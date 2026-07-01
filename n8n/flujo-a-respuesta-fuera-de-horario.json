@@ -1,0 +1,310 @@
+{
+  "name": "FARO - Flujo A - Respuesta fuera de horario",
+  "nodes": [
+    {
+      "id": "wh-trigger",
+      "name": "Webhook WhatsApp (mensajes)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-1180, 0],
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "faro/whatsapp-incoming",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "wh-verify",
+      "name": "Webhook WhatsApp (verificación GET)",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-1180, 220],
+      "notes": "Meta llama a este endpoint una sola vez al configurar el webhook, con hub.mode, hub.verify_token y hub.challenge en query string.",
+      "parameters": {
+        "httpMethod": "GET",
+        "path": "faro/whatsapp-incoming",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "respond-verify",
+      "name": "Responder challenge de Meta",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [-960, 220],
+      "parameters": {
+        "respondWith": "text",
+        "responseBody": "={{$json.query[\"hub.challenge\"]}}"
+      }
+    },
+    {
+      "id": "extract-message",
+      "name": "Extraer datos del mensaje",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-960, 0],
+      "notes": "Aplana el payload de Meta: wa_id, texto, phone_number_id, timestamp.",
+      "parameters": {
+        "jsCode": "const entry = $json.body.entry?.[0];\nconst change = entry?.changes?.[0]?.value;\nconst message = change?.messages?.[0];\n\nif (!message) {\n  return []; // Evento sin mensaje (ej. status de entrega) - se ignora\n}\n\nreturn [{\n  json: {\n    wa_id: message.from,\n    texto: message.text?.body || '',\n    phone_number_id: change.metadata?.phone_number_id,\n    timestamp: message.timestamp\n  }\n}];"
+      }
+    },
+    {
+      "id": "lookup-clinic",
+      "name": "Buscar clínica por phone_number_id",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-740, 0],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id, nombre, horario_json, direccion, precios_orientativos, atiende_urgencias, telefono_urgencias, email_recepcion FROM clinics WHERE whatsapp_phone_number_id = $1 AND activa = true LIMIT 1;",
+        "options": {
+          "queryReplacement": "={{ [$json.phone_number_id] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    },
+    {
+      "id": "check-business-hours",
+      "name": "¿Está fuera de horario?",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-520, 0],
+      "notes": "Calcula si el timestamp actual (Europe/Madrid) cae dentro del horario_json de la clínica.",
+      "parameters": {
+        "jsCode": "const clinic = $input.first().json;\nconst horario = clinic.horario_json;\nconst now = new Date(new Date().toLocaleString('en-US', { timeZone: 'Europe/Madrid' }));\nconst dias = ['domingo','lunes','martes','miercoles','jueves','viernes','sabado'];\nconst diaHoy = dias[now.getDay()];\nconst horarioHoy = horario[diaHoy];\n\nlet fueraDeHorario = true;\nif (horarioHoy) {\n  const [hA, mA] = horarioHoy.apertura.split(':').map(Number);\n  const [hC, mC] = horarioHoy.cierre.split(':').map(Number);\n  const minutosAhora = now.getHours() * 60 + now.getMinutes();\n  const minutosApertura = hA * 60 + mA;\n  const minutosCierre = hC * 60 + mC;\n  fueraDeHorario = !(minutosAhora >= minutosApertura && minutosAhora < minutosCierre);\n}\n\nreturn [{ json: { ...clinic, fueraDeHorario } }];"
+      }
+    },
+    {
+      "id": "if-fuera-horario",
+      "name": "IF fuera de horario",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-300, 0],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{$json.fueraDeHorario}}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "noop-en-horario",
+      "name": "En horario - no actuar",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [-80, 220],
+      "notes": "Excepción documentada: si en el futuro se añade lógica de 'sin respuesta humana en 15 min', se engancha aquí."
+    },
+    {
+      "id": "check-existing-conv",
+      "name": "¿Ya hay conversación abierta (24h)?",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-80, 0],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id FROM conversations WHERE clinic_id = $1 AND tipo = 'fuera_horario' AND created_at > now() - interval '24 hours' ORDER BY created_at DESC LIMIT 1;",
+        "options": {
+          "queryReplacement": "={{ [$json.id] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    },
+    {
+      "id": "if-primera-vez",
+      "name": "IF primer mensaje de la conversación",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [140, 0],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{$json.id}}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "isEmpty" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "mensaje-corto-repetido",
+      "name": "Mensaje corto (sin LLM)",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [360, 220],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            { "name": "respuesta", "type": "string", "value": "Recibido, en cuanto abramos te contestamos personalmente 🦷" },
+            { "name": "es_urgencia", "type": "boolean", "value": false }
+          ]
+        }
+      }
+    },
+    {
+      "id": "openai-request",
+      "name": "OpenAI - generar respuesta",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [360, 0],
+      "notes": "gpt-4o-mini, response_format json_object. Reintentos configurados en 'Ajustes de nodo' (2 reintentos, 3s/8s).",
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: 'gpt-4o-mini',\n  response_format: { type: 'json_object' },\n  messages: [\n    { role: 'system', content: 'Eres el asistente de recepción de ' + $json.nombre + '. Es fuera del horario de atención. Confirma que el mensaje se ha recibido, da info básica (horario, dirección, si se atienden urgencias), nunca des diagnóstico ni precios exactos. Si detectas lenguaje de urgencia dental real, marca es_urgencia true. Responde SIEMPRE en JSON: {\\\"respuesta\\\": string, \\\"es_urgencia\\\": boolean}. Datos: horario=' + JSON.stringify($json.horario_json) + ', direccion=' + $json.direccion + ', atiende_urgencias=' + $json.atiende_urgencias + ', precios=' + $json.precios_orientativos },\n    { role: 'user', content: $json.texto }\n  ]\n}) }}",
+        "options": {
+          "timeout": 10000,
+          "retry": { "maxTries": 3, "waitBetweenTries": 3000 }
+        }
+      },
+      "credentials": {
+        "openAiApi": { "id": "REPLACE_ME", "name": "OpenAI FARO" }
+      }
+    },
+    {
+      "id": "parse-openai",
+      "name": "Parsear JSON del LLM (con fallback)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [580, 0],
+      "parameters": {
+        "jsCode": "const FALLBACK = 'Gracias por tu mensaje. Hemos recibido tu consulta y te responderemos en cuanto abramos. Si es una urgencia, por favor llama al ' + ($json.telefono_urgencias || 'teléfono de la clínica') + '.';\n\ntry {\n  const raw = $json.choices[0].message.content;\n  const parsed = JSON.parse(raw);\n  if (typeof parsed.respuesta !== 'string') throw new Error('formato inesperado');\n  return [{ json: { respuesta: parsed.respuesta, es_urgencia: !!parsed.es_urgencia, fallback_usado: false } }];\n} catch (err) {\n  return [{ json: { respuesta: FALLBACK, es_urgencia: false, fallback_usado: true } }];\n}"
+      }
+    },
+    {
+      "id": "if-urgencia",
+      "name": "IF es urgencia",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [800, 0],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{$json.es_urgencia}}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "notify-urgencia",
+      "name": "Notificar urgencia al equipo",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1020, -120],
+      "notes": "Envía WhatsApp/SMS al móvil personal del propietario/recepcionista. Sustituir por el número real de la clínica.",
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v20.0/{{$json.phone_number_id}}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: 'NUMERO_MOVIL_CLINICA', type: 'text', text: { body: '🚨 Posible urgencia detectada de ' + $json.wa_id + ': ' + $json.texto } }) }}"
+      },
+      "credentials": {
+        "httpHeaderAuth": { "id": "REPLACE_ME", "name": "WhatsApp Cloud API - Bearer token" }
+      }
+    },
+    {
+      "id": "send-whatsapp",
+      "name": "Enviar respuesta al paciente (WhatsApp)",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [1020, 120],
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v20.0/{{$json.phone_number_id}}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({ messaging_product: 'whatsapp', to: $json.wa_id, type: 'text', text: { body: $json.respuesta } }) }}",
+        "options": {
+          "timeout": 8000,
+          "retry": { "maxTries": 2, "waitBetweenTries": 3000 }
+        },
+        "onError": "continueRegularOutput"
+      },
+      "credentials": {
+        "httpHeaderAuth": { "id": "REPLACE_ME", "name": "WhatsApp Cloud API - Bearer token" }
+      }
+    },
+    {
+      "id": "log-conversation",
+      "name": "Guardar conversación en Postgres",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [1240, 0],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO conversations (clinic_id, tipo, mensaje_entrante, mensaje_saliente, es_urgencia, estado) VALUES ($1, 'fuera_horario', $2, $3, $4, $5);",
+        "options": {
+          "queryReplacement": "={{ [$json.id, $json.texto, $json.respuesta, $json.es_urgencia, $json.error ? 'error_envio' : 'ok'] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    }
+  ],
+  "connections": {
+    "Webhook WhatsApp (mensajes)": { "main": [[{ "node": "Extraer datos del mensaje", "type": "main", "index": 0 }]] },
+    "Webhook WhatsApp (verificación GET)": { "main": [[{ "node": "Responder challenge de Meta", "type": "main", "index": 0 }]] },
+    "Extraer datos del mensaje": { "main": [[{ "node": "Buscar clínica por phone_number_id", "type": "main", "index": 0 }]] },
+    "Buscar clínica por phone_number_id": { "main": [[{ "node": "¿Está fuera de horario?", "type": "main", "index": 0 }]] },
+    "¿Está fuera de horario?": { "main": [[{ "node": "IF fuera de horario", "type": "main", "index": 0 }]] },
+    "IF fuera de horario": {
+      "main": [
+        [{ "node": "¿Ya hay conversación abierta (24h)?", "type": "main", "index": 0 }],
+        [{ "node": "En horario - no actuar", "type": "main", "index": 0 }]
+      ]
+    },
+    "¿Ya hay conversación abierta (24h)?": { "main": [[{ "node": "IF primer mensaje de la conversación", "type": "main", "index": 0 }]] },
+    "IF primer mensaje de la conversación": {
+      "main": [
+        [{ "node": "OpenAI - generar respuesta", "type": "main", "index": 0 }],
+        [{ "node": "Mensaje corto (sin LLM)", "type": "main", "index": 0 }]
+      ]
+    },
+    "OpenAI - generar respuesta": { "main": [[{ "node": "Parsear JSON del LLM (con fallback)", "type": "main", "index": 0 }]] },
+    "Parsear JSON del LLM (con fallback)": { "main": [[{ "node": "IF es urgencia", "type": "main", "index": 0 }]] },
+    "Mensaje corto (sin LLM)": { "main": [[{ "node": "IF es urgencia", "type": "main", "index": 0 }]] },
+    "IF es urgencia": {
+      "main": [
+        [{ "node": "Notificar urgencia al equipo", "type": "main", "index": 0 }, { "node": "Enviar respuesta al paciente (WhatsApp)", "type": "main", "index": 0 }],
+        [{ "node": "Enviar respuesta al paciente (WhatsApp)", "type": "main", "index": 0 }]
+      ]
+    },
+    "Enviar respuesta al paciente (WhatsApp)": { "main": [[{ "node": "Guardar conversación en Postgres", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}

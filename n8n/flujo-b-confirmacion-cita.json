@@ -1,0 +1,274 @@
+{
+  "name": "FARO - Flujo B - Confirmación de cita 24h antes",
+  "nodes": [
+    {
+      "id": "cron-daily",
+      "name": "Cron diario 09:00 Europe/Madrid",
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [-1400, 0],
+      "parameters": {
+        "rule": {
+          "interval": [
+            { "field": "cronExpression", "expression": "0 9 * * *" }
+          ]
+        }
+      }
+    },
+    {
+      "id": "find-appointments",
+      "name": "Buscar citas en ventana 23-25h",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-1180, 0],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT a.id AS appointment_id, a.fecha_hora, a.tipo_tratamiento, a.clinic_id, p.id AS patient_id, p.nombre AS patient_nombre, p.telefono_whatsapp, c.nombre AS clinic_nombre, c.whatsapp_phone_number_id FROM appointments a JOIN patients p ON p.id = a.patient_id JOIN clinics c ON c.id = a.clinic_id WHERE a.fecha_hora BETWEEN now() + interval '23 hours' AND now() + interval '25 hours' AND a.estado = 'programada' AND a.recordatorio_enviado = false;",
+        "options": {}
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    },
+    {
+      "id": "split-items",
+      "name": "Procesar cada cita",
+      "type": "n8n-nodes-base.splitInBatches",
+      "typeVersion": 3,
+      "position": [-960, 0],
+      "parameters": { "batchSize": 1, "options": {} }
+    },
+    {
+      "id": "check-duplicate",
+      "name": "¿Ya se envió recordatorio a esta cita?",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-740, 0],
+      "notes": "Idempotencia: evita reenviar si el cron se ejecutó dos veces.",
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "SELECT id FROM conversations WHERE appointment_id = $1 AND tipo = 'confirmacion_cita' LIMIT 1;",
+        "options": {
+          "queryReplacement": "={{ [$json.appointment_id] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    },
+    {
+      "id": "if-not-duplicate",
+      "name": "IF no enviado todavía",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-520, 0],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{$json.id}}",
+              "rightValue": "",
+              "operator": { "type": "string", "operation": "isEmpty" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "send-template",
+      "name": "Enviar plantilla recordatorio_cita_es",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [-300, -60],
+      "notes": "Plantilla HSM aprobada por Meta (categoría Utility), con botones Confirmar / Necesito cambiarla.",
+      "parameters": {
+        "method": "POST",
+        "url": "=https://graph.facebook.com/v20.0/{{$json.whatsapp_phone_number_id}}/messages",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "httpHeaderAuth",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  messaging_product: 'whatsapp',\n  to: $json.telefono_whatsapp,\n  type: 'template',\n  template: {\n    name: 'recordatorio_cita_es',\n    language: { code: 'es' },\n    components: [{\n      type: 'body',\n      parameters: [\n        { type: 'text', text: $json.patient_nombre },\n        { type: 'text', text: $json.clinic_nombre },\n        { type: 'text', text: new Date($json.fecha_hora).toLocaleDateString('es-ES') },\n        { type: 'text', text: new Date($json.fecha_hora).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit' }) }\n      ]\n    }]\n  }\n}) }}",
+        "options": {
+          "timeout": 8000,
+          "retry": { "maxTries": 2, "waitBetweenTries": 3000 }
+        },
+        "onError": "continueRegularOutput"
+      },
+      "credentials": {
+        "httpHeaderAuth": { "id": "REPLACE_ME", "name": "WhatsApp Cloud API - Bearer token" }
+      }
+    },
+    {
+      "id": "log-reminder-sent",
+      "name": "Registrar envío + marcar recordatorio_enviado",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-80, -60],
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "INSERT INTO conversations (clinic_id, patient_id, appointment_id, tipo, estado) VALUES ($1, $2, $3, 'confirmacion_cita', $4); UPDATE appointments SET recordatorio_enviado = true WHERE id = $3;",
+        "options": {
+          "queryReplacement": "={{ [$json.clinic_id, $json.patient_id, $json.appointment_id, $json.error ? 'fallido' : 'esperando_respuesta'] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    },
+    {
+      "id": "noop-duplicate",
+      "name": "Ya enviado - no repetir",
+      "type": "n8n-nodes-base.noOp",
+      "typeVersion": 1,
+      "position": [-300, 100]
+    },
+    {
+      "id": "wh-response-trigger",
+      "name": "Webhook: respuesta del paciente",
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2,
+      "position": [-1400, 400],
+      "notes": "Comparte el mismo endpoint entrante de WhatsApp que el Flujo A; este workflow separado modela solo la rama de respuesta a un recordatorio de cita. En producción ambos flujos se fusionan en un único webhook con enrutamiento por tipo de conversación.",
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "faro/whatsapp-confirmacion-respuesta",
+        "responseMode": "responseNode",
+        "options": {}
+      }
+    },
+    {
+      "id": "respond-ack",
+      "name": "Responder 200 OK a Meta",
+      "type": "n8n-nodes-base.respondToWebhook",
+      "typeVersion": 1,
+      "position": [-1180, 400],
+      "parameters": { "respondWith": "text", "responseBody": "EVENT_RECEIVED" }
+    },
+    {
+      "id": "extract-response",
+      "name": "Extraer respuesta (botón o texto libre)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-1180, 560],
+      "parameters": {
+        "jsCode": "const entry = $json.body.entry?.[0];\nconst change = entry?.changes?.[0]?.value;\nconst message = change?.messages?.[0];\nif (!message) return [];\n\nconst esBoton = message.type === 'button' || message.type === 'interactive';\nconst buttonId = message.button?.payload || message.interactive?.button_reply?.id || null;\nconst textoLibre = message.text?.body || null;\n\nreturn [{ json: { wa_id: message.from, esBoton, buttonId, textoLibre } }];"
+      }
+    },
+    {
+      "id": "if-boton",
+      "name": "IF respuesta por botón",
+      "type": "n8n-nodes-base.if",
+      "typeVersion": 2,
+      "position": [-960, 560],
+      "parameters": {
+        "conditions": {
+          "options": { "caseSensitive": true, "leftValue": "", "typeValidation": "strict" },
+          "conditions": [
+            {
+              "leftValue": "={{$json.esBoton}}",
+              "rightValue": true,
+              "operator": { "type": "boolean", "operation": "true" }
+            }
+          ],
+          "combinator": "and"
+        }
+      }
+    },
+    {
+      "id": "map-button-to-status",
+      "name": "Mapear botón a estado",
+      "type": "n8n-nodes-base.set",
+      "typeVersion": 3,
+      "position": [-740, 460],
+      "parameters": {
+        "assignments": {
+          "assignments": [
+            {
+              "name": "nuevo_estado",
+              "type": "string",
+              "value": "={{ $json.buttonId === 'CONFIRMAR' ? 'confirmada' : ($json.buttonId === 'CANCELAR' ? 'cancelada' : 'pendiente_reprogramacion') }}"
+            }
+          ]
+        }
+      }
+    },
+    {
+      "id": "openai-classify",
+      "name": "OpenAI - clasificar texto libre",
+      "type": "n8n-nodes-base.httpRequest",
+      "typeVersion": 4,
+      "position": [-740, 660],
+      "parameters": {
+        "method": "POST",
+        "url": "https://api.openai.com/v1/chat/completions",
+        "authentication": "predefinedCredentialType",
+        "nodeCredentialType": "openAiApi",
+        "sendBody": true,
+        "specifyBody": "json",
+        "jsonBody": "={{ JSON.stringify({\n  model: 'gpt-4o-mini',\n  response_format: { type: 'json_object' },\n  messages: [\n    { role: 'system', content: 'Un paciente respondió con texto libre a un recordatorio de cita. Clasifica en: confirma, cancela_o_reprograma, no_claro. Responde SOLO JSON {\\\"categoria\\\": string}.' },\n    { role: 'user', content: $json.textoLibre }\n  ]\n}) }}",
+        "options": { "timeout": 10000, "retry": { "maxTries": 3, "waitBetweenTries": 3000 } }
+      },
+      "credentials": {
+        "openAiApi": { "id": "REPLACE_ME", "name": "OpenAI FARO" }
+      }
+    },
+    {
+      "id": "parse-classify",
+      "name": "Parsear categoría (fail-safe = no_claro)",
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [-520, 660],
+      "parameters": {
+        "jsCode": "let categoria = 'no_claro';\ntry {\n  const parsed = JSON.parse($json.choices[0].message.content);\n  if (['confirma','cancela_o_reprograma','no_claro'].includes(parsed.categoria)) {\n    categoria = parsed.categoria;\n  }\n} catch (e) { /* fail-safe: se queda en no_claro */ }\n\nconst mapa = { confirma: 'confirmada', cancela_o_reprograma: 'pendiente_reprogramacion', no_claro: 'alerta_manual' };\nreturn [{ json: { nuevo_estado: mapa[categoria] } }];"
+      }
+    },
+    {
+      "id": "update-appointment-status",
+      "name": "Actualizar estado de la cita",
+      "type": "n8n-nodes-base.postgres",
+      "typeVersion": 2,
+      "position": [-300, 560],
+      "notes": "Si nuevo_estado = 'alerta_manual', no se toca appointments.estado - se marca la conversación para revisión humana (fail-safe ante ambigüedad).",
+      "parameters": {
+        "operation": "executeQuery",
+        "query": "UPDATE appointments SET estado = CASE WHEN $2 <> 'alerta_manual' THEN $2 ELSE estado END WHERE id = (SELECT appointment_id FROM conversations WHERE clinic_id IN (SELECT id FROM clinics WHERE whatsapp_phone_number_id = $1) ORDER BY created_at DESC LIMIT 1); ",
+        "options": {
+          "queryReplacement": "={{ [$json.wa_id, $json.nuevo_estado] }}"
+        }
+      },
+      "credentials": {
+        "postgres": { "id": "REPLACE_ME", "name": "Postgres FARO" }
+      }
+    }
+  ],
+  "connections": {
+    "Cron diario 09:00 Europe/Madrid": { "main": [[{ "node": "Buscar citas en ventana 23-25h", "type": "main", "index": 0 }]] },
+    "Buscar citas en ventana 23-25h": { "main": [[{ "node": "Procesar cada cita", "type": "main", "index": 0 }]] },
+    "Procesar cada cita": { "main": [[{ "node": "¿Ya se envió recordatorio a esta cita?", "type": "main", "index": 0 }]] },
+    "¿Ya se envió recordatorio a esta cita?": { "main": [[{ "node": "IF no enviado todavía", "type": "main", "index": 0 }]] },
+    "IF no enviado todavía": {
+      "main": [
+        [{ "node": "Enviar plantilla recordatorio_cita_es", "type": "main", "index": 0 }],
+        [{ "node": "Ya enviado - no repetir", "type": "main", "index": 0 }]
+      ]
+    },
+    "Enviar plantilla recordatorio_cita_es": { "main": [[{ "node": "Registrar envío + marcar recordatorio_enviado", "type": "main", "index": 0 }]] },
+    "Webhook: respuesta del paciente": { "main": [[{ "node": "Responder 200 OK a Meta", "type": "main", "index": 0 }, { "node": "Extraer respuesta (botón o texto libre)", "type": "main", "index": 0 }]] },
+    "Extraer respuesta (botón o texto libre)": { "main": [[{ "node": "IF respuesta por botón", "type": "main", "index": 0 }]] },
+    "IF respuesta por botón": {
+      "main": [
+        [{ "node": "Mapear botón a estado", "type": "main", "index": 0 }],
+        [{ "node": "OpenAI - clasificar texto libre", "type": "main", "index": 0 }]
+      ]
+    },
+    "Mapear botón a estado": { "main": [[{ "node": "Actualizar estado de la cita", "type": "main", "index": 0 }]] },
+    "OpenAI - clasificar texto libre": { "main": [[{ "node": "Parsear categoría (fail-safe = no_claro)", "type": "main", "index": 0 }]] },
+    "Parsear categoría (fail-safe = no_claro)": { "main": [[{ "node": "Actualizar estado de la cita", "type": "main", "index": 0 }]] }
+  },
+  "active": false,
+  "settings": { "executionOrder": "v1" },
+  "pinData": {}
+}
