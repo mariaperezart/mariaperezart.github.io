@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Calcula cuánto te cuesta un WhatsApp sin responder — FARO</title>
+<meta name="description" content="Calculadora gratuita: descubre cuánto le puede estar costando a tu clínica cada mensaje de WhatsApp sin responder y cada cita sin confirmar.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+    <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav__links">
+      <li><a href="/como-funciona/">Cómo funciona</a></li>
+      <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/precios/">Precios</a></li>
+      <li><a href="/casos-de-exito/">Casos de éxito</a></li>
+      <li><a href="/preguntas-frecuentes/">FAQ</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn btn--accent nav__cta" href="/diagnostico/">Agenda tu diagnóstico</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>¿Cuánto te cuesta, en euros, lo que hoy se te escapa?</h1>
+      <p>Responde tres preguntas rápidas y te damos una estimación. Después, en la llamada de 15 minutos, la ajustamos con tus números reales.</p>
+
+      <form id="roi-form">
+        <label for="roi-gabinetes">Número de gabinetes de tu clínica</label>
+        <input type="number" id="roi-gabinetes" min="1" max="20" value="6" required>
+
+        <label for="roi-mensajes">Mensajes de WhatsApp que recibís al día (aprox.)</label>
+        <input type="number" id="roi-mensajes" min="5" max="300" value="50" required>
+
+        <label for="roi-ciudad">Ciudad</label>
+        <input type="text" id="roi-ciudad" placeholder="Ej. Valencia">
+
+        <label for="roi-email">Tu email</label>
+        <input type="email" id="roi-email" placeholder="tu@clinica.com" required>
+
+        <button type="submit" class="btn btn--accent" style="margin-top: 24px;">Calcular mi caso</button>
+      </form>
+
+      <div class="roi-result" id="roi-result">
+        <p class="eyebrow">Ingreso potencial recuperable</p>
+        <p class="roi-result__figure" id="roi-rango">—</p>
+        <p class="form-note">Esto es una estimación con datos de sector, no una promesa. En tu llamada de diagnóstico ajustamos el cálculo con tus números reales.</p>
+        <a class="btn btn--primary" href="/contacto/">Agenda tu llamada de 15 minutos</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Ayudamos a clínicas dentales a que ningún paciente que contacta se quede sin respuesta ni sin seguimiento.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <a href="/como-funciona/">Cómo funciona</a>
+      <a href="/servicios/">Servicios</a>
+      <a href="/precios/">Precios</a>
+    </div>
+    <div>
+      <h4>Empresa</h4>
+      <a href="/sobre-faro/">Sobre FARO</a>
+      <a href="/casos-de-exito/">Casos de éxito</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      <a href="/diagnostico/">Diagnóstico gratuito</a>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <span>© 2026 FARO. Todos los derechos reservados.</span>
+    <span>
+      <a href="/legal/privacidad/">Privacidad</a>
+      <a href="/legal/terminos/">Términos</a>
+      <a href="/legal/cookies/">Cookies</a>
+    </span>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>

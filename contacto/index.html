@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Contacto — FARO</title>
+<meta name="description" content="Habla con FARO. Agenda una llamada de 15 minutos o escríbenos directamente.">
+<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/assets/css/styles.css">
+</head>
+<body>
+<header class="site-header">
+  <nav class="nav">
+    <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+    <button class="nav__toggle" aria-label="Abrir menú">☰</button>
+    <ul class="nav__links">
+      <li><a href="/como-funciona/">Cómo funciona</a></li>
+      <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/precios/">Precios</a></li>
+      <li><a href="/casos-de-exito/">Casos de éxito</a></li>
+      <li><a href="/preguntas-frecuentes/">FAQ</a></li>
+      <li><a href="/contacto/">Contacto</a></li>
+    </ul>
+    <a class="btn btn--accent nav__cta" href="/diagnostico/">Agenda tu diagnóstico</a>
+  </nav>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <h1>Hablemos de tu clínica, no de tecnología.</h1>
+
+      <form data-faro-form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
+        <p class="form-note form-pending-notice" style="display:none; color:var(--color-alert);">
+          Este formulario todavía no está conectado a un servicio de envío real. Sustituye la acción del formulario por tu propio endpoint (Formspree, Getform, etc.) antes de publicar.
+        </p>
+        <label for="c-nombre">Nombre</label>
+        <input type="text" id="c-nombre" name="nombre" required>
+
+        <label for="c-clinica">Clínica</label>
+        <input type="text" id="c-clinica" name="clinica" required>
+
+        <label for="c-email">Email</label>
+        <input type="email" id="c-email" name="email" required>
+
+        <label for="c-telefono">Teléfono</label>
+        <input type="tel" id="c-telefono" name="telefono">
+
+        <label for="c-mensaje">Mensaje (opcional)</label>
+        <textarea id="c-mensaje" name="mensaje" rows="4"></textarea>
+
+        <button type="submit" class="btn btn--accent" style="margin-top: 24px;">Enviar</button>
+      </form>
+
+      <div style="margin-top: 48px;">
+        <p><strong>O escríbenos directamente:</strong></p>
+        <p>Email: <a href="mailto:hola@faro.clinic">hola@faro.clinic</a></p>
+        <p>Teléfono: <a href="tel:+34600000000">+34 600 000 000</a></p>
+        <p class="form-note">(Sustituye estos datos de contacto por los reales antes de publicar.)</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Ayudamos a clínicas dentales a que ningún paciente que contacta se quede sin respuesta ni sin seguimiento.</p>
+    </div>
+    <div>
+      <h4>Producto</h4>
+      <a href="/como-funciona/">Cómo funciona</a>
+      <a href="/servicios/">Servicios</a>
+      <a href="/precios/">Precios</a>
+    </div>
+    <div>
+      <h4>Empresa</h4>
+      <a href="/sobre-faro/">Sobre FARO</a>
+      <a href="/casos-de-exito/">Casos de éxito</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+      <a href="/diagnostico/">Diagnóstico gratuito</a>
+    </div>
+  </div>
+  <div class="container footer__legal">
+    <span>© 2026 FARO. Todos los derechos reservados.</span>
+    <span>
+      <a href="/legal/privacidad/">Privacidad</a>
+      <a href="/legal/terminos/">Términos</a>
+      <a href="/legal/cookies/">Cookies</a>
+    </span>
+  </div>
+</footer>
+<script src="/assets/js/main.js"></script>
+</body>
+</html>
