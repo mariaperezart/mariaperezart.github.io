@@ -36,8 +36,11 @@ No todos los agentes de `.claude/agents/` pertenecen a la cadena Investigador→
 | 14 | RRHH/Contratación | Prepara la incorporación del freelancer de implementación y, más adelante, la primera contratación interna | Solo el rol de freelancer tiene sentido preparar ya |
 | 15 | Producto (catálogo) | Decide qué petición de cliente entra en el catálogo estandarizado vs. se cobra a medida | Vacío honestamente hasta el primer cliente |
 | 16 | Éxito de Cliente | Prepara la revisión periódica de cada cliente activo, detecta upsell y momento de pedir referido, según los plazos de `FARO_PROCESO_COMERCIAL.md` | El primero que tendrá trabajo real en cuanto se cierre un cliente |
+| 17 | Correo (Gmail) | Crea en Gmail los borradores reales del plan de envío del Preparador (nunca los envía) y busca en la bandeja respuestas a una secuencia en curso | Con trabajo real ya — requiere el conector de Gmail activo en la sesión |
 
 A medida que aparezcan más funciones continuas de este tipo (no ligadas a un experimento concreto), se añaden aquí — no se fuerza su numeración dentro de la secuencia 01-10 para no sugerir un orden de ejecución que no existe.
+
+**Nota sobre el Agente de Correo**: a diferencia de los agentes 12-16 (que solo manejan archivos Markdown), este usa herramientas reales de Gmail (`mcp__Gmail__*`). Solo puede crear borradores, nunca enviar — no existe ni debe añadirse una acción de envío automático sin que el usuario lo pida explícitamente y entienda que eso convierte una acción reversible (un borrador) en una irreversible (un email ya salido a un tercero real).
 
 **Nota de honestidad**: los agentes 12-16 se crearon a petición explícita del usuario para cubrir funciones que "tendría una empresa grande", no porque exista ya un proceso documentado sin ejecutar (que es el criterio que sí cumplía el Agente de Marketing). La mayoría de ellos, hoy, con cero clientes de pago, tienen poco o nada que hacer — y cada uno lo dice explícitamente en su propia definición en vez de fingir actividad. Su utilidad real empieza cuando exista la señal que cada uno describe (un cliente de pago, una petición repetida, una señal de sobrecarga) — no antes.
 
