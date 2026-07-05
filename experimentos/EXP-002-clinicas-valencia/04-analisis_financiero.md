@@ -1,11 +1,11 @@
 # Análisis Financiero — EXP-002-clinicas-valencia
 
 ## Aviso de alcance
-Este análisis se basa en un dataset de solo 5 candidatos dudosos (ver `03-verificacion.md`), no en un dataset verificado de 15-20+ clínicas. Las cifras de mercado son, por tanto, una **estimación de orden de magnitud para decidir si vale la pena verificar e invertir tiempo en Valencia como zona**, no una proyección fiable de facturación. Se marca explícitamente cada cifra que es estimación propia.
+Este análisis se basa en un dataset de 9 candidatos dudosos (ver `03-verificacion.md`), ampliado de los 5 iniciales tras una segunda ronda de búsqueda, pero todavía no en un dataset verificado de 15-20+ clínicas. Las cifras de mercado son, por tanto, una **estimación de orden de magnitud para decidir si vale la pena verificar e invertir tiempo en Valencia como zona**, no una proyección fiable de facturación. Se marca explícitamente cada cifra que es estimación propia.
 
 ## Tamaño de mercado direccionable
-- Clínicas de Valencia ciudad que cumplen el rango de gabinetes del ICP en este dataset: 2-5 de 6 encontradas en dos búsquedas superficiales (estimación).
-- Fuentes agregadoras (DentalQuality, Top Doctors, DocDental) listan entre 10 y 20 clínicas "destacadas" en Valencia ciudad — sugiere que un barrido manual completo (Google Maps + Doctoralia, ver `02-investigacion/queries.md`) probablemente produzca 15-30 candidatos dentro del rango ICP (estimación, no verificado).
+- Clínicas de Valencia ciudad con señal ICP parcial o fuerte encontradas en cuatro búsquedas: 9 de 13 nombres distintos localizados (se descartaron 2 por tamaño/franquicia, se fusionó 1 duplicado).
+- Fuentes agregadoras (DentalQuality, Top Doctors, DocDental, Doctoralia) listan entre 13 y 20 clínicas "destacadas" en Valencia ciudad — sugiere que un barrido manual completo (Google Maps + Doctoralia, ver `02-investigacion/queries.md`) probablemente produzca 15-30 candidatos dentro del rango ICP (estimación, no verificado). Dos rondas de búsqueda web ya cubren cerca de la mitad de ese rango, lo que hace razonable esperar alcanzar 15-20 con un barrido manual adicional en Google Maps/Doctoralia.
 - **SOM realista para este experimento:** de un universo estimado de 20-30 clínicas ICP en Valencia ciudad, y con la tasa de cierre histórica de FARO todavía sin datos propios (primer experimento del sistema), se usa como referencia el criterio de éxito ya fijado en `00-objetivo.md`: 3 llamadas agendadas sobre 20-30 contactos.
 
 ## Escenarios de facturación

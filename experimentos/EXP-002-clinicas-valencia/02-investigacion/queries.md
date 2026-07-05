@@ -3,8 +3,13 @@
 Búsquedas ejecutadas (WebSearch, 2026-07-05):
 1. `clínica dental Valencia varios gabinetes equipo dentistas`
 2. `"clínica dental" Valencia reseñas Google "gabinetes" equipo grande`
+3. `clínica dental Valencia Ruzafa Benimaclet Extramurs Camins al Grau varios dentistas`
+4. `clínica dental Valencia Doctoralia mejor valorada equipo odontólogos`
 
-Fuentes agregadoras consultadas dentro de los resultados: DentalQuality, Top Doctors, Akeito, DocDental.
+Fuentes agregadoras consultadas dentro de los resultados: DentalQuality, Top Doctors, Akeito, DocDental, Doctoralia.
+
+## Intento de verificación directa (bloqueado)
+Se intentó usar WebFetch para leer directamente las páginas de DentalQuality, Top Doctors, DocDental y las webs de Clínica Badal y Albalat Dental, con el fin de extraer teléfono/dirección exactos. Las cuatro devolvieron error 403 (bloqueo anti-bot de esos sitios) — no es un límite del sistema multiagente, es una protección del lado del sitio. Confirma que **la verificación de contacto exacto solo se puede completar navegando manualmente** (abriendo la web en un navegador normal), no vía herramientas automatizadas de esta sesión.
 
 ## Queries pendientes de ejecutar manualmente (no cubiertas por búsqueda web genérica)
 Según `FARO_PROCESO_COMERCIAL.md` sección 2, estas fuentes requieren navegación directa (no indexadas de forma útil por búsqueda web genérica) y las debe ejecutar el usuario:
