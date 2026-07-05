@@ -24,6 +24,16 @@ Cada vez que hay que probar algo de FARO (un nicho nuevo, un mensaje nuevo, un p
 
 Cada definición en `.claude/agents/NN-nombre.md` sigue el mismo formato: Responsabilidad única, qué NO debe hacer, entrada, salida (ruta exacta del archivo que produce) y reglas. Puedes pedirle a Claude Code que actúe como uno solo de estos agentes sin ejecutar el flujo completo — por ejemplo, para un análisis financiero puntual sin abrir un experimento nuevo.
 
+## 2.1 Agentes independientes (fuera de la secuencia de experimentos)
+
+No todos los agentes de `.claude/agents/` pertenecen a la cadena Investigador→Estratega de arriba. Algunos resuelven una función continua que no depende de abrir un `EXP-XXX`:
+
+| # | Agente | Responsabilidad | Se invoca |
+|---|---|---|---|
+| 11 | Marketing | Escribe el siguiente artículo del calendario editorial de `FARO_SEO_CONTENIDOS.md` | Cuando toque el siguiente artículo del mes, no como parte de un experimento |
+
+A medida que aparezcan más funciones continuas de este tipo (no ligadas a un experimento concreto), se añaden aquí — no se fuerza su numeración dentro de la secuencia 01-10 para no sugerir un orden de ejecución que no existe.
+
 ## 3. Estructura de carpetas
 
 ```
