@@ -16,6 +16,7 @@ Este repositorio contiene todo lo construido para FARO: la tesis de negocio, el 
 | `FARO_PROCESO_COMERCIAL.md` | Embudo comercial completo, outbound → referidos |
 | `FARO_BIBLIOTECA_AUTOMATIZACIONES.md` | 100 casos de uso de automatización clasificados |
 | `FARO_SISTEMA_MULTIAGENTE.md` | Sistema de 10 agentes de Claude Code para ejecutar experimentos de validación/crecimiento de forma repetible |
+| `FARO_AGENTES_VERTICALES.md` | Investigación (nivel de evidencia 🟡, tratar como hipótesis) sobre si el propio producto de FARO debería evolucionar hacia una familia de agentes especializados de cara al cliente |
 
 Cada documento referencia a los anteriores en vez de repetirlos — léelos en este orden si es tu primera vez.
 
