@@ -15,8 +15,13 @@ Este repositorio contiene todo lo construido para FARO: la tesis de negocio, el 
 | `FARO_SEO_CONTENIDOS.md` | Keyword research, calendario editorial |
 | `FARO_PROCESO_COMERCIAL.md` | Embudo comercial completo, outbound → referidos |
 | `FARO_BIBLIOTECA_AUTOMATIZACIONES.md` | 100 casos de uso de automatización clasificados |
+| `FARO_SISTEMA_MULTIAGENTE.md` | Sistema de 10 agentes de Claude Code para ejecutar experimentos de validación/crecimiento de forma repetible |
 
 Cada documento referencia a los anteriores en vez de repetirlos — léelos en este orden si es tu primera vez.
+
+## 1.1 Sistema multiagente de validación (`.claude/agents/`, `experimentos/`, `base_conocimiento/`)
+
+Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única (Orquestador, Financiero, Investigador, Verificador, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega). Funciona hoy en modo manual (sin APIs) y está pensado para conectar integraciones (búsqueda, CRM, WhatsApp Business) de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
