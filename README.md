@@ -25,7 +25,7 @@ Cada documento referencia a los anteriores en vez de repetirlos — léelos en e
 
 ## 1.1 Sistema multiagente de validación (`.claude/agents/`, `experimentos/`, `base_conocimiento/`)
 
-Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única en secuencia (Orquestador, Investigador, Verificador, Financiero, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega), más agentes independientes que no siguen esa secuencia (Marketing, que escribe el calendario editorial de `FARO_SEO_CONTENIDOS.md`). Funciona hoy en modo manual (sin APIs) y está pensado para conectar integraciones (búsqueda, CRM, WhatsApp Business) de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
+Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única en secuencia (Orquestador, Investigador, Verificador, Financiero, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega), más 6 agentes independientes que no siguen esa secuencia (Marketing, Legal, Finanzas, RRHH, Producto, Éxito de Cliente — ver la nota de honestidad en `FARO_SISTEMA_MULTIAGENTE.md` sección 2.1: la mayoría de estos últimos tienen poco que hacer hasta que exista el primer cliente de pago, y lo dicen explícitamente en su propia definición). Funciona hoy en modo manual (sin APIs) y está pensado para conectar integraciones (búsqueda, CRM, WhatsApp Business) de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
