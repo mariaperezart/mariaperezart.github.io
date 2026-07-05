@@ -85,7 +85,7 @@ En lugar de un único asistente conversacional (el alcance actual del MVP, ver `
 - Framework para convertir procedimientos en agentes reutilizables.
 - Motor de evaluación del rendimiento de agentes.
 
-Ninguno de estos es un compromiso de construcción — son candidatos a evaluar una vez que el MVP de 2 flujos (`FARO_TESIS_MVP_60DIAS.md`) haya demostrado retención real con clientes de pago (mismo criterio que ya rige la transición de pricing de validación a pricing objetivo en `FARO_MODELO_NEGOCIO.md`).
+Ninguno de estos es un compromiso de construcción — son candidatos a evaluar una vez que el MVP de 2 flujos (`FARO_TESIS_MVP_60DIAS.md`) haya demostrado retención real con clientes de pago (mismo criterio que ya rige la transición de pricing de validación a pricing objetivo en `FARO_MODELO_NEGOCIO.md`). El criterio concreto para decidir cuándo un resultado ya justifica esto — y no solo un golpe de suerte puntual — está desarrollado en `FARO_NEGOCIO_SOSTENIBLE.md`, no se repite aquí.
 
 ## 11. Insight clave
 

@@ -79,7 +79,7 @@ Experiencia diferenciadora → construcción de marca → mayor percepción de v
 - Motor de segmentación de clientes por valor (canal → ticket medio → retención).
 - Framework de optimización de márgenes.
 
-Igual que en `FARO_AGENTES_VERTICALES.md`, ninguno de estos es un compromiso de construcción — son candidatos a evaluar una vez que haya suficientes clientes de pago reales para que "ticket medio" y "retención" sean datos, no proyecciones. Con cero o un puñado de clientes (la fase actual de FARO), la aplicación inmediata de este documento no es construir herramientas nuevas, sino un hábito de decisión: cuando el Agente Financiero de `FARO_SISTEMA_MULTIAGENTE.md` calcule escenarios de un experimento, que incluya explícitamente un escenario de "mismo nº de clientes, ticket medio más alto" junto a los escenarios de volumen que ya calcula.
+Igual que en `FARO_AGENTES_VERTICALES.md`, ninguno de estos es un compromiso de construcción — son candidatos a evaluar una vez que haya suficientes clientes de pago reales para que "ticket medio" y "retención" sean datos, no proyecciones (criterio desarrollado con más detalle en `FARO_NEGOCIO_SOSTENIBLE.md`). Con cero o un puñado de clientes (la fase actual de FARO), la aplicación inmediata de este documento no es construir herramientas nuevas, sino un hábito de decisión: cuando el Agente Financiero de `FARO_SISTEMA_MULTIAGENTE.md` calcule escenarios de un experimento, que incluya explícitamente un escenario de "mismo nº de clientes, ticket medio más alto" junto a los escenarios de volumen que ya calcula.
 
 ## 11. Insight clave
 
