@@ -9,11 +9,11 @@ Copy final, listo para publicar, para cada página del sitio definido en `FARO_U
 
 ## 0. Convenciones globales de SEO
 
-- **Patrón de meta title**: `{Título específico de la página} | FARO — Optimización operativa para clínicas dentales`
+- **Patrón de meta title**: `{Título específico de la página} — FARO` o `{Título específico} — {contexto de la página}` con "FARO" en el título (al inicio o al final, según lo que lea mejor en cada página) — separador em dash (`—`), no barra vertical. Ver los ejemplos de cada página en este documento, que son los que se implementaron literalmente.
 - **Meta description por defecto** (fallback): "FARO automatiza y mejora continuamente los procesos operativos de tu clínica dental: WhatsApp, confirmaciones de cita y seguimiento de pacientes. Sin software que aprender."
-- **Open Graph**: imagen por defecto = wordmark horizontal sobre fondo Azul Faro (`#1B3A4B`), 1200×630px.
+- **Open Graph**: imagen por defecto = wordmark horizontal sobre fondo Azul Faro (`#1B3A4B`), 1200×630px. **Pendiente**: hoy todas las páginas usan `/assets/img/favicon.svg` como `og:image` (un SVG no se renderiza en la mayoría de redes sociales) — falta encargar/generar el PNG 1200×630 real antes de compartir enlaces de FARO en redes.
 - **Idioma**: `es-ES` en todo el sitio, `hreflang` no aplica en el lanzamiento (mercado único España).
-- **Schema global**: `Organization` en el layout base (nombre, logo, sameAs de LinkedIn), `LocalBusiness` no aplica (FARO no atiende presencialmente al público, es B2B remoto).
+- **Schema global**: `Organization` (nombre, logo, descripción) repetido en el `<head>` de cada página de contenido — el sitio no tiene un layout compartido real (es HTML estático sin build), así que "global" significa "el mismo bloque copiado en cada página", no un include único. `sameAs` de LinkedIn queda pendiente de añadir cuando exista el perfil. `LocalBusiness` no aplica (FARO no atiende presencialmente al público, es B2B remoto).
 
 ---
 

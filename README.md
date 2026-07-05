@@ -22,7 +22,7 @@ Cada documento referencia a los anteriores en vez de repetirlos — léelos en e
 
 ## 1.1 Sistema multiagente de validación (`.claude/agents/`, `experimentos/`, `base_conocimiento/`)
 
-Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única (Orquestador, Financiero, Investigador, Verificador, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega). Funciona hoy en modo manual (sin APIs) y está pensado para conectar integraciones (búsqueda, CRM, WhatsApp Business) de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
+Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única (Orquestador, Investigador, Verificador, Financiero, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega). Funciona hoy en modo manual (sin APIs) y está pensado para conectar integraciones (búsqueda, CRM, WhatsApp Business) de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
@@ -41,7 +41,8 @@ Sitio estático (HTML/CSS/JS, sin dependencias de build) que implementa el copy 
 Todo lo de arriba es código y contenido — está terminado. Lo que sigue son acciones que **solo tú puedes ejecutar**, porque requieren tu identidad legal, tu método de pago o tus propias cuentas. Ningún asistente puede completarlas por ti.
 
 ### Publicar la web (gratis, ~15 minutos)
-- [ ] En GitHub: **Settings → Pages** de este repositorio → fuente = rama `claude/faro-thesis-mvp-60days-e4wf3z` (o hacer merge a `main` primero) → carpeta raíz.
+- [ ] Fusionar a `main` la pull request abierta con el trabajo más reciente (o la rama activa en ese momento, si hay una PR sin fusionar — revisa qué rama tiene los últimos commits antes de publicar, `main` puede estar por detrás de una rama `claude/...` en curso).
+- [ ] En GitHub: **Settings → Pages** de este repositorio → fuente = rama `main` → carpeta raíz.
 - [ ] Confirmar que `mariaperezart.github.io` sirve la web (puede tardar unos minutos en propagarse).
 - [ ] Si quieres un dominio propio (ej. `faro.clinic`), registrarlo y configurarlo en Settings → Pages → Custom domain.
 

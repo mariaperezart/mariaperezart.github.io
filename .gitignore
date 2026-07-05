@@ -1,0 +1,14 @@
+# Sistema operativo
+.DS_Store
+Thumbs.db
+
+# Dependencias (por si en el futuro se añade tooling de build)
+node_modules/
+
+# Variables de entorno / credenciales
+.env
+.env.local
+
+# Editores
+.vscode/
+.idea/

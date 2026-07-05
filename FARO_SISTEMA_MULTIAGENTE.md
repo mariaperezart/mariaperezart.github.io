@@ -12,9 +12,9 @@ Cada vez que hay que probar algo de FARO (un nicho nuevo, un mensaje nuevo, un p
 | # | Agente | Responsabilidad |
 |---|---|---|
 | 01 | Orquestador | Abre el experimento y decide qué agente actúa a continuación |
-| 02 | Financiero | Viabilidad económica: TAM/SAM/SOM, escenarios de facturación, CAC/LTV, GO/NO-GO |
-| 03 | Investigador | Genera el dataset de prospectos del nicho/zona a validar |
-| 04 | Verificador | Audita el dataset: descarta duplicados, marca datos no verificables |
+| 02 | Investigador | Genera el dataset de prospectos del nicho/zona a validar |
+| 03 | Verificador | Audita el dataset: descarta duplicados, marca datos no verificables |
+| 04 | Financiero | Viabilidad económica: TAM/SAM/SOM, escenarios de facturación, CAC/LTV, GO/NO-GO |
 | 05 | Redactor | Escribe hasta 3 variantes de mensaje de prospección |
 | 06 | Preparador | Reparte prospectos entre variantes y arma el plan de envío |
 | 07 | Tracker | Registra las respuestas que el usuario informa |

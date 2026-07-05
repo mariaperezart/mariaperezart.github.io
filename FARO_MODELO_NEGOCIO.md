@@ -53,7 +53,7 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 **Ventajas.** Genera ingresos recurrentes predecibles (base del modelo de suscripción) y una razón legítima de contacto periódico con el cliente (revisión de optimización) que sirve tanto para retención como para upselling natural, sin que se perciba como venta forzada.
 
-**Riesgos.** Un modelo de relación de largo plazo exige que el coste marginal de mantener a cada cliente activo (soporte, ajustes, revisión) se mantenga bajo control — si cada revisión periódica se convierte en una sesión de trabajo extenso no facturado, el modelo de suscripción deja de ser rentable (ver Estructura de costes y Riesgos, sección 4).
+**Riesgos.** Un modelo de relación de largo plazo exige que el coste marginal de mantener a cada cliente activo (soporte, ajustes, revisión) se mantenga bajo control — si cada revisión periódica se convierte en una sesión de trabajo extenso no facturado, el modelo de suscripción deja de ser rentable (ver Estructura de costes, sección 1.9, y Riesgos, sección 8).
 
 **Evolución futura.** A medida que crece la base de clientes, la revisión periódica individual (llamada 1:1) debe evolucionar hacia un proceso semi-estandarizado (checklist de optimización por tipo de clínica) para que la relación de largo plazo no dependa linealmente del tiempo de un humano por cliente.
 
@@ -73,7 +73,7 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 **Qué incluye.** El conocimiento acumulado de procesos clínicos (el activo menos replicable), la infraestructura técnica (n8n, OpenAI/Claude, WhatsApp Business API, Google Workspace), la documentación y metodología propia, la marca FARO (ver Fase 1) y, de forma creciente, una biblioteca de automatizaciones reutilizables ya probadas en clientes reales.
 
-**Por qué se diseña así.** De estos recursos, solo dos son defendibles a medio plazo: el conocimiento de procesos y la biblioteca de automatizaciones reutilizables. La infraestructura técnica (n8n, OpenAI) es un commodity al alcance de cualquier competidor con tiempo y conocimiento técnico equivalente — ver Ventaja competitiva en el documento de Fase 1 y su desarrollo ampliado en la sección 5 de este documento.
+**Por qué se diseña así.** De estos recursos, solo dos son defendibles a medio plazo: el conocimiento de procesos y la biblioteca de automatizaciones reutilizables. La infraestructura técnica (n8n, OpenAI) es un commodity al alcance de cualquier competidor con tiempo y conocimiento técnico equivalente — ver Diferenciación en `FARO_ESTRATEGIA_MARCA.md` (Fase 1) y su desarrollo ampliado en la sección 8 de este documento (Riesgos del modelo → Competencia).
 
 **Ventajas.** Cada nueva automatización construida para un cliente, si se diseña de forma reutilizable desde el principio (parametrizada, no hardcodeada a un cliente concreto), se convierte en un activo que reduce el coste marginal de servir al siguiente cliente similar.
 
@@ -91,13 +91,13 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 **Riesgos.** Mientras exista una sola persona en FARO, estas siete actividades compiten por el mismo tiempo finito. El riesgo de sobrecarga operativa que FARO vende resolver a sus clientes es exactamente el riesgo que FARO corre internamente si crece sin disciplina de priorización.
 
-**Evolución futura.** La incorporación de un primer colaborador (soporte técnico o implementación) se plantea en el roadmap en cuanto el tiempo dedicado a mantenimiento y soporte reactivo supere de forma sostenida el tiempo dedicado a análisis y diseño — señal de que el fundador se está convirtiendo en operador en lugar de estratega.
+**Evolución futura.** La incorporación de un primer colaborador (soporte técnico o implementación) se plantea en el roadmap en cuanto el tiempo dedicado a mantenimiento y soporte reactivo supere de forma sostenida el tiempo dedicado a análisis y diseño — señal de que la fundadora se está convirtiendo en operadora en lugar de estratega.
 
 ### 1.8 Socios clave
 
 **Qué incluye.** Proveedores de infraestructura de IA (OpenAI, Anthropic), la plataforma de automatización (n8n), proveedores de infraestructura (Google Workspace, hosting), Meta (WhatsApp Business Platform), software de gestión dental (como aliados potenciales, no como integraciones técnicas actuales — ver restricción de PMS en el documento de MVP técnico), consultores legales (protección de datos de pacientes, contratos de suscripción) y empresas informáticas locales que ya atienden a clínicas dentales y pueden actuar como canal (ver 1.3).
 
-**Por qué se diseña así.** Ninguno de los socios tecnológicos (OpenAI, Anthropic, n8n, Meta) es una alianza estratégica en el sentido clásico — son proveedores intercambiables, y tratarlos como "socios clave" en el Canvas no debe confundirse con dependencia estratégica: si mañana cambia el proveedor de LLM, el negocio no cambia, porque el valor no está ahí (ver Ventaja competitiva). El socio verdaderamente estratégico a cultivar es el software de gestión dental, no como integración técnica (bloqueada hoy por la falta de API pública de la mayoría), sino como relación institucional que podría abrirse en el futuro.
+**Por qué se diseña así.** Ninguno de los socios tecnológicos (OpenAI, Anthropic, n8n, Meta) es una alianza estratégica en el sentido clásico — son proveedores intercambiables, y tratarlos como "socios clave" en el Canvas no debe confundirse con dependencia estratégica: si mañana cambia el proveedor de LLM, el negocio no cambia, porque el valor no está ahí (ver Diferenciación en `FARO_ESTRATEGIA_MARCA.md`, Fase 1). El socio verdaderamente estratégico a cultivar es el software de gestión dental, no como integración técnica (bloqueada hoy por la falta de API pública de la mayoría), sino como relación institucional que podría abrirse en el futuro.
 
 **Riesgos.** Dependencia operativa (no estratégica) de proveedores de IA y de Meta: un cambio de política de precios de WhatsApp Business API o de OpenAI afecta directamente al margen por cliente. El riesgo se mitiga manteniendo la arquitectura técnica desacoplada de un proveedor único (ver documento técnico: el prompt y la lógica de negocio no están atados irreversiblemente a un modelo concreto).
 
@@ -126,10 +126,10 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 | **Propuesta única de valor** | "Nos convertimos en el equipo externo que se asegura de que ningún proceso operativo de tu clínica se caiga — sin que tengas que aprender ni gestionar nada nuevo." |
 | **Solución** | Servicio gestionado de automatización de procesos (WhatsApp, confirmaciones, seguimiento) construido y mantenido por FARO, entregado por suscripción mensual con mejora continua. |
 | **Canales** | Outbound directo, visitas y eventos del sector, SEO/contenido propio, partners tecnológicos y de consultoría dental (ver BMC 1.3). |
-| **Fuentes de ingresos** | Setup 300€ + suscripción mensual en tres planes (149€ / 299€ / 499€) — ver Pricing, sección 6. |
+| **Fuentes de ingresos** | Setup 300€ + suscripción mensual en tres planes (149€ / 299€ / 499€) — ver Pricing, sección 4. |
 | **Estructura de costes** | Infraestructura variable por cliente (LLM, WhatsApp API), costes fijos mínimos, tiempo de soporte y coste de adquisición (ver BMC 1.9). |
 | **Métricas clave** | Nº de clínicas activas, MRR, churn mensual, tiempo de soporte por clínica, tasa de conversión de llamada a contrato, % de servicio estandarizado vs. a medida. |
-| **Ventaja injusta** | Conocimiento acumulado y verificado de qué automatizar en una clínica dental española y en qué orden — biblioteca de procesos y automatizaciones ya probadas, no replicable con solo copiar la tecnología (ver sección 5, Ventaja competitiva). |
+| **Ventaja injusta** | Conocimiento acumulado y verificado de qué automatizar en una clínica dental española y en qué orden — biblioteca de procesos y automatizaciones ya probadas, no replicable con solo copiar la tecnología (ver Diferenciación en `FARO_ESTRATEGIA_MARCA.md`, Fase 1). |
 
 ---
 
@@ -225,7 +225,7 @@ MRR, número de clínicas activas, churn mensual, CAC, LTV, tiempo de soporte po
 
 **Personalización excesiva.** El riesgo silencioso más peligroso: cada cliente, de forma razonable, pedirá ajustes específicos a su caso. Sin un proceso explícito de decir "no" o de cobrar aparte por lo que no está en el catálogo estandarizado, el negocio deriva hacia un modelo de consultoría a medida disfrazado de suscripción, con la estructura de costes de una consultora pero el precio de un SaaS.
 
-**Competencia.** El moat de FARO (ver Fase 1, Ventaja competitiva) es de conocimiento y metodología, no de tecnología — lo que significa que la barrera de entrada para un competidor con el mismo criterio y la misma dedicación es baja en el corto plazo. La defensa no es impedir que aparezcan competidores, es acumular más rápido que ellos evidencia real de qué funciona (biblioteca de automatizaciones, casos documentados) y relación de confianza en el sector.
+**Competencia.** El moat de FARO (ver Fase 1, Diferenciación) es de conocimiento y metodología, no de tecnología — lo que significa que la barrera de entrada para un competidor con el mismo criterio y la misma dedicación es baja en el corto plazo. La defensa no es impedir que aparezcan competidores, es acumular más rápido que ellos evidencia real de qué funciona (biblioteca de automatizaciones, casos documentados) y relación de confianza en el sector.
 
 **Pricing.** El riesgo de fijar 149€ como entrada es doble: si es demasiado bajo, no cubre el coste real de soporte no estandarizado (ver Rentabilidad); si se percibe como alto frente a alternativas genéricas de automatización sin especialización, el cliente compara precio de herramienta en vez de valor de resultado — de ahí la importancia de que toda comunicación (ver Fase 1, pilares) anclada en resultado, no en funcionalidad.
 
