@@ -18,6 +18,8 @@ Este repositorio contiene todo lo construido para FARO: la tesis de negocio, el 
 | `FARO_SISTEMA_MULTIAGENTE.md` | Sistema de 10 agentes de Claude Code para ejecutar experimentos de validación/crecimiento de forma repetible |
 | `FARO_AGENTES_VERTICALES.md` | Investigación (nivel de evidencia 🟡, tratar como hipótesis) sobre si el propio producto de FARO debería evolucionar hacia una familia de agentes especializados de cara al cliente |
 | `FARO_MARCA_Y_MARGEN.md` | Investigación (nivel de evidencia 🟡, tratar como hipótesis) sobre si la marca debería gestionarse como palanca de margen y de capacidad, no solo de captación |
+| `FARO_NEGOCIO_SOSTENIBLE.md` | Investigación (nivel de evidencia 🟡) sobre cómo distinguir un ingreso puntual afortunado de un proceso de adquisición repetible, aplicado al primer experimento real del sistema multiagente |
+| `FARO_VENTA_ADAPTATIVA.md` | Investigación (nivel de evidencia 🟠, generalizaciones sin validar) sobre adaptar la venta al perfil de riesgo del comprador dentro del ICP, no por geografía |
 
 Cada documento referencia a los anteriores en vez de repetirlos — léelos en este orden si es tu primera vez.
 
