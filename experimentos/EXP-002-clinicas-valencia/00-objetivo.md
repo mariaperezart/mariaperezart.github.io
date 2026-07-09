@@ -17,3 +17,10 @@ Al menos 3 llamadas de discovery agendadas sobre 20-30 contactos trabajados en 3
 
 ## Nota de trazabilidad
 El dataset (`02-investigacion/dataset.md`) se construyó con búsqueda web real (nombres y datos públicos de clínicas de Valencia), pero **no ha sido verificado con visita a cada web/ficha individual** — está marcado como tal en `03-verificacion.md`. Antes de enviar ningún mensaje real, el usuario debe confirmar manualmente los datos de contacto y las señales de ICP de cada clínica.
+
+## Nota de alcance (añadida 2026-07-09 — auditoría)
+Este objetivo y su criterio de éxito siguen refiriéndose solo a **Valencia ciudad** con el dataset original de 10 clínicas (Lote A de 6 ya verificado). El 2026-07-09 se añadieron a `02-investigacion/` dos datasets adicionales que **no forman parte de este objetivo tal como está escrito**:
+- `dataset-ampliacion-2026-07-09.md`: 20 clínicas de la Comunidad Valenciana fuera de Valencia ciudad.
+- `dataset-leon-crm-maestro-2026-07-09.md`: 57 clínicas de la **provincia de León** — una región distinta, sin relación geográfica con "Valencia ciudad".
+
+Se guardan en esta misma carpeta por conveniencia (mismo producto, FARO, mismo ICP de clínica dental), pero son pipeline de prospección general, no parte del experimento EXP-002 tal como se definió. Si se decide ampliar formalmente el alcance geográfico de este experimento (o abrir uno nuevo, ej. "EXP-003"), es una decisión de negocio pendiente de tomar explícitamente — no se ha tomado todavía.

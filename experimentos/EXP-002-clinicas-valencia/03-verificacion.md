@@ -1,12 +1,15 @@
 # Verificación del dataset — EXP-002-clinicas-valencia
 
-## Resumen (actualizado 2026-07-09 — Lote B verificado de forma independiente por Claude)
+## Resumen (actualizado 2026-07-09 — Lote B verificado de forma independiente por Claude; corregido error aritmético en esta misma fecha, ver nota)
 - Total de filas recibidas: 11 (de las cuales 1, "Clínica Dental 2RP", es casi con certeza duplicada de la fila "2RPValencia" — se trata como una sola clínica, no como candidato adicional)
-- Total de clínicas distintas: 10
+- Total de clínicas distintas dentro de la tabla de `dataset.md`: 10
 - **Válidas (contacto real verificado de forma independiente): 6** — 2RP, Badal, Dra. Clara Martínez Valero (verificadas 2026-07-06), Dentalmedica, Albalat Dental, Dr. Pedroza (verificadas 2026-07-09). Ver sección "Filas válidas" abajo.
 - Dudosas (señal ICP parcial, falta un dato clave, o contacto sin verificar de forma independiente): 2 (Llobell, ARTDENTA)
 - Sin encaje claro de tamaño: 1 (Paloma Tortosa — ver nota)
-- Descartadas (no cumplen ICP): 2 (Teresa Badía — tamaño; +Dental Benimaclet — cadena corporativa)
+- Descartada dentro de las 10 (no cumple ICP): 1 (Teresa Badía — tamaño)
+- 6 + 2 + 1 + 1 = 10 ✓
+
+**Nota de corrección (2026-07-09)**: la versión anterior de este resumen contaba "+Dental Benimaclet" como una de las 10 clínicas distintas descartadas, pero esa fila nunca estuvo en la tabla de `dataset.md` — está en su sección aparte "Candidatos descartados en la propia búsqueda (no incluidos en la tabla)". Se mantiene como referencia (es una franquicia de cadena nacional, no encaja en el ICP), pero no cuenta dentro del total de 10.
 
 ## Filas válidas — contacto verificado de forma independiente (WebSearch cruzado por Claude sobre lo aportado por el usuario)
 
@@ -24,10 +27,10 @@
 **Nota sobre Dr. Pedroza**: la duda original era si "C/ Yecla" y "C/ Gorgos" eran dos sedes distintas o la misma clínica mudada. La verificación independiente aclara que es una sola clínica física (C/ Gorgos) que opera bajo el nombre comercial/dominio "Yecla Integral" (marca de un grupo, visible en su email y redes) — no hay dos sedes.
 
 ## Filas descartadas y motivo
-| Nombre | Motivo del descarte |
-|---|---|
-| Clínica Dental Teresa Badía | 2 gabinetes, por debajo del rango ICP 4-10. Candidata al segmento "1-3 gabinetes, paquete simplificado" del roadmap, no a este experimento. |
-| +Dental Benimaclet | Franquicia de cadena nacional — el ICP excluye explícitamente cadenas corporativas (`FARO_MODELO_NEGOCIO.md` 3.1: "no cadena corporativa"), porque la decisión de compra no es local. |
+| Nombre | ¿Estaba en la tabla de `dataset.md`? | Motivo del descarte |
+|---|---|---|
+| Clínica Dental Teresa Badía | Sí, es una de las 10 | 2 gabinetes, por debajo del rango ICP 4-10. Candidata al segmento "1-3 gabinetes, paquete simplificado" del roadmap, no a este experimento. |
+| +Dental Benimaclet | No — venía ya descartada aparte en `dataset.md` §"Candidatos descartados en la propia búsqueda" | Franquicia de cadena nacional — el ICP excluye explícitamente cadenas corporativas (`FARO_MODELO_NEGOCIO.md` 3.1: "no cadena corporativa"), porque la decisión de compra no es local. Se mantiene aquí solo como referencia, no resta del total de 10. |
 
 ## Filas dudosas y qué falta verificar
 | Nombre | Qué falta |

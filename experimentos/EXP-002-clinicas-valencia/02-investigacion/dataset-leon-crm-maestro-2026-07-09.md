@@ -4,7 +4,7 @@ Origen: CRM Excel ("CRM_Maestro.xlsx") aportado por la usuaria el 2026-07-09, co
 
 ## Verificación antes de importar
 
-Antes de dar esto por bueno, Claude comprobó de forma independiente 3 de las 59 filas (WebSearch, 2026-07-09):
+Antes de dar esto por bueno, Claude comprobó de forma independiente 4 de las 59 filas originales (WebSearch, 2026-07-09):
 
 - **Clínica dental Mesiodens** (León): teléfono y WhatsApp (695 988 082) coinciden exactamente con fuente independiente. Decisor Dr. Milton Caravaca confirmado real.
 
@@ -12,10 +12,12 @@ Antes de dar esto por bueno, Claude comprobó de forma independiente 3 de las 59
 
 - **Clínica Dental Dra. Emilia Santamarta** (León): teléfono coincide; una fuente independiente confirma que la clínica acepta WhatsApp (no se reconfirmó el número exacto).
 
-Las 3 muestras se sostienen — a diferencia de dos incidentes previos con otra herramienta externa en este mismo proyecto (ver `plan.md` de EXP-002), aquí no se encontró ningún dato inventado en la muestra comprobada. **Aun así, solo se ha verificado el 5% de las filas (3 de 59) — el resto no ha pasado la comprobación cruzada independiente que sí se aplicó al Lote A de Valencia.**
+- **Clínica Dental Dr. Merino / INEOM** (Ponferrada): esta sí falló — el teléfono del CRM (987 234 567) era incorrecto (patrón de placeholder), corregido a 987 402 510 tras verificación independiente. El decisor (Dr. Enrique Martínez Merino) sí se confirmó como real.
+
+3 de 4 muestras se sostuvieron sin cambios, 1 tenía un dato incorrecto real (el teléfono) que se corrigió — a diferencia de los dos incidentes previos con otra herramienta externa en este mismo proyecto (datos completamente inventados de la nada), aquí es un error puntual dentro de un registro por lo demás real, no una fabricación completa. **Aun así, solo se ha verificado el 7% de las filas (4 de 56 tras deduplicar) — el resto no ha pasado la comprobación cruzada independiente que sí se aplicó al Lote A de Valencia. Este resultado (1 de 4 con un dato erróneo) es motivo suficiente para no tratar el resto como fiable sin verificar.**
 
 
-Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Lorente, Clínica Dental De la Riva — misma clínica que otra fila ya existente, se conservó la versión con más datos).
+Se eliminaron 3 filas duplicadas del CRM original (Clínica Dental García Lorente, Clínica Dental De la Riva, CIO Dental La Chantría/Clínica Dental CIO - La Chantria — misma clínica que otra fila ya existente en cada caso, se conservó la versión con más datos). La tercera duplicidad (CIO - La Chantria) no estaba en el CRM original tal como se detectó al importar — se encontró en una auditoría posterior del 2026-07-09, ver nota en la fila correspondiente.
 
 
 **Criterio ICP de FARO**: clínica dental privada de 4-10 gabinetes, recepción propia, no cadena corporativa ni institucional. El CRM original no registra el nº de gabinetes de forma sistemática — no asumir que una fila cumple el ICP solo por estar aquí; varias notas ya señalan casos que probablemente no lo cumplen (ej. redes tipo Sanitas Milenium, Dentomedic, AREA CLINICA como policlínico multiespecialidad).
@@ -52,7 +54,7 @@ Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Loren
 | Clínica Arregui | Dr. Ignacio Arregui Hurtado | info@clinica-arregui.com | 987 091 910 | clinicaarregui.com | ✅ Listo | [2026-06-20] Investigación web: email verificado en web oficial clinicaarregui.com. 23+ reseñas Google, media 4.3/5 (dato exacto). Decisor confirmado vía Doctoralia (colegiado 24000993). |
 | Clínica dental DENTOMEDIC León | Dr. José Luis Alvares (implantólogo referente) | ponferrada@gmail.com | 987 270 881 | dentomedic.es | ✅ Listo | [2026-06-20] Investigación web: MISMA RED que fila 6 (Dentomedic Ponferrada/León/Palencia). Mismo email corporativo verificado vía perfil Nextdoor. 63 reseñas Google, 4.2/5 (red completa). Considerar fusionar como una sola cuenta comercial en vez de 2 filas separadas. |
 | Clínica Dental Condesa | Dr. Luis González-Cobos Rodríguez / Dra. Ana Belén Alonso Celadilla | clinica@dentalcondesa.es | 987 245 577 | clinicadentalcondesa.es | ✅ Listo | [2026-06-20] Investigación web: email verificado en web oficial clinicadentalcondesa.es. 31 reseñas DocDental, media 4.2/5. +15 años trayectoria. Web algo anticuada (oportunidad). |
-| Clínica Dental CIO - La Chantria | Dr. Alberto Tezza Courteau | info@ciodental.es | 987 206 845 | — | ✅ Listo | [2026-06-20] Investigación web: email verificado en web oficial ciodental.es. Desde 1986 (38+ años). Redes activas: Facebook e Instagram con publicaciones recientes confirmadas. |
+| Clínica Dental CIO - La Chantria (C. Fray Luis de León, 27) | Dr. Alberto Tezza Courteau (también mencionada Dra. Diana Tezza en reviews, sin confirmar si decide) | info@ciodental.es | 987 206 845 | — | ✅ Listo | [2026-06-20] Investigación web: email verificado en web oficial ciodental.es. Desde 1986 (38+ años). Redes activas: Facebook e Instagram con publicaciones recientes confirmadas. **[Corrección auditoría 2026-07-09]: fusionada con la fila duplicada "CIO Dental La Chantría" que aparecía como negocio distinto en el CRM original — mismo apellido Tezza, misma marca, era la misma clínica con datos incompletos en la segunda entrada.** |
 | Lancia Dental, S.L. | Dra. Mª del Camino González Fernández-Llamazares | camino@lanciadental.com | 987 212 575 | — | ✅ Listo | [2026-06-20] Investigación web: ⚠️ DECISOR CORREGIDO -- era "Posible Dr. Jorge G. Vázquez" (no confirmado, pertenecía a otra clínica). Real: Dra. Camino González Fernández-Llamazares, confirmada en directorio profesional oficial junto con su email. Clínica dental INFANTIL desde 1987. 20 opiniones, mayoría positivas pero con 1 reseña muy negativa visible. |
 | Clínica Dental Silva Cideo | Dr. José Luis Silva González | clinica@clinicadentalsilvaleon.com | 987 239 650 | clinicadentalsilvacideo.es | ✅ Listo | [2026-06-20] Nueva investigación (Instagram + LinkedIn): Instagram clínica @clinicadentalsilvacideo: 1.339 seguidores, 118 publicaciones, 819 seguidos. Instagram Dr. José Luis Silva Canal (@dr.joseluisssilvacanal, cirujano maxilofacial en Quirón Ruber): 1.035 seguidores, 53 publicaciones. GMB León 4.8⭐/186 reseñas, GMB Carrizo 4.6⭐/12 reseñas (brecha de visibilidad entre sedes). LinkedIn corporati… (nota completa truncada, ver CRM original) |
 | Víctor del Canto, clínica dental | Victoriano del Canto Álvarez | citaprevia@victordelcanto.com | 987 49 58 17 | victordelcanto.com | ✅ Listo | [2026-06-20] Nueva investigación: Equipo confirmado: Víctor del Canto (propietario/odontólogo), Pablo Rebollo Díez (odontólogo), Ylenia Blanco (ortodoncista) -- 3 profesionales identificados por nombre (el CRM ya tenía 7 empleados de otra fuente, se mantiene esa cifra superior). GMB: 4.7⭐, 103 reseñas (dato exacto). Web victordelcanto.com: moderna, completa, con TAC 3D, Diseño de Sonrisa DSD, fina… (nota completa truncada, ver CRM original) |
@@ -78,12 +80,6 @@ Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Loren
 | Clínica Dental ALN | Pendiente verificar | No publicado | 987 24 43 79 | No tiene | ⚠️ Falta decisor | — |
 | Activadent (Dra. Graciela Nemer Pelliza) | Dra. Graciela Nemer Pelliza | — | 987 17 85 28 | doctoranemer.com | ❌ Descartado | — |
 
-## León (C. Fray Luis de León, 27)
-
-| Clínica | Decisor | Email | Teléfono/WhatsApp | Web | Estado | Notas |
-|---|---|---|---|---|---|---|
-| CIO Dental La Chantría | Dra. Diana Tezza (mencionada en reviews, no confirmado si decide) | Pendiente verificar | Pendiente verificar - BUSCAR | Pendiente verificar | ✅ Listo | — |
-
 ## Navatejera, Villaquilambre (León)
 
 | Clínica | Decisor | Email | Teléfono/WhatsApp | Web | Estado | Notas |
@@ -99,7 +95,7 @@ Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Loren
 | Clínica Dental Dentomedic Ponferrada | Dr. José Luis Alvares | ponferrada@gmail.com | 987 409 890 | dentomedic.es | ✅ Listo | [2026-06-20] Investigación web: email verificado (perfil Nextdoor oficial). Red Dentomedic: León-Palencia-Ponferrada, +19 años. 63 reseñas Google, media 4.2/5 (dato exacto). MISMA RED que fila 11 (Dentomedic León) -- considerar tratar como cuenta única. |
 | Clínica Dental Milenium Ponferrada (Sanitas) | Dra. Raquel Baeza Blanco / Dr. Eradio Pisonero Blanco | — | 987 425 001 | clinicadental-ponferrada.sanitas.es | ⚠️ Falta email | [2026-06-20] Investigación web: SIN email propio -- franquicia de red Sanitas Milenium (+220 clínicas en España), solo chatbot/teléfono corporativo. 139 reseñas Google, 4.8/5 (dato exacto). ⚠️ BAJA PRIORIDAD COMERCIAL: decisiones de marketing probablemente gestionadas centralmente por Sanitas, no por el equipo local. Mantener como "Falta email" pero considerar descartar o contactar directamente a … (nota completa truncada, ver CRM original) |
 | Clínica Dental Santa Polonia | Pendiente verificar (SLP, fundada 1991) | — | 987 414 858 | No disponible | ⚠️ Falta email | [2026-06-20] Investigación web: Ciudad confirmada Ponferrada (era "Sin determinar"). ⚠️ SIN EMAIL ni web propia, 2 empleados confirmado (eInforma 2022, dato exacto). 0 reseñas visibles -- presencia digital mínima, similar a fila 16. |
-| Clínica Dental Dr. Merino (INEOM) | Dr. Enrique Martínez Merino | info@drmerino.es | 987 234 567 | drmerino.es | ✅ Listo | ⚠️ DECISOR A VERIFICAR: el CRM tiene 'Dr. Enrique Martínez Merino' (mantenido sin cambios). Una nueva fuente de investigación menciona 'Dr. Alberto Merino' (posiblemente Alberto Fernández de Valderrama también en el equipo) como nombre del fundador -- NO se ha verificado cuál es correcto, puede haber confusión entre el fundador histórico y un médico actual del equipo. Verificar antes de personaliz… (nota completa truncada, ver CRM original) |
+| Clínica Dental Dr. Merino (INEOM) | Dr. Enrique Martínez Merino | info@drmerino.es | **987 402 510** (también móvil 634 873 177) | drmerino.es | ✅ Listo | **[Corrección auditoría 2026-07-09]**: el teléfono original del CRM (987 234 567) tenía un patrón secuencial típico de placeholder y no coincidía con ninguna fuente independiente — corregido a 987 402 510 tras WebSearch (Páginas Amarillas, Top Doctors, docfav.com, web oficial ineom.es). Dirección real: C. El Cristo, 22, 2º, Ponferrada (el CRM tenía "Calle Fontecha 10", no confirmado por ninguna fuente independiente — verificar cuál es correcta antes de usar). Decisor **Dr. Enrique Martínez Merino confirmado real e independientemente** (Top Doctors) — la duda del CRM sobre "Dr. Alberto Merino" no encontró respaldo en esta verificación, usar Enrique Martínez Merino. |
 | Clínica Dental Meda | Dr. Ramón Gómez Meda | recepcion@dentalmeda.com | 987 456 184 / 617 456 368 (WhatsApp) | dentalmeda.com | ✅ Listo | [2026-06-20] Nueva investigación: Ciudad corregida a Ponferrada (era 'Sin determinar') -- 3 sedes confirmadas: Ponferrada (Avda. Pérez Colino 22-24), Fabero, O Barco. +25 años de experiencia, 20+ profesionales (escala confirmada, la mayor de las 5 clínicas revisadas en esta ronda). Dr. Ramón Gómez Meda: PHD, profesor en LSUHSC New Orleans, conferenciante internacional (Roma, Bucarest, Oporto, Lond… (nota completa truncada, ver CRM original) |
 | Clínica Dental Dra. Natalia Buitrón | Dra. Natalia Buitrón López | clinicadental_ponferrada@hotmail.com | 987 413 013 | clinicadentalbuitronponferrada.es | ✅ Listo | — |
 | Clínica Dental Balcázar Torres (Dora Torres) | Dr. Óscar Balcázar Rodríguez | obalcazaro@gmail.com | 987 404 019 | clinicadentalenponferrada.es / clinicadentalbalcazar.com | ✅ Listo | — |
@@ -125,11 +121,11 @@ Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Loren
 
 ## Resumen
 
-- Total de filas tras deduplicar: 57
+- Total de filas tras deduplicar: 56 (actualizado tras la auditoría del 2026-07-09, que encontró y fusionó una tercera duplicidad no detectada en la importación inicial — ver nota arriba)
 
 - ⚠️ Falta decisor: 8
 
-- ✅ Listo: 37
+- ✅ Listo: 36
 
 - ⚠️ Falta email: 11
 
@@ -140,4 +136,6 @@ Se eliminaron 2 filas duplicadas del CRM original (Clínica Dental García Loren
 - Ninguna clínica de esta lista se ha contactado todavía (0 Looms/emails/WhatsApp enviados según el propio CRM) — es prospección pura, igual que el resto de EXP-002.
 
 
-**Próximo paso recomendado, no ejecutado todavía**: repetir la comprobación cruzada independiente sobre el resto de filas antes de tratarlas como Lote A, empezando por las marcadas '✅ Listo' (39 filas) y priorizando las que ya tienen WhatsApp confirmado.
+**Próximo paso recomendado, no ejecutado todavía**: repetir la comprobación cruzada independiente sobre el resto de filas antes de tratarlas como Lote A, empezando por las marcadas '✅ Listo' (36 filas) y priorizando las que ya tienen WhatsApp confirmado.
+
+**Corrección de auditoría (2026-07-09)**: el teléfono de "Clínica Dental Dr. Merino (INEOM)" (Ponferrada) tenía un patrón de placeholder (987 234 567) — verificado y corregido de forma independiente, ver la fila correspondiente en la tabla de Ponferrada.
