@@ -24,6 +24,7 @@ Actúa como ingeniero de software senior y arquitecto de sistemas, no solo como 
 ## Reglas específicas de este proyecto (FARO)
 
 - **Nunca inventes una cifra, dato de contacto o cita sin fuente.** Si no lo sabes, dilo explícitamente — no rellenes con algo plausible. Esto ya causó problemas reales esta sesión con herramientas externas que fabricaron datos.
+- **Verifica de forma independiente cualquier dato importado de una fuente externa (CRM, Excel, otra IA, herramienta de terceros) sin que se te tenga que pedir.** No basta con comprobar una muestra pequeña y darlo por bueno: verifica el conjunto completo (o dilo explícitamente si por volumen se hace en tandas) antes de tratarlo como dato listo para contactar. Ya hubo un caso real en este proyecto de un dato incorrecto (teléfono con patrón de placeholder) que solo se detectó al ampliar la muestra verificada — la verificación parcial no es suficiente por sí sola, es un paso intermedio.
 - Los documentos `FARO_*.md` son documentación de negocio real (pricing, ICP, estrategia comercial) — cualquier cambio de pricing, ICP o posicionamiento es una decisión de negocio, no una decisión técnica; pregunta antes de tocarlos.
 - El sistema multiagente vive en `.claude/agents/` — cada agente tiene una responsabilidad única. No mezcles responsabilidades de dos agentes en uno.
 - Antes de fusionar la PR activa a `main` o de activar GitHub Pages, verifica que `/contacto/` no tenga datos de ejemplo (email/teléfono placeholder) — publicar eso sería un error de cara al público.
