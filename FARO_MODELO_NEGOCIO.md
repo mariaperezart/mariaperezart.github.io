@@ -11,19 +11,21 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 ### 1.1 Segmentos de clientes
 
-**Qué incluye.** El cliente objetivo de FARO son clínicas dentales privadas de 4 a 10 gabinetes en España, con volumen de pacientes medio-alto, uso intensivo de WhatsApp como canal de entrada, recepción administrativa propia (una o más personas dedicadas a ello) y un software de gestión ya implantado (Gesden, Clinic Cloud, Dentalink u otro). Dentro de ese segmento, FARO distingue tres roles: el **decisor** (propietario, director o gerente de clínica, quien firma y paga), el **usuario** (recepción, atención al paciente, administración, quienes conviven con el sistema cada día) y los **influenciadores** (consultores de gestión dental, empresas de software del sector, responsables de marketing que trabajan con la clínica y pueden recomendar o bloquear la adopción).
+> **Nota de pivote (ver Fase de escalabilidad más abajo y `FARO_PROCESO_COMERCIAL.md` sección 13-bis)**: esta sección describía originalmente un único vertical (clínicas dentales, mercado nacional). Se amplía a pyme de servicios con agenda en la provincia de León, tras validar con FELE y la Cámara de Comercio de León (ver `consejo-estrategico-leon`) que el mecanismo de FARO —WhatsApp sin respuesta, confirmación de citas, seguimiento de clientes— no depende de que el cliente final sea una clínica dental, depende de que el negocio gestione una agenda de citas o reservas con recepción limitada. Dental sigue siendo un segmento válido dentro de este universo más amplio, no se descarta.
 
-**Por qué se diseña así.** Separar decisor de usuario no es un matiz académico: determina cómo se vende y cómo se onboarda. La venta se dirige al decisor con lenguaje de resultado económico (ver Fuentes de ingresos y Pricing), pero el onboarding y el uso diario se diseñan para el usuario, que no eligió el sistema y puede resistirse a él si le genera más trabajo en vez de menos. Ignorar esta distinción es la causa más común de que una automatización bien vendida fracase en la práctica: se convence al propietario y se abandona a la recepcionista con una herramienta que no entendió ni pidió.
+**Qué incluye.** El cliente objetivo de FARO es una pyme de servicios en la provincia de León con una agenda de citas o reservas activa: clínicas dentales, veterinarias, centros de fisioterapia y estética, peluquerías y salones de belleza, talleres mecánicos, academias y autoescuelas, entre otros negocios con el mismo patrón operativo. Uso intensivo de WhatsApp o teléfono como canal de entrada, recepción limitada (a menudo el propio dueño, o una sola persona administrativa), y con o sin software de gestión ya implantado — a diferencia del vertical dental, donde casi siempre existía un programa de gestión previo, muchas pymes leonesas de otros sectores no tienen ningún sistema todavía, lo que cambia el punto de partida de la conversación comercial (ver 3.1). Dentro de ese segmento, FARO distingue tres roles: el **decisor** (propietario o gerente del negocio, quien firma y paga — casi siempre la misma persona en una pyme pequeña), el **usuario** (recepción o el propio decisor cuando no hay recepción separada, quienes conviven con el sistema cada día) y los **influenciadores** (gremios y asociaciones sectoriales de León, la Cámara de Comercio, otros propietarios de negocios de la misma zona que recomiendan por confianza personal).
 
-**Ventajas de este segmento.** Ticket medio de tratamiento alto (permite que el ROI de FARO se demuestre con pocos casos), ciclo de venta corto (decisor único, sin comité de compra), estructura de agenda estricta (hace tangible el coste de cada hueco vacío), y tamaño de equipo suficiente para que un fallo de proceso sea doloroso pero no tan grande como para tener ya un departamento de operaciones propio que resuelva esto internamente.
+**Por qué se diseña así.** Separar decisor de usuario sigue siendo relevante incluso cuando ambos roles recaen en la misma persona (frecuente en pyme pequeña): determina si el onboarding se diseña para alguien con tiempo de sobra para aprender un sistema nuevo (casi nunca) o para alguien que necesita valor inmediato y fricción mínima (casi siempre). La venta se dirige al decisor con lenguaje de resultado económico (ver Fuentes de ingresos y Pricing), pero el onboarding se diseña asumiendo que quien lo usa cada día tiene, de media, menos tiempo y menos tolerancia a la complejidad que en el vertical dental original.
 
-**Riesgos.** Concentrarse en un segmento tan estrecho limita el TAM inmediato (ver Estructura de costes y Roadmap para la expansión). Además, dentro de "4 a 10 gabinetes" hay heterogeneidad real: una clínica de 4 gabinetes en una ciudad pequeña no tiene el mismo volumen de WhatsApp que una de 10 en Madrid o Barcelona, lo que obliga a validar el ICP (ver 3) con más granularidad de la que sugiere el rango numérico.
+**Ventajas de este segmento.** Universo de clientes potenciales mucho mayor dentro de un territorio pequeño y de alta confianza (León), lo que reduce el coste de adquisición vía referido y red local (FELE, Cámara de Comercio, gremios) frente a un vertical único disperso por toda España. Ciclo de venta corto (decisor único, sin comité de compra) se mantiene igual que en el modelo original. La estructura de agenda estricta que hacía tangible el coste de cada hueco vacío en dental se mantiene en la mayoría de estos negocios (veterinaria, fisioterapia, peluquería), aunque no en todos (un taller mecánico tiene una lógica de agenda más flexible).
 
-**Evolución futura.** El roadmap contempla expandir primero dentro del propio sector dental (clínicas de 1-3 gabinetes con paquete simplificado, grupos de +10 con paquete a medida) antes que saltar a otro vertical — ver Fase de escalabilidad en el documento de roadmap.
+**Riesgos.** La heterogeneidad entre verticales es mayor que la heterogeneidad dentro de "4 a 10 gabinetes dentales": el volumen de WhatsApp, el ticket medio y la urgencia del dolor varían mucho entre una veterinaria y una academia. Esto obliga a validar el ICP con más cuidado por vertical (ver 3.1) en vez de asumir que el mismo mensaje sirve para todos. Además, sin software de gestión previo en muchos casos, la barrera de entrada tecnológica de FARO como "primera herramienta digital" del negocio es mayor que cuando ya existía un programa de gestión que demostraba predisposición a invertir en tecnología.
+
+**Evolución futura.** El roadmap prioriza primero validar 2-3 verticales dentro de León (con el propio FELE o la Cámara ayudando a identificar cuáles tienen más señal de dolor real) antes de expandir a otras provincias de Castilla y León o de replicar el modelo dental original a nivel nacional en paralelo — no son mutuamente excluyentes, pero no se persiguen los dos a la vez sin evidencia de cuál da mejor retorno por hora de trabajo comercial.
 
 ### 1.2 Propuesta de valor
 
-**Qué incluye.** FARO no vende automatización, vende la ausencia de un problema: que ningún proceso operativo de la clínica se caiga por falta de tiempo o de personal disponible. Esto se traduce en cuatro capas ya desarrolladas en la Fase 1 (funcional, económica, emocional, estratégica) que aquí se conectan directamente con el modelo de ingresos: cada capa de valor debe poder mapearse a un motivo de pago recurrente, no solo a un beneficio abstracto.
+**Qué incluye.** FARO no vende automatización, vende la ausencia de un problema: que ningún proceso operativo del negocio se caiga por falta de tiempo o de personal disponible. Esto se traduce en cuatro capas ya desarrolladas en la Fase 1 (funcional, económica, emocional, estratégica) que aquí se conectan directamente con el modelo de ingresos: cada capa de valor debe poder mapearse a un motivo de pago recurrente, no solo a un beneficio abstracto.
 
 **Por qué se diseña así.** Una propuesta de valor que solo enumera funcionalidades ("respondemos WhatsApp", "confirmamos citas") compite en el terreno de las herramientas, donde siempre habrá una alternativa más barata. Una propuesta de valor anclada en el resultado operativo y económico compite en un terreno donde FARO tiene ventaja: conocimiento del proceso, no del código.
 
@@ -35,7 +37,7 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 ### 1.3 Canales
 
-**Qué incluye.** Tres frentes: digital (web propia, SEO, Google Business Profile, LinkedIn, email outbound), presencial (visitas comerciales directas, ferias y congresos odontológicos — como Expodental —, asociaciones y colegios profesionales de dentistas) y partners (empresas de software de gestión dental, consultoras de gestión de clínicas, agencias de marketing dental especializadas que no compiten directamente con FARO porque su foco es captación, no operación).
+**Qué incluye.** Tres frentes: digital (web propia, SEO, Google Business Profile, LinkedIn, email outbound), presencial (visitas comerciales directas en León, FELE, Cámara de Comercio de León, asociaciones y gremios sectoriales locales — dental, veterinario, estética, etc.) y partners (empresas de software de gestión sectorial, consultoras de gestión de negocio, agencias de marketing local que no compiten directamente con FARO porque su foco es captación, no operación).
 
 **Por qué se diseña así.** En una fase temprana con un solo fundador, el canal presencial y el outbound directo dominan porque generan la primera decena de clientes con control total sobre el mensaje y el aprendizaje cualitativo (objeciones reales, lenguaje que resuena). El canal digital (SEO, contenido) se construye en paralelo porque tarda meses en producir resultado, pero compone valor de forma pasiva. El canal de partners se reserva para cuando exista prueba social suficiente (casos de éxito reales) como para que un tercero arriesgue su reputación recomendando FARO.
 
@@ -121,15 +123,15 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 | Bloque | Contenido |
 |---|---|
-| **Problema** | (1) Mensajes de WhatsApp de pacientes sin respuesta fuera de horario o en picos de carga. (2) Citas no confirmadas que generan huecos de agenda no facturables. (3) Tareas administrativas repetitivas que consumen el tiempo del equipo de recepción sin generar valor diferencial. |
-| **Segmentos de clientes** | Clínicas dentales privadas de 4-10 gabinetes en España, con recepción propia y uso intensivo de WhatsApp (ver detalle en BMC 1.1 e ICP en sección 3). |
-| **Propuesta única de valor** | "Nos convertimos en el equipo externo que se asegura de que ningún proceso operativo de tu clínica se caiga — sin que tengas que aprender ni gestionar nada nuevo." |
+| **Problema** | (1) Mensajes de WhatsApp de clientes sin respuesta fuera de horario o en picos de carga. (2) Citas no confirmadas que generan huecos de agenda no facturables. (3) Tareas administrativas repetitivas que consumen el tiempo de quien atiende (a menudo el propio dueño) sin generar valor diferencial. |
+| **Segmentos de clientes** | Pymes de servicios con agenda en la provincia de León (dental, veterinaria, fisioterapia/estética, peluquería, talleres, academias), con recepción limitada y uso intensivo de WhatsApp (ver detalle en BMC 1.1 e ICP en sección 3). |
+| **Propuesta única de valor** | "Nos convertimos en el equipo externo que se asegura de que ningún proceso operativo de tu negocio se caiga — sin que tengas que aprender ni gestionar nada nuevo." |
 | **Solución** | Servicio gestionado de automatización de procesos (WhatsApp, confirmaciones, seguimiento) construido y mantenido por FARO, entregado por suscripción mensual con mejora continua. |
-| **Canales** | Outbound directo, visitas y eventos del sector, SEO/contenido propio, partners tecnológicos y de consultoría dental (ver BMC 1.3). |
+| **Canales** | Outbound directo local, gremios y Cámara de Comercio de León, SEO/contenido propio, partners tecnológicos y de consultoría sectorial (ver BMC 1.3). |
 | **Fuentes de ingresos** | Setup 300€ + suscripción mensual en tres planes (149€ / 299€ / 499€) — ver Pricing, sección 4. |
 | **Estructura de costes** | Infraestructura variable por cliente (LLM, WhatsApp API), costes fijos mínimos, tiempo de soporte y coste de adquisición (ver BMC 1.9). |
-| **Métricas clave** | Nº de clínicas activas, MRR, churn mensual, tiempo de soporte por clínica, tasa de conversión de llamada a contrato, % de servicio estandarizado vs. a medida. |
-| **Ventaja injusta** | Conocimiento acumulado y verificado de qué automatizar en una clínica dental española y en qué orden — biblioteca de procesos y automatizaciones ya probadas, no replicable con solo copiar la tecnología (ver Diferenciación en `FARO_ESTRATEGIA_MARCA.md`, Fase 1). |
+| **Métricas clave** | Nº de negocios activos, MRR, churn mensual, tiempo de soporte por cliente, tasa de conversión de llamada a contrato, % de servicio estandarizado vs. a medida. |
+| **Ventaja injusta** | Conocimiento acumulado y verificado de qué automatizar en una pyme leonesa con agenda y en qué orden, más una red de confianza local (FELE, Cámara de Comercio) difícil de replicar por un competidor de fuera del territorio — no solo la tecnología (ver Diferenciación en `FARO_ESTRATEGIA_MARCA.md`, Fase 1). |
 
 ---
 
@@ -137,33 +139,36 @@ Construye sobre `FARO_ESTRATEGIA_MARCA.md` (Fase 1). No repite el posicionamient
 
 ### 3.1 ICP — perfil de cliente ideal
 
-- Clínica dental privada española, independiente o parte de un grupo pequeño (no cadena corporativa).
-- Entre 4 y 10 gabinetes activos, con al menos 2 dentistas trabajando de forma simultánea la mayoría de días.
-- Recepción propia con 1-3 personas dedicadas a atención al paciente y agenda.
-- Volumen estimado de 30-100 mensajes de WhatsApp al día.
-- Software de gestión ya implantado (indicador de que la clínica ya invierte en herramientas, no de que vaya a integrarse con FARO).
-- Propietario o gerente con capacidad de decisión de compra sin necesidad de aprobación externa (descarta franquicias o cadenas con proceso de compra centralizado).
-- Señal de dolor explícita y verbalizable: menciona espontáneamente, sin que se le pregunte de forma dirigida, que "se les escapan mensajes" o que "tienen problemas con los huecos de agenda".
+*(Actualizado tras el pivote — ver nota en 1.1. Versión anterior, específica de clínicas dentales a nivel nacional, archivada en el historial de git de este documento, no se repite aquí.)*
 
-### 3.2 Buyer persona — "Marta, gerente de clínica"
+- Pyme de servicios con sede en la provincia de León (ciudad de León o alrededores en una primera fase), de cualquiera de estos verticales iniciales: clínicas dentales, veterinarias, centros de fisioterapia/estética, peluquerías y salones de belleza, talleres mecánicos, academias — la lista se amplía según lo que confirmen FELE/Cámara de Comercio como sectores con más señal de dolor real, no es cerrada.
+- Equipo pequeño: entre el propietario en solitario y hasta 5-6 empleados, sin departamento administrativo dedicado — la recepción o atención al cliente la hace el propio dueño o, como mucho, una persona.
+- Volumen de contactos (WhatsApp, teléfono, presencial) suficiente para que perder uno duela de verdad — el número exacto varía mucho por vertical, no se fija un rango único como en el ICP dental original; se valida caso a caso en la sesión de diagnóstico.
+- Puede o no tener ya un software de gestión implantado — a diferencia del ICP dental, no es un requisito, es una variable a identificar en la conversación (cambia el enfoque de "conectar con lo que ya tienes" a "ser la primera herramienta digital del negocio").
+- Propietario o gerente con capacidad de decisión de compra sin aprobación externa — igual que en el ICP original, descarta franquicias o cadenas con compra centralizada.
+- Señal de dolor explícita y verbalizable: menciona espontáneamente que "se le escapan clientes por WhatsApp", "no da abasto respondiendo fuera de horario", o "se le olvida confirmar/recordar citas" — el síntoma es el mismo en cualquier vertical, cambia solo el contexto.
 
-Marta tiene 42 años y gestiona, junto al dentista propietario (su pareja o socio), una clínica de 6 gabinetes en una ciudad española de tamaño medio. No es la dueña en el papel, pero es quien decide sobre proveedores, herramientas y procesos del día a día — el propietario confía en su criterio y rara vez revisa estas decisiones en detalle. Su jornada se reparte entre supervisar a las dos recepcionistas, resolver incidencias de agenda y, cada vez con más frecuencia, revisar personalmente el WhatsApp de la clínica los domingos por la noche porque sabe que si no lo hace, el lunes hay mensajes de pacientes nuevos sin respuesta desde el viernes.
+### 3.2 Buyer persona — "el dueño que hace de todo"
 
-Marta no busca "un chatbot" ni "más tecnología" — de hecho, ha rechazado antes propuestas de agencias que le vendían dashboards que nunca llegó a abrir. Lo que busca es dejar de ser la última línea de defensa de un proceso que debería sostenerse solo. Decide comprar cuando alguien le demuestra, con sus propios números, que el problema tiene un coste concreto y que la solución no le va a generar más trabajo de gestión del que ya tiene.
+*(Sustituye a "Marta, gerente de clínica" del ICP dental original — la psicología de fondo es la misma, el contexto de negocio ya no es fijo.)*
+
+Representa a un propietario o gerente de una pyme leonesa pequeña — puede ser dueño de una peluquería, una clínica veterinaria o un taller, hombre o mujer, entre 30 y 55 años — que hace de todo: atiende al cliente, lleva la agenda, y además ejerce su oficio (corta pelo, opera animales, repara coches). No tiene tiempo ni ganas de aprender "otra herramienta más" y, como Marta en el modelo original, a menudo ya ha probado y abandonado algún software o app que prometía mucho y le generó más trabajo de gestión, no menos. Revisa el WhatsApp del negocio a deshora — por la noche, el fin de semana — porque sabe que si no lo hace, pierde clientes que no van a esperar a que abra al día siguiente.
+
+No busca "digitalizarse" como objetivo en sí — busca dejar de ser el cuello de botella de su propio negocio. Decide comprar cuando alguien le demuestra, con números de su propio negocio (no una proyección genérica), que el problema tiene un coste concreto, y cuando la recomendación viene de alguien de confianza en su misma red — un gremio, la Cámara de Comercio, u otro propietario de León al que conoce.
 
 ### 3.3 Customer Journey
 
-**Conciencia.** Marta no busca activamente "automatización para clínicas dentales" — el problema se le presenta como frustración recurrente (WhatsApp del fin de semana), no como una categoría de compra. La conciencia se genera por contacto directo (outbound, evento del sector) o por búsqueda tangencial ("cómo evitar no-shows en clínica dental").
+**Conciencia.** El propietario no busca activamente "automatización para pymes" — el problema se presenta como frustración recurrente (WhatsApp fuera de horario, cita olvidada), no como categoría de compra. En León, la conciencia se genera sobre todo por contacto directo (outbound local, gremios, Cámara de Comercio) más que por búsqueda online — el territorio pequeño hace que el boca a boca pese más que en un mercado nacional disperso.
 
-**Consideración.** Marta agenda la llamada de configuración de 15 minutos precisamente porque no se le pide comprar nada todavía — el marco de "diagnóstico, no venta" (ver Fase 1, narrativa) reduce la fricción de este paso más que cualquier argumento de producto.
+**Consideración.** Se agenda la llamada de diagnóstico de 15-30 minutos precisamente porque no se pide comprar nada todavía — el marco de "diagnóstico, no venta" reduce la fricción más que cualquier argumento de producto, y en León se refuerza si la introducción viene de un gremio o de un propietario conocido, no en frío.
 
-**Decisión.** El cierre ocurre cuando el cálculo de ROI se hace con sus propios números (no una proyección genérica) y cuando queda claro, sin ambigüedad, qué NO incluye el servicio todavía — la honestidad de alcance reduce el riesgo percibido de la decisión.
+**Decisión.** El cierre ocurre cuando el cálculo de ROI se hace con los números reales de ese negocio concreto (no un ejemplo genérico de otro vertical) y cuando queda claro qué NO incluye el servicio todavía — la honestidad de alcance sigue reduciendo el riesgo percibido, igual que en el modelo original.
 
-**Onboarding.** Las primeras dos semanas son críticas: si el sistema falla o genera trabajo extra a la recepción en este periodo, la relación se rompe antes de generar valor. El checklist de onboarding (ver documento técnico) existe precisamente para blindar esta etapa.
+**Onboarding.** Las primeras dos semanas siguen siendo críticas, con un matiz nuevo: si no había software de gestión previo, el onboarding tiene que cubrir también la curva de aprendizaje de "primera herramienta digital", no solo la conexión con un sistema ya conocido.
 
-**Retención y expansión.** La revisión periódica de optimización (ver BMC 1.4) es el mecanismo formal por el que Marta pasa de START a GROW o a OPS — no por presión comercial, sino porque ve, con datos propios, qué otro proceso merece automatizarse a continuación.
+**Retención y expansión.** Igual que en el modelo original — la revisión periódica (BMC 1.4) es el mecanismo por el que se pasa de START a GROW/OPS, con datos propios como argumento, no presión comercial.
 
-**Referencia.** El sector dental español es gremial: los propietarios se conocen entre sí a través de colegios profesionales y proveedores comunes. Una Marta satisfecha es el canal de adquisición más barato y de mayor confianza disponible a partir del tercer o cuarto cliente.
+**Referencia.** León es, si acaso, más gremial que el sector dental nacional: la red de FELE, la Cámara de Comercio y las asociaciones sectoriales locales conectan a propietarios de negocios muy distintos entre sí en un territorio pequeño. Un cliente satisfecho en León es, potencialmente, un canal de adquisición todavía más barato que en el modelo dental disperso por España, precisamente por lo compacta que es la red de confianza local.
 
 ---
 
