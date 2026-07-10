@@ -5,6 +5,8 @@ Aplica la identidad visual (Fase 3) y el modelo de negocio (Fase 2) a la estruct
 
 **Nota de alcance**: el documento técnico inicial (`FARO_TESIS_MVP_60DIAS.md`) especifica deliberadamente que el MVP de los primeros 60 días **no tiene dashboard ni portal cliente** — el cliente recibe un email diario de resumen. Esta fase diseña la **web comercial pública** (que sí debe existir desde el día 1 para vender) y describe, además, un **portal cliente ligero** como visión de producto a futuro (roadmap Fase 2, mes 10+), no como parte del MVP técnico. Ambos documentos son coherentes: la web se construye ya; el portal cliente se construye cuando el volumen de clientes lo justifique.
 
+**Nota de pivote**: este documento describía originalmente un único vertical (clínicas dentales, mercado nacional). Se actualiza para reflejar el ICP ampliado (pyme de servicios con agenda en la provincia de León, ver `FARO_MODELO_NEGOCIO.md` sección 1.1): clínica→negocio, paciente→cliente en wireframes y flujos, salvo donde el ejemplo nombra explícitamente el vertical dental.
+
 ---
 
 ## 1. Arquitectura de información — mapa del sitio
@@ -20,7 +22,7 @@ faro.clinic
 │   └── /servicios/seguimiento-de-pacientes
 ├── /precios
 ├── /casos-de-exito
-│   └── /casos-de-exito/[slug-clinica]
+│   └── /casos-de-exito/[slug-negocio]
 ├── /diagnostico (calculadora de ROI + formulario de llamada)
 ├── /sobre-faro
 ├── /preguntas-frecuentes
@@ -37,18 +39,18 @@ faro.clinic
 ├── /404
 │
 └── Landing pages independientes (no en navegación principal, uso en campañas):
-    ├── /lp/outbound-clinicas-[ciudad]
-    ├── /lp/congreso-[nombre-evento]
+    ├── /lp/automatizacion-[vertical]-leon
+    ├── /lp/evento-[nombre-evento]
     └── /lp/seo-[intencion-busqueda]
 ```
 
-**Por qué esta estructura.** La navegación principal se limita a 7 elementos (Inicio, Cómo funciona, Servicios, Precios, Casos de éxito, Recursos/Blog, Contacto) porque el visitante objetivo (Marta, la buyer persona de la Fase 2) no navega un sitio B2B en profundidad — decide en los primeros 30 segundos si vale la pena seguir leyendo o agendar la llamada. Cada nivel adicional de profundidad en el menú es una oportunidad de que abandone antes de llegar al CTA. Las landing pages de campaña viven fuera de la navegación deliberadamamente: existen para tráfico de pago o de outbound con un único mensaje de entrada, sin la distracción del menú completo (principio de CRO: "attention ratio" bajo en páginas de conversión).
+**Por qué esta estructura.** La navegación principal se limita a 7 elementos (Inicio, Cómo funciona, Servicios, Precios, Casos de éxito, Recursos/Blog, Contacto) porque el visitante objetivo (el dueño que hace de todo, la buyer persona de la Fase 2) no navega un sitio B2B en profundidad — decide en los primeros 30 segundos si vale la pena seguir leyendo o agendar la llamada. Cada nivel adicional de profundidad en el menú es una oportunidad de que abandone antes de llegar al CTA. Las landing pages de campaña viven fuera de la navegación deliberadamamente: existen para tráfico de pago o de outbound con un único mensaje de entrada, sin la distracción del menú completo (principio de CRO: "attention ratio" bajo en páginas de conversión).
 
 ## 2. User flows principales
 
 ### Flujo A — Visitante frío llega por SEO/contenido
 
-`Blog o página de servicio` → lee contenido específico a su dolor → banner/CTA contextual ("¿Esto te pasa en tu clínica? Calcula cuánto te cuesta") → `/diagnostico` → introduce datos básicos (nº de gabinetes, mensajes/día estimados) → ve cálculo de ROI personalizado en pantalla → CTA "Agenda tu llamada de 15 min" → formulario de agenda → `/gracias` con confirmación y qué esperar de la llamada.
+`Blog o página de servicio` → lee contenido específico a su dolor → banner/CTA contextual ("¿Esto te pasa en tu negocio? Calcula cuánto te cuesta") → `/diagnostico` → introduce datos básicos (tamaño de equipo, mensajes/día estimados) → ve cálculo de ROI personalizado en pantalla → CTA "Agenda tu llamada de 15 min" → formulario de agenda → `/gracias` con confirmación y qué esperar de la llamada.
 
 ### Flujo B — Visitante que llega por outbound/referencia (ya tiene contexto)
 
@@ -56,11 +58,11 @@ faro.clinic
 
 ### Flujo C — Visitante que investiga antes de decidir (ciclo largo)
 
-`Inicio` → `/como-funciona` (entiende el modelo sin fricción de precio) → `/casos-de-exito` (busca prueba social de clínicas similares) → `/preguntas-frecuentes` (resuelve objeciones de alcance: "¿Se integra con mi Gesden?") → `/precios` → agenda llamada. Este flujo es el más largo y el que más depende de que cada página responda la pregunta siguiente sin fricción — de ahí que cada página cuente con enlazado interno explícito hacia la siguiente etapa lógica del recorrido.
+`Inicio` → `/como-funciona` (entiende el modelo sin fricción de precio) → `/casos-de-exito` (busca prueba social de negocios similares) → `/preguntas-frecuentes` (resuelve objeciones de alcance: "¿Se integra con mi programa de gestión?") → `/precios` → agenda llamada. Este flujo es el más largo y el que más depende de que cada página responda la pregunta siguiente sin fricción — de ahí que cada página cuente con enlazado interno explícito hacia la siguiente etapa lógica del recorrido.
 
 ### Flujo D — Cliente ya en producción (portal cliente, visión futura, no MVP)
 
-`Email de resumen diario` (MVP actual) evoluciona en el roadmap hacia `login en /portal` → vista de las automatizaciones activas de su plan (START/GROW/OPS) → historial simple de conversaciones y confirmaciones → botón de contacto directo con soporte. Se diseña deliberadamente mínimo: no es un dashboard analítico con gráficas, es una vista de estado ("qué está pasando ahora mismo en mi clínica"), coherente con la propuesta de valor de la Fase 1 de no añadir carga de gestión al cliente.
+`Email de resumen diario` (MVP actual) evoluciona en el roadmap hacia `login en /portal` → vista de las automatizaciones activas de su plan (START/GROW/OPS) → historial simple de conversaciones y confirmaciones → botón de contacto directo con soporte. Se diseña deliberadamente mínimo: no es un dashboard analítico con gráficas, es una vista de estado ("qué está pasando ahora mismo en mi negocio"), coherente con la propuesta de valor de la Fase 1 de no añadir carga de gestión al cliente.
 
 ## 3. Wireframe textual por tipo de página
 
@@ -93,13 +95,13 @@ faro.clinic
 
 ### 3.4 Página de Diagnóstico (calculadora de ROI)
 
-1. Formulario corto (3-4 campos: nº de gabinetes, mensajes de WhatsApp/día estimados, ciudad, email).
+1. Formulario corto (3-4 campos: tamaño de equipo, mensajes de WhatsApp/día estimados, municipio, email).
 2. Al enviar, cálculo en pantalla con el mismo modelo de ROI de la tesis inicial (sección 1.4), mostrando un rango, nunca una cifra cerrada.
 3. CTA inmediato a agendar la llamada, con el cálculo ya como contexto de la conversación.
 
 ### 3.5 Página de Caso de éxito
 
-1. Contexto de la clínica (tamaño, ciudad, anonimizado si el cliente lo pide).
+1. Contexto del negocio (vertical, tamaño, municipio, anonimizado si el cliente lo pide).
 2. El problema específico antes de FARO, en palabras del propio cliente si es posible.
 3. Qué se implementó (con honestidad de alcance: qué automatización concreta, no genérica).
 4. Resultado medido con datos reales (mensajes gestionados, citas confirmadas) — nunca proyecciones en esta sección, que es exclusivamente de evidencia.
@@ -117,15 +119,15 @@ En cada página, un único elemento debe dominar el primer viewport (hero): nunc
 
 **Móvil (≤767px)**: una columna, márgenes de 16px, CTA primario siempre fijo en la parte inferior de la pantalla (sticky) en páginas de conversión (Precios, Diagnóstico, landing de campaña) porque el visitante en móvil no vuelve a hacer scroll hacia arriba para encontrar el botón — regla de CRO móvil no negociable para estas páginas específicas.
 
-Formularios en móvil: un campo por fila, sin excepción, teclado numérico forzado en campos de teléfono/número de gabinetes (`inputmode="numeric"`).
+Formularios en móvil: un campo por fila, sin excepción, teclado numérico forzado en campos de teléfono/tamaño de equipo (`inputmode="numeric"`).
 
 ## 6. Accesibilidad
 
-Contraste mínimo AA en todo el texto de cuerpo (ya validado en la paleta de la Fase 3). Navegación completa por teclado (tab order lógico, focus visible con el borde Azul Faro de 2px definido en componentes de la Fase 3). Todas las imágenes con `alt` descriptivo funcional (no decorativo: describe qué información aporta la imagen, no "imagen de clínica dental"). Formularios con `label` asociado a cada campo (nunca solo placeholder como única indicación). Tamaño mínimo de área táctil 44×44px en botones e inputs de móvil. Sin animaciones que dependan de hover puro sin equivalente táctil/focus en móvil.
+Contraste mínimo AA en todo el texto de cuerpo (ya validado en la paleta de la Fase 3). Navegación completa por teclado (tab order lógico, focus visible con el borde Azul Faro de 2px definido en componentes de la Fase 3). Todas las imágenes con `alt` descriptivo funcional (no decorativo: describe qué información aporta la imagen, no "imagen de un negocio"). Formularios con `label` asociado a cada campo (nunca solo placeholder como única indicación). Tamaño mínimo de área táctil 44×44px en botones e inputs de móvil. Sin animaciones que dependan de hover puro sin equivalente táctil/focus en móvil.
 
 ## 7. Formularios
 
-**Principio general**: cada formulario pide el mínimo de campos necesario para el paso siguiente, nunca todo de una vez. El formulario de `/diagnostico` pide 3-4 campos (suficiente para calcular y contactar); el formulario de agenda de llamada posterior pide solo nombre, teléfono/WhatsApp y franja horaria preferida — los datos de la clínica ya se capturaron en el paso anterior y no se vuelven a pedir.
+**Principio general**: cada formulario pide el mínimo de campos necesario para el paso siguiente, nunca todo de una vez. El formulario de `/diagnostico` pide 3-4 campos (suficiente para calcular y contactar); el formulario de agenda de llamada posterior pide solo nombre, teléfono/WhatsApp y franja horaria preferida — los datos del negocio ya se capturaron en el paso anterior y no se vuelven a pedir.
 
 **Validación**: en línea, al perder el foco del campo (no solo al enviar), con mensaje de error específico ("Introduce un teléfono válido de 9 dígitos", nunca "Campo inválido").
 
@@ -134,14 +136,14 @@ Contraste mínimo AA en todo el texto de cuerpo (ya validado en la paleta de la 
 ## 8. Componentes específicos de la web (más allá de la base de Fase 3)
 
 - **Tarjeta de plan de precios**: nombre del plan, precio grande (Fraunces), lista de qué incluye con iconos de check (Verde Ancla), CTA propio por tarjeta.
-- **Tarjeta de caso de éxito (preview en listado)**: nombre/ciudad de la clínica, una métrica destacada en grande, enlace a caso completo.
+- **Tarjeta de caso de éxito (preview en listado)**: nombre/municipio del negocio, una métrica destacada en grande, enlace a caso completo.
 - **Calculadora de ROI (componente interactivo)**: inputs numéricos + resultado que se actualiza sin recargar la página, con el rango (pesimista-optimista) visualmente diferenciado, nunca una única cifra que parezca garantía.
 - **Bloque de objeción/FAQ acordeón**: pregunta siempre visible, respuesta desplegable — evita que la página de precios se perciba densa por adelantado.
 - **Banner de honestidad de alcance**: componente reutilizable en varias páginas (Inicio, Servicios, Precios) con icono de alerta suave (no rojo, un gris/ámbar neutro) y el texto de qué no incluye el servicio todavía.
 
 ## 9. Portal cliente (visión de producto futura, no MVP)
 
-Cuando el volumen de clientes justifique construirlo (roadmap Fase 2, mes 10 en adelante), el portal cliente debe seguir el mismo principio que el email de resumen diario del MVP: mostrar estado, no pedir gestión. Estructura mínima: login simple (magic link por email, sin gestión de contraseñas), una vista única por clínica con las automatizaciones activas de su plan, un historial de las últimas conversaciones/confirmaciones (de solo lectura, sin edición manual de datos que rompa la automatización), y un botón de contacto directo con soporte. Deliberadamente sin gráficas ni analítica avanzada en su primera versión — el error a evitar es construir un dashboard complejo que nadie usa, cuando el cliente ya recibe la información que necesita por email.
+Cuando el volumen de clientes justifique construirlo (roadmap Fase 2, mes 10 en adelante), el portal cliente debe seguir el mismo principio que el email de resumen diario del MVP: mostrar estado, no pedir gestión. Estructura mínima: login simple (magic link por email, sin gestión de contraseñas), una vista única por negocio con las automatizaciones activas de su plan, un historial de las últimas conversaciones/confirmaciones (de solo lectura, sin edición manual de datos que rompa la automatización), y un botón de contacto directo con soporte. Deliberadamente sin gráficas ni analítica avanzada en su primera versión — el error a evitar es construir un dashboard complejo que nadie usa, cuando el cliente ya recibe la información que necesita por email.
 
 ---
 

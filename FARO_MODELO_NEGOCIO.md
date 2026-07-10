@@ -156,6 +156,42 @@ Representa a un propietario o gerente de una pyme leonesa pequeña — puede ser
 
 No busca "digitalizarse" como objetivo en sí — busca dejar de ser el cuello de botella de su propio negocio. Decide comprar cuando alguien le demuestra, con números de su propio negocio (no una proyección genérica), que el problema tiene un coste concreto, y cuando la recomendación viene de alguien de confianza en su misma red — un gremio, la Cámara de Comercio, u otro propietario de León al que conoce.
 
+### 3.2-bis Segmentación en 4 perfiles — hipótesis a validar en discovery calls
+
+**Nivel de evidencia: 🔴 SUPOSICIÓN.** El persona único de 3.2 es un arquetipo psicológico útil para diseñar el tono de marca (Fase 1), pero trata a todo el ICP como si tuviera una única relación con la tecnología, el dinero y el tiempo. En la práctica, dentro del mismo ICP (pyme leonesa con agenda) conviven negocios en momentos muy distintos de madurez, y eso cambia qué tareas les duelen más, qué herramientas ya tienen, qué objeciones ponen y qué están dispuestos a pagar. Los cuatro perfiles siguientes son una hipótesis de segmentación, no un dato medido — ninguno de estos rasgos está confirmado todavía con clientes reales (FARO no tiene ninguno, ver `FARO_PROCESO_COMERCIAL.md` sección 13). Su función es orientar las preguntas de la llamada de diagnóstico (`FARO_TESIS_MVP_60DIAS.md`, Anexo 4.2) para, con las primeras 10-15 llamadas reales, confirmar, fusionar o descartar perfiles — exactamente el mismo principio que ya aplica `FARO_VENTA_ADAPTATIVA.md` sección 2 sobre no construir una taxonomía formal de compradores sin datos que la respalden.
+
+Para cada perfil se documentan las mismas cuatro dimensiones, pensadas para poder rellenarse con datos reales de la llamada de diagnóstico en cuanto existan:
+- **Qué tareas le consumen más tiempo** (para priorizar qué automatización ofrecer primero).
+- **Qué herramientas ya utiliza** (determina si la conversación es "conectar con lo que ya tienes" o "ser su primera herramienta digital", ver 1.1).
+- **Qué objeciones repite** (para el manejo de objeciones de `FARO_PROCESO_COMERCIAL.md` sección 4).
+- **Qué resultado valoraría más pagar** (para decidir con qué argumento de ROI abrir la propuesta, ver Pricing sección 4).
+
+**1. Empresario tradicional** (negocio con 10+ años, dueño de 50+ años, poca presencia digital)
+- Tareas que más tiempo consumen: atender el teléfono y WhatsApp personalmente porque no confía en que otra persona "hable en su nombre"; llevar la agenda en papel o en una libreta junto al sistema que tenga.
+- Herramientas que ya usa: WhatsApp personal (no Business), quizá ninguna herramienta de gestión, o una muy antigua que nadie recuerda por qué se eligió.
+- Objeciones que repite: "esto no es para mí", "yo ya me las apaño así", desconfianza de que un sistema automático "hable mal" en su nombre.
+- Qué pagaría por conseguir: tranquilidad de que nada se le escapa sin tener que estar él pendiente a todas horas — el argumento de venta es alivio, no eficiencia.
+
+**2. Empresario en crecimiento** (negocio en expansión activa, ha abierto una segunda ubicación o ampliado equipo recientemente)
+- Tareas que más tiempo consumen: coordinar entre más personas y más agenda de la que puede supervisar personalmente; formar a personal nuevo en procesos que él tenía en la cabeza, no documentados.
+- Herramientas que ya usa: probablemente ya tiene algún software de gestión o reservas, y activamente busca herramientas nuevas — es el perfil más receptivo a "conectar con lo que ya tienes".
+- Objeciones que repite: "¿esto escala con nosotros?", "¿qué pasa cuando tengamos el doble de citas?" — la objeción es de crecimiento futuro, no de confianza inicial.
+- Qué pagaría por conseguir: capacidad de crecer sin tener que fichar a alguien solo para gestionar WhatsApp y agenda — el argumento de venta es apalancamiento, no alivio.
+
+**3. Empresa familiar** (varias generaciones o socios familiares implicados en la decisión)
+- Tareas que más tiempo consumen: coordinar criterios distintos dentro de la propia familia sobre cómo se debe atender a un cliente — el proceso "informal" ya existe pero varía según quién esté al teléfono.
+- Herramientas que ya usa: variable, a menudo fragmentado entre lo que usa cada generación (el fundador con libreta, el hijo con el móvil).
+- Objeciones que repite: "tenemos que hablarlo en familia", decisión más lenta que en los otros perfiles porque el comprador no es una sola persona aunque lo parezca.
+- Qué pagaría por conseguir: consistencia — que el cliente reciba la misma calidad de respuesta sin importar quién esté disponible ese día, reduciendo la fricción interna de criterios distintos.
+
+**4. Negocio joven** (menos de 3-4 años, fundador más joven, cómodo con tecnología)
+- Tareas que más tiempo consumen: hacer de todo con equipo mínimo — el mismo síntoma que el persona único de 3.2, pero sin la desconfianza tecnológica del perfil tradicional.
+- Herramientas que ya usa: probablemente ya usa varias apps sueltas (agenda online, WhatsApp Business, alguna hoja de cálculo) sin que estén conectadas entre sí.
+- Objeciones que repite: sensibilidad al precio más que a la confianza tecnológica — "¿por qué pagar suscripción si puedo montarlo yo con herramientas gratuitas?".
+- Qué pagaría por conseguir: tiempo — el argumento de venta es coste de oportunidad de su propio tiempo frente al ahorro de la suscripción, no alivio ni apalancamiento.
+
+**Uso previsto**: no se construyen cuatro discursos de venta cerrados de antemano — se usa esta hipótesis para que, en las primeras llamadas de diagnóstico, se registre explícitamente a qué perfil se parece más el prospecto (nota de una frase, mismo mecanismo ya descrito en `FARO_VENTA_ADAPTATIVA.md` sección 2) y, con 10-15 casos, revisar si la segmentación aguanta con datos reales o si dos perfiles convergen en la práctica.
+
 ### 3.3 Customer Journey
 
 **Conciencia.** El propietario no busca activamente "automatización para pymes" — el problema se presenta como frustración recurrente (WhatsApp fuera de horario, cita olvidada), no como categoría de compra. En León, la conciencia se genera sobre todo por contacto directo (outbound local, gremios, Cámara de Comercio) más que por búsqueda online — el territorio pequeño hace que el boca a boca pese más que en un mercado nacional disperso.
