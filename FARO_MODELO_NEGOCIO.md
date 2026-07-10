@@ -180,6 +180,18 @@ El fee de setup no es un ítem de beneficio para FARO — es un filtro de compro
 
 **Mientras no exista ningún cliente de pago**, este pricing no cambia — ver `FARO_PROCESO_COMERCIAL.md` sección 13 (Fase de clientes fundadores) para qué se ofrece a los primeros clientes sin tocar estos precios ni recurrir a descuentos.
 
+### 4.1 Plan LITE — diseñado, no activado
+
+Existe un cuarto plan ya diseñado (procedente de un kit de prospección presencial, `Kit 3.0 — One-pager A4 + Tarjeta`, hoy retirado) que no forma parte del pricing activo hasta que se decida activarlo explícitamente:
+
+| Plan | Precio | Para quién | Qué incluye |
+|---|---|---|---|
+| **LITE** | 99€/mes · 0€ setup ahora (después 150€) · fase de validación, máx. 6 meses | Clínica que quiere probar con el mínimo riesgo posible | 1 automatización, soporte por email, onboarding presencial reducido a 1h |
+
+A diferencia de la nota de "clientes fundadores" (sección 13 de `FARO_PROCESO_COMERCIAL.md`, que congela precio pero no lo reduce), LITE sí es un precio de entrada más bajo y con setup diferido — es una estructura de pricing distinta (coherente con `FARO_VENTA_ADAPTATIVA.md`, principio 5: "el pricing debería poder adaptarse en estructura antes que en precio base, según el perfil"), pensada para el comprador más conservador del espectro de riesgo, no para todos los primeros clientes por defecto. El mismo material de origen definía una prospección presencial acotada a León y Castilla y León (visita física con one-pager y tarjeta), más estrecha que el ICP nacional ya definido en la sección 3.1 — válida como canal complementario local, no como sustituto del outbound digital de `FARO_PROCESO_COMERCIAL.md` sección 2.
+
+**Antes de activar LITE**, decidir explícitamente: (1) si convive con la Fase de clientes fundadores o la sustituye para el perfil conservador, (2) qué pasa a los 6 meses si el cliente quiere continuar, (3) si el fee de 150€ diferido se cobra igual si el cliente cancela antes del mes 6.
+
 ---
 
 ## 5. MVP — por qué no un SaaS
