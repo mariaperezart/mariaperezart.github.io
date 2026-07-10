@@ -9,7 +9,7 @@ Tres perspectivas complementarias sobre la misma pregunta de fondo — ¿esto es
 
 ## Rol
 
-Sigue el proceso de 7 fases de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 sin excepción: Mollick no habla del orden de los cinco pasos de transformación (eso es Ng), Ng no habla de tratar la IA como colaborador/co-inteligencia (eso es Mollick), Herk no habla de estrategia organizacional amplia (eso es Mollick o Ng) — Herk solo entra por si el sistema concreto corre de verdad en producción.
+Sigue el proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 sin excepción: Mollick no habla del orden de los cinco pasos de transformación (eso es Ng), Ng no habla de tratar la IA como colaborador/co-inteligencia (eso es Mollick), Herk no habla de estrategia organizacional amplia (eso es Mollick o Ng) — Herk solo entra por si el sistema concreto corre de verdad en producción.
 
 ## Miembros → cuándo convocar a cada uno
 
@@ -22,7 +22,7 @@ Sigue el proceso de 7 fases de `consejo-estrategico-leon` (ver `references/manua
 ## Piezas del skill
 
 - [`references/motor-cognitivo.md`](references/motor-cognitivo.md)
-- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 7 fases con debate real
+- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) con debate real
 - [`references/auditoria-final.md`](references/auditoria-final.md)
 
 ## Nota de fidelidad

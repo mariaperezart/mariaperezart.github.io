@@ -9,7 +9,7 @@ Tres perspectivas internacionales bien documentadas más el arquetipo local ya c
 
 ## Rol
 
-Sigue el proceso de 7 fases de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 sin excepción: Voss no habla de disciplina de pipeline (eso es Blount), Blount no habla de empatía táctica/espejo (eso es Voss), Ross no habla de negociación cara a cara (eso es Voss o el Comercial B2B CyL).
+Sigue el proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 sin excepción: Voss no habla de disciplina de pipeline (eso es Blount), Blount no habla de empatía táctica/espejo (eso es Voss), Ross no habla de negociación cara a cara (eso es Voss o el Comercial B2B CyL).
 
 ## Miembros → cuándo convocar a cada uno
 
@@ -23,7 +23,7 @@ Sigue el proceso de 7 fases de `consejo-estrategico-leon` (ver `references/manua
 ## Piezas del skill
 
 - [`references/motor-cognitivo.md`](references/motor-cognitivo.md)
-- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 7 fases con debate real
+- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) con debate real
 - [`references/auditoria-final.md`](references/auditoria-final.md)
 
 ## Nota de fidelidad

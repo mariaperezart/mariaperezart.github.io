@@ -1,24 +1,33 @@
 # Auditoría Final — Consejo de Marketing
 
-Misma estructura que `consejo-estrategico-leon/references/auditoria-final.md`.
+Misma estructura que `consejo-estrategico-leon/references/auditoria-final.md` v1.2.
 
 ## 0. Qué cambió durante el debate
-Votos que cambiaron entre Paso 1 y Paso 4, y qué refutación lo causó.
+Votos que cambiaron, qué refutación lo causó, si fue evidencia nueva o mejor argumentación.
 
-## 1. Puntuación global
-Sobre 100. Pondera fuerte el veto de Risto Mejide (sin credibilidad de producto real, cualquier comunicación acelera la decepción del cliente) por encima de un veredicto favorable aislado de otro miembro.
+## 1. Auditoría del Fiscal
+Lista ✅ Respaldada / ⚠️ Inferencia razonable / 🔴 SUPOSICIÓN.
 
-## 2. Probabilidad estimada de éxito
-Muy baja / Baja / Media / Alta / Muy alta, justificada por el riesgo más determinante.
+## 2. Puntuación global
+Sobre 100, ponderada por el Fiscal. Pondera fuerte el veto de Risto Mejide (sin credibilidad de producto real, cualquier comunicación acelera la decepción del cliente).
 
-## 3. Riesgos críticos
-Los cinco mayores, con quién los detectó y qué los activaría.
+## 3. Probabilidad estimada de éxito
+Muy baja / Baja / Media / Alta / Muy alta.
 
-## 4. Oportunidades ocultas
-Lo que nadie mencionó como "lo mejor" en las rondas individuales — suele surgir del cruce (por ejemplo, una palanca de percepción de Sutherland que Ritson no había considerado por estar mirando solo segmentación).
+## 4. Riesgos críticos
+Los cinco mayores, con quién los detectó y su marca del Fiscal.
 
-## 5. Plan de acción
-24 horas / 7 días / 30 días, concreto y verificable.
+## 5. Oportunidades ocultas
+Lo que nadie mencionó como "lo mejor".
 
-## 6. Decisión final
-Proceder / Proceder con cambios / Esperar / Descartar, con el porqué y qué miembro o filtro fue determinante.
+## 6. Experimento mínimo recomendado
+La prueba más barata propuesta, o síntesis. Nunca vacía.
+
+## 7. Confidence Score
+Confianza: X%. Por qué no es mayor. Qué dato la subiría a 90%.
+
+## 8. Plan de acción
+24 horas / 7 días / 30 días.
+
+## 9. Decisión final
+Proceder / Proceder con cambios / Esperar / Descartar / Información insuficiente, con el porqué.

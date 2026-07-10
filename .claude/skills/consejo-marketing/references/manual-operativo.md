@@ -1,6 +1,10 @@
 # Manual Operativo — Consejo de Marketing
 
-Mismo proceso de 7 fases que `consejo-estrategico-leon` v1.1. No lo abrevies.
+Mismo proceso de 8 fases que `consejo-estrategico-leon` v1.2.
+
+## Reglas de resolución de conflictos (ley permanente)
+
+Hechos > opiniones. Evidencia > intuición. Experiencia demostrada > teoría. Si falta información decisiva, el resultado es "Información insuficiente" — nunca se inventa una conclusión.
 
 ## Regla 0 — Pureza de razonamiento (obligatoria)
 
@@ -12,26 +16,30 @@ Contaminaciones a vigilar en este consejo concreto:
 
 Usa 2-3 elementos del vocabulario/preguntas propios de cada archivo antes de escribir su respuesta.
 
-## Paso 0 — Alcance
-Decide qué miembros tocan la decisión. Si la pregunta es sobre coherencia de marca a largo plazo, convoca también (o en su lugar) a Seth Godin desde `consejo-de-expertos`.
+## Fase 0 — Marco de consultora
+
+¿Qué sabemos? ¿Qué NO sabemos? ¿Qué hipótesis se dan por ciertas sin probar? ¿Qué habría que demostrar? Responde esto antes de convocar miembros.
 
 ## Paso 1 — Opiniones
-Veredicto (1-10), lo mejor, mayor riesgo, recomendación concreta — anclado en el archivo propio de cada miembro.
+Veredicto (1-10), lo mejor, mayor riesgo, recomendación concreta, y **experimento mínimo obligatorio** — anclado en el archivo propio de cada miembro. Si la pregunta es sobre coherencia de marca a largo plazo, convoca también (o en su lugar) a Seth Godin desde `consejo-de-expertos`.
 
 ## Paso 2 — Debate entre expertos
 Respuesta directa a otro miembro sin abandonar el marco propio.
 
-## Paso 3 — Refutaciones
-Donde haya discrepancia real (por ejemplo, Sutherland defendiendo una idea "irracional" y Sharp exigiendo evidencia de categoría antes de aprobarla), que se refuten mutuamente sin forzar consenso si la discrepancia es genuina.
+## Paso 3 — Refutaciones (aplicando las reglas de resolución de conflictos)
+Donde haya discrepancia real (por ejemplo, Sutherland defendiendo una idea "irracional" y Sharp exigiendo evidencia de categoría antes de aprobarla), se resuelve con la jerarquía hechos > opiniones. Sin evidencia de ningún lado, "Información insuficiente" en ese punto.
 
 ## Paso 4 — Cambio de voto
-Justificado desde el marco propio, o señalado explícitamente si nadie cambia.
+Justificado desde el marco propio, distinguiendo evidencia nueva de mejor argumentación. Señalado explícitamente si nadie cambia.
 
-## Paso 5 — Filtro final
-Si el usuario tiene criterios de marca ya establecidos (honestidad de alcance, promesa cumplida, etc.), aplícalos aquí como filtro con veto antes de la decisión final.
+## Paso 5 — El Fiscal audita
+Invoca `consejo-estrategico-leon/references/00-fiscal.md`. Clasifica afirmaciones como ✅ / ⚠️ / 🔴.
 
-## Paso 6 — Decisión final
-Según `references/auditoria-final.md`.
+## Paso 6 — Filtro final
+Si el usuario tiene criterios de marca ya establecidos (honestidad de alcance, promesa cumplida, etc.), aplícalos aquí como filtro con veto.
 
-## Paso 7 — Honestidad sobre lo que falta
+## Paso 7 — Decisión final
+Según `references/auditoria-final.md` — incluye auditoría del Fiscal, experimento mínimo y Confidence Score.
+
+## Paso 8 — Honestidad sobre lo que falta
 Si falta un dato (por ejemplo, datos reales de penetración/recuerdo de marca para que Sharp evalúe), dilo explícitamente.

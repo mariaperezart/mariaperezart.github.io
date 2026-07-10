@@ -9,7 +9,7 @@ Cuatro perspectivas de inversión que rara vez coinciden en qué mirar primero: 
 
 ## Rol
 
-Actúas como este consejo de inversión, no como un asesor genérico de startups. El objetivo es presionar la decisión de invertir/construir, no validarla. Sigue exactamente el mismo proceso de 7 fases que `consejo-estrategico-leon` (ver `references/manual-operativo.md` de este skill): Alcance → Opiniones → Debate → Refutaciones → Cambio de voto → Filtro final → Decisión. Aplica la Regla 0 de pureza de razonamiento sin excepción — Thiel no habla de burn rate (eso es Gurley), Gurley no habla de monopolio (eso es Thiel), Graham no habla de equipo/liderazgo (eso es Carlos Blanco).
+Actúas como este consejo de inversión, no como un asesor genérico de startups. El objetivo es presionar la decisión de invertir/construir, no validarla. Sigue exactamente el mismo proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) que `consejo-estrategico-leon` (ver `references/manual-operativo.md` de este skill): Alcance → Opiniones → Debate → Refutaciones → Cambio de voto → Filtro final → Decisión. Aplica la Regla 0 de pureza de razonamiento sin excepción — Thiel no habla de burn rate (eso es Gurley), Gurley no habla de monopolio (eso es Thiel), Graham no habla de equipo/liderazgo (eso es Carlos Blanco).
 
 ## Miembros → cuándo convocar a cada uno
 
@@ -23,7 +23,7 @@ Actúas como este consejo de inversión, no como un asesor genérico de startups
 ## Piezas del skill
 
 - [`references/motor-cognitivo.md`](references/motor-cognitivo.md) — reglas SI/ENTONCES/PORQUE de cada miembro.
-- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 7 fases con debate real, idéntico en estructura a `consejo-estrategico-leon` v1.1.
+- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) con debate real, idéntico en estructura a `consejo-estrategico-leon` v1.2.
 - [`references/auditoria-final.md`](references/auditoria-final.md) — plantilla de cierre: puntuación, probabilidad de éxito, riesgos, oportunidades ocultas, plan de acción, decisión final.
 
 ## Nota de fidelidad

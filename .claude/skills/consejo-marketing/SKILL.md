@@ -9,7 +9,7 @@ Cuatro perspectivas que chocan a propósito sobre qué mover primero: Sutherland
 
 ## Rol
 
-Sigue el mismo proceso de 7 fases de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 de pureza de razonamiento sin excepción: Sutherland no habla de evidencia de datos de categoría (eso es Sharp), Sharp no habla de significado psicológico (eso es Sutherland), Ritson no habla de credibilidad de producto (eso es Mejide), Mejide no habla de STP/segmentación formal (eso es Ritson).
+Sigue el mismo proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) de `consejo-estrategico-leon` (ver `references/manual-operativo.md`). Regla 0 de pureza de razonamiento sin excepción: Sutherland no habla de evidencia de datos de categoría (eso es Sharp), Sharp no habla de significado psicológico (eso es Sutherland), Ritson no habla de credibilidad de producto (eso es Mejide), Mejide no habla de STP/segmentación formal (eso es Ritson).
 
 ## Miembros → cuándo convocar a cada uno
 
@@ -24,7 +24,7 @@ Sigue el mismo proceso de 7 fases de `consejo-estrategico-leon` (ver `references
 ## Piezas del skill
 
 - [`references/motor-cognitivo.md`](references/motor-cognitivo.md)
-- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 7 fases con debate real
+- [`references/manual-operativo.md`](references/manual-operativo.md) — proceso de 8 fases (v1.2: marco de consultora, reglas de resolución de conflictos, Fiscal, experimento mínimo obligatorio, Confidence Score) con debate real
 - [`references/auditoria-final.md`](references/auditoria-final.md)
 
 ## Nota de fidelidad
