@@ -1,50 +1,59 @@
 # Auditoría Final — Plantilla de Cierre
 
-Se genera siempre al final de las 7 fases descritas en `manual-operativo.md` (alcance, opiniones, debate, refutaciones, cambio de voto, filtro de Gabriela, decisión final). Sigue este orden y estos formatos exactos — no los resumas ni los combines.
+**v1.2**: añade la auditoría del Fiscal, el experimento mínimo, el Confidence Score, y una quinta opción de decisión ("Información insuficiente"). Sigue este orden exacto — no lo resumas ni lo combines.
 
 ## 0. Qué cambió durante el debate
 
-Antes de la puntuación, resume en 2-4 líneas qué votos cambiaron entre el Paso 1 (Opiniones) y el Paso 4 (Cambio de voto) del proceso, y qué refutación concreta lo causó. Si nadie cambió de voto pese a discrepancias fuertes, dilo explícitamente — es una señal a interpretar, no un dato a omitir (ver `manual-operativo.md`, Paso 4).
+2-4 líneas: qué votos cambiaron entre el Paso 1 (Opiniones) y el Paso 4 (Cambio de voto), y qué refutación concreta lo causó — distinguiendo si el cambio vino de evidencia nueva o solo de mejor argumentación. Si nadie cambió pese a discrepancia fuerte, dilo explícitamente.
 
-## 1. Puntuación global
+## 1. Auditoría del Fiscal
 
-Un número sobre 100, no una media mecánica de los veredictos individuales — pondera más los vetos (Gabriela, Munger) que los veredictos favorables aislados. Justifica la cifra en una frase.
+Pega aquí la lista completa de `references/00-fiscal.md`: qué afirmaciones quedaron ✅ Respaldadas, cuáles fueron ⚠️ Inferencia razonable, y cuáles 🔴 SUPOSICIÓN. No se omite ni se suaviza aunque debilite el argumento que parecía ganar.
 
-## 2. Probabilidad estimada de éxito
+## 2. Puntuación global
 
-Una de estas cinco categorías, nunca un porcentaje inventado con falsa precisión:
+Sobre 100, ponderada por la auditoría del Fiscal — un veredicto alto sostenido mayoritariamente en 🔴 SUPOSICIÓN no puede puntuar igual que uno sostenido en ✅ Respaldada, aunque el número (1-10) que dio el miembro fuera el mismo. Pondera también los vetos (Gabriela, Munger cuando esté convocado) por encima de veredictos favorables aislados.
 
-- Muy baja
-- Baja
-- Media
-- Alta
-- Muy alta
+## 3. Probabilidad estimada de éxito
 
-Justifica la categoría con el riesgo más determinante identificado en las rondas, no con una sensación general.
+Muy baja / Baja / Media / Alta / Muy alta — justificada por el riesgo más determinante y por cuánta de la base de esa estimación es ✅ Respaldada frente a 🔴 SUPOSICIÓN.
 
-## 3. Riesgos críticos
+## 4. Riesgos críticos
 
-Exactamente los cinco mayores riesgos detectados por el consejo, ordenados de mayor a menor severidad. Cada uno en una línea: qué es el riesgo, qué miembro lo detectó, qué lo activaría.
+Los cinco mayores, ordenados por severidad. Cada uno: qué es, qué miembro lo detectó, qué lo activaría, y si está marcado como ✅ o 🔴 por el Fiscal.
 
-## 4. Oportunidades ocultas
+## 5. Oportunidades ocultas
 
-Aspectos que el usuario probablemente no está viendo — normalmente surgen del cruce entre miembros (por ejemplo, una ventaja territorial que Cámara de Comercio señala pero que Comercial B2B no estaba usando en el argumentario). No repitas aquí lo que ya se dijo como "lo mejor" en las rondas individuales; esto es lo que nadie mencionó todavía.
+Lo que ningún miembro mencionó como "lo mejor" en las rondas individuales — surge normalmente del cruce entre marcos.
 
-## 5. Plan de acción
+## 6. Experimento mínimo recomendado
 
-Tres horizontes, cada uno con acciones concretas y verificables, no genéricas ("investigar" no vale, "llamar a la Cámara de Comercio de León y preguntar por el programa X" sí):
+La prueba más barata y rápida de todas las propuestas por los miembros en el Paso 1, o una síntesis si varias se complementan. Debe ser concreta y verificable — "investigar más" no vale; "enviar 100 mensajes de prueba al sandbox de Meta y medir % resuelto sin intervención" sí vale. Esta sección nunca puede estar vacía — si ningún miembro propuso experimento mínimo, es un fallo del proceso a señalar explícitamente, no a rellenar de oficio.
+
+## 7. Confidence Score
+
+Un porcentaje explícito de confianza en la Decisión Final (no en el éxito del proyecto — en la decisión tomada aquí). Formato obligatorio:
+
+- **Confianza: X%**
+- **Por qué no es mayor**: qué evidencia falta, listado explícito (ej. "no existe piloto ejecutado", "no hay métricas reales", "cero usuarios reales").
+- **Qué dato subiría la confianza a 90%**: el umbral concreto y medible (ej. "500 conversaciones reales con menos del 5% de error y más del 90% de resolución sin intervención").
+
+## 8. Plan de acción
+
+Tres horizontes con acciones concretas y verificables:
 
 - **Próximas 24 horas**
 - **Próximos 7 días**
 - **Próximos 30 días**
 
-## 6. Decisión final
+## 9. Decisión final
 
-Una de estas cuatro opciones, nunca una respuesta intermedia sin elegir:
+Una de estas cinco opciones, nunca una respuesta intermedia sin elegir:
 
 - **Proceder**
-- **Proceder con cambios** (especifica exactamente cuáles, no en general)
-- **Esperar** (especifica qué señal o dato concreto hay que tener antes de reconsiderar)
+- **Proceder con cambios** (especifica exactamente cuáles)
+- **Esperar** (especifica qué señal o dato concreto hay que tener antes de reconsiderar — debe coincidir con el umbral del Confidence Score)
 - **Descartar**
+- **Información insuficiente** (cuando la Regla 4 de resolución de conflictos se activó en un punto decisivo de la discusión — no se fuerza ninguna de las otras cuatro opciones solo por cerrar con algo)
 
-Explica el porqué en 2-3 frases, citando qué miembro o filtro fue determinante para esa decisión — si el filtro de Gabriela (visión) vetó algo, dilo explícitamente aunque el resto del consejo puntuara alto.
+Explica el porqué en 2-3 frases, citando qué miembro, qué hallazgo del Fiscal, o qué filtro fue determinante.

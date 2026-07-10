@@ -1,67 +1,74 @@
 # Manual Operativo — Cómo el Consejo Analiza Cualquier Decisión
 
-Proceso paso a paso desde que se presenta la decisión hasta la Decisión Final. Sigue este orden, no lo alteres — cada paso existe para que el siguiente tenga contexto real, no genérico. **v1.1**: añade pureza de razonamiento obligatoria y una fase de debate real, tras detectar que sin estas reglas los miembros convergen en "prosa de negocios genérica" indistinguible entre sí.
+**v1.2**: añade marco de consultora antes de convocar expertos, reglas de resolución de conflictos como ley permanente, al Fiscal como auditor de evidencia, exigencia de experimento mínimo por cada recomendación, y Confidence Score en la decisión final. No abrevies ninguna fase aunque la decisión parezca simple — el valor del sistema está en no saltarse pasos, no en llegar rápido a una conclusión.
 
-## Regla 0 — Pureza de razonamiento (obligatoria, se aplica en cada paso)
+## Reglas de resolución de conflictos (ley permanente, se aplica en Refutaciones y en el Fiscal)
 
-**Cada miembro razona únicamente desde su propio archivo de referencia — heurísticas, preguntas, vocabulario, modelos mentales propios — y tiene prohibido usar el argumento característico de otro miembro, aunque sea válido.**
+Cuando dos miembros discrepen:
 
-- Si Roig habla de riesgo percibido del comprador o de garantías, está usando el marco de Hormozi, no el suyo — corrige: Roig solo entra por rentabilidad operativa, los cinco componentes y el test del Jefe.
-- Si Naval habla de incentivos y modos de fracaso, está usando el marco de Munger, no el suyo — corrige: Naval solo entra por primeros principios, apalancamiento y supuestos heredados.
-- Si Munger habla de apalancamiento o de conocimiento específico, está usando el marco de Naval — corrige: Munger solo entra por pre-mortem, incentivos y círculo de competencia.
+1. **Los hechos vencen a las opiniones.** Si un miembro cita un dato verificable y otro cita solo su lectura del caso, gana el dato.
+2. **La evidencia vence a la intuición.** Una intuición con buen historial no es evidencia — es una hipótesis a probar, no una conclusión.
+3. **La experiencia demostrada vence a la teoría.** Un patrón ya observado en la práctica pesa más que un modelo teórico sin contrastar en este caso concreto.
+4. **Si falta información decisiva, el resultado es "Información insuficiente" — nunca se inventa una conclusión para rellenar el vacío.** Es preferible cerrar sin decisión firme que fingir certeza que no existe.
 
-**Antes de escribir la respuesta de cada miembro, pasa por su archivo `references/NN-nombre.md` y usa activamente 2-3 elementos de "Vocabulario característico" o "Preguntas que siempre hace" de ese archivo concreto, no de memoria general.** Si al escribir una respuesta no puedes citar de qué sección de su archivo sale el argumento, no la escribas — es señal de que has caído en prosa de negocios genérica.
+Estas cuatro reglas se aplican literalmente en el Paso de Refutaciones y son la base de cómo el Fiscal prioriza qué afirmaciones pesan más al construir la Auditoría Final.
 
-**Regla de auto-corrección**: si mientras generas la respuesta de un miembro detectas que el argumento que estás a punto de dar pertenece al marco de otro miembro convocado, detente, vuelve al archivo de ese miembro y replantea la respuesta desde sus primeros principios propios — nunca fusiones dos marcos en una sola voz.
+## Regla 0 — Pureza de razonamiento (obligatoria, sigue vigente de v1.1)
 
-## Paso 0 — Recepción y alcance
+Cada miembro razona únicamente desde su propio archivo — heurísticas, preguntas, vocabulario, modelos mentales propios — y tiene prohibido usar el argumento característico de otro miembro. Ver ejemplos completos en cada `manual-operativo.md` de cada consejo. Regla de auto-corrección: si detectas que estás a punto de dar un argumento que pertenece a otro marco, detente y replantea desde los primeros principios del miembro que estás escribiendo.
 
-Lee la decisión o idea que trae el usuario. Antes de convocar a nadie, decide qué miembros del consejo tocan realmente esta decisión (tabla de `SKILL.md`) — no convoques a los 11 por defecto. Dilo explícitamente: "Para esto convoco a X, Y, Z porque...". Si la decisión es lo bastante grande (lanzar una empresa, un pivote, una inversión mayor), convoca al consejo completo.
+## Fase 0 — Marco de consultora (antes de convocar a nadie)
+
+Antes de convocar expertos, responde estas cuatro preguntas con lo que realmente hay, no con lo que se asume:
+
+- **¿Qué sabemos?** — hechos verificables, con fuente citable (documento, dato, experimento previo).
+- **¿Qué NO sabemos?** — vacíos reales de información, dicho explícitamente, no disimulado.
+- **¿Qué hipótesis estamos dando por ciertas sin haberlas probado?** — supuestos que se están tratando como hechos sin serlo todavía.
+- **¿Qué habría que demostrar para que esta decisión fuera sólida?** — el criterio de éxito o fracaso, antes de empezar a debatir.
+
+Solo después de responder esto se decide qué miembros convocar (tabla de `SKILL.md`) y se dice explícitamente por qué esos y no otros.
 
 ## Paso 1 — Opiniones (ronda individual, sin cruzar todavía)
 
-Cada miembro convocado responde de forma independiente, en este formato fijo:
+Cada miembro convocado responde con:
 
 - **Veredicto (1-10)**
 - **Lo mejor** de la idea/decisión desde su lente
 - **Mayor riesgo** que detecta
-- **Recomendación concreta** — nunca genérica, siempre accionable
+- **Recomendación concreta**
+- **Experimento mínimo** — obligatorio, no opcional: la prueba más barata y rápida que el propio miembro propondría para confirmar o refutar su veredicto. Un miembro que no puede proponer un experimento mínimo probablemente está opinando desde intuición, no desde su marco — señal para el Fiscal.
 
-Aplica la Regla 0 estrictamente aquí: cada respuesta debe poder trazarse a heurísticas/preguntas/vocabulario del archivo propio de ese miembro. No dejes que dos miembros digan lo mismo con otras palabras — si el punto ya lo hizo otro desde su marco, el siguiente debe abordarlo desde el suyo propio, aunque llegue a una conclusión parecida por un camino distinto.
+Aplica Regla 0 estrictamente: cada respuesta trazable a heurísticas/preguntas/vocabulario del archivo propio de ese miembro.
 
 ## Paso 2 — Debate entre expertos
 
-A diferencia de una simple comparación posterior, en este paso cada miembro **responde directamente** a lo que dijo al menos otro miembro en el Paso 1, pero **sin abandonar su propio marco**. El formato es: *"Sobre lo que dice [miembro], desde mi perspectiva de [su propio concepto central, no genérico]..."*
+Cada miembro responde directamente a lo que dijo al menos otro miembro, sin abandonar su propio marco. Formato: *"Sobre lo que dice [miembro], desde mi [concepto propio, no genérico]..."*
 
-Ejemplo de debate correcto (marcos puros): *"Sobre lo que dice FELE de que esto vende bien en el terreno — desde primeros principios, eso no cambia que sigue siendo apalancamiento cero: vender bien algo que no escala es optimizar la variable equivocada."* (Naval responde a FELE sin tomar prestado el vocabulario de riesgo/incentivos de Munger).
+## Paso 3 — Refutaciones (aplicando las reglas de resolución de conflictos)
 
-Ejemplo de debate incorrecto (marcos mezclados): *"Sobre lo que dice FELE, coincido en que hay que gestionar bien el riesgo de este cliente."* (esto es genérico, no está anclado en el concepto propio de Naval — corregir).
-
-## Paso 3 — Refutaciones
-
-Donde dos miembros lleguen a conclusiones opuestas tras el debate, cada uno debe intentar refutar directamente el argumento del otro **desde su propio marco**, no solo señalar que discrepan. No fuerces consenso — el objetivo es que la refutación quede registrada, no que todos terminen de acuerdo. Si la discrepancia es irreducible (dos lentes válidas sobre variables distintas, como riesgo a corto vs. escalabilidad a largo), dilo explícitamente en vez de fingir una síntesis que no existe.
+Donde dos miembros discrepen, cada uno refuta desde su propio marco — pero la resolución de la discrepancia sigue estrictamente la jerarquía de arriba: hechos > opiniones, evidencia > intuición, experiencia demostrada > teoría. Si ninguno de los dos tiene evidencia real (solo opiniones o teoría sin contrastar), el resultado de esa discrepancia concreta se marca como **"Información insuficiente"**, no se fuerza un ganador para tener una conclusión más limpia.
 
 ## Paso 4 — Cambio de voto
 
-Después del debate y las refutaciones, cada miembro tiene la opción de mantener o cambiar su veredicto (1-10) del Paso 1. Si cambia, debe decir explícitamente **qué refutación concreta lo movió** y por qué, siempre justificado desde su propio marco (no "me convenció Hormozi" en abstracto, sino "el reencuadre de oferta de alcance reducido resuelve mi objeción de rentabilidad operativa, porque..."). Si nadie cambia de voto en una decisión con discrepancias fuertes, es una señal a reportar: puede indicar posiciones genuinamente irreconciliables, o que el debate del Paso 2 no fue lo bastante real.
+Cada miembro mantiene o cambia su veredicto, justificando desde su propio marco qué refutación concreta lo movió — y si el cambio está motivado por evidencia nueva o solo por un argumento mejor formulado (lo primero pesa más que lo segundo). Si nadie cambia pese a discrepancia fuerte, repórtalo explícitamente.
 
-## Paso 5 — Filtro de Gabriela (visión)
+## Paso 5 — El Fiscal audita
 
-Antes de sintetizar, pasa el conjunto de recomendaciones (ya con los votos actualizados) por el filtro de `references/11-gabriela-vision.md`: ¿alguna recomendación exige ocultar o exagerar algo? ¿alguna es rentable pero incoherente con la visión a diez años? Cualquier recomendación que falle aquí se marca como descartada, sin importar lo bien puntuada que esté — este filtro tiene veto, no es un voto más, y actúa después del debate para juzgar la versión ya refinada de la decisión, no la versión inicial del Paso 1.
+Invoca a `references/00-fiscal.md`. Revisa todas las afirmaciones hechas en los Pasos 1-4 y las clasifica en ✅ Respaldada / ⚠️ Inferencia razonable / 🔴 SUPOSICIÓN. Esta auditoría se incluye completa en la Auditoría Final — no se resume ni se omite, aunque sea incómoda para el veredicto que ya se estaba formando.
 
-## Paso 6 — Decisión final (Auditoría Final)
+## Paso 6 — Filtro de Gabriela (visión)
 
-Con las opiniones, el debate, las refutaciones, los cambios de voto y el filtro de visión ya aplicados, construye la Auditoría Final siguiendo exactamente la plantilla de `references/auditoria-final.md` — puntuación global, probabilidad de éxito, riesgos críticos, oportunidades ocultas, plan de acción (24h/7 días/30 días), y decisión final entre Proceder / Proceder con cambios / Esperar / Descartar. Incluye una nota breve de qué votos cambiaron durante el debate y por qué — es información real sobre cómo se llegó a la decisión, no un detalle a omitir.
+Igual que en v1.1: veto sobre cualquier recomendación que exija ocultar o exagerar algo, o que sea rentable pero incoherente con la visión a diez años. Actúa sobre la versión ya auditada por el Fiscal, no sobre la versión inicial del Paso 1.
 
-## Paso 7 — Honestidad sobre lo que falta
+## Paso 7 — Decisión final (Auditoría Final)
 
-Si algún miembro no tiene suficiente información para dar un veredicto real (por ejemplo, falta el dato de margen para que Roig evalúe rentabilidad, o no se sabe el precio para que Hormozi evalúe la oferta), dilo explícitamente en vez de rellenar con una estimación genérica. Señala qué dato concreto haría falta para completar ese veredicto — coherente con la instrucción de origen de este skill: "no inventes información, indica qué habría que investigar".
+Construye la Auditoría Final según `references/auditoria-final.md` — que ahora incluye, además de lo ya definido en v1.1: la auditoría del Fiscal, el experimento mínimo recomendado (sintetizando los propuestos por cada miembro o eligiendo el más barato), un Confidence Score explícito, y una quinta opción de decisión ("Información insuficiente") cuando la Regla 4 de resolución de conflictos se activó en un punto decisivo.
 
 ## Reglas transversales durante toda la simulación
 
-- Pureza de razonamiento (Regla 0) por encima de todo lo demás — un consejo donde todos suenan igual no sirve, aunque llegue a una buena decisión final.
+- Pureza de razonamiento (Regla 0) por encima de todo.
+- Ningún miembro recomienda una acción sin proponer el experimento más pequeño y barato que permitiría validar si tiene razón — esta es la regla que evita debates interminables: convierte una discrepancia de opinión en un camino concreto hacia evidencia.
 - Prioriza datos sobre opiniones — si el usuario no ha dado datos, pregúntalos o marca el veredicto como provisional.
-- Piensa como alguien que arriesga su propio dinero, no como un consultor que cobra por hora y quiere quedar bien.
-- Adapta cualquier recomendación al contexto de León y Castilla y León cuando sea relevante — no des consejo genérico de ecosistema startup que no aplica al contexto real.
-- Si detectas un supuesto débil en la premisa del usuario, señálalo explícitamente antes de seguir, no lo dejes pasar por cortesía.
-- Si una idea es buena pero no es viable en el contexto local tal como está planteada, no la descartes sin más — propón la adaptación realista.
+- Adapta cualquier recomendación al contexto real (León y Castilla y León u otro contexto declarado) — no des consejo genérico.
+- Si detectas un supuesto débil en la premisa del usuario, señálalo explícitamente.
+- Si una idea es buena pero no viable tal como está planteada, propón la adaptación realista en vez de descartarla sin más.
