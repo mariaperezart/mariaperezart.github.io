@@ -15,8 +15,17 @@ Este repositorio contiene todo lo construido para FARO: la tesis de negocio, el 
 | `FARO_SEO_CONTENIDOS.md` | Keyword research, calendario editorial |
 | `FARO_PROCESO_COMERCIAL.md` | Embudo comercial completo, outbound → referidos |
 | `FARO_BIBLIOTECA_AUTOMATIZACIONES.md` | 100 casos de uso de automatización clasificados |
+| `FARO_SISTEMA_MULTIAGENTE.md` | Sistema de agentes de Claude Code para ejecutar experimentos de validación/crecimiento de forma repetible (10 en la secuencia de experimentos + agentes independientes como Marketing) |
+| `FARO_AGENTES_VERTICALES.md` | Investigación (nivel de evidencia 🟡, tratar como hipótesis) sobre si el propio producto de FARO debería evolucionar hacia una familia de agentes especializados de cara al cliente |
+| `FARO_MARCA_Y_MARGEN.md` | Investigación (nivel de evidencia 🟡, tratar como hipótesis) sobre si la marca debería gestionarse como palanca de margen y de capacidad, no solo de captación |
+| `FARO_NEGOCIO_SOSTENIBLE.md` | Investigación (nivel de evidencia 🟡) sobre cómo distinguir un ingreso puntual afortunado de un proceso de adquisición repetible, aplicado al primer experimento real del sistema multiagente |
+| `FARO_VENTA_ADAPTATIVA.md` | Investigación (nivel de evidencia 🟠, generalizaciones sin validar) sobre adaptar la venta al perfil de riesgo del comprador dentro del ICP, no por geografía |
 
 Cada documento referencia a los anteriores en vez de repetirlos — léelos en este orden si es tu primera vez.
+
+## 1.1 Sistema multiagente de validación (`.claude/agents/`, `experimentos/`, `base_conocimiento/`)
+
+Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con 10 agentes de Claude Code de responsabilidad única en secuencia (Orquestador, Investigador, Verificador, Financiero, Redactor, Preparador, Tracker, Analizador, Aprendizaje, Estratega), más 7 agentes independientes que no siguen esa secuencia (Marketing, Legal, Finanzas, RRHH, Producto, Éxito de Cliente, Correo/Gmail — ver la nota de honestidad en `FARO_SISTEMA_MULTIAGENTE.md` sección 2.1: la mayoría de estos últimos tienen poco que hacer hasta que exista el primer cliente de pago, y lo dicen explícitamente en su propia definición). El Agente de Correo es el único que ya usa una integración real (Gmail: crea borradores, nunca envía) — el resto sigue en modo manual y está pensado para conectar más integraciones de forma gradual, sin rediseñar los agentes. Ver `FARO_SISTEMA_MULTIAGENTE.md` para el protocolo completo de uso.
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
@@ -35,7 +44,8 @@ Sitio estático (HTML/CSS/JS, sin dependencias de build) que implementa el copy 
 Todo lo de arriba es código y contenido — está terminado. Lo que sigue son acciones que **solo tú puedes ejecutar**, porque requieren tu identidad legal, tu método de pago o tus propias cuentas. Ningún asistente puede completarlas por ti.
 
 ### Publicar la web (gratis, ~15 minutos)
-- [ ] En GitHub: **Settings → Pages** de este repositorio → fuente = rama `claude/faro-thesis-mvp-60days-e4wf3z` (o hacer merge a `main` primero) → carpeta raíz.
+- [ ] Fusionar a `main` la pull request abierta con el trabajo más reciente (o la rama activa en ese momento, si hay una PR sin fusionar — revisa qué rama tiene los últimos commits antes de publicar, `main` puede estar por detrás de una rama `claude/...` en curso).
+- [ ] En GitHub: **Settings → Pages** de este repositorio → fuente = rama `main` → carpeta raíz.
 - [ ] Confirmar que `mariaperezart.github.io` sirve la web (puede tardar unos minutos en propagarse).
 - [ ] Si quieres un dominio propio (ej. `faro.clinic`), registrarlo y configurarlo en Settings → Pages → Custom domain.
 
