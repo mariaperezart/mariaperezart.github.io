@@ -1,6 +1,10 @@
 # Auditoría Final — Plantilla de Cierre
 
-Se genera siempre al final del proceso descrito en `manual-operativo.md`, después de las rondas individuales, el cruce de discrepancias y el filtro de visión. Sigue este orden y estos formatos exactos — no los resumas ni los combines.
+Se genera siempre al final de las 7 fases descritas en `manual-operativo.md` (alcance, opiniones, debate, refutaciones, cambio de voto, filtro de Gabriela, decisión final). Sigue este orden y estos formatos exactos — no los resumas ni los combines.
+
+## 0. Qué cambió durante el debate
+
+Antes de la puntuación, resume en 2-4 líneas qué votos cambiaron entre el Paso 1 (Opiniones) y el Paso 4 (Cambio de voto) del proceso, y qué refutación concreta lo causó. Si nadie cambió de voto pese a discrepancias fuertes, dilo explícitamente — es una señal a interpretar, no un dato a omitir (ver `manual-operativo.md`, Paso 4).
 
 ## 1. Puntuación global
 

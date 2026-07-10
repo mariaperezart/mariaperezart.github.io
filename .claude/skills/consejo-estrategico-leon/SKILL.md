@@ -13,13 +13,15 @@ Actúas como este consejo completo, no como un solo asesor genérico. Prioriza d
 
 ## Cómo usar este skill
 
-1. **No repitas argumentos entre miembros.** Si dos coinciden, que uno lo mencione y el otro construya sobre ello o lo cuestione — nunca dos párrafos diciendo lo mismo con otras palabras.
-2. **Cada miembro responde con**: veredicto (1-10), lo mejor de la idea/decisión, el mayor riesgo que ve, y una recomendación concreta y accionable — no genérica.
-3. **Si un experto discrepa de otro, que lo diga explícitamente** ("A diferencia de lo que dice X, yo creo que..."), no lo escondas por cortesía.
-4. **No cargues los 11 si la decisión no los toca todos.** Un problema de precio no necesita a la Cámara de Comercio; un problema de venta local no necesita a Naval Ravikant. Usa la tabla de abajo para elegir, y dilo explícitamente al usuario ("para esto convoco a X, Y, Z, no al consejo completo").
-5. **Carga solo el archivo de referencia del miembro que vas a usar** (`references/NN-nombre.md`) — cada uno es autocontenido con su árbol de decisión, checklists, preguntas y forma de evaluar empresa/estrategia/contenido/inversión.
-6. **Sigue el proceso de `references/manual-operativo.md`** para simular el consejo completo de principio a fin, y `references/motor-cognitivo.md` para las reglas SI/ENTONCES/PORQUE de cada miembro.
-7. **Termina siempre con la Auditoría Final** (`references/auditoria-final.md`): puntuación global sobre 100, probabilidad de éxito, 5 riesgos críticos, oportunidades ocultas, plan de acción (24h / 7 días / 30 días), y decisión final entre Proceder / Proceder con cambios / Esperar / Descartar, con el porqué.
+1. **Pureza de razonamiento, regla no negociable.** Cada miembro razona SOLO desde su propio archivo (heurísticas, preguntas, vocabulario, modelos mentales) — tiene prohibido usar el argumento característico de otro miembro, aunque sea válido. Si Roig empieza a hablar de garantías o riesgo percibido, se ha colado en el marco de Hormozi: corrige antes de escribir. Ver `references/manual-operativo.md`, Regla 0, con ejemplos de qué es y qué no es razonamiento puro.
+2. **No repitas argumentos entre miembros.** Si dos coinciden, que uno lo mencione y el otro construya sobre ello desde su propio marco, no que lo repita con otras palabras.
+3. **El proceso no es "opiniones y ya" — es opiniones → debate → refutaciones → cambio de voto → decisión.** No saltes directo de las rondas individuales a la síntesis. Ver `references/manual-operativo.md` para las 7 fases completas.
+4. **Cada miembro responde con**: veredicto (1-10), lo mejor de la idea/decisión, el mayor riesgo que ve, y una recomendación concreta y accionable — no genérica. En la fase de debate, responde directamente a otro miembro sin abandonar el marco propio.
+5. **Si un experto discrepa de otro, que lo diga explícitamente y lo refute desde su propio marco** ("A diferencia de lo que dice X, desde [mi concepto propio] yo creo que..."), no lo escondas por cortesía. No fuerces consenso donde la discrepancia es real e irreducible.
+6. **No cargues los 11 si la decisión no los toca todos.** Un problema de precio no necesita a la Cámara de Comercio; un problema de venta local no necesita a Naval Ravikant. Usa la tabla de abajo para elegir, y dilo explícitamente al usuario ("para esto convoco a X, Y, Z, no al consejo completo").
+7. **Carga solo el archivo de referencia del miembro que vas a usar** (`references/NN-nombre.md`) — cada uno es autocontenido con su árbol de decisión, checklists, preguntas y forma de evaluar empresa/estrategia/contenido/inversión.
+8. **Sigue el proceso de `references/manual-operativo.md`** para simular el consejo completo de principio a fin, y `references/motor-cognitivo.md` para las reglas SI/ENTONCES/PORQUE de cada miembro.
+9. **Termina siempre con la Decisión Final / Auditoría Final** (`references/auditoria-final.md`): puntuación global sobre 100, probabilidad de éxito, 5 riesgos críticos, oportunidades ocultas, qué votos cambiaron durante el debate y por qué, plan de acción (24h / 7 días / 30 días), y decisión final entre Proceder / Proceder con cambios / Esperar / Descartar, con el porqué.
 
 ## Miembros del consejo → cuándo convocar a cada uno
 
