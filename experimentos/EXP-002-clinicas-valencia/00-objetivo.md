@@ -2,6 +2,7 @@
 
 **Fecha de apertura:** 2026-07-05
 **Abierto por:** usuario (vía Claude Code, ejecución de demostración del sistema multiagente)
+**Estado: ARCHIVADO (2026-07-10)** — superado por el pivote de ICP a pymes leonesas con agenda. Ver detalle en `plan.md`, sección "Estado: ARCHIVADO". No se envió el Lote A.
 
 ## Objetivo del experimento
 Validar si hay demanda real de FARO entre clínicas dentales privadas de 4-10 gabinetes en Valencia ciudad, usando el mensaje de outbound centrado en "mensajes de WhatsApp de pacientes sin responder fuera de horario" (dolor #1 de `FARO_MODELO_NEGOCIO.md` Lean Canvas).

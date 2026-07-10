@@ -21,3 +21,14 @@ Paso: 5 completado. El usuario verificó manualmente el contacto de las 9 clíni
 **Nota de proceso importante**: durante esta verificación, una herramienta externa que el usuario estaba consultando en paralelo generó al menos dos veces datos completamente inventados (un "EXP-001 en León" con clínicas y cifras financieras fabricadas de la nada) presentados con total confianza junto a datos reales. Quedó descartado tras verificación exhaustiva — no existe, nunca existió. Se deja constancia aquí para que quede claro por qué el Lote A pasó por una comprobación cruzada independiente antes de aceptarse, y por qué el mismo criterio debe aplicarse a los Lotes B y C antes de contactarlos.
 
 Siguiente agente: ninguno (bloqueado) — Bloqueado por: el usuario debe (a) decidir fecha de envío para el Lote A y enviar los 3 mensajes de `06-envio/plan_envio.md` (sustituyendo los datos reales ya disponibles), y (b) si quiere ampliar el lote, repetir la comprobación cruzada independiente sobre el Lote B antes de enviarles nada. El sistema no envía nada automáticamente en Fase 1. Cuando el usuario informe la primera respuesta, retoma en el paso 7 (Tracker).
+
+## Estado: ARCHIVADO (2026-07-10) — superado por el pivote de ICP
+
+FARO pivotó su ICP de "clínicas dentales, mercado nacional" a "pyme de servicios con agenda en la provincia de León" (ver `FARO_MODELO_NEGOCIO.md` sección 1.1). Este experimento se cierra sin enviar el Lote A: el dataset (clínicas dentales de Valencia) ya no corresponde al ICP vigente, y enviar los mensajes ahora validaría un mercado que ya no es el objetivo, no el actual.
+
+**No se borra nada.** El trabajo hecho aquí es real y queda como aprendizaje del proceso multiagente, no como campaña pendiente:
+- El flujo completo de 10 agentes (Investigador → Verificador → Financiero → Redactor → Preparador) se ejecutó de principio a fin y produjo artefactos usables — esa validación del propio sistema multiagente sigue siendo válida independientemente del ICP.
+- La disciplina de verificación cruzada aplicada al Lote A (sección "Nota de proceso importante" arriba, sobre los datos inventados por una herramienta externa) es un aprendizaje de proceso que se traslada tal cual a cualquier experimento futuro, incluido uno en León.
+- Si en el futuro se decide validar el segmento dental en paralelo a León (ver `FARO_MODELO_NEGOCIO.md` sección 1.1, "Evolución futura"), este dataset verificado (3 clínicas con contacto confirmado de forma independiente) sigue siendo reutilizable sin rehacer el trabajo de investigación y verificación.
+
+Para validar demanda del nuevo ICP, abrir un experimento nuevo (p. ej. `EXP-003-pymes-leon`) en vez de reconvertir este — mezclar un dataset de Valencia/dental con un objetivo de León/multi-vertical rompería la trazabilidad de `00-objetivo.md`.
