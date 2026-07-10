@@ -1,4 +1,15 @@
 <!--
+  BORRADOR DE PROPUESTA v4 — corrige la jerarquía de CTA del hero:
+  "Llamar ahora" pasa a ser el CTA principal (relleno, color urgencia)
+  y WhatsApp queda como alternativa secundaria (contorno), no como
+  vía de gestión de una urgencia real. Motivo: quien busca "veterinario
+  urgencias León" llega con ansiedad y quiere respuesta inmediata —
+  el botón de llamada tiene que ser el primero que vea. Además evita
+  un problema legal y de expectativas real: no se debe transmitir que
+  una urgencia se gestiona por WhatsApp cuando lo seguro es llamar.
+  Jerarquía resultante: urgencia → llama; no puedes llamar → WhatsApp;
+  consulta normal → cita.
+
   BORRADOR DE PROPUESTA v3 — no está publicado ni es el sitio oficial
   de este negocio. Reconstruido tras ver capturas reales de
   leonveterinaria.com (hero, equipo, especialistas, urgencias,
@@ -128,7 +139,9 @@
   @media (prefers-reduced-motion: no-preference) { .btn:hover { transform: translateY(-1px); filter: brightness(1.05); } }
   .btn--cta { background: var(--color-cta); color: #fff; }
   .btn--whatsapp { background: var(--color-whatsapp); color: #fff; }
-  .btn--outline-urgencia { background: transparent; border-color: var(--color-urgencia); color: var(--color-urgencia); }
+  /* CTA principal = llamar (urgencia real); WhatsApp queda como alternativa, no como vía de urgencia */
+  .btn--urgencia-fill { background: var(--color-urgencia); color: #fff; }
+  .btn--whatsapp-outline { background: transparent; border-color: var(--color-whatsapp); color: var(--color-whatsapp); }
   .btn--lg { padding: 15px 30px; font-size: 16px; }
 
   .hero { padding: 56px 0 52px; }
@@ -211,17 +224,18 @@
   <section class="hero">
     <div class="container hero__grid">
       <div>
-        <span class="eyebrow">León · Roa de la Vega, 30 · +20 años de experiencia</span>
-        <h1>Que tu mascota tenga cita, aunque sea domingo por la noche.</h1>
-        <p>Escríbenos por WhatsApp a cualquier hora. Te confirmamos que hemos recibido tu mensaje al momento, y te damos cita o te llamamos en cuanto abrimos — nunca te quedas sin respuesta.</p>
+        <span class="eyebrow">León · Roa de la Vega, 30 · Urgencias 24h</span>
+        <h1>Urgencias veterinarias 24 horas en León.</h1>
+        <p style="font-weight:600; color:var(--color-primary); margin-bottom:10px;">Cuando tu mascota te necesita, nosotros también estamos.</p>
+        <p>Si es una urgencia, llámanos ahora. Si no puedes hacerlo o prefieres escribirnos, envíanos un WhatsApp a cualquier hora: confirmamos tu mensaje inmediatamente y actuamos según la prioridad de tu caso.</p>
         <div class="hero-actions">
-          <a class="btn btn--whatsapp btn--lg" href="https://wa.me/34666706831?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota" target="_blank" rel="noopener">💬 Pedir cita por WhatsApp</a>
-          <a class="btn btn--outline-urgencia" href="tel:+34666706831">Es una urgencia — llamar ahora</a>
+          <a class="btn btn--urgencia-fill btn--lg" href="tel:+34666706831">🔴 Llamar ahora</a>
+          <a class="btn btn--whatsapp-outline" href="https://wa.me/34666706831?text=Hola%2C%20quiero%20pedir%20cita%20para%20mi%20mascota" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
         </div>
         <ul class="trust-list">
-          <li>Equipo con especialistas certificados AVEPA (oftalmología, cardiología, cirugía, endoscopia, odontología)</li>
-          <li>Urgencias y hospitalización 24 horas, los 365 días del año</li>
-          <li>L-V 9:30-19:30 · S 10:00-14:00</li>
+          <li>Hospitalización y urgencias 24h, 365 días al año</li>
+          <li>Más de 20 años cuidando mascotas en León</li>
+          <li>Equipo con especialistas certificados AVEPA</li>
         </ul>
       </div>
       <div class="hero__art" aria-hidden="true">
@@ -242,24 +256,21 @@
   <section class="section section--tinted" id="como-funciona">
     <div class="container">
       <div class="section__intro">
-        <h2>Fuera de nuestro horario, seguimos aquí</h2>
-        <p>No dejamos tu mensaje esperando hasta que abramos.</p>
+        <h2>¿Qué ocurre si nos escribes fuera del horario?</h2>
       </div>
       <div class="steps">
         <div class="step">
           <span class="step__num">1</span>
-          <h3>Escribes por WhatsApp, a cualquier hora</h3>
-          <p>Sin formularios que fallen ni esperas al teléfono.</p>
+          <h3>Recibimos tu mensaje al instante</h3>
         </div>
         <div class="step">
           <span class="step__num">2</span>
-          <h3>Confirmamos que hemos recibido tu mensaje</h3>
-          <p>Sabes al momento que no se ha perdido, aunque sea de madrugada.</p>
+          <h3>Te confirmamos que no se ha perdido</h3>
         </div>
         <div class="step">
           <span class="step__num">3</span>
-          <h3>Te damos cita, o te llamamos si es urgente</h3>
-          <p>En cuanto abrimos si es consulta normal; al momento si es urgencia real.</p>
+          <h3>Actuamos según la prioridad de tu caso</h3>
+          <p>Si es una urgencia, te indicamos cómo actuar inmediatamente. Si es una consulta, te damos cita o te llamamos al abrir.</p>
         </div>
       </div>
     </div>
@@ -268,9 +279,9 @@
   <section class="section section--blush">
     <div class="container">
       <div class="trust-strip">
-        <div><strong>+20</strong><span>años de experiencia</span></div>
-        <div><strong>5</strong><span>veterinarios especialistas AVEPA</span></div>
-        <div><strong>24h</strong><span>urgencias, 365 días</span></div>
+        <div><strong>24h</strong><span>hospitalización y urgencias, 365 días al año</span></div>
+        <div><strong>+20</strong><span>años cuidando mascotas en León</span></div>
+        <div><strong>AVEPA</strong><span>equipo con especialistas certificados</span></div>
       </div>
     </div>
   </section>
