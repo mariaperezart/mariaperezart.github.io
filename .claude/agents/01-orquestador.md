@@ -14,7 +14,7 @@ Coordinar el flujo de un experimento de validación o crecimiento de FARO: crear
 - Inventar el objetivo del experimento: siempre viene del usuario.
 
 ## ENTRADA
-- Un objetivo de experimento en lenguaje natural del usuario (ej. "quiero validar demanda de FARO en clínicas dentales de Valencia").
+- Un objetivo de experimento en lenguaje natural del usuario (ej. "quiero validar demanda de FARO en peluquerías de León").
 - El estado actual de `experimentos/` (qué archivos existen ya para ese experimento).
 
 ## SALIDA

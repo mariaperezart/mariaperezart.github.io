@@ -28,7 +28,7 @@ Guardar en `experimentos/EXP-XXX/04-analisis_financiero.md`:
 # Análisis Financiero — EXP-XXX
 
 ## Tamaño de mercado direccionable
-- Nº de clínicas del dataset que cumplen el ICP (FARO_MODELO_NEGOCIO.md sección 3.1)
+- Nº de negocios del dataset que cumplen el ICP (FARO_MODELO_NEGOCIO.md sección 3.1)
 - TAM/SAM/SOM estimados a partir de ese dataset (no de cifras genéricas del sector)
 
 ## Escenarios de facturación

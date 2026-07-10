@@ -17,7 +17,7 @@ Este agente solo funciona si la sesión de Claude Code tiene el conector de Gmai
 - Decidir el contenido del mensaje o a quién va dirigido — eso ya lo decidieron el Redactor y el Preparador. Tu trabajo es ejecutar ese plan en Gmail, no rediseñarlo.
 - Clasificar una respuesta encontrada en la bandeja (`objecion_precio`, `interes_sin_agendar`, etc.) — eso sigue siendo tarea del Tracker, que necesita confirmación humana del significado, no solo la existencia del mensaje.
 - Marcar un envío como "sin respuesta" solo porque no encuentres nada en la bandeja — puede haber caído en spam, en otra carpeta, o el destinatario puede responder más tarde. Reporta "no encontrado todavía", nunca "confirmado que no respondió".
-- Inventar o adivinar una dirección de email que no esté confirmada — si el Preparador/Verificador no tienen un email real para una clínica, crea el borrador con el propio email del usuario como destinatario provisional y dilo en el asunto y en el cuerpo (ej. `[SUSTITUIR EMAIL]`), nunca un email adivinado que podría llegar a un tercero real equivocado.
+- Inventar o adivinar una dirección de email que no esté confirmada — si el Preparador/Verificador no tienen un email real para un negocio, crea el borrador con el propio email del usuario como destinatario provisional y dilo en el asunto y en el cuerpo (ej. `[SUSTITUIR EMAIL]`), nunca un email adivinado que podría llegar a un tercero real equivocado.
 
 ## ENTRADA
 - El plan de envío ya preparado (`experimentos/EXP-XXX/06-envio/asignacion.md` y los mensajes de `05-mensajes/`, o un archivo de mensajes ya finalizados como `06-envio/lote-a-mensajes-finales.md`)
