@@ -50,9 +50,9 @@ En lugar de un único asistente conversacional (el alcance actual del MVP, ver `
 **Esto es una dirección de roadmap a largo plazo, no una revisión del alcance del MVP.** `FARO_TESIS_MVP_60DIAS.md` ya fija deliberadamente el alcance a 2 flujos (respuesta fuera de horario, confirmación de cita) y `FARO_ESTRATEGIA_MARCA.md` señala la disciplina de alcance como fuente de confianza ("no promete integrar el software de gestión dental... no promete un dashboard"). Ampliar a una familia de agentes antes de validar los 2 flujos iniciales contradice esa disciplina — ver Objeciones, punto 3.
 
 ### Ideas de producto derivadas (para el roadmap, no para el MVP actual)
-- **Marketplace de agentes**: una clínica activa únicamente los agentes que necesita, coherente con el pricing por escalones ya existente (START/GROW/OPS).
-- **Constructor de agentes**: cada clínica adapta los agentes a sus propios protocolos.
-- **Motor de evaluación**: comparar automáticamente tiempo ahorrado, errores evitados, retorno económico, satisfacción del paciente — esto conecta directamente con la recomendación de `FARO_MODELO_NEGOCIO.md` 1.2 de pasar de propuesta de valor "por proyección" a propuesta de valor "por evidencia propia".
+- **Marketplace de agentes**: un negocio activa únicamente los agentes que necesita, coherente con el pricing por escalones ya existente (START/GROW/OPS).
+- **Constructor de agentes**: cada negocio adapta los agentes a sus propios protocolos.
+- **Motor de evaluación**: comparar automáticamente tiempo ahorrado, errores evitados, retorno económico, satisfacción del cliente — esto conecta directamente con la recomendación de `FARO_MODELO_NEGOCIO.md` 1.2 de pasar de propuesta de valor "por proyección" a propuesta de valor "por evidencia propia".
 - **Biblioteca de procesos**: antes de crear un agente nuevo, modelar el proceso. El proceso es el activo; el agente es una implementación — mismo principio ya aplicado en `base_conocimiento/` del sistema multiagente interno.
 
 ## 8. Hipótesis a validar (no hechos)

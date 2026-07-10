@@ -32,8 +32,8 @@ La respuesta ya está parcialmente diseñada en `FARO_SISTEMA_MULTIAGENTE.md`: e
 
 En vez de proponer un "índice de resiliencia empresarial" o un "motor de activos" nuevo (que sería prematuro sin clientes reales — ver Objeciones), la aplicación inmediata es una pregunta de checklist que el Agente Estratega de `FARO_SISTEMA_MULTIAGENTE.md` debería hacerse explícitamente antes de recomendar escalar cualquier resultado positivo de un experimento:
 
-- ¿Este resultado depende de una sola clínica, un solo canal, o una sola persona (la fundadora)?
-- ¿El mensaje/canal que funcionó es reproducible con el mismo esfuerzo en el siguiente experimento, o fue un golpe de suerte con una clínica concreta?
+- ¿Este resultado depende de un solo negocio, un solo canal, o una sola persona (la fundadora)?
+- ¿El mensaje/canal que funcionó es reproducible con el mismo esfuerzo en el siguiente experimento, o fue un golpe de suerte con un negocio concreto?
 - ¿Qué parte del resultado se puede atribuir a `base_conocimiento/` acumulado (repetible) frente a una circunstancia irrepetible de ese caso?
 
 Esto conecta directamente con la lista de "activos potenciales de largo plazo" ya escrita en `FARO_AGENTES_VERTICALES.md` sección 10 y `FARO_MARCA_Y_MARGEN.md` sección 10: ambas ya advierten explícitamente que esos activos son candidatos a evaluar solo cuando haya clientes de pago reales. Este documento es el criterio para hacer esa evaluación cuando llegue el momento, no una tercera lista de activos especulativos que añadir.
@@ -49,7 +49,7 @@ Esto conecta directamente con la lista de "activos potenciales de largo plazo" y
 ## 7. Objeciones — por qué no tomar esto al pie de la letra
 
 1. **"Si genera ingresos rápidos, no es un negocio."** No necesariamente — algunas empresas empiezan con una oportunidad puntual y evolucionan hacia un modelo sostenible. Para FARO, el primer cliente piloto (ver checklist de `README.md`) probablemente será, en efecto, más una demostración que un proceso ya probado — eso no lo invalida, siempre que no se confunda uno con lo otro al decidir si escalar.
-2. **"La IA elimina la ventaja tecnológica."** La reduce, no la elimina — la calidad de integración con el flujo real de una clínica dental española y los datos propios acumulados siguen siendo diferenciales reales, no solo narrativa de marca.
+2. **"La IA elimina la ventaja tecnológica."** La reduce, no la elimina — la calidad de integración con el flujo real de una pyme de servicios leonesa y los datos propios acumulados siguen siendo diferenciales reales, no solo narrativa de marca.
 3. **Construir un "índice de resiliencia" o un "motor de riesgo" ahora sería prematuro.** Con cero clientes de pago, no hay datos de concentración de clientes, dependencia de canal, ni churn que medir — cualquier herramienta de este tipo mediría ruido, no señal. La aplicación correcta hoy es el criterio de la sección 5, no una construcción de software nueva.
 
 ## 8. Insight clave
