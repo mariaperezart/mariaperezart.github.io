@@ -4,6 +4,12 @@
 Automatización operativa por WhatsApp para clínicas dentales en España
 Fundadora: Gabriela · Fecha: julio 2026 · Versión 1.0
 
+> **Nota de pivote (ver `FARO_MODELO_NEGOCIO.md`, sección 1.1, y `FARO_ESTRATEGIA_MARCA.md`)**: este documento es el registro histórico de la tesis de validación original, centrada en un único vertical (clínicas dentales, mercado nacional). El ICP de FARO se ha ampliado desde entonces a pyme de servicios con agenda en la provincia de León (dental, veterinaria, fisioterapia/estética, peluquería, talleres, academias). Este documento **no se reescribe** porque su Parte 1 (TAM, competencia, por qué dental) es un análisis de mercado específico de ese vertical que dejaría de ser cierto si se sustituyera mecánicamente "clínica" por "negocio" — las cifras de TAM, la lista de competidores (PMS dentales) y el razonamiento de "por qué este segmento" solo aplican al mercado dental nacional tal como se investigó en su momento. Se conserva íntegro como evidencia de cómo se validó la primera versión de la tesis.
+>
+> Lo que **sí es reutilizable sin cambios** para el pivote (coherente con la decisión de "reutilizar infraestructura, cambiar el negocio"): toda la Parte 2 (arquitectura técnica — n8n, WhatsApp Business API, PostgreSQL, los tres flujos) es agnóstica de vertical, tal como ya señala `FARO_MODELO_NEGOCIO.md` sección 1.6 sobre la biblioteca de automatizaciones reutilizables.
+>
+> Lo que **no es reutilizable sin adaptación**: los prompts de OpenAI (2.3, 2.4), el email outbound (4.1), el script de llamada (4.2) y el checklist de onboarding (4.3) están redactados en vocabulario dental ("paciente", "gabinete", "urgencia dental", "Gesden/Clinic Cloud") — antes de usarlos con un cliente de otro vertical (veterinaria, peluquería, taller), deben adaptarse al vocabulario y los flujos de ese negocio concreto, siguiendo el mismo patrón pero sin asumir que el texto sirve tal cual. Este es, de hecho, el trabajo central de la Fase 8 (`FARO_BIBLIOTECA_AUTOMATIZACIONES.md`): documentar qué cambia y qué no cambia entre verticales.
+
 ---
 
 # PARTE 1 · TESIS DE NEGOCIO
