@@ -46,6 +46,7 @@ El script completo (apertura, diagnóstico, presentación acotada, cálculo de R
 - **"¿Cómo sé que esto no va a sonar robótico con mis pacientes?"** — *"Es la pregunta correcta. Por eso el sistema está diseñado para ser muy conservador: si no está seguro de qué contestar, no improvisa, avisa a tu equipo. Prefiere quedarse corto a arriesgarse a sonar mal."*
 - **"Necesito pensarlo / hablarlo con mi socio."** — *"Totalmente lógico. ¿Qué necesitarías ver o saber para poder decidir con tranquilidad? Si es un dato concreto de tu clínica, lo calculamos ahora mismo."* — esta respuesta convierte una objeción genérica en una necesidad específica que se puede resolver en la misma llamada, en vez de dejar la decisión en el aire.
 - **"¿Y si no funciona?"** — *"Por eso no hay permanencia mínima más allá del primer mes (ver `/precios`). Si en las primeras semanas ves que no aporta valor real, lo dejamos ahí sin coste adicional."*
+- **"No tenéis casos de éxito, ¿cómo sé que esto funciona?"** — objeción propia de la fase actual (cero clientes), ver manejo completo en la sección 13.
 
 ## 5. Propuesta comercial
 
@@ -80,6 +81,20 @@ El upsell no se plantea como objetivo comercial trimestral con presión de cuota
 ## 12. Referidos
 
 Dado el carácter gremial del sector dental español (colegios profesionales, asociaciones, contacto habitual entre propietarios de clínicas de una misma zona — ver Fase 2, Customer Journey), el referido es, potencialmente, el canal de menor coste de adquisición a partir del tercer o cuarto cliente satisfecho. El mecanismo es deliberadamente simple y no transaccional en el primer año: se pide la referencia de forma directa y personal en la revisión del mes 3-4 (*"¿conoces a algún otro propietario de clínica al que le pueda estar pasando algo parecido?"*), sin programa de incentivos económicos formal todavía — un incentivo monetario en una relación B2B de proximidad puede percibirse como transaccional y dañar la confianza que sostiene la referencia en primer lugar. Un programa de incentivos (descuento en la mensualidad por cliente referido que firme) se introduce en el roadmap solo a partir de que existan 10+ clientes activos y el mecanismo informal haya demostrado que ya funciona.
+
+## 13. Fase de clientes fundadores (mientras no exista ningún caso de éxito público)
+
+FARO no tiene todavía ningún cliente de pago (ver `FARO_NEGOCIO_SOSTENIBLE.md`, `/casos-de-exito`). Esto no se esconde en el proceso comercial — se declara, siguiendo el pilar de "honestidad de alcance" (`FARO_ESTRATEGIA_MARCA.md`): un prospecto que pregunta "¿a quién le ha funcionado esto?" en la discovery call merece una respuesta honesta, no evasiva. Esta sección define qué se ofrece a cambio mientras dura esta fase, sin contradecir la sección 7 (nunca descuento por defecto, nunca urgencia artificial).
+
+**Qué se ofrece a los primeros clientes:**
+
+- **Tarifa congelada, no descuento.** El precio de la Fase 2 (`FARO_MODELO_NEGOCIO.md`, sección 4) no cambia — no se ofrece un precio más bajo que a clientes futuros, porque eso sería exactamente el descuento por defecto que la sección 7 descarta. Lo que sí se ofrece: si el precio de lista sube más adelante (al añadir funcionalidad o ganar demanda validada), el cliente fundador mantiene el precio con el que entró mientras siga siendo cliente. Es una garantía hacia adelante, no una rebaja hacia atrás — no requiere tocar el pricing ya definido.
+- **Atención directa de la fundadora, no soporte escalado.** Con cero clientes en cartera, cada cliente fundador recibe implementación y revisión directamente de la fundadora, no de un proceso de soporte todavía por construir. Se comunica como lo que es — una ventaja real de ser de los primeros — no como una carencia a disculpar.
+- **A cambio, se pide permiso explícito para publicar el resultado.** En la llamada de kickoff de onboarding (sección 8), se pide autorización para, si el resultado es positivo a los 60-90 días, publicarlo con nombre real en `/casos-de-exito` (plantilla ya definida en `FARO_WEB_COPY.md`, sección 6). Si el cliente prefiere mantenerlo anónimo o no autoriza publicarlo, se respeta sin que afecte al servicio — pero se pide la conversación de forma explícita en vez de asumir el permiso por defecto.
+
+**Objeción de esta fase, manejo completo** (referenciada desde la sección 4): *"No tenéis casos de éxito, ¿cómo sé que esto funciona?"* — *"Tienes razón, sois de las primeras clínicas con las que trabajamos, y no te lo voy a esconder. Lo que sí puedo ofrecerte es que, al ser de las primeras, tienes atención mía directa desde el primer día — no un proceso de soporte todavía por rodar — y el cálculo de ROI que acabamos de hacer con tus números reales, no con los de otra clínica. Si en las primeras semanas ves que no aporta valor, no hay permanencia (ver `/precios`)."*
+
+**Cuándo termina esta fase.** No es una fecha, es un hito: cuando exista al menos un caso de éxito real y publicado en `/casos-de-exito`. Siguiendo el criterio de `FARO_NEGOCIO_SOSTENIBLE.md` sobre distinguir un ingreso puntual de un proceso repetible, lo ideal es esperar al 2º o 3er cliente satisfecho, no publicar y cerrar la fase con uno solo. A partir de ahí, el proceso comercial vuelve a apoyarse en prueba social real en lugar de en la transparencia sobre no tenerla todavía — y es también el momento en que, según la sección 12, se empieza a considerar un programa formal de referidos.
 
 ---
 

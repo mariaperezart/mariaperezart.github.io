@@ -178,6 +178,8 @@ Marta no busca "un chatbot" ni "más tecnología" — de hecho, ha rechazado ant
 
 El fee de setup no es un ítem de beneficio para FARO — es un filtro de compromiso y una cobertura del coste real de las primeras horas de implementación, que no deben subsidiarse con el margen de la suscripción desde el primer mes.
 
+**Mientras no exista ningún cliente de pago**, este pricing no cambia — ver `FARO_PROCESO_COMERCIAL.md` sección 13 (Fase de clientes fundadores) para qué se ofrece a los primeros clientes sin tocar estos precios ni recurrir a descuentos.
+
 ---
 
 ## 5. MVP — por qué no un SaaS

@@ -172,11 +172,14 @@ Tarjetas hacia las 3 sub-páginas, cada una con el titular de dolor + un dato de
 
 **Implementación inicial**: 300€ (pago único, todos los planes) — cubre la configuración de tu WhatsApp Business, la primera automatización activa y las pruebas antes de ponerla en marcha con pacientes reales.
 
+**Nota de clientes fundadores** (mientras no exista ningún caso de éxito público, ver `FARO_PROCESO_COMERCIAL.md` sección 13): *Eres de las primeras clínicas con las que trabajamos: el precio no cambia respecto al de arriba, pero si más adelante sube para clientes nuevos, el tuyo queda congelado mientras sigas con nosotros — y la implementación la llevas directamente con la fundadora, no con un proceso de soporte todavía por rodar.* Retirar esta nota en cuanto se cierre la fase de clientes fundadores (hito definido en esa misma sección, no una fecha).
+
 ### Objeciones de precio (acordeón)
 
 - **¿Por qué suscripción y no un pago único?** Porque el trabajo no termina en la implementación. Cada mes revisamos qué está funcionando y qué se puede mejorar — igual que un gestor no te hace la contabilidad de un año y desaparece.
 - **¿Hay permanencia mínima?** No. Si en cualquier momento decides que no te aporta valor, puedes darte de baja sin penalización a partir del segundo mes.
 - **¿Qué pasa si necesito algo que no está en el catálogo?** Lo hablamos en la sesión de optimización y te decimos con honestidad si encaja en tu plan actual o si requiere un desarrollo aparte.
+- **No tenéis casos de éxito, ¿cómo sé que esto funciona?** *(retirar cuando se cierre la fase de clientes fundadores)* Tienes razón, sois de las primeras clínicas con las que trabajamos, y no te lo vamos a esconder. A cambio, tienes atención directa de la fundadora desde el primer día y un cálculo de ROI hecho con tus números reales, no con los de otra clínica. Y como no hay permanencia, si en las primeras semanas ves que no aporta valor, lo dejamos ahí.
 
 **CTA**: Agenda tu diagnóstico gratuito antes de decidir → `/diagnostico`
 
