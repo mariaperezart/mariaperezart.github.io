@@ -1,0 +1,134 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Segundo caso del vertical de podología (expansión
+  del dataset).
+
+  Ángulo: especialización por etapas de vida (infantil, deportiva,
+  diabética, geriátrica) como estructura de la landing, en vez de un
+  catálogo técnico genérico -- cada perfil de paciente ve su propia
+  sección.
+
+  Datos públicos confirmados (ver informe-auditoria.html): C/
+  República Argentina 11, 2º, León · Tel. 987 26 41 30 · Vanessa
+  Robles Dorado, Universidad Complutense de Madrid.
+
+  Identidad visual: verde azulado + terracota -- clínico y cercano --
+  distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Podológica Vanessa — Un plan para cada etapa, León</title>
+<meta name="description" content="Clínica Podológica Vanessa, C/ República Argentina 11, León. Podología infantil, deportiva, diabética y geriátrica, con nutrición integrada.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #EFF5F6; --color-surface: #FFFFFF; --color-ink: #17262A; --color-ink-muted: #4C6165;
+    --color-primary: #1E5C6B; --color-accent: #E38B5D; --color-border: #D9E7E9;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(30,92,107,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #0D1618; --color-surface: #182124; --color-ink: #E4EEEF; --color-ink-muted: #A2BABD; --color-border: #263639; }
+  }
+  :root[data-theme="dark"] { --color-bg: #0D1618; --color-surface: #182124; --color-ink: #E4EEEF; --color-ink-muted: #A2BABD; --color-border: #263639; }
+  :root[data-theme="light"] { --color-bg: #EFF5F6; --color-surface: #FFFFFF; --color-ink: #17262A; --color-ink-muted: #4C6165; --color-border: #D9E7E9; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .stages { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 860px) { .stages { grid-template-columns: repeat(2, 1fr); } }
+  .stage { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 22px 16px; text-align: center; box-shadow: var(--shadow-card); }
+  .stage .icon { font-size: 34px; margin-bottom: 8px; }
+  .stage h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 15px; }
+  .stage p { margin: 0; font-size: 12px; }
+
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Clínica Vanessa</span>
+    <nav><a class="call" href="tel:+34987264130">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">C/ República Argentina 11, León</span>
+      <h1>Un plan de podología distinto para cada etapa de la vida.</h1>
+      <p>Vanessa Robles Dorado, graduada por la Universidad Complutense de Madrid, experta en cirugía del antepié — con nutrición integrada para el cuidado completo del pie.</p>
+      <div class="hero-actions">
+        <a class="btn btn--primary" href="tel:+34987264130">📞 987 26 41 30</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro"><h2>¿En qué etapa estás?</h2></div>
+      <div class="stages">
+        <div class="stage"><div class="icon">👶</div><h4>Infantil</h4><p>Primera visita a los 4-5 años.</p></div>
+        <div class="stage"><div class="icon">🏃</div><h4>Deportiva</h4><p>Estudio de la pisada y plantillas.</p></div>
+        <div class="stage"><div class="icon">💉</div><h4>Diabética</h4><p>Cuidado especializado + nutrición.</p></div>
+        <div class="stage"><div class="icon">👵</div><h4>Geriátrica</h4><p>Revisiones periódicas.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro"><h2>Nuestros servicios</h2></div>
+      <div class="services">
+        <div class="service"><h4>Ortopodología</h4><p>Plantillas a medida, ortesis de silicona.</p></div>
+        <div class="service"><h4>Quiropodia</h4><p>Cuidados generales del pie.</p></div>
+        <div class="service"><h4>Estudio de la pisada</h4><p>Diagnóstico biomecánico.</p></div>
+        <div class="service"><h4>Uña encarnada</h4><p>Tratamiento específico.</p></div>
+        <div class="service"><h4>Lámpara de Wood</h4><p>Diagnóstico dermatológico.</p></div>
+        <div class="service"><h4>Nutrición</h4><p>Con Sergio Díez Álvarez.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Clínica Podológica Vanessa — C/ República Argentina 11, León · 987 26 41 30</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar.</p>
+</footer>
+
+</body>
+</html>

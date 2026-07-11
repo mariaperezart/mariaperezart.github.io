@@ -1,0 +1,228 @@
+<!--
+  Informe de auditoría — Clínica Podológica Vanessa (C/ República
+  Argentina 11, 2º, León). Segundo caso del vertical de podología,
+  expansión del dataset. Auditado con los tres skills operativos
+  completos, a partir de una investigación con navegación directa
+  hecha por el usuario fuera de esta sesión.
+
+  Datos confirmados por navegación directa:
+  - Dirección: C/ República Argentina 11, 2º, 24006 León (centro). ✅ Teléfono: 987 26 41 30 · Email: info@podologovanessa.com. ✅
+  - Web: podologovanessa.com. ✅
+  - Directora: Vanessa Robles Dorado -- Graduada en Podología por la Universidad Complutense de Madrid, Experto en Médico-Quirúrgica del Antepie. ✅
+  - Horario: L y X 09:30-13:00/15:30-19:30; M, J y V 09:30-16:30 (jornada intensiva). ✅
+  - Especialización por poblaciones: podología infantil (primera visita recomendada a los 4-5 años), geriátrica, deportiva, diabética. ✅
+  - Servicios técnicos: ortopodología (plantillas a medida, ortesis de silicona), quiropodia, tratamientos dérmicos, estudio de la pisada, uña encarnada, lámpara de Wood. ✅
+  - Nutrición integrada: Sergio Díez Álvarez (nutrición clínica, deportiva, obesidad, asesoramiento farmacéutico). ✅
+  - Sin cifra de reseñas confirmada en la investigación disponible. 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Podológica Vanessa</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1E5C6B; --color-accent: #E38B5D; --color-ink: #17262A;
+    --color-bg: #EFF5F6; --color-white: #FFFFFF; --color-success: #2F7A6F; --color-alert: #B4453A;
+    --color-border: #D9E7E9; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7BC3D3; --color-accent: #F0AC7E; --color-ink: #E4EEEF;
+      --color-bg: #101B1D; --color-white: #1B2528; --color-success: #7ADAC7; --color-alert: #E08579;
+      --color-border: #2A3B3E70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7BC3D3; --color-accent: #F0AC7E; --color-ink: #E4EEEF;
+    --color-bg: #101B1D; --color-white: #1B2528; --color-success: #7ADAC7; --color-alert: #E08579;
+    --color-border: #2A3B3E70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1E5C6B; --color-accent: #E38B5D; --color-ink: #17262A;
+    --color-bg: #EFF5F6; --color-white: #FFFFFF; --color-success: #2F7A6F; --color-alert: #B4453A;
+    --color-border: #D9E7E9; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #E4F0F1; border: 1px solid #BEDBDD; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Podológica Vanessa</p>
+  <h1>Tenéis un plan distinto para cada etapa de la vida. La web no lo cuenta así.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de podologovanessa.com hecha fuera de esta sesión (WebFetch propio sigue en 403). Lo que esa investigación no pudo confirmar (cifra de reseñas, precios) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Vanessa Robles Dorado, graduada en Podología por la Universidad Complutense de Madrid y experta en cirugía médica del antepié, dirige una clínica con un enfoque poco común en el vertical: especialización explícita por etapas de vida (infantil, deportiva, diabética, geriátrica), con nutrición integrada (Sergio Díez Álvarez). Horario flexible con jornada intensiva tres días a la semana. El reto es que esa especialización tan clara por población no está necesariamente comunicada como tal — cada perfil de paciente (un niño de 4 años, un diabético, un deportista, una persona mayor) podría tener su propio mensaje, y hoy probablemente comparten el mismo catálogo genérico de servicios.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Formación académica sólida y verificable: Universidad Complutense de Madrid + Experto en Médico-Quirúrgica del Antepie. ✅</li>
+      <li>Especialización explícita por etapas de vida: infantil (primera visita a los 4-5 años), deportiva, diabética, geriátrica. ✅</li>
+      <li>Nutrición integrada con un segundo profesional (Sergio Díez Álvarez) — combina cuidado del pie con alimentación, relevante sobre todo para pacientes diabéticos. ✅</li>
+      <li>Catálogo técnico completo: ortopodología, quiropodia, estudio de la pisada, lámpara de Wood para diagnóstico dermatológico. ✅</li>
+      <li>Horario flexible con jornada intensiva tres días a la semana — se adapta a quien no puede partir el día. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Directora</th><td>Vanessa Robles Dorado — Graduada en Podología (Universidad Complutense de Madrid), Experto en Médico-Quirúrgica del Antepie</td></tr>
+    <tr><th>Dirección</th><td>C/ República Argentina 11, 2º, 24006 León (centro)</td></tr>
+    <tr><th>Contacto</th><td>987 26 41 30 · info@podologovanessa.com</td></tr>
+    <tr><th>Horario</th><td>Lunes y miércoles 09:30-13:00/15:30-19:30 · Martes, jueves y viernes 09:30-16:30 (jornada intensiva)</td></tr>
+    <tr><th>Especialización</th><td>Podología infantil, geriátrica, deportiva y diabética, con nutrición integrada</td></tr>
+    <tr><th>Servicios técnicos</th><td>Ortopodología, quiropodia, tratamientos dérmicos, estudio de la pisada, lámpara de Wood</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "podólogo diabético León" o "podólogo infantil León" — un tipo de búsqueda muy específica, distinta de "podólogo León" genérico.</p>
+    <p><strong>Leo</strong> el catálogo de servicios — si está organizado por tipo de tratamiento (ortopodología, quiropodia) en vez de por perfil de paciente, tengo que interpretar cuál me corresponde.</p>
+    <p><strong>Busco</strong> si hay algo específico para mi caso (diabetes, niño pequeño, deportista) — si lo encuentro con claridad, confío más que si tengo que deducirlo de un catálogo técnico general.</p>
+    <p><strong>Decido</strong> en función de si veo mi situación concreta reflejada, no solo una lista de tratamientos con nombres técnicos.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La especialización por etapas de vida es un diferenciador real, sin confirmar si organiza el mensaje principal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Vanessa ofrece podología infantil, deportiva, diabética y geriátrica de forma explícita — pero no está confirmado si la web organiza el contenido por estos perfiles o por tipo de tratamiento técnico.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un padre buscando la primera revisión de su hijo, o un paciente diabético que necesita cuidado especializado, decide más rápido si ve su situación reflejada directamente, no si tiene que interpretar un catálogo de "ortopodología" y "quiropodia".</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web tiene secciones por perfil de paciente (familias, deportistas, diabéticos, mayores); si no, es el cambio de mayor impacto potencial de este informe.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce el esfuerzo de interpretación del paciente y aumenta la sensación de "esto es justo para mí".</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La nutrición integrada es especialmente relevante para el segmento diabético, sin confirmar si se comunica junto a ese servicio</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Sergio Díez Álvarez ofrece nutrición clínica y para diabetes dentro del mismo centro — una combinación con sentido clínico real para el paciente diabético, que necesita cuidado del pie y control de la alimentación a la vez.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si esa combinación no se comunica junto al servicio de podología diabética específicamente, se pierde el argumento más fuerte para ese segmento de pacientes.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la página de podología diabética menciona la nutrición integrada como parte del mismo cuidado.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte dos servicios independientes en un argumento de cuidado integral para el paciente diabético, un segmento de alto valor clínico.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Precios diferenciados por segmento:</strong> la especialización poblacional permite justificar precios distintos — podología infantil (precio familiar), deportiva (precio premium), diabética (posible convenio con mutuas).</li>
+      <li style="margin-bottom:10px;"><strong>La formación académica como activo de autoridad:</strong> Complutense + experto en cirugía del antepié es una credencial fuerte, poco explotada si no aparece de forma prominente.</li>
+      <li style="margin-bottom:0;"><strong>Horario intensivo como ventaja competitiva</strong> frente a clínicas con horario partido todos los días.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Plan Infantil Vanessa":</strong> primera visita a los 4-5 años + revisiones semestrales + educación parental — fidelización temprana de familias.</li>
+      <li style="margin-bottom:10px;"><strong>"Pack Deportista Vanessa":</strong> estudio de la pisada + plantillas + podología deportiva + nutrición deportiva, precio premium.</li>
+      <li style="margin-bottom:0;"><strong>"Plan Diabético Vanessa":</strong> revisiones mensuales + nutrición + coordinación implícita con el endocrinólogo del paciente.</li>
+    </ul>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">Especialización real y explícita por etapas de vida, poco común en el resto del vertical auditado.</td></tr>
+    <tr><td>Autoridad</td><td class="num">7/10</td><td class="why">Formación académica verificable (Complutense, experto en antepié).</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td><td class="why">Horario flexible y catálogo técnico claro, sin confirmar precios.</td></tr>
+    <tr><td>Prueba social</td><td class="num pending">Pendiente</td><td class="why">Sin cifra de reseñas confirmada en la investigación disponible.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si el mensaje se organiza por perfil de paciente.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay fotos reales del equipo.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">19/30</span><span class="label">Suma de las 3 dimensiones con evidencia directa ÷ 30 × 100 = 63/100 sobre esas 3. Las 9 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si la web organiza el contenido por perfil de paciente (familias, deportistas, diabéticos, mayores) o solo por tratamiento técnico.</li>
+      <li>Vincular la nutrición de Sergio Díez Álvarez al mensaje de podología diabética específicamente.</li>
+      <li>Destacar la formación de Vanessa Robles Dorado (Complutense, experto en antepié) en el bloque principal.</li>
+      <li>Navegar la web real y Google Business Profile para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (mensaje organizado por tratamiento, no por perfil) → secciones específicas por tipo de paciente.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (nutrición diabética sin vincular) → mensaje conjunto para el segmento diabético.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real para completar la Puntuación FARO.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis un enfoque distinto para cada etapa de la vida -- niños, deportistas, diabéticos, mayores -- con formación académica real detrás. Os dejamos un informe honesto sobre cómo hacer que cada persona vea su situación reflejada, en vez de un catálogo técnico genérico."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que cada paciente encuentre su propio reflejo más rápido.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Tercer caso del vertical de podología (expansión
+  del dataset). Datos muy limitados -- landing deliberadamente simple,
+  centrada solo en el diferenciador confirmado (visita a domicilio
+  gratuita), sin inventar contenido sobre lo que no se sabe.
+
+  Datos públicos confirmados (ver informe-auditoria.html): C/ Germán
+  Alonso 2, León · Tel. 987 44 08 28 · visita a domicilio gratuita.
+
+  Identidad visual: verde bosque + terracota -- cercano, de confianza
+  -- distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dra. Nerea Ortega — Podología a domicilio, León</title>
+<meta name="description" content="Clínica de Podología Dra. Nerea Ortega, León. Visita a domicilio gratuita para quien no puede desplazarse.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F1F5F1; --color-surface: #FFFFFF; --color-ink: #1B2420; --color-ink-muted: #52604F;
+    --color-primary: #3E6B4F; --color-accent: #C77B4E; --color-border: #DDE6DC;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(62,107,79,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #101810; --color-surface: #1B241C; --color-ink: #E6EFE7; --color-ink-muted: #AEC2AC; --color-border: #2C3B2E; }
+  }
+  :root[data-theme="dark"] { --color-bg: #101810; --color-surface: #1B241C; --color-ink: #E6EFE7; --color-ink-muted: #AEC2AC; --color-border: #2C3B2E; }
+  :root[data-theme="light"] { --color-bg: #F1F5F1; --color-surface: #FFFFFF; --color-ink: #1B2420; --color-ink-muted: #52604F; --color-border: #DDE6DC; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 40px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 700px; margin: 0 auto; padding: 0 24px; }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0; text-align: center; }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; background: var(--color-primary); color: #fff; margin-top: 8px; }
+
+  .home-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 28px; box-shadow: var(--shadow-card); margin-top: 32px; text-align: left; }
+  .home-card .icon { font-size: 40px; margin-bottom: 10px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Dra. Nerea Ortega</span>
+    <nav><a class="call" href="tel:+34987440828">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container">
+      <span class="eyebrow">Podología en León</span>
+      <h1>¿No puedes desplazarte? Voy yo. Gratis.</h1>
+      <p>Visita a domicilio gratuita para quien tiene dificultades para moverse — sin coste añadido por venir a tu casa.</p>
+      <a class="btn" href="tel:+34987440828">📞 987 44 08 28</a>
+
+      <div class="home-card">
+        <div class="icon">🏠</div>
+        <h3 style="margin:0 0 6px; font-family:var(--font-display); font-size:18px;">Cuidado del pie, sin salir de casa</h3>
+        <p style="margin:0;">Ideal para mayores, personas con movilidad reducida, o quien simplemente prefiere que la consulta venga a ellos.</p>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Dra. Nerea Ortega — C/ Germán Alonso 2, León · 987 44 08 28</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública muy limitada — pendiente de validar con el negocio antes de publicar. El alcance exacto del servicio de domicilio (zona, condiciones) está por confirmar.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!--
+  Informe de auditoría — Clínica Wecoco (C/ Padre Isla 38, León).
+  Primer caso del vertical de podología, dentro de la expansión del
+  dataset más allá de los 18 negocios originales de EXP-003. Auditado
+  con los tres skills operativos completos, a partir de una
+  investigación con navegación directa hecha por el usuario fuera de
+  esta sesión.
+
+  Nota de encuadre: Wecoco no es una clínica de podología pura -- es
+  un centro de salud multidisciplinar (10+ profesionales: nutrición,
+  psicología, fisioterapia, neuropsicología, matrona, logopedia,
+  terapia ocupacional, gimnasio) donde la podología es uno de los
+  servicios. Se audita como caso del vertical de podología porque así
+  se identificó en la búsqueda original, pero el hallazgo principal es
+  precisamente esa amplitud.
+
+  Datos confirmados por navegación directa:
+  - Dirección: C/ Padre Isla 38, 24002 León (centro). ✅ Teléfono: 987 38 22 66 · Email: hola@clinicawecoco.com. ✅
+  - Web: clinicawecoco.com -- blog activo, testimonios reales, buen diseño. ✅
+  - Registro Sanitario: 24-C22-0492. ✅
+  - Equipo de 10+ profesionales, formación de alto nivel documentada (másteres, dobles titulaciones) -- la fisioterapeuta-podóloga tiene doble titulación (fisioterapia + podología) y tres másteres distintos. ✅
+  - Servicios: podología, nutrición (3 nutricionistas con distintas especialidades), fisioterapia, psicología general y neuropsicología, terapia ocupacional, logopedia, matrona (obstetricia + yoga pre/postnatal), gimnasio propio (Gym Wecoco). ✅
+  - Parking Renueva con descuento para pacientes. ✅
+  - 3 testimonios reales y detallados en la propia web, con nombre y apellidos. ✅
+  - Presencia en Doctoralia y prensa local (La Nueva Crónica). ✅
+  - Equipo 100% femenino (según fuentes consultadas). 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Wecoco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #6B3F73; --color-accent: #E0A458; --color-ink: #241E27;
+    --color-bg: #F6F1F5; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #EBDDE9; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #D6A6DC; --color-accent: #F0BC7C; --color-ink: #F0E6EF;
+      --color-bg: #1C161C; --color-white: #272029; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #3D2E3B70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #D6A6DC; --color-accent: #F0BC7C; --color-ink: #F0E6EF;
+    --color-bg: #1C161C; --color-white: #272029; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #3D2E3B70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #6B3F73; --color-accent: #E0A458; --color-ink: #241E27;
+    --color-bg: #F6F1F5; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #EBDDE9; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #F0E5EF; border: 1px solid #DFC3DB; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Wecoco</p>
+  <h1>No sois solo podología. Sois diez especialidades de salud bajo un mismo techo, con parking incluido.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de clinicawecoco.com hecha fuera de esta sesión (WebFetch propio sigue en 403). Lo que esa investigación no pudo confirmar (precios, cifra de reseñas en Google) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Wecoco no encaja del todo en la etiqueta "clínica de podología" con la que se identificó este caso — es un centro de salud multidisciplinar con más de 10 profesionales: podología, nutrición (tres especialistas distintas), fisioterapia, psicología general y neuropsicología, terapia ocupacional, logopedia, matrona, y hasta un gimnasio propio. La profesional que atiende podología tiene doble titulación (fisioterapia + podología) y tres másteres — una formación excepcional. A eso se suma parking con descuento y tres testimonios reales muy detallados en la propia web. El reto no es la falta de sustancia — es que la amplitud del centro podría no estar comunicada como la ventaja que realmente es: no vienes solo por un pie, puede resolver mucho más en el mismo sitio.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Equipo multidisciplinar real: 10+ profesionales con formación documentada (másteres, dobles titulaciones), no solo un listado de servicios. ✅</li>
+      <li>La especialista en podología tiene doble titulación (fisioterapia + podología) y tres másteres — permite ver la conexión entre pisada y el resto del cuerpo, no solo el pie de forma aislada. ✅</li>
+      <li>Parking Renueva con descuento — resuelve una fricción real de acceso al centro de León. ✅</li>
+      <li>Tres testimonios reales, detallados y con nombre, en la propia web — no genéricos. ✅</li>
+      <li>Blog activo, presencia en Doctoralia y prensa local. ✅</li>
+      <li>Registro Sanitario confirmado (24-C22-0492) — señal de cumplimiento normativo verificable. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Clínica Wecoco</td></tr>
+    <tr><th>Dirección</th><td>C/ Padre Isla 38, 24002 León (centro)</td></tr>
+    <tr><th>Contacto</th><td>987 38 22 66 · hola@clinicawecoco.com</td></tr>
+    <tr><th>Registro Sanitario</th><td>24-C22-0492</td></tr>
+    <tr><th>Especialidades</th><td>Podología, nutrición (3 especialistas), fisioterapia, psicología general, neuropsicología, terapia ocupacional, logopedia, matrona, gimnasio propio</td></tr>
+    <tr><th>Diferenciador</th><td>Ecosistema de salud integral bajo un mismo techo, con derivación interna entre especialidades</td></tr>
+    <tr><th>Accesibilidad</th><td>Parking Renueva con descuento para pacientes</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "podólogo León" — llego a Wecoco sin saber, de entrada, que también hay nutrición, fisioterapia, psicología y gimnasio en el mismo sitio.</p>
+    <p><strong>Leo</strong> los testimonios — muy específicos, mencionan varios servicios distintos ("fui a fisio, a la podóloga, a la nutricionista y también a la psicóloga") — señal real de que la gente sí usa varios servicios a la vez.</p>
+    <p><strong>Dudo</strong> si vengo solo por el pie o si me interesa saber qué más ofrecen — depende de si el mensaje principal comunica la amplitud del centro desde el primer segundo.</p>
+    <p><strong>Decido</strong> en función de si veo con claridad que un problema de pisada, por ejemplo, podría conectarse con una consulta de fisioterapia en el mismo lugar, sin tener que buscarlo por separado.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La multidisciplinariedad es un activo de conversión real, sin confirmar si domina el mensaje de entrada</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Los tres testimonios reales mencionan haber usado varios servicios distintos del centro (fisioterapia, podología, nutrición, psicología) — evidencia real de derivación interna entre especialidades, no solo una promesa de marketing.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Alguien que busca solo "podólogo León" puede no enterarse de la amplitud del centro si el mensaje principal se centra únicamente en el pie — perdiendo la oportunidad de convertir una visita puntual en una relación con varios servicios.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la página de podología enlaza de forma visible al resto de especialidades, con casos reales de derivación (como los que ya aparecen en los testimonios).</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una visita por un solo servicio en la puerta de entrada a un ecosistema completo, sin coste adicional de captación.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La doble titulación de la podóloga es una credencial fuerte, sin confirmar si se comunica en el bloque de podología</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La profesional que atiende podología tiene formación en fisioterapia y podología, más tres másteres distintos — una combinación poco común que permite tratar el pie en conexión con el resto del cuerpo.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si esa credencial no aparece junto al servicio de podología específicamente, un paciente que compara podólogos en León no tiene forma de distinguir esa formación superior de la de cualquier otro centro.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la página de podología muestra la formación completa de la profesional, no solo su nombre.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una credencial real en el argumento de autoridad específico del servicio de podología, no solo del centro en general.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Modelo altamente escalable:</strong> el centro multidisciplinar + gimnasio es replicable en otras ciudades de Castilla y León, si el negocio quisiera crecer.</li>
+      <li style="margin-bottom:10px;"><strong>Equipo 100% femenino como posible diferenciador de marca</strong> (sin confirmar si es intencional) — valdría la pena preguntarlo directamente antes de proponerlo como mensaje.</li>
+      <li style="margin-bottom:0;"><strong>La podóloga con doble titulación como rostro visible</strong> de esa especialidad concreta, sin diluirla entre el resto del equipo.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Wecoco Integral":</strong> revisión podológica + estudio de pisada + sesión de fisioterapia + plan nutricional, empaquetado con precio único.</li>
+      <li style="margin-bottom:10px;"><strong>"Wecoco Deporte":</strong> podología deportiva + fisioterapia + nutrición deportiva + entrenamiento personal, dirigido a deportistas de León.</li>
+      <li style="margin-bottom:0;"><strong>"Wecoco Embarazo":</strong> matrona + podología (edemas, varices) + yoga prenatal + nutrición, como programa específico.</li>
+    </ul>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">8/10</td><td class="why">Modelo multidisciplinar real, con evidencia de derivación interna entre especialidades, único en el vertical auditado.</td></tr>
+    <tr><td>Prueba social</td><td class="num">7/10</td><td class="why">Tres testimonios reales, detallados y con nombre — de los mejores del dataset en calidad, aunque volumen no confirmado.</td></tr>
+    <tr><td>Autoridad</td><td class="num">7/10</td><td class="why">Formación documentada de todo el equipo, con másteres y dobles titulaciones.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">6/10</td><td class="why">Teléfono y email confirmados, parking con descuento resuelve fricción de acceso.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la amplitud del centro se comunica desde el primer bloque.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay fotos reales del equipo.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay precios publicados.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar (WhatsApp)</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar entre las distintas páginas de especialidad.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">28/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 70/100 sobre esas 4 — la nota más alta de las cuatro clínicas de podología auditadas. Las 9 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si la página de podología enlaza con claridad al resto de especialidades del centro.</li>
+      <li>Añadir la formación completa de la podóloga (doble titulación, másteres) junto al servicio de podología específicamente.</li>
+      <li>Confirmar si la reputación en Google (cifra no disponible en esta investigación) está publicada; si es sólida, subirla al bloque principal.</li>
+      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (amplitud del centro poco comunicada) → enlaces cruzados visibles entre especialidades.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (credencial de la podóloga sin destacar) → formación completa junto al servicio de podología.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real y Google Business Profile para completar la Puntuación FARO.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Sois el único centro de este dataset donde un problema de pie puede conectarse en el mismo sitio con fisioterapia, nutrición o psicología, con testimonios reales que lo demuestran. Os dejamos un informe honesto sobre cómo hacer que esa amplitud se vea desde el primer segundo."</p>
+    <p style="margin-bottom:0;">No proponemos añadir servicios — ya los tenéis. Proponemos contarlos como una sola historia de salud integral, no como una lista de especialidades sueltas.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

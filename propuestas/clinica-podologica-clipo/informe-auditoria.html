@@ -1,0 +1,122 @@
+<!--
+  Informe de auditoría — Clínica Podológica Clipo (Av. Ordoño II 32,
+  León). Cuarto y último caso del vertical de podología, cierra esta
+  expansión del dataset. Flujo estándar faro-auditor-conversion (no
+  board-of-advisors/offer-architect -- datos demasiado limitados).
+
+  Datos confirmados por la investigación disponible:
+  - Dirección: Av. Ordoño II 32, 24001 León (centro). ✅ Teléfono: 653 82 54 60. ✅
+  - Web propia (clinicapodologicaclipo.com) dio ERROR durante la investigación -- no se pudo navegar ni confirmar si es un fallo puntual o persistente. 🔴
+  - Presencia confirmada en QDQ y Google Business/Maps (sin cifra de valoración disponible). ✅
+  - "Instalaciones modernas" mencionado en fuentes externas, sin más detalle. 🟡
+  - Sin catálogo de servicios, horario, ni nombre de profesional identificado en la investigación disponible. 🔴
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Podológica Clipo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #4A5A6B; --color-accent: #D98E4C; --color-ink: #1D242B;
+    --color-bg: #F2F4F6; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DEE3E8; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #9AAABE; --color-accent: #EDAD70; --color-ink: #E6EAEF;
+      --color-bg: #12161B; --color-white: #1C2129; --color-success: #7CC79E; --color-alert: #E08579;
+      --color-border: #2E353F70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #9AAABE; --color-accent: #EDAD70; --color-ink: #E6EAEF;
+    --color-bg: #12161B; --color-white: #1C2129; --color-success: #7CC79E; --color-alert: #E08579;
+    --color-border: #2E353F70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #4A5A6B; --color-accent: #D98E4C; --color-ink: #1D242B;
+    --color-bg: #F2F4F6; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DEE3E8; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 26px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-alert); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Podológica Clipo</p>
+  <h1>Antes de hablar de conversión: vuestra web dio un error al intentar visitarla.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este es el caso con menos evidencia de todo el dataset. clinicapodologicaclipo.com dio error durante la investigación disponible (hecha fuera de esta sesión) — no se pudo confirmar si es un fallo puntual o un problema persistente. Sin acceso a la web, no se puede evaluar casi ninguna de las 13 dimensiones de la Puntuación FARO — este informe se limita al único hallazgo real disponible.</p>
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Clínica Clipo está en Av. Ordoño II 32, una de las direcciones más céntricas del vertical de podología auditado, con teléfono confirmado y presencia en QDQ y Google. El dato más importante de este informe no es sobre diseño ni mensaje — es que la web propia no cargó durante la investigación. Si eso es un problema recurrente, cualquier cliente que busque "podólogo Ordoño II León" y haga clic en el resultado se encuentra con lo mismo: una página que no funciona.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La web propia no es accesible — antes de cualquier otra mejora, esto es lo urgente</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>clinicapodologicaclipo.com dio error durante la investigación — no se ha podido confirmar si es un fallo temporal (dominio caducado, problema de hosting) o algo puntual del momento de la consulta.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si el problema es persistente, cada clic desde Google a la web es una cita perdida — no importa lo buena que sea la clínica si la puerta de entrada digital no abre. Es, con diferencia, el problema de mayor impacto posible en cualquier negocio de este dataset.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar cuanto antes si la web sigue caída, y si es así, resolverlo con prioridad absoluta antes de pensar en cualquier otra mejora de diseño o mensaje.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Recupera el acceso a cualquier cliente que llegue por búsqueda directa — probablemente el cambio de mayor impacto posible en este negocio, y el más urgente.</p></div>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si la web sigue caída, y resolverlo con prioridad absoluta.</li>
+      <li>Una vez accesible, auditar el resto de dimensiones (mensaje, catálogo, reseñas) con navegación directa.</li>
+      <li>Mientras tanto, confirmar que Google Business Profile tiene datos correctos (teléfono, horario), como vía de contacto de respaldo.</li>
+    </ol>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Antes de hablar de mensaje, diseño o conversión, hay algo más urgente: vuestra web no cargó cuando la buscamos. Si eso le pasa también a un cliente real, es la pérdida de negocio más silenciosa y más grave que puede tener cualquier clínica."</p>
+    <p style="margin-bottom:0;">No proponemos un rediseño todavía — proponemos confirmar primero si la puerta de entrada digital está abierta.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

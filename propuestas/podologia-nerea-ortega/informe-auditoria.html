@@ -1,0 +1,135 @@
+<!--
+  Informe de auditoría — Clínica de Podología Dra. Nerea Ortega (C/
+  Germán Alonso 2, León). Tercer caso del vertical de podología,
+  expansión del dataset. Flujo estándar faro-auditor-conversion (no
+  board-of-advisors/offer-architect -- datos demasiado limitados para
+  hipótesis de peso, se reserva para casos con más evidencia).
+
+  Datos confirmados por la investigación disponible (directorios, sin
+  navegación directa -- no se identificó web propia):
+  - Dirección: C/ Germán Alonso 2, 24001 León (centro). ✅ Teléfono: 987 44 08 28. ✅
+  - Diferenciador único: visita domiciliaria gratuita. ✅ (citado en la investigación, sin más detalle sobre alcance o condiciones)
+  - Perfil activo en Doctoralia. ✅
+  - Sin web propia identificada, sin horario, sin catálogo de servicios detallado, sin cifra de reseñas. 🟡 -- la investigación disponible es mucho más limitada que la de Wecoco o Vanessa.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Dra. Nerea Ortega, Podología</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #3E6B4F; --color-accent: #C77B4E; --color-ink: #1B2420;
+    --color-bg: #F1F5F1; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DDE6DC; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #8FC9A4; --color-accent: #EBAB7C; --color-ink: #E4EDE6;
+      --color-bg: #131B15; --color-white: #1D251F; --color-success: #7CC79E; --color-alert: #E08579;
+      --color-border: #2E3D3170; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #8FC9A4; --color-accent: #EBAB7C; --color-ink: #E4EDE6;
+    --color-bg: #131B15; --color-white: #1D251F; --color-success: #7CC79E; --color-alert: #E08579;
+    --color-border: #2E3D3170; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #3E6B4F; --color-accent: #C77B4E; --color-ink: #1B2420;
+    --color-bg: #F1F5F1; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DDE6DC; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 26px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #E9F3EC; border: 1px solid #BEDCC7; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Dra. Nerea Ortega, Podología</p>
+  <h1>Visita a domicilio gratuita. Un servicio único en el vertical, sin web propia donde contarlo.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este caso tiene mucha menos evidencia que el resto del vertical de podología auditado — no se ha identificado web propia, solo presencia en directorios (Doctoralia). La mayor parte de este informe queda <span class="pending-tag">Pendiente de confirmar</span> hasta conseguir más datos.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">La Dra. Nerea Ortega ofrece un servicio que ninguna otra de las cuatro clínicas de podología auditadas tiene confirmado: visita a domicilio gratuita. Es un diferenciador real, especialmente valioso para pacientes con movilidad reducida — justo el tipo de paciente que más necesita atención podológica regular (mayores, diabéticos). El problema es que hoy ese servicio vive solo en directorios de terceros, sin web propia que lo cuente con más detalle (alcance, zona, condiciones).</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Visita a domicilio gratuita — único servicio así confirmado entre las cuatro clínicas de podología auditadas. ✅</li>
+      <li>Perfil activo en Doctoralia. ✅</li>
+      <li>Ubicación céntrica (C/ Germán Alonso 2). ✅</li>
+    </ul>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>Sin web propia, el diferenciador más fuerte del negocio no tiene dónde explicarse</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>No se ha identificado una web propia — la única presencia digital confirmada es un perfil en Doctoralia, donde el servicio de domicilio aparece mencionado sin más contexto (zona de cobertura, condiciones, cómo solicitarlo).</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un familiar buscando atención podológica a domicilio para un mayor con movilidad reducida —el perfil de cliente que más valora este servicio— no tiene dónde confirmar los detalles antes de llamar, lo que añade fricción justo al segmento que más lo necesita.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Una landing simple, centrada solo en el servicio de domicilio gratuito (zona de cobertura, cómo pedirlo, qué incluye) resolvería la mayor parte del problema sin necesidad de una web completa.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte el diferenciador más fuerte del negocio en algo que se puede encontrar y confiar, no solo mencionar de pasada en un directorio.</p></div>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar el alcance real del servicio de domicilio (zona, condiciones, coste real si "gratuito" se refiere solo a la visita y no al tratamiento).</li>
+      <li>Crear una landing simple centrada en ese servicio, aunque sea de una sola página.</li>
+      <li>Confirmar horario, catálogo de servicios y cifra de reseñas — datos que esta investigación no ha podido reunir.</li>
+    </ol>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Ofrecéis algo que ninguna otra clínica de podología que hemos visto en León tiene: visitas a domicilio gratuitas. Y hoy ese dato vive solo en un directorio, sin ningún sitio propio que lo explique con más detalle."</p>
+    <p style="margin-bottom:0;">No proponemos un rediseño completo — con una página sencilla centrada en ese servicio ya se resolvería la mayor parte del problema.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
