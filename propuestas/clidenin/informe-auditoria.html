@@ -1,22 +1,37 @@
 <!--
-  Informe de auditoría — Clidenin, Clínica Dental y Ortodoncia (Av.
-  Independencia, León). Duodécimo caso del dataset EXP-003, tercer
-  caso dental. Flujo estándar faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2. Clidenin, Clínica Dental,
+  Ortodoncia y Odontopediatría (Av. Independencia 4, Bajo, León).
+  Duodécimo caso del dataset EXP-003, tercer caso dental. Primera vez
+  que se amplía con los tres skills operativos completos
+  (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect).
 
-  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
-  repetidamente). Informe apoyado en WebSearch con fuente citada.
+  QUÉ CAMBIA RESPECTO A LA v1 — la v1 (solo WebSearch) construía su
+  hallazgo principal alrededor de una reputación pública "mixta" en
+  Google (4,3/5, ~149 opiniones, con quejas específicas sobre cargos
+  inesperados y esperas largas, citadas por un agregador de baja
+  fiabilidad, opinadentistas.com). Una investigación posterior con
+  navegación directa (web propia, FIATC, Doctoralia, Giradental,
+  Cuident) NO encuentra esas quejas en ningún sitio -- en su lugar,
+  encuentra un perfil de Doctoralia con 4/5 sobre 18 opiniones y un
+  reconocimiento (RH, 15 feb 2021, implantes dentales), y tres
+  testimonios positivos en la propia web. La propia investigación más
+  reciente marca "reseñas de Google" como dato todavía pendiente de
+  verificar directamente -- así que ninguna de las dos cifras de
+  Google (ni la de la v1 ni ninguna alternativa) está confirmada por
+  navegación directa. Se baja la firmeza de la afirmación "reputación
+  mixta" de 🟡 hallazgo central a nota de contexto, sin retirarla del
+  todo (las quejas citadas por la v1 pueden seguir existiendo en
+  Google sin que esta investigación las haya visto, dado que no
+  navegó esa plataforma).
 
-  Datos confirmados por búsqueda web:
-  - Dirección: fuentes externas citan "Av. Independencia, 4, 24001 León" -- el dataset original de este experimento tenía "Avenida Independencia 6, 6ºE". Discrepancia menor de portal a portal, sin confirmar cuál es la correcta. 🟡
-  - Teléfono: 987 21 01 32. ✅ (coincide con el dataset original)
-  - Web propia: ortodoncialeon.org. ✅
-  - Horario: cerrado sábados y domingos; horario laborable no especificado con precisión en las fuentes consultadas. 🟡
-  - Especialidades: ortodoncia, ortodoncia invisible, odontopediatría, implantología, además de blanqueamiento, carillas, cirugía oral, endodoncia, periodoncia, prótesis. ✅
-  - Primera visita, diagnóstico y presupuesto gratuitos. ✅
-  - Accesibilidad: silla de ruedas, baño adaptado, parking adaptado. ✅
-  - Más de 25 años de experiencia (mencionado en fuentes externas, no confirmado en la web propia). 🟡
-  - Valoración: 4,3/5 sobre ~149 opiniones en Google Business Profile. ✅ (agregador, cifra consistente entre dos fuentes distintas)
-  - Reseñas mixtas: reseñas positivas destacan trato con niños y explicaciones claras; reseñas negativas señalan esperas largas, citas breves y cargos elevados en algunos tratamientos (curetaje, infiltraciones), con al menos un caso de diagnóstico disputado tras una segunda opinión. 🟡 — dato de reputación real y públicamente visible, no un rumor aislado; se documenta con honestidad porque es exactamente el tipo de señal que un cliente potencial también puede encontrar buscando.
+  La dirección queda resuelta: "Av. Independencia 4, Bajo" se confirma
+  ahora por cuatro fuentes independientes (web propia, FIATC,
+  Doctoralia, Cuident) -- se descarta la referencia "6, 6ºE" del
+  dataset original como desactualizada o errónea.
+
+  Aplica ahora los tres skills operativos completos, a partir de las
+  hipótesis de la investigación del usuario (navegación directa de
+  ortodoncialeon.org, FIATC, Doctoralia, Giradental, Cuident, TikTok).
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -62,10 +77,15 @@
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
   .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
   .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 14px; }
   .caveat strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .correction strong { color: var(--color-alert); }
   .good-box { background: #E9F5F1; border: 1px solid #BEE0D5; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
   .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
   .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
   .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
   .journey strong { font-style: normal; color: var(--color-accent); }
@@ -78,6 +98,9 @@
   .finding__part p { margin: 0; }
   .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
   .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
   .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
   .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
   .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
@@ -101,101 +124,153 @@
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026 · v2</span></div>
 
   <p class="cover-meta">Auditoría de conversión · Clidenin</p>
-  <h1>Primera visita gratis es un diferenciador fuerte. La reputación mixta puede estar frenándolo.</h1>
+  <h1>Sois la única clínica dental de León que hemos visto en TikTok. Y casi nadie lo sabe fuera de ahí.</h1>
+
+  <div class="correction">
+    <strong>Ampliación respecto a la v1:</strong> la v1 construía su hallazgo principal sobre una reputación "mixta" en Google (4,3/5, quejas sobre cargos y esperas), citada por un único agregador de baja fiabilidad. Una investigación posterior, con navegación directa de la web propia, FIATC, Doctoralia, Giradental y Cuident, no encuentra esas quejas en ningún sitio — en su lugar encuentra un perfil de Doctoralia sólido (4/5, 18 opiniones, un reconocimiento por implantes) y tres testimonios positivos en la propia web. Ninguna de las dos investigaciones navegó Google directamente, así que ni se confirma ni se descarta del todo la cifra de la v1 — se baja de hallazgo central a nota de contexto, sin retirarla como falsa.
+  </div>
 
   <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar ortodoncialeon.org directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. También hay una discrepancia menor de dirección entre el dataset original de este proyecto (Av. Independencia 6, 6ºE) y las fuentes externas consultadas ahora (Av. Independencia 4) — a confirmar antes de cualquier contacto.
+    <strong>Nota de transparencia:</strong> los datos de esta v2 (ficha de identidad, equipo, competencia) proceden de una investigación con navegación directa hecha fuera de esta sesión — no se han vuelto a verificar de forma independiente aquí. Lo que ni esa investigación ni esta pudieron confirmar (reseñas de Google, año de fundación, precios) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
   </div>
 
   <div class="intro">
-    <p style="margin:0;">Clidenin ofrece primera visita, diagnóstico y presupuesto gratis — una forma directa de reducir la barrera de entrada de quien no sabe cuánto le va a costar el tratamiento antes incluso de pisar la clínica. Al mismo tiempo, su valoración pública (4,3/5 sobre ~149 opiniones) es más mixta que la de otros negocios del dataset: junto a reseñas muy positivas sobre el trato con niños, hay quejas visibles sobre esperas largas y cargos que algunos pacientes no esperaban. Esto no es un rumor aislado — es información pública que cualquier persona que busque "Clidenin opiniones" puede encontrar igual que la hemos encontrado nosotros.</p>
+    <p style="margin:0;">Clidenin es una clínica dental familiar con 5 gabinetes, especializada en ortodoncia y odontopediatría, dirigida por la Dra. Mercedes Marcos de Paz. Acepta 6 aseguradoras distintas, ofrece primera visita gratis y financiación, y tiene un perfil de Doctoralia sólido con un reconocimiento por implantes dentales. Y es la única clínica dental de todo el dataset con presencia activa en TikTok — un canal que ningún competidor auditado en León está usando. El reto no es la falta de activos: es que esa combinación (especialización familiar + reputación real + un canal digital que nadie más tiene) no está contada como una sola historia.</p>
   </div>
 
   <div class="good-box">
     <h2>🟢 Lo que funciona</h2>
     <ul>
-      <li>Primera visita, diagnóstico y presupuesto gratuitos — reduce la barrera de entrada real antes de comprometerse a nada. ✅</li>
-      <li>Más de 25 años de experiencia y especialización concreta en ortodoncia, odontopediatría e implantología. ✅ (fuente externa)</li>
-      <li>Accesibilidad completa: silla de ruedas, baño adaptado, parking adaptado — relevante para un segmento de pacientes que otras clínicas del dataset no mencionan. ✅</li>
-      <li>Reseñas positivas destacan específicamente el trato con niños — coherente con la especialización en odontopediatría. ✅</li>
+      <li>Única clínica dental del dataset con presencia activa en TikTok (@clinicaclidenin) — contenido educativo sobre salud dental infantil. ✅</li>
+      <li>Dentista principal identificada: Dra. Mercedes Marcos de Paz, dentista y odontopediatra, con perfil propio en Doctoralia (4/5, 18 opiniones, reconocimiento RH por implantes dentales). ✅</li>
+      <li>5 gabinetes y horario amplio (L-V 09:00-20:00, 11 horas) — capacidad de atención real. ✅</li>
+      <li>6 aseguradoras aceptadas (Adeslas, Asisa, Caser, Canal Salud, Dentyred-DSalus, NorteHispana). ✅</li>
+      <li>WhatsApp activo en la web, además del teléfono. ✅</li>
+      <li>Tres testimonios reales visibles en la propia web, con nombre y apellido. ✅</li>
+      <li>Primera visita, diagnóstico y presupuesto gratuitos, con financiación disponible. ✅</li>
     </ul>
   </div>
 
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Clidenin — Clínica Dental, Ortodoncia y Odontopediatría (CLIDENIN ODONTOLOGIA LEON)</td></tr>
+    <tr><th>Dirección</th><td>Av. Independencia, 4, Bajo, 24001 León — confirmada ahora por cuatro fuentes independientes, sustituye la referencia "6, 6ºE" del dataset original</td></tr>
+    <tr><th>Dentista principal</th><td>Dra. Mercedes Marcos de Paz — dentista y odontopediatra, atiende en español e inglés</td></tr>
+    <tr><th>Contacto</th><td>987 21 01 32 · WhatsApp activo en la web</td></tr>
+    <tr><th>Horario</th><td>L-V 09:00-20:00 · domingo cerrado · sábado sin especificar</td></tr>
+    <tr><th>Instalaciones</th><td>5 gabinetes</td></tr>
+    <tr><th>Aseguradoras</th><td>Adeslas, Asisa, Caser, Canal Salud, Dentyred-DSalus, NorteHispana</td></tr>
+    <tr><th>Reputación</th><td>Doctoralia: 4/5 sobre 18 opiniones, reconocimiento RH (15 feb 2021, implantes dentales) · 3 testimonios positivos en la propia web · reseñas de Google sin navegar directamente por ninguna de las dos investigaciones</td></tr>
+  </table>
+
   <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
   <div class="journey">
-    <p><strong>Busco</strong> "ortodoncia León" o "dentista para niños León" — encuentro la web propia y, si sigo buscando, también opiniones de Google con valoración de 4,3/5.</p>
-    <p><strong>Leo</strong> las reseñas más recientes o más votadas — algunas muy positivas sobre el trato con niños, otras que mencionan esperas largas o un presupuesto que subió más de lo esperado.</p>
-    <p><strong>Dudo</strong> — la primera visita gratis reduce el riesgo de probar, pero la reseña sobre cargos inesperados es justo el tipo de duda que "primera visita gratis" por sí solo no resuelve del todo, si no va acompañada de un mensaje claro sobre cómo se calcula el presupuesto.</p>
-    <p><strong>Decido</strong> en función de si encuentro algo en la propia web (no solo en reseñas de terceros) que explique con claridad qué incluye el presupuesto gratuito y qué pasa después.</p>
+    <p><strong>Busco</strong> "ortodoncia León" o "dentista para niños León", o veo un vídeo en TikTok sobre salud dental infantil sin buscar nada — @clinicaclidenin es el único canal así en todo el dataset.</p>
+    <p><strong>Sigo</strong> el enlace del TikTok a la web, o busco por separado — encuentro un perfil de Doctoralia sólido y testimonios reales en la propia web.</p>
+    <p><strong>Dudo</strong> si es una clínica familiar cercana o una consulta más — el nombre de la doctora (Mercedes Marcos de Paz) y su presencia en Doctoralia ayudan a resolver esa duda, si aparecen con claridad.</p>
+    <p><strong>Decido</strong> en función de si la primera visita gratis, la financiación y las aseguradoras aceptadas están claras antes de llamar — reduce la incertidumbre de cuánto va a costar.</p>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La reputación pública es mixta — un mensaje claro sobre transparencia de precios podría contrarrestar la objeción más repetida</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Junto a reseñas muy positivas, hay quejas visibles sobre cargos que algunos pacientes describen como mayores de lo esperado, y al menos un caso de diagnóstico disputado tras una segunda opinión externa.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente potencial que busque reseñas antes de reservar puede encontrar esa objeción específica (miedo a un presupuesto que "crece") antes de leer sobre el diagnóstico gratuito que ya ofrece la clínica para evitarlo.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web explica con claridad qué incluye exactamente el "presupuesto gratuito" y si se garantiza por escrito antes de empezar ningún tratamiento — ese mensaje, bien visible, responde directamente a la objeción más repetida en las reseñas negativas.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la duda más específica que ya existe en la reputación pública del negocio, en vez de dejar que la resuelva (o no) cada cliente por su cuenta leyendo reseñas de terceros.</p></div>
+    <div class="finding__title"><span class="finding__num">1</span><h2>El único canal de TikTok del dataset es un activo real, probablemente subutilizado</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Clidenin es la única clínica dental (y el único negocio) de todo el dataset con presencia activa en TikTok, con contenido educativo sobre salud dental infantil.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin un CTA claro hacia la web o WhatsApp en ese contenido, el alcance de TikTok puede no traducirse en citas — es tráfico y atención que hoy no se sabe si se está convirtiendo.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si los vídeos incluyen un enlace claro a reserva o WhatsApp, y si el volumen de seguidores/interacciones justifica invertir más en este canal frente a uno nuevo (Instagram, mencionado como ausencia en la investigación).</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte un diferenciador digital único en el dataset en citas reales, no solo en visualizaciones.</p></div>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>La especialización en odontopediatría no está confirmada como mensaje principal, pese a ser un punto fuerte real en las reseñas</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Las reseñas positivas mencionan específicamente el buen trato con niños, coherente con la especialidad en odontopediatría que ofrece la clínica.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si ese diferenciador no aparece pronto en la web, una familia que busca dentista para sus hijos puede no distinguir a Clidenin de cualquier otra clínica generalista con la misma rapidez.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la odontopediatría aparece en el bloque principal de la web, con algún testimonio real (con permiso) sobre el trato con niños.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta más rápido al segmento de familias con hijos, que es exactamente donde la clínica ya tiene su reputación más sólida.</p></div>
+    <div class="finding__title"><span class="finding__num">2</span><h2>La odontopediatría es un motor de fidelización familiar a largo plazo, sin confirmar si se comunica como tal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La Dra. Marcos de Paz es odontopediatra además de dentista general — un niño que empieza en Clidenin puede seguir siendo paciente durante décadas (pediatría → ortodoncia adolescente → adulto → implantes).</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si el mensaje principal no conecta la atención infantil con el resto del ciclo de vida del paciente, se pierde la narrativa de fidelización familiar que ya tiene sentido con la oferta real (ortodoncia + pediatría + implantes bajo el mismo techo).</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Construir un mensaje de "clínica de toda la familia, para toda la vida" que conecte explícitamente pediatría con ortodoncia adolescente e implantes en adultos.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte un paciente pediátrico puntual en una relación de varias décadas, con varios miembros de la misma familia.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>La financiación es un facilitador real para tratamientos de alto coste, sin confirmar si es un pilar visible del mensaje</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La ortodoncia invisible puede costar varios miles de euros; Clidenin ofrece financiación, pero no está confirmado si aparece junto al mensaje de ortodoncia o solo como nota aparte.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin la financiación visible junto al tratamiento de mayor coste, un paciente interesado puede descartar la opción antes de preguntar, asumiendo que no puede permitírselo.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Mostrar la financiación junto al mensaje de ortodoncia invisible específicamente, no solo como condición general de la clínica.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la barrera de entrada percibida en el tratamiento de mayor valor de la clínica.</p></div>
   </div>
 
   <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda → Mensaje claro de especialización (ortodoncia + niños) → Primera visita/presupuesto gratis, con qué incluye explicado con transparencia → Accesibilidad como valor añadido → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Capacidad probablemente subutilizada:</strong> 5 gabinetes y 11 horas de apertura diaria sugieren capacidad para 40-60 pacientes/día — sin confirmar si se está alcanzando esa capacidad real.</li>
+      <li style="margin-bottom:10px;"><strong>Odontopediatría como motor de fidelización, no solo servicio:</strong> el ciclo de vida completo (niño → adolescente con ortodoncia → adulto con implantes) es el activo estratégico más fuerte, si se gestiona como relación a largo plazo y no como visitas puntuales.</li>
+      <li style="margin-bottom:10px;"><strong>Ubicación céntrica pero no premium:</strong> frente al Centro Leonés de Ortodoncia (ubicación frente al Corte Inglés), Clidenin necesita compensar con experiencia de cliente y diferenciación (TikTok, pediatría) más que con localización.</li>
+      <li style="margin-bottom:0;"><strong>La financiación debería ser pilar, no añadido:</strong> en tratamientos de varios miles de euros, la financiación visible desde el primer mensaje puede ser la diferencia entre preguntar y descartar.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Plan Familia Clidenin:</strong> revisión anual para toda la familia, con descuento en ortodoncia para hermanos y prevención pediátrica incluida.</li>
+      <li style="margin-bottom:10px;"><strong>Landing propia para ortodoncia invisible:</strong> proceso paso a paso, casos reales, precio con financiación, cita gratis — hoy mezclada con el resto del catálogo.</li>
+      <li style="margin-bottom:10px;"><strong>Primera visita del peque como experiencia</strong>, no solo revisión: convertir la visita al dentista en algo positivo desde el principio, coherente con el contenido ya publicado en TikTok.</li>
+      <li style="margin-bottom:0;"><strong>Convenios con colegios y guarderías de León</strong> para revisiones grupales y charlas de higiene — encaje natural con la especialización en odontopediatría.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Competencia directa en odontología familiar de León</h2>
+    <table class="compete-table">
+      <tr><th>Competidor</th><th>Diferenciador clave</th><th>Frente a Clidenin</th></tr>
+      <tr><td>Centro Leonés de Ortodoncia</td><td>Primera visita gratis, ubicación premium (frente al Corte Inglés)</td><td>Gana en ubicación; Clidenin gana en odontopediatría y TikTok</td></tr>
+      <tr><td>Clínica Dental HM Regla</td><td>Hospital, urgencias 24h</td><td>HM gana en urgencias; Clidenin gana en especialización y trato familiar</td></tr>
+      <tr><td>HM San Francisco</td><td>Hospital</td><td>Competidor hospitalario, distinto perfil de paciente</td></tr>
+    </table>
   </div>
 
   <h2>Puntuación FARO</h2>
   <table class="score-table">
     <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">Primera visita y presupuesto gratis reducen la barrera de entrada, pero no está confirmado si eso se comunica con la claridad suficiente para contrarrestar las quejas sobre cargos.</td></tr>
-    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">4,3/5 sobre ~149 opiniones — volumen alto, pero valoración más mixta que la mayoría del dataset.</td></tr>
-    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">Odontopediatría y accesibilidad son diferenciadores reales, sin confirmar si se comunican como tales en el bloque principal.</td></tr>
-    <tr><td>Confianza</td><td class="num">4/10</td><td class="why">Reputación pública mixta, con quejas específicas sobre transparencia de precios — un riesgo real de conversión que requiere un mensaje deliberado para contrarrestarlo.</td></tr>
-    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
-    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
-    <tr><td>Autoridad</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web muestra credenciales del equipo.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">TikTok único en el dataset y especialización familiar (ortodoncia + pediatría) real.</td></tr>
+    <tr><td>Prueba social</td><td class="num">6/10</td><td class="why">Doctoralia sólido (4/5, 18 opiniones, reconocimiento) + testimonios propios, aunque menor volumen que otros casos del dataset.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">Primera visita, diagnóstico y presupuesto gratis, más financiación disponible.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">6/10</td><td class="why">Teléfono y WhatsApp confirmados, horario amplio.</td></tr>
+    <tr><td>Autoridad</td><td class="num">5/10</td><td class="why">Dentista identificada por nombre con perfil profesional propio, sin más credenciales confirmadas.</td></tr>
+    <tr><td>Confianza</td><td class="num">5/10</td><td class="why">Reputación real en Doctoralia, sin confirmación directa de Google (donde la v1 encontró señales mixtas no corroboradas por esta investigación).</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si TikTok, pediatría y financiación se conectan en un solo mensaje o aparecen sueltos.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
     <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además del teléfono.</td></tr>
     <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
     <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
     <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la primera visita gratis como palanca de decisión, no solo como dato suelto.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la financiación y la odontopediatría se usan como palanca de decisión.</td></tr>
   </table>
-  <div class="score-total"><span class="big">20/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 50/100 sobre esas 4 — la nota más baja del dataset hasta ahora sobre las dimensiones evaluables, por la reputación mixta. Las 9 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+  <div class="score-total"><span class="big">35/60</span><span class="label">Suma de las 6 dimensiones con evidencia directa ÷ 60 × 100 = 58/100 sobre esas 6 — mejora notable frente a la v1 (50/100 sobre 4), gracias a datos más completos y una reputación mejor contextualizada. Las 7 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Quick wins — ordenados por impacto</h2>
     <ol class="quickwins">
-      <li>Añadir un mensaje claro y visible sobre qué incluye exactamente el presupuesto gratuito, y el compromiso de no cambiarlo sin avisar antes de empezar.</li>
-      <li>Subir la odontopediatría y el trato con niños al mensaje principal, con algún testimonio real si hay permiso para usarlo.</li>
-      <li>Confirmar la dirección exacta (discrepancia entre fuentes) antes de cualquier contacto o material impreso.</li>
-      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+      <li>Confirmar si los vídeos de TikTok incluyen un CTA claro hacia la web o WhatsApp, y potenciar ese canal único en el dataset.</li>
+      <li>Construir un mensaje de "clínica de toda la familia" que conecte pediatría, ortodoncia adolescente e implantes en adultos.</li>
+      <li>Mostrar la financiación junto al mensaje de ortodoncia invisible, no solo como condición general.</li>
+      <li>Navegar la web real y Google Business Profile directamente para completar las dimensiones pendientes y aclarar del todo la cuestión de reputación.</li>
     </ol>
   </div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Si os interesa, así lo implementaríamos</h2>
     <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación mixta sobre precios) → mensaje de transparencia de presupuesto en el bloque principal.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (odontopediatría poco destacada) → subir ese diferenciador al mensaje principal.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 9 dimensiones que este informe deja pendientes con honestidad.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (TikTok subutilizado) → CTA claro en cada vídeo hacia reserva o WhatsApp.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (odontopediatría como fidelización) → mensaje de "toda la familia, para toda la vida".</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real y Google Business Profile para completar la Puntuación FARO y cerrar la cuestión de reputación con evidencia directa.</li>
     </ul>
     <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
   </div>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Tenéis un diferenciador fuerte -- primera visita, diagnóstico y presupuesto gratis -- que puede estar compitiendo contra una reputación pública más mixta de lo que os gustaría. Os dejamos un informe honesto sobre cómo hacer que ese diferenciador hable antes que la duda."</p>
-    <p style="margin-bottom:0;">No proponemos ocultar ni discutir las reseñas — proponemos un mensaje tan claro sobre transparencia de precios que la duda no llegue a formarse.</p>
+    <p class="quote">"Sois la única clínica dental de León que hemos visto en TikTok, con una doctora identificada, un perfil de Doctoralia sólido y una especialización real en niños. Os dejamos un informe honesto sobre cómo conectar todo eso en un solo mensaje — y sobre una duda de reputación de una versión anterior de este informe que esta investigación no ha podido confirmar ni descartar del todo."</p>
+    <p style="margin-bottom:0;">No proponemos empezar de cero — proponemos contar como una sola historia lo que ya tenéis repartido en varios sitios.</p>
   </div>
 
   <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>

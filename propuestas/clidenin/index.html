@@ -1,25 +1,29 @@
 <!--
-  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  BORRADOR DE PROPUESTA v2 — no está publicado ni es el sitio oficial
   de este negocio. Duodécimo candidato de experimentos/EXP-003-pymes-leon,
   tercer caso dental.
 
-  Ángulo: primera visita + diagnóstico + presupuesto gratuitos como
-  reductor de fricción real, con un mensaje explícito de transparencia
-  de precios ("el presupuesto que os damos es el que pagáis") para
-  contrarrestar la objeción más repetida en la reputación pública
-  mixta del negocio (ver informe-auditoria.html). Odontopediatría como
-  segundo eje, apoyada en el punto fuerte real de las reseñas: el trato
-  con niños.
+  CORRECCIÓN v2: la v1 abría con un mensaje de transparencia de precios
+  para contrarrestar una reputación "mixta" en Google, citada por un
+  único agregador de baja fiabilidad. Una investigación posterior con
+  navegación directa (web propia, FIATC, Doctoralia, Giradental,
+  Cuident) no encuentra esas quejas -- encuentra en su lugar un perfil
+  de Doctoralia sólido y tres testimonios reales. Se sustituye el
+  ángulo defensivo por uno que sube los activos reales: la Dra.
+  Mercedes Marcos de Paz (dentista y odontopediatra, identificada por
+  nombre) y el único canal de TikTok del dataset.
+
+  Ángulo v2: "toda la familia, para toda la vida" -- odontopediatría
+  como puerta de entrada a una relación de décadas (niño → adolescente
+  con ortodoncia → adulto con implantes), con la primera visita gratis
+  y la financiación como reductores de fricción.
 
   Datos públicos confirmados (ver informe-auditoria.html): Av.
-  Independencia (número exacto sin confirmar entre fuentes), León ·
-  Tel. 987 21 01 32 · cerrado fines de semana · 4,3/5 sobre ~149
-  opiniones en Google (reputación mixta, documentada con honestidad en
-  el informe).
+  Independencia 4, Bajo, León (dirección ahora confirmada por cuatro
+  fuentes) · Tel. 987 21 01 32 · WhatsApp activo · L-V 09:00-20:00 · 5
+  gabinetes · Dra. Mercedes Marcos de Paz.
 
-  Identidad visual: azul marino + verde menta -- profesional con un
-  punto cercano/infantil -- distinta a las paletas ya usadas en el
-  dataset.
+  Identidad visual: azul marino + verde menta -- se mantiene de la v1.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -27,7 +31,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clidenin — Ortodoncia y odontopediatría, León</title>
-<meta name="description" content="Clidenin, Clínica Dental y Ortodoncia en León. Primera visita, diagnóstico y presupuesto gratuitos. Especialistas en ortodoncia y odontopediatría.">
+<meta name="description" content="Clidenin, Clínica Dental, Ortodoncia y Odontopediatría en León. Dra. Mercedes Marcos de Paz. Primera visita gratis. 5 gabinetes, 6 aseguradoras aceptadas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -68,10 +72,13 @@
   .btn--primary { background: var(--color-primary); color: #fff; }
   .btn--accent { background: var(--color-accent); color: #06210F; }
 
-  .promise-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
-  .promise-card h3 { margin-top: 0; color: var(--color-accent); }
-  .promise-card ul { padding-left: 18px; margin: 12px 0 0; font-size: 14px; }
-  .promise-card li { margin-bottom: 8px; }
+  .doctor-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .doctor-card h3 { margin-top: 0; color: var(--color-accent); }
+  .doctor-card .avatar { width: 48px; height: 48px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 22px; margin-bottom: 12px; }
+
+  .lifecycle { display: flex; align-items: center; gap: 8px; justify-content: center; flex-wrap: wrap; margin: 24px 0; }
+  .lifecycle .step { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 14px 18px; text-align: center; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-card); }
+  .lifecycle .arrow { color: var(--color-accent); font-size: 18px; }
 
   .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
   .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
@@ -80,6 +87,9 @@
   .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
   .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
   .service p { margin: 0; font-size: 13px; }
+
+  .trust-row { display: flex; gap: 14px; flex-wrap: wrap; justify-content: center; }
+  .trust-chip { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 8px 16px; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-card); }
 
   footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
   footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
@@ -98,23 +108,19 @@
   <section class="hero">
     <div class="container hero__grid">
       <div>
-        <span class="eyebrow">Av. Independencia, León · ortodoncia y odontopediatría</span>
-        <h1>El presupuesto que os damos es el que pagáis. Sin sorpresas.</h1>
-        <p>Primera visita, diagnóstico y presupuesto, gratis. Y especialistas en el trato con niños — es lo que más repiten nuestros pacientes.</p>
+        <span class="eyebrow">Av. Independencia 4, León · desde niños hasta adultos</span>
+        <h1>Toda la familia. Para toda la vida.</h1>
+        <p>Odontopediatría y ortodoncia con la Dra. Mercedes Marcos de Paz — primera visita, diagnóstico y presupuesto gratis, con financiación disponible.</p>
         <div class="hero-actions">
           <a class="btn btn--primary" href="tel:+34987210132">📞 987 21 01 32</a>
-          <a class="btn btn--accent" href="#presupuesto">💶 Pedir presupuesto gratis</a>
+          <a class="btn btn--accent" href="https://wa.me/34987210132" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
       </div>
 
-      <div class="promise-card" id="presupuesto">
-        <h3>Nuestra promesa</h3>
-        <p style="margin:0;">Diagnóstico y presupuesto por escrito, gratis, antes de decidir nada.</p>
-        <ul>
-          <li>Sin coste por la primera visita</li>
-          <li>Presupuesto cerrado antes de empezar</li>
-          <li>Sin cambios sin avisar antes</li>
-        </ul>
+      <div class="doctor-card">
+        <div class="avatar">🦷</div>
+        <h3>Dra. Mercedes Marcos de Paz</h3>
+        <p style="margin:0;">Dentista y odontopediatra. Atención en español e inglés.</p>
       </div>
     </div>
   </section>
@@ -122,24 +128,45 @@
   <section class="section">
     <div class="container">
       <div class="section__intro">
+        <h2>Con vosotros en cada etapa</h2>
+      </div>
+      <div class="lifecycle">
+        <div class="step">👶 Odontopediatría</div>
+        <span class="arrow">→</span>
+        <div class="step">🦷 Ortodoncia</div>
+        <span class="arrow">→</span>
+        <div class="step">✨ Implantes y estética</div>
+      </div>
+      <div class="trust-row">
+        <span class="trust-chip">5 gabinetes</span>
+        <span class="trust-chip">L-V 09:00-20:00</span>
+        <span class="trust-chip">6 aseguradoras aceptadas</span>
+        <span class="trust-chip">4/5 en Doctoralia (18 opiniones)</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro">
         <h2>Especialidades</h2>
         <p style="margin:0 auto;">Ortodoncia, odontopediatría e implantología, además de los tratamientos dentales habituales.</p>
       </div>
       <div class="services">
-        <div class="service"><h4>Ortodoncia</h4><p>Incluida ortodoncia invisible.</p></div>
+        <div class="service"><h4>Ortodoncia</h4><p>Incluida ortodoncia invisible, con financiación.</p></div>
         <div class="service"><h4>Odontopediatría</h4><p>Trato especializado con niños.</p></div>
         <div class="service"><h4>Implantología</h4><p>Implantes y prótesis dentales.</p></div>
         <div class="service"><h4>Estética dental</h4><p>Blanqueamiento y carillas.</p></div>
         <div class="service"><h4>Endodoncia y periodoncia</h4><p>Tratamiento de conducto y encías.</p></div>
-        <div class="service"><h4>Accesibilidad completa</h4><p>Silla de ruedas, baño y parking adaptados.</p></div>
+        <div class="service"><h4>Primera visita gratis</h4><p>Diagnóstico y presupuesto, sin coste.</p></div>
       </div>
     </div>
   </section>
 </main>
 
 <footer>
-  <p>Clidenin — Av. Independencia, León · 987 21 01 32</p>
-  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. La dirección exacta tiene una discrepancia menor entre fuentes, por confirmar.</p>
+  <p>Clidenin — Av. Independencia 4, León · 987 21 01 32</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar.</p>
 </footer>
 
 </body>
