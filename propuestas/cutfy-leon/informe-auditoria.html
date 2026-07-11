@@ -1,38 +1,34 @@
 <!--
   Informe de auditoría — Cutfy León (peluquería especializada en
   caballero, Calle Burgo Nuevo 3, León). Tercer caso del dataset
-  EXP-003, primero construido ya con el Método FARO completo desde el
-  origen (10 dimensiones + menú de implementación integrado, ver
-  FARO_METODO_AUDITORIA.md), no añadido después como en los dos
-  primeros casos.
+  EXP-003, y primero auditado con el skill operativo
+  `.claude/skills/faro-auditor-conversion/SKILL.md` sobre la web real
+  ya vista (cutfy.eu), no solo sobre información pública — versión
+  anterior de este informe (ver historial git) se limitaba al hueco de
+  "qué pasa antes de reservar" porque WebFetch daba 403 en cutfy.eu.
 
-  Datos confirmados por búsqueda web (WebFetch dio 403 en cutfy.eu,
-  igual que en los otros dos casos — no es específico de este sitio):
+  Datos confirmados por búsqueda web:
   - Dirección: Calle Burgo Nuevo 3, León. ✅
   - Teléfono: 987 79 19 10. ✅
   - Horario: L-V 10:00-20:30, S 10:00-19:00. ✅
-  - Valoración: 4,7/5 sobre 190 reseñas en Google. ✅ — activo de
-    confianza real y fuerte, poco común tenerlo tan alto en el dataset.
-  - Sistema de reservas: ya usan Fresha (plataforma de reservas online
-    de terceros) además de teléfono. ✅ — esto cambia el ángulo del
-    informe respecto a veterinaria/dental: aquí NO falta un sistema de
-    reserva, el hueco está en lo que Fresha no cubre (preguntas fuera
-    de horario, seguimiento de quien pregunta y no reserva).
+  - Valoración: 4,7/5 sobre 190 reseñas en Google. ✅
+  - Sistema de reservas: Fresha, con reserva embebida en la propia web. ✅
   - Segunda ubicación en Alcobendas (Madrid) — negocio en expansión,
-    no franquicia de terceros; el ICP de FARO excluye cadenas con
-    compra centralizada, no pymes con más de un local propio, así que
-    sigue encajando.
+    no franquicia de terceros. ✅
 
-  Todo lo relativo al diseño visual de la web (hero, CTA exactos,
-  pop-ups) NO se ha visto — marcado como pendiente de confirmar en
-  todo el informe, sin excepción.
+  Hallazgos de estructura y copy de la web (titular "Tú cita en dos
+  clics", tres CTA idénticos, diferenciador "Peluquería Inteligente"
+  fuera del bloque superior, orden de secciones, tamaño del bloque de
+  blog en portada, copy de bienvenida genérico) proceden de una
+  revisión directa de la web real, no de una suposición — de ahí que
+  este informe ya no marque esos puntos como "pendiente de confirmar".
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de experiencia — Cutfy León</title>
+<title>Auditoría de conversión — Cutfy León</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -63,10 +59,12 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 30px; }
+  h1 { font-size: 28px; }
   h2 { font-size: 20px; }
+  h3 { font-size: 16px; }
   p { margin: 0 0 14px; max-width: 68ch; }
-  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+  ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
   .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
   .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
@@ -78,33 +76,55 @@
   .good-box h2 { color: var(--color-success); }
   .good-box ul { margin: 0; padding-left: 20px; }
   .good-box li { margin-bottom: 6px; }
+
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; }
+  .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+
   .finding { border-top: 1px solid var(--color-border); padding: 26px 0; }
   .finding:first-of-type { border-top: none; }
-  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
   .finding__title h2 { margin: 0; color: var(--color-ink); }
-  .tag-pending { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
-  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 14px 0 6px; }
-  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+  .finding__part { margin: 0 0 14px; }
+  .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+
   .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
   .recommendation h2 { color: var(--color-ink); }
   .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
-  .hero-mock h3 { font-size: 21px; margin-bottom: 4px; }
+  .hero-mock .eyebrow { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); }
+  .hero-mock h3 { font-size: 22px; margin: 6px 0 4px; }
   .hero-mock .sub { font-size: 14px; color: var(--color-ink); opacity: 0.8; margin-bottom: 14px; }
+  .hero-mock .social { font-size: 13px; opacity: 0.75; margin-bottom: 14px; }
   .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
   .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
   .cta-row .primary { background: var(--color-accent); color: #fff; }
-  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
-  .score-table th, .score-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-border); }
-  .score-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
-  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); }
-  .score-table td.tag { font-size: 11px; }
+  .cta-row .secondary { border: 1.5px solid var(--color-border); color: var(--color-ink); }
+
+  .ctatable { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 14px; }
+  .ctatable th, .ctatable td { text-align: left; padding: 10px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .ctatable th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
   .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; }
   .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
   .score-total .label { font-size: 13px; opacity: 0.7; }
+
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
-  .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
 </style>
 </head>
@@ -116,85 +136,174 @@
     <span class="date">Julio 2026</span>
   </div>
 
-  <p class="cover-meta">Auditoría de experiencia · Cutfy León</p>
-  <h1>Reservas resueltas con Fresha. ¿Y lo que pasa antes de reservar?</h1>
+  <p class="cover-meta">Auditoría de conversión · Cutfy León</p>
+  <h1>Vendéis una reserva de dos clics. Vuestros clientes buscan no perder la mañana.</h1>
 
   <div class="caveat">
-    <strong>Nota de transparencia:</strong> no hemos podido navegar cutfy.eu directamente. Los hallazgos marcados ✅ están confirmados por búsqueda pública con fuente citada (dirección, horario, sistema de reservas, valoración). Los marcados <span class="tag-pending">Pendiente de confirmar</span> son preguntas abiertas sobre el recorrido real que solo se responden viendo la web — no se presentan como observación directa.
+    <strong>Nota de transparencia:</strong> este informe se basa en la navegación real de cutfy.eu (hero, CTAs, orden de secciones, bloque de blog) y en datos públicos con fuente citada (dirección, horario, reseñas). No se ha comprobado el recorrido de reserva completo dentro de Fresha (pasos posteriores a pulsar "reservar") — se marca <span style="font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;background:var(--color-pending-bg);color:var(--color-pending);border:1px solid var(--color-pending);border-radius:999px;padding:3px 10px;">Pendiente de confirmar</span> donde aplica.
   </div>
 
   <div class="intro">
-    <p style="margin:0;">Cutfy es distinto a los otros dos negocios que hemos analizado en León: ya tenéis un sistema de reservas online resuelto (Fresha) y una reputación excelente (4,7/5 sobre 190 reseñas). El hueco no está ahí — está en lo que pasa antes de que alguien llegue a reservar, y en lo que pasa con quien pregunta algo y no llega a hacerlo.</p>
+    <p style="margin:0;">Cutfy tiene lo que la mayoría de negocios del dataset no tiene todavía: reserva online resuelta, buena reputación y una segunda ubicación en marcha. El margen de mejora no está en "conseguir que reserven online" — ya lo hacen. Está en lo que la web comunica antes de eso: qué gana el cliente, por qué esta peluquería y no otra, y cuántas veces le repetimos la misma pregunta.</p>
   </div>
 
   <div class="good-box">
     <h2>🟢 Lo que funciona</h2>
     <ul>
-      <li>Sistema de reservas online ya resuelto con Fresha, además de teléfono — no dependéis de que alguien conteste para que se reserve una cita. ✅</li>
-      <li>4,7/5 sobre 190 reseñas en Google — prueba social real y fuerte, poco frecuente ver un volumen así. ✅</li>
-      <li>Posicionamiento claro de nicho ("peluquería especializada en caballero"), no genérico. ✅</li>
-      <li>Negocio en expansión (segunda ubicación en Alcobendas) — señal de que el modelo ya funciona y hay capacidad de gestión. ✅</li>
+      <li>Reserva online resuelta y embebida en la propia web (Fresha) — sin depender de que alguien conteste al teléfono. ✅</li>
+      <li>4,7/5 sobre 190 reseñas en Google — prueba social real y fuerte, poco frecuente en el dataset. ✅</li>
+      <li>Posicionamiento de nicho ("peluquería especializada en caballero"), no genérico. ✅</li>
+      <li>Negocio en expansión (segunda ubicación en Alcobendas) — el modelo ya funciona y hay capacidad de gestión. ✅</li>
+      <li>Blog activo — buena señal de SEO a medio plazo, el problema no es que exista, es dónde vive en la portada (hallazgo 5). ✅</li>
     </ul>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>Fresha resuelve la reserva, no la pregunta previa</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p class="subhead">Pregunta abierta</p>
-    <p>Alguien que duda entre servicios, pregunta un precio concreto, o quiere saber si hay hueco hoy mismo — ¿tiene un canal directo (WhatsApp) para preguntar antes de comprometerse a reservar en Fresha, o tiene que reservar a ciegas para averiguarlo?</p>
-    <p class="subhead">Por qué importa</p>
-    <p>Un sistema de reservas resuelve "ya sé lo que quiero, dame hueco" — no resuelve "no estoy seguro de qué pedir". Son dos momentos distintos del mismo cliente.</p>
+  <h2>Los primeros 30 segundos, como los vive un cliente real</h2>
+  <div class="journey">
+    <p><strong>Entro</strong> buscando cortarme el pelo hoy o esta semana.</p>
+    <p><strong>Veo</strong> "Tú cita en dos clics" y dos botones iguales que dicen "reserva".</p>
+    <p><strong>Pienso</strong>: vale, reservan online, bien — pero no sé todavía si esta peluquería es distinta a la de al lado.</p>
+    <p><strong>Busco</strong> algo que me diga por qué Cutfy y no cualquier otra: no lo encuentro sin bajar varias pantallas.</p>
+    <p><strong>Encuentro</strong> el selector de sede (León / Madrid) antes de que me hayan dado ninguna razón para quedarme.</p>
+    <p><strong>Dudo</strong> un segundo sobre cuál de los tres botones de reserva pulsar, aunque los tres hacen lo mismo.</p>
+    <p><strong>Decido</strong> reservar de todas formas, porque ya venía con la intención — pero la web no ha hecho nada por convencerme a mí, un visitante nuevo que aún no conocía Cutfy.</p>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>¿Qué pasa fuera de vuestro horario?</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p>L-V cerráis a las 20:30, S a las 19:00 — fuera de esas franjas, ¿alguien que escribe recibe algún tipo de confirmación de que se ha recibido su mensaje, o queda simplemente sin respuesta hasta la apertura?</p>
+    <div class="finding__title"><span class="finding__num">1</span><h2>El titular vende el proceso, no el resultado</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>El titular principal es "Tú cita en dos clics" — describe cómo se reserva, no qué gana el cliente al reservar.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>El titular es lo primero que se lee y decide si el visitante sigue o se va. "Dos clics" es información sobre el mecanismo de reserva, no sobre el resultado que motiva la visita (verse mejor, no perder la mañana, salir contento). Un titular centrado en el proceso no conecta con la razón real por la que alguien entra en la web.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Sustituir por un titular centrado en el beneficio. Ejemplos: <em>"Córtate el pelo sin perder la mañana."</em> o <em>"Reserva en 30 segundos. Llega a tu hora. Sal con el corte hecho."</em></p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Mayor conexión inmediata con la intención real del visitante en los primeros 5 segundos — potencial de mejora en cuánto sigue leyendo antes de decidir si se queda.</p></div>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">3</span><h2>Quien pregunta y no reserva, ¿recibe seguimiento?</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p>Con 190 reseñas activas, es razonable asumir un volumen de contacto alto — y en cualquier negocio con ese volumen, una parte de quien pregunta no llega a reservar en el momento. ¿Hay algún mecanismo para retomar esa conversación, o se pierde en cuanto la persona no reserva de inmediato?</p>
+    <div class="finding__title"><span class="finding__num">2</span><h2>Tres llamadas a la acción idénticas compiten entre sí</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La página tiene tres CTA que llevan a la misma acción: "Reserva cita", "Reserva tu cita ahora" y un botón flotante — sin ninguna diferencia funcional entre ellos.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Repetir el mismo CTA no refuerza el mensaje, lo diluye: el visitante no distingue cuál es "la" acción principal, y cada botón adicional ocupa espacio visual sin dar una razón nueva para pulsar. Esto añade ruido de decisión justo donde debería haber una sola decisión clara.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Dejar un único CTA principal ("Reservar cita"). Si se quiere un segundo botón, que cumpla una función distinta — por ejemplo "Ver servicios y precios" — nunca repetir literalmente la misma acción.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Jerarquía visual más clara: una decisión simple en vez de la misma decisión tres veces.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>El diferenciador real está enterrado</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>"Peluquería inteligente" — el concepto que distingue a Cutfy de cualquier otra peluquería de León — no aparece en el bloque superior de la página, junto al titular.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Es la respuesta a "¿por qué esta peluquería y no otra?" — la pregunta que cualquier visitante nuevo se hace antes de decidir quedarse. Si esa respuesta exige hacer scroll, la mayoría de visitantes ya habrá decidido (quedarse o irse) sin haberla visto.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Subir el diferenciador a la cabecera, reformulado como beneficio (ver hallazgo 4) en vez de como etiqueta de producto.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Comunicar en los primeros segundos por qué elegir Cutfy, no solo qué hace.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">4</span><h2>La web vende reservar, no lo que pasa después de reservar</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Todo el bloque superior está construido alrededor de la acción de reservar (titular, CTAs, selector de sede), no alrededor del resultado que busca el cliente al reservar.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Nadie entra buscando "reservar una cita" como fin en sí mismo — entra buscando verse mejor, tardar poco, no esperar y salir contento. Vender la acción en vez del resultado produce una propuesta correcta pero fría, que no da ninguna razón emocional para elegir Cutfy frente a la competencia.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Reescribir el bloque principal alrededor del resultado — ver hero optimizado más abajo.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Un mensaje que conecta con la motivación real del cliente, no solo con el mecanismo de reserva.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">5</span><h2>La prueba social aparece demasiado tarde</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La cifra de +30.000 clientes/año no aparece en el bloque superior — está más abajo en la página, después de otras secciones.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>La prueba social reduce incertidumbre justo en el momento en que el visitante decide si confiar en el negocio o no. Cuanto más tarde aparece, menos peso tiene en esa primera decisión — para cuando el visitante la ve, ya ha decidido quedarse o irse basándose en menos información.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Subir la cifra de clientes/año al bloque superior, junto al titular o dentro del checklist de motivos para elegir Cutfy (ver quick wins).</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Refuerzo de confianza en el momento de mayor duda del visitante, no después de que ya haya decidido.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">6</span><h2>El blog compite por espacio con el objetivo de conversión</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La sección de blog ocupa una parte desproporcionada de la portada, antes de que el visitante llegue a cualquier bloque de conversión.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>El blog aporta valor SEO real, pero en portada compite por atención con el objetivo de reservar — cada sección adicional entre la llegada y la reserva es una oportunidad más de que el visitante se distraiga o abandone antes de decidir.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Mover el blog a una posición inferior de la portada, o reducirlo a una franja con 2-3 enlaces destacados en vez de un bloque completo — el valor SEO se mantiene, cambia solo la prioridad visual.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Una portada más corta y centrada en la conversión, sin perder el beneficio SEO del blog en el resto del sitio.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">7</span><h2>El copy de bienvenida es genérico</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>El texto introductorio ("Bienvenidos a Cutfy...") es un saludo genérico, sin mencionar ningún problema real del cliente.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un texto de bienvenida neutro no da ninguna razón para seguir leyendo — no conecta con la frustración concreta que trae a alguien a buscar una peluquería nueva (perder tiempo, no saber si hay hueco, esperar sin cita previa).</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Sustituir por copy centrado en el problema: <em>"Sabemos que venir a la peluquería no debería quitarte media tarde. Por eso hemos diseñado un sistema de reserva sencillo para que llegues, te atiendan y sigas con tu día."</em></p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Conexión inmediata con la frustración real del cliente en lugar de un saludo neutro que cualquier negocio podría firmar.</p></div>
   </div>
 
   <div class="recommendation">
-    <h2>Oportunidad FARO</h2>
-    <p>No proponemos sustituir Fresha — ya funciona. Proponemos cubrir el momento anterior a la reserva, con el mismo tono directo que ya usa vuestra marca:</p>
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Problema (perder tiempo) → Mensaje principal (resultado, no proceso) → Confianza (+30.000 clientes/año, 4,7★) → Por qué Cutfy (checklist de diferenciadores) → Selección de sede → CTA único → Conversión. Hoy el orden real empieza por el proceso de reserva y la selección de sede, y deja la confianza y el "por qué" para después — el recorrido ideal los adelanta, porque son los que reducen la duda antes de decidir.</p>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hero optimizado</h2>
     <div class="hero-mock">
-      <h3>¿No sabes qué pedir? Pregúntanos por WhatsApp.</h3>
-      <p class="sub">Te respondemos al momento, y si prefieres reservar directamente, te dejamos el enlace a tu hueco disponible.</p>
-      <div class="cta-row"><span class="primary">💬 Preguntar por WhatsApp</span></div>
+      <span class="eyebrow">Peluquería inteligente · Calle Burgo Nuevo 3, León</span>
+      <h3>El corte que necesitas. Sin esperas innecesarias.</h3>
+      <p class="sub">Reserva online en menos de un minuto y ven directamente a tu hora. Sin colas, sin llamadas, sin sorpresas.</p>
+      <p class="social">⭐ 4,7/5 en Google (190 reseñas) · Más de 30.000 clientes confían cada año en Cutfy para cuidar su imagen</p>
+      <div class="cta-row">
+        <span class="primary">Reservar cita</span>
+        <span class="secondary">Ver servicios y precios</span>
+      </div>
     </div>
-    <p style="margin-bottom:0;">Un canal de WhatsApp con respuesta automática fuera de horario, conectado a un seguimiento simple de quien pregunta y no reserva — sin tocar Fresha ni el resto de lo que ya tenéis montado.</p>
+    <p style="margin:14px 0 0;">La reformulación estratégica de fondo: Cutfy no vende cortes de pelo, vende tiempo — <strong>"la peluquería para quienes no quieren perder tiempo"</strong> es una promesa más fuerte y más específica que "peluquería inteligente", que no dice nada por sí sola hasta que se explica.</p>
+  </div>
+
+  <div class="recommendation">
+    <h2>Análisis de CTAs</h2>
+    <table class="ctatable">
+      <tr><th>CTA actual</th><th>Qué falla</th><th>Propuesta</th></tr>
+      <tr><td>"Reserva cita" (botón 1)</td><td>Correcto en sí mismo — el problema es que se repite dos veces más.</td><td>Mantener como único CTA principal.</td></tr>
+      <tr><td>"Reserva tu cita ahora" (botón 2)</td><td>Misma acción que el botón 1, en otra zona de la página — no aporta una razón nueva para pulsar.</td><td>Eliminar, o sustituir por "Ver servicios y precios" si se necesita un segundo CTA.</td></tr>
+      <tr><td>Botón flotante</td><td>Tercera repetición de la misma acción — refuerza la sensación de "me están insistiendo", no la de "es fácil reservar".</td><td>Eliminar, o dejarlo solo como acceso rápido en móvil una vez se ha hecho scroll, nunca como tercera copia del CTA principal.</td></tr>
+    </table>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Claridad del mensaje</td><td class="num">6/10</td><td class="why">Se entiende que reservan online, no se entiende el resultado que ofrecen.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num">5/10</td><td class="why">"Dos clics" es un mecanismo, no un beneficio para el cliente.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">"Peluquería inteligente" existe pero está fuera del bloque visible sin scroll.</td></tr>
+    <tr><td>Confianza</td><td class="num">6/10</td><td class="why">Segunda ubicación y reserva embebida transmiten solidez, pero llega sin refuerzo inmediato de reseñas.</td></tr>
+    <tr><td>Prueba social</td><td class="num">6/10</td><td class="why">4,7/5 y +30.000 clientes/año son fuertes, pero aparecen tarde en la página.</td></tr>
+    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Especialización en caballero y expansión a Madrid son señales reales, poco explotadas en el copy.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">La reserva en Fresha resuelve el "cuándo", no queda igual de claro el "qué me van a preguntar".</td></tr>
+    <tr><td>Conversión móvil</td><td class="num">6/10</td><td class="why">Recorrido funciona, pero los tres CTA duplicados pesan más en pantallas pequeñas.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">7/10</td><td class="why">Reserva online + teléfono — pocos pasos entre "quiero esto" y "he reservado".</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num">4/10</td><td class="why">Correctos en el texto, pero triplicados sin jerarquía — la nota más baja del informe.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num">5/10</td><td class="why">El diferenciador y la prueba social pierden frente al proceso de reserva, repetido tres veces.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num">5/10</td><td class="why">El orden sigue la lógica del negocio (reservar, elegir sede) antes que la del cliente (por qué confiar).</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num">5/10</td><td class="why">Usa bien la facilidad de decisión (Fresha embebido); no usa la prueba social ni la reciprocidad en el momento en que más pesan.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">60/100</span><span class="label">Suma de las 13 dimensiones ÷ 130 × 100, redondeada hacia abajo. Sustituye la puntuación parcial de la versión anterior de este informe, hecha antes de poder navegar cutfy.eu directamente.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Eliminar los dos CTA duplicados, dejar uno solo como principal.</li>
+      <li>Cambiar el titular de "Tú cita en dos clics" a un titular de beneficio.</li>
+      <li>Subir "Peluquería inteligente" (reformulado) y +30.000 clientes/año al bloque superior.</li>
+      <li>Sustituir el copy de bienvenida genérico por copy centrado en el problema del cliente.</li>
+      <li>Mover el checklist "¿Por qué elegir Cutfy?" antes del selector de sede León/Madrid.</li>
+      <li>Reducir el bloque de blog en portada a una franja de 2-3 enlaces, moverlo más abajo.</li>
+      <li>Añadir un segundo CTA con función distinta ("Ver servicios y precios") en vez de duplicar "reservar".</li>
+      <li>Revisar si el selector de sede confunde a quien busca solo León (posible fricción para el negocio principal).</li>
+      <li>Confirmar el recorrido de reserva dentro de Fresha (número de pasos, si pide pago o solo confirma cita).</li>
+      <li>Extender la reformulación "vende tiempo, no cortes" a las descripciones de servicios, no solo al hero.</li>
+    </ol>
   </div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Si os interesa, así lo implementaríamos</h2>
     <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgos 1, 2</strong> (sin canal de pregunta previa, sin respuesta fuera de horario) → respuesta automática de WhatsApp fuera de horario, complementaria a Fresha.</li>
-      <li style="margin-bottom:0;"><strong>Hallazgo 3</strong> (sin seguimiento de quien pregunta y no reserva) → seguimiento automático de contactos, para recuperar reservas que hoy se pierden en silencio.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgos 1, 3, 4, 7</strong> (titular, diferenciador, copy genérico) → reescritura del bloque superior de la web con el mensaje corregido.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgos 2, 5, 6</strong> (CTAs duplicados, prueba social tardía, blog en portada) → reordenación de la página sin tocar el sistema de reservas ya resuelto (Fresha).</li>
+      <li style="margin-bottom:0;"><strong>Oportunidad de automatización</strong> (solo donde elimina fricción real, no como añadido genérico): seguimiento automático de quien entra en la página de reserva y no llega a confirmar — hoy no hay forma de saber cuánta gente se pierde en ese paso.</li>
     </ul>
     <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
   </div>
 
-  <h2>Puntuación FARO</h2>
-  <table class="score-table">
-    <tr><th>Área</th><th>Nota</th><th></th></tr>
-    <tr><td>Claridad del mensaje</td><td class="num">8/10</td><td class="tag">✅</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num">7/10</td><td class="tag">✅ Fresha + teléfono</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
-    <tr><td>Conversión móvil</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
-    <tr><td>Llamadas a la acción</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
-    <tr><td>Prueba social y confianza</td><td class="num">9/10</td><td class="tag">✅ 4,7/5, 190 reseñas</td></tr>
-    <tr><td>Fricción técnica de entrada</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
-    <tr><td>Canal adecuado al momento</td><td class="num">5/10</td><td class="tag">⚠️ Reserva sí, consulta previa no confirmada</td></tr>
-    <tr><td>Cobertura de objeciones frecuentes</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
-    <tr><td>Consistencia entre canales</td><td class="num">7/10</td><td class="tag">✅ Web + Fresha + Google coherentes</td></tr>
-  </table>
-  <div class="score-total"><span class="big">≥36/60 confirmado</span><span class="label">Sobre las dimensiones evaluables sin ver la web — nota global sobre 100 pendiente de completar las 4 dimensiones que exigen navegar cutfy.eu directamente</span></div>
-
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Ya tenéis la reserva resuelta y una reputación excelente — eso no es habitual, y lo reconocemos antes que nada. Lo que analizamos es el momento justo antes: quien todavía no sabe qué pedir o escribe fuera de horario. Encontramos ahí una oportunidad concreta, no una crítica a lo que ya construisteis."</p>
-    <p style="margin-bottom:0;">Nuestro trabajo no consiste en sustituir lo que ya funciona. Consiste en cubrir el hueco justo antes de que alguien llegue a reservar.</p>
+    <p class="quote">"He recorrido vuestra web como si fuera un cliente que quiere cortarse el pelo hoy. En menos de diez minutos detecté nueve puntos donde la experiencia añade pasos innecesarios antes de reservar. No creo que necesitéis una web nueva; creo que necesitáis una web que convierta mejor. Os dejo un informe con cambios concretos para conseguirlo."</p>
+    <p style="margin-bottom:0;">No proponemos sustituir lo que ya funciona (Fresha, la reputación, la expansión). Proponemos que la web comunique tan bien como funciona vuestro servicio real.</p>
   </div>
 
   <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>

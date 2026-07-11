@@ -4,6 +4,8 @@
 
 **Nota sobre el nombre**: se llama "Método FARO", sin símbolo ®. FARO no tiene una marca registrada — usar ® sin registro real ya fue un error cometido y corregido en este mismo proyecto (ver `.claude/skills/consejo-estrategico-leon/references/11-gabriela-vision.md`, sección "Casos reales": "la corrección del símbolo ® falso... rentables a corto plazo pero incoherentes con la honestidad de alcance ya declarada"). No se repite ese error aquí.
 
+**Implementación operativa**: desde julio 2026 este método se ejecuta como skill de Claude Code — `.claude/skills/faro-auditor-conversion/SKILL.md`. Ese skill contiene el rol, la filosofía, el Score FARO de 13 dimensiones, el formato fijo de hallazgo y la estructura completa de 12 pasos del informe; este documento sigue siendo la referencia del *porqué* (secciones 1-3), la regla de evidencia (sección 5) y qué no hacer (sección 9), para no duplicar contenido operativo en dos sitios que puedan desincronizarse.
+
 ---
 
 ## 1. Por qué la auditoría, y no vender IA/landings directamente
@@ -40,24 +42,11 @@ Consecuencia práctica: **ningún informe se diseña como pieza aislada** — de
 
 El paso 4 no es opcional ni se deja para "si sale el tema" — es un paso estructural del método, con su propia sección en la plantilla del informe (ver sección 6).
 
-## 4. Las 10 dimensiones de la Puntuación FARO
+## 4. La Puntuación FARO — de 10 a 13 dimensiones (julio 2026)
 
-Amplía las 5 dimensiones iniciales de `FARO_MVP_LANDING.md` v1 a un rubric completo, pensado para ser aplicable a cualquier vertical con agenda (dental, veterinaria, abogados, fisioterapia, hostales, restaurantes), no solo a las ya trabajadas:
+Amplía las 5 dimensiones iniciales de `FARO_MVP_LANDING.md` v1 a un rubric completo, pensado para ser aplicable a cualquier vertical con agenda (dental, veterinaria, abogados, fisioterapia, hostales, restaurantes), no solo a las ya trabajadas.
 
-| # | Dimensión | Qué mide |
-|---|---|---|
-| 1 | Claridad del mensaje | ¿Se entiende en 5 segundos qué resuelve el negocio y para quién? |
-| 2 | Facilidad para contactar | ¿Cuántos pasos/decisiones hay entre "quiero esto" y "he contactado"? |
-| 3 | Reducción de incertidumbre | ¿Sabe el visitante qué va a pasar después de contactar (cuándo le responden, qué le van a preguntar)? |
-| 4 | Conversión móvil | ¿El recorrido funciona igual de bien en el móvil, canal de entrada real de la mayoría? |
-| 5 | Llamadas a la acción | ¿Los CTA dicen el resultado ("Quiero hablar con un especialista") o son genéricos ("Más información")? |
-| 6 | Prueba social y confianza | ¿Hay fotos reales, años de experiencia, certificaciones, testimonios verificables? |
-| 7 | Fricción técnica de entrada | ¿Pop-ups, banners de cookies o widgets bloquean el contenido antes de que el visitante vea nada? |
-| 8 | Canal adecuado al momento | ¿Hay un canal directo (WhatsApp, llamada) visible y coherente con la urgencia real del servicio? |
-| 9 | Cobertura de objeciones frecuentes | ¿Responde a precio orientativo, política de cancelación, dudas típicas, sin que el visitante tenga que preguntar? |
-| 10 | Consistencia entre canales | ¿La web, Google Business y redes sociales cuentan la misma historia y dan la misma disponibilidad? |
-
-Cada dimensión se puntúa 0-10 con una nota razonada de una frase. Nota global sobre 100 = suma simple de las diez — nunca se redondea al alza (ver `FARO_MVP_LANDING.md` sección 9.2, regla que se mantiene).
+**Este rubric pasó de 10 a 13 dimensiones con el caso Cutfy León** (primer negocio auditado sobre su web real ya visitada, no solo sobre información pública): se separaron "Claridad del mensaje" y "Propuesta de valor", y se añadieron "Diferenciación", "Autoridad", "Jerarquía visual", "Recorrido del usuario" y "Psicología aplicada" — dimensiones que solo se pueden evaluar viendo el sitio real, no una web todavía sin navegar. La tabla completa, con la fórmula de nota global (suma ÷ 130 × 100, redondeada siempre hacia abajo), vive en `.claude/skills/faro-auditor-conversion/SKILL.md` sección "Score FARO", para no mantener dos tablas que puedan desincronizarse — este documento ya no repite la tabla completa.
 
 ## 5. Regla de evidencia (se mantiene sin cambios)
 
@@ -68,11 +57,13 @@ Cada hallazgo debe ser trazable a algo verificado: una captura, una búsqueda we
 1. **Portada** — título con la tensión central detectada (no genérico: "¿cuántas decisiones le pedimos al visitante antes de que decida contactar?", no "Auditoría de [Negocio]").
 2. **Nota de transparencia** — qué está confirmado (✅) y qué pendiente de confirmar.
 3. **🟢 Lo que funciona** — 3-5 puntos, siempre antes de las críticas.
-4. **Hallazgos** — cada uno con situación actual + impacto, nunca "esto es feo", siempre "esto añade fricción/duda/un paso".
-5. **Oportunidad FARO** — ejemplo concreto de hero/CTA corregido, no solo crítica abstracta.
-6. **Puntuación FARO** — tabla de 10 dimensiones + nota global.
-7. **Menú de implementación (nuevo, obligatorio)** — ver sección 7. Traduce cada hallazgo relevante a un servicio concreto del catálogo FARO, con la pregunta explícita de si quieren ayuda para implementarlo.
+4. **Hallazgos** — formato fijo en cuatro partes (Observación / Impacto / Recomendación / Beneficio esperado), sin excepción — ver `.claude/skills/faro-auditor-conversion/SKILL.md` sección 5. Introducido con el caso Cutfy León (julio 2026): la falta de un formato fijo hacía que hallazgos igual de sólidos se leyeran con un peso distinto según cómo se hubieran redactado.
+5. **Oportunidad FARO / Hero optimizado** — ejemplo concreto de hero/CTA corregido, no solo crítica abstracta (skill sección 8).
+6. **Puntuación FARO** — tabla de 13 dimensiones + nota global (skill sección 3).
+7. **Menú de implementación (obligatorio)** — ver sección 7 de este documento. Traduce cada hallazgo relevante a un servicio concreto del catálogo FARO, con la pregunta explícita de si quieren ayuda para implementarlo.
 8. **Frase de cierre** — variante de: *"Nuestro trabajo no consiste en hacer una web nueva. Consiste en conseguir que más personas que ya llegan a vuestra web den el siguiente paso."*
+
+El resto de pasos del informe (recorrido de cliente en los primeros 30 segundos, psicología del consumidor, recorrido ideal, análisis de CTAs, quick wins, oportunidades de automatización) siguen la estructura de 12 pasos del skill — no se repiten aquí para no mantener dos versiones de la misma plantilla.
 
 ## 7. Menú de implementación — el paso que faltaba
 
@@ -90,7 +81,7 @@ En el propio informe, esta tabla se presenta de forma resumida y personalizada �
 
 ## 8. Escalabilidad — por qué este método sí compone
 
-Cada auditoría completada dentro de la misma metodología (mismas 10 dimensiones, misma estructura, mismo menú de implementación) reduce el coste marginal de la siguiente: el mismo criterio de evaluación, la misma plantilla de informe, el mismo guion de entrega. Esto es literalmente el mecanismo que `FARO_MODELO_NEGOCIO.md` sección 1.6 ya identifica como el recurso clave defendible de FARO — conocimiento de proceso reutilizable, no herramienta. La auditoría de conversión es, en sí misma, la primera automatización interna de FARO sobre su propio proceso comercial.
+Cada auditoría completada dentro de la misma metodología (mismo skill, mismas 13 dimensiones, misma estructura, mismo menú de implementación) reduce el coste marginal de la siguiente: el mismo criterio de evaluación, la misma plantilla de informe, el mismo guion de entrega. Esto es literalmente el mecanismo que `FARO_MODELO_NEGOCIO.md` sección 1.6 ya identifica como el recurso clave defendible de FARO — conocimiento de proceso reutilizable, no herramienta. La auditoría de conversión es, en sí misma, la primera automatización interna de FARO sobre su propio proceso comercial.
 
 ## 9. Qué NO hacer (riesgos ya detectados)
 
