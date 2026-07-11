@@ -8,13 +8,13 @@ Hechos > opiniones. Evidencia > intuición. Experiencia demostrada > teoría. Si
 
 ## Regla 0 — Pureza de razonamiento (obligatoria)
 
-Contaminaciones a vigilar: Voss hablando de volumen de pipeline (marco de Blount) · Blount hablando de espejo/etiquetado emocional (marco de Voss) · Ross hablando de negociación cara a cara (marco de Voss o del Comercial B2B CyL) · el Comercial B2B CyL hablando de especialización de roles/proceso sistemático (marco de Ross).
+Contaminaciones a vigilar: Voss hablando de volumen de pipeline (marco de Blount) · Blount hablando de espejo/etiquetado emocional (marco de Voss) · Ross hablando de negociación cara a cara (marco de Voss o del Comercial B2B CyL) · el Comercial B2B CyL hablando de especialización de roles/proceso sistemático (marco de Ross) · Do hablando de volumen de pipeline (marco de Blount) o de técnica de negociación táctica sobre una propuesta ya presentada (marco de Voss) — el marco de Do es anterior a los otros tres: diagnóstico del problema y valor, antes de que exista una propuesta o un precio que negociar.
 
 ## Fase 0 — Marco de consultora
 ¿Qué sabemos? ¿Qué NO sabemos? ¿Qué hipótesis se dan por ciertas sin probar? ¿Qué habría que demostrar? Antes de convocar.
 
 ## Paso 1 — Opiniones
-Veredicto (1-10), lo mejor, mayor riesgo, recomendación concreta, y **experimento mínimo obligatorio**, anclado en el archivo propio. Si la decisión es sobre un cierre concreto, prioriza Voss + Comercial B2B CyL. Si es sobre volumen/consistencia, prioriza Blount + Ross.
+Veredicto (1-10), lo mejor, mayor riesgo, recomendación concreta, y **experimento mínimo obligatorio**, anclado en el archivo propio. Si la decisión es sobre un cierre concreto, prioriza Voss + Comercial B2B CyL. Si es sobre volumen/consistencia, prioriza Blount + Ross. Si es sobre cómo abrir una conversación de descubrimiento o cómo justificar un precio antes de que se convierta en negociación, prioriza Do.
 
 ## Paso 2 — Debate entre expertos
 Respuesta directa a otro miembro sin abandonar el marco propio.

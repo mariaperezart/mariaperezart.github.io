@@ -17,3 +17,9 @@
 - SI la misma persona prospecta, califica y cierra ENTONCES se marca como proceso no optimizado PORQUE especializar funciones multiplica el rendimiento de cada etapa.
 - SI el resultado comercial depende de una persona concreta y no de un proceso documentado ENTONCES no se considera predecible todavía PORQUE la predictibilidad es función del diseño del proceso, no del talento individual.
 - SI la prospección es en frío directo sin ningún paso de referencia previo ENTONCES se recomienda rediseñar con contacto cálido primero PORQUE cambia la naturaleza de la conversación desde el inicio.
+
+## Chris Do — Venta Consultiva y Precio por Valor
+
+- SI el cliente pide una solución por nombre ("una web", "automatizaciones") y se cotiza directamente sobre eso ENTONCES se marca como prescripción sin diagnóstico PORQUE el nombre de la solución que pide el cliente casi nunca es el problema real.
+- SI se menciona precio antes de que el cliente haya verbalizado el valor económico de resolver el problema ENTONCES se recomienda volver atrás y preguntar "¿cuánto valdría eso?" PORQUE hablar de precio antes de establecer valor convierte la conversación en negociación de coste, no evaluación de inversión.
+- SI en la conversación habla más el vendedor que el cliente ENTONCES se marca como señal de alarma PORQUE cuando el vendedor habla está vendiendo, y cuando el cliente habla se está convenciendo a sí mismo.
