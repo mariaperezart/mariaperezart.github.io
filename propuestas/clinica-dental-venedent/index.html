@@ -1,0 +1,165 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Decimotercer candidato de experimentos/EXP-003-pymes-leon,
+  cuarto caso dental.
+
+  Ángulo: la reputación (4,8/5, 77 opiniones) es la mejor del clúster
+  dental del dataset -- se sube al primer plano. El botón de urgencias
+  no promete "24/7" sin matices (ver informe-auditoria.html: esa
+  afirmación necesita confirmación telefónica directa antes de
+  presentarse como hecho) -- en su lugar, invita a llamar para
+  confirmar disponibilidad real.
+
+  Datos públicos confirmados (ver informe-auditoria.html): Calle San
+  Juan 2, León · Tel. 987 107 123 / 661 636 888 · L-J 10-14/17-21, V
+  10-19, S 10-14, D cerrado · 4,8/5 sobre 77 opiniones en Google.
+
+  Identidad visual: azul cobalto + coral -- confianza clínica con
+  urgencia -- distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Dental Venedent — 4,8★ en Google, León</title>
+<meta name="description" content="Clínica Dental Venedent, Calle San Juan 2, León. 4,8/5 en Google con 77 opiniones. Horario amplio, financiación sin intereses hasta 48 meses.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F1F4F9; --color-surface: #FFFFFF; --color-ink: #1A2029; --color-ink-muted: #545E70;
+    --color-primary: #1B4F91; --color-accent: #E85C4A; --color-border: #DCE3EF;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(27,79,145,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #0F131C; --color-surface: #1A2130; --color-ink: #E6EAF2; --color-ink-muted: #A6B1C4; --color-border: #2C3850; }
+  }
+  :root[data-theme="dark"] { --color-bg: #0F131C; --color-surface: #1A2130; --color-ink: #E6EAF2; --color-ink-muted: #A6B1C4; --color-border: #2C3850; }
+  :root[data-theme="light"] { --color-bg: #F1F4F9; --color-surface: #FFFFFF; --color-ink: #1A2029; --color-ink-muted: #545E70; --color-border: #DCE3EF; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating-big { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); margin-bottom: 20px; }
+  .rating-big .num { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--color-primary); line-height: 1; }
+  .rating-big .stars { color: var(--color-accent); font-size: 15px; margin-bottom: 4px; }
+  .rating-big .sub { font-size: 13px; color: var(--color-ink-muted); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--accent { background: var(--color-accent); color: #fff; }
+
+  .urgency-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .urgency-card h3 { margin-top: 0; color: var(--color-accent); }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  .hours-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); max-width: 480px; margin: 0 auto; }
+  .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .lbl { color: var(--color-ink-muted); }
+  .hours-row .val { font-weight: 600; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Clínica Dental Venedent</span>
+    <nav><a class="call" href="tel:+34987107123">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Calle San Juan 2, León · centro, cerca de Plaza Mayor</span>
+        <div class="rating-big">
+          <div class="num">4,8</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="sub">77 opiniones en Google — la mejor valoración dental de León que hemos visto</div>
+          </div>
+        </div>
+        <h1>Abierto hasta las 21:00. Financiación sin intereses hasta 48 meses.</h1>
+        <p>Implantes, ortodoncia, odontopediatría y los tratamientos dentales habituales, con horario pensado para quien solo puede venir después del trabajo.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987107123">📞 987 107 123</a>
+          <a class="btn btn--accent" href="tel:+34661636888">🚨 Urgencias: 661 636 888</a>
+        </div>
+      </div>
+
+      <div class="urgency-card">
+        <h3>¿Tienes una urgencia dental?</h3>
+        <p style="margin:0;">Llámanos y te confirmamos disponibilidad inmediata — no hace falta cita previa para casos de dolor o urgencia.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Horario</h2>
+      </div>
+      <div class="hours-card">
+        <div class="hours-row"><span class="lbl">Lunes a jueves</span><span class="val">10:00-14:00 / 17:00-21:00</span></div>
+        <div class="hours-row"><span class="lbl">Viernes</span><span class="val">10:00-19:00</span></div>
+        <div class="hours-row"><span class="lbl">Sábado</span><span class="val">10:00-14:00</span></div>
+        <div class="hours-row"><span class="lbl">Domingo</span><span class="val">Cerrado</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Nuestros servicios</h2>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Implantes y prótesis</h4><p>Soluciones fijas y removibles.</p></div>
+        <div class="service"><h4>Ortodoncia</h4><p>Para adultos y niños.</p></div>
+        <div class="service"><h4>Odontopediatría</h4><p>Atención dental para los más pequeños.</p></div>
+        <div class="service"><h4>Endodoncia y periodoncia</h4><p>Tratamiento de conducto y encías.</p></div>
+        <div class="service"><h4>Estética dental</h4><p>Blanqueamiento y tratamientos estéticos.</p></div>
+        <div class="service"><h4>Financiación sin intereses</h4><p>Hasta 48 meses, primera consulta gratis.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Clínica Dental Venedent — Calle San Juan 2, León · 987 107 123</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El alcance exacto del servicio de urgencias (horario, fin de semana) está pendiente de confirmar directamente con el negocio antes de publicar cualquier promesa de disponibilidad.</p>
+</footer>
+
+</body>
+</html>

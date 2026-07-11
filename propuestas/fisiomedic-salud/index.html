@@ -1,0 +1,157 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Decimoquinto candidato de experimentos/EXP-003-pymes-leon,
+  tercer caso de fisioterapia.
+
+  Ángulo: omnicanalidad (presencial + virtual + domicilio) como mensaje
+  central, evaluación funcional gratuita como lead magnet de baja
+  fricción, y la tienda B2B de equipos separada en su propia sección
+  para no competir por atención con el mensaje dirigido a pacientes
+  (ver informe-auditoria.html, hallazgo 4).
+
+  Datos públicos confirmados (ver informe-auditoria.html): C/ Alcázar
+  de Toledo 7, 2ºC, León · Tel. 987 231 012 · presencial + virtual +
+  domicilio · sin horario publicado (a confirmar).
+
+  Identidad visual: azul acero + ámbar -- clínico con un punto
+  tecnológico -- distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fisiomedic Salud — Fisioterapia presencial, online y a domicilio, León</title>
+<meta name="description" content="Fisiomedic Salud, C/ Alcázar de Toledo 7, León. Fisioterapia presencial, virtual y a domicilio. Evaluación funcional gratuita. Dolor de espalda y traumatología.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F0F4F7; --color-surface: #FFFFFF; --color-ink: #1A222B; --color-ink-muted: #526175;
+    --color-primary: #2C5F8A; --color-accent: #D98A3D; --color-border: #DBE4EC;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(44,95,138,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #0F141A; --color-surface: #1A222C; --color-ink: #E5EBF0; --color-ink-muted: #A5B2C2; --color-border: #2B394A; }
+  }
+  :root[data-theme="dark"] { --color-bg: #0F141A; --color-surface: #1A222C; --color-ink: #E5EBF0; --color-ink-muted: #A5B2C2; --color-border: #2B394A; }
+  :root[data-theme="light"] { --color-bg: #F0F4F7; --color-surface: #FFFFFF; --color-ink: #1A222B; --color-ink-muted: #526175; --color-border: #DBE4EC; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--accent { background: var(--color-accent); color: #fff; }
+
+  .channels-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .channels-card h3 { margin-top: 0; color: var(--color-accent); }
+  .channel-row { display: flex; align-items: center; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .channel-row:last-child { border-bottom: none; }
+  .channel-row .icon { font-size: 20px; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  .b2b-band { background: var(--color-primary); color: #fff; }
+  .b2b-band .section__intro h2 { color: #fff; }
+  .b2b-band .section__intro p { color: rgba(255,255,255,0.85); }
+  .b2b-card { background: rgba(255,255,255,0.08); border: 1px solid rgba(255,255,255,0.2); border-radius: 14px; padding: 26px; max-width: 640px; margin: 0 auto; text-align: center; }
+  .b2b-card p { color: rgba(255,255,255,0.9); margin: 0 0 16px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Fisiomedic Salud</span>
+    <nav><a class="call" href="tel:+34987231012">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">C/ Alcázar de Toledo 7, León</span>
+        <h1>Fisioterapia donde estés: en el centro, en tu casa, o por videollamada.</h1>
+        <p>Dolor de espalda, traumatología y evaluación funcional — presencial, virtual o a domicilio, según lo que necesites.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987231012">📞 987 231 012</a>
+          <a class="btn btn--accent" href="#evaluacion">🩺 Evaluación funcional gratuita</a>
+        </div>
+      </div>
+
+      <div class="channels-card" id="evaluacion">
+        <h3>Tú eliges cómo</h3>
+        <div class="channel-row"><span class="icon">🏥</span><span>Presencial en la clínica</span></div>
+        <div class="channel-row"><span class="icon">💻</span><span>Virtual, por videollamada</span></div>
+        <div class="channel-row"><span class="icon">🏠</span><span>A domicilio, si no puedes desplazarte</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Nuestras especialidades</h2>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Dolor de espalda</h4><p>Lumbalgia, dorsalgia, cervicalgia.</p></div>
+        <div class="service"><h4>Traumatología</h4><p>Rehabilitación post-traumatismo y postoperatoria.</p></div>
+        <div class="service"><h4>Evaluación funcional</h4><p>Análisis del movimiento antes de tratar.</p></div>
+        <div class="service"><h4>Electroterapia</h4><p>Electroestimulación y TENS.</p></div>
+        <div class="service"><h4>Magnetoterapia</h4><p>Para tejidos blandos.</p></div>
+        <div class="service"><h4>Ultrasonido terapéutico</h4><p>Tecnología profesional certificada.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section b2b-band" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro">
+        <h2>¿Eres profesional o centro sanitario?</h2>
+        <p style="margin:0 auto;">También vendemos y asesoramos sobre equipos de electroterapia, magnetoterapia y ultrasonido para tu consultorio, centro u hospital.</p>
+      </div>
+      <div class="b2b-card">
+        <p>Catálogo de equipamiento profesional con asesoría incluida — para quien equipa una clínica, no para quien busca tratamiento.</p>
+        <a class="btn btn--accent" href="tel:+34987231012">📞 Consultar catálogo y precios</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Fisiomedic Salud — C/ Alcázar de Toledo 7, León · 987 231 012</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El horario real y la accesibilidad del local (2º piso) están pendientes de confirmar.</p>
+</footer>
+
+</body>
+</html>

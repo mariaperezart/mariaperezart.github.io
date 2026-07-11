@@ -1,0 +1,205 @@
+<!--
+  Informe de auditoría — Clidenin, Clínica Dental y Ortodoncia (Av.
+  Independencia, León). Duodécimo caso del dataset EXP-003, tercer
+  caso dental. Flujo estándar faro-auditor-conversion.
+
+  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
+  repetidamente). Informe apoyado en WebSearch con fuente citada.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: fuentes externas citan "Av. Independencia, 4, 24001 León" -- el dataset original de este experimento tenía "Avenida Independencia 6, 6ºE". Discrepancia menor de portal a portal, sin confirmar cuál es la correcta. 🟡
+  - Teléfono: 987 21 01 32. ✅ (coincide con el dataset original)
+  - Web propia: ortodoncialeon.org. ✅
+  - Horario: cerrado sábados y domingos; horario laborable no especificado con precisión en las fuentes consultadas. 🟡
+  - Especialidades: ortodoncia, ortodoncia invisible, odontopediatría, implantología, además de blanqueamiento, carillas, cirugía oral, endodoncia, periodoncia, prótesis. ✅
+  - Primera visita, diagnóstico y presupuesto gratuitos. ✅
+  - Accesibilidad: silla de ruedas, baño adaptado, parking adaptado. ✅
+  - Más de 25 años de experiencia (mencionado en fuentes externas, no confirmado en la web propia). 🟡
+  - Valoración: 4,3/5 sobre ~149 opiniones en Google Business Profile. ✅ (agregador, cifra consistente entre dos fuentes distintas)
+  - Reseñas mixtas: reseñas positivas destacan trato con niños y explicaciones claras; reseñas negativas señalan esperas largas, citas breves y cargos elevados en algunos tratamientos (curetaje, infiltraciones), con al menos un caso de diagnóstico disputado tras una segunda opinión. 🟡 — dato de reputación real y públicamente visible, no un rumor aislado; se documenta con honestidad porque es exactamente el tipo de señal que un cliente potencial también puede encontrar buscando.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clidenin</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1E3A5F; --color-accent: #4FB89D; --color-ink: #182028;
+    --color-bg: #F1F4F6; --color-white: #FFFFFF; --color-success: #2F8A6E; --color-alert: #B4453A;
+    --color-border: #DDE3E8; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7FA7D6; --color-accent: #7FD9C0; --color-ink: #E5EAF0;
+      --color-bg: #141A21; --color-white: #1E262E; --color-success: #7FD9B8; --color-alert: #E08579;
+      --color-border: #33404970; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7FA7D6; --color-accent: #7FD9C0; --color-ink: #E5EAF0;
+    --color-bg: #141A21; --color-white: #1E262E; --color-success: #7FD9B8; --color-alert: #E08579;
+    --color-border: #33404970; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1E3A5F; --color-accent: #4FB89D; --color-ink: #182028;
+    --color-bg: #F1F4F6; --color-white: #FFFFFF; --color-success: #2F8A6E; --color-alert: #B4453A;
+    --color-border: #DDE3E8; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #E9F5F1; border: 1px solid #BEE0D5; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clidenin</p>
+  <h1>Primera visita gratis es un diferenciador fuerte. La reputación mixta puede estar frenándolo.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar ortodoncialeon.org directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. También hay una discrepancia menor de dirección entre el dataset original de este proyecto (Av. Independencia 6, 6ºE) y las fuentes externas consultadas ahora (Av. Independencia 4) — a confirmar antes de cualquier contacto.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Clidenin ofrece primera visita, diagnóstico y presupuesto gratis — una forma directa de reducir la barrera de entrada de quien no sabe cuánto le va a costar el tratamiento antes incluso de pisar la clínica. Al mismo tiempo, su valoración pública (4,3/5 sobre ~149 opiniones) es más mixta que la de otros negocios del dataset: junto a reseñas muy positivas sobre el trato con niños, hay quejas visibles sobre esperas largas y cargos que algunos pacientes no esperaban. Esto no es un rumor aislado — es información pública que cualquier persona que busque "Clidenin opiniones" puede encontrar igual que la hemos encontrado nosotros.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Primera visita, diagnóstico y presupuesto gratuitos — reduce la barrera de entrada real antes de comprometerse a nada. ✅</li>
+      <li>Más de 25 años de experiencia y especialización concreta en ortodoncia, odontopediatría e implantología. ✅ (fuente externa)</li>
+      <li>Accesibilidad completa: silla de ruedas, baño adaptado, parking adaptado — relevante para un segmento de pacientes que otras clínicas del dataset no mencionan. ✅</li>
+      <li>Reseñas positivas destacan específicamente el trato con niños — coherente con la especialización en odontopediatría. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "ortodoncia León" o "dentista para niños León" — encuentro la web propia y, si sigo buscando, también opiniones de Google con valoración de 4,3/5.</p>
+    <p><strong>Leo</strong> las reseñas más recientes o más votadas — algunas muy positivas sobre el trato con niños, otras que mencionan esperas largas o un presupuesto que subió más de lo esperado.</p>
+    <p><strong>Dudo</strong> — la primera visita gratis reduce el riesgo de probar, pero la reseña sobre cargos inesperados es justo el tipo de duda que "primera visita gratis" por sí solo no resuelve del todo, si no va acompañada de un mensaje claro sobre cómo se calcula el presupuesto.</p>
+    <p><strong>Decido</strong> en función de si encuentro algo en la propia web (no solo en reseñas de terceros) que explique con claridad qué incluye el presupuesto gratuito y qué pasa después.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La reputación pública es mixta — un mensaje claro sobre transparencia de precios podría contrarrestar la objeción más repetida</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Junto a reseñas muy positivas, hay quejas visibles sobre cargos que algunos pacientes describen como mayores de lo esperado, y al menos un caso de diagnóstico disputado tras una segunda opinión externa.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente potencial que busque reseñas antes de reservar puede encontrar esa objeción específica (miedo a un presupuesto que "crece") antes de leer sobre el diagnóstico gratuito que ya ofrece la clínica para evitarlo.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web explica con claridad qué incluye exactamente el "presupuesto gratuito" y si se garantiza por escrito antes de empezar ningún tratamiento — ese mensaje, bien visible, responde directamente a la objeción más repetida en las reseñas negativas.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la duda más específica que ya existe en la reputación pública del negocio, en vez de dejar que la resuelva (o no) cada cliente por su cuenta leyendo reseñas de terceros.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La especialización en odontopediatría no está confirmada como mensaje principal, pese a ser un punto fuerte real en las reseñas</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Las reseñas positivas mencionan específicamente el buen trato con niños, coherente con la especialidad en odontopediatría que ofrece la clínica.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si ese diferenciador no aparece pronto en la web, una familia que busca dentista para sus hijos puede no distinguir a Clidenin de cualquier otra clínica generalista con la misma rapidez.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la odontopediatría aparece en el bloque principal de la web, con algún testimonio real (con permiso) sobre el trato con niños.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta más rápido al segmento de familias con hijos, que es exactamente donde la clínica ya tiene su reputación más sólida.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda → Mensaje claro de especialización (ortodoncia + niños) → Primera visita/presupuesto gratis, con qué incluye explicado con transparencia → Accesibilidad como valor añadido → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">Primera visita y presupuesto gratis reducen la barrera de entrada, pero no está confirmado si eso se comunica con la claridad suficiente para contrarrestar las quejas sobre cargos.</td></tr>
+    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">4,3/5 sobre ~149 opiniones — volumen alto, pero valoración más mixta que la mayoría del dataset.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">Odontopediatría y accesibilidad son diferenciadores reales, sin confirmar si se comunican como tales en el bloque principal.</td></tr>
+    <tr><td>Confianza</td><td class="num">4/10</td><td class="why">Reputación pública mixta, con quejas específicas sobre transparencia de precios — un riesgo real de conversión que requiere un mensaje deliberado para contrarrestarlo.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
+    <tr><td>Autoridad</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web muestra credenciales del equipo.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además del teléfono.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la primera visita gratis como palanca de decisión, no solo como dato suelto.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">20/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 50/100 sobre esas 4 — la nota más baja del dataset hasta ahora sobre las dimensiones evaluables, por la reputación mixta. Las 9 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Añadir un mensaje claro y visible sobre qué incluye exactamente el presupuesto gratuito, y el compromiso de no cambiarlo sin avisar antes de empezar.</li>
+      <li>Subir la odontopediatría y el trato con niños al mensaje principal, con algún testimonio real si hay permiso para usarlo.</li>
+      <li>Confirmar la dirección exacta (discrepancia entre fuentes) antes de cualquier contacto o material impreso.</li>
+      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación mixta sobre precios) → mensaje de transparencia de presupuesto en el bloque principal.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (odontopediatría poco destacada) → subir ese diferenciador al mensaje principal.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 9 dimensiones que este informe deja pendientes con honestidad.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis un diferenciador fuerte -- primera visita, diagnóstico y presupuesto gratis -- que puede estar compitiendo contra una reputación pública más mixta de lo que os gustaría. Os dejamos un informe honesto sobre cómo hacer que ese diferenciador hable antes que la duda."</p>
+    <p style="margin-bottom:0;">No proponemos ocultar ni discutir las reseñas — proponemos un mensaje tan claro sobre transparencia de precios que la duda no llegue a formarse.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

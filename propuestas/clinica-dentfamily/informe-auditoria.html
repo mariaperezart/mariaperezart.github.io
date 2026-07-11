@@ -1,0 +1,202 @@
+<!--
+  Informe de auditoría — Clínica DentFamily (Avenida de Nocedo 23,
+  León). Decimocuarto caso del dataset EXP-003, quinto caso dental,
+  cierra el clúster dental. Flujo estándar faro-auditor-conversion.
+
+  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
+  repetidamente). Informe apoyado en WebSearch con fuente citada.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: Avenida de Nocedo 23, 24007 León -- confirma el dato del dataset original ("León, dirección exacta no confirmada"). ✅
+  - Teléfono: 987 01 45 46. ✅ (coincide con el dataset original) · Email: info@clinicadentfamily.com. ✅
+  - Horario: L-V 10:00-13:30 y 16:30-20:00. ✅ (web propia)
+  - Dirigida por el Dr. Sergio Vogulis. ✅
+  - Servicios: implantes, ortodoncia, periodoncia, endodoncia, estética dental con diseño digital de sonrisa 3D, sedación consciente para pacientes nerviosos, planes de financiación. ✅
+  - Reputación: sin opiniones registradas en Doctoralia en el momento de esta búsqueda -- a diferencia del resto del clúster dental de este dataset (Clidenin 149, Cachero, Venedent 77), DentFamily no tiene todavía un volumen de reseñas públicas visible. 🟡 -- puede indicar un negocio más reciente o con menor actividad en plataformas de reseñas, no necesariamente peor calidad de servicio.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica DentFamily</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #A24E63; --color-accent: #C9995C; --color-ink: #241A1D;
+    --color-bg: #F7F1EE; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #EBDFDA; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #E39CAE; --color-accent: #E0BD8B; --color-ink: #F0E4E7;
+      --color-bg: #201619; --color-white: #2B2024; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #3D2E3170; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #E39CAE; --color-accent: #E0BD8B; --color-ink: #F0E4E7;
+    --color-bg: #201619; --color-white: #2B2024; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #3D2E3170; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #A24E63; --color-accent: #C9995C; --color-ink: #241A1D;
+    --color-bg: #F7F1EE; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #EBDFDA; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #F3E7EB; border: 1px solid #E0C3CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica DentFamily</p>
+  <h1>Sedación consciente para pacientes nerviosos — un diferenciador real que resuelve el miedo al dentista, no solo la caries.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar clinicadentfamily.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">DentFamily es el único negocio del clúster dental de este dataset sin un volumen de reseñas públicas visible todavía — lo cual no significa mala calidad, pero sí significa que no puede apoyarse en prueba social como los otros cuatro casos dentales auditados. A cambio, tiene dos diferenciadores reales y poco comunes: sedación consciente para pacientes con miedo al dentista (una de las objeciones más universales del sector) y diseño digital de sonrisa 3D antes de empezar cualquier tratamiento estético. El reto aquí es distinto al resto del clúster: en vez de amplificar una reputación ya fuerte, hay que construir confianza con otros activos, mientras se empieza a generar reseñas reales.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Sedación consciente para pacientes nerviosos — responde directamente a una de las objeciones más comunes en cualquier clínica dental: el miedo. ✅</li>
+      <li>Diseño digital de sonrisa 3D antes de empezar el tratamiento estético — reduce la incertidumbre sobre el resultado final. ✅</li>
+      <li>Dirigida por un profesional identificado (Dr. Sergio Vogulis), no una marca genérica sin cara visible. ✅</li>
+      <li>Catálogo completo: implantes, ortodoncia, periodoncia, endodoncia, estética. ✅</li>
+      <li>Planes de financiación disponibles. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "dentista para pacientes nerviosos León" o simplemente "dentista León" — si busco lo primero, DentFamily tiene una respuesta real que muchas clínicas no ofrecen.</p>
+    <p><strong>Busco</strong> reseñas para confirmar que es de fiar — aquí es donde DentFamily tiene menos que mostrar que el resto del clúster dental de este dataset.</p>
+    <p><strong>Dudo</strong> — sin reseñas visibles, ¿qué otra cosa me da confianza? El nombre del doctor, si aparece con claridad, y la explicación de en qué consiste la sedación consciente, pueden sustituir parte de esa confianza que normalmente dan las reseñas.</p>
+    <p><strong>Decido</strong> en función de si la web transmite suficiente confianza por sí misma (equipo, proceso claro, fotos reales) sin depender de reseñas que todavía no existen en volumen.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La sedación consciente es un diferenciador fuerte que puede no estar comunicado como tal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>DentFamily ofrece sedación consciente para pacientes nerviosos — un servicio que responde directamente al miedo al dentista, una de las barreras más comunes para pedir cita en cualquier clínica.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Alguien que evita ir al dentista por miedo puede no saber que existe esta opción si no aparece de forma explícita y temprana en la web — y seguir posponiendo el tratamiento en vez de buscar activamente esta solución.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la sedación consciente aparece en el bloque principal de la web, con una explicación breve y tranquilizadora de en qué consiste.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta un segmento de clientes (quienes evitan el dentista por miedo) que probablemente no está buscando "el mejor dentista" sino "un dentista que entienda mi miedo".</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>Sin reseñas públicas visibles, la confianza tiene que construirse con otros activos</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>A diferencia del resto del clúster dental de este dataset (Clidenin, Cachero, Venedent, todos con decenas o cientos de opiniones), DentFamily no tiene reseñas registradas en Doctoralia en el momento de esta búsqueda.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que compare varias clínicas dentales de León puede descartar DentFamily solo por falta de prueba social visible, incluso si la calidad real del servicio es igual o mejor que la competencia.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web muestra el nombre y credenciales del Dr. Sergio Vogulis con claridad, y valorar activar una petición sistemática de reseñas a pacientes satisfechos — el resto del clúster dental de este dataset demuestra que el volumen de reseñas es alcanzable en León.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Empezar a cerrar la brecha de prueba social frente al resto de clínicas del dataset, con un activo (reseñas) que hoy no cuesta nada generar salvo pedirlo.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda (posiblemente por miedo al dentista) → Mensaje claro sobre sedación consciente → Nombre y cara del doctor, como sustituto parcial de la prueba social que todavía falta → Diseño digital de sonrisa como reductor de incertidumbre → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">Sedación consciente y diseño digital 3D son diferenciadores reales y poco comunes en el resto del dataset.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">El diseño digital de sonrisa reduce la incertidumbre sobre el resultado estético antes de empezar.</td></tr>
+    <tr><td>Prueba social</td><td class="num">2/10</td><td class="why">Sin reseñas visibles registradas — la nota más baja de este dataset en esta dimensión, aunque no implica mala calidad de servicio.</td></tr>
+    <tr><td>Autoridad</td><td class="num">4/10</td><td class="why">Profesional identificado por nombre (Dr. Sergio Vogulis), sin credenciales adicionales confirmadas.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
+    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay fotos reales del equipo o de la clínica.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además del teléfono y el email.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la sedación consciente como palanca contra el miedo, o solo la menciona de pasada.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">19/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 47,5/100 sobre esas 4 — la nota más baja del dataset en la dimensión de prueba social, compensada parcialmente por diferenciación real. Las 9 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Subir la sedación consciente al mensaje principal, con una explicación breve y tranquilizadora dirigida a quien tiene miedo al dentista.</li>
+      <li>Empezar a pedir reseñas de forma sistemática a pacientes satisfechos — es la brecha más grande frente al resto del clúster dental del dataset.</li>
+      <li>Confirmar si el nombre y la cara del Dr. Sergio Vogulis aparecen con claridad — sustituye parte de la confianza que aportarían las reseñas.</li>
+      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (sedación consciente poco destacada) → mensaje principal dirigido a pacientes con miedo al dentista.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (sin reseñas visibles) → sistema simple de petición de reseñas tras cada tratamiento.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 9 dimensiones que este informe deja pendientes con honestidad.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis un diferenciador real -- sedación consciente para pacientes con miedo -- que resuelve una barrera muy común y que casi nadie comunica bien. Os dejamos un informe honesto sobre cómo aprovecharlo, y sobre cómo empezar a construir la prueba social que hoy os falta frente al resto de clínicas de León."</p>
+    <p style="margin-bottom:0;">No proponemos inventar reseñas ni maquillar nada — proponemos un sistema simple para conseguirlas de verdad, y un mensaje que hable directamente a quien pospone el dentista por miedo.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

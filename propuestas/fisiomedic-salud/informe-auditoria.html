@@ -1,0 +1,289 @@
+<!--
+  Informe de auditoría — Fisiomedic Salud (razón social FISIOMEDIC
+  LEON SL), C/ Alcázar de Toledo 7, 2ºC, León. Decimoquinto caso del
+  dataset EXP-003, tercer caso de fisioterapia, segundo auditado con
+  los tres skills operativos completos (faro-auditor-conversion +
+  faro-board-of-advisors + faro-offer-architect). Corresponde a la fila
+  "Centro Fisiomedic León" del dataset original (mismo teléfono,
+  987 23 10 12 / 987 231 012, y misma dirección).
+
+  PROVENANCIA: los datos de este informe proceden de una investigación
+  hecha por el usuario en otra sesión, con navegación directa de
+  fisiomedic-salud.com y consulta de directorios (Axesor, DocFav,
+  Doctoralia, Cinco Días, eFisioterapia.net). A diferencia de la
+  mayoría de casos recientes de este dataset (WebFetch caído, solo
+  WebSearch), aquí sí hay navegación real de la web propia -- se marca
+  🟢 lo confirmado por esa navegación directa.
+
+  NOTA CRUZADA IMPORTANTE: esta investigación cita a CEFIS León (C/
+  Lucas de Tuy 7, ya en el dataset como "Centro de Fisioterapia y
+  Osteopatía León") como fundada en 1995, 31 años de trayectoria, con
+  2 fundadores -- Jorge y Félix Cañal. Es la misma versión que ya
+  presentaba la v2 de ese informe (con la discrepancia grave sin
+  resolver frente a la v1). Esta es una tercera fuente independiente
+  que corrobora esos datos -- aumenta la confianza en la v2, sin
+  cerrar la discrepancia del todo (sigue sin navegación directa propia
+  de cefisleon.com en esta sesión). Ver nota añadida en
+  propuestas/centro-fisioterapia-osteopatia-leon/informe-auditoria.html.
+
+  Ficha de identidad (fuente: investigación con navegación directa):
+  - Nombre comercial: Fisiomedic Salud ("Medicina y Terapia Física"). Razón social: FISIOMEDIC LEON SL.
+  - Dirección: C/ Alcázar de Toledo, 7, 2ºC, 24001 León (2º piso). Tel. 987 231 012.
+  - Web: fisiomedic-salud.com. Cita online y por WhatsApp.
+  - Modalidades: presencial, virtual (telefisioterapia), a domicilio, evaluación funcional.
+  - Especialidades: dolor de espalda (lumbalgia, dorsalgia, cervicalgia), traumatología, evaluación funcional.
+  - Tecnología: electroterapia, magnetoterapia, ultrasonido terapéutico.
+  - Línea B2B: venta de equipos (ultrasonido, electroterapia, magnetoterapia) + asesoría a consultorios/centros/hospitales -- diferenciador único frente al resto del clúster de fisioterapia del dataset.
+  - Equipo: mínimo 3 fisioterapeutas visibles en fotografías, sin nombres ni titulaciones publicadas. Equipo 100% femenino (inferido de fotos).
+  - Horario no publicado. Sin reseñas identificadas en ninguna plataforma.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Fisiomedic Salud</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #2C5F8A; --color-accent: #D98A3D; --color-ink: #1A222B;
+    --color-bg: #F0F4F7; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #DBE4EC; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #86B4DE; --color-accent: #F0B076; --color-ink: #E5EBF0;
+      --color-bg: #121820; --color-white: #1C242E; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #2E3C4C70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #86B4DE; --color-accent: #F0B076; --color-ink: #E5EBF0;
+    --color-bg: #121820; --color-white: #1C242E; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #2E3C4C70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #2C5F8A; --color-accent: #D98A3D; --color-ink: #1A222B;
+    --color-bg: #F0F4F7; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #DBE4EC; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Fisiomedic Salud</p>
+  <h1>Sois clínica y proveedor de equipos a la vez. Nadie más en León hace las dos cosas.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de fisiomedic-salud.com hecha fuera de esta sesión (WebFetch propio sigue en 403). Lo que esa investigación no pudo confirmar (horario, precios, nombres del equipo, reseñas) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Fisiomedic Salud tiene algo que ningún otro centro de fisioterapia de este dataset tiene: una línea B2B de venta y asesoría de equipos de electroterapia, magnetoterapia y ultrasonido para consultorios y hospitales, además de la clínica. También ofrece atención presencial, virtual y a domicilio — más canales que la mayoría de sus competidores directos. A cambio, la web no muestra nombres ni titulaciones del equipo, no hay reseñas visibles en ninguna plataforma, y el horario no está publicado. Es un negocio con activos reales y poco comunes, compitiendo con menos prueba social que casi cualquier otro competidor de León.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Omnicanalidad real: presencial, virtual (telefisioterapia) y a domicilio — más canales que CEFIS, Fisiorama, FisioAsemar y el resto de competidores auditados, que operan solo en presencial. ✅</li>
+      <li>Línea B2B de venta y asesoría de equipamiento terapéutico — modelo dual único en el dataset, sin competencia directa conocida en este nicho en León. ✅</li>
+      <li>Cita online y por WhatsApp — canal de contacto moderno, mejor que buena parte del dataset. ✅</li>
+      <li>Web propia con diseño moderno y fotografías reales del equipo y los tratamientos. ✅</li>
+      <li>Evaluación funcional como servicio propio — base real para construir un lead magnet gratuito. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Fisiomedic Salud — "Medicina y Terapia Física" (razón social: FISIOMEDIC LEON SL)</td></tr>
+    <tr><th>Dirección</th><td>C/ Alcázar de Toledo, 7, 2ºC, 24001 León (2º piso)</td></tr>
+    <tr><th>Contacto</th><td>987 231 012 · cita online y WhatsApp mencionados en la web</td></tr>
+    <tr><th>Modalidades</th><td>Presencial · virtual (telefisioterapia) · a domicilio · evaluación funcional</td></tr>
+    <tr><th>Especialidades</th><td>Dolor de espalda (lumbalgia, dorsalgia, cervicalgia) · traumatología · evaluación funcional</td></tr>
+    <tr><th>Tecnología</th><td>Electroterapia, magnetoterapia, ultrasonido terapéutico</td></tr>
+    <tr><th>Línea B2B</th><td>Venta de equipos de electroterapia/magnetoterapia/ultrasonido + asesoría a consultorios, centros y hospitales</td></tr>
+    <tr><th>Equipo</th><td>Mínimo 3 fisioterapeutas visibles en fotografías, sin nombres ni titulaciones publicadas</td></tr>
+    <tr><th>Horario</th><td>No publicado en la web</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "fisioterapia a domicilio León" o "fisioterapia online León" — Fisiomedic aparece con más opciones de canal que la mayoría de competidores.</p>
+    <p><strong>Navego</strong> la web y veo fotos de un equipo profesional y un diseño cuidado — buena primera impresión visual.</p>
+    <p><strong>Busco</strong> quién me va a tratar — no encuentro nombres ni titulaciones, solo fotografías sin identificar. En un sector donde el paciente quiere saber el nivel de formación de quien le trata, esto es una laguna real.</p>
+    <p><strong>Busco</strong> reseñas para confirmar que es de fiar — no encuentro ninguna en ninguna plataforma, a diferencia de competidores como Physiotherapy León, que sí las tiene y con carga emocional fuerte.</p>
+    <p><strong>Decido</strong> en función de si el horario está claro y si el acceso al 2º piso es viable para mí — ninguno de los dos datos está confirmado en la web.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La falta de nombres y credenciales del equipo reduce la confianza en un sector donde el paciente quiere saber quién le trata</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La web muestra fotografías de al menos 3 fisioterapeutas, pero sin nombres ni titulaciones asociadas a cada una.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>En fisioterapia, la confianza depende en parte de saber la formación de quien va a tratarte — la ausencia de esa información deja el activo de "equipo profesional visible" a medio construir.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Añadir nombre, titulación y especialidad de cada fisioterapeuta junto a su fotografía.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte fotografías genéricas en credenciales verificables, cerrando la brecha de confianza frente a competidores como CEFIS o FisioAsemar, que sí identifican a su equipo.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La ausencia total de reseñas es la mayor brecha de prueba social frente a la competencia directa</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>No se ha identificado ninguna reseña en Google, Doctoralia ni otras plataformas — a diferencia de competidores del mismo sector en León, algunos con más de una decena de reseñas con carga emocional fuerte.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un paciente que compare varios centros de fisioterapia puede descartar Fisiomedic solo por falta de prueba social visible, sin relación con la calidad real del servicio.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Activar una petición sistemática de reseñas a pacientes satisfechos tras cada tratamiento — el resto del dataset demuestra que el volumen es alcanzable en León.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Empieza a cerrar la brecha de confianza más grande del negocio con un coste mínimo.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>Horario no publicado y ubicación en 2º piso son barreras de conversión sin resolver</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La web no publica el horario de atención, y la clínica está en un 2º piso (C/ Alcázar de Toledo 7, 2ºC), sin confirmación de ascensor u otra vía accesible.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin horario claro, un cliente no sabe si puede llamar o acudir en un momento concreto. Sin confirmación de accesibilidad, un paciente con movilidad reducida (justo el perfil que más se beneficiaría del servicio a domicilio) puede descartar la opción presencial sin necesidad.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Publicar el horario real con claridad, y confirmar y comunicar si hay ascensor o acceso adaptado al 2º piso.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Elimina dos dudas concretas que hoy dependen de llamar para resolverlas.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">4</span><h2>La tienda B2B de equipamiento es un activo único y subcomunicado</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Fisiomedic vende equipos de electroterapia, magnetoterapia y ultrasonido a otros profesionales, con asesoría incluida — ningún competidor auditado en este dataset ofrece esto.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Mezclada dentro del mismo sitio que la clínica, esta línea de negocio compite por atención con los pacientes particulares, y probablemente no llega bien a su público objetivo real: otros fisioterapeutas, consultorios y hospitales, que buscan de forma distinta a un paciente.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Dar a la tienda B2B su propia sección o landing, con catálogo, precios orientativos y un canal de contacto específico para profesionales — separado del mensaje dirigido a pacientes.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte un activo real pero mal segmentado en una segunda línea de ingresos con su propio embudo, sin diluir el mensaje de la clínica.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Motor de crecimiento sin definir:</strong> el modelo dual clínica + B2B es inteligente, pero no está claro cuál de las dos líneas debe crecer primero, ni si una debería subvencionar a la otra en la comunicación (ej. contenido técnico dirigido a profesionales que también capte pacientes por autoridad).</li>
+      <li style="margin-bottom:10px;"><strong>La omnicanalidad como pilar de marca:</strong> "presencial + virtual + domicilio" es una ventaja competitiva real y verificable frente a todo el clúster de fisioterapia del dataset — candidata a ser el mensaje central de la marca, no un detalle más del catálogo.</li>
+      <li style="margin-bottom:10px;"><strong>Falta de nicho clínico:</strong> Fisiomedic compite en el segmento más saturado (fisioterapia general — dolor de espalda, traumatología) frente a competidores con especializaciones nicho (suelo pélvico, neurorrehabilitación, deporte de alto rendimiento). Elegir 1-2 nichos y posicionarse reduciría la competencia directa.</li>
+      <li style="margin-bottom:0;"><strong>Equipo 100% femenino (a confirmar):</strong> si es intencional, podría comunicarse como diferenciador de marca; si no lo es, no forzarlo — cualquier mensaje sobre esto necesita confirmación directa con el negocio antes de proponerlo.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Programa Espalda Sana:</strong> empaquetar el tratamiento de dolor de espalda como programa estructurado (sesiones + ejercicios en casa + seguimiento virtual), no como servicio suelto — coherente con la omnicanalidad ya existente.</li>
+      <li style="margin-bottom:10px;"><strong>Evaluación funcional como lead magnet:</strong> ofrecer la valoración inicial gratuita, con un informe de resultados que justifique el plan de tratamiento propuesto — reduce la fricción de la primera cita.</li>
+      <li style="margin-bottom:10px;"><strong>Embudo propio para la tienda B2B:</strong> contenido técnico para fisioterapeutas → catálogo como lead magnet → demo → venta, separado del funnel de pacientes.</li>
+      <li style="margin-bottom:0;"><strong>Atención a domicilio como servicio premium:</strong> con tarifa diferenciada, no como alternativa "de segunda" a la presencial — es un servicio con más valor para quien no puede desplazarse, no menos.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Competencia directa en el vertical de fisioterapia de León</h2>
+    <table class="compete-table">
+      <tr><th>Competidor</th><th>Diferenciador clave</th><th>Frente a Fisiomedic</th></tr>
+      <tr><td>CEFIS León (C/ Lucas de Tuy 7)</td><td>31 años, osteopatía, acupuntura, gestión de aseguradoras</td><td>CEFIS gana en trayectoria; Fisiomedic gana en omnicanalidad y B2B</td></tr>
+      <tr><td>Fisiorama (3 centros)</td><td>Tecnología avanzada (INDIBA, ondas de choque), neurorrehabilitación, suelo pélvico</td><td>Fisiorama gana en escala y especialización nicho; Fisiomedic gana en venta de equipos y domicilio</td></tr>
+      <tr><td>Fisiosalud / Martín-Granizo</td><td>8 profesionales, fisioterapia + entrenamiento, cursos</td><td>Martín-Granizo gana en tamaño de equipo; Fisiomedic gana en B2B</td></tr>
+      <tr><td>Physiotherapy León</td><td>Testimonios muy fuertes, ondas de choque</td><td>Gana en reputación; Fisiomedic gana en omnicanalidad</td></tr>
+      <tr><td>FisioAsemar</td><td>25 años, 275 m², 7 salas, tecnología avanzada</td><td>Gana en instalaciones; Fisiomedic gana en B2B</td></tr>
+    </table>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">Omnicanalidad y línea B2B son reales y únicas en el dataset, aunque mezcladas sin separar públicos.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">6/10</td><td class="why">Cita online y WhatsApp confirmados, sin horario publicado que indique cuándo es útil contactar.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num">6/10</td><td class="why">Web moderna con fotografías reales, aunque mezcla mensajes de clínica y de tienda B2B en el mismo espacio.</td></tr>
+    <tr><td>Prueba social</td><td class="num">1/10</td><td class="why">Sin reseñas identificadas en ninguna plataforma — la nota más baja de todo el dataset en esta dimensión.</td></tr>
+    <tr><td>Autoridad</td><td class="num">3/10</td><td class="why">Equipo visible en fotos pero sin nombres ni titulaciones — autoridad no verificable tal como está presentada.</td></tr>
+    <tr><td>Confianza</td><td class="num">4/10</td><td class="why">Web profesional, pero sin reseñas ni credenciales del equipo que la respalden.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">3/10</td><td class="why">Horario no publicado y accesibilidad del 2º piso sin confirmar.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web distingue con claridad el mensaje de clínica del mensaje de tienda B2B.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular exacto de la portada.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar entre la sección de clínica y la de tienda B2B.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la omnicanalidad como palanca de decisión, o solo la menciona de pasada.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">30/70</span><span class="label">Suma de las 7 dimensiones con evidencia directa ÷ 70 × 100 = 43/100 sobre esas 7 — nota baja por la ausencia casi total de prueba social y autoridad verificable, pese a activos de diferenciación reales. Las 6 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Añadir nombre, titulación y especialidad de cada fisioterapeuta junto a su fotografía.</li>
+      <li>Activar petición sistemática de reseñas — es la brecha de prueba social más grande de todo el dataset.</li>
+      <li>Publicar el horario real y confirmar/comunicar la accesibilidad del 2º piso.</li>
+      <li>Separar el mensaje de la tienda B2B del mensaje dirigido a pacientes, con su propia sección.</li>
+      <li>Subir la omnicanalidad (presencial + virtual + domicilio) al mensaje principal como diferenciador central.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgos 1 y 2</strong> (equipo sin nombres, sin reseñas) → fichas de equipo + sistema de petición de reseñas.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgos 3 y 4</strong> (horario/accesibilidad, tienda B2B mezclada) → horario visible + landing propia para el negocio B2B.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: confirmar directamente con el negocio horario, nombres del equipo y alcance real del canal B2B.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Sois el único centro de fisioterapia de León que hemos visto con clínica y tienda de equipos a la vez, y con más canales de atención que la mayoría de vuestra competencia. Os dejamos un informe honesto sobre por qué eso todavía no se traduce en confianza visible — cero reseñas, equipo sin nombre — y cómo cerrar esa brecha."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar lo que ofrecéis — proponemos que se vea y se confíe tanto como merece.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
