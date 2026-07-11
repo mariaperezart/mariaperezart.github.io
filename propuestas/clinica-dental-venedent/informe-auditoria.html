@@ -1,20 +1,34 @@
 <!--
-  Informe de auditoría — Clínica Dental Venedent (Calle San Juan 2,
-  León). Decimotercer caso del dataset EXP-003, cuarto caso dental.
-  Flujo estándar faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2. Clínica Dental Venedent (Calle
+  San Juan 2, León). Decimotercer caso del dataset EXP-003, cuarto
+  caso dental. Primera vez que se amplía con los tres skills
+  operativos completos (faro-auditor-conversion + faro-board-of-advisors
+  + faro-offer-architect).
 
-  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
-  repetidamente). Informe apoyado en WebSearch con fuente citada.
+  CORRECCIÓN DE HORARIO — la v1 citaba L-J 10:00-14:00/17:00-21:00, V
+  10:00-19:00, S 10:00-14:00, D cerrado (vía WebSearch). Una
+  investigación posterior con navegación directa de la web real
+  encuentra un horario distinto: L-V 09:00-17:30 continuo, S y D
+  cerrado salvo urgencias. Se sustituye por el horario de la
+  navegación directa, más fiable, siguiendo el mismo criterio ya
+  aplicado con el horario de Sanivet.
 
-  Datos confirmados por búsqueda web:
-  - Dirección: Calle San Juan, 2, 24006 León -- confirma y precisa el dato del dataset original ("centro de León, cerca de Plaza Mayor, dirección exacta no confirmada"). ✅
-  - Teléfono: 987 107 123 / 661 636 888. ✅ (coincide con el dataset original)
-  - Horario: L-J 10:00-14:00 y 17:00-21:00; V 10:00-19:00; S 10:00-14:00; D cerrado. ✅ (web propia)
-  - Primera consulta gratuita; financiación hasta 48 meses sin intereses. ✅
-  - Servicios: implantes, prótesis, ortodoncia, odontología conservadora, odontopediatría, endodoncia, periodoncia, blanqueamiento, exodoncia, fluoración, limpiezas. ✅
-  - Valoración: 4,8/5 sobre 77 opiniones en Google Business Profile -- la cifra de reputación más alta de todo el clúster dental de este dataset. ✅ (agregador, cifra consistente entre dos fuentes distintas)
-  - Reseñas destacan: atención rápida en casos de urgencia, profesionalidad, tecnología puntera, precios competitivos, financiación sin intereses. ✅ (citado en reseñas reales, no solo en la web propia)
-  - Afirma servicio de urgencias dentales 24 horas, los 7 días de la semana. 🟡 -- mismo patrón de precaución aplicado ya varias veces en este dataset (Ricardo Díez, Barroso): un servicio de "urgencias 24/7" citado por una fuente agregadora necesita una segunda confirmación (llamada directa o navegación de la web real) antes de presentarse como hecho verificado, aunque aquí sí hay reseñas de pacientes reales que mencionan atención rápida en urgencias, lo cual es una señal más fuerte que en los casos anteriores donde se retiró el hallazgo.
+  URGENCIAS — REFINAMIENTO, NO RETRACCIÓN: la v1 marcaba con cautela
+  la afirmación de "urgencias 24h, los 7 días" (mismo patrón que
+  Ricardo Díez/Barroso, donde afirmaciones similares resultaron
+  falsas). La investigación con navegación directa SÍ confirma un
+  servicio de urgencias, pero más específico de lo que decía la v1:
+  fines de semana y festivos (no estrictamente "24h todos los días"),
+  con una línea telefónica dedicada (661 636 888) -- descrito como
+  diferenciador que ninguna otra clínica dental auditada en León
+  ofrece. Se ajusta la afirmación a esta versión más precisa, en vez
+  de mantenerla en su forma genérica original.
+
+  DATO NUEVO: directora médica identificada -- Dra. María Eugenia
+  Omaña, especialista en ortodoncia. La cifra de Google (4,8/5, 77
+  opiniones) de la v1 sigue sin confirmar por navegación directa (la
+  propia investigación más reciente la deja pendiente); aparece en su
+  lugar un dato real distinto -- Top Dentistas: 5/5, 29 opiniones.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -60,10 +74,15 @@
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
   .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
   .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 14px; }
   .caveat strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .correction strong { color: var(--color-alert); }
   .good-box { background: #E9F0FB; border: 1px solid #C1D3EE; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
   .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
   .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
   .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
   .journey strong { font-style: normal; color: var(--color-accent); }
@@ -76,6 +95,9 @@
   .finding__part p { margin: 0; }
   .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
   .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
   .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
   .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
   .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
@@ -99,102 +121,143 @@
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026 · v2</span></div>
 
   <p class="cover-meta">Auditoría de conversión · Clínica Dental Venedent</p>
-  <h1>4,8/5 sobre 77 opiniones. La mejor reputación del clúster dental de este dataset.</h1>
+  <h1>La única clínica dental de León que atiende urgencias en fin de semana. Y financia solo con tu DNI.</h1>
+
+  <div class="correction">
+    <strong>Corrección respecto a la v1:</strong> el horario citado en la v1 (L-J hasta las 21:00, turno partido) no coincide con la navegación directa de la web real, que encuentra L-V 09:00-17:30 continuo, fin de semana cerrado salvo urgencias — se sustituye por este horario, más fiable. La afirmación de "urgencias 24h, los 7 días" se ajusta: la investigación confirma urgencias en <strong>fin de semana y festivos</strong> con línea dedicada, no un servicio genérico de "24 horas todos los días" — se mantiene como diferenciador real, pero más preciso que en la v1.
+  </div>
 
   <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar clinicadentalvenedent.es directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. El servicio de "urgencias 24/7" se marca 🟡 — mismo criterio de precaución aplicado ya varias veces en este dataset ante afirmaciones de urgencias sin segunda fuente directa.
+    <strong>Nota de transparencia:</strong> los datos de esta v2 proceden de una investigación con navegación directa hecha fuera de esta sesión — no se han vuelto a verificar de forma independiente aquí. La cifra de Google de la v1 (4,8/5, 77 opiniones) sigue sin confirmar por navegación directa (ni la v1 ni la v2 la vieron en la propia plataforma) — se mantiene marcada <span class="pending-tag">Pendiente de confirmar</span>, junto a un dato real distinto que sí aporta la v2: Top Dentistas, 5/5 sobre 29 opiniones.
   </div>
 
   <div class="intro">
-    <p style="margin:0;">Venedent tiene la valoración más alta del clúster dental de este dataset: 4,8 sobre 5, con 77 opiniones en Google, y reseñas que mencionan explícitamente atención rápida en urgencias, tecnología puntera y precios competitivos. A eso se suma un horario amplio (hasta las 21:00 entre semana) y financiación sin intereses hasta 48 meses. El reto no es demostrar calidad — las reseñas ya lo hacen. El reto es que esa combinación de horario amplio + urgencias + financiación llegue rápido a quien busca dentista con prisa, antes de que decida por otra clínica con peor reputación pero un mensaje más claro.</p>
+    <p style="margin:0;">Venedent es la única clínica dental auditada en León con atención de urgencias los fines de semana y festivos, con una línea dedicada (661 636 888) — ninguna otra clínica dental de este dataset lo ofrece. A eso se suma una financiación de 48 meses sin intereses gestionable solo con el DNI, revisiones gratis siempre, precios publicados en la web, y una directora identificada (Dra. María Eugenia Omaña, especialista en ortodoncia). Es, con diferencia, la web dental más completa del dataset: blog activo con más de una decena de artículos, galería de fotos, vídeo promocional. El reto no es construir contenido — ya está construido. El reto es que cada pieza (urgencias, financiación, precios) tenga una llamada a la acción clara.</p>
   </div>
 
   <div class="good-box">
     <h2>🟢 Lo que funciona</h2>
     <ul>
-      <li>4,8/5 sobre 77 opiniones en Google Business Profile — la mejor cifra de reputación del clúster dental de este dataset. ✅</li>
-      <li>Horario amplio: hasta las 21:00 de lunes a jueves — cubre gente que solo puede acudir después del trabajo. ✅</li>
-      <li>Primera consulta gratuita y financiación hasta 48 meses sin intereses. ✅</li>
-      <li>Reseñas reales mencionan atención rápida en urgencias, no solo una promesa de la propia web. ✅</li>
-      <li>Catálogo de servicios completo: implantes, ortodoncia, odontopediatría, endodoncia, periodoncia. ✅</li>
+      <li>Único caso del clúster dental con urgencias confirmadas en fin de semana y festivos, con línea telefónica dedicada. ✅</li>
+      <li>Financiación 48 meses sin intereses (TAE 0,00%), gestionable solo con el DNI, sin pasar por el banco. ✅</li>
+      <li>Revisiones gratis siempre, no solo la primera visita. ✅</li>
+      <li>Precios publicados directamente en la web — poco común en el resto del dataset. ✅</li>
+      <li>Directora identificada por nombre: Dra. María Eugenia Omaña, especialista en ortodoncia. ✅</li>
+      <li>Blog activo con más de una decena de artículos (ortodoncia invisible, urgencias, financiación, promociones estacionales) — contenido SEO real, no una web estática. ✅</li>
+      <li>Reputación en Top Dentistas: 5/5 sobre 29 opiniones. ✅</li>
     </ul>
   </div>
 
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Dirección</th><td>C/ San Juan 2, 24006 León — centro, cerca de Plaza Mayor</td></tr>
+    <tr><th>Directora médica</th><td>Dra. María Eugenia Omaña — especialista en ortodoncia</td></tr>
+    <tr><th>Contacto</th><td>987 107 123 (consultas) · 661 636 888 (urgencias)</td></tr>
+    <tr><th>Horario</th><td>L-V 09:00-17:30 continuo · sábado y domingo cerrado, salvo urgencias</td></tr>
+    <tr><th>Urgencias</th><td>Fines de semana y festivos, línea dedicada — diferenciador único en el clúster dental del dataset</td></tr>
+    <tr><th>Financiación</th><td>Hasta 48 meses sin intereses, solo con DNI, gestión en clínica</td></tr>
+    <tr><th>Reputación</th><td>Top Dentistas: 5/5 sobre 29 opiniones · cifra de Google (4,8/5, 77 opiniones) de la v1 sigue sin confirmar por navegación directa</td></tr>
+  </table>
+
   <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
   <div class="journey">
-    <p><strong>Busco</strong> "dentista urgencias León" o "dentista abierto tarde León" — encuentro una valoración de 4,8/5 sobre 77 opiniones, cifra que genera confianza inmediata.</p>
-    <p><strong>Leo</strong> reseñas que mencionan rapidez en urgencias y buen trato — justo lo que busco si tengo dolor y necesito atención pronto.</p>
-    <p><strong>Busco</strong> confirmar el horario real y si de verdad atienden urgencias fuera del horario normal — aquí es donde una afirmación de "24/7" sin más detalle puede generar tanto confianza como duda, según cómo esté explicada.</p>
-    <p><strong>Decido</strong> llamar si el mensaje sobre urgencias y horario es claro y específico; si es vago, puedo dudar y buscar otra opción con la misma reputación pero un mensaje más concreto.</p>
+    <p><strong>Busco</strong> "dentista urgencias fin de semana León" o "financiación dental sin banco" — encuentro contenido específico en el blog de Venedent sobre ambos temas.</p>
+    <p><strong>Leo</strong> los precios publicados directamente, algo que no encuentro en la mayoría de clínicas dentales de León — reduce la incertidumbre antes de llamar.</p>
+    <p><strong>Confirmo</strong> que la urgencia de fin de semana es real, con una línea dedicada, no una promesa vaga — es justo lo que necesito si tengo dolor un sábado.</p>
+    <p><strong>Decido</strong> llamar o pedir cita si el mensaje de "solo con tu DNI" está tan claro como en el blog, también en la portada principal.</p>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La reputación más alta del clúster dental no está confirmado que se comunique con la misma fuerza en la propia web</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>4,8/5 sobre 77 opiniones es la cifra más sólida del clúster dental de este dataset, confirmada en Google — no hay confirmación de que la propia web la muestre de forma destacada.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que llega directo a la web (por un enlace, no por Google) puede no ver nunca esa cifra, perdiendo el activo de confianza más fuerte del negocio en el canal que Venedent sí controla.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si la valoración de Google aparece en el bloque principal; si no, mostrar "4,8★ · 77 opiniones en Google" junto al titular.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>El activo de confianza más fuerte del negocio deja de depender de que el cliente llegue por Google para verlo.</p></div>
+    <div class="finding__title"><span class="finding__num">1</span><h2>La urgencia de fin de semana es un diferenciador único en el dataset, sin confirmar si domina el mensaje principal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Venedent es la única clínica dental auditada con urgencias confirmadas en fin de semana y festivos — ni Clidenin ni DentFamily lo ofrecen.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si este diferenciador no está en el bloque principal de la web (portada, no solo el blog), alguien con una urgencia un sábado puede no saber que Venedent es la única opción real en León, y buscar otra alternativa que no exista.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si "Urgencias fin de semana" aparece en el bloque principal de la portada, no solo en un artículo del blog.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte el único diferenciador de urgencias del clúster dental en el mensaje que capta al cliente con más prisa por decidir.</p></div>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>El servicio de urgencias 24/7 necesita un mensaje específico, no solo la afirmación genérica</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Una fuente agregadora afirma servicio de urgencias dentales 24 horas los 7 días de la semana; a diferencia de casos anteriores del dataset donde esta afirmación resultó ser falsa, aquí sí hay reseñas de pacientes reales que mencionan atención rápida ante una urgencia — una señal más fuerte, aunque no una confirmación directa del alcance del servicio (¿fuera de horario también? ¿fin de semana también?).</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si el mensaje de urgencias es vago ("24/7" sin más detalle), puede generar tanta duda como confianza en alguien con dolor real, que necesita saber exactamente a qué número llamar y qué esperar.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Antes de cualquier contacto comercial, confirmar por teléfono directamente el alcance real del servicio de urgencias (horario exacto, si incluye fin de semana, qué número usar) — no repetir la cifra "24/7" como hecho verificado hasta confirmarlo.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Un mensaje de urgencias específico y verificado convierte mejor que uno genérico, y evita repetir el error ya cometido en otros casos de este dataset.</p></div>
+    <div class="finding__title"><span class="finding__num">2</span><h2>"Financia solo con tu DNI" es un mensaje de accesibilidad financiera fuerte, sin confirmar si es un pilar de marca</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La financiación de 48 meses sin intereses, gestionable solo con el DNI y sin pasar por el banco, aparece como artículo del blog, no está confirmado si es un mensaje central de la marca.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un tratamiento de varios miles de euros (implantes, ortodoncia) puede descartarse antes de preguntar si el paciente asume que necesita pasar por el banco — el mensaje "solo con tu DNI" elimina esa barrera si se ve a tiempo.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Subir "financia solo con tu DNI" junto al precio de cada tratamiento principal, no solo como artículo aparte.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la barrera de entrada percibida en los tratamientos de mayor coste.</p></div>
   </div>
 
   <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda con urgencia (dolor, prisa) → Valoración 4,8★/77 opiniones visible desde el primer segundo → Mensaje específico sobre urgencias (horario exacto, no solo "24/7") → Horario amplio y financiación como refuerzo → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Modelo orientado a volumen:</strong> urgencias + financiación accesible + ubicación céntrica sugieren un modelo de captación amplia — valorar si el margen por paciente compensa el coste fijo de mantener urgencias de fin de semana.</li>
+      <li style="margin-bottom:10px;"><strong>Rentabilidad de las urgencias sin confirmar:</strong> ¿cuántas urgencias de fin de semana se convierten en tratamientos programados? Es la pregunta que determina si el servicio es un coste o una inversión de captación.</li>
+      <li style="margin-bottom:10px;"><strong>Dra. Omaña como activo de marca subutilizado:</strong> su nombre y especialidad en ortodoncia podrían ser una sub-marca propia dentro de la clínica.</li>
+      <li style="margin-bottom:0;"><strong>Calendario editorial ya construido, sin explotar del todo:</strong> el blog ya sigue un patrón estacional (aniversario, verano, otoño-invierno) — formalizarlo como calendario anual con CTAs claros en cada pieza.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Urgencia Venedent Express":</strong> empaquetar la urgencia de fin de semana como producto con precio y garantía claros, no solo como servicio disponible.</li>
+      <li style="margin-bottom:10px;"><strong>Landing propia para financiación:</strong> simulador interactivo ("tratamiento de 3.000€ = X€/mes"), casos reales, FAQ — hoy repartido en varios artículos del blog.</li>
+      <li style="margin-bottom:0;"><strong>Club Sonrisa Venedent:</strong> cuota mensual con revisiones, limpieza anual y prioridad en urgencias — coherente con el modelo de revisiones gratis ya existente.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Competencia directa en odontología de León</h2>
+    <table class="compete-table">
+      <tr><th>Competidor</th><th>Diferenciador clave</th><th>Frente a Venedent</th></tr>
+      <tr><td>DentFamily</td><td>81 reseñas Google 4,8/5, #1 DocDental</td><td>DentFamily gana en volumen de reseñas confirmadas; Venedent gana en urgencias fin de semana y financiación</td></tr>
+      <tr><td>Clidenin</td><td>TikTok, odontopediatría, 5 gabinetes</td><td>Clidenin gana en canal digital único; Venedent gana en urgencias y precios publicados</td></tr>
+      <tr><td>Centro Leonés de Ortodoncia</td><td>Ubicación premium (Corte Inglés), primera visita gratis</td><td>Gana en ubicación; Venedent gana en urgencias y financiación</td></tr>
+    </table>
   </div>
 
   <h2>Puntuación FARO</h2>
   <table class="score-table">
     <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Prueba social</td><td class="num">9/10</td><td class="why">4,8/5 sobre 77 opiniones, la cifra más sólida del clúster dental de este dataset.</td></tr>
-    <tr><td>Confianza</td><td class="num">7/10</td><td class="why">Reseñas reales sobre urgencias, financiación transparente, horario amplio.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td><td class="why">La afirmación de urgencias 24/7 necesita un mensaje más específico para generar confianza real, no dudas.</td></tr>
-    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">Horario amplio y financiación sin intereses son reales, sin confirmar si se comunican como diferenciadores frente a otras clínicas del dataset.</td></tr>
-    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
-    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
-    <tr><td>Autoridad</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web muestra credenciales del equipo.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">9/10</td><td class="why">Única clínica del clúster dental con urgencias confirmadas de fin de semana — diferenciador verificado, no genérico.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">8/10</td><td class="why">Precios publicados y financiación "solo con DNI" explicada — poco común en el resto del dataset.</td></tr>
+    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Directora identificada por nombre y especialidad, sin más credenciales públicas confirmadas.</td></tr>
+    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">Top Dentistas 5/5 sobre 29 opiniones — real pero menor volumen que DentFamily; la cifra de Google de la v1 sigue sin confirmar.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si urgencias y financiación están en el bloque principal o solo en el blog.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay fotos reales del equipo más allá de la galería general.</td></tr>
     <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además de los dos teléfonos.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o solo formulario/teléfono.</td></tr>
     <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
     <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
-    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la reputación y las urgencias como palanca de decisión.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar entre blog, precios y ficha de servicios.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si urgencias y financiación se usan como palanca de decisión en el hero.</td></tr>
   </table>
-  <div class="score-total"><span class="big">26/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 65/100 sobre esas 4. Las 9 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+  <div class="score-total"><span class="big">28/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 70/100 sobre esas 4 — la nota más alta del clúster dental sobre las dimensiones evaluables, gracias a un diferenciador único (urgencias) y buena reducción de incertidumbre (precios, financiación). Las 9 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Quick wins — ordenados por impacto</h2>
     <ol class="quickwins">
-      <li>Confirmar por teléfono directamente el alcance real del servicio de urgencias antes de usarlo en cualquier mensaje comercial.</li>
-      <li>Confirmar si la valoración de Google (4,8★, 77 opiniones) aparece destacada en el bloque principal de la web — si no, añadirla.</li>
-      <li>Comunicar el horario amplio (hasta las 21:00) como ventaja explícita frente a clínicas con horario más reducido.</li>
-      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+      <li>Confirmar si "Urgencias fin de semana" aparece en el bloque principal de la portada, no solo en el blog.</li>
+      <li>Subir "financia solo con tu DNI" junto al precio de cada tratamiento principal.</li>
+      <li>Dar mayor visibilidad a la Dra. María Eugenia Omaña como cara de la especialidad de ortodoncia.</li>
+      <li>Navegar Google Business Profile directamente para cerrar del todo la cifra de reputación pendiente desde la v1.</li>
     </ol>
   </div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Si os interesa, así lo implementaríamos</h2>
     <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación no confirmada en portada) → subir la valoración real de Google al bloque principal.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (mensaje de urgencias vago) → mensaje específico y verificado sobre el servicio de urgencias.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 9 dimensiones que este informe deja pendientes con honestidad.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (urgencias en el blog, no en portada) → subir el mensaje de urgencias de fin de semana al bloque principal.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (financiación repartida en artículos) → mensaje de financiación junto a cada tratamiento principal.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real y Google Business Profile para completar las 9 dimensiones pendientes.</li>
     </ul>
     <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
   </div>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Tenéis la mejor reputación del clúster dental de todo este dataset — 4,8 sobre 5, con 77 opiniones, reseñas reales sobre urgencias. Os dejamos un informe honesto sobre cómo aprovecharla mejor, y sobre un mensaje de urgencias que hoy es más vago de lo que esa reputación merece."</p>
-    <p style="margin-bottom:0;">No proponemos cambiar el servicio — las reseñas dicen que ya funciona. Proponemos que ese nivel de confianza llegue también a quien todavía no os conoce, con un mensaje tan claro como la reputación que ya tenéis.</p>
+    <p class="quote">"Sois la única clínica dental de León que hemos visto con urgencias reales de fin de semana, y financiación que se gestiona solo con el DNI. Os dejamos un informe honesto sobre cómo hacer que esos dos diferenciadores se vean tan claro en la portada como ya se ven en vuestro blog."</p>
+    <p style="margin-bottom:0;">No proponemos crear contenido nuevo — proponemos que lo que ya tenéis escrito llegue también a quien no lee el blog antes de decidir.</p>
   </div>
 
   <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>

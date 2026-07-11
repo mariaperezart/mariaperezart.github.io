@@ -1,27 +1,30 @@
 # Guion de reclutamiento — Clínica Dental Venedent
 
-**Decimotercer caso del dataset, cuarto caso dental.** Flujo estándar `faro-auditor-conversion`. Misma limitación que los últimos casos: WebFetch caído toda la sesión, informe apoyado en WebSearch con fuente citada.
+**Decimotercer caso del dataset, cuarto caso dental.** Primera vez que se amplía con los tres skills operativos completos (`faro-auditor-conversion` + `faro-board-of-advisors` + `faro-offer-architect`), a partir de una investigación con navegación directa hecha por el usuario fuera de esta sesión.
 
-**Ángulo del guion**: 4,8/5 sobre 77 opiniones es la mejor reputación del clúster dental de este dataset, con reseñas reales que mencionan atención rápida en urgencias — se abre con eso sin reservas. El servicio de "urgencias 24/7" citado por una fuente agregadora **no se presenta como hecho verificado** — mismo criterio de precaución que en Ricardo Díez y Barroso, donde afirmaciones similares resultaron ser falsas. Aquí hay más señal a favor (reseñas reales), pero sigue sin confirmación directa del alcance exacto.
+**Corrección respecto a la v1 de este guion**: el horario citado en la v1 (hasta las 21:00 entre semana) no coincide con la navegación directa de la web real (L-V 09:00-17:30 continuo) — **no citar el horario extendido hasta las 21:00**. La cifra de Google (4,8/5, 77 opiniones) de la v1 sigue sin confirmar por navegación directa — no abrir con esa cifra como hecho. La afirmación de urgencias se precisa: es fin de semana y festivos con línea dedicada, no "24 horas todos los días".
+
+**Ángulo del guion (nuevo)**: Venedent es la única clínica dental auditada en León con urgencias reales de fin de semana, financiación "solo con tu DNI", y precios publicados — tres reductores de fricción reales. La Dra. María Eugenia Omaña queda identificada como responsable de ortodoncia.
 
 **Canal recomendado**: teléfono (987 107 123) o en persona.
 
 ---
 
-## 1. Apertura — la reputación real, con total confianza
+## 1. Apertura — los tres diferenciadores reales
 
-> *"Hola, buenas — soy [nombre]. Vi que tenéis 4,8 sobre 5 en Google con 77 opiniones — es la mejor valoración que he visto en una clínica dental de León, y vuestro horario llega hasta las 21:00 entre semana. ¿Sentís que la gente lo sabe antes de llamaros, o se enteran ya siendo pacientes?"*
+> *"Hola, buenas — soy [nombre]. Vi que sois la única clínica dental de León con urgencias de fin de semana, que publicáis precios directamente en la web, y que la financiación se gestiona solo con el DNI — tres cosas que no he visto juntas en ninguna otra clínica. ¿Sentís que la gente sabe eso antes de buscar en otro sitio con dolor un sábado?"*
 
 ## 2. Puente hacia el informe
 
-> *"Os preparé un informe corto sobre eso — y sobre un detalle en el mensaje de urgencias que puede estar generando más dudas de las necesarias. Es gratis, sin compromiso."*
+> *"Os preparé un informe corto sobre eso — si esos tres puntos están en la portada principal o solo en vuestro blog, que por cierto está muy completo. Es gratis, sin compromiso."*
 
 ## 3. Variante corta para enviar por escrito
 
 ```
-Hola, os escribo porque vuestra valoración en Google (4,8/5, 77
-opiniones) es la mejor que he visto en una clínica dental de León. Os
-dejo un informe sobre cómo aprovecharla mejor:
+Hola, os escribo porque sois la única clínica dental de León que he
+visto con urgencias reales de fin de semana, financiación solo con
+DNI, y precios publicados. Os dejo un informe sobre cómo hacer que eso
+se vea igual de claro en la portada:
 [enlace a propuestas/clinica-dental-venedent/informe-auditoria.html]
 
 Si os interesa que os ayude con algo de esto, seguimos hablando.
@@ -29,14 +32,14 @@ Si os interesa que os ayude con algo de esto, seguimos hablando.
 
 ## 4. Manejo de objeciones específicas de este negocio
 
-- **Si surge el tema de "urgencias 24 horas"** — no repetir esa cifra como si fuera un hecho confirmado por nosotros; preguntar directamente cómo funciona en la práctica: *"He visto que ofrecéis atención de urgencia — ¿cómo es exactamente? ¿hay un horario concreto o es de verdad las 24 horas los 7 días?"* La respuesta real del negocio es la única fuente fiable en este punto, no lo que dicen los agregadores.
-- **"Ya nos va bien el boca a boca."** — *"Y se nota en las 77 opiniones. La pregunta es cuántos pacientes nuevos, sin esa referencia previa, deciden por otra clínica porque el mensaje de urgencias no era lo bastante claro en el momento en que más lo necesitaban."*
+- **"Las urgencias de fin de semana nos cuestan mantenerlas."** — *"Tiene sentido, y es justo el motivo para que se vean más, no menos — cuantas más personas sepan que sois la única opción real un sábado, más rentable es ese coste fijo."*
+- **"El blog ya cuenta todo eso, no hace falta repetirlo en la portada."** — *"El blog lo cuenta muy bien, pero solo lo lee quien ya está buscando activamente — la portada la ve todo el mundo, incluso quien decide en 10 segundos."*
 - **Precio / Kit Digital**: mismo guion que en el resto del dataset (`FARO_PROCESO_COMERCIAL.md`).
 
 ## 5. Cierre
 
-> *"¿Os mando el informe por WhatsApp o preferís que os lo enseñe en persona?"*
+> *"¿Os mando el informe por email o preferís que os lo enseñe en persona?"*
 
 ---
 
-*Pendiente antes de contactar: navegar clinicadentalvenedent.es directamente en cuanto WebFetch vuelva a funcionar, confirmar por teléfono el alcance real del servicio de urgencias, y completar las 9 dimensiones pendientes de la Puntuación FARO.*
+*Pendiente antes de contactar: navegar Google Business Profile directamente en cuanto WebFetch vuelva a funcionar, para cerrar del todo la cifra de reputación de la v1 (4,8/5, 77 opiniones) que ninguna de las dos investigaciones ha confirmado por navegación directa, y completar las 9 dimensiones pendientes de la Puntuación FARO.*
