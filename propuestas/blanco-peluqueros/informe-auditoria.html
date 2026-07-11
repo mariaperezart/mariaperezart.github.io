@@ -1,0 +1,234 @@
+<!--
+  Informe de auditoría — Blanco Peluqueros (Av. de Roma 3, Bajo,
+  León). Decimosexto caso del dataset EXP-003, primero del vertical de
+  peluquería. Primer caso de peluquería auditado con los tres skills
+  operativos completos (faro-auditor-conversion + faro-board-of-advisors
+  + faro-offer-architect), a partir de una investigación con
+  navegación directa hecha por el usuario fuera de esta sesión.
+
+  Datos confirmados por navegación directa:
+  - Dirección: Av. de Roma 3, Bajo, 24001 León (centro, entre Plaza Inmaculada y Guzmán). ✅
+  - Teléfono: 987 244 706. ✅
+  - Web: blancopeluqueros.es. ✅ Facebook e Instagram activos, enlazados en la web. ✅
+  - Fundada en 2000 — 26 años de trayectoria. ✅
+  - Fundadora: Araceli García, formación en centros nacionales e internacionales. ✅
+  - Horario: L 10:00-20:00, M-V 09:30-20:00, S 09:30-14:30, D cerrado. ✅
+  - Servicios técnicos reales: coloración sin amoniaco/PPD/PPT en 10 min, coloración caballero (cobertura de canas) en 5 min sin efecto raíz, tratamiento libre de formol, tratamiento reestructurante intenso (Botox capilar), extensiones, peinados de novia. ✅
+  - Reputación: presencia en Yelp, QDQ, Páginas Amarillas, sin cifra de valoración detallada en la investigación disponible. 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Blanco Peluqueros</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1E1B18; --color-accent: #B08D57; --color-ink: #1E1B18;
+    --color-bg: #F7F4EF; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E7E0D3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #E7DFD1; --color-accent: #D6B87C; --color-ink: #EFE9DD;
+      --color-bg: #17140F; --color-white: #221E17; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #3A3226 70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #E7DFD1; --color-accent: #D6B87C; --color-ink: #EFE9DD;
+    --color-bg: #17140F; --color-white: #221E17; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #3A3226 70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1E1B18; --color-accent: #B08D57; --color-ink: #1E1B18;
+    --color-bg: #F7F4EF; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E7E0D3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #F1EBDD; border: 1px solid #E0D3B4; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Blanco Peluqueros</p>
+  <h1>26 años y una fundadora con nombre y trayectoria propia. Un activo de confianza que la mayoría de peluquerías de León no tiene.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de blancopeluqueros.es hecha fuera de esta sesión (WebFetch propio sigue en 403). Lo que esa investigación no pudo confirmar (cifra de reseñas, precios) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Blanco Peluqueros lleva 26 años en León, fundada por Araceli García, con formación en centros nacionales e internacionales — un activo de autoridad que ninguno de los otros dos negocios de peluquería auditados en este dataset tiene (ni Emma Hidalgo ni Origen Estilistas identifican a su fundador o fundadora por nombre). A eso se suma un catálogo de tratamientos técnicos reales: coloración sin amoniaco en 10 minutos, cobertura de canas para caballero en 5 minutos sin efecto raíz, tratamiento libre de formol, Botox capilar. El reto no es la falta de sustancia — es que esa combinación de trayectoria personal y tecnología real no está necesariamente contada como una sola historia de autoridad.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Fundadora identificada por nombre — Araceli García, con formación nacional e internacional documentada — único caso del vertical de peluquería del dataset con esta credencial. ✅</li>
+      <li>26 años de trayectoria (fundada en 2000). ✅</li>
+      <li>Catálogo de tratamientos técnicos reales y verificables: coloración sin amoniaco/PPD/PPT, tratamiento libre de formol, Botox capilar, coloración caballero en 5 minutos. ✅</li>
+      <li>Presencia digital diversificada: web propia, Facebook e Instagram activos, además de Yelp, QDQ y Páginas Amarillas — más canales que el resto del vertical auditado en este dataset. ✅</li>
+      <li>Especialización en novias y celebraciones, con asesoramiento de imagen. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Blanco Peluqueros</td></tr>
+    <tr><th>Fundadora</th><td>Araceli García — formación en centros nacionales e internacionales</td></tr>
+    <tr><th>Dirección</th><td>Av. de Roma 3, Bajo, 24001 León — centro, entre Plaza Inmaculada y Guzmán</td></tr>
+    <tr><th>Contacto</th><td>987 244 706</td></tr>
+    <tr><th>Horario</th><td>Lunes 10:00-20:00 · Martes-viernes 09:30-20:00 · Sábado 09:30-14:30 · Domingo cerrado</td></tr>
+    <tr><th>Canales digitales</th><td>Web propia, Facebook, Instagram, Yelp, QDQ, Páginas Amarillas</td></tr>
+    <tr><th>Reputación</th><td>Presencia confirmada en Yelp; cifra de valoración pendiente de confirmar</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "peluquería León" o "tratamiento sin formol León" — encuentro blancopeluqueros.es con un catálogo técnico detallado.</p>
+    <p><strong>Leo</strong> sobre los tratamientos (Botox capilar, coloración sin amoniaco) — información técnica real, pero no está claro si sé quién los hace o con qué trayectoria.</p>
+    <p><strong>Busco</strong> quién está detrás — si la web destaca a Araceli García con su formación y 26 años, gano confianza rápido; si aparece solo en un "Quiénes somos" secundario, la pierdo.</p>
+    <p><strong>Decido</strong> en función de si veo el mismo nivel de autoridad en el mensaje principal que en el catálogo técnico.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La fundadora es un activo de autoridad único en el vertical, sin confirmar si domina el mensaje principal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Araceli García, con 26 años de trayectoria y formación internacional, es la única fundadora identificada por nombre entre los tres negocios de peluquería auditados en este dataset.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si esa credencial no aparece con fuerza en el bloque principal (foto, historia, formación), se pierde el diferenciador de confianza más fuerte frente a Emma Hidalgo y Origen Estilistas, ninguna de las cuales tiene una cara visible.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web destaca a Araceli García en el bloque principal, con foto, historia breve y formación — no solo en una página secundaria de "Quiénes somos".</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una credencial real y única en el vertical en el argumento de autoridad más fuerte frente a la competencia.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>Los tratamientos técnicos avanzados podrían tener su propio espacio, con antes/después</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>El Botox capilar, la coloración sin amoniaco en 10 minutos y la coloración caballero en 5 minutos son tratamientos técnicos concretos, con beneficios medibles (tiempo, ausencia de químicos agresivos).</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin evidencia visual (antes/después) de estos tratamientos, un cliente potencial tiene que confiar en la descripción técnica sin verla en acción — más difícil de decidir que ver un resultado real.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si Instagram o la web muestran antes/después reales de estos tratamientos; si no, es una oportunidad de contenido de bajo coste con alto potencial de conversión.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una descripción técnica en prueba visual, el tipo de contenido que mejor funciona en peluquería.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Marca personal + marca corporativa:</strong> el modelo de fundadora con nombre propio es escalable — "Araceli García by Blanco Peluqueros" podría convivir con la marca del salón sin sustituirla.</li>
+      <li style="margin-bottom:10px;"><strong>26 años como base de expansión:</strong> la trayectoria y la tecnología capilar avanzada posicionan a Blanco como candidato a segunda ubicación o formación de estilistas, si el negocio quisiera crecer.</li>
+      <li style="margin-bottom:0;"><strong>Coloración sin químicos agresivos como eje de marca:</strong> alineado con la tendencia de "clean beauty" — podría ser el mensaje central, no un tratamiento más del catálogo.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Blanco Men":</strong> empaquetar la coloración caballero en 5 minutos como producto independiente, dirigido específicamente a hombres con canas.</li>
+      <li style="margin-bottom:10px;"><strong>Plan de mantenimiento mensual:</strong> corte + retoque de color + tratamiento, con descuento en productos — ingresos recurrentes en vez de visitas puntuales.</li>
+      <li style="margin-bottom:0;"><strong>Pack Novia Blanco:</strong> prueba + día de la boda + asesoramiento de imagen, empaquetado con precio único, apoyado en la especialización ya existente.</li>
+    </ul>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Autoridad</td><td class="num">7/10</td><td class="why">Fundadora identificada con formación y trayectoria real — único caso así en el vertical del dataset.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Catálogo técnico real (Botox capilar, coloración sin químicos agresivos), sin confirmar si se comunica con evidencia visual.</td></tr>
+    <tr><td>Confianza</td><td class="num">6/10</td><td class="why">26 años de trayectoria y presencia digital diversificada.</td></tr>
+    <tr><td>Prueba social</td><td class="num pending">Pendiente</td><td class="why">Presencia en Yelp confirmada, sin cifra de valoración disponible.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la fundadora domina el mensaje principal.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay precios publicados.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la trayectoria de Araceli García como palanca de confianza.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">19/30</span><span class="label">Suma de las 3 dimensiones con evidencia directa ÷ 30 × 100 = 63/100 sobre esas 3. Las 10 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si Araceli García y su trayectoria aparecen en el bloque principal de la web, con foto e historia breve.</li>
+      <li>Añadir antes/después reales de los tratamientos técnicos (Botox capilar, coloración sin químicos) en Instagram y la web.</li>
+      <li>Confirmar la cifra de reseñas en Google directamente y usarla si es sólida.</li>
+      <li>Navegar la web real para completar las 10 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (fundadora poco destacada) → subir a Araceli García y su formación al bloque principal.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (tratamientos sin evidencia visual) → antes/después reales en Instagram y web.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real y Google Business Profile para completar la Puntuación FARO.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Sois la única peluquería de las que hemos auditado en León con una fundadora identificada por nombre y 26 años de trayectoria real. Os dejamos un informe honesto sobre cómo hacer que esa autoridad se note tanto como vuestro catálogo técnico."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar lo que ofrecéis — proponemos que se cuente como una sola historia de confianza, no como datos sueltos.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

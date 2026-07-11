@@ -1,0 +1,249 @@
+<!--
+  Informe de auditoría — Origen Estilistas (Av. Gral. Gutiérrez
+  Mellado 28, Trobajo del Camino, León). Decimoctavo caso del dataset
+  EXP-003, tercero y último del vertical de peluquería, cierra el
+  dataset completo (18 de 18 negocios con propuesta construida).
+  Auditado con los tres skills operativos completos, a partir de una
+  investigación del usuario fuera de esta sesión -- la web propia
+  (origenestilistas.com) no fue accesible en esa investigación, así
+  que este informe se apoya en directorios (Google Maps, Rizopelus,
+  PeluqueríaMaster, Bodas.net, Fresha).
+
+  Datos confirmados por directorios:
+  - Dirección: Av. Gral. Gutiérrez Mellado 28, 24010 Trobajo del Camino, León (zona periférica). ✅
+  - Teléfono: 987 225 473. ✅
+  - Fundado hace más de 15 años (aprox. 2009-2010). ✅
+  - Reputación: Google Maps 4,7/5 sobre 190 opiniones -- la mejor cifra confirmada de los tres negocios de peluquería auditados. ✅ Rizopelus 4,6/5 sobre 15 opiniones. ✅ PeluqueríaMaster: puesto #21 en León, 4,7/5 sobre 190 opiniones -- cifra consistente con Google Maps. ✅
+  - Reserva online activa en Fresha. ✅
+  - Especialización: cambios de imagen y ceremonias (bodas, eventos) -- presencia confirmada en Bodas.net. ✅
+  - Servicios: corte, color, peinado (según PeluqueríaMaster). ✅
+  - Web propia (origenestilistas.com) no accesible en esta investigación. 🟡
+  - Sin nombre de fundador/a identificado, sin horario específico confirmado, sin presencia en redes sociales identificada. 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Origen Estilistas</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #7A5C3E; --color-accent: #6E7F5C; --color-ink: #23201A;
+    --color-bg: #F7F3EC; --color-white: #FFFFFF; --color-success: #4E7A3E; --color-alert: #B4453A;
+    --color-border: #EBE2D2; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #D3B48A; --color-accent: #A9C093; --color-ink: #EDE8DC;
+      --color-bg: #1A1710; --color-white: #24211A; --color-success: #8DC77A; --color-alert: #E08579;
+      --color-border: #3A342570; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #D3B48A; --color-accent: #A9C093; --color-ink: #EDE8DC;
+    --color-bg: #1A1710; --color-white: #24211A; --color-success: #8DC77A; --color-alert: #E08579;
+    --color-border: #3A342570; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #7A5C3E; --color-accent: #6E7F5C; --color-ink: #23201A;
+    --color-bg: #F7F3EC; --color-white: #FFFFFF; --color-success: #4E7A3E; --color-alert: #B4453A;
+    --color-border: #EBE2D2; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EDF1E6; border: 1px solid #CFDBC2; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Origen Estilistas</p>
+  <h1>190 opiniones a 4,7/5 en Google. La mejor reputación de las tres peluquerías auditadas, con la web menos accesible de las tres.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> a diferencia de Blanco Peluqueros y Emma Hidalgo, origenestilistas.com no fue accesible en la investigación disponible — este informe se apoya en directorios (Google Maps, Rizopelus, PeluqueríaMaster, Bodas.net, Fresha), no en navegación directa de la web propia. Lo que depende de ver la página real sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Origen Estilistas tiene la mejor reputación confirmada de los tres negocios de peluquería auditados en este dataset: 4,7/5 sobre 190 opiniones en Google, cifra consistente con su puesto #21 en el ranking de PeluqueríaMaster de León. Más de 15 años de trayectoria, especialización en cambios de imagen y ceremonias (con presencia confirmada en Bodas.net), y reserva online activa en Fresha — la misma plataforma que ya usa OseoActive, otro caso de este dataset. El reto es distinto al de Blanco o Emma: aquí la reputación y la reserva ya están resueltas; lo que falta es acceso a la propia web para confirmar si todo eso se comunica bien en el canal que el negocio controla directamente.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>4,7/5 sobre 190 opiniones en Google Maps — la mejor cifra confirmada de los tres negocios de peluquería de este dataset, consistente entre dos fuentes distintas (Google, PeluqueríaMaster). ✅</li>
+      <li>Reserva online activa en Fresha — reduce la fricción de tener que llamar. ✅</li>
+      <li>Más de 15 años de trayectoria. ✅</li>
+      <li>Especialización real en ceremonias y bodas, con presencia confirmada en Bodas.net — un nicho de mayor valor por servicio que el corte/color habitual. ✅</li>
+      <li>Presencia en Rizopelus (4,6/5, 15 opiniones), directorio especializado del sector. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Origen Estilistas</td></tr>
+    <tr><th>Dirección</th><td>Av. Gral. Gutiérrez Mellado 28, 24010 Trobajo del Camino, León (zona periférica)</td></tr>
+    <tr><th>Contacto</th><td>987 225 473</td></tr>
+    <tr><th>Fundación</th><td>Más de 15 años de trayectoria (aprox. 2009-2010)</td></tr>
+    <tr><th>Reputación</th><td>Google Maps: 4,7/5 sobre 190 opiniones · PeluqueríaMaster: #21 en León, 4,7/5 sobre 190 opiniones · Rizopelus: 4,6/5 sobre 15 opiniones</td></tr>
+    <tr><th>Reserva</th><td>Fresha (plataforma online)</td></tr>
+    <tr><th>Especialización</th><td>Cambios de imagen, ceremonias y bodas (presencia confirmada en Bodas.net)</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "peluquería novias León" o "peluquería Trobajo del Camino" — encuentro una valoración de 4,7/5 sobre 190 opiniones, la más sólida de las tres peluquerías de este dataset.</p>
+    <p><strong>Confirmo</strong> la especialización en ceremonias a través de Bodas.net, un directorio específico del sector — señal de que esta especialización es real, no solo un servicio más del catálogo.</p>
+    <p><strong>Busco</strong> reservar — si encuentro el enlace a Fresha rápido, reservo directamente; si no, llamo.</p>
+    <p><strong>Decido</strong> en función de si la web propia (cuando esté accesible) transmite la misma confianza que ya generan las 190 opiniones y la presencia en Bodas.net.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La mejor reputación de las tres peluquerías del dataset no está confirmado que se comunique en la propia web</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>4,7/5 sobre 190 opiniones es un dato consistente entre dos fuentes distintas (Google, PeluqueríaMaster) — no hay confirmación de que la propia web lo muestre de forma destacada, precisamente porque no ha sido posible navegarla en esta investigación.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que llegue directo a la web (sin pasar por Google) puede no ver esa cifra — se pierde el activo de confianza más fuerte de los tres negocios de peluquería auditados, en el canal que Origen sí controla.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>En cuanto la web sea accesible, confirmar si la valoración de Google aparece en el bloque principal; si no, es el cambio de mayor impacto potencial de este informe.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>El activo de confianza más fuerte del negocio deja de depender de que el cliente llegue por Google para verlo.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La especialización en ceremonias es un nicho de mayor valor, sin confirmar si tiene su propio espacio</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Origen tiene presencia confirmada en Bodas.net, un directorio específico para proveedores de boda — señal de una especialización real en ceremonias, no solo un servicio adicional.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Una novia que busca peluquería para su boda compara proveedores especializados, con paquetes claros (prueba + día del evento) — si esa oferta no está empaquetada con claridad, compite en desventaja frente a proveedores que sí lo tienen así.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si existe un paquete claro de "servicio de novia" con precio, prueba previa y día del evento, o si se gestiona como una cita más sin diferenciación de precio o proceso.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una especialización real en un producto con nombre propio, más fácil de comparar y de vender a un precio acorde a su valor.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Modelo ceremonias + mantenimiento:</strong> el negocio de bodas es altamente estacional (picos en primavera/verano) — diversificar con servicios de mantenimiento regular (color, corte) da ingresos recurrentes fuera de temporada alta.</li>
+      <li style="margin-bottom:10px;"><strong>Ubicación periférica como ventaja de proximidad, no solo barrera:</strong> Trobajo del Camino tiene su propia base de clientes locales — vale la pena entender si el volumen de 190 reseñas viene sobre todo de esa zona o también del centro de León.</li>
+      <li style="margin-bottom:0;"><strong>190 reseñas sugieren volumen alto:</strong> valdría la pena confirmar la tasa de repetición y si existe algún programa de fidelización, dado que no hay evidencia de uno en la investigación disponible.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Pack Ceremonia Origen":</strong> novia + acompañantes con precio grupal, incluye prueba, día del evento y producto de mantenimiento — empaquetar lo que hoy probablemente se gestiona caso a caso.</li>
+      <li style="margin-bottom:10px;"><strong>"Transformación Origen":</strong> consulta de imagen + corte + color + tratamiento, como experiencia completa para cambios de imagen, no solo servicios sueltos.</li>
+      <li style="margin-bottom:0;"><strong>Convenios cruzados con fotógrafos y floristerías de León</strong> — encaje natural con la especialización en bodas ya confirmada en Bodas.net.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Competencia directa en peluquería de León</h2>
+    <table class="compete-table">
+      <tr><th>Competidor</th><th>Valoración Google</th><th>Frente a Origen</th></tr>
+      <tr><td>Mandarina Peluqueros</td><td>4,9/5, 170 reseñas</td><td>Valoración puntual más alta; Origen gana en volumen y especialización en ceremonias</td></tr>
+      <tr><td>Kel'Art Unisex-Estilismo</td><td>4,9/5, 135 reseñas (Trobajo del Camino)</td><td>Competidor directo de zona; Origen gana en volumen de reseñas</td></tr>
+      <tr><td>Blanco Peluqueros</td><td>Sin cifra confirmada</td><td>Origen gana en prueba social confirmada; Blanco gana en fundadora identificada</td></tr>
+      <tr><td>Emma Hidalgo</td><td>Sin cifra confirmada</td><td>Origen gana en prueba social y reserva online; Emma gana en especialización de nicho (color)</td></tr>
+    </table>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Prueba social</td><td class="num">8/10</td><td class="why">4,7/5 sobre 190 opiniones, consistente entre dos fuentes — la mejor cifra confirmada del vertical de peluquería.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">7/10</td><td class="why">Reserva online en Fresha, además de teléfono.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Especialización real en ceremonias, confirmada en un directorio específico del sector (Bodas.net).</td></tr>
+    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Trayectoria de 15+ años real, sin más credenciales confirmadas por la falta de acceso a la web propia.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real, no accesible en esta investigación.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Autoridad</td><td class="num pending">Pendiente</td><td class="why">Sin fundador/a identificado en ninguna fuente consultada.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay precios o paquetes de boda publicados.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la reputación y la especialización en bodas se usan como palanca de decisión.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">21/30</span><span class="label">Suma de las 3 dimensiones con evidencia directa ÷ 30 × 100 = 70/100 sobre esas 3 — la nota más alta del vertical de peluquería sobre las dimensiones evaluables. Las 10 restantes quedan sin puntuar hasta poder acceder a la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Conseguir acceso real a origenestilistas.com para confirmar si la reputación de Google aparece en el bloque principal.</li>
+      <li>Confirmar si existe un paquete claro de "servicio de novia" con precio y proceso definido.</li>
+      <li>Confirmar la tasa de repetición de clientes y si existe algún programa de fidelización.</li>
+      <li>Navegar la web real para completar las 10 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación no confirmada en portada) → subir la cifra real de Google al bloque principal, en cuanto la web sea accesible.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (ceremonias sin paquete claro) → empaquetar el servicio de novia con nombre, precio y proceso propios.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: conseguir acceso real a la web para completar la Puntuación FARO con evidencia directa.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis la mejor reputación de las tres peluquerías que hemos auditado en León — 190 opiniones a 4,7/5, y una especialización real en ceremonias. Os dejamos un informe honesto sobre cómo aprovecharla, y sobre lo que todavía no hemos podido comprobar porque no conseguimos acceder a vuestra web."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — las reseñas dicen que ya funciona. Proponemos que esa confianza real llegue también a quien todavía no os conoce.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

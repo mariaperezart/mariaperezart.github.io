@@ -1,0 +1,134 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Decimosexto candidato de experimentos/EXP-003-pymes-leon,
+  primero del vertical de peluquería.
+
+  Ángulo: Araceli García, fundadora con 26 años de trayectoria y
+  formación internacional, como cara del negocio -- único caso del
+  vertical con esta credencial -- combinada con el catálogo técnico
+  real (coloración sin químicos agresivos, Botox capilar, coloración
+  caballero en 5 min).
+
+  Datos públicos confirmados (ver informe-auditoria.html): Av. de Roma
+  3, León · Tel. 987 244 706 · L 10-20, M-V 9:30-20, S 9:30-14:30, D
+  cerrado · fundada en 2000.
+
+  Identidad visual: marfil + carbón + dorado envejecido -- editorial,
+  atemporal -- distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Blanco Peluqueros — 26 años en León</title>
+<meta name="description" content="Blanco Peluqueros, Av. de Roma 3, León. Araceli García, 26 años de trayectoria. Coloración sin amoniaco, Botox capilar, coloración caballero en 5 minutos.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F7F4EF; --color-surface: #FFFFFF; --color-ink: #1E1B18; --color-ink-muted: #635A4E;
+    --color-primary: #1E1B18; --color-accent: #B08D57; --color-border: #E7E0D3;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(30,27,24,0.12);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #15130F; --color-surface: #211D17; --color-ink: #EFE9DD; --color-ink-muted: #C4B9A5; --color-border: #38321F; }
+  }
+  :root[data-theme="dark"] { --color-bg: #15130F; --color-surface: #211D17; --color-ink: #EFE9DD; --color-ink-muted: #C4B9A5; --color-border: #38321F; }
+  :root[data-theme="light"] { --color-bg: #F7F4EF; --color-surface: #FFFFFF; --color-ink: #1E1B18; --color-ink-muted: #635A4E; --color-border: #E7E0D3; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-accent); margin-bottom: 12px; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--accent { border: 1.5px solid var(--color-accent); color: var(--color-accent); }
+
+  .founder-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .founder-card .avatar { width: 56px; height: 56px; border-radius: 50%; background: var(--color-accent); display: flex; align-items: center; justify-content: center; font-size: 24px; margin-bottom: 12px; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Blanco Peluqueros</span>
+    <nav><a class="call" href="tel:+34987244706">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Av. de Roma 3, León · desde el año 2000</span>
+        <h1>26 años dando forma a la imagen de León.</h1>
+        <p>Coloración sin amoniaco en 10 minutos, Botox capilar, coloración para caballero en 5 minutos sin efecto raíz — tecnología capilar real, con la trayectoria de Araceli García detrás.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987244706">📞 987 244 706</a>
+          <a class="btn btn--accent" href="#tratamientos">Ver tratamientos</a>
+        </div>
+      </div>
+
+      <div class="founder-card">
+        <div class="avatar">✂️</div>
+        <h3 style="margin:0 0 6px;">Araceli García</h3>
+        <p style="margin:0;">Fundadora, con formación en centros nacionales e internacionales.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="tratamientos">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Tecnología capilar real</h2>
+        <p style="margin:0 auto;">No solo corte y color — tratamientos técnicos con resultados medibles.</p>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Coloración sin químicos agresivos</h4><p>Sin amoniaco, PPDs ni PPTs. En 10 minutos.</p></div>
+        <div class="service"><h4>Coloración caballero</h4><p>Cobertura de canas en 5 minutos, sin efecto raíz.</p></div>
+        <div class="service"><h4>Tratamiento libre de formol</h4><p>30% más de penetración, brillo y elasticidad.</p></div>
+        <div class="service"><h4>Botox capilar</h4><p>Reestructurante intenso, pigmentos naturales.</p></div>
+        <div class="service"><h4>Extensiones</h4><p>Extensiones de cabello a medida.</p></div>
+        <div class="service"><h4>Novias y celebraciones</h4><p>Peinado y asesoramiento de imagen.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Blanco Peluqueros — Av. de Roma 3, León · 987 244 706</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar.</p>
+</footer>
+
+</body>
+</html>

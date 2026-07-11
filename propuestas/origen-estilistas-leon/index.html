@@ -1,0 +1,145 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Decimoctavo y último candidato de
+  experimentos/EXP-003-pymes-leon, tercero del vertical de peluquería
+  -- cierra el dataset completo (18 de 18 negocios con propuesta
+  construida).
+
+  Ángulo: la reputación real (4,7/5, 190 opiniones en Google,
+  consistente con PeluqueríaMaster) es la más fuerte de las tres
+  peluquerías del dataset -- se sube al primer plano, junto con la
+  especialización en ceremonias (confirmada en Bodas.net) y la reserva
+  online ya activa en Fresha.
+
+  Datos públicos confirmados (ver informe-auditoria.html): Av. Gral.
+  Gutiérrez Mellado 28, Trobajo del Camino, León · Tel. 987 225 473 ·
+  más de 15 años de trayectoria · reserva en Fresha.
+
+  Identidad visual: champán + salvia -- elegante, orientado a bodas --
+  distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Origen Estilistas — 4,7★ en Google, especialistas en novias</title>
+<meta name="description" content="Origen Estilistas, Av. Gral. Gutiérrez Mellado 28, Trobajo del Camino, León. 4,7/5 en Google con 190 opiniones. Especialistas en cambios de imagen y ceremonias.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F7F3EC; --color-surface: #FFFFFF; --color-ink: #23201A; --color-ink-muted: #6C6250;
+    --color-primary: #7A5C3E; --color-accent: #6E7F5C; --color-border: #EBE2D2;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(122,92,62,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #17140E; --color-surface: #221E16; --color-ink: #EDE8DC; --color-ink-muted: #C6BAA1; --color-border: #383221; }
+  }
+  :root[data-theme="dark"] { --color-bg: #17140E; --color-surface: #221E16; --color-ink: #EDE8DC; --color-ink-muted: #C6BAA1; --color-border: #383221; }
+  :root[data-theme="light"] { --color-bg: #F7F3EC; --color-surface: #FFFFFF; --color-ink: #23201A; --color-ink-muted: #6C6250; --color-border: #EBE2D2; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating-big { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); margin-bottom: 20px; }
+  .rating-big .num { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--color-primary); line-height: 1; }
+  .rating-big .stars { color: var(--color-accent); font-size: 15px; margin-bottom: 4px; }
+  .rating-big .sub { font-size: 13px; color: var(--color-ink-muted); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--accent { background: var(--color-accent); color: #fff; }
+
+  .wedding-card { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .wedding-card h3 { margin-top: 0; color: var(--color-accent); }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Origen Estilistas</span>
+    <nav><a class="call" href="tel:+34987225473">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Trobajo del Camino, León · más de 15 años</span>
+        <div class="rating-big">
+          <div class="num">4,7</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="sub">190 opiniones en Google</div>
+          </div>
+        </div>
+        <h1>Especialistas en cambios de imagen y ceremonias.</h1>
+        <p>Del corte del día a día al gran cambio de imagen para tu boda o evento especial — con más de 15 años haciéndolo en León.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987225473">📞 987 225 473</a>
+          <a class="btn btn--accent" href="#reserva">📅 Reservar cita online</a>
+        </div>
+      </div>
+
+      <div class="wedding-card" id="reserva">
+        <h3>Reserva online</h3>
+        <p style="margin:0;">Elige día y hora sin llamar, disponible en Fresha.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Nuestros servicios</h2>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Corte</h4><p>Para el día a día.</p></div>
+        <div class="service"><h4>Color</h4><p>Técnicas adaptadas a ti.</p></div>
+        <div class="service"><h4>Peinado</h4><p>Para cualquier ocasión.</p></div>
+        <div class="service"><h4>Cambios de imagen</h4><p>Transformación completa.</p></div>
+        <div class="service"><h4>Ceremonias</h4><p>Especialistas en bodas y eventos.</p></div>
+        <div class="service"><h4>Reserva online</h4><p>Disponible en Fresha.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Origen Estilistas — Av. Gral. Gutiérrez Mellado 28, Trobajo del Camino, León · 987 225 473</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. La web propia no ha sido accesible en la investigación disponible.</p>
+</footer>
+
+</body>
+</html>

@@ -1,0 +1,229 @@
+<!--
+  Informe de auditoría — Peluquería Emma Hidalgo (C/ Conde Guillén 16,
+  León). Decimoséptimo caso del dataset EXP-003, segundo del vertical
+  de peluquería. Auditado con los tres skills operativos completos
+  (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect),
+  a partir de una investigación con navegación directa hecha por el
+  usuario fuera de esta sesión.
+
+  Datos confirmados por navegación directa:
+  - Dirección: C/ Conde Guillén 16, 24004 León (centro). ✅ (coincide con el dataset original)
+  - Teléfono: 987 21 62 96. ✅ (coincide con el dataset original)
+  - Web: emmahidalgo.com -- diseño moderno, buen copy ("Tu cabello es una parte esencial de tu identidad"). ✅
+  - Especialización: color -- coloración, mechas, balayage a medida. ✅ Corte personalizado, tratamientos capilares, servicio masculino, asesoramiento personalizado. ✅
+  - Reputación: perfil activo en ProvenExpert, sin cifra detallada en la investigación disponible. 🟡
+  - Sin presencia identificada en Facebook, Instagram, TikTok, LinkedIn o YouTube -- ausencia notable para un salón que se posiciona como "vanguardista e innovador" en técnicas de color, un contenido muy visual por naturaleza. 🟡
+  - Horario no especificado en las fuentes consultadas. 🟡
+  - Sin nombre de fundador/a identificado -- no está confirmado si "Emma Hidalgo" es una persona real al frente del salón o un nombre de marca. 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Peluquería Emma Hidalgo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #8C4A2F; --color-accent: #E3AE7D; --color-ink: #2B1D15;
+    --color-bg: #FBF3EB; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #F0DFCB; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #E8A97E; --color-accent: #F0C99A; --color-ink: #F3E4D6;
+      --color-bg: #1E140D; --color-white: #291E15; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #3E2D1E70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #E8A97E; --color-accent: #F0C99A; --color-ink: #F3E4D6;
+    --color-bg: #1E140D; --color-white: #291E15; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #3E2D1E70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #8C4A2F; --color-accent: #E3AE7D; --color-ink: #2B1D15;
+    --color-bg: #FBF3EB; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #F0DFCB; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #F6E9DA; border: 1px solid #EBCEA9; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Peluquería Emma Hidalgo</p>
+  <h1>Especialistas en color, sin una sola foto de ese color en redes sociales.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de emmahidalgo.com hecha fuera de esta sesión (WebFetch propio sigue en 403). Lo que esa investigación no pudo confirmar (horario, nombre de la fundadora, cifra de reseñas) sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Emma Hidalgo se presenta como un salón "vanguardista e innovador", especializado en color — coloración, mechas y balayage a medida, con buen copy en la propia web ("tu cabello es una parte esencial de tu identidad"). Y, aun así, no tiene ninguna presencia identificada en Instagram, Facebook ni TikTok — justo el tipo de contenido más visual y compartible que existe (transformaciones de color) no tiene ningún canal donde mostrarse. Es la brecha más llamativa de los tres negocios de peluquería auditados en este dataset.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Especialización clara en color: coloración, mechas, balayage a medida — un nicho defensible en un mercado saturado. ✅</li>
+      <li>Web moderna con buen copy, orientada a un posicionamiento de identidad personal, no solo servicio técnico. ✅</li>
+      <li>Servicio masculino y asesoramiento personalizado, además de tratamientos capilares. ✅</li>
+      <li>Perfil activo en ProvenExpert. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Peluquería Emma Hidalgo</td></tr>
+    <tr><th>Dirección</th><td>C/ Conde Guillén 16, 24004 León (centro)</td></tr>
+    <tr><th>Contacto</th><td>987 21 62 96</td></tr>
+    <tr><th>Especialización</th><td>Color (coloración, mechas, balayage a medida), corte personalizado, servicio masculino</td></tr>
+    <tr><th>Canales digitales</th><td>Web propia, ProvenExpert — sin Facebook, Instagram, TikTok, LinkedIn ni YouTube identificados</td></tr>
+    <tr><th>Fundador/a</th><td>No identificado — no está confirmado si "Emma Hidalgo" es una persona real al frente del salón</td></tr>
+  </table>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "balayage León" o "mechas León" — un tipo de búsqueda muy visual, donde normalmente esperaría encontrar Instagram con fotos de transformaciones reales.</p>
+    <p><strong>No encuentro</strong> ese Instagram — llego solo a la web, con buen copy pero sin la evidencia visual que este tipo de servicio suele necesitar para decidir.</p>
+    <p><strong>Dudo</strong> si el salón es tan vanguardista como dice, sin poder ver resultados reales antes de reservar.</p>
+    <p><strong>Decido</strong> en función de si encuentro alguna prueba visual (aunque sea en la propia web) que respalde la especialización que se anuncia.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La ausencia de redes sociales es la brecha más grave para un negocio especializado en color</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>No hay presencia identificada en Instagram, Facebook ni TikTok — a diferencia de Blanco Peluqueros (Facebook e Instagram activos), y pese a que el color (balayage, mechas) es de los contenidos más virales que existen en el sector.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que busca específicamente balayage o mechas suele comparar salones por resultados visuales — sin ese canal, Emma Hidalgo puede estar perdiendo el tipo de cliente que su propia especialización debería atraer mejor.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si existe alguna cuenta no identificada en esta investigación; si no, valorar Instagram como prioridad número uno, con fotos reales de transformaciones (con permiso de las clientas).</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte la especialización real en color en el tipo de prueba visual que ese servicio necesita para convertir.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>No hay una cara visible detrás de la marca "Emma Hidalgo"</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>No se ha podido confirmar si Emma Hidalgo es una persona real al frente del salón, ni el nombre del resto del equipo.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Frente a Blanco Peluqueros (fundadora identificada con nombre y trayectoria), Emma Hidalgo pierde un argumento de confianza personal que su competencia directa sí tiene.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si hay una persona real detrás del nombre de marca, y si es así, darle cara visible en la web y en cualquier futuro canal social.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Añade un argumento de confianza personal que hoy depende solo del copy de la web, sin respaldo visible.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Posicionamiento en color como nicho defensible:</strong> "expertos en color" es más específico que "peluquería general" — profundizar en subnichos (canas, transformaciones drásticas, morenas/rubias) reforzaría esa especialización.</li>
+      <li style="margin-bottom:10px;"><strong>La ausencia de redes sugiere dos escenarios opuestos:</strong> o un boca a boca muy fuerte que no necesita más canal (documentarlo si es así), o una oportunidad perdida real — sin confirmación directa, no se puede saber cuál de las dos.</li>
+      <li style="margin-bottom:0;"><strong>Falta una cara visible de la marca:</strong> "Emma Hidalgo" necesita una persona real detrás, visible, para competir con negocios como Blanco Peluqueros que sí la tienen.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Color Experience Emma":</strong> evaluación de color + balayage personalizado + tratamiento de mantenimiento, empaquetado con precio único.</li>
+      <li style="margin-bottom:10px;"><strong>Comunicar la formación continua del equipo</strong> como valor explícito, no solo implícito en el copy de la web.</li>
+      <li style="margin-bottom:0;"><strong>Programa de mantenimiento de color:</strong> retoque de raíz mensual + tratamiento hidratante + prioridad de cita — ingresos recurrentes en vez de visitas puntuales.</li>
+    </ul>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Especialización real en color, nicho defensible frente a peluquerías generalistas.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num">5/10</td><td class="why">Buen copy de identidad, pero sin evidencia visual que lo respalde.</td></tr>
+    <tr><td>Diferenciación digital</td><td class="num">2/10</td><td class="why">Ausencia total de redes sociales — la brecha más grave del vertical para un negocio especializado en un servicio visual como el color.</td></tr>
+    <tr><td>Autoridad</td><td class="num">3/10</td><td class="why">Sin fundador/a ni equipo identificado, a diferencia de la competencia directa dentro del dataset.</td></tr>
+    <tr><td>Prueba social</td><td class="num pending">Pendiente</td><td class="why">ProvenExpert activo, sin cifra de valoración disponible.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular real de la portada.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay precios publicados.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además del teléfono.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si el copy de identidad se traduce en una llamada a la acción concreta.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">16/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 40/100 sobre esas 4 — nota baja por la ausencia total de redes sociales y de autoridad personal identificada, pese a una especialización real. Las 9 restantes quedan sin puntuar hasta poder navegar más a fondo.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si existe alguna red social no identificada; si no, priorizar Instagram con fotos reales de balayage y mechas.</li>
+      <li>Confirmar si hay una persona real detrás de "Emma Hidalgo" y darle cara visible.</li>
+      <li>Añadir evidencia visual (antes/después) que respalde el copy de identidad ya existente.</li>
+      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (sin redes sociales) → Instagram con contenido real de transformaciones de color.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (sin cara visible) → confirmar y presentar a la persona real detrás de la marca.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: navegar la web real y Google Business Profile para completar la Puntuación FARO.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Sois especialistas en color, uno de los servicios más visuales que existen, y no tenéis ni una sola foto en redes sociales que lo demuestre. Os dejamos un informe honesto sobre esa brecha, y sobre cómo cerrarla con lo que ya sabéis hacer bien."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que se vea, porque ahora mismo solo existe en la memoria de quien ya lo ha probado.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
