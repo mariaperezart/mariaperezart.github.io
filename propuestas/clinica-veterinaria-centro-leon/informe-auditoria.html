@@ -1,0 +1,206 @@
+<!--
+  Informe de auditoría — este SÍ lleva la identidad de FARO (no la del
+  cliente), porque es un documento de trabajo de FARO entregado al
+  cliente, no una maqueta de su propia web. Ver FARO_IDENTIDAD_VISUAL.md
+  para los tokens de marca reutilizados aquí.
+
+  Este informe es ahora el artefacto principal de venta para Centro
+  León — la landing (index.html en esta misma carpeta) pasa a ser el
+  anexo/prueba de concepto que demuestra la sección "Recomendación",
+  no el primer contacto. Ver guion actualizado en
+  experimentos/EXP-003-pymes-leon/05-mensajes/clinica-veterinaria-centro-leon.md.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de experiencia — Clínica Veterinaria Centro León</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 32px; }
+  h2 { font-size: 20px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 40px; }
+
+  .finding { border-top: 1px solid var(--color-border); padding: 28px 0; }
+  .finding:first-of-type { border-top: none; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-primary); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); margin-right: 10px; }
+  .finding__title { display: flex; align-items: center; gap: 4px; margin-bottom: 14px; }
+  .finding__title h2 { margin: 0; }
+  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 16px 0 6px; }
+  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+
+  .journey { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14px; margin: 12px 0; }
+  .journey span { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 999px; padding: 6px 14px; }
+  .journey .arrow { opacity: 0.5; }
+  .journey--bad span { border-color: var(--color-alert); color: var(--color-alert); }
+  .journey--good span { border-color: var(--color-success); color: var(--color-success); }
+
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
+  .hero-mock h3 { font-size: 22px; margin-bottom: 4px; }
+  .hero-mock .sub { font-weight: 600; color: var(--color-primary); margin-bottom: 12px; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
+  .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
+  .cta-row .primary { background: var(--color-alert); color: #fff; }
+  .cta-row .secondary { background: transparent; border: 1.5px solid var(--color-success); color: var(--color-success); }
+
+  .wa-mock { background: #E9FBE9; border: 1px solid #B9E8B9; border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 14.5px; }
+
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block p { max-width: none; }
+  .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
+
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead">
+    <span class="logo">FARO</span>
+    <span class="date">Julio 2026</span>
+  </div>
+
+  <p class="cover-meta">Auditoría de experiencia · Clínica Veterinaria Centro León</p>
+  <h1>Ocho puntos de fricción entre "necesito ayuda" y "he llamado".</h1>
+
+  <div class="intro">
+    <p style="margin:0;">Analizamos el recorrido de un propietario preocupado que entra en vuestra web desde el móvil, en el momento en el que su mascota necesita atención. En menos de cinco minutos identificamos ocho puntos donde la propia página añade fricción justo antes de que esa persona decida llamar. Ninguno de estos puntos requiere cambiar vuestra identidad de marca — son de recorrido, no de diseño.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>El primer contacto genera fricción</h2></div>
+    <p class="subhead">Situación actual</p>
+    <p>Nada más entrar aparece un pop-up que ocupa prácticamente toda la pantalla. El usuario no puede interactuar con la página hasta encontrar la "X" y cerrarlo.</p>
+    <p class="subhead">Impacto</p>
+    <p>En ese momento el visitante todavía no ha visto quién es la clínica, qué ofrece, por qué debería confiar, ni dónde está. Su primera tarea pasa a ser cerrar una ventana — fricción justo en los primeros segundos, los más importantes.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>El pop-up compite con el objetivo principal</h2></div>
+    <p class="subhead">Situación actual</p>
+    <p>El mensaje principal debería ser <em>"podemos ayudarte"</em>. El primer mensaje real que recibe el usuario es <em>"pide tu cita"</em>, seguido de <em>"fuera del horario usa un formulario"</em>.</p>
+    <p class="subhead">Impacto</p>
+    <p>No transmite tranquilidad. Transmite instrucciones.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>El formulario es el protagonista</h2></div>
+    <p class="subhead">Situación actual</p>
+    <p>Lo más visible de toda la página es un formulario.</p>
+    <p class="subhead">Impacto</p>
+    <p>Una persona que entra por una urgencia no quiere rellenar nada. Quiere saber: <span class="quote">¿pueden atenderme ahora?</span></p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">4</span><h2>El CTA principal es débil</h2></div>
+    <p class="subhead">Situación actual</p>
+    <p>El botón verde dice <em>"Enviar"</em>. No dice qué ocurrirá después.</p>
+    <p class="subhead">Impacto</p>
+    <div class="journey">
+      <span style="opacity:0.6;">Enviar</span><span class="arrow">→</span><span style="border-color:var(--color-alert); color:var(--color-alert); font-weight:700;">🔴 Llamar ahora</span>
+    </div>
+    <p style="margin-top:8px;">La diferencia psicológica entre ambos es enorme — el segundo dice exactamente qué pasa al pulsar.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">5</span><h2>Rompe el recorrido natural</h2></div>
+    <p class="subhead">Recorrido esperado</p>
+    <div class="journey journey--good">
+      <span>Necesito ayuda</span><span class="arrow">↓</span><span>Esta clínica hace urgencias</span><span class="arrow">↓</span><span>Confío</span><span class="arrow">↓</span><span>Llamo</span>
+    </div>
+    <p class="subhead">Recorrido actual</p>
+    <div class="journey journey--bad">
+      <span>Necesito ayuda</span><span class="arrow">↓</span><span>Pop-up</span><span class="arrow">↓</span><span>Formulario</span><span class="arrow">↓</span><span>Buscar la X</span><span class="arrow">↓</span><span>Ahora empiezo a ver la web</span>
+    </div>
+    <p style="margin-top:8px;">Un paso innecesario, añadido justo donde menos margen hay.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">6</span><h2>El WhatsApp se usa como formulario</h2></div>
+    <p>WhatsApp funciona mejor cuando parece una conversación. Aquí parece un formulario incrustado — se pierde gran parte de la sensación de cercanía que el propio canal ya tiene ganada.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">7</span><h2>El usuario no sabe qué ocurrirá</h2></div>
+    <p class="subhead">Situación actual</p>
+    <p>El texto dice <em>"te responderemos lo antes posible"</em>.</p>
+    <p class="subhead">Impacto</p>
+    <p>No responde a lo que de verdad importa: ¿cuánto es "lo antes posible"? ¿Quién responde? ¿Qué pasa si es una urgencia? ¿Qué ocurre si escribo a las tres de la mañana?</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">8</span><h2>La primera emoción es la equivocada</h2></div>
+    <p>Una urgencia veterinaria genera ansiedad. La web debería reducirla. El pop-up, en cambio, aumenta la carga cognitiva: hay que leer, buscar la X, entender horarios, buscar un enlace — todo antes incluso de conocer la clínica.</p>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recomendación</h2>
+    <p>En lugar del pop-up, un hero que responde de inmediato a la pregunta real:</p>
+    <div class="hero-mock">
+      <h3>Tu mascota necesita ayuda. Nosotros estamos preparados para dársela.</h3>
+      <p class="sub">Urgencias veterinarias 24 horas en León.</p>
+      <div class="cta-row">
+        <span class="primary">🔴 Llamar ahora</span>
+        <span class="secondary">💬 Escribir por WhatsApp</span>
+      </div>
+    </div>
+    <p>Y solo si el usuario pulsa WhatsApp, una automatización responde al instante — nunca bloqueando la navegación de quien todavía está decidiendo:</p>
+    <div class="wa-mock">
+      Hola 👋 Gracias por escribir a Centro León.<br><br>
+      Si tu mascota necesita atención urgente, llama directamente al <strong>666 70 68 31</strong>.<br><br>
+      Si tu consulta no es urgente, cuéntanos qué necesita tu mascota y te responderemos en cuanto sea posible.
+    </div>
+    <p style="margin-bottom:0;">Esto consigue exactamente el mismo objetivo que el formulario actual — recoger el contacto y encauzar la urgencia — pero sin bloquear la navegación de nadie. Hay un prototipo funcional de este hero ya construido, sin coste ni compromiso, si queréis verlo en marcha antes de decidir nada.</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"He analizado el recorrido de un propietario preocupado que entra en vuestra web desde el móvil. En menos de cinco minutos detecté ocho puntos donde estáis añadiendo fricción justo antes de que alguien decida llamar. He preparado este informe con propuestas concretas para reducir esa fricción y mejorar la experiencia del propietario, sin cambiar vuestra identidad de marca."</p>
+    <p style="margin-bottom:0;">No es una propuesta de rediseño — es un diagnóstico de por qué algunas visitas no terminan en una llamada, con la corrección exacta de cada punto.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
