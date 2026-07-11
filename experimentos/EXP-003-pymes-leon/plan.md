@@ -17,6 +17,27 @@ Ver `00-objetivo.md`.
 
 ## Estado actual
 
+### Cierre de la ronda de ampliaciones (11 jul 2026)
+
+6 de 18 negocios del dataset tienen ya propuesta completa (informe de auditoría + landing + guion de reclutamiento), todos con los tres skills operativos aplicados (`faro-auditor-conversion` + `faro-board-of-advisors` + `faro-offer-architect`):
+
+| Negocio | Vertical | Estado del informe | Corrección o discrepancia documentada |
+|---|---|---|---|
+| Clínica Veterinaria Centro León | Veterinaria | v2, auditoría operativa completa | Anexo corregido: la landing no materializaba una recomendación que el texto original daba por construida |
+| Berciano Dental | Dental | v3, auditoría operativa completa | Mismo tipo de corrección de Anexo + aviso sobre uso cuidadoso de datos financieros sensibles |
+| Cutfy León | Peluquería | v2, ampliado sin sustituir la auditoría UX original (la de mayor evidencia del dataset) | Ninguna discrepancia grave — cifras de reputación reconciliadas como evolución en el tiempo |
+| Clínica Veterinaria Ricardo Díez Reyero | Veterinaria | v2, corregido | Se retiró un dato publicado erróneo (urgencias 24h que no existen) |
+| Sanivet Veterinarios | Veterinaria | v2, ampliado y reconciliado | Horario corregido; hallazgo de urgencias reconciliado, no contradicho; sigue pendiente confirmar en Google |
+| Clínica Dental Dr. Cachero | Dental | v2, ampliado | Discrepancia real sin resolver en la cifra de reseñas (33 en Google según v1 vs. 0 en Google / 1 en Doctoralia según v2) |
+
+**Patrón que se repite en las tres correcciones más serias** (Ricardo Díez, Cachero, y el horario de Sanivet): un dato publicado con una única fuente de baja confianza no debe presentarse como si fuera un hecho verificado — la lección ya quedó explícita en este mismo documento tras el caso de Ricardo Díez, y se ha aplicado de forma consistente desde entonces.
+
+**Limitación compartida por los 6 casos**: WebFetch no funcionó en ninguna sesión de este proyecto durante esta ronda (403 confirmado repetidamente, incluso en dominios de control ajenos al dataset) — toda la investigación adicional se apoyó en WebSearch o en investigaciones externas a la sesión, nunca en navegación directa de las webs reales salvo en el caso original de Cutfy y en hallazgos puntuales ya verificados antes de esta ronda (Centro León, Berciano). Antes de retomar el dataset, vale la pena reintentar WebFetch — varios hallazgos de esta ronda quedarían mejor fundamentados con navegación directa.
+
+**Lo que esta ronda NO ha hecho, y sigue siendo el cuello de botella real**: ningún negocio ha sido contactado todavía. Ver la nota de la Auditoría del Consejo más abajo — construir más informes sin llegar a la conversación real repite el patrón de riesgo ya señalado.
+
+---
+
 Paso 1 completado por Claude Code (2026-07-10), como acción directa de `AUDITORIA_CONSEJO_2026-07-10.md`: 18 negocios de 5 verticales de León (peluquería, veterinaria, fisioterapia, dental, taller), con fuente citada por fila, cadenas corporativas ya excluidas por ICP.
 
 **Contexto de mercado regional añadido**: `02-investigacion/03-panorama-mercado-leon.md`, a partir de una investigación del usuario sobre el tejido empresarial de la provincia (sectores, top 10 por facturación, Parque Tecnológico, startups, programas de financiación). **Nota de calibración importante, documentada en el propio archivo**: la mayor parte de ese panorama (grandes empresas, biofarmacéutica, filiales tecnológicas del Parque Tecnológico) queda fuera del ICP de FARO (`FARO_MODELO_NEGOCIO.md` sección 3.1 — descarta empresas con aprobación de compra externa) y se conserva solo como contexto macro y lecciones de gestión, no como lista de prospectos. Los únicos segmentos del panorama que sí encajan con el ICP son los que ya tiene este dataset (veterinaria, dental, peluquería).
