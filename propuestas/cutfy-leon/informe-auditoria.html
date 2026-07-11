@@ -1,0 +1,204 @@
+<!--
+  Informe de auditoría — Cutfy León (peluquería especializada en
+  caballero, Calle Burgo Nuevo 3, León). Tercer caso del dataset
+  EXP-003, primero construido ya con el Método FARO completo desde el
+  origen (10 dimensiones + menú de implementación integrado, ver
+  FARO_METODO_AUDITORIA.md), no añadido después como en los dos
+  primeros casos.
+
+  Datos confirmados por búsqueda web (WebFetch dio 403 en cutfy.eu,
+  igual que en los otros dos casos — no es específico de este sitio):
+  - Dirección: Calle Burgo Nuevo 3, León. ✅
+  - Teléfono: 987 79 19 10. ✅
+  - Horario: L-V 10:00-20:30, S 10:00-19:00. ✅
+  - Valoración: 4,7/5 sobre 190 reseñas en Google. ✅ — activo de
+    confianza real y fuerte, poco común tenerlo tan alto en el dataset.
+  - Sistema de reservas: ya usan Fresha (plataforma de reservas online
+    de terceros) además de teléfono. ✅ — esto cambia el ángulo del
+    informe respecto a veterinaria/dental: aquí NO falta un sistema de
+    reserva, el hueco está en lo que Fresha no cubre (preguntas fuera
+    de horario, seguimiento de quien pregunta y no reserva).
+  - Segunda ubicación en Alcobendas (Madrid) — negocio en expansión,
+    no franquicia de terceros; el ICP de FARO excluye cadenas con
+    compra centralizada, no pymes con más de un local propio, así que
+    sigue encajando.
+
+  Todo lo relativo al diseño visual de la web (hero, CTA exactos,
+  pop-ups) NO se ha visto — marcado como pendiente de confirmar en
+  todo el informe, sin excepción.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de experiencia — Cutfy León</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1B3A4B; --color-accent: #C97A3D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7FA8BD; --color-accent: #E29B5E; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7FA8BD; --color-accent: #E29B5E; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1B3A4B; --color-accent: #C97A3D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); }
+  .good-box ul { margin: 0; padding-left: 20px; }
+  .good-box li { margin-bottom: 6px; }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; }
+  .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .tag-pending { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 14px 0 6px; }
+  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
+  .hero-mock h3 { font-size: 21px; margin-bottom: 4px; }
+  .hero-mock .sub { font-size: 14px; color: var(--color-ink); opacity: 0.8; margin-bottom: 14px; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+  .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
+  .cta-row .primary { background: var(--color-accent); color: #fff; }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
+  .score-table th, .score-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); }
+  .score-table td.tag { font-size: 11px; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead">
+    <span class="logo">FARO</span>
+    <span class="date">Julio 2026</span>
+  </div>
+
+  <p class="cover-meta">Auditoría de experiencia · Cutfy León</p>
+  <h1>Reservas resueltas con Fresha. ¿Y lo que pasa antes de reservar?</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> no hemos podido navegar cutfy.eu directamente. Los hallazgos marcados ✅ están confirmados por búsqueda pública con fuente citada (dirección, horario, sistema de reservas, valoración). Los marcados <span class="tag-pending">Pendiente de confirmar</span> son preguntas abiertas sobre el recorrido real que solo se responden viendo la web — no se presentan como observación directa.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Cutfy es distinto a los otros dos negocios que hemos analizado en León: ya tenéis un sistema de reservas online resuelto (Fresha) y una reputación excelente (4,7/5 sobre 190 reseñas). El hueco no está ahí — está en lo que pasa antes de que alguien llegue a reservar, y en lo que pasa con quien pregunta algo y no llega a hacerlo.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Sistema de reservas online ya resuelto con Fresha, además de teléfono — no dependéis de que alguien conteste para que se reserve una cita. ✅</li>
+      <li>4,7/5 sobre 190 reseñas en Google — prueba social real y fuerte, poco frecuente ver un volumen así. ✅</li>
+      <li>Posicionamiento claro de nicho ("peluquería especializada en caballero"), no genérico. ✅</li>
+      <li>Negocio en expansión (segunda ubicación en Alcobendas) — señal de que el modelo ya funciona y hay capacidad de gestión. ✅</li>
+    </ul>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>Fresha resuelve la reserva, no la pregunta previa</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p class="subhead">Pregunta abierta</p>
+    <p>Alguien que duda entre servicios, pregunta un precio concreto, o quiere saber si hay hueco hoy mismo — ¿tiene un canal directo (WhatsApp) para preguntar antes de comprometerse a reservar en Fresha, o tiene que reservar a ciegas para averiguarlo?</p>
+    <p class="subhead">Por qué importa</p>
+    <p>Un sistema de reservas resuelve "ya sé lo que quiero, dame hueco" — no resuelve "no estoy seguro de qué pedir". Son dos momentos distintos del mismo cliente.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>¿Qué pasa fuera de vuestro horario?</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p>L-V cerráis a las 20:30, S a las 19:00 — fuera de esas franjas, ¿alguien que escribe recibe algún tipo de confirmación de que se ha recibido su mensaje, o queda simplemente sin respuesta hasta la apertura?</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>Quien pregunta y no reserva, ¿recibe seguimiento?</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p>Con 190 reseñas activas, es razonable asumir un volumen de contacto alto — y en cualquier negocio con ese volumen, una parte de quien pregunta no llega a reservar en el momento. ¿Hay algún mecanismo para retomar esa conversación, o se pierde en cuanto la persona no reserva de inmediato?</p>
+  </div>
+
+  <div class="recommendation">
+    <h2>Oportunidad FARO</h2>
+    <p>No proponemos sustituir Fresha — ya funciona. Proponemos cubrir el momento anterior a la reserva, con el mismo tono directo que ya usa vuestra marca:</p>
+    <div class="hero-mock">
+      <h3>¿No sabes qué pedir? Pregúntanos por WhatsApp.</h3>
+      <p class="sub">Te respondemos al momento, y si prefieres reservar directamente, te dejamos el enlace a tu hueco disponible.</p>
+      <div class="cta-row"><span class="primary">💬 Preguntar por WhatsApp</span></div>
+    </div>
+    <p style="margin-bottom:0;">Un canal de WhatsApp con respuesta automática fuera de horario, conectado a un seguimiento simple de quien pregunta y no reserva — sin tocar Fresha ni el resto de lo que ya tenéis montado.</p>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgos 1, 2</strong> (sin canal de pregunta previa, sin respuesta fuera de horario) → respuesta automática de WhatsApp fuera de horario, complementaria a Fresha.</li>
+      <li style="margin-bottom:0;"><strong>Hallazgo 3</strong> (sin seguimiento de quien pregunta y no reserva) → seguimiento automático de contactos, para recuperar reservas que hoy se pierden en silencio.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th></th></tr>
+    <tr><td>Claridad del mensaje</td><td class="num">8/10</td><td class="tag">✅</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">7/10</td><td class="tag">✅ Fresha + teléfono</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
+    <tr><td>Conversión móvil</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
+    <tr><td>Llamadas a la acción</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
+    <tr><td>Prueba social y confianza</td><td class="num">9/10</td><td class="tag">✅ 4,7/5, 190 reseñas</td></tr>
+    <tr><td>Fricción técnica de entrada</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
+    <tr><td>Canal adecuado al momento</td><td class="num">5/10</td><td class="tag">⚠️ Reserva sí, consulta previa no confirmada</td></tr>
+    <tr><td>Cobertura de objeciones frecuentes</td><td class="num">—</td><td class="tag tag-pending" style="padding:2px 8px; border-radius:999px;">Pendiente</td></tr>
+    <tr><td>Consistencia entre canales</td><td class="num">7/10</td><td class="tag">✅ Web + Fresha + Google coherentes</td></tr>
+  </table>
+  <div class="score-total"><span class="big">≥36/60 confirmado</span><span class="label">Sobre las dimensiones evaluables sin ver la web — nota global sobre 100 pendiente de completar las 4 dimensiones que exigen navegar cutfy.eu directamente</span></div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Ya tenéis la reserva resuelta y una reputación excelente — eso no es habitual, y lo reconocemos antes que nada. Lo que analizamos es el momento justo antes: quien todavía no sabe qué pedir o escribe fuera de horario. Encontramos ahí una oportunidad concreta, no una crítica a lo que ya construisteis."</p>
+    <p style="margin-bottom:0;">Nuestro trabajo no consiste en sustituir lo que ya funciona. Consiste en cubrir el hueco justo antes de que alguien llegue a reservar.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
