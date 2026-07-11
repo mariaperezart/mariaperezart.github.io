@@ -1,0 +1,175 @@
+<!--
+  Informe de auditoría — RACC Autoescuela Colón (Av. Independencia 5,
+  Bajo, León). Segundo caso del vertical de autoescuelas, fuera del
+  dataset original de 18 negocios de EXP-003. Auditado con los tres
+  skills operativos completos, a partir de una investigación con
+  navegación directa hecha por el usuario fuera de esta sesión.
+
+  ⚠️ AVISO DE ICP — LEER ANTES DE CUALQUIER CONTACTO: el negocio se
+  presenta como "RACC Autoescuela Colón", afiliado a RACC (Reial
+  Automòbil Club de Catalunya), una red nacional. El modelo de negocio
+  de FARO excluye explícitamente cadenas con compra centralizada
+  (FARO_MODELO_NEGOCIO.md, sección 3.1 -- ICP: pyme de servicios con
+  agenda, decisor sin aprobación de compra externa). No hay datos en
+  esta investigación que confirmen si el centro de León tiene
+  autonomía real de decisión (como LeonCar, que opera bajo redes de
+  marca pero con dirección local confirmada) o si las decisiones de
+  compra dependen de RACC de forma centralizada. Antes de cualquier
+  contacto comercial real, hay que aclarar esto directamente -- si la
+  decisión de compra no es local, este negocio queda fuera del ICP de
+  FARO y no debería contactarse con el guion comercial estándar.
+
+  Datos confirmados por navegación directa:
+  - Dirección: Av. Independencia 5, Bajo, 24003 León (casco histórico) -- segundo centro en C/ Astorga 30 (zona Crucero). ✅
+  - Teléfono: 987 10 50 20 · Email: colonindependencia@aecolon.es. ✅
+  - Web: aecolon.es. ✅
+  - Horario: L-V 10:00-13:30 y 16:30-20:00, domingo cerrado. ✅
+  - Afiliación a RACC (red nacional de autoescuelas). ✅
+  - Servicios: permisos de turismos (B), motos, carnets profesionales (según Academia del Transportista), gestión de permiso por puntos (email específico). ✅
+  - Sin cifra de reseñas ni tasa de aprobados confirmada en la investigación disponible. 🟡
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — RACC Autoescuela Colón</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1B3A6B; --color-accent: #C4302B; --color-ink: #1A2029;
+    --color-bg: #F1F3F8; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DCE1EE; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7E9FDB; --color-accent: #E8756F; --color-ink: #E6E9F2;
+      --color-bg: #12151F; --color-white: #1C2029; --color-success: #7CC79E; --color-alert: #E08579;
+      --color-border: #2E344C70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7E9FDB; --color-accent: #E8756F; --color-ink: #E6E9F2;
+    --color-bg: #12151F; --color-white: #1C2029; --color-success: #7CC79E; --color-alert: #E08579;
+    --color-border: #2E344C70; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1B3A6B; --color-accent: #C4302B; --color-ink: #1A2029;
+    --color-bg: #F1F3F8; --color-white: #FFFFFF; --color-success: #2F7A52; --color-alert: #B4453A;
+    --color-border: #DCE1EE; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 26px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .icp-alert { background: #FBEAE7; border: 2px solid var(--color-alert); border-radius: 8px; padding: 20px 22px; margin: 0 0 40px; font-size: 14px; }
+  .icp-alert strong { color: var(--color-alert); }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #E9EFF9; border: 1px solid #C4D2EC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · RACC Autoescuela Colón</p>
+  <h1>Antes de contactar: hay que aclarar si este centro decide solo, o si depende de RACC.</h1>
+
+  <div class="icp-alert">
+    <strong>⚠️ Aviso de encaje con el ICP de FARO — leer antes de cualquier contacto comercial:</strong> este negocio opera como "RACC Autoescuela Colón", afiliado a RACC (Reial Automòbil Club de Catalunya), una red nacional de autoescuelas. El modelo de FARO excluye explícitamente negocios con aprobación de compra externa o centralizada (<code>FARO_MODELO_NEGOCIO.md</code>, sección 3.1). No hay datos en esta investigación que confirmen si el centro de León tiene autonomía real de decisión — a diferencia de LeonCar (otro caso del dataset que opera bajo redes de marca, pero donde un artículo de prensa confirmó dirección local independiente), aquí no existe esa confirmación. <strong>No usar el guion comercial estándar con este negocio hasta aclarar directamente si la decisión de contratar un servicio como el de FARO es local o depende de RACC.</strong> El resto de este informe se construye igualmente, por si la respuesta confirma que sí hay autonomía local.
+  </div>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en una investigación con navegación directa de aecolon.es hecha fuera de esta sesión. Lo que esa investigación no pudo confirmar sigue marcado <span class="pending-tag">Pendiente de confirmar</span>.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Colón es la única autoescuela del vertical auditado con presencia en dos centros (Independencia y Crucero) y con carnets profesionales y gestión de permiso por puntos como servicios explícitos, apoyada en la marca RACC. Si la afiliación permite decisión local (pendiente de confirmar), el reto de conversión sería similar al resto del vertical: sin precios publicados, sin redes sociales, y con la marca RACC probablemente subexplotada como argumento de confianza.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Dos centros en León (Independencia y Crucero) — cobertura geográfica que ninguna otra autoescuela del vertical auditado tiene. ✅</li>
+      <li>Afiliación a RACC — reconocimiento de marca nacional. ✅</li>
+      <li>Carnets profesionales (transportistas, autobuses) — nicho de mayor valor por trámite, poco atendido por el resto del vertical auditado. ✅</li>
+      <li>Gestión específica de permiso por puntos, con email dedicado. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>RACC Autoescuela Colón</td></tr>
+    <tr><th>Centros</th><td>Av. Independencia 5, Bajo (casco histórico) · C/ Astorga 30 (zona Crucero)</td></tr>
+    <tr><th>Contacto</th><td>987 10 50 20 · colonindependencia@aecolon.es</td></tr>
+    <tr><th>Horario</th><td>L-V 10:00-13:30 y 16:30-20:00, domingo cerrado</td></tr>
+    <tr><th>Afiliación</th><td>RACC — pendiente confirmar si implica compra/decisión centralizada</td></tr>
+    <tr><th>Servicios</th><td>Permisos turismos y motos, carnets profesionales, gestión de permiso por puntos</td></tr>
+  </table>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>El encaje con el ICP de FARO no está confirmado — es el primer paso, antes que cualquier hallazgo de conversión</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>No hay evidencia en esta investigación sobre si el centro de León de Colón decide de forma local sobre proveedores y servicios, o si esas decisiones dependen de la estructura de RACC.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Si la decisión es centralizada, cualquier esfuerzo de contacto comercial con el guion estándar de FARO sería improductivo — no es la persona/entidad que puede decidir contratar el servicio.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Antes de cualquier otro paso, confirmar directamente (llamada o email) si el centro de León gestiona sus propias decisiones de marketing/proveedores, o si dependen de RACC central.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Evita invertir tiempo comercial en un contacto que, si la decisión es centralizada, no puede convertir.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>Los carnets profesionales son un nicho de mayor valor, poco atendido por el resto del vertical</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Colón ofrece carnets profesionales (C, D, E) — un servicio de mayor valor económico que el permiso B estándar, y que ninguna otra autoescuela del vertical auditado tiene confirmado.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un transportista o futuro conductor profesional que busca este servicio específico tiene menos competencia directa en León — si el mensaje no lo destaca, se pierde ese nicho de alto valor.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Si se confirma el encaje de ICP, valorar una landing propia para carnets profesionales, con requisitos, duración y precio orientativo.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta un segmento de mayor valor económico por trámite, con menos competencia directa en el vertical.</p></div>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Dos centros y carnets profesionales, únicos en el vertical auditado.</td></tr>
+    <tr><td>Autoridad</td><td class="num">5/10</td><td class="why">Marca RACC reconocida a nivel nacional, sin confirmar cómo se comunica localmente.</td></tr>
+    <tr><td colspan="3" class="num pending" style="text-align:center; padding:16px;">Resto de dimensiones sin evaluar hasta resolver la cuestión de ICP (hallazgo 1)</td></tr>
+  </table>
+  <div class="score-total"><span class="big">11/20</span><span class="label">Puntuación deliberadamente incompleta — no tiene sentido invertir en completar la Puntuación FARO de un negocio cuyo encaje con el ICP todavía no está confirmado.</span></div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Este informe queda pendiente de la confirmación de ICP antes de cualquier paso comercial.</p>
+
+</div>
+</body>
+</html>
