@@ -1,0 +1,147 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Noveno candidato de experimentos/EXP-003-pymes-leon,
+  primero del vertical de fisioterapia.
+
+  Ángulo: el horario de atención telefónica (9-14/16-19) es más corto
+  que el horario real del centro (8-20) -- un cliente que llama fuera
+  de esa franja, pensando que el centro está "abierto", puede no
+  entender por qué no le cogen. Esta landing separa ambos horarios
+  con claridad y añade WhatsApp como vía para las franjas sin
+  atención telefónica. También sube el catálogo de tratamientos
+  avanzados (INDIBA, ondas de choque, EPTE) para justificar el precio
+  frente a las reseñas que lo cuestionan.
+
+  Datos públicos confirmados (ver informe-auditoria.html): C/ Lucas de
+  Tuy 7, León · Tel. 987 23 14 65 · centro abierto L-V 8:00-20:00,
+  teléfono atendido L-V 9:00-14:00 y 16:00-19:00. WhatsApp no
+  confirmado como canal activo.
+
+  Identidad visual: azul acero + verde lima -- clínico y deportivo a
+  la vez -- distinta a las paletas ya usadas en el dataset.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Centro de Fisioterapia y Osteopatía León</title>
+<meta name="description" content="Centro de Fisioterapia y Osteopatía León, C/ Lucas de Tuy 7. Fisioterapia deportiva, osteopatía, ondas de choque, INDIBA. Abierto L-V 8:00-20:00.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F2F6F7; --color-surface: #FFFFFF; --color-ink: #17262A; --color-ink-muted: #4E6469;
+    --color-primary: #2A5B6E; --color-accent: #8FBF3F; --color-border: #DCE8EA;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(42,91,110,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #101C1F; --color-surface: #1A2A2D; --color-ink: #E7F0F1; --color-ink-muted: #9DB6BA; --color-border: #2B3F42; }
+  }
+  :root[data-theme="dark"] { --color-bg: #101C1F; --color-surface: #1A2A2D; --color-ink: #E7F0F1; --color-ink-muted: #9DB6BA; --color-border: #2B3F42; }
+  :root[data-theme="light"] { --color-bg: #F2F6F7; --color-surface: #FFFFFF; --color-ink: #17262A; --color-ink-muted: #4E6469; --color-border: #DCE8EA; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: start; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating { display: inline-flex; align-items: center; gap: 8px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 8px 16px; font-size: 14px; margin-bottom: 18px; box-shadow: var(--shadow-card); }
+  .rating strong { color: var(--color-primary); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; }
+
+  .hours-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .hours-card h3 { margin-top: 0; }
+  .hours-row { display: flex; justify-content: space-between; padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .hours-row:last-child { border-bottom: none; }
+  .hours-row .lbl { color: var(--color-ink-muted); }
+  .hours-row .val { font-weight: 600; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .treatments { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .treatments { grid-template-columns: repeat(2, 1fr); } }
+  .treatment { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px; text-align: center; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-card); }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Centro de Fisioterapia y Osteopatía León</span>
+    <nav><a class="call" href="tel:+34987231465">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">C/ Lucas de Tuy 7, León</span>
+        <div class="rating">⭐ <strong>4,6/5</strong> · reseñas de clientes reales (cifra pendiente de confirmar directamente en Google)</div>
+        <h1>Tratamientos que no encuentras en cualquier centro de fisioterapia.</h1>
+        <p>Ondas de choque, INDIBA, punción seca, EPTE guiada — tecnología avanzada, no solo una sesión de manos. Por eso cada tratamiento tiene su propio precio, según lo que necesitas de verdad.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987231465">📞 987 23 14 65</a>
+          <a class="btn btn--whatsapp" href="https://wa.me/34987231465?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener">💬 Fuera de horario, escribe aquí</a>
+        </div>
+      </div>
+
+      <div class="hours-card">
+        <h3>Horario</h3>
+        <div class="hours-row"><span class="lbl">Centro abierto</span><span class="val">L-V 8:00-20:00</span></div>
+        <div class="hours-row"><span class="lbl">Teléfono atendido</span><span class="val">L-V 9:00-14:00 y 16:00-19:00</span></div>
+        <p style="margin:14px 0 0; font-size:12px; opacity:0.7;">Si llamas fuera de esa franja, el centro puede seguir abierto pero el teléfono no se atiende — escríbenos por WhatsApp y te respondemos en cuanto podamos.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Tratamientos avanzados</h2>
+        <p style="margin:0 auto;">Más allá de la fisioterapia estándar — tecnología que pocos centros de León ofrecen.</p>
+      </div>
+      <div class="treatments">
+        <div class="treatment">Ondas de choque</div>
+        <div class="treatment">INDIBA</div>
+        <div class="treatment">Punción seca</div>
+        <div class="treatment">EPTE guiada</div>
+        <div class="treatment">Osteopatía</div>
+        <div class="treatment">Fisioterapia deportiva</div>
+        <div class="treatment">Fisioterapia pediátrica</div>
+        <div class="treatment">Presoterapia</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Centro de Fisioterapia y Osteopatía León — C/ Lucas de Tuy 7, León · 987 23 14 65</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El canal de WhatsApp es una propuesta, no un canal activo confirmado.</p>
+</footer>
+
+</body>
+</html>

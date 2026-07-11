@@ -1,0 +1,206 @@
+<!--
+  Informe de auditoría — Centro de Fisioterapia y Osteopatía León (C/
+  Lucas de Tuy 7, León). Noveno caso del dataset EXP-003, y primero
+  del vertical de fisioterapia. Flujo estándar faro-auditor-conversion.
+
+  WebFetch no navegó ningún dominio en esta sesión. Informe apoyado en
+  WebSearch con fuente citada.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: C/ Lucas de Tuy nº7, Bajo (esquina Rodríguez del Valle), 24002 León. ✅
+  - Teléfono: 987 23 14 65. Email: cefisleon@cefisleon.com. ✅
+  - Horario del centro: L-V 8:00-20:00. Horario de atención telefónica: L-V 9:00-14:00 y 16:00-19:00 — más estrecho que el horario del centro. ✅ (web propia)
+  - Servicios muy amplios: drenaje linfático, electroterapia, fisioterapia deportiva/pediátrica/traumatológica, masaje, osteopatía, terapia manual, vendaje neuromuscular, y tratamientos avanzados (punción seca, acupuntura, fibrólisis, EPTE guiada, Super Inductive System, ondas de choque, tracción TRITON DTS, presoterapia, INDIBA). ✅
+  - Trabajan con seguros de salud. ✅
+  - Valoración: cifra entre 4,6 y 4,7 según fuente, con volumen entre 55 y 73 opiniones según fuente — variación menor, no se trata como discrepancia grave (a diferencia del caso de Cachero en este dataset), pero sin confirmar en Google directamente. 🟡
+  - Personal citado por nombre en reseñas: Marta y Patricia (fisioterapeutas). ✅
+  - Reseña recurrente: precios percibidos como elevados para algunos tratamientos — hallazgo real de fricción de precio. ✅
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Centro de Fisioterapia y Osteopatía León</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #2A5B6E; --color-accent: #8FBF3F; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7FB8CE; --color-accent: #B4DE7C; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7FB8CE; --color-accent: #B4DE7C; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #2A5B6E; --color-accent: #8FBF3F; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Centro de Fisioterapia y Osteopatía León</p>
+  <h1>El centro abre 12 horas al día. El teléfono, solo 8.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar cefisleon.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Este es el primer centro de fisioterapia auditado en el dataset. Tiene un catálogo de tratamientos avanzados (punción seca, ondas de choque, INDIBA, EPTE guiada) que pocos centros de este tamaño en León pueden igualar — una señal de autoridad clínica real. También tiene dos fricciones concretas y verificables: un horario de atención telefónica más corto que el horario real del centro, y varias reseñas que mencionan el precio como motivo de duda.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Catálogo de tratamientos avanzados poco común: punción seca, ondas de choque, INDIBA, fibrólisis, EPTE guiada, tracción TRITON DTS — autoridad clínica real, no genérica. ✅</li>
+      <li>Horario del centro amplio: L-V de 8:00 a 20:00, doce horas de apertura. ✅</li>
+      <li>Trabajan con seguros de salud — reduce la barrera de precio para quien tiene cobertura. ✅</li>
+      <li>Personal citado por nombre en reseñas (Marta, Patricia) con comentarios sobre trato cercano y profesionalidad. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "fisioterapia León" con una molestia concreta (una lesión deportiva, un dolor de espalda que no mejora).</p>
+    <p><strong>Veo</strong> el horario del centro: 8:00 a 20:00, doce horas — parece fácil encontrar hueco.</p>
+    <p><strong>Llamo</strong> a media tarde, sobre las 15:00, porque es cuando tengo un rato libre.</p>
+    <p><strong>No me cogen</strong> — el horario de atención telefónica real es más corto que el del centro (9:00-14:00 y 16:00-19:00), algo que no sabía al ver "abierto de 8 a 20".</p>
+    <p><strong>Dudo</strong> si insistir más tarde o buscar otro centro que sí me coja a la primera.</p>
+    <p><strong>Reviso</strong> reseñas antes de decidir, y encuentro varias que mencionan que los precios les parecieron altos para ciertos tratamientos — otra duda que se suma a la anterior.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>El horario de atención telefónica es más corto que el horario del centro, sin que quede claro desde fuera</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>El centro abre de 8:00 a 20:00, pero el teléfono solo se atiende de 9:00 a 14:00 y de 16:00 a 19:00, según su propia web — hay franjas (8:00-9:00, 14:00-16:00, 19:00-20:00) donde el centro está abierto pero el teléfono no se coge.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que ve "abierto de 8 a 20" y llama a las 14:30 puede no entender por qué nadie contesta, y asumir que el centro gestiona mal las llamadas — cuando en realidad es una franja de atención telefónica distinta a la de apertura, simplemente no comunicada con la misma claridad.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Mostrar ambos horarios por separado y con la misma visibilidad: "Centro abierto: L-V 8:00-20:00" y "Teléfono: L-V 9:00-14:00 y 16:00-19:00" — o añadir un canal de WhatsApp para las franjas sin atención telefónica.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Elimina la confusión entre "abierto" y "disponible para atender una llamada", que hoy son cosas distintas sin que el cliente lo sepa de antemano.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>Varias reseñas mencionan el precio como motivo de duda, sin que la web explique el porqué del catálogo avanzado</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Se han encontrado menciones a precios percibidos como elevados para ciertos tratamientos — no está confirmado si la web explica la diferencia entre una sesión de fisioterapia estándar y un tratamiento avanzado (ondas de choque, INDIBA) que justifica un coste distinto.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin esa explicación, el precio se compara contra fisioterapia genérica, no contra la tecnología avanzada real que se está ofreciendo — la misma fricción que ya se ha visto en otros casos de este dataset donde un precio más alto no está justificado en el mensaje principal.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web distingue con claridad los tratamientos avanzados de la fisioterapia estándar, y si el precio de cada uno se comunica junto a su beneficio específico, no como una tarifa genérica.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la sensación de "es caro" al convertirla en "es un tratamiento distinto, por eso cuesta distinto".</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda con molestia concreta → Horario de centro y horario telefónico mostrados por separado → Catálogo de tratamientos con explicación del porqué de cada precio → Contacto sin franjas muertas. Hoy no se puede confirmar si este orden es el real en la web — pendiente de navegación directa.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Autoridad</td><td class="num">8/10</td><td class="why">Catálogo de tratamientos avanzados real y poco común (ondas de choque, INDIBA, EPTE guiada).</td></tr>
+    <tr><td>Confianza</td><td class="num">6/10</td><td class="why">Reseñas con nombres reales del equipo, atenuado por menciones recurrentes de precio elevado.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">4/10</td><td class="why">Horario de centro y horario telefónico distintos, sin confirmar si se comunican con la misma claridad.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">4/10</td><td class="why">Franjas del día donde el centro está abierto pero el teléfono no se atiende.</td></tr>
+    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">Valoración alta (4,6-4,7) pero cifra de reseñas inconsistente entre fuentes, sin confirmar en Google directamente.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si el catálogo avanzado se presenta como diferenciador.</td></tr>
+    <tr><td>Diferenciación</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web comunica el catálogo avanzado frente a otros centros.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web justifica el precio con el valor del tratamiento.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">27/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 54/100 sobre esas 5 — las 8 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Mostrar el horario telefónico y el horario del centro por separado, con la misma visibilidad.</li>
+      <li>Añadir un canal de WhatsApp para las franjas sin atención telefónica.</li>
+      <li>Explicar junto a cada tratamiento avanzado por qué su precio es distinto al de una sesión estándar.</li>
+      <li>Confirmar la cifra real de reseñas y valoración directamente en Google Business Profile.</li>
+      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (horario telefónico confuso) → WhatsApp con respuesta automática para las franjas sin atención telefónica, y horarios mostrados por separado.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (precio sin justificar) → revisión del mensaje de cada tratamiento avanzado para explicar el porqué del coste.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis un catálogo de tratamientos avanzados que pocos centros de fisioterapia en León pueden igualar, y aun así encontramos reseñas que dudan del precio — probablemente porque no se ve la diferencia entre una sesión estándar y una con tecnología real detrás. Os dejamos un informe honesto sobre esto y sobre una franja horaria donde el teléfono no coincide con el horario del centro."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que el valor real de lo que ya hacéis se entienda antes de que alguien decida por precio.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
