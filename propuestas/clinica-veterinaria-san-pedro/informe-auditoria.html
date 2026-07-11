@@ -1,0 +1,205 @@
+<!--
+  Informe de auditoría — Clínica Veterinaria San Pedro (Calle San
+  Pedro 20, León). Séptimo caso del dataset EXP-003. Flujo estándar
+  faro-auditor-conversion (no board-of-advisors/offer-architect —
+  criterio ya establecido: se reserva para casos de mayor peso).
+
+  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
+  repetidamente). Informe apoyado en WebSearch con fuente citada.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: Calle de San Pedro, 20, 24007 León. ✅ (web propia + agregadores)
+  - Teléfono: 987 26 08 05. ✅
+  - Horario: L-V 10:30-13:30 y 17:30-20:00; sábado 11:00-13:30; domingo cerrado. ✅ (agregador PeludosyFelices, no confirmado en web propia directamente)
+  - Fundada en 2001. ✅
+  - Valoración: 4,8/5 sobre 204 opiniones, citado directamente como Google Business Profile — la fuente de reputación más fiable de todo el dataset hasta ahora (no un agregador genérico). ✅
+  - Servicios: rayos X, ecógrafo de alta gama, TAC y resonancia magnética concertados (no propios), laboratorio propio (urianálisis, coprologías, cultivos, hematología, bioquímica, citologías, anatomía patológica). ✅
+  - Trabajan con especies exóticas además de perros y gatos (hurones, roedores, aves). ✅
+  - Veterinario mencionado por nombre en reseñas: Israel. ✅
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Veterinaria San Pedro</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #A15C38; --color-accent: #6B8F71; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #D69B78; --color-accent: #9BC3A2; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #D69B78; --color-accent: #9BC3A2; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #A15C38; --color-accent: #6B8F71; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Veterinaria San Pedro</p>
+  <h1>204 reseñas a 4,8/5 en Google, directamente. La cifra de confianza más sólida de todo el dataset.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar cvsanpedro.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real (hero, CTA, orden de secciones) se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">San Pedro tiene, con diferencia, el dato de reputación mejor confirmado de todo el dataset auditado hasta ahora: 4,8 sobre 5, con 204 opiniones, citado directamente como Google Business Profile — no un agregador de terceros. 25 años de trayectoria (fundada en 2001), laboratorio propio y capacidad para atender especies exóticas además de perros y gatos. El reto no es demostrar que son buenos — ya lo demuestran las reseñas. El reto es que ese nivel de confianza llegue a quien todavía no los conoce, antes de que decida llamar a otra clínica.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>4,8/5 sobre 204 opiniones en Google Business Profile — la cifra de reputación mejor confirmada del dataset hasta ahora, sin depender de un agregador. ✅</li>
+      <li>25 años de trayectoria (fundada en 2001) — antigüedad real. ✅</li>
+      <li>Laboratorio propio con pruebas específicas (hematología, bioquímica, citologías, anatomía patológica) — capacidad diagnóstica in situ, no derivada a terceros para lo básico. ✅</li>
+      <li>Atienden especies exóticas (hurones, roedores, aves) además de perros y gatos — cobertura de un nicho que no todas las veterinarias generalistas atienden. ✅</li>
+      <li>Reseñas que destacan rapidez de cita y trato personalizado, con personal citado por nombre (Israel). ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "veterinario León" o pregunto por recomendación — encuentro rápido una valoración de 4,8/5 con 204 opiniones, una cifra que genera confianza inmediata y es difícil de igualar.</p>
+    <p><strong>Leo</strong> reseñas que hablan de rapidez para conseguir cita y trato cercano — dos cosas que me importan si mi mascota no se encuentra bien.</p>
+    <p><strong>Busco</strong> si atienden a mi mascota en concreto, si no es un perro o gato común (un hurón, un ave) — encuentro que sí, lo cual no es tan común en otras clínicas del dataset.</p>
+    <p><strong>Decido</strong> confiar en la cifra de reseñas y llamar — pero todo lo que ocurre después de esa decisión (qué veo en la web, qué CTA encuentro, si hay reserva online) sigue siendo una incógnita para este informe.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La reputación real (4,8/5, 204 reseñas) no está confirmado que se comunique con la misma fuerza en la propia web</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La cifra de reputación más fuerte de todo el dataset vive en Google, confirmada por búsqueda externa — no hay confirmación de que la propia web de San Pedro la muestre de forma destacada.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que llega a la web directamente (por un enlace, una búsqueda de dirección) sin pasar antes por Google puede no ver nunca esa cifra — se pierde el activo de confianza más fuerte del negocio en el canal que la clínica sí controla.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si la valoración de Google aparece en el bloque principal; si no, es el cambio de mayor impacto potencial de este informe — mostrar "4,8★ · 204 opiniones en Google" junto al titular.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>El activo de confianza más fuerte del negocio deja de depender de que el cliente llegue por Google para verlo.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La atención a especies exóticas es un diferenciador real que puede no estar comunicado como tal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>San Pedro atiende hurones, roedores y aves además de perros y gatos — un servicio que no todas las veterinarias generalistas de León ofrecen, según el resto del dataset auditado.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un propietario de una mascota exótica tiene mucho menos donde elegir en León — si este diferenciador no está visible, esos clientes potenciales pueden no saber que San Pedro los atiende y buscar en otro sitio, o asumir que solo tratan perros y gatos como la mayoría.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web menciona explícitamente la atención a exóticos en el bloque de servicios principal, no solo en una página interna.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta un segmento de clientes con muchas menos alternativas en la ciudad, sin coste adicional — el servicio ya existe.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda → Valoración 4,8★/204 opiniones visible desde el primer segundo → Servicios (incluyendo exóticos, diferenciador real) → Laboratorio propio como señal de capacidad diagnóstica → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Prueba social</td><td class="num">9/10</td><td class="why">4,8/5 sobre 204 opiniones, confirmado directamente en Google Business Profile — la cifra más sólida del dataset.</td></tr>
+    <tr><td>Confianza</td><td class="num">8/10</td><td class="why">25 años de trayectoria + laboratorio propio + reseñas con nombres reales del equipo.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Atención a especies exóticas es un diferenciador real, sin confirmar si se comunica como tal.</td></tr>
+    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Laboratorio propio y capacidad diagnóstica amplia, señal real de autoridad clínica.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">5/10</td><td class="why">Teléfono claro; sin confirmar si hay WhatsApp o reserva online.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web explica qué pasa al contactar.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la reputación real como palanca de confianza.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">34/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 68/100 sobre esas 5 — la nota más alta del dataset hasta ahora sobre las dimensiones evaluables. Las 8 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si la valoración de Google (4,8★, 204 opiniones) aparece destacada en el bloque principal de la web — si no, añadirla.</li>
+      <li>Comunicar explícitamente la atención a especies exóticas como diferenciador, no solo como servicio secundario.</li>
+      <li>Confirmar si existe canal de WhatsApp o reserva online — sin evidencia de ninguno de los dos en esta pasada.</li>
+      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación no confirmada en portada) → subir la valoración real de Google al bloque principal de la web.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (atención a exóticos poco visible) → destacar este servicio en el mensaje principal.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 8 dimensiones que este informe deja pendientes con honestidad.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis la cifra de reputación más sólida que hemos visto en todo este dataset de negocios de León — 4,8 sobre 5, con 204 opiniones, directamente en Google. Os dejamos un informe honesto sobre cómo aprovecharla mejor, y sobre lo que todavía no hemos podido comprobar navegando vuestra web real."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — las reseñas dicen que ya funciona. Proponemos que esa confianza real llegue también a quien todavía no os conoce.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

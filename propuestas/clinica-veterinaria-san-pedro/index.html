@@ -1,0 +1,151 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Séptimo candidato de experimentos/EXP-003-pymes-leon.
+
+  Ángulo: la cifra de reputación real (4,8/5, 204 opiniones, Google
+  Business Profile directo) es la más fuerte del dataset -- esta
+  landing la sube al primer plano, junto con un diferenciador real y
+  poco visible: atención a especies exóticas (hurones, roedores,
+  aves), no solo perros y gatos.
+
+  Datos públicos confirmados (ver informe-auditoria.html): Calle San
+  Pedro 20, León · Tel. 987 26 08 05 · L-V 10:30-13:30/17:30-20:00,
+  sábado 11:00-13:30, domingo cerrado (agregador, no confirmado en web
+  propia). WhatsApp no confirmado como canal activo.
+
+  Identidad visual: terracota + verde salvia -- cálido, confianza
+  clínica sin frialdad -- distinta a las paletas ya usadas en el
+  dataset (magenta, oliva, negro/cobre, teal/coral, índigo/ámbar,
+  burdeos/dorado).
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Veterinaria San Pedro — 4,8★ en Google, León</title>
+<meta name="description" content="Clínica Veterinaria San Pedro, Calle San Pedro 20, León. 4,8/5 en Google con 204 opiniones. Atendemos perros, gatos y especies exóticas.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #FAF4EF; --color-surface: #FFFFFF; --color-ink: #2E211A; --color-ink-muted: #75634F;
+    --color-primary: #A15C38; --color-accent: #6B8F71; --color-border: #EEE0D3;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(161,92,56,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #201812; --color-surface: #2B2019; --color-ink: #F2E9E1; --color-ink-muted: #C9AF9A; --color-border: #46362A; }
+  }
+  :root[data-theme="dark"] { --color-bg: #201812; --color-surface: #2B2019; --color-ink: #F2E9E1; --color-ink-muted: #C9AF9A; --color-border: #46362A; }
+  :root[data-theme="light"] { --color-bg: #FAF4EF; --color-surface: #FFFFFF; --color-ink: #2E211A; --color-ink-muted: #75634F; --color-border: #EEE0D3; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating-big { display: flex; align-items: center; gap: 16px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 20px; box-shadow: var(--shadow-card); margin-bottom: 20px; }
+  .rating-big .num { font-family: var(--font-display); font-size: 40px; font-weight: 700; color: var(--color-primary); line-height: 1; }
+  .rating-big .stars { color: var(--color-accent); font-size: 15px; margin-bottom: 4px; }
+  .rating-big .sub { font-size: 13px; color: var(--color-ink-muted); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; }
+
+  .species-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); }
+  .species-card h3 { margin-top: 0; }
+  .species-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+  .species-grid div { background: var(--color-bg); border-radius: 10px; padding: 10px; text-align: center; font-size: 13px; font-weight: 600; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .services { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .services { grid-template-columns: 1fr; } }
+  .service { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px; box-shadow: var(--shadow-card); }
+  .service h4 { margin: 0 0 6px; font-family: var(--font-display); font-size: 16px; }
+  .service p { margin: 0; font-size: 13px; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Clínica Veterinaria San Pedro</span>
+    <nav><a class="call" href="tel:+34987260805">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Calle San Pedro 20, León · desde 2001</span>
+        <div class="rating-big">
+          <div class="num">4,8</div>
+          <div>
+            <div class="stars">★★★★★</div>
+            <div class="sub">204 opiniones en Google — de las valoraciones más altas de León</div>
+          </div>
+        </div>
+        <h1>Perros, gatos y también las mascotas menos habituales.</h1>
+        <p>Laboratorio propio para diagnósticos rápidos y un equipo acostumbrado a atender hurones, roedores y aves, no solo perros y gatos.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987260805">📞 987 26 08 05</a>
+          <a class="btn btn--whatsapp" href="https://wa.me/34987260805?text=Hola%2C%20quiero%20pedir%20cita" target="_blank" rel="noopener">💬 WhatsApp (canal a confirmar)</a>
+        </div>
+      </div>
+
+      <div class="species-card">
+        <h3>También atendemos a...</h3>
+        <p style="margin:0;">No solo perros y gatos — mascotas que muchas clínicas no saben tratar.</p>
+        <div class="species-grid">
+          <div>🐹 Roedores</div>
+          <div>🦜 Aves</div>
+          <div>🐾 Hurones</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Capacidad diagnóstica propia</h2>
+        <p style="margin:0 auto;">Laboratorio propio para no depender de terceros en lo básico.</p>
+      </div>
+      <div class="services">
+        <div class="service"><h4>Rayos X y ecografía</h4><p>Ecógrafo de alta gama con sondas para cualquier exploración.</p></div>
+        <div class="service"><h4>Laboratorio propio</h4><p>Hematología, bioquímica, citologías, anatomía patológica.</p></div>
+        <div class="service"><h4>TAC y resonancia</h4><p>Servicios concertados para diagnóstico avanzado.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Clínica Veterinaria San Pedro — Calle San Pedro 20, León · 987 26 08 05</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El canal de WhatsApp es una propuesta, no un canal activo confirmado.</p>
+</footer>
+
+</body>
+</html>
