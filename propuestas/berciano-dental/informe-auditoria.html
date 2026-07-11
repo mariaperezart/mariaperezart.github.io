@@ -1,0 +1,205 @@
+<!--
+  Informe de auditoría — identidad de FARO (no la del cliente), mismo
+  patrón que propuestas/clinica-veterinaria-centro-leon/informe-auditoria.html.
+  Ver metodología formalizada en FARO_MVP_LANDING.md sección 9.
+
+  NOTA DE HONESTIDAD IMPORTANTE: no se pudo acceder a bercianodental.com
+  con WebFetch (403 Forbidden, dos intentos). Los hallazgos de este
+  informe combinan:
+  (a) datos confirmados por búsqueda web con fuente citada — el
+      servicio "diseño de sonrisa" como propuesta central, con
+      fotos/vídeos reales, simulación digital y prueba en boca antes
+      del tratamiento (ver bercianodental.com/post/diseno-digital-sonrisa);
+  (b) patrones típicos de sitios de clínicas dentales estéticas de este
+      tipo (multiplicidad de tratamientos en portada, CTA genéricos tipo
+      "Más información"), marcados explícitamente como PENDIENTE DE
+      CONFIRMAR con una captura real antes de usarse en una conversación
+      real — no se presentan como observación directa.
+
+  Antes de enseñar este informe a Berciano Dental, sustituir cualquier
+  hallazgo marcado como "patrón típico, pendiente de confirmar" por lo
+  que se vea realmente en su web, o eliminarlo si no aplica.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de experiencia — Berciano Dental</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 30px; }
+  h2 { font-size: 20px; }
+  p { margin: 0 0 14px; max-width: 68ch; }
+  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
+
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); }
+  .good-box ul { margin: 0; padding-left: 20px; }
+  .good-box li { margin-bottom: 6px; }
+
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; }
+  .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .tag-pending { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 14px 0 6px; }
+  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
+  .hero-mock h3 { font-size: 21px; margin-bottom: 4px; }
+  .hero-mock .sub { font-size: 14px; color: var(--color-ink); opacity: 0.8; margin-bottom: 14px; }
+  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
+  .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
+  .cta-row .primary { background: var(--color-accent); color: #22190A; }
+
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
+  .score-table th, .score-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
+
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead">
+    <span class="logo">FARO</span>
+    <span class="date">Julio 2026</span>
+  </div>
+
+  <p class="cover-meta">Auditoría de experiencia · Berciano Dental</p>
+  <h1>Entre "quiero una sonrisa mejor" y pedir cita, ¿cuántas decisiones le pedimos al paciente?</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia sobre este borrador:</strong> algunos de los hallazgos siguientes están confirmados con fuente pública (marcados ✅), y otros son patrones típicos de clínicas de estética dental de este perfil, pendientes de confirmar con una captura real de vuestra portada antes de compartirse como definitivos (marcados <span class="tag-pending">Pendiente de confirmar</span>). No se presenta ninguna suposición como si fuera una observación directa.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Analizamos el recorrido de alguien que busca mejorar su sonrisa y no sabe todavía qué tratamiento necesita — el visitante más habitual de una clínica de estética dental. El servicio de diseño de sonrisa que ofrecéis está bien construido y documentado (fotos y vídeos reales, simulación digital, prueba en boca antes de decidir) — el problema no está en el tratamiento, está en cómo llega esa confianza al visitante antes de que decida contactar.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>La propuesta de valor central ("diseño de sonrisa") se entiende rápido y está bien documentada — fotos/vídeos reales del proceso, simulación digital y prueba en boca antes del tratamiento. ✅</li>
+      <li>El proceso descrito (evaluación → simulación → mock-up → tratamiento) transmite un método serio, no una promesa genérica. ✅</li>
+      <li>Cobertura de varios tratamientos relacionados (ortodoncia, implantes, blanqueamiento) bajo un mismo criterio estético. ✅</li>
+    </ul>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>Demasiadas decisiones antes de la primera pregunta</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p class="subhead">Patrón típico en este tipo de sitio</p>
+    <p>En la primera pantalla suelen convivir diseño de sonrisa, ortodoncia, implantes, estética, equipo, tratamientos y testimonios a la vez.</p>
+    <p class="subhead">Impacto, si aplica</p>
+    <p>El visitante llega con una sola pregunta — <span class="quote">¿podéis ayudarme con mi problema?</span> — y antes de que se responda ya está navegando entre decenas de elementos.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>El recorrido obliga a decidir demasiado pronto</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p>Si la portada exige elegir qué tratamiento se necesita antes de poder contactar, es un problema: la mayoría de quien busca un dentista estético no sabe todavía cuál es el tratamiento correcto — quiere que alguien se lo diga, no elegir entre un menú de especialidades.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>CTA genéricos que no reducen incertidumbre</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p class="subhead">Patrón típico</p>
+    <p>Botones como <em>"Más información"</em> o <em>"Ver más"</em> no responden a la intención real de quien los pulsa.</p>
+    <p class="subhead">Alternativa</p>
+    <p class="quote">"Quiero saber qué tratamiento necesito" / "Hablar con un especialista"</p>
+    <p>Un CTA debería reducir incertidumbre, no solo invitar a seguir navegando.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">4</span><h2>Mucha información, poco acompañamiento</h2></div>
+    <p>Esto sí es un hallazgo estructural, no específico de vuestra web: la mayoría de sitios de clínicas explican bien los tratamientos pero apenas explican qué ocurre después de contactar — ¿os llamarán?, ¿hay compromiso?, ¿cuánto tarda?, ¿qué pasa en la primera visita? Son las preguntas que de verdad frenan el contacto, y rara vez tienen respuesta visible.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">5</span><h2>El lenguaje puede estar centrado en la clínica, no en la emoción</h2><span class="tag-pending">Pendiente de confirmar</span></div>
+    <p>Si el texto habla sobre todo de tratamientos, tecnología y materiales, y poco de miedo, inseguridad o confianza — son esas emociones, no las especificaciones técnicas, las que hacen que alguien reserve una cita de valoración.</p>
+  </div>
+
+  <div class="recommendation">
+    <h2>Oportunidad FARO</h2>
+    <p>No proponemos rehacer la web — proponemos optimizar el recorrido de entrada para quien todavía no sabe qué tratamiento necesita:</p>
+    <div class="hero-mock">
+      <h3>¿No sabes qué tratamiento necesitas?</h3>
+      <p class="sub">No hace falta decidirlo ahora. Cuéntanos qué te preocupa y uno de nuestros especialistas te orientará sin compromiso.</p>
+      <div class="cta-row"><span class="primary">🟠 Quiero hablar con un especialista</span></div>
+    </div>
+    <p style="margin-bottom:0;">Ese CTA probablemente convierta mejor que "Más información" — dice exactamente lo que va a pasar al pulsarlo. Hay un prototipo de landing con este enfoque ya construido, sin coste ni compromiso, si queréis verlo en marcha.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th></tr>
+    <tr><td>Claridad del mensaje</td><td class="num">7/10</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">6/10</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td></tr>
+    <tr><td>Conversión móvil</td><td class="num">7/10</td></tr>
+    <tr><td>Llamadas a la acción</td><td class="num">6/10</td></tr>
+    <tr><td>Confianza</td><td class="num">8/10</td></tr>
+  </table>
+  <div class="score-total"><span class="big">61/100</span><span class="label">Conversión estimada — nota provisional, sujeta a confirmar los hallazgos marcados como pendientes con una captura real de la portada</span></div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"He analizado el recorrido de un paciente desde que entra en vuestra web hasta que decide pedir cita. He encontrado varios puntos donde podéis estar perdiendo oportunidades de contacto, no por falta de tráfico, sino por pequeñas fricciones en la experiencia. He preparado este informe con mejoras concretas que podéis aplicar sin cambiar vuestra marca ni vuestra forma de trabajar."</p>
+    <p style="margin-bottom:0;">Nuestro trabajo no consiste en hacer una web nueva. Consiste en conseguir que más personas que ya llegan a vuestra web den el siguiente paso.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

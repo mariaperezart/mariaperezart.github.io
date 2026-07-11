@@ -76,6 +76,40 @@ Diferencia clave con el pitch del concierge: aquí se puede enseñar algo constr
 
 Una vez el cliente confía (landing entregada, seguimiento demostrado), la conversación natural de upsell —no forzada, coherente con `FARO_PROCESO_COMERCIAL.md` sección 11— es: *"Ahora que ves cuántos contactos te llegan, ¿sabías que la mayoría de negocios como el tuyo pierden también mensajes de WhatsApp fuera de horario y citas sin confirmar? Es el mismo principio que ya ves funcionando aquí."* La landing deja de ser el producto y se convierte en la prueba viva de por qué el resto del catálogo (`FARO_MODELO_NEGOCIO.md`, Pricing) también vale la pena.
 
+## 9. Metodología de auditoría — Puntuación FARO
+
+Formato estándar para cada informe de auditoría (sección "Actualización" al inicio de este documento), validado ya con dos casos reales (veterinaria y dental) del dataset de `EXP-003`. No es una crítica de diseño — es una demostración de que FARO entiende el recorrido del cliente del negocio mejor que una agencia genérica.
+
+### 9.1 Estructura del informe
+
+1. **🟢 Lo que funciona** — 3-5 puntos concretos y verificables. Nunca empezar el informe solo con lo negativo: reconocer primero lo que ya genera confianza (fotos reales, propuesta de valor clara, profesionalidad percibida) antes de señalar fricciones — un informe que solo critica se lee como venta agresiva, uno que reconoce lo bueno se lee como análisis honesto.
+2. **🔴 Hallazgos** — cada uno con la misma estructura de dos líneas: *situación actual* (qué hay, verificable, sin opinión) e *impacto* (qué le cuesta al negocio en términos de conversión, no de estética). Nunca decir "esto es feo" — siempre "esto añade un paso/una duda/una fricción entre el visitante y la llamada".
+3. **Oportunidad FARO** — no "rehacer la web", sino "optimizar el recorrido". Incluye un ejemplo concreto de hero/CTA corregido, no solo la crítica abstracta.
+4. **Puntuación FARO (tabla + nota global)** — ver 9.2.
+5. **Frase de cierre** — variantes de: *"Nuestro trabajo no consiste en hacer una web nueva. Consiste en conseguir que más personas que ya llegan a vuestra web den el siguiente paso."*
+
+### 9.2 Tabla de puntuación (0-100, cinco subáreas)
+
+| Área | Qué mide |
+|---|---|
+| Claridad del mensaje | ¿Se entiende en 5 segundos qué resuelve el negocio y para quién? |
+| Facilidad para contactar | ¿Cuántos pasos/decisiones hay entre "quiero esto" y "he contactado"? |
+| Reducción de incertidumbre | ¿Sabe el visitante qué va a pasar después de contactar (cuándo le responden, qué le van a preguntar)? |
+| Conversión móvil | ¿El recorrido funciona igual de bien en el móvil, canal de entrada real de la mayoría? |
+| Llamadas a la acción | ¿Los CTA dicen el resultado ("Quiero hablar con un especialista") o son genéricos ("Más información")? |
+
+Cada subárea se puntúa 0-10 con una nota razonada de una frase. La nota global (0-100) es la suma simple de las cinco — **nunca se redondea al alza para quedar bien**: un negocio con web funcional pero CTA débiles y sin reducción de incertidumbre puntúa medio (50-65), no alto, aunque el resto esté cuidado. La honestidad de la puntuación es lo que la hace creíble frente a "todo está genial, contrátanos".
+
+### 9.3 Regla de evidencia — no auditar lo que no se ha visto
+
+Cada hallazgo debe ser trazable a algo verificado: una captura, una búsqueda web con fuente citada, o la propia navegación del sitio. Si una parte del sitio no es accesible (bloqueo de scraping, WebFetch con 403, etc.) y no hay forma de confirmar un hallazgo de primera mano, se marca explícitamente en el informe como *"patrón típico del sector, pendiente de confirmar con una captura real"* — nunca se presenta una suposición razonable como si fuera una observación directa. Esta regla es la misma que ya aplica el Fiscal en `consejo-estrategico-leon` (✅ Respaldada / ⚠️ Inferencia razonable / 🔴 SUPOSICIÓN) y no se relaja para que un informe de venta suene más impresionante.
+
+### 9.4 CTA para vender FARO tras el informe
+
+Nunca: *"Hago páginas web"* ni *"Hago landings"*. Siempre una variante de:
+
+> *"He analizado el recorrido de un [paciente/cliente] desde que entra en vuestra web hasta que decide [pedir cita/contactar]. He encontrado varios puntos donde estáis perdiendo oportunidades de contacto, no por falta de tráfico, sino por pequeñas fricciones en la experiencia. He preparado un informe con mejoras concretas que podéis aplicar sin cambiar vuestra marca ni vuestra forma de trabajar."*
+
 ---
 
 *Este documento no sustituye la posición de marca de FARO (`FARO_ESTRATEGIA_MARCA.md`) — la landing es la oferta de entrada de menor fricción, no una redefinición de qué es FARO. Ver `FARO_MVP_CONCIERGE.md` para el mecanismo de seguimiento manual reutilizado aquí en la sección 4.2.*
