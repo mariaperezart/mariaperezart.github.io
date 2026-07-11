@@ -1,18 +1,38 @@
 <!--
-  Informe de auditoría — Clínica DentFamily (Avenida de Nocedo 23,
-  León). Decimocuarto caso del dataset EXP-003, quinto caso dental,
-  cierra el clúster dental. Flujo estándar faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2. Clínica DentFamily (Av. de
+  Nocedo 23, Bajo, León). Decimocuarto caso del dataset EXP-003,
+  quinto caso dental, cierra el clúster. Primera vez que se amplía con
+  los tres skills operativos completos (faro-auditor-conversion +
+  faro-board-of-advisors + faro-offer-architect).
 
-  WebFetch no navegó ningún dominio en esta sesión (403 confirmado
-  repetidamente). Informe apoyado en WebSearch con fuente citada.
+  CORRECCIÓN GRAVE RESPECTO A LA v1 — el hallazgo central de la v1 era
+  "DentFamily no tiene ninguna reseña pública visible, a diferencia
+  del resto del clúster dental". Una investigación posterior, con
+  navegación por varios directorios (FIATC, Cuident, ProvenExpert,
+  DocDental.es, Top Dentistas), encuentra JUSTO LO CONTRARIO: 81
+  reseñas en Google Maps a 4,80/5, el mismo dato replicado en
+  ProvenExpert, y el puesto #1 en el ranking de DocDental.es 2026 (4,8/5
+  sobre 60 reviews) entre las clínicas dentales de León -- por encima
+  de Clidenin, Venedent y Cachero en volumen de reseñas confirmadas.
+  Es la misma categoría de error que Ricardo Díez (urgencias
+  inexistentes) o LeonCar ("30 años" que no eran de la misma persona):
+  el hallazgo principal de la v1 no era una aproximación incompleta,
+  era sencillamente incorrecto. Se retira por completo la narrativa de
+  "sin prueba social" y se reconstruye el informe alrededor del
+  hallazgo real: DentFamily es el líder de reputación online del
+  clúster dental de este dataset.
 
-  Datos confirmados por búsqueda web:
-  - Dirección: Avenida de Nocedo 23, 24007 León -- confirma el dato del dataset original ("León, dirección exacta no confirmada"). ✅
-  - Teléfono: 987 01 45 46. ✅ (coincide con el dataset original) · Email: info@clinicadentfamily.com. ✅
-  - Horario: L-V 10:00-13:30 y 16:30-20:00. ✅ (web propia)
-  - Dirigida por el Dr. Sergio Vogulis. ✅
-  - Servicios: implantes, ortodoncia, periodoncia, endodoncia, estética dental con diseño digital de sonrisa 3D, sedación consciente para pacientes nerviosos, planes de financiación. ✅
-  - Reputación: sin opiniones registradas en Doctoralia en el momento de esta búsqueda -- a diferencia del resto del clúster dental de este dataset (Clidenin 149, Cachero, Venedent 77), DentFamily no tiene todavía un volumen de reseñas públicas visible. 🟡 -- puede indicar un negocio más reciente o con menor actividad en plataformas de reseñas, no necesariamente peor calidad de servicio.
+  DOS DATOS DE LA v1 SIN CONFIRMAR POR LA INVESTIGACIÓN MÁS RECIENTE:
+  "dirigida por el Dr. Sergio Vogulis" y "sedación consciente para
+  pacientes nerviosos" no aparecen en ninguno de los directorios
+  consultados por la investigación más reciente (que sí encontró
+  service de "prótesis en 48h", no mencionado en la v1). No hay
+  evidencia de que sean falsos, pero tampoco de que sigan vigentes --
+  se bajan de 🟢 confirmado a 🟡 sin confirmar, y se retiran del
+  mensaje principal de la landing hasta poder verificarlos.
+
+  Año de fundación (dato nuevo): 1999, 27 años de trayectoria -- no
+  disponible en la v1.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -58,10 +78,15 @@
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
   .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
   .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 14px; }
   .caveat strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .correction strong { color: var(--color-alert); }
   .good-box { background: #F3E7EB; border: 1px solid #E0C3CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
   .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .id-table { width: 100%; border-collapse: collapse; margin: 16px 0 36px; font-size: 14px; }
+  .id-table th, .id-table td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .id-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; width: 34%; }
   .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
   .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
   .journey strong { font-style: normal; color: var(--color-accent); }
@@ -74,6 +99,9 @@
   .finding__part p { margin: 0; }
   .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
   .recommendation h2 { color: var(--color-ink); }
+  .compete-table { width: 100%; border-collapse: collapse; margin: 14px 0; font-size: 13px; }
+  .compete-table th, .compete-table td { text-align: left; padding: 8px 8px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  .compete-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
   .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
   .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
   .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
@@ -97,102 +125,142 @@
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026 · v2</span></div>
 
   <p class="cover-meta">Auditoría de conversión · Clínica DentFamily</p>
-  <h1>Sedación consciente para pacientes nerviosos — un diferenciador real que resuelve el miedo al dentista, no solo la caries.</h1>
+  <h1>81 reseñas en Google a 4,8/5. #1 en el ranking de DocDental de León. Y una versión anterior de este informe decía que no teníais ninguna.</h1>
+
+  <div class="correction">
+    <strong>Corrección grave respecto a la v1:</strong> el hallazgo central de la v1 era que DentFamily "no tiene ninguna reseña pública visible". Una investigación posterior, navegando varios directorios (FIATC, Cuident, ProvenExpert, DocDental.es, Top Dentistas), encuentra justo lo contrario: <strong>81 reseñas en Google Maps a 4,80/5</strong>, el mismo dato en ProvenExpert, y el <strong>puesto #1 del ranking DocDental.es 2026</strong> entre clínicas dentales de León. Es el mismo tipo de error que Ricardo Díez o LeonCar: el hallazgo principal de la v1 no era incompleto, era incorrecto. Se retira por completo la narrativa de "sin prueba social" del informe, la landing y el guion.
+  </div>
 
   <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar clinicadentfamily.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+    <strong>Nota de transparencia:</strong> además de la corrección anterior, dos datos de la v1 ("dirigida por el Dr. Sergio Vogulis" y "sedación consciente para pacientes nerviosos") no aparecen en ninguno de los directorios consultados por la investigación más reciente. No hay evidencia de que sean falsos, pero tampoco de que sigan vigentes — se bajan a <span class="pending-tag">Pendiente de confirmar</span> y se retiran del mensaje principal hasta poder verificarlos.
   </div>
 
   <div class="intro">
-    <p style="margin:0;">DentFamily es el único negocio del clúster dental de este dataset sin un volumen de reseñas públicas visible todavía — lo cual no significa mala calidad, pero sí significa que no puede apoyarse en prueba social como los otros cuatro casos dentales auditados. A cambio, tiene dos diferenciadores reales y poco comunes: sedación consciente para pacientes con miedo al dentista (una de las objeciones más universales del sector) y diseño digital de sonrisa 3D antes de empezar cualquier tratamiento estético. El reto aquí es distinto al resto del clúster: en vez de amplificar una reputación ya fuerte, hay que construir confianza con otros activos, mientras se empieza a generar reseñas reales.</p>
+    <p style="margin:0;">DentFamily es una clínica dental independiente (no franquicia, no multiclínica) con 27 años de trayectoria en León (fundada en 1999), y el líder de reputación online de todo el clúster dental de este dataset: 81 reseñas en Google a 4,80/5, replicadas en ProvenExpert, y el puesto #1 en el ranking de DocDental.es 2026. Ofrece implantes, ortodoncia invisible 3D y un servicio real de prótesis en 48 horas. El reto no es construir confianza desde cero — ya la tiene, y más que la mayoría de su competencia. El reto es que esa reputación excepcional se vea con la misma fuerza en la propia web y en cualquier primer contacto, no solo en directorios de terceros.</p>
   </div>
 
   <div class="good-box">
     <h2>🟢 Lo que funciona</h2>
     <ul>
-      <li>Sedación consciente para pacientes nerviosos — responde directamente a una de las objeciones más comunes en cualquier clínica dental: el miedo. ✅</li>
-      <li>Diseño digital de sonrisa 3D antes de empezar el tratamiento estético — reduce la incertidumbre sobre el resultado final. ✅</li>
-      <li>Dirigida por un profesional identificado (Dr. Sergio Vogulis), no una marca genérica sin cara visible. ✅</li>
-      <li>Catálogo completo: implantes, ortodoncia, periodoncia, endodoncia, estética. ✅</li>
-      <li>Planes de financiación disponibles. ✅</li>
+      <li>81 reseñas en Google Maps a 4,80/5 — la cifra de reputación con más volumen confirmado de todo el clúster dental de este dataset. ✅</li>
+      <li>Puesto #1 en el ranking de clínicas dentales de León de DocDental.es (2026), con 4,8/5 sobre 60 reviews. ✅</li>
+      <li>27 años de trayectoria (fundada en 1999) como clínica independiente, sin franquicia ni multiclínica detrás. ✅</li>
+      <li>Prótesis dentales en 48 horas — diferenciador de velocidad real, poco común en el resto del dataset. ✅</li>
+      <li>Ortodoncia invisible con tecnología 3D. ✅</li>
     </ul>
   </div>
 
+  <h2>Ficha de identidad</h2>
+  <table class="id-table">
+    <tr><th>Nombre comercial</th><td>Clínica DentFamily (CLÍNICA DENT FAMILY ODONTOLOGIA LEON)</td></tr>
+    <tr><th>Dirección</th><td>Av. de Nocedo, 23, Bajo, 24007 León</td></tr>
+    <tr><th>Fundación</th><td>1999 — 27 años de trayectoria</td></tr>
+    <tr><th>Contacto</th><td>987 01 45 46 · info@clinicadentfamily.com</td></tr>
+    <tr><th>Modelo</th><td>Clínica independiente — explícitamente no franquicia ni multiclínica</td></tr>
+    <tr><th>Reputación</th><td>Google Maps: 81 reseñas, 4,80/5 · ProvenExpert: 81 reseñas, 4,80/5 (sincronizado) · DocDental.es: #1 en el ranking de León 2026, 4,8/5 sobre 60 reviews</td></tr>
+    <tr><th>Equipo</th><td>Sin nombres identificados públicamente — el "Dr. Sergio Vogulis" citado en la v1 de este informe no aparece en ningún directorio consultado por la investigación más reciente</td></tr>
+    <tr><th>Servicios confirmados</th><td>Implantes dentales, ortodoncia, ortodoncia invisible 3D, estética dental, prótesis en 48h, odontología general</td></tr>
+    <tr><th>Servicio sin confirmar de la v1</th><td>Sedación consciente para pacientes nerviosos — 🟡 no aparece en la investigación más reciente</td></tr>
+  </table>
+
   <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
   <div class="journey">
-    <p><strong>Busco</strong> "dentista para pacientes nerviosos León" o simplemente "dentista León" — si busco lo primero, DentFamily tiene una respuesta real que muchas clínicas no ofrecen.</p>
-    <p><strong>Busco</strong> reseñas para confirmar que es de fiar — aquí es donde DentFamily tiene menos que mostrar que el resto del clúster dental de este dataset.</p>
-    <p><strong>Dudo</strong> — sin reseñas visibles, ¿qué otra cosa me da confianza? El nombre del doctor, si aparece con claridad, y la explicación de en qué consiste la sedación consciente, pueden sustituir parte de esa confianza que normalmente dan las reseñas.</p>
-    <p><strong>Decido</strong> en función de si la web transmite suficiente confianza por sí misma (equipo, proceso claro, fotos reales) sin depender de reseñas que todavía no existen en volumen.</p>
+    <p><strong>Busco</strong> "dentista León" o "implantes León" — encuentro DentFamily en el puesto #1 de un ranking (DocDental.es) y una valoración de 4,8/5 sobre 81 reseñas en Google.</p>
+    <p><strong>Comparo</strong> con otras clínicas dentales de León — DentFamily tiene más volumen de reseñas confirmadas que Clidenin, Venedent y Cachero, aunque alguna tenga una puntuación puntual más alta con menos reseñas.</p>
+    <p><strong>Busco</strong> confirmar esa reputación en la propia web — no está confirmado si aparece destacada ahí, o solo en los directorios donde la encontré.</p>
+    <p><strong>Decido</strong> llamar si la cifra de reputación (que ya me convenció en el directorio) se repite con la misma fuerza en el primer contacto con la web o el teléfono.</p>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La sedación consciente es un diferenciador fuerte que puede no estar comunicado como tal</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>DentFamily ofrece sedación consciente para pacientes nerviosos — un servicio que responde directamente al miedo al dentista, una de las barreras más comunes para pedir cita en cualquier clínica.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Alguien que evita ir al dentista por miedo puede no saber que existe esta opción si no aparece de forma explícita y temprana en la web — y seguir posponiendo el tratamiento en vez de buscar activamente esta solución.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la sedación consciente aparece en el bloque principal de la web, con una explicación breve y tranquilizadora de en qué consiste.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta un segmento de clientes (quienes evitan el dentista por miedo) que probablemente no está buscando "el mejor dentista" sino "un dentista que entienda mi miedo".</p></div>
+    <div class="finding__title"><span class="finding__num">1</span><h2>La mejor reputación confirmada del clúster dental no está confirmado que se comunique en la propia web</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>81 reseñas a 4,80/5 en Google y el puesto #1 en DocDental.es son datos encontrados en directorios externos — no hay confirmación de que la propia web de DentFamily los muestre de forma destacada.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que llegue directo a la web (sin pasar antes por un directorio) puede no ver nunca esa cifra — se pierde el activo de confianza más fuerte del negocio en el canal que la clínica sí controla.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si la cifra de Google (81 reseñas, 4,8/5) y el ranking #1 de DocDental aparecen en el bloque principal; si no, es el cambio de mayor impacto potencial de este informe.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>El activo de confianza más fuerte de todo el clúster dental de este dataset deja de depender de que el cliente llegue por un directorio externo para verlo.</p></div>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>Sin reseñas públicas visibles, la confianza tiene que construirse con otros activos</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>A diferencia del resto del clúster dental de este dataset (Clidenin, Cachero, Venedent, todos con decenas o cientos de opiniones), DentFamily no tiene reseñas registradas en Doctoralia en el momento de esta búsqueda.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que compare varias clínicas dentales de León puede descartar DentFamily solo por falta de prueba social visible, incluso si la calidad real del servicio es igual o mejor que la competencia.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web muestra el nombre y credenciales del Dr. Sergio Vogulis con claridad, y valorar activar una petición sistemática de reseñas a pacientes satisfechos — el resto del clúster dental de este dataset demuestra que el volumen de reseñas es alcanzable en León.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Empezar a cerrar la brecha de prueba social frente al resto de clínicas del dataset, con un activo (reseñas) que hoy no cuesta nada generar salvo pedirlo.</p></div>
+    <div class="finding__title"><span class="finding__num">2</span><h2>El modelo "independiente, no franquicia" es un activo emocional real, sin confirmar si se comunica como tal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>DentFamily se presenta explícitamente como clínica independiente, no franquicia ni multiclínica — en un mercado donde las cadenas dentales están creciendo, esto puede ser un valor diferencial para quien prefiere trato cercano frente a una cadena.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Sin ese mensaje explícito, un cliente puede no distinguir a DentFamily de cualquier otra clínica genérica, perdiendo un argumento emocional real que ya forma parte de su identidad.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Combinar "27 años, independientes, sin franquicias" con la reputación online en un solo mensaje de confianza.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte la independencia en un argumento de autenticidad frente a cadenas, no solo en un dato neutro.</p></div>
   </div>
 
   <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda (posiblemente por miedo al dentista) → Mensaje claro sobre sedación consciente → Nombre y cara del doctor, como sustituto parcial de la prueba social que todavía falta → Diseño digital de sonrisa como reductor de incertidumbre → Contacto. Hoy no se puede confirmar en qué orden aparece esto en la web real — es exactamente lo que una navegación directa resolvería.</p>
+    <h2>Hipótesis del Consejo FARO (faro-board-of-advisors)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>Reputación como activo de expansión:</strong> 27 años de trayectoria más una reputación online excepcional posicionan a DentFamily como candidato natural para una segunda ubicación o alianzas con otros dentistas independientes.</li>
+      <li style="margin-bottom:10px;"><strong>Falta de especialización nicho:</strong> a diferencia de Clidenin (odontopediatría), DentFamily no tiene una especialidad diferenciada más allá de la reputación general — valorar un nicho (implantes de carga inmediata, diseño de sonrisa digital).</li>
+      <li style="margin-bottom:0;"><strong>El ranking #1 de DocDental debería usarse activamente en comunicación</strong>, no quedarse como un dato que solo aparece si alguien busca directamente en ese directorio.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Hipótesis de oferta (faro-offer-architect)</h2>
+    <ul style="padding-left:20px; margin:0;">
+      <li style="margin-bottom:10px;"><strong>"Prótesis DentFamily Express":</strong> empaquetar la prótesis en 48h como producto premium con garantía de ajuste, no solo como dato suelto.</li>
+      <li style="margin-bottom:10px;"><strong>Landing propia para ortodoncia invisible 3D:</strong> proceso, casos reales, precio con financiación (a confirmar si existe).</li>
+      <li style="margin-bottom:0;"><strong>Programa de referidos apoyado en la reputación</strong>: "recomienda y ambos obtenéis descuento" — coherente con una base de 81 pacientes que ya han dejado reseña positiva.</li>
+    </ul>
+  </div>
+
+  <div class="recommendation">
+    <h2>Competencia directa en odontología de León (por volumen de reseñas)</h2>
+    <table class="compete-table">
+      <tr><th>Competidor</th><th>Valoración</th><th>Nº reseñas</th><th>Frente a DentFamily</th></tr>
+      <tr><td>DentFamily</td><td>4,8/5</td><td>81 (Google) / 60 (DocDental)</td><td>Líder en volumen de reseñas confirmadas del clúster</td></tr>
+      <tr><td>Clidenin</td><td>4,0/5</td><td>18 (Doctoralia)</td><td>DentFamily gana en reputación; Clidenin gana en TikTok y odontopediatría</td></tr>
+      <tr><td>Clínica Dental Cachero</td><td>5,0/5</td><td>32</td><td>Puntuación puntual más alta, con menos reseñas y más volátil</td></tr>
+    </table>
   </div>
 
   <h2>Puntuación FARO</h2>
   <table class="score-table">
     <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">Sedación consciente y diseño digital 3D son diferenciadores reales y poco comunes en el resto del dataset.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">6/10</td><td class="why">El diseño digital de sonrisa reduce la incertidumbre sobre el resultado estético antes de empezar.</td></tr>
-    <tr><td>Prueba social</td><td class="num">2/10</td><td class="why">Sin reseñas visibles registradas — la nota más baja de este dataset en esta dimensión, aunque no implica mala calidad de servicio.</td></tr>
-    <tr><td>Autoridad</td><td class="num">4/10</td><td class="why">Profesional identificado por nombre (Dr. Sergio Vogulis), sin credenciales adicionales confirmadas.</td></tr>
+    <tr><td>Prueba social</td><td class="num">9/10</td><td class="why">81 reseñas en Google a 4,80/5, replicadas en ProvenExpert, más el puesto #1 en DocDental.es — la mejor cifra confirmada del clúster dental.</td></tr>
+    <tr><td>Confianza</td><td class="num">7/10</td><td class="why">27 años de trayectoria, modelo independiente, reputación consistente entre tres fuentes distintas.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">6/10</td><td class="why">Prótesis en 48h e independencia (no franquicia) son reales, sin confirmar si se comunican como diferenciadores explícitos.</td></tr>
+    <tr><td>Autoridad</td><td class="num">3/10</td><td class="why">Sin nombres ni titulaciones del equipo confirmados públicamente.</td></tr>
     <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
     <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
-    <tr><td>Confianza</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay fotos reales del equipo o de la clínica.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere confirmar precios y alcance real de "sedación consciente".</td></tr>
     <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
     <tr><td>Facilidad para contactar</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si hay WhatsApp o reserva online, además del teléfono y el email.</td></tr>
     <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
     <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
-    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la sedación consciente como palanca contra el miedo, o solo la menciona de pasada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real (no accesible en ninguna de las dos investigaciones).</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la reputación de Google/DocDental como palanca de confianza.</td></tr>
   </table>
-  <div class="score-total"><span class="big">19/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 47,5/100 sobre esas 4 — la nota más baja del dataset en la dimensión de prueba social, compensada parcialmente por diferenciación real. Las 9 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+  <div class="score-total"><span class="big">25/40</span><span class="label">Suma de las 4 dimensiones con evidencia directa ÷ 40 × 100 = 62,5/100 sobre esas 4 — mejora radical frente a la v1 (47,5/100), al corregirse el hallazgo de prueba social de "el más bajo del dataset" a "el más alto del clúster dental". Las 9 restantes quedan sin puntuar hasta poder navegar la web real, que sigue sin ser accesible en ninguna de las dos investigaciones.</span></div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Quick wins — ordenados por impacto</h2>
     <ol class="quickwins">
-      <li>Subir la sedación consciente al mensaje principal, con una explicación breve y tranquilizadora dirigida a quien tiene miedo al dentista.</li>
-      <li>Empezar a pedir reseñas de forma sistemática a pacientes satisfechos — es la brecha más grande frente al resto del clúster dental del dataset.</li>
-      <li>Confirmar si el nombre y la cara del Dr. Sergio Vogulis aparecen con claridad — sustituye parte de la confianza que aportarían las reseñas.</li>
-      <li>Navegar la web real para completar las 9 dimensiones pendientes de la Puntuación FARO.</li>
+      <li>Confirmar si la cifra de Google (81 reseñas, 4,8/5) y el puesto #1 de DocDental aparecen en el bloque principal de la web — si no, es el cambio de mayor impacto de este informe.</li>
+      <li>Combinar "27 años, independientes, sin franquicias" con la reputación online en un solo mensaje.</li>
+      <li>Empaquetar la prótesis en 48h como producto con nombre propio y garantía.</li>
+      <li>Confirmar el estado real de "sedación consciente" y del nombre del director antes de seguir citándolos.</li>
     </ol>
   </div>
 
   <div class="recommendation" style="border-color: var(--color-primary);">
     <h2>Si os interesa, así lo implementaríamos</h2>
     <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (sedación consciente poco destacada) → mensaje principal dirigido a pacientes con miedo al dentista.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (sin reseñas visibles) → sistema simple de petición de reseñas tras cada tratamiento.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 9 dimensiones que este informe deja pendientes con honestidad.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (reputación no confirmada en portada) → subir la cifra real de Google y el ranking #1 de DocDental al bloque principal.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (independencia poco destacada) → mensaje de "27 años, sin franquicias" combinado con la reputación.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: conseguir acceso real a la web (no ha sido accesible en ninguna de las dos investigaciones) para completar las 9 dimensiones pendientes.</li>
     </ul>
     <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
   </div>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Tenéis un diferenciador real -- sedación consciente para pacientes con miedo -- que resuelve una barrera muy común y que casi nadie comunica bien. Os dejamos un informe honesto sobre cómo aprovecharlo, y sobre cómo empezar a construir la prueba social que hoy os falta frente al resto de clínicas de León."</p>
-    <p style="margin-bottom:0;">No proponemos inventar reseñas ni maquillar nada — proponemos un sistema simple para conseguirlas de verdad, y un mensaje que hable directamente a quien pospone el dentista por miedo.</p>
+    <p class="quote">"Tenéis la mejor reputación online confirmada de todo el clúster dental que hemos auditado en León -- 81 reseñas a 4,8/5, más el puesto #1 en DocDental. Una versión anterior de este informe decía justo lo contrario, y nos equivocamos -- os lo contamos con la misma transparencia con la que corregimos el error."</p>
+    <p style="margin-bottom:0;">No proponemos construir confianza desde cero — ya la tenéis. Proponemos que se vea con la misma fuerza en vuestra propia web.</p>
   </div>
 
   <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
