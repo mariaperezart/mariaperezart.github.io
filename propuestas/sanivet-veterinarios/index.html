@@ -1,34 +1,39 @@
 <!--
-  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
-  de este negocio. Quinto candidato de experimentos/EXP-003-pymes-leon.
+  BORRADOR DE PROPUESTA v2 — no está publicado ni es el sitio oficial
+  de este negocio. Candidato de experimentos/EXP-003-pymes-leon.
 
-  Ángulo: el diferenciador real de Sanivet es "urgencias 24h/365", pero
-  el informe encontró reseñas que cuestionan la atención nocturna. Esta
-  landing no oculta ni maquilla eso -- lo sostiene con información
-  concreta (protocolo, tiempo de respuesta) y añade WhatsApp como
-  segunda vía cuando el teléfono no coge, en vez de dejar que la duda
-  la resuelvan solo reseñas de terceros.
+  CORRECCIÓN v2: la v1 de esta landing abría con una franja destacada
+  "Urgencia ahora — 24h, 365 días" como titular principal. Una
+  investigación posterior (navegación directa de sanivet.es) no
+  contradice que exista una línea de urgencias, pero describe el fin
+  de semana como "servicio de guardia" -- compatible con 24h/365, pero
+  sin confirmación literal de esas palabras fuera de la propia v1. Se
+  suaviza el titular para no afirmar más de lo que se puede sostener,
+  y se sube a primer plano un diferenciador nuevo y verificable: la
+  acreditación ISFM Silver Cat Friendly Clinic (medicina felina),
+  citada como única en León según su propia web -- ver
+  informe-auditoria.html para el detalle completo y las correcciones.
 
-  Datos públicos confirmados (ver informe-auditoria.html): Av. del
-  Alcalde Miguel Castaño 29, León · Tel. general 987 19 63 29 · Tel.
-  urgencias 622 28 51 90 · L-V 10:30-14:00 y 17:00-20:30, sábado
-  10:30-14:00, domingo cerrado (horario de consulta general -- las
-  urgencias son aparte, 24h/365). Valoración citada entre 4,4 y 4,6
-  según fuente, ninguna confirmada en Google Business Profile
-  directamente. WhatsApp Business no confirmado como canal activo.
+  El hallazgo central de la v1 (reseña negativa sobre atención
+  nocturna) sigue sin confirmar ni desmentir -- no se ha eliminado de
+  esta landing, solo se ha dejado de liderar con la promesa de "24h"
+  sin matizar mientras esa duda siga abierta.
 
-  Identidad visual: azul índigo oscuro + ámbar (baliza de urgencia,
-  sin rojo de alarma) -- distinta al verde-coral de Ricardo Díez, la
-  magenta de Centro León, el verde oliva de Berciano Dental y el
-  negro/cobre de Cutfy.
+  Datos públicos: Av. del Alcalde Miguel Castaño 29, León · Tel.
+  consulta 987 196 329 · Tel. urgencias 622 285 190 · L-V 09:30-19:30
+  (corrige la v1, que tenía jornada partida) · sábado-domingo,
+  servicio de guardia. WhatsApp Business no confirmado como canal
+  activo.
+
+  Identidad visual: se mantiene azul índigo + ámbar de la v1.
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Sanivet Veterinarios — Urgencias 24h y especialidades, León</title>
-<meta name="description" content="Sanivet Veterinarios, Av. del Alcalde Miguel Castaño 29, León. Urgencias 24 horas los 365 días. Cardiología, oncología, neurología y más.">
+<title>Sanivet Veterinarios — Especialistas en medicina felina, León</title>
+<meta name="description" content="Sanivet Veterinarios, Av. del Alcalde Miguel Castaño 29, León. Acreditación ISFM en medicina felina. Cardiología, oncología, neurología y más.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,8 +65,7 @@
   .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
   nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
 
-  .urgency-bar { background: var(--color-accent); color: #241A03; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 700; }
-  .urgency-bar a { color: #241A03; text-decoration: underline; }
+  .badge-bar { background: var(--color-accent); color: #241A03; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 700; }
 
   .hero { padding: 56px 0 48px; border-bottom: 1px solid var(--color-border); }
   .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: start; }
@@ -79,13 +83,9 @@
   .phone-card a.btn-call { flex-shrink: 0; font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 16px; border-radius: 999px; text-decoration: none; }
   .phone-card.urgente a.btn-call { background: var(--color-accent); color: #241A03; }
 
-  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
-  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; margin-top: 4px; }
-
-  .protocol-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-card); }
-  .protocol-box h3 { margin-top: 0; }
-  .protocol-box ol { margin: 0; padding-left: 20px; }
-  .protocol-box li { margin-bottom: 10px; font-size: 14px; color: var(--color-ink-muted); }
+  .isfm-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-card); }
+  .isfm-card h3 { margin-top: 0; }
+  .isfm-card .small { font-size: 12px; opacity: 0.65; margin-top: 10px; }
 
   .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
   .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
@@ -99,7 +99,7 @@
 </head>
 <body>
 
-<div class="urgency-bar">🚨 Urgencia ahora — <a href="tel:+34622285190">622 28 51 90</a>, 24h, 365 días</div>
+<div class="badge-bar">🐱 Acreditación ISFM Silver Cat Friendly Clinic — medicina felina especializada</div>
 
 <header>
   <div class="container">
@@ -113,32 +113,28 @@
     <div class="container hero__grid">
       <div>
         <span class="eyebrow">Av. del Alcalde Miguel Castaño 29, León</span>
-        <div class="rating">⭐ <strong>4,4/5</strong> · reseñas de clientes reales (cifra pendiente de confirmar en Google directamente)</div>
-        <h1>Urgencias 24h, 365 días. Con protocolo, no solo con una frase.</h1>
-        <p>Si es urgente, llama directamente. Si no consigues línea a la primera, tienes una segunda vía: WhatsApp con respuesta inmediata para que sepas que hemos recibido tu aviso.</p>
+        <div class="rating">⭐ <strong>4,4/5</strong> · reseñas de clientes reales (cifra pendiente de confirmar directamente en Google)</div>
+        <h1>Especialistas en medicina felina. Con acreditación, no solo con la palabra.</h1>
+        <p>L-V de 9:30 a 19:30, jornada continua. Si tu mascota tiene una urgencia fuera de ese horario, tenemos una línea aparte — te contamos abajo cómo funciona.</p>
 
         <div class="phone-cards">
-          <div class="phone-card urgente">
-            <div><span class="label">Urgencias · 24h / 365 días</span><div class="num">622 28 51 90</div></div>
-            <a class="btn-call" href="tel:+34622285190">Llamar</a>
-          </div>
           <div class="phone-card">
-            <div><span class="label">Consultas y citas</span><div class="num">987 19 63 29</div></div>
+            <div><span class="label">Consultas y citas</span><div class="num">987 196 329</div></div>
             <a class="btn-call" href="tel:+34987196329">Llamar</a>
+          </div>
+          <div class="phone-card urgente">
+            <div><span class="label">Urgencias fuera de horario</span><div class="num">622 285 190</div></div>
+            <a class="btn-call" href="tel:+34622285190">Llamar</a>
           </div>
         </div>
 
-        <a class="btn btn--whatsapp" href="https://wa.me/34622285190?text=Hola%2C%20tengo%20una%20urgencia%20con%20mi%20mascota" target="_blank" rel="noopener">💬 Si no cogemos, escribe aquí</a>
+        <a class="btn btn--whatsapp" href="https://wa.me/34622285190?text=Hola%2C%20tengo%20una%20urgencia%20con%20mi%20mascota" style="display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:14px;padding:14px 24px;border-radius:999px;text-decoration:none;background:var(--color-whatsapp);color:#06210F;margin-top:4px;" target="_blank" rel="noopener">💬 Si no cogemos, escribe aquí</a>
       </div>
 
-      <div class="protocol-box">
-        <h3>Qué pasa cuando llamas de noche</h3>
-        <ol>
-          <li>Descuelga el equipo de guardia — no es un contestador automático.</li>
-          <li>Si la línea está ocupada, tu llamada no se pierde: reintenta en segundos.</li>
-          <li>Si aun así no conseguimos cogerlo, escribe por WhatsApp y confirmamos que hemos recibido tu aviso.</li>
-        </ol>
-        <p style="margin:14px 0 0; font-size:12px; opacity:0.75;">Protocolo ilustrativo a validar con el negocio real antes de publicar — el objetivo es sustituir la duda de "¿me van a coger?" por información concreta.</p>
+      <div class="isfm-card">
+        <h3>¿Qué significa la acreditación ISFM?</h3>
+        <p style="margin:0;">La International Society of Feline Medicine certifica clínicas que adaptan instalaciones y protocolos para reducir el estrés de los gatos durante la visita — desde la sala de espera hasta la forma de sujetarlos. Según nuestra web, somos la única clínica de León con esta acreditación.</p>
+        <p class="small">Dato citado por investigación externa a esta landing — pendiente de confirmar directamente en el registro de ISFM antes de publicar como afirmación definitiva.</p>
       </div>
     </div>
   </section>
@@ -147,7 +143,7 @@
     <div class="container">
       <div class="section__intro">
         <h2>Un catálogo de especialidades poco común en León</h2>
-        <p style="margin:0 auto;">No solo urgencias y consulta general — especialidades que muchas clínicas no ofrecen dentro de casa.</p>
+        <p style="margin:0 auto;">No solo consulta general — especialidades que muchas clínicas no ofrecen dentro de casa.</p>
       </div>
       <div class="specialties">
         <div class="specialty">Cardiología</div>
@@ -164,8 +160,8 @@
 </main>
 
 <footer>
-  <p>Sanivet Veterinarios — Av. del Alcalde Miguel Castaño 29, León · 987 19 63 29 · Urgencias 622 28 51 90</p>
-  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El protocolo nocturno mostrado es ilustrativo, no confirmado.</p>
+  <p>Sanivet Veterinarios — Av. del Alcalde Miguel Castaño 29, León · 987 196 329 · Urgencias 622 285 190</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO — pendiente de validar con el negocio antes de publicar. El alcance exacto del servicio de urgencias fuera de horario (propio y continuo, o guardia compartida) no está confirmado — ver informe-auditoria.html.</p>
 </footer>
 
 </body>

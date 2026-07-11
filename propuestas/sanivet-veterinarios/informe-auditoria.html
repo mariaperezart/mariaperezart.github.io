@@ -1,33 +1,49 @@
 <!--
-  Informe de auditoría — Sanivet Veterinarios (Av. del Alcalde Miguel
-  Castaño 29, León). Quinto caso del dataset EXP-003, segundo con los
-  tres skills operativos (faro-auditor-conversion + faro-board-of-
-  advisors + faro-offer-architect).
+  Informe de auditoría — REVISIÓN v2. Quinto caso del dataset EXP-003,
+  segundo con los tres skills operativos.
 
-  Misma limitación que en el caso de Ricardo Díez: WebFetch no navegó
-  ningún dominio en esta sesión (403 confirmado en sitios de control),
-  así que este informe tampoco evalúa hero, CTA ni orden de secciones
-  reales. Se apoya en WebSearch con fuente citada.
+  CORRECCIÓN de horario general: la v1 citaba L-V 10:30-14:00 y
+  17:00-20:30 (jornada partida), vía WebSearch. Una investigación
+  posterior, hecha por el usuario navegando la web real
+  (sanivet.es) en otra sesión, describe L-V 09:30-19:30 en jornada
+  continua. Se adopta el dato de la v2 por venir de navegación directa
+  en vez de agregadores — pero no se ha vuelto a verificar de forma
+  independiente en esta sesión (WebFetch sigue caído, 403 confirmado
+  de nuevo antes de escribir esta revisión).
 
-  Datos confirmados por búsqueda web:
-  - Dirección: Av. del Alcalde Miguel Castaño, 29, 24005 León. ✅ (web propia + dataset)
-  - Teléfono general: 987 19 63 29. Teléfono de urgencias: 622 28 51 90. ✅
-  - Horario general: L-V 10:30-14:00 y 17:00-20:30; sábado 10:30-14:00; domingo cerrado. ✅ (web propia)
-  - Urgencias 24h, 365 días al año, según página propia dedicada a ese servicio. ✅ (sanivet.es/veterinario-urgencias-24-horas-leon)
-  - Valoración: cifra inconsistente entre fuentes — 4,4/5 sobre 74 opiniones según una fuente, 4,6/5 sobre 47 según otra. 🟡 Ninguna de las dos es Google Business Profile visto directamente — usar la más conservadora (4,4/5) y confirmar antes de cualquier propuesta real.
-  - Reseñas positivas: trato "exquisito" hacia las mascotas, profesionalidad destacada de personal citado por nombre (Lorena). ✅
-  - Reseñas negativas encontradas: mención explícita de problemas con la atención en horario de urgencia nocturna — esto es el hallazgo central de este informe. ✅ (fuente: agregador de opiniones, cita indirecta, no literal)
-  - Cartera de servicios muy amplia: cardiología, oncología, endocrinología, neurología, oftalmología, traumatología, odontología, geriatría, pediatría, peluquería. ✅ (web propia, sección de servicios)
+  RECONCILIACIÓN, no contradicción, sobre las urgencias: la v1 marcaba
+  como hallazgo central que Sanivet promociona "urgencias 24h/365"
+  (según una página propia dedicada, sanivet.es/veterinario-urgencias-
+  24-horas-leon) mientras reseñas de terceros cuestionaban la atención
+  nocturna. La v2 describe el horario de fin de semana como "servicio
+  de guardia" (urgencias veterinarias sábado y domingo) — compatible
+  con una línea de urgencias de guardia 24h/365 operada aparte de la
+  consulta general, no contradictorio. La v2 NO comprobó reseñas de
+  Google (queda listado como pendiente en su propia sección 9), así
+  que ni confirma ni desmiente la reseña negativa sobre atención
+  nocturna que sí encontró la v1 — sigue igual de pendiente.
+
+  DATO NUEVO DE MAYOR VALOR: acreditación ISFM Silver Cat Friendly
+  Clinic (medicina felina), citada como única en León según la propia
+  web de Sanivet — no confirmada de forma independiente, pero es un
+  diferenciador verificable (la acreditación ISFM es un sello externo
+  real, no una autodenominación) que no aparecía en absoluto en la v1.
+
+  Coincidencia que refuerza la fiabilidad relativa de ambas
+  investigaciones: la v1 encontró reseñas que mencionan por nombre a
+  "Lorena" con elogios de profesionalidad — la v2 identifica a la
+  directora como Dra. Lorena Aris Ruiz. Es la misma persona citada por
+  dos fuentes independientes.
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de conversión — Sanivet Veterinarios</title>
+<title>Auditoría operativa — Sanivet Veterinarios</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --color-primary: #1F2A44; --color-accent: #F2A93B; --color-ink: #20262B;
@@ -55,172 +71,139 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
-  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
-  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
-  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
-  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  h1 { font-size: 30px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 72ch; } ul { max-width: 72ch; }
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
-  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
-  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
-  .caveat strong { color: var(--color-pending); }
-  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 24px; }
-  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
-  .risk-box { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
-  .risk-box h2 { color: var(--color-alert); } .risk-box ul { margin: 0; padding-left: 20px; } .risk-box li { margin-bottom: 6px; }
-  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
-  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
-  .journey strong { font-style: normal; color: var(--color-accent); }
-  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
-  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
-  .finding__title h2 { margin: 0; color: var(--color-ink); }
-  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
-  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
-  .finding__part p { margin: 0; }
-  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
-  .recommendation h2 { color: var(--color-ink); }
-  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
-  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
-  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
-  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-  .score-table td.why { font-size: 13px; opacity: 0.8; }
-  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
-  .score-total .label { font-size: 13px; opacity: 0.7; }
-  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
-  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
-  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
-  .quickwins li:last-child { border-bottom: none; }
+  .tagline { font-size: 13px; color: var(--color-ink); opacity: 0.6; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 6px; }
+  .cover-sub { font-size: 15px; opacity: 0.8; margin-bottom: 28px; }
+  .provenance { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .provenance strong { color: var(--color-pending); }
+  .verdict { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 26px; margin: 0 0 28px; }
+  .verdict h2 { margin-top: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 44px; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 12px; opacity: 0.7; }
+  .section-num { display: flex; align-items: baseline; gap: 10px; margin: 56px 0 20px; padding-top: 24px; border-top: 3px solid var(--color-ink); }
+  .section-num:first-of-type { margin-top: 0; }
+  .section-num .n { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-accent); text-transform: uppercase; }
+  .section-num h2 { margin: 0; }
+  table.data { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 13.5px; }
+  table.data th, table.data td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .callout { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout strong { color: var(--color-primary); }
+  .callout-alert { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout-alert strong { color: var(--color-alert); }
+  .roadmap-phase { margin-bottom: 32px; }
+  .roadmap-phase h3 { color: var(--color-ink); background: var(--color-bg); display: inline-block; padding: 4px 12px; border-radius: 6px; }
+  .pending-list { list-style: none; margin: 0; padding: 0; }
+  .pending-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .pending-list .prio { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-pending); }
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
   .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
-  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO — Inteligencia Operativa</span><span class="date">11 jul 2026 · v2</span></div>
+  <div class="tagline">Convertimos investigación en resultados medibles</div>
 
-  <p class="cover-meta">Auditoría de conversión · Sanivet Veterinarios</p>
-  <h1>Prometéis urgencias 24h los 365 días. Algunas reseñas dicen que de noche no siempre responden igual.</h1>
+  <p class="cover-meta">Informe de Auditoría Operativa · Sanivet Veterinarios</p>
+  <h1>Una acreditación felina única en León, escondida detrás de un cartel de "urgencias 24h" sin matizar.</h1>
+  <p class="cover-sub">Dataset EXP-003 · Caso adicional (posterior al Caso 4) · 3 skills operativos (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect)</p>
 
-  <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada (servicios, horario, urgencias, reseñas) — no hemos podido navegar sanivet.es directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  <div class="provenance">
+    <strong>Provenencia y correcciones:</strong> la v1 de este informe (WebSearch, sin navegación directa) citaba jornada partida (L-V 10:30-14:00 y 17:00-20:30). Una investigación posterior, con navegación directa de sanivet.es, describe jornada continua (L-V 09:30-19:30) — se adopta aquí por venir de una fuente más directa, sin reverificar de forma independiente en esta sesión (WebFetch sigue caído). El hallazgo central de la v1 (reseña negativa sobre atención nocturna) no queda ni confirmado ni desmentido por la v2, que no revisó reseñas de Google — sigue pendiente. Coincidencia que refuerza ambas fuentes: la v1 encontró reseñas que elogian a "Lorena" por nombre; la v2 identifica a la directora como Dra. Lorena Aris Ruiz — es, con alta probabilidad, la misma persona citada por dos investigaciones independientes.
   </div>
 
-  <div class="intro">
-    <p style="margin:0;">Sanivet tiene el catálogo de servicios más completo del dataset veterinario que hemos auditado — desde cardiología hasta oncología — y una promesa fuerte y poco común: urgencias 24 horas, 365 días al año. Ese es un diferenciador real. El problema es que hemos encontrado reseñas que ponen en duda si esa promesa se cumple igual de bien de noche que de día — y una promesa de urgencias que falla en el peor momento pesa más que cualquier otra cosa que la clínica haga bien el resto del tiempo.</p>
+  <div class="verdict">
+    <h2>Veredicto FARO</h2>
+    <p style="margin-bottom:0;">Sanivet tiene un diferenciador real y verificable que no tenía ningún otro caso veterinario de este dataset: la acreditación ISFM Silver Cat Friendly Clinic, un sello externo de medicina felina que, según su propia web, es único en León. Tiene también infraestructura digital notablemente más moderna que su competencia directa (app propia, blog con SEO activo, financiación integrada). Y sigue arrastrando la misma pregunta sin resolver de la v1: si la promesa de urgencias fuera de horario se sostiene igual de bien que el resto de su operación, sobre todo de noche.</p>
   </div>
 
-  <div class="good-box">
-    <h2>🟢 Lo que funciona</h2>
-    <ul>
-      <li>Catálogo de especialidades muy amplio y con nombre propio: cardiología, oncología, endocrinología, neurología, traumatología — pocos negocios del dataset pueden decir lo mismo. ✅</li>
-      <li>Página propia dedicada a las urgencias 24h — el negocio ya entendió que es un servicio que necesita explicación aparte, no una línea perdida en el footer. ✅</li>
-      <li>Reseñas que destacan trato "exquisito" y profesionalidad citada por nombre de una empleada concreta (Lorena) — señal de un equipo reconocible, no anónimo. ✅</li>
-      <li>Horario general claro y consistente entre fuentes (L-V 10:30-14:00 y 17:00-20:30, sábado mañana). ✅</li>
-    </ul>
+  <div class="stat-row">
+    <div class="stat"><div class="num">ISFM Silver</div><div class="lbl">acreditación felina, única en León según su web</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">veterinarias fijas + 2 especialistas colaboradores externos</div></div>
+    <div class="stat"><div class="num">10+</div><div class="lbl">artículos de blog con SEO activo</div></div>
+    <div class="stat"><div class="num">17</div><div class="lbl">números de distancia del competidor más cercano (Zoo Nature, misma avenida)</div></div>
   </div>
 
-  <div class="risk-box">
-    <h2>🔴 El riesgo que este informe prioriza sobre todo lo demás</h2>
-    <ul>
-      <li>Reseñas encontradas mencionan explícitamente problemas con la atención en horario de urgencia nocturna — justo el servicio que la clínica usa como diferenciador principal frente al resto del dataset.</li>
-      <li>La valoración global varía entre fuentes (4,4/5 sobre 74 opiniones vs. 4,6/5 sobre 47) — ninguna confirmada directamente en Google Business Profile, lo que impide saber con precisión cuánto pesa hoy ese problema en la reputación real.</li>
-    </ul>
-  </div>
-
-  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
-  <div class="journey">
-    <p><strong>Busco</strong> "veterinario urgencias 24 horas León" — de noche, probablemente asustado, con una mascota que no puede esperar a mañana.</p>
-    <p><strong>Encuentro</strong> vuestra página específica de urgencias 24h/365 — mensaje claro, exactamente lo que necesito ver en ese momento.</p>
-    <p><strong>Confío</strong> en que, si lo anunciáis así de explícito, va a funcionar igual de bien que de día.</p>
-    <p><strong>Reviso</strong> reseñas antes de decidir — y me encuentro con al menos una que dice que de noche no siempre contestan o atienden igual.</p>
-    <p><strong>Dudo</strong>, justo cuando menos margen tengo para dudar: ¿es un caso aislado o un patrón? La web no me da ninguna señal para resolver esa duda.</p>
-    <p><strong>Decido</strong> llamar de todas formas porque no tengo mejor opción a esa hora — pero esa duda no debería existir si la promesa de "24h/365" está bien sostenida por dentro.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La promesa de urgencias 24h no tiene refuerzo de confianza propio frente a las reseñas que la cuestionan</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Existe una página propia dedicada a las urgencias 24h, pero no hemos encontrado evidencia de que responda directamente a las dudas que plantean las reseñas negativas sobre atención nocturna (tiempo de respuesta real, qué pasa si no contesta nadie, protocolo de esa franja horaria).</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que llega de noche, con una urgencia real, y que ha leído esa reseña antes de decidir, se enfrenta a la peor combinación posible: miedo por su mascota más duda sobre si le van a atender bien. Eso puede hacer que llame a otra clínica, o que llegue ya desconfiado.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Añadir en la propia página de urgencias una explicación concreta del protocolo nocturno (quién atiende, tiempo medio de respuesta, qué hacer si no contestan a la primera) — no para negar el problema, sino para dar información que compense la duda que genera la reseña.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce la incertidumbre exactamente en el momento en que el cliente más la necesita resuelta, y da una respuesta propia a una duda que hoy solo resuelven reseñas de terceros.</p></div>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>Nadie sabe si hay un canal de seguimiento cuando la llamada de urgencia no coge línea</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>El único canal de contacto confirmado en las fuentes consultadas es el teléfono (622 28 51 90 para urgencias) — no se ha encontrado evidencia de WhatsApp, formulario o cualquier alternativa si la línea está ocupada.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>En una urgencia real nocturna, si la línea comunica o nadie contesta a la primera, el cliente no tiene ninguna alternativa dentro del propio negocio — solo puede reintentar o buscar otra clínica. Esto agrava exactamente el riesgo que ya señalan las reseñas negativas.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Un canal de WhatsApp para la línea de urgencias, con un mensaje automático claro ("si no te cogemos en menos de 2 minutos, sigue llamando o escribe aquí") — no sustituye la llamada, da una segunda vía cuando la primera falla.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Menos clientes perdidos por simple saturación de la línea en el peor momento posible para perderlos.</p></div>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">3</span><h2>El catálogo de especialidades es una ventaja competitiva que depende de que el cliente ya sepa buscarla</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Sanivet tiene páginas propias para especialidades poco comunes en el dataset (cardiología, oncología, endocrinología, neurología) — pero no hay evidencia de que esto se comunique como diferenciador frente a clínicas más generalistas.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente con una mascota que necesita un especialista (no una urgencia general) puede no saber que Sanivet lo cubre, y buscar directamente en un hospital veterinario de referencia fuera de León — perdiendo un cliente que ya tenían a mano.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Destacar el catálogo de especialidades en el bloque principal de la web, no solo en páginas internas — "el único veterinario de León con cardiología y oncología propias" (verificar antes si es cierto) es un mensaje mucho más fuerte que una lista de servicios.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una ventaja real ya existente en un motivo de elección explícito, en vez de dejarla enterrada en páginas internas.</p></div>
-  </div>
-
-  <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda nocturna de urgencias → Página de urgencias con protocolo explícito (no solo "24h/365") → Refuerzo de confianza que responda directamente a la duda de las reseñas → Teléfono + WhatsApp como red de seguridad si la línea no coge → Confirmación de que el mensaje ha llegado. Hoy el recorrido se apoya solo en la promesa de "24h/365" sin explicar cómo funciona por dentro — el recorrido ideal sostiene esa promesa con información, no solo con una frase.</p>
-  </div>
-
-  <h2>Puntuación FARO</h2>
-  <table class="score-table">
-    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Autoridad</td><td class="num">8/10</td><td class="why">Catálogo de especialidades real y poco común en el dataset — cardiología, oncología, neurología propias.</td></tr>
-    <tr><td>Confianza</td><td class="num">5/10</td><td class="why">Reseñas positivas fuertes conviven con al menos una crítica directa a la atención nocturna — justo el servicio ancla del negocio.</td></tr>
-    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">Volumen de opiniones alto, pero la cifra exacta varía según fuente y no está confirmada en Google directamente.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">4/10</td><td class="why">La promesa "24h/365" no viene acompañada de ninguna explicación de protocolo que compense la duda de las reseñas negativas.</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num">5/10</td><td class="why">Teléfono de urgencias claro y diferenciado del general, pero sin alternativa si la línea no coge.</td></tr>
-    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
-    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el catálogo de especialidades en portada.</td></tr>
-    <tr><td>Diferenciación</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web comunica el catálogo de especialidades como diferenciador.</td></tr>
-    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
-    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
-    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
-    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real, no solo lo que la rodea.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo (o si) la propia web responde a la duda de las reseñas sobre urgencias nocturnas.</td></tr>
+  <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
+  <table class="data">
+    <tr><th>Nombre comercial</th><td>Clínica Veterinaria Sanivet</td></tr>
+    <tr><th>Eslogan citado</th><td>"Tu mascota en las mejores manos"</td></tr>
+    <tr><th>Dirección</th><td>Av. del Alcalde Miguel Castaño, 29, 24005 León — coincide con el dato ya confirmado en este dataset</td></tr>
+    <tr><th>Teléfono consulta</th><td>987 196 329 — mismo número que la v1 (987 19 63 29), solo agrupación distinta de cifras</td></tr>
+    <tr><th>Teléfono urgencias</th><td>622 285 190 — mismo número que la v1 (622 28 51 90)</td></tr>
+    <tr><th>Horario</th><td>L-V 09:30-19:30 (jornada continua) — corrige la v1. Sábado y domingo: servicio de guardia / urgencias veterinarias</td></tr>
+    <tr><th>Email</th><td>info@sanivet.es, según la investigación</td></tr>
   </table>
-  <div class="score-total"><span class="big">27/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 54/100 sobre esas 5 — las 8 restantes quedan sin puntuar, no en 0, hasta poder navegar la web real. No es la Puntuación FARO completa de 13 dimensiones.</span></div>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Quick wins — ordenados por impacto</h2>
-    <ol class="quickwins">
-      <li>Explicar el protocolo real de urgencias nocturnas en la propia página — no dejar que solo lo definan las reseñas de terceros.</li>
-      <li>Añadir WhatsApp como canal de respaldo en la línea de urgencias, para cuando el teléfono no coge a la primera.</li>
-      <li>Subir el catálogo de especialidades (cardiología, oncología, neurología) al bloque principal de la web como diferenciador explícito.</li>
-      <li>Confirmar la valoración real en Google Business Profile directamente — hoy hay dos cifras distintas circulando (4,4 vs. 4,6).</li>
-      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
-    </ol>
-  </div>
+  <div class="section-num"><span class="n">02</span><h2>Equipo</h2></div>
+  <p><strong>Dra. Lorena Aris Ruiz</strong> — directora y fundadora, según la investigación. Licenciada en Veterinaria (ULE), miembro de la International Society of Feline Medicine (ISFM), especializada en medicina interna, medicina felina y ecografía.</p>
+  <table class="data">
+    <tr><th>Eugenia Nieto Arza</th><td>Veterinaria, 25+ años de experiencia citados, miembro AVEPA y GEMFE, especialización en medicina felina (postgrado Universidad de Valencia)</td></tr>
+    <tr><th>Ariadna Hinojosa González</th><td>Auxiliar técnico veterinario + peluquería</td></tr>
+    <tr><th>2 especialistas colaboradores externos</th><td>Cirugía/traumatología y endoscopia/laparoscopia, no identificados por nombre según la investigación</td></tr>
+  </table>
+  <div class="callout"><strong>Coherencia con la v1:</strong> "Lorena" aparecía citada por nombre en reseñas positivas encontradas en la v1, sin más contexto en ese momento — ahora se puede vincular con razonable confianza a la Dra. Lorena Aris Ruiz.</div>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Si os interesa, así lo implementaríamos</h2>
-    <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgos 1 y 2</strong> (promesa de urgencias sin refuerzo, sin canal de respaldo) → WhatsApp de urgencias con respuesta automática y explicación de protocolo, igual que en otros negocios del dataset con el mismo problema de canal único.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 3</strong> (especialidades enterradas) → reordenación del mensaje principal de la web para destacar el catálogo real de especialidades.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 8 dimensiones que este informe deja pendientes con honestidad.</li>
-    </ul>
-    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
-  </div>
+  <div class="section-num"><span class="n">03</span><h2>Oferta — servicios, tecnología y financiación</h2></div>
+  <p>Catálogo amplio ya confirmado en la v1 (cardiología, oncología, endocrinología, neurología, oftalmología, traumatología, odontología, geriatría) — la v2 añade contexto de infraestructura: radiología digital y dental, ecógrafo de alta resolución, anestesia inhalatoria con ventilación mecánica electrónica, hospital climatizado con videovigilancia 24h.</p>
+  <table class="data">
+    <tr><th>App WAKYMA</th><td>App propia citada para historial de mascota y recordatorios de vacunación/desparasitación — activo digital que ningún otro caso veterinario del dataset tiene confirmado</td></tr>
+    <tr><th>Financiación FRAKMENTA</th><td>Pago a plazos de 69€ a 1.000€, según la investigación</td></tr>
+    <tr><th>Primera consulta cachorro</th><td>Gratuita, según la investigación</td></tr>
+  </table>
+  <div class="callout"><strong>Diferenciador de mayor valor de esta ampliación:</strong> la acreditación ISFM Silver Cat Friendly Clinic (medicina felina) es, si se confirma, un sello externo real — no una autodenominación de marketing — y citada como única en León. Es exactamente el tipo de diferenciador verificable que Dunford (en el marco de posicionamiento ya usado en este proyecto) distingue de "calidad" o "profesionalidad" como respuesta insuficiente.</div>
+
+  <div class="section-num"><span class="n">04</span><h2>Digital — presencia y canales</h2></div>
+  <table class="data">
+    <tr><th>Web propia</th><td>Diseño moderno, branding morado consistente, según la investigación</td></tr>
+    <tr><th>Blog</th><td>10+ artículos con enfoque SEO (urgencias, plantas tóxicas, piómetra, artrosis) — canal de captación orgánica que ningún otro veterinario del dataset tiene confirmado</td></tr>
+    <tr><th>Redes sociales</th><td>Facebook e Instagram mencionadas por la investigación — no confirmadas de forma independiente</td></tr>
+    <tr><th>Reseñas en Google</th><td>Pendiente — ni la v1 ni la v2 las revisaron directamente sobre el perfil real</td></tr>
+  </table>
+  <div class="callout-alert"><strong>El hallazgo central de la v1 sigue sin resolver:</strong> ninguna de las dos investigaciones ha confirmado o desmentido, mirando Google Business Profile directamente, si existen reseñas reales sobre problemas de atención nocturna. Sigue siendo el punto de mayor riesgo reputacional de este caso hasta que se confirme.</div>
+
+  <div class="section-num"><span class="n">05</span><h2>Competencia directa en León capital</h2></div>
+  <table class="data">
+    <tr><th>Competidor</th><th>Diferenciador</th><th>Relación con Sanivet</th></tr>
+    <tr><td>Zoo Nature</td><td>Av. Alcalde Miguel Castaño 46 — misma avenida, 17 números de distancia</td><td>Competencia de proximidad peatonal directa, según la investigación</td></tr>
+    <tr><td>Ricardo Díez Reyero (ya auditado en este dataset)</td><td>32 años, vínculo académico ULE, oncología y cirugía compleja</td><td>Compite en autoridad y trayectoria — Sanivet compite en modernidad digital y nicho felino</td></tr>
+    <tr><td>Centro San Marcos / Hospital Ferral</td><td>Urgencias 24h</td><td>Mismo terreno de urgencias que Sanivet</td></tr>
+  </table>
+
+  <div class="section-num"><span class="n">06</span><h2>Estrategia — hipótesis por skill operativo</h2></div>
+  <p><strong>faro-auditor-conversion</strong> — la acreditación ISFM está subcomunicada frente a su valor real de diferenciación; la primera consulta de cachorro gratis es un lead magnet sin funnel de conversión visible hacia planes de pago; el blog genera tráfico SEO pero, según la investigación, sin CTA de conversión claro en cada artículo.</p>
+  <p><strong>faro-board-of-advisors</strong> — equipo reducido (2 veterinarias fijas) frente a una oferta de especialidades amplia sostenida por colaboradores externos — riesgo de cuello de botella de capacidad; la proximidad de Zoo Nature en la misma avenida es una amenaza de tráfico peatonal que exige diferenciación visible desde la calle, no solo desde la web.</p>
+  <p><strong>faro-offer-architect</strong> — falta un plan de salud estructurado tipo suscripción (existe la financiación FRAKMENTA, pero no es lo mismo que un plan recurrente); la app WAKYMA es un activo de fidelización probablemente subutilizado; la peluquería podría reposicionarse como servicio de mayor valor percibido (spa terapéutico) en vez de competir por precio con peluquerías genéricas.</p>
+
+  <div class="section-num"><span class="n">07</span><h2>Pendientes — datos que requieren confirmación directa</h2></div>
+  <ul class="pending-list">
+    <li><span class="prio">Crítica</span> — Confirmar directamente en Google Business Profile si existen reseñas negativas sobre atención nocturna (hallazgo central de la v1, ni confirmado ni desmentido por la v2)</li>
+    <li><span class="prio">Crítica</span> — Alcance real del servicio de urgencias de fin de semana/nocturno: ¿es propio y continuo, o guardia rotatoria compartida con otras clínicas de la zona?</li>
+    <li><span class="prio">Alta</span> — Confirmar la acreditación ISFM Silver directamente en el registro de ISFM, no solo en la autodescripción de la web</li>
+    <li><span class="prio">Alta</span> — Objetivos personales de la Dra. Aris Ruiz (mantener, escalar, especializarse más en felino)</li>
+    <li><span class="prio">Media</span> — Nivel de uso real de la app WAKYMA entre los clientes actuales</li>
+  </ul>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Tenéis el catálogo de especialidades más completo del dataset que hemos auditado en León, y una promesa de urgencias 24h que pocos negocios se atreven a hacer. También hemos encontrado una reseña que pone en duda si esa promesa se sostiene igual de bien de noche. No es un juicio — es exactamente el tipo de brecha entre lo que se promete y lo que se percibe que conviene cerrar antes de que la vea más gente."</p>
-    <p style="margin-bottom:0;">No proponemos tocar el servicio médico — lo que hacéis bien, lo hacéis bien. Proponemos que la promesa de urgencias 24h llegue reforzada con la información que hoy solo dan las reseñas de terceros.</p>
+    <p class="quote">"Tenéis un sello de medicina felina que, según vuestra propia web, no tiene ninguna otra clínica de León — y una app propia que la mayoría de vuestra competencia en este dataset no tiene. Al mismo tiempo, seguimos sin poder confirmar si la promesa de urgencias fuera de horario se sostiene igual de bien de noche. Os dejamos un informe honesto: lo que dos investigaciones distintas coinciden en confirmar, y lo que ninguna de las dos ha podido resolver todavía."</p>
+    <p style="margin-bottom:0;">No proponemos competir en más urgencias — proponemos que el diferenciador felino, que es real y verificable, se comunique con la misma fuerza que hoy tiene el cartel de "24h".</p>
   </div>
 
-  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+  <p class="cta-footer">FARO — Inteligencia Operativa para pymes de León con agenda. Documento de trabajo · Dataset EXP-003. Sin compromiso, sin coste por este informe.</p>
 
 </div>
 </body>
