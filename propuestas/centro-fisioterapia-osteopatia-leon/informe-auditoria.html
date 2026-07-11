@@ -1,20 +1,47 @@
 <!--
-  Informe de auditoría — Centro de Fisioterapia y Osteopatía León (C/
-  Lucas de Tuy 7, León). Noveno caso del dataset EXP-003, y primero
-  del vertical de fisioterapia. Flujo estándar faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2. Centro de Fisioterapia y
+  Osteopatía León (C/ Lucas de Tuy 7, León). Noveno caso del dataset
+  EXP-003, primero del vertical de fisioterapia.
 
-  WebFetch no navegó ningún dominio en esta sesión. Informe apoyado en
-  WebSearch con fuente citada.
+  DISCREPANCIA GRAVE ENTRE v1 Y v2 — la más seria detectada hasta
+  ahora en este dataset, más amplia que la de Cachero (que afectaba
+  solo a una cifra de reseñas). Una segunda investigación, que la
+  propia persona que la hizo introduce con incertidumbre ("como no
+  especificaste cuál 'Centro de Fisioterapia', voy a auditar el que
+  parece más representativo... si prefieres otro [Fisiorama,
+  Martín-Granizo, Physiotherapy León], indícamelo"), aporta datos que
+  CONTRADICEN, no amplían, varios hechos centrales de la v1:
 
-  Datos confirmados por búsqueda web:
-  - Dirección: C/ Lucas de Tuy nº7, Bajo (esquina Rodríguez del Valle), 24002 León. ✅
-  - Teléfono: 987 23 14 65. Email: cefisleon@cefisleon.com. ✅
-  - Horario del centro: L-V 8:00-20:00. Horario de atención telefónica: L-V 9:00-14:00 y 16:00-19:00 — más estrecho que el horario del centro. ✅ (web propia)
-  - Servicios muy amplios: drenaje linfático, electroterapia, fisioterapia deportiva/pediátrica/traumatológica, masaje, osteopatía, terapia manual, vendaje neuromuscular, y tratamientos avanzados (punción seca, acupuntura, fibrólisis, EPTE guiada, Super Inductive System, ondas de choque, tracción TRITON DTS, presoterapia, INDIBA). ✅
-  - Trabajan con seguros de salud. ✅
-  - Valoración: cifra entre 4,6 y 4,7 según fuente, con volumen entre 55 y 73 opiniones según fuente — variación menor, no se trata como discrepancia grave (a diferencia del caso de Cachero en este dataset), pero sin confirmar en Google directamente. 🟡
-  - Personal citado por nombre en reseñas: Marta y Patricia (fisioterapeutas). ✅
-  - Reseña recurrente: precios percibidos como elevados para algunos tratamientos — hallazgo real de fricción de precio. ✅
+  - Fundadores/equipo: v1 encontró personal citado en reseñas como
+    "Marta y Patricia". v2 identifica como fundadores y directores a
+    "Jorge Cañal González y Félix Cañal González" (hermanos). Ningún
+    nombre coincide entre las dos investigaciones.
+  - Año de fundación: v1 no tenía ningún dato. v2 afirma 1995 (31 años).
+  - Horario: v1 tenía horario específico del centro (L-V 8:00-20:00)
+    y del teléfono (L-V 9:00-14:00/16:00-19:00), citado como visto en
+    la web propia. v2 afirma explícitamente que el horario "no está
+    especificado en la web" — contradice directamente a la v1, no la
+    complementa.
+  - Email: v1 citaba cefisleon@cefisleon.com como visto en la web
+    propia. v2 dice "no identificado públicamente".
+  - Catálogo de servicios: v1 encontró una lista extensa de
+    tratamientos avanzados (INDIBA, ondas de choque, EPTE guiada,
+    punción seca, fibrólisis, Super Inductive System). v2 encuentra
+    una lista mucho más básica (terapia manual, fisioterapia del
+    deporte y traumatológica, osteopatía, acupuntura) sin mencionar
+    ninguna de esas tecnologías avanzadas.
+
+  La dirección (C/ Lucas de Tuy 7, 24002 León) y el teléfono (987 23
+  14 65 / 987231465) SÍ coinciden entre ambas investigaciones y con el
+  dataset original — es, casi con toda seguridad, el mismo negocio
+  físico. Pero el resto de los datos son tan distintos que no se puede
+  fusionar como si fueran complementarios. No se ha podido verificar
+  ninguna de las dos versiones de forma independiente en esta sesión
+  (WebFetch sigue caído). Este informe mantiene AMBAS versiones
+  documentadas por separado, sin elegir una — es el caso de más alto
+  riesgo de error de todo el dataset hasta la fecha, y no debe usarse
+  en una conversación real sin navegar cefisleon.com directamente
+  primero.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -94,31 +121,49 @@
   .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
   .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+  .discrepancy { background: #FBEAE7; border: 2px solid var(--color-alert); border-radius: 8px; padding: 20px 24px; margin: 0 0 32px; font-size: 14px; }
+  .discrepancy strong { color: var(--color-alert); }
+  .discrepancy table { width: 100%; border-collapse: collapse; margin: 14px 0 0; font-size: 13px; }
+  .discrepancy th, .discrepancy td { text-align: left; padding: 6px 8px; border-bottom: 1px solid #E5B7AE; vertical-align: top; }
+  .discrepancy th { font-size: 10px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.7; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026 · v2</span></div>
 
   <p class="cover-meta">Auditoría de conversión · Centro de Fisioterapia y Osteopatía León</p>
-  <h1>El centro abre 12 horas al día. El teléfono, solo 8.</h1>
+  <h1>El centro abre 12 horas al día. El teléfono, solo 8 — según una investigación. Según otra, el horario ni siquiera está publicado.</h1>
+
+  <div class="discrepancy">
+    <strong>⚠️ Discrepancia grave sin resolver — la más seria de todo el dataset hasta ahora.</strong> Dos investigaciones distintas sobre este mismo negocio (misma dirección y teléfono confirmados en ambas) dan datos que se contradicen, no se complementan, en varios puntos centrales. No usar ninguna de las dos versiones en una conversación real sin confirmar antes navegando cefisleon.com directamente.
+    <table>
+      <tr><th>Dato</th><th>Versión 1 (esta auditoría)</th><th>Versión 2 (investigación posterior)</th></tr>
+      <tr><td>Equipo</td><td>Personal citado en reseñas: Marta y Patricia</td><td>Fundadores: Jorge y Félix Cañal González (hermanos)</td></tr>
+      <tr><td>Fundación</td><td>Sin dato</td><td>1995 (31 años)</td></tr>
+      <tr><td>Horario</td><td>Centro 8:00-20:00, teléfono 9:00-14:00/16:00-19:00</td><td>"No especificado en la web"</td></tr>
+      <tr><td>Email</td><td>cefisleon@cefisleon.com</td><td>"No identificado públicamente"</td></tr>
+      <tr><td>Catálogo</td><td>Amplio: INDIBA, ondas de choque, EPTE, punción seca</td><td>Básico: terapia manual, deporte, traumatología, osteopatía</td></tr>
+    </table>
+    <p style="margin:14px 0 0;">Lo único que coincide entre ambas: dirección (C/ Lucas de Tuy 7) y teléfono (987 23 14 65) — con alta probabilidad es el mismo negocio, pero el resto de la ficha no se puede dar por buena hasta verificarla de primera mano.</p>
+  </div>
 
   <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar cefisleon.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar cefisleon.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. Dado lo anterior, esto aplica ahora con más fuerza que en cualquier otro caso del dataset.
   </div>
 
   <div class="intro">
-    <p style="margin:0;">Este es el primer centro de fisioterapia auditado en el dataset. Tiene un catálogo de tratamientos avanzados (punción seca, ondas de choque, INDIBA, EPTE guiada) que pocos centros de este tamaño en León pueden igualar — una señal de autoridad clínica real. También tiene dos fricciones concretas y verificables: un horario de atención telefónica más corto que el horario real del centro, y varias reseñas que mencionan el precio como motivo de duda.</p>
+    <p style="margin:0;">Este es el primer centro de fisioterapia auditado en el dataset, y el primer caso donde dos investigaciones independientes se contradicen en datos centrales (ver aviso de discrepancia arriba) en vez de complementarse. La v1 de este informe describía un catálogo de tratamientos avanzados y una fricción de horario telefónico; la v2 describe un centro más básico, dirigido por otras personas, sin horario publicado. Ambas coinciden en la dirección y el teléfono — es, con alta probabilidad, el mismo negocio — pero el resto exige verificación directa antes de actuar.</p>
   </div>
 
   <div class="good-box">
-    <h2>🟢 Lo que funciona</h2>
+    <h2>🟢 Lo que funciona, según esta auditoría (v1) — ver discrepancia arriba antes de dar nada por hecho</h2>
     <ul>
-      <li>Catálogo de tratamientos avanzados poco común: punción seca, ondas de choque, INDIBA, fibrólisis, EPTE guiada, tracción TRITON DTS — autoridad clínica real, no genérica. ✅</li>
-      <li>Horario del centro amplio: L-V de 8:00 a 20:00, doce horas de apertura. ✅</li>
+      <li>Catálogo de tratamientos avanzados poco común: punción seca, ondas de choque, INDIBA, fibrólisis, EPTE guiada, tracción TRITON DTS — autoridad clínica real, no genérica. ✅ <em>(disputado por la v2 — ver tabla de discrepancia)</em></li>
+      <li>Horario del centro amplio: L-V de 8:00 a 20:00, doce horas de apertura. ✅ <em>(disputado por la v2)</em></li>
       <li>Trabajan con seguros de salud — reduce la barrera de precio para quien tiene cobertura. ✅</li>
-      <li>Personal citado por nombre en reseñas (Marta, Patricia) con comentarios sobre trato cercano y profesionalidad. ✅</li>
+      <li>Personal citado por nombre en reseñas (Marta, Patricia) con comentarios sobre trato cercano y profesionalidad. ✅ <em>(disputado por la v2, que da otros nombres)</em></li>
     </ul>
   </div>
 
@@ -193,10 +238,15 @@
     <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
   </div>
 
+  <div class="recommendation">
+    <h2>Competencia directa en León (dato nuevo, no en conflicto entre versiones)</h2>
+    <p>Según la investigación más reciente, el mercado de fisioterapia en León incluye centros con posicionamientos muy distintos: Fisiorama (3 centros, tecnología avanzada, neurorehabilitación, suelo pélvico), Fisioterapia Martín-Granizo (equipo de 8, integración con entrenamiento físico), y Physiotherapy León (un solo profesional, reputación fuerte de boca a boca con más de 12 reseñas emotivas). Si el catálogo avanzado de la v1 de este informe se confirma, este centro competiría de tú a tú con Fisiorama en tecnología; si se confirma la versión más básica de la v2, competiría más bien en el segmento de fisioterapia tradicional de barrio frente a estos competidores más especializados — el hueco entre ambos escenarios es precisamente lo que hay que resolver antes de proponer cualquier estrategia.</p>
+  </div>
+
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Tenéis un catálogo de tratamientos avanzados que pocos centros de fisioterapia en León pueden igualar, y aun así encontramos reseñas que dudan del precio — probablemente porque no se ve la diferencia entre una sesión estándar y una con tecnología real detrás. Os dejamos un informe honesto sobre esto y sobre una franja horaria donde el teléfono no coincide con el horario del centro."</p>
-    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que el valor real de lo que ya hacéis se entienda antes de que alguien decida por precio.</p>
+    <p class="quote">"Hemos intentado auditar vuestro centro dos veces, con dos investigaciones distintas, y hemos obtenido resultados que no coinciden en varios puntos importantes — desde quién dirige el centro hasta qué tratamientos ofrecéis. Preferimos deciros esto con total honestidad antes que entregaros un informe bonito construido sobre datos que no hemos podido confirmar."</p>
+    <p style="margin-bottom:0;">Antes de proponer nada, lo primero que os pedimos es 10 minutos para confirmar con vosotros los datos básicos — así el siguiente informe será el primero de verdad fiable.</p>
   </div>
 
   <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
