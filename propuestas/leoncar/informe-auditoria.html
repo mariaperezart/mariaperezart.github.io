@@ -1,40 +1,40 @@
 <!--
-  Informe de auditoría — LeonCar (Av. del Alcalde Miguel Castaño 28,
-  León). Décimo caso del dataset EXP-003, y primero del vertical de
-  talleres mecánicos. Flujo estándar faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2, corrige un dato importante de la
+  v1 y amplía a auditoría operativa completa. Décimo caso del dataset
+  EXP-003, primero del vertical de talleres, primero de este caso con
+  los tres skills operativos.
 
-  WebFetch no navegó ningún dominio en esta sesión. Informe apoyado en
-  WebSearch con fuente citada.
+  CORRECCIÓN RESPECTO A LA v1: la v1 afirmaba "Sergio Blanco, 30 años
+  de experiencia en mecánica" dando a entender que llevaba décadas al
+  frente del taller. Una investigación posterior, con navegación
+  directa de leoncar.es y lectura de un artículo de León Noticias,
+  aclara que Sergio tomó la dirección del taller en julio de 2024 —
+  hace apenas un año — y que el local funcionaba antes bajo la
+  franquicia Midas (un testimonio de cliente lo confirma: "desde
+  cuando era el antiguo midas, 2019"). El taller en sí tiene 27+ años
+  de historia (fundado en 1998, según la investigación), pero bajo
+  distintas marcas y direcciones — no 27 años del mismo director. Se
+  retira la cifra "30 años de experiencia de Sergio" del informe y de
+  la landing por no estar confirmada; tampoco se ha confirmado el
+  apellido "Blanco". La historia real (taller con historia larga,
+  antigua franquicia Midas, nueva dirección y marca propia desde
+  2024) es, de hecho, un ángulo más interesante que el original.
 
-  Nota sobre el ICP: el dataset original (02-investigacion/dataset.md)
-  ya clasificó a LeonCar como "independiente, no cadena" al excluir
-  franquicias con compra centralizada (Feu Vert, Norauto, Euromaster,
-  Northgate). Una investigación adicional confirma que LeonCar opera
-  bajo las marcas de red Confortauto y RecOficial Service (redes
-  multimarca de más de 700 talleres en España) — esto es una afiliación
-  de compra/marca, no una cadena de propiedad centralizada: el taller
-  lo dirige y posee Sergio Blanco, con 30 años de experiencia, según la
-  investigación. Se declara aquí por transparencia, coherente con el
-  ICP de FARO (decisor propio, sin aprobación externa de compra).
-
-  Datos confirmados por búsqueda web:
-  - Dirección: Av. del Alcalde Miguel Castaño, 28, 24005 León. ✅
-  - Teléfono: 987 25 11 56. ✅
-  - Horario: L-V 8:30-19:30, fin de semana cerrado — coincide entre dos fuentes distintas. ✅
-  - Dirigido por Sergio Blanco, 30 años de experiencia en mecánica, según la investigación. ✅
-  - Taller multimarca y multiservicio: neumáticos, baterías, aire acondicionado, distribución, embragues, revisión oficial (preparación para ITV/inspecciones). ✅
-  - Valoración: 4,3/5 sobre 96 opiniones en Google My Business. ✅ (la valoración más baja de los 4 casos auditados en esta ronda, aunque sigue siendo sólida)
-  - Más de 25 años de trayectoria del taller (según su propia comunicación). ✅
+  PROVENENCIA (mismo criterio que el resto del dataset en esta ronda):
+  ficha societaria, historia de la marca y competencia proceden de una
+  investigación hecha fuera de esta sesión. WebFetch no funcionó aquí
+  (403 confirmado de nuevo antes de esta revisión) — no se ha vuelto a
+  verificar de forma independiente.
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de conversión — LeonCar</title>
+<title>Auditoría operativa — LeonCar</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --color-primary: #2B2E33; --color-accent: #E0692A; --color-ink: #20262B;
@@ -62,151 +62,136 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
-  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
-  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
-  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
-  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  h1 { font-size: 30px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 72ch; } ul { max-width: 72ch; }
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
-  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
-  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
-  .caveat strong { color: var(--color-pending); }
-  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
-  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
-  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
-  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
-  .journey strong { font-style: normal; color: var(--color-accent); }
-  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
-  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
-  .finding__title h2 { margin: 0; color: var(--color-ink); }
-  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
-  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
-  .finding__part p { margin: 0; }
-  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
-  .recommendation h2 { color: var(--color-ink); }
-  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
-  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
-  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
-  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-  .score-table td.why { font-size: 13px; opacity: 0.8; }
-  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
-  .score-total .label { font-size: 13px; opacity: 0.7; }
-  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
-  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
-  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
-  .quickwins li:last-child { border-bottom: none; }
+  .tagline { font-size: 13px; color: var(--color-ink); opacity: 0.6; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 6px; }
+  .cover-sub { font-size: 15px; opacity: 0.8; margin-bottom: 28px; }
+  .provenance { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .provenance strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 2px solid var(--color-alert); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .correction strong { color: var(--color-alert); }
+  .verdict { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 26px; margin: 0 0 28px; }
+  .verdict h2 { margin-top: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 44px; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 12px; opacity: 0.7; }
+  .section-num { display: flex; align-items: baseline; gap: 10px; margin: 56px 0 20px; padding-top: 24px; border-top: 3px solid var(--color-ink); }
+  .section-num:first-of-type { margin-top: 0; }
+  .section-num .n { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-accent); text-transform: uppercase; }
+  .section-num h2 { margin: 0; }
+  table.data { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 13.5px; }
+  table.data th, table.data td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .callout { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout strong { color: var(--color-primary); }
+  .callout-alert { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout-alert strong { color: var(--color-alert); }
+  .roadmap-phase { margin-bottom: 32px; }
+  .roadmap-phase h3 { color: var(--color-ink); background: var(--color-bg); display: inline-block; padding: 4px 12px; border-radius: 6px; }
+  .pending-list { list-style: none; margin: 0; padding: 0; }
+  .pending-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .pending-list .prio { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-pending); }
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
   .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
-  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO — Inteligencia Operativa</span><span class="date">11 jul 2026 · v2</span></div>
+  <div class="tagline">Convertimos investigación en resultados medibles</div>
 
-  <p class="cover-meta">Auditoría de conversión · LeonCar</p>
-  <h1>25 años de mecánica y 30 de experiencia del dueño. La valoración online todavía no lo refleja del todo.</h1>
+  <p class="cover-meta">Informe de Auditoría Operativa · LeonCar</p>
+  <h1>27 años de taller, tres nombres distintos, y un director nuevo desde hace un año.</h1>
+  <p class="cover-sub">Dataset EXP-003 · Caso adicional (taller mecánico) · 3 skills operativos (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect)</p>
 
-  <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar leoncar.es directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  <div class="correction">
+    <strong>Corrección respecto a la v1 de este informe:</strong> la v1 afirmaba "Sergio Blanco, 30 años de experiencia en mecánica" dando a entender una trayectoria personal de décadas al frente del taller. Una investigación posterior aclara que Sergio tomó la dirección en julio de 2024 — hace un año — y que el local operó antes bajo la franquicia Midas (confirmado por un testimonio de cliente: "desde cuando era el antiguo midas, 2019"). El taller tiene 27+ años de historia real (fundado en 1998), pero repartidos entre distintas marcas y direcciones, no 27 años del mismo director. Se retira la cifra de "30 años de Sergio" — no confirmada — de este informe y de la landing.
   </div>
 
-  <div class="intro">
-    <p style="margin:0;">LeonCar es el primer taller mecánico auditado en este dataset. Lo dirige Sergio Blanco, con 30 años de experiencia en mecánica, y el taller lleva más de 25 años en León, ofreciendo servicio multimarca (neumáticos, baterías, distribución, embragues, revisión oficial). Su valoración en Google (4,3/5 sobre 96 opiniones) es sólida pero es la más baja de los cuatro casos auditados en esta ronda del dataset — un margen de mejora real, no solo una cuestión de comunicación.</p>
+  <div class="provenance">
+    <strong>Provenencia del resto de datos:</strong> ficha societaria (razón social, CIF), historia de la marca, catálogo de servicios y mapa de competencia proceden de una investigación hecha fuera de esta sesión (WebFetch no funcionó aquí — 403 confirmado de nuevo antes de esta revisión). No se han vuelto a verificar de forma independiente.
   </div>
 
-  <div class="good-box">
-    <h2>🟢 Lo que funciona</h2>
-    <ul>
-      <li>25+ años de trayectoria del taller, con Sergio Blanco (30 años de experiencia) al frente. ✅</li>
-      <li>Servicio multimarca y multiservicio: neumáticos, baterías, aire acondicionado, distribución, embragues, revisión oficial. ✅</li>
-      <li>"Revisión oficial" en el catálogo — señal de que pueden preparar el vehículo para inspecciones oficiales, no solo mantenimiento básico. ✅</li>
-      <li>4,3/5 sobre 96 opiniones en Google — valoración sólida, con margen real de mejora. ✅</li>
-    </ul>
+  <div class="verdict">
+    <h2>Veredicto FARO</h2>
+    <p style="margin-bottom:0;">LeonCar no es "un taller con 27 años del mismo dueño" — es un local con 27 años de historia real que ha cambiado de marca (de una franquicia Midas a una identidad propia, LeonCar, bajo redes de compra Confortauto/RecOficial) y de dirección (Sergio, desde julio de 2024). Es una historia de continuidad de servicio con relanzamiento reciente de marca — un ángulo distinto, y potencialmente más honesto y más útil comercialmente, que el de "empresario veterano" que sugería la v1 de este informe. Los testimonios de clientes que llevan años volviendo, incluso a través del cambio de marca, son el activo real más fuerte.</p>
   </div>
 
-  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
-  <div class="journey">
-    <p><strong>Busco</strong> "taller mecánico León" o "cambio de neumáticos León" — a menudo con prisa, el coche ya está dando un problema.</p>
-    <p><strong>Comparo</strong> valoraciones entre varios talleres — 4,3/5 es buena, pero al lado de otros negocios con 4,8 o 4,9 puede no destacar tanto a primera vista.</p>
-    <p><strong>No sé</strong>, solo con la cifra, que detrás hay 25 años de trayectoria y un mecánico con 30 años de experiencia — ese contexto no está en la cifra de estrellas.</p>
-    <p><strong>Decido</strong> en parte por la valoración numérica, sin haber visto el contexto que la explicaría mejor.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">1998</div><div class="lbl">año de fundación del taller, según la investigación</div></div>
+    <div class="stat"><div class="num">Jul 2024</div><div class="lbl">Sergio toma la dirección — no décadas, un año</div></div>
+    <div class="stat"><div class="num">700+</div><div class="lbl">talleres en la red Confortauto/RecOficial Service</div></div>
+    <div class="stat"><div class="num">5</div><div class="lbl">testimonios positivos citados en la propia web</div></div>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La valoración (4,3/5) es buena, pero compite en desventaja numérica sin el contexto que la explica</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>4,3/5 sobre 96 opiniones es una valoración sólida, pero es la más baja de los cuatro casos auditados en esta ronda del dataset (todos por encima de 4,4) — sin que se conozca si la web comunica la trayectoria de 25 años y la experiencia del mecánico principal (30 años) como contexto de esa cifra.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que compara varios talleres solo por estrellas puede descartar LeonCar frente a otro con una décima más, sin conocer el contexto de trayectoria y experiencia que sí podría inclinar la decisión.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si la web comunica "25 años en León" y "30 años de experiencia del mecánico" junto a la valoración, y lanzar una campaña sencilla de solicitud de reseñas a clientes recientes para subir el volumen y, con suerte, la nota media.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Da contexto a una cifra que, sola, compite en desventaja frente a negocios con más volumen de reseñas.</p></div>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>El servicio de "revisión oficial" es un activo de confianza que puede no estar destacado</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>El catálogo incluye "revisión oficial" (preparación para inspecciones), un servicio que implica un nivel de homologación y confianza mayor que el mantenimiento básico — no se ha confirmado si aparece destacado en el mensaje principal de la web.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que necesita pasar una inspección oficial busca específicamente un taller que pueda prepararlo — si ese servicio está enterrado en una lista larga, se pierde la oportunidad de captar esa búsqueda concreta.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar si "revisión oficial" tiene su propio espacio destacado, no solo una línea en una lista de servicios genérica.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Capta búsquedas específicas de un servicio de mayor confianza y probablemente mayor margen.</p></div>
-  </div>
-
-  <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda con necesidad concreta → Trayectoria (25 años, mecánico con 30 años de experiencia) como contexto de la valoración → Servicios destacados por relevancia (revisión oficial, neumáticos) → Contacto directo. Hoy no se puede confirmar si este orden es el real en la web — pendiente de navegación directa.</p>
-  </div>
-
-  <h2>Puntuación FARO</h2>
-  <table class="score-table">
-    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Confianza</td><td class="num">7/10</td><td class="why">25 años de trayectoria + mecánico con 30 años de experiencia, señal real de solidez.</td></tr>
-    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Servicio de revisión oficial implica homologación real, sin confirmar si se comunica como tal.</td></tr>
-    <tr><td>Prueba social</td><td class="num">5/10</td><td class="why">4,3/5 sobre 96 opiniones, sólido pero el más bajo de los casos auditados en esta ronda.</td></tr>
-    <tr><td>Diferenciación</td><td class="num">4/10</td><td class="why">Multimarca y revisión oficial son reales, sin confirmar si se comunican frente a talleres genéricos de la zona.</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num">5/10</td><td class="why">Teléfono claro; sin confirmar canal de WhatsApp ni cita online.</td></tr>
-    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
-    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta el servicio en la propia web.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web explica qué pasa al contactar (presupuesto, cita, tiempos).</td></tr>
-    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
-    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
-    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
-    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la trayectoria como palanca de confianza.</td></tr>
+  <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
+  <table class="data">
+    <tr><th>Nombre comercial</th><td>LeonCar</td></tr>
+    <tr><th>Razón social</th><td>Leon Car Motor Sociedad Limitada, según la investigación — sin confirmar de forma independiente</td></tr>
+    <tr><th>CIF</th><td>B70788757, según la investigación</td></tr>
+    <tr><th>Dirección social</th><td>Calle Real 13 Bajo, Fontoria, Fabero (León) — distinta de la dirección del taller en León capital, patrón habitual en pymes con sede social fuera de la ubicación operativa</td></tr>
+    <tr><th>Dirección del taller</th><td>Av. del Alcalde Miguel Castaño 28, León — coincide con el dato ya confirmado en este dataset</td></tr>
+    <tr><th>Teléfono</th><td>987 251 156 (fijo) · 663 022 727 (móvil), según la investigación — coincide con el fijo ya confirmado</td></tr>
+    <tr><th>Historia de marca</th><td>Local operando desde 1998; funcionó como franquicia Midas al menos hasta 2019 (según testimonio de cliente); rebranding a LeonCar en julio de 2024 bajo la nueva dirección de Sergio, manteniendo la afiliación a las redes Confortauto y RecOficial Service</td></tr>
   </table>
-  <div class="score-total"><span class="big">27/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 54/100 sobre esas 5 — las 8 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Quick wins — ordenados por impacto</h2>
-    <ol class="quickwins">
-      <li>Lanzar una campaña sencilla de solicitud de reseñas a clientes recientes — el volumen (96) es el más bajo de la ronda y tiene recorrido claro de mejora.</li>
-      <li>Comunicar los 25 años de trayectoria y la experiencia del mecánico principal junto a la valoración, no solo como dato suelto.</li>
-      <li>Destacar el servicio de revisión oficial de forma independiente, no como una línea más en la lista.</li>
-      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
-    </ol>
-  </div>
+  <div class="section-num"><span class="n">02</span><h2>Equipo</h2></div>
+  <p><strong>Sergio</strong> — director desde julio de 2024, según la investigación. Apellido no confirmado ("Blanco" en la v1 de este informe no tiene fuente sólida). Testimonios de clientes lo describen como "gran profesional" y destacan que asesora en todo momento.</p>
+  <p>Equipo técnico: al menos dos mecánicos adicionales, mencionados en testimonios como "Sergio y sus dos compañeros" — sin nombres confirmados.</p>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Si os interesa, así lo implementaríamos</h2>
-    <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (valoración sin contexto) → seguimiento automático post-servicio con solicitud de reseña, y mensaje de trayectoria junto a la cifra.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (revisión oficial poco visible) → destacar este servicio de forma independiente en el mensaje principal.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real.</li>
-    </ul>
-    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
-  </div>
+  <div class="section-num"><span class="n">03</span><h2>Oferta — servicios y garantías</h2></div>
+  <p>Catálogo amplio, coherente con lo ya confirmado en este dataset: neumáticos, aceites, baterías, frenos, amortiguadores, climatización, mecánica general (distribución, embragues), electrónica, preparación para ITV. Según la investigación, garantía en todas las reparaciones, y garantía específica de 2 años en tubos de escape (visible en fotografía del propio taller).</p>
+  <div class="callout"><strong>Ausencia de producto empaquetado:</strong> el servicio de preparación para ITV se presta, pero no está confirmado que exista como paquete con nombre propio o garantía explícita ("pasa o te lo dejamos listo sin coste") — es tratado como un servicio más de la lista, no como un producto de captación diferenciado.</div>
+
+  <div class="section-num"><span class="n">04</span><h2>Digital — presencia y canales</h2></div>
+  <table class="data">
+    <tr><th>Web propia</th><td>leoncar.es, diseño moderno con testimonios reales, según la investigación</td></tr>
+    <tr><th>Redes sociales</th><td>Ninguna identificada (Facebook, Instagram, LinkedIn, YouTube)</td></tr>
+    <tr><th>Blog / contenidos</th><td>Ninguno identificado</td></tr>
+    <tr><th>Google Business</th><td>No verificado directamente — dirección confirmada solo en directorios de terceros</td></tr>
+  </table>
+  <div class="callout"><strong>Activo más fuerte, infrautilizado:</strong> un testimonio cita 30 años de fidelidad como cliente ("como clientes desde hace 30 años... seguiremos siendo fieles a su trabajo") — atravesando el cambio de Midas a LeonCar. Es una prueba de continuidad de servicio real y poco común, y no hay evidencia de que esté replicada en Google Reviews o redes, donde tendría mucho más alcance que en la web propia.</div>
+
+  <div class="section-num"><span class="n">05</span><h2>Competencia directa en León</h2></div>
+  <table class="data">
+    <tr><th>Tipo</th><th>Diferenciador citado</th></tr>
+    <tr><td>Talleres oficiales de marca (BMW, VW, Kia...)</td><td>Garantía de marca, especialización</td></tr>
+    <tr><td>Redes nacionales (Midas, Speedy, Norauto)</td><td>Precio competitivo, marketing masivo — la misma categoría que LeonCar dejó atrás al independizarse de Midas</td></tr>
+    <tr><td>Talleres independientes de barrio</td><td>Precio, proximidad, sin respaldo de red</td></tr>
+  </table>
+  <p style="margin-bottom:0;">Según la investigación, LeonCar ocupa una posición híbrida poco común: independencia de marca local (ya no es una franquicia) con respaldo de compra y garantía de una red nacional (Confortauto/RecOficial) — combina lo mejor de ambas categorías de competidor, si se comunica con claridad.</p>
+
+  <div class="section-num"><span class="n">06</span><h2>Estrategia — hipótesis por skill operativo</h2></div>
+  <p><strong>faro-auditor-conversion</strong> — los testimonios de fidelidad de décadas son un activo de marketing real y subutilizado, ausente de Google Reviews y redes sociales; el horario sin fin de semana puede ser punto de fuga para clientes que trabajan entre semana.</p>
+  <p><strong>faro-board-of-advisors</strong> — el relanzamiento de marca (Midas → LeonCar, julio 2024) es una oportunidad de comunicación que parece no haberse acompañado de una estrategia digital; la dirección social en Fabero frente al taller operativo en León capital debería aclararse para entender si hay más ubicaciones o es solo un domicilio fiscal heredado; la transición del parque móvil hacia vehículos eléctricos es una amenaza a 3-5 años si el taller no se forma en electrificación, según la investigación.</p>
+  <p><strong>faro-offer-architect</strong> — falta un plan de mantenimiento preventivo estructurado con nombre propio; la preparación para ITV podría empaquetarse con una garantía explícita de resultado; la garantía de 2 años en tubos de escape podría extenderse como argumento de confianza a más servicios en vez de quedar solo en un cartel del taller; el respaldo de Confortauto/RecOficial (700+ talleres) es un diferenciador que probablemente la mayoría de clientes locales no conoce, y podría ser el argumento central: "tu taller de siempre, con la garantía de una red nacional".</p>
+
+  <div class="section-num"><span class="n">07</span><h2>Pendientes — datos que requieren confirmación directa</h2></div>
+  <ul class="pending-list">
+    <li><span class="prio">Crítica</span> — Apellido real de Sergio y su trayectoria profesional previa (la v1 de este informe usó "Blanco" y "30 años" sin fuente sólida)</li>
+    <li><span class="prio">Crítica</span> — Objetivos de Sergio como nuevo director (¿consolidar la transición de marca, escalar, mantener?)</li>
+    <li><span class="prio">Alta</span> — Relación exacta entre la dirección social en Fabero y el taller operativo en León capital</li>
+    <li><span class="prio">Alta</span> — Estado real de Google Business Profile (reseñas, puntuación) — no verificado directamente en ninguna de las dos investigaciones</li>
+    <li><span class="prio">Media</span> — Capacidad real del taller (puestos, elevadores) y si hay margen para nuevos servicios (ITV empaquetada, flotas)</li>
+  </ul>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"25 años de taller y 30 de experiencia del mecánico que lo dirige es un nivel de trayectoria que muy pocos talleres de León pueden decir — y aun así vuestra valoración online, siendo buena, es la más baja de los cuatro negocios que auditamos en esta ronda. Os dejamos un informe honesto sobre cómo cerrar esa distancia entre lo que ya sois y lo que se ve desde fuera."</p>
-    <p style="margin-bottom:0;">No proponemos cambiar cómo arregláis los coches — proponemos que la trayectoria real se refleje también en cómo os encuentra un cliente nuevo.</p>
+    <p class="quote">"Tenéis clientes que llevan 30 años volviendo a este taller, incluso cuando cambió de Midas a LeonCar — eso es un nivel de fidelidad que no se compra con marketing. Y al mismo tiempo, esa historia real de continuidad no está en ningún sitio donde un cliente nuevo pueda verla antes de decidir. Os dejamos un informe honesto: corregimos un dato que habíamos publicado mal sobre la trayectoria de Sergio, y os contamos lo que sí hemos podido confirmar."</p>
+    <p style="margin-bottom:0;">No proponemos inventar una historia — proponemos contar la real, que es mejor: un taller de siempre, con dirección nueva y respaldo de una red nacional.</p>
   </div>
 
-  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+  <p class="cta-footer">FARO — Inteligencia Operativa para pymes de León con agenda. Documento de trabajo · Dataset EXP-003. Sin compromiso, sin coste por este informe.</p>
 
 </div>
 </body>
