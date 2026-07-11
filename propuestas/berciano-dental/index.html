@@ -1,23 +1,27 @@
 <!--
-  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  BORRADOR DE PROPUESTA v2 — no está publicado ni es el sitio oficial
   de este negocio. Candidato de experimentos/EXP-003-pymes-leon.
 
-  Datos públicos reales usados (búsqueda web, bercianodental.com no
-  accesible por WebFetch — 403 — así que no se pudo leer paleta ni
-  horario reales del sitio; identidad visual 100% original):
-  - Dirección: C/ Los Osorios, 2 (Plaza del Espolón), León.
-  - Teléfono: 987 35 59 24.
-  - Especialidad declarada: odontología estética, Invisalign,
-    blanqueamiento, implantología, ortodoncia, periodoncia,
-    tratamientos personalizados combinando especialidades.
+  v2: paleta corregida a partir de una captura real de la portada de
+  bercianodental.com aportada por el usuario (WebFetch seguía dando
+  403). Su marca real es verde oliva oscuro + crema/verde pálido, con
+  logotipo "B | Berciano · Clínica Dental" — no la esmeralda/dorado
+  inventada en v1. La captura también confirma un hero limpio, un
+  único CTA ("PIDE CITA") y teléfono visible con icono — ver
+  informe-auditoria.html v2 para el detalle de qué cambió.
+
+  Datos públicos reales usados:
+  - Dirección: C/ Los Osorios, 2 (Plaza del Espolón), León. ✅ confirmada en captura.
+  - Teléfono: 987 35 59 24. ✅ confirmado en captura.
+  - Especialidad declarada: diseño de sonrisa (servicio central,
+    confirmado por búsqueda web con fuente citada), Invisalign,
+    blanqueamiento, implantología, ortodoncia, periodoncia.
   - Horario: NO confirmado en ninguna fuente — no se inventa, se deja
-    "consultar horario" en vez de un horario ficticio. Confirmarlo
-    antes de publicar.
-  - WhatsApp: no confirmado si el 987 35 59 24 tiene WhatsApp Business
-    activo (formato de fijo) — verificar antes de usarlo como CTA en
-    una conversación real; mientras tanto el CTA enlaza a ese número
-    por si acaso, pero avisar al negocio de que puede necesitar un
-    número de móvil distinto.
+    "consultar horario" en vez de un horario ficticio.
+  - WhatsApp: no visible en el hero de la captura real — a diferencia
+    de la veterinaria, aquí no hay confirmación de que exista un canal
+    de WhatsApp activo. El CTA de esta landing lo ofrece como opción,
+    pero debe confirmarse con el negocio antes de publicar.
 
   Enfoque distinto al de la landing de Centro León (veterinaria):
   esto no es un servicio de urgencias — es una clínica de odontología
@@ -25,12 +29,6 @@
   implantes). El CTA principal es "reservar cita de valoración", no
   "llamar ahora" — no hay ansiedad de urgencia que resolver aquí, hay
   fricción de "no sé si me van a devolver la llamada a tiempo".
-
-  Identidad visual original (verde esmeralda + dorado cálido, tipografía
-  Cormorant Garamond + Karla) — deliberadamente distinta a la paleta
-  magenta/coral usada en la landing de Centro León, para que cada
-  propuesta del dataset tenga su propia identidad y no parezcan
-  copias de la misma plantilla.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -44,15 +42,16 @@
 <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --color-bg: #F6F4EE;
+    /* Verde oliva + crema real de Berciano Dental, tomado de captura de su portada */
+    --color-bg: #F6F5EC;
     --color-surface: #FFFFFF;
-    --color-ink: #221F1C;
-    --color-ink-muted: #6B6459;
-    --color-primary: #1F5B4E;
-    --color-primary-deep: #123A32;
-    --color-gold: #B68A2E;
-    --color-gold-deep: #96701F;
-    --color-border: #E6E0D2;
+    --color-ink: #24261C;
+    --color-ink-muted: #66684F;
+    --color-primary: #454B33;
+    --color-primary-deep: #2B2F1E;
+    --color-gold: #C9D08B;
+    --color-gold-deep: #A9B36B;
+    --color-border: #E2E4D2;
     --color-whatsapp: #25D366;
     --font-display: 'Cormorant Garamond', Georgia, serif;
     --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
