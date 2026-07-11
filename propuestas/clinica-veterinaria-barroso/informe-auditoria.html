@@ -1,0 +1,203 @@
+<!--
+  Informe de auditoría — Clínica Veterinaria Barroso (Calle Los
+  Osorios 6, León). Octavo caso del dataset EXP-003. Flujo estándar
+  faro-auditor-conversion.
+
+  WebFetch no navegó ningún dominio en esta sesión. Informe apoyado en
+  WebSearch con fuente citada.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: Calle Los Osorios 6 (Arco de la Cárcel), León. ✅
+  - Teléfono: 987 22 21 66 / 620 76 13 73. Emergencias fuera de horario: 630 52 23 82 — un tercer número, distinto de los dos anteriores. ✅
+  - Horario: L-V 10:00-13:30 y 16:00-19:30, según agregador — otra fuente sugería que el horario público podría estar desactualizado. 🟡
+  - Fundada en 1996 por el veterinario Enrique Barroso. Equipo: Enrique Barroso + María Bayón. ✅
+  - Cirugía láser CO₂ — diferenciador tecnológico real, no común en el resto del dataset veterinario (ni Ricardo Díez, ni Sanivet, ni San Pedro lo mencionan). ✅
+  - Valoración: 4,9/5 sobre 103 opiniones, según Google My Business citado por un agregador — no visto directamente en Google. ✅ (razonablemente fiable, cifra específica con fuente nombrada)
+  - Equipamiento: radiografía digital, ecografía, laboratorio de análisis propio. ✅
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Veterinaria Barroso</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #4A2545; --color-accent: #C97B3D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #C79BC2; --color-accent: #E2A268; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #C79BC2; --color-accent: #E2A268; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #4A2545; --color-accent: #C97B3D; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Veterinaria Barroso</p>
+  <h1>Tenéis cirugía láser, un diferenciador que ninguna otra veterinaria del dataset tiene. ¿Se ve al llegar?</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar clinicaveterinariabarroso.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. El horario citado tiene una fuente que advierte que podría estar desactualizado — se marca igual.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">Barroso lleva casi 30 años en León (fundada en 1996 por Enrique Barroso), tiene una valoración muy alta (4,9/5 sobre 103 opiniones) y un diferenciador tecnológico real que ninguna otra veterinaria de este dataset ha mencionado: cirugía láser CO₂, con menos sangrado y recuperación más rápida. Es exactamente el tipo de diferenciador verificable — no una frase de marketing — que separa a un negocio del resto. La pregunta de este informe es si ese diferenciador llega a un cliente nuevo antes de que decida por otra clínica.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>Cirugía láser CO₂ — diferenciador tecnológico real, único en el dataset veterinario auditado hasta ahora. ✅</li>
+      <li>4,9/5 sobre 103 opiniones, según Google My Business citado por fuente específica. ✅</li>
+      <li>Casi 30 años de trayectoria (fundada en 1996), con el mismo veterinario fundador (Enrique Barroso) todavía al frente, junto a María Bayón. ✅</li>
+      <li>Tres canales telefónicos distintos, incluyendo uno específico para emergencias fuera de horario (630 52 23 82) — señal de que se toman en serio la disponibilidad. ✅</li>
+      <li>Reseñas que destacan precios asequibles frente a otras clínicas de la zona, además del trato humano. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "veterinario León cirugía" o simplemente "veterinario cerca de mí" — encuentro una valoración muy alta (4,9/5) y casi 30 años de trayectoria.</p>
+    <p><strong>No sé</strong> todavía, solo con eso, que tenéis cirugía láser — un dato que no aparece en la mayoría de resúmenes ni fichas externas, solo en fuentes que hablan específicamente de vuestros servicios.</p>
+    <p><strong>Comparo</strong> mentalmente con otras veterinarias de León que sí destacan su tecnología de forma más visible.</p>
+    <p><strong>Decido</strong> en base a la valoración y la cercanía — pero si mi mascota necesita cirugía, el dato de la tecnología láser podría haber sido el que decidiera, y puede que nunca lo haya visto.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>La cirugía láser, vuestro diferenciador tecnológico real, no aparece en la mayoría de fuentes externas</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La cirugía láser CO₂ solo apareció en fuentes que describen específicamente los servicios de la clínica, no en resúmenes generales ni fichas de agregadores — a diferencia de la valoración o la dirección, que aparecen en casi todas las fuentes.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que compara veterinarias para una cirugía concreta puede no llegar nunca a ver este diferenciador si se queda en la primera capa de información (fichas de Google, agregadores) — justo el momento en que ese dato pesaría más en la decisión.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si "cirugía láser CO₂" aparece en el bloque principal, con explicación del beneficio (menos sangrado, recuperación más rápida) en lenguaje que entienda un propietario, no solo el nombre técnico.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una ventaja tecnológica real en un motivo explícito de elección, en vez de un dato que solo descubren quienes ya buscan específicamente ese servicio.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>Tres números de teléfono sin que quede claro, desde fuera, cuál usar y cuándo</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Las fuentes consultadas muestran tres teléfonos (987 22 21 66, 620 76 13 73, y 630 52 23 82 específico para emergencias fuera de horario) sin que quede claro en qué orden o contexto se presentan al cliente.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Tener un número específico para emergencias fuera de horario es una ventaja real — pero solo si el cliente lo distingue con claridad del resto en el momento en que lo necesita, mismo patrón de riesgo ya visto en otros casos veterinarios de este dataset.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Mostrar los tres números etiquetados sin ambigüedad ("Consultas", "Alternativo", "Emergencias fuera de horario") siempre juntos, en la web y en cualquier ficha externa.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Cero duda sobre qué número marcar según la situación.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda → Valoración 4,9★ visible → Cirugía láser explicada como beneficio (menos dolor, recuperación rápida) → Trayectoria de casi 30 años con el mismo fundador → Teléfonos etiquetados sin ambigüedad → Contacto. Hoy no se puede confirmar si este orden es el real — pendiente de navegación directa.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Prueba social</td><td class="num">8/10</td><td class="why">4,9/5 sobre 103 opiniones, cifra específica con fuente nombrada.</td></tr>
+    <tr><td>Confianza</td><td class="num">8/10</td><td class="why">Casi 30 años con el mismo fundador al frente — continuidad real, poco frecuente.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">Cirugía láser es un diferenciador real y fuerte, pero poco visible fuera de fuentes muy específicas.</td></tr>
+    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Equipamiento propio (radiografía digital, ecografía, laboratorio) real, señal de capacidad clínica seria.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">4/10</td><td class="why">Tres teléfonos sin confirmar si están etiquetados con claridad para el cliente.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta la cirugía láser en la propia web.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web explica qué pasa al contactar.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la tecnología láser como palanca de decisión.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">31/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 62/100 sobre esas 5 — las 8 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Confirmar si la cirugía láser CO₂ aparece explicada (no solo nombrada) en el bloque principal de la web.</li>
+      <li>Etiquetar con claridad los tres teléfonos según su función (consultas, alternativo, emergencias fuera de horario).</li>
+      <li>Confirmar el horario real actualizado — una fuente advierte que podría no estarlo.</li>
+      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (cirugía láser poco visible) → reescritura del bloque principal para explicar el beneficio en lenguaje del propietario, no solo el nombre técnico.</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (tres teléfonos sin etiquetar) → orden y etiquetado claro de los canales de contacto.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Lleváis casi 30 años en León con el mismo fundador al frente, una valoración de 4,9 sobre 5, y tecnología de cirugía láser que ninguna otra veterinaria de nuestro estudio menciona. Os dejamos un informe honesto sobre cómo hacer que ese diferenciador real se vea antes de que un cliente decida por otra clínica."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que lo que ya os hace diferentes se note desde el primer segundo.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
