@@ -1,216 +1,280 @@
 <!--
-  Informe de auditoría — este SÍ lleva la identidad de FARO (no la del
-  cliente), porque es un documento de trabajo de FARO entregado al
-  cliente, no una maqueta de su propia web. Ver FARO_IDENTIDAD_VISUAL.md
-  para los tokens de marca reutilizados aquí.
+  Informe de auditoría — REVISIÓN v2, sustituye la auditoría UX de 8
+  hallazgos de la v1 (esa v1 sigue siendo válida en su contenido —
+  el hallazgo del widget de WhatsApp con enlace roto a un formulario
+  404 era una comprobación directa sobre la web real, hecha en esta
+  misma sesión de trabajo — pero queda ahora integrado como un
+  hallazgo más dentro de una auditoría de negocio mucho más completa,
+  no como el documento entero).
 
-  Este informe es ahora el artefacto principal de venta para Centro
-  León — la landing (index.html en esta misma carpeta) pasa a ser el
-  anexo/prueba de concepto que demuestra la sección "Recomendación",
-  no el primer contacto. Ver guion actualizado en
-  experimentos/EXP-003-pymes-leon/05-mensajes/clinica-veterinaria-centro-leon.md.
+  PROVENANCIA DE LOS DATOS NUEVOS (léase antes de reutilizar el
+  formato — mismo criterio ya aplicado al caso de Ricardo Díez Reyero
+  en este dataset): la ficha de identidad, biografía de la directora,
+  equipo, catálogo de servicios, planes de salud, análisis de
+  reputación y mapa de competencia proceden de una investigación hecha
+  por el usuario en otra sesión, con herramientas de navegación que en
+  ESTA sesión no funcionaron (WebFetch dio 403 en todos los dominios
+  probados, confirmado de nuevo justo antes de escribir esta revisión).
+  No se han vuelto a verificar de forma independiente aquí. Sí hay
+  coincidencia con datos ya conocidos en este dataset antes de esta
+  revisión (María Martínez Marcos como directora, teléfono 987 228
+  801, dirección Roa de la Vega 30) — una señal de consistencia, no
+  una verificación completa. Antes de cualquier contacto real con este
+  negocio, conviene una verificación cruzada adicional de los datos
+  más específicos (Registro Mercantil, cifras de equipo, volumen y
+  puntuación exacta de reseñas), igual que con cualquier dato de este
+  dataset que no se ha visto de primera mano.
+
+  CORRECCIÓN RESPECTO AL TEXTO ORIGINAL DE LA INVESTIGACIÓN: la
+  sección "10 / Anexo" tal como se recibió afirmaba que la landing
+  (index.html en esta carpeta) ya materializa la recomendación de
+  "hero product + storytelling emocional" (PlanSalud Senior con el
+  testimonio de Cristina, Nuca y Anita). Eso no es exacto: index.html
+  es la landing v5 ya existente, centrada en la corrección del
+  recorrido de urgencias 24h (el hallazgo del pop-up y el WhatsApp
+  roto de la v1 de este informe) — no construye todavía el hero
+  product de planes de salud. Se corrige la sección 10 para reflejar
+  esto con precisión; el hero product de PlanSalud Senior queda
+  documentado como recomendación pendiente de construir, no como algo
+  ya entregado.
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de experiencia — Clínica Veterinaria Centro León</title>
+<title>Auditoría operativa — Clínica Veterinaria Centro León</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
     --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
-    --color-border: #E4DFD3;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
     --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
   }
   @media (prefers-color-scheme: dark) {
     :root {
       --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
       --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
-      --color-border: #34404770;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
     }
   }
   :root[data-theme="dark"] {
     --color-primary: #7FA8BD; --color-accent: #F0BC6C; --color-ink: #EAE6DD;
     --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
-    --color-border: #34404770;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
   }
   :root[data-theme="light"] {
     --color-primary: #1B3A4B; --color-accent: #E8A33D; --color-ink: #20262B;
     --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
-    --color-border: #E4DFD3;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
   }
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 32px; }
-  h2 { font-size: 20px; }
-  p { margin: 0 0 14px; max-width: 68ch; }
-  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
-
-  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
-  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  h1 { font-size: 30px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 72ch; } ul { max-width: 72ch; }
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .tagline { font-size: 13px; color: var(--color-ink); opacity: 0.6; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 6px; }
+  .cover-sub { font-size: 15px; opacity: 0.8; margin-bottom: 28px; }
+  .provenance { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .provenance strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 8px; padding: 18px 22px; margin: 0 0 36px; font-size: 13.5px; }
+  .correction strong { color: var(--color-alert); }
+  .verdict { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 26px; margin: 0 0 28px; }
+  .verdict h2 { margin-top: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 44px; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 12px; opacity: 0.7; }
 
-  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
-  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 40px; }
+  .section-num { display: flex; align-items: baseline; gap: 10px; margin: 56px 0 20px; padding-top: 24px; border-top: 3px solid var(--color-ink); }
+  .section-num:first-of-type { margin-top: 0; }
+  .section-num .n { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-accent); text-transform: uppercase; }
+  .section-num h2 { margin: 0; }
 
-  .finding { border-top: 1px solid var(--color-border); padding: 28px 0; }
-  .finding:first-of-type { border-top: none; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-primary); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); margin-right: 10px; }
-  .finding__title { display: flex; align-items: center; gap: 4px; margin-bottom: 14px; }
-  .finding__title h2 { margin: 0; }
-  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 16px 0 6px; }
-  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+  table.data { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 13.5px; }
+  table.data th, table.data td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
 
-  .journey { display: flex; align-items: center; gap: 10px; flex-wrap: wrap; font-size: 14px; margin: 12px 0; }
-  .journey span { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 999px; padding: 6px 14px; }
-  .journey .arrow { opacity: 0.5; }
-  .journey--bad span { border-color: var(--color-alert); color: var(--color-alert); }
-  .journey--good span { border-color: var(--color-success); color: var(--color-success); }
+  .callout { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout strong { color: var(--color-primary); }
 
-  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
-  .recommendation h2 { color: var(--color-ink); }
-  .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
-  .hero-mock h3 { font-size: 22px; margin-bottom: 4px; }
-  .hero-mock .sub { font-weight: 600; color: var(--color-primary); margin-bottom: 12px; }
-  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 14px; }
-  .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
-  .cta-row .primary { background: var(--color-alert); color: #fff; }
-  .cta-row .secondary { background: transparent; border: 1.5px solid var(--color-success); color: var(--color-success); }
+  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 12px 0; }
 
-  .wa-mock { background: #E9FBE9; border: 1px solid #B9E8B9; border-radius: 8px; padding: 16px 20px; margin: 16px 0; font-size: 14.5px; }
+  .finding-inline { background: var(--color-white); border: 1px solid var(--color-alert); border-radius: 10px; padding: 22px 24px; margin: 20px 0 32px; }
+  .finding-inline h3 { color: var(--color-alert); margin-top: 0; }
+  .finding-inline .tag { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--color-success); color: #fff; border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
+
+  .roadmap-phase { margin-bottom: 32px; }
+  .roadmap-phase h3 { color: var(--color-ink); background: var(--color-bg); display: inline-block; padding: 4px 12px; border-radius: 6px; }
+
+  .pending-list { list-style: none; margin: 0; padding: 0; }
+  .pending-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .pending-list .prio { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-pending); }
 
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
-  .pitch-block p { max-width: none; }
   .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
-
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead">
-    <span class="logo">FARO</span>
-    <span class="date">Julio 2026</span>
+  <div class="masthead"><span class="logo">FARO — Inteligencia Operativa</span><span class="date">11 jul 2026 · v2</span></div>
+  <div class="tagline">Convertimos investigación en resultados medibles</div>
+
+  <p class="cover-meta">Informe de Auditoría Operativa · Clínica Veterinaria Centro León</p>
+  <h1>Excelencia clínica de 21 años con una infraestructura digital de 2013.</h1>
+  <p class="cover-sub">Dataset EXP-003 · Caso 4 de N · 3 skills operativos (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect)</p>
+
+  <div class="provenance">
+    <strong>Provenencia de los datos:</strong> la ficha de identidad, equipo, oferta, reputación y mapa de competencia de este informe proceden de una investigación hecha fuera de esta sesión (WebFetch no funcionó aquí — 403 confirmado en toda la sesión, en varios dominios de control). No se han vuelto a verificar de forma independiente. Hay coincidencia con datos ya conocidos en este dataset antes de esta revisión (directora, teléfono, dirección) — señal de consistencia, no verificación completa. El hallazgo de la sección 04 sobre el widget de WhatsApp roto sí es una comprobación directa hecha en la sesión original de este proyecto.
   </div>
 
-  <p class="cover-meta">Auditoría de experiencia · Clínica Veterinaria Centro León</p>
-  <h1>Ocho puntos de fricción entre "necesito ayuda" y "he llamado".</h1>
-
-  <div class="intro">
-    <p style="margin:0;">Analizamos el recorrido de un propietario preocupado que entra en vuestra web desde el móvil, en el momento en el que su mascota necesita atención. En menos de cinco minutos identificamos ocho puntos donde la propia página añade fricción justo antes de que esa persona decida llamar. Ninguno de estos puntos requiere cambiar vuestra identidad de marca — son de recorrido, no de diseño.</p>
+  <div class="verdict">
+    <h2>Veredicto FARO</h2>
+    <p style="margin-bottom:0;">Centro León es una clínica de referencia regional con una fortaleza operativa excepcional (urgencias 24h, oncología especializada, reputación de 4,9/5 citada sobre 103 reseñas) pero con una infraestructura digital subaprovechada: sin redes sociales activas, tienda online no operativa, y un posicionamiento de marca que no transmite la magnitud real de su oferta técnica. El hueco entre excelencia clínica y presencia digital es la oportunidad de crecimiento más rentable de este informe.</p>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>El primer contacto genera fricción</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>Nada más entrar aparece un pop-up que ocupa prácticamente toda la pantalla. El usuario no puede interactuar con la página hasta encontrar la "X" y cerrarlo.</p>
-    <p class="subhead">Impacto</p>
-    <p>En ese momento el visitante todavía no ha visto quién es la clínica, qué ofrece, por qué debería confiar, ni dónde está. Su primera tarea pasa a ser cerrar una ventana — fricción justo en los primeros segundos, los más importantes.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">4,9/5</div><div class="lbl">satisfacción citada (103 reseñas, fuente externa a esta sesión)</div></div>
+    <div class="stat"><div class="num">21</div><div class="lbl">años de trayectoria (2005–2026)</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">profesionales en plantilla, según la investigación</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">redes sociales identificadas</div></div>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>El pop-up compite con el objetivo principal</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>El mensaje principal debería ser <em>"podemos ayudarte"</em>. El primer mensaje real que recibe el usuario es <em>"pide tu cita"</em>, seguido de <em>"fuera del horario usa un formulario"</em>.</p>
-    <p class="subhead">Impacto</p>
-    <p>No transmite tranquilidad. Transmite instrucciones.</p>
+  <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
+  <table class="data">
+    <tr><th>Denominación social</th><td>Clínica Veterinaria Centro León, S.L.U. — sin confirmar de forma independiente en esta sesión</td></tr>
+    <tr><th>Forma jurídica</th><td>Sociedad de Responsabilidad Limitada Unipersonal</td></tr>
+    <tr><th>Actividad desde</th><td>Junio de 2005</td></tr>
+    <tr><th>Dirección</th><td>Calle Roa de la Vega, 30 Bajo, 24001 León — coincide con el dato ya conocido en este dataset antes de esta revisión</td></tr>
+    <tr><th>Teléfono</th><td>987 228 801 — coincide con el dato ya conocido</td></tr>
+    <tr><th>Urgencias 24h</th><td>666 706 831 — coincide con el número ya usado en la landing de este mismo caso</td></tr>
+    <tr><th>Web</th><td>leonveterinaria.com</td></tr>
+    <tr><th>Superficie</th><td>325 m², según la investigación — sin confirmar</td></tr>
+    <tr><th>Actividad declarada</th><td>Consultorio, clínica y hospital veterinario; urgencias 24h; venta de artículos y comida para animales</td></tr>
+  </table>
+  <div class="callout"><strong>Activo estructural:</strong> si la forma jurídica S.L.U. está confirmada, permite escalar, externalizar capital y formalizar acuerdos con aseguradoras y plataformas digitales — ventaja frente a competidores que operan como comunidad de bienes (caso ya visto en este dataset: Clínica Veterinaria Ricardo Díez Reyero) o autónomos.</div>
+
+  <div class="section-num"><span class="n">02</span><h2>Equipo — liderazgo y talento</h2></div>
+  <p><strong>Dra. María Martínez Marcos</strong> — directora veterinaria y fundadora (ya identificada como directora en el dataset antes de esta revisión). Según la investigación: más de 25 años de experiencia, más de 10.000 cirugías realizadas, 3 años en el PDSA británico (People's Dispensary for Sick Animals) como veterinaria titular y cirujana, y titular de un GPCert(Onco) en oncología de pequeños animales — que la investigación describe como el único en la provincia de León.</p>
+  <table class="data">
+    <tr><th>Directora veterinaria</th><td>1 — María Martínez Marcos</td></tr>
+    <tr><th>Veterinarias medicina general/urgencias</th><td>3, según la investigación</td></tr>
+    <tr><th>Veterinarios especialistas</th><td>5 — oftalmología, diagnóstico por imagen/cardiología, cirugía de tejidos blandos, traumatología/neurocirugía, endoscopia/laparoscopia, odontología (agrupados en 5 personas, según la investigación)</td></tr>
+    <tr><th>Auxiliares + gerencia</th><td>3, según la investigación</td></tr>
+  </table>
+  <div class="callout"><strong>Fortaleza humana:</strong> la investigación identifica nombres propios mencionados en reseñas (María, Manuela, Lidia, Laura, Ana, Diego, Iván, Lourdes, Fernando) — si se confirma, es una señal de relación personalizada de alto valor emocional, un activo que una clínica genérica no puede replicar fácilmente.</div>
+
+  <div class="section-num"><span class="n">03</span><h2>Oferta — servicios y productos</h2></div>
+  <p>Catálogo citado por la investigación: consulta veterinaria (cita previa), urgencias 24h/365d, oncología especializada (proyecto propio "LeONCvet"), hospitalización con monitoreo 24h, cirugía general y especializada (tejidos blandos, traumatología, neurocirugía, endoscopia, laparoscopia), diagnóstico por imagen, oftalmología, odontología, cardiología, medicina interna preventiva, vacunación/desparasitación, recogida a domicilio, y peluquería profesional.</p>
+  <table class="data">
+    <tr><th>Plan</th><th>Precio citado</th><th>Cobertura</th></tr>
+    <tr><td>PlanSalud Básico (gato/perro)</td><td>250 €</td><td>Vacunas, chequeos, consultas ilimitadas, descuentos en urgencias, antiparasitarios</td></tr>
+    <tr><td>PlanSalud Cachorro</td><td>395 €</td><td>Cobertura completa primer año</td></tr>
+    <tr><td>PlanSalud Completo (gato/perro)</td><td>295 €</td><td>Cobertura ampliada</td></tr>
+  </table>
+  <div class="callout"><strong>Observación FARO — tienda online:</strong> según la investigación, leonveterinaria.com/tienda/ no está operativa (muestra un mensaje sobre aparcamiento) y los planes de salud están listados pero no se pueden contratar online — un canal de conversión ya diseñado pero no activado. No verificado de forma independiente en esta sesión.</div>
+
+  <div class="section-num"><span class="n">04</span><h2>Digital — presencia y canales</h2></div>
+  <table class="data">
+    <tr><th>Canal</th><th>Estado citado</th></tr>
+    <tr><td>Web propia</td><td>Activa, funcional, SEO básico. Sin blog ni contenido educativo</td></tr>
+    <tr><td>Facebook / Instagram / LinkedIn / YouTube / TikTok</td><td>Ninguno identificado</td></tr>
+    <tr><td>Tienda online propia</td><td>No operativa</td></tr>
+    <tr><td>Videoconsulta</td><td>Disponible para oncología, según la investigación</td></tr>
+    <tr><td>Email marketing</td><td>No identificado</td></tr>
+  </table>
+
+  <div class="finding-inline">
+    <span class="tag">🟢 Comprobado directamente en este proyecto</span>
+    <h3>El widget de WhatsApp fuera de horario enlaza a un formulario que da error 404</h3>
+    <p style="margin-bottom:0;">A diferencia del resto de este informe, este hallazgo sí se verificó de primera mano al construir el primer borrador de la landing de este caso (ver <code>index.html</code> en esta misma carpeta): el botón de WhatsApp del sitio real, cuando se contacta fuera de horario, redirige a un formulario que devuelve error 404 — justo el momento en que un cliente preocupado más necesita una respuesta clara. Es la base del hallazgo principal de la v1 de este informe (recorrido de urgencias con fricción), que sigue siendo válida y no ha sido sustituida por esta revisión, solo ampliada con el contexto de negocio que faltaba.</p>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">3</span><h2>El formulario es el protagonista</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>Lo más visible de toda la página es un formulario.</p>
-    <p class="subhead">Impacto</p>
-    <p>Una persona que entra por una urgencia no quiere rellenar nada. Quiere saber: <span class="quote">¿pueden atenderme ahora?</span></p>
+  <div class="callout"><strong>Diagnóstico digital:</strong> si los datos de esta sección se confirman, Centro León tendría 21 años de trayectoria y reputación clínica fuerte, pero una infraestructura digital que no refleja ese nivel — sin redes, sin contenido, con un canal de contacto (WhatsApp) que además falla técnicamente en el peor momento posible.</div>
+
+  <div class="section-num"><span class="n">05</span><h2>Reputación — lo que dicen los clientes</h2></div>
+  <p>La investigación cita 103 reseñas con una media de 4,9/5 en un agregador de clínicas veterinarias, con temas recurrentes: profesionalidad y equipamiento, trato humano ("nuestro veterinario sabe hacer lo más difícil: acompañar"), efectividad de las urgencias 24h relatada en un caso concreto de madrugada, clientes con más de 13 años de continuidad, especialización felina, y al menos un caso de cliente que viaja desde Valladolid. Se cita también una queja aislada sobre la atención telefónica centrada en informar solo de precio.</p>
+  <div class="callout"><strong>Nota de cautela:</strong> estas cifras y citas no se han verificado de forma independiente en esta sesión (WebFetch caído) — antes de usarlas en cualquier conversación real con el negocio, conviene confirmar el volumen y la puntuación exacta directamente en Google Business Profile, no solo en el agregador citado por la investigación.</div>
+
+  <div class="section-num"><span class="n">06</span><h2>Mercado — competencia directa en León capital</h2></div>
+  <table class="data">
+    <tr><th>Competidor</th><th>Urgencias 24h</th><th>Oncología</th><th>Redes</th><th>Trayectoria</th></tr>
+    <tr><td><strong>Centro León</strong></td><td>✓ propias</td><td>✓ (única en provincia, según la investigación)</td><td>✗</td><td>21 años</td></tr>
+    <tr><td>Ricardo Díez Reyero (ya auditado en este dataset)</td><td>✗</td><td>✓</td><td>✗</td><td>32 años</td></tr>
+    <tr><td>Barroso</td><td>✗</td><td>✗</td><td>parcial</td><td>~15 años</td></tr>
+    <tr><td>San Marcos / Hospital Ferral</td><td>✓</td><td>✗</td><td>✗</td><td>~10-20 años</td></tr>
+    <tr><td>Sanivet Veterinarios (ya auditado en este dataset)</td><td>✓</td><td>✗</td><td>✗</td><td>~10 años</td></tr>
+    <tr><td>Hospital Veterinario ULE</td><td>parcial</td><td>✗</td><td>✗</td><td>~30 años</td></tr>
+  </table>
+  <p style="margin-bottom:0;">Si se confirma, Centro León sería la única clínica del dataset con urgencias 24h propias <em>y</em> oncología especializada a la vez — una combinación que ningún competidor directo replica. La oportunidad de mayor esfuerzo/menor coste no está en el servicio clínico, está en comunicarlo.</p>
+
+  <div class="section-num"><span class="n">07</span><h2>Estrategia — hipótesis por skill operativo</h2></div>
+  <p><strong>faro-auditor-conversion</strong> — fuga de clientes por ausencia de funnel digital; el servicio de urgencias 24h no se comunica con suficiente fuerza frente a competidores más recientes; los planes de salud no tienen canal de venta online; la videoconsulta de oncología es un activo subutilizado.</p>
+  <p><strong>faro-board-of-advisors</strong> — la forma jurídica S.L.U. permite escalar pero la estructura actual no parece aprovecharlo; el proyecto de oncología ("LeONCvet") podría convertirse en marca regional independiente; la experiencia de la directora en el sistema veterinario británico es una credencial de gobernanza no explotada en la comunicación; el modelo de "hospital de referencia" para pacientes remitidos de otras clínicas ya funciona informalmente y podría formalizarse como producto B2B.</p>
+  <p><strong>faro-offer-architect</strong> — los planes de salud son técnicamente sólidos pero sin narrativa emocional (el testimonio de una clienta con dos mascotas de 18 y 15 años, si se confirma, sería una prueba de valor fuerte); la oncología podría empaquetarse como "segunda opinión especializada" con tarifa premium; las urgencias 24h podrían monetizarse como suscripción de acceso prioritario; la peluquería y la tienda son canales de fidelización sin cross-selling; el conocimiento acumulado del equipo es contenido educativo sin publicar, con valor SEO gratuito.</p>
+
+  <div class="section-num"><span class="n">08</span><h2>Recomendación — propuesta de intervención</h2></div>
+  <p>Convertir la excelencia clínica en una presencia digital a la misma altura — no es "hacer redes sociales", es cerrar la brecha entre lo que la clínica ya hace bien y lo que un cliente nuevo puede ver antes de decidir.</p>
+
+  <div class="roadmap-phase">
+    <h3>Fase 1 — Fundamentos (0-60 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Corregir el enlace roto del widget de WhatsApp fuera de horario (hallazgo verificado, sección 04)</td><td>Cero mensajes perdidos por error técnico</td></tr>
+      <tr><td>Auditoría de Google Business + activación de reseñas</td><td>Confirmar cifra real de reseñas y puntuación</td></tr>
+      <tr><td>Activar tienda online: planes de salud contratables</td><td>Canal de ingresos recurrentes activo</td></tr>
+    </table>
+  </div>
+  <div class="roadmap-phase">
+    <h3>Fase 2 — Escalado (60-180 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Presencia en Instagram con contenido del equipo y casos reales (con permiso)</td><td>Captación orgánica de clientes que buscan validación social antes de la primera visita</td></tr>
+      <tr><td>Landing propia para el proyecto de oncología, si se confirma como diferenciador real</td><td>Captación de pacientes derivados de fuera de León</td></tr>
+    </table>
+  </div>
+  <div class="roadmap-phase">
+    <h3>Fase 3 — Liderazgo (180-365 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Formalizar el modelo de "hospital de referencia" para pacientes remitidos, si ya ocurre informalmente</td><td>Ingresos de casos complejos sin coste de captación</td></tr>
+      <tr><td>Blog/contenido educativo del equipo</td><td>Tráfico orgánico + confianza previa a la primera visita</td></tr>
+    </table>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">4</span><h2>El CTA principal es débil</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>El botón verde dice <em>"Enviar"</em>. No dice qué ocurrirá después.</p>
-    <p class="subhead">Impacto</p>
-    <div class="journey">
-      <span style="opacity:0.6;">Enviar</span><span class="arrow">→</span><span style="border-color:var(--color-alert); color:var(--color-alert); font-weight:700;">🔴 Llamar ahora</span>
-    </div>
-    <p style="margin-top:8px;">La diferencia psicológica entre ambos es enorme — el segundo dice exactamente qué pasa al pulsar.</p>
-  </div>
+  <div class="section-num"><span class="n">09</span><h2>Pendientes — datos que requieren confirmación directa</h2></div>
+  <ul class="pending-list">
+    <li><span class="prio">Crítica</span> — Facturación anual y estructura de costes (define presupuesto de inversión y ROI esperado)</li>
+    <li><span class="prio">Crítica</span> — Objetivos personales de la directora (¿escalar, mantener, vender?) — define el horizonte de cualquier propuesta</li>
+    <li><span class="prio">Alta</span> — Número de clientes activos y frecuencia media de visita</li>
+    <li><span class="prio">Alta</span> — Tasa de conversión actual (web → cita, llamada → visita)</li>
+    <li><span class="prio">Alta</span> — Perfil real del cliente (edad, zona, tipo de mascota, motivo de primera visita)</li>
+    <li><span class="prio">Media</span> — Google Analytics / Search Console, si existen</li>
+    <li><span class="prio">Media</span> — Experiencia previa con marketing digital o agencias</li>
+  </ul>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">5</span><h2>Rompe el recorrido natural</h2></div>
-    <p class="subhead">Recorrido esperado</p>
-    <div class="journey journey--good">
-      <span>Necesito ayuda</span><span class="arrow">↓</span><span>Esta clínica hace urgencias</span><span class="arrow">↓</span><span>Confío</span><span class="arrow">↓</span><span>Llamo</span>
-    </div>
-    <p class="subhead">Recorrido actual</p>
-    <div class="journey journey--bad">
-      <span>Necesito ayuda</span><span class="arrow">↓</span><span>Pop-up</span><span class="arrow">↓</span><span>Formulario</span><span class="arrow">↓</span><span>Buscar la X</span><span class="arrow">↓</span><span>Ahora empiezo a ver la web</span>
-    </div>
-    <p style="margin-top:8px;">Un paso innecesario, añadido justo donde menos margen hay.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">6</span><h2>El WhatsApp se usa como formulario</h2></div>
-    <p>WhatsApp funciona mejor cuando parece una conversación. Aquí parece un formulario incrustado — se pierde gran parte de la sensación de cercanía que el propio canal ya tiene ganada.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">7</span><h2>El usuario no sabe qué ocurrirá</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>El texto dice <em>"te responderemos lo antes posible"</em>.</p>
-    <p class="subhead">Impacto</p>
-    <p>No responde a lo que de verdad importa: ¿cuánto es "lo antes posible"? ¿Quién responde? ¿Qué pasa si es una urgencia? ¿Qué ocurre si escribo a las tres de la mañana?</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">8</span><h2>La primera emoción es la equivocada</h2></div>
-    <p>Una urgencia veterinaria genera ansiedad. La web debería reducirla. El pop-up, en cambio, aumenta la carga cognitiva: hay que leer, buscar la X, entender horarios, buscar un enlace — todo antes incluso de conocer la clínica.</p>
-  </div>
-
-  <div class="recommendation">
-    <h2>Recomendación</h2>
-    <p>En lugar del pop-up, un hero que responde de inmediato a la pregunta real:</p>
-    <div class="hero-mock">
-      <h3>Tu mascota necesita ayuda. Nosotros estamos preparados para dársela.</h3>
-      <p class="sub">Urgencias veterinarias 24 horas en León.</p>
-      <div class="cta-row">
-        <span class="primary">🔴 Llamar ahora</span>
-        <span class="secondary">💬 Escribir por WhatsApp</span>
-      </div>
-    </div>
-    <p>Y solo si el usuario pulsa WhatsApp, una automatización responde al instante — nunca bloqueando la navegación de quien todavía está decidiendo:</p>
-    <div class="wa-mock">
-      Hola 👋 Gracias por escribir a Centro León.<br><br>
-      Si tu mascota necesita atención urgente, llama directamente al <strong>666 70 68 31</strong>.<br><br>
-      Si tu consulta no es urgente, cuéntanos qué necesita tu mascota y te responderemos en cuanto sea posible.
-    </div>
-    <p style="margin-bottom:0;">Esto consigue exactamente el mismo objetivo que el formulario actual — recoger el contacto y encauzar la urgencia — pero sin bloquear la navegación de nadie. Hay un prototipo funcional de este hero ya construido, sin coste ni compromiso, si queréis verlo en marcha antes de decidir nada.</p>
-  </div>
-
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Si os interesa, así lo implementaríamos</h2>
-    <p>Cada hallazgo de este informe se corresponde con algo que ya sabemos construir — no es un rediseño completo, son piezas concretas:</p>
-    <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgos 1, 2, 3, 5, 8</strong> (pop-up, formulario protagonista, recorrido roto, carga cognitiva) → una landing de un único objetivo, como el prototipo de este informe.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 6</strong> (WhatsApp usado como formulario) → respuesta automática fuera de horario, para que la conversación se sienta como una conversación, no como un trámite.</li>
-      <li style="margin-bottom:0;"><strong>Hallazgo 7</strong> (no se sabe qué ocurrirá) → seguimiento automático de quien escribe y no recibe respuesta inmediata, para que nunca dependa de que alguien se acuerde.</li>
-    </ul>
-    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
-  </div>
+  <div class="section-num"><span class="n">10</span><h2>Anexo — prueba de concepto ya construida</h2></div>
+  <p><strong>Corrección respecto al texto original de esta investigación:</strong> este anexo no describe un hero product de "PlanSalud Senior con storytelling emocional" — eso es una recomendación de la Fase 1-2 de este informe, todavía por construir, no un artefacto ya entregado. Lo que sí existe ya en esta misma carpeta (<code>index.html</code>, v5) es la prueba de concepto de la v1 de este informe: una landing centrada en corregir el recorrido de una urgencia real (pop-up inicial, WhatsApp usado como formulario, CTA débil) con un hero que responde de inmediato, triaje visual de síntomas, y un flujo claro de "qué pasa cuando contactas". Sigue siendo un anexo válido — demuestra la sección "Recomendación" de la v1 del hallazgo verificado sobre el widget roto — pero no materializa las recomendaciones nuevas de las Fases 2-3 de este informe (oncología como marca, planes de salud con narrativa emocional), que quedan como trabajo futuro si el negocio confirma interés.</p>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"He analizado el recorrido de un propietario preocupado que entra en vuestra web desde el móvil. En menos de cinco minutos detecté ocho puntos donde estáis añadiendo fricción justo antes de que alguien decida llamar. He preparado este informe con propuestas concretas para reducir esa fricción y mejorar la experiencia del propietario, sin cambiar vuestra identidad de marca."</p>
-    <p style="margin-bottom:0;">No es una propuesta de rediseño — es un diagnóstico de por qué algunas visitas no terminan en una llamada, con la corrección exacta de cada punto.</p>
+    <p class="quote">"Tenéis 21 años de trayectoria, urgencias 24h propias y, según lo que hemos podido investigar, el único servicio de oncología especializada de la provincia — y aun así vuestro canal de contacto fuera de horario manda a un enlace roto. Os dejamos un informe honesto: lo que ya comprobamos directamente sobre vuestra web real, y lo que todavía necesita confirmarse con vosotros antes de proponer nada más."</p>
+    <p style="margin-bottom:0;">No proponemos rediseñar la clínica — proponemos que la web y los canales digitales comuniquen lo que la clínica ya es.</p>
   </div>
 
-  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+  <p class="cta-footer">FARO — Inteligencia Operativa para pymes de León con agenda. Documento de trabajo · Dataset EXP-003, caso 4 de N. Sin compromiso, sin coste por este informe.</p>
 
 </div>
 </body>
