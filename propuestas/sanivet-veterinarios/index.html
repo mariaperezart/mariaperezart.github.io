@@ -1,0 +1,172 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Quinto candidato de experimentos/EXP-003-pymes-leon.
+
+  Ángulo: el diferenciador real de Sanivet es "urgencias 24h/365", pero
+  el informe encontró reseñas que cuestionan la atención nocturna. Esta
+  landing no oculta ni maquilla eso -- lo sostiene con información
+  concreta (protocolo, tiempo de respuesta) y añade WhatsApp como
+  segunda vía cuando el teléfono no coge, en vez de dejar que la duda
+  la resuelvan solo reseñas de terceros.
+
+  Datos públicos confirmados (ver informe-auditoria.html): Av. del
+  Alcalde Miguel Castaño 29, León · Tel. general 987 19 63 29 · Tel.
+  urgencias 622 28 51 90 · L-V 10:30-14:00 y 17:00-20:30, sábado
+  10:30-14:00, domingo cerrado (horario de consulta general -- las
+  urgencias son aparte, 24h/365). Valoración citada entre 4,4 y 4,6
+  según fuente, ninguna confirmada en Google Business Profile
+  directamente. WhatsApp Business no confirmado como canal activo.
+
+  Identidad visual: azul índigo oscuro + ámbar (baliza de urgencia,
+  sin rojo de alarma) -- distinta al verde-coral de Ricardo Díez, la
+  magenta de Centro León, el verde oliva de Berciano Dental y el
+  negro/cobre de Cutfy.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sanivet Veterinarios — Urgencias 24h y especialidades, León</title>
+<meta name="description" content="Sanivet Veterinarios, Av. del Alcalde Miguel Castaño 29, León. Urgencias 24 horas los 365 días. Cardiología, oncología, neurología y más.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F3F4F9; --color-surface: #FFFFFF; --color-ink: #171C2E; --color-ink-muted: #565C77;
+    --color-primary: #1F2A44; --color-accent: #F2A93B; --color-border: #E1E3EE;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(31,42,68,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #10131F; --color-surface: #1A2036; --color-ink: #E9EAF4; --color-ink-muted: #A6ACC9; --color-border: #2C3350; }
+  }
+  :root[data-theme="dark"] { --color-bg: #10131F; --color-surface: #1A2036; --color-ink: #E9EAF4; --color-ink-muted: #A6ACC9; --color-border: #2C3350; }
+  :root[data-theme="light"] { --color-bg: #F3F4F9; --color-surface: #FFFFFF; --color-ink: #171C2E; --color-ink-muted: #565C77; --color-border: #E1E3EE; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .urgency-bar { background: var(--color-accent); color: #241A03; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 700; }
+  .urgency-bar a { color: #241A03; text-decoration: underline; }
+
+  .hero { padding: 56px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: start; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating { display: inline-flex; align-items: center; gap: 8px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 8px 16px; font-size: 14px; margin-bottom: 18px; box-shadow: var(--shadow-card); }
+  .rating strong { color: var(--color-primary); }
+
+  .phone-cards { display: flex; flex-direction: column; gap: 12px; margin: 22px 0; }
+  .phone-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: 12px; padding: 16px 20px; box-shadow: var(--shadow-card); }
+  .phone-card.urgente { border-color: var(--color-accent); }
+  .phone-card .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-muted); }
+  .phone-card.urgente .label { color: #B9791A; }
+  .phone-card .num { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-ink); }
+  .phone-card a.btn-call { flex-shrink: 0; font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 16px; border-radius: 999px; text-decoration: none; }
+  .phone-card.urgente a.btn-call { background: var(--color-accent); color: #241A03; }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; margin-top: 4px; }
+
+  .protocol-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-card); }
+  .protocol-box h3 { margin-top: 0; }
+  .protocol-box ol { margin: 0; padding-left: 20px; }
+  .protocol-box li { margin-bottom: 10px; font-size: 14px; color: var(--color-ink-muted); }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .specialties { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .specialties { grid-template-columns: repeat(2, 1fr); } }
+  .specialty { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px; text-align: center; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-card); }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<div class="urgency-bar">🚨 Urgencia ahora — <a href="tel:+34622285190">622 28 51 90</a>, 24h, 365 días</div>
+
+<header>
+  <div class="container">
+    <span class="logo">Sanivet Veterinarios</span>
+    <nav><a class="call" href="tel:+34987196329">📞 Llamar</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Av. del Alcalde Miguel Castaño 29, León</span>
+        <div class="rating">⭐ <strong>4,4/5</strong> · reseñas de clientes reales (cifra pendiente de confirmar en Google directamente)</div>
+        <h1>Urgencias 24h, 365 días. Con protocolo, no solo con una frase.</h1>
+        <p>Si es urgente, llama directamente. Si no consigues línea a la primera, tienes una segunda vía: WhatsApp con respuesta inmediata para que sepas que hemos recibido tu aviso.</p>
+
+        <div class="phone-cards">
+          <div class="phone-card urgente">
+            <div><span class="label">Urgencias · 24h / 365 días</span><div class="num">622 28 51 90</div></div>
+            <a class="btn-call" href="tel:+34622285190">Llamar</a>
+          </div>
+          <div class="phone-card">
+            <div><span class="label">Consultas y citas</span><div class="num">987 19 63 29</div></div>
+            <a class="btn-call" href="tel:+34987196329">Llamar</a>
+          </div>
+        </div>
+
+        <a class="btn btn--whatsapp" href="https://wa.me/34622285190?text=Hola%2C%20tengo%20una%20urgencia%20con%20mi%20mascota" target="_blank" rel="noopener">💬 Si no cogemos, escribe aquí</a>
+      </div>
+
+      <div class="protocol-box">
+        <h3>Qué pasa cuando llamas de noche</h3>
+        <ol>
+          <li>Descuelga el equipo de guardia — no es un contestador automático.</li>
+          <li>Si la línea está ocupada, tu llamada no se pierde: reintenta en segundos.</li>
+          <li>Si aun así no conseguimos cogerlo, escribe por WhatsApp y confirmamos que hemos recibido tu aviso.</li>
+        </ol>
+        <p style="margin:14px 0 0; font-size:12px; opacity:0.75;">Protocolo ilustrativo a validar con el negocio real antes de publicar — el objetivo es sustituir la duda de "¿me van a coger?" por información concreta.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Un catálogo de especialidades poco común en León</h2>
+        <p style="margin:0 auto;">No solo urgencias y consulta general — especialidades que muchas clínicas no ofrecen dentro de casa.</p>
+      </div>
+      <div class="specialties">
+        <div class="specialty">Cardiología</div>
+        <div class="specialty">Oncología</div>
+        <div class="specialty">Endocrinología</div>
+        <div class="specialty">Neurología</div>
+        <div class="specialty">Traumatología</div>
+        <div class="specialty">Oftalmología</div>
+        <div class="specialty">Odontología</div>
+        <div class="specialty">Geriatría</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Sanivet Veterinarios — Av. del Alcalde Miguel Castaño 29, León · 987 19 63 29 · Urgencias 622 28 51 90</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El protocolo nocturno mostrado es ilustrativo, no confirmado.</p>
+</footer>
+
+</body>
+</html>
