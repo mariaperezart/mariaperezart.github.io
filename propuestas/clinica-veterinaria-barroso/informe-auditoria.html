@@ -1,29 +1,47 @@
 <!--
-  Informe de auditoría — Clínica Veterinaria Barroso (Calle Los
-  Osorios 6, León). Octavo caso del dataset EXP-003. Flujo estándar
-  faro-auditor-conversion.
+  Informe de auditoría — REVISIÓN v2, amplía la auditoría de
+  conversión (v1) a auditoría operativa completa. Octavo caso del
+  dataset EXP-003, primero de este caso con los tres skills
+  operativos.
 
-  WebFetch no navegó ningún dominio en esta sesión. Informe apoyado en
-  WebSearch con fuente citada.
+  CORRECCIÓN RESPECTO A LA v1: la v1 presentaba tres teléfonos,
+  incluido uno específico "de emergencias fuera de horario" (630 52 23
+  82), como una ventaja real del negocio. Una investigación posterior,
+  con navegación directa de clinicaveterinariabarroso.com, no
+  encuentra ese número ni ninguna mención de servicio de urgencias o
+  fuera de horario — al contrario, indica explícitamente "sin servicio
+  de fin de semana ni urgencias identificadas". No se puede confirmar
+  cuál de las dos es correcta sin verificar directamente, pero dado
+  que la v2 procede de navegación directa de la web real, se retira el
+  hallazgo 2 de la v1 (que dependía por completo de ese número) y se
+  marca el dato como no confirmado, no como una ventaja del negocio.
 
-  Datos confirmados por búsqueda web:
-  - Dirección: Calle Los Osorios 6 (Arco de la Cárcel), León. ✅
-  - Teléfono: 987 22 21 66 / 620 76 13 73. Emergencias fuera de horario: 630 52 23 82 — un tercer número, distinto de los dos anteriores. ✅
-  - Horario: L-V 10:00-13:30 y 16:00-19:30, según agregador — otra fuente sugería que el horario público podría estar desactualizado. 🟡
-  - Fundada en 1996 por el veterinario Enrique Barroso. Equipo: Enrique Barroso + María Bayón. ✅
-  - Cirugía láser CO₂ — diferenciador tecnológico real, no común en el resto del dataset veterinario (ni Ricardo Díez, ni Sanivet, ni San Pedro lo mencionan). ✅
-  - Valoración: 4,9/5 sobre 103 opiniones, según Google My Business citado por un agregador — no visto directamente en Google. ✅ (razonablemente fiable, cifra específica con fuente nombrada)
-  - Equipamiento: radiografía digital, ecografía, laboratorio de análisis propio. ✅
+  REFORZADO por la v2 (mismo hallazgo, ahora con más detalle): la
+  cirugía láser CO₂ es real y está mucho más documentada de lo que la
+  v1 pudo confirmar — usos específicos (cirugía palpebral, maxilofacial,
+  fístulas y masas perianales, tumores cutáneos, síndrome
+  braquicefálico) y beneficios comunicados (menos sangrado, menos
+  disemininación de células tumorales, mayor precisión).
+
+  CONFIRMADO sin cambios: dirección, fundación en 1996 por Enrique
+  Barroso, equipo (Enrique Barroso + María Bayón desde 2014), horario
+  L-V 10:00-13:30/16:00-19:30 (la v1 marcaba este dato con posible
+  desactualización; la v2 lo confirma con fuente más directa).
+
+  PROVENENCIA: el resto de datos nuevos (planes de salud, cardiología,
+  competencia, estrategia) proceden de una investigación hecha fuera
+  de esta sesión, no verificada de forma independiente aquí (WebFetch
+  sigue caído, 403 confirmado de nuevo antes de esta revisión).
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de conversión — Clínica Veterinaria Barroso</title>
+<title>Auditoría operativa — Clínica Veterinaria Barroso</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
     --color-primary: #4A2545; --color-accent: #C97B3D; --color-ink: #20262B;
@@ -51,152 +69,142 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
-  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
-  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
-  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
-  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  h1 { font-size: 30px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 72ch; } ul { max-width: 72ch; }
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
-  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
-  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
-  .caveat strong { color: var(--color-pending); }
-  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
-  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
-  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
-  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
-  .journey strong { font-style: normal; color: var(--color-accent); }
-  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
-  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
-  .finding__title h2 { margin: 0; color: var(--color-ink); }
-  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
-  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
-  .finding__part p { margin: 0; }
-  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
-  .recommendation h2 { color: var(--color-ink); }
-  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
-  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
-  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
-  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
-  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
-  .score-table td.why { font-size: 13px; opacity: 0.8; }
-  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
-  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
-  .score-total .label { font-size: 13px; opacity: 0.7; }
-  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
-  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
-  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
-  .quickwins li:last-child { border-bottom: none; }
+  .tagline { font-size: 13px; color: var(--color-ink); opacity: 0.6; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 6px; }
+  .cover-sub { font-size: 15px; opacity: 0.8; margin-bottom: 28px; }
+  .provenance { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .provenance strong { color: var(--color-pending); }
+  .correction { background: #FBEAE7; border: 2px solid var(--color-alert); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .correction strong { color: var(--color-alert); }
+  .verdict { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 26px; margin: 0 0 28px; }
+  .verdict h2 { margin-top: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 44px; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: var(--font-heading); font-size: 26px; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 12px; opacity: 0.7; }
+  .section-num { display: flex; align-items: baseline; gap: 10px; margin: 56px 0 20px; padding-top: 24px; border-top: 3px solid var(--color-ink); }
+  .section-num:first-of-type { margin-top: 0; }
+  .section-num .n { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-accent); text-transform: uppercase; }
+  .section-num h2 { margin: 0; }
+  table.data { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 13.5px; }
+  table.data th, table.data td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .callout { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout strong { color: var(--color-primary); }
+  .callout-alert { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout-alert strong { color: var(--color-alert); }
+  .roadmap-phase { margin-bottom: 32px; }
+  .roadmap-phase h3 { color: var(--color-ink); background: var(--color-bg); display: inline-block; padding: 4px 12px; border-radius: 6px; }
+  .pending-list { list-style: none; margin: 0; padding: 0; }
+  .pending-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .pending-list .prio { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-pending); }
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
   .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
-  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+  <div class="masthead"><span class="logo">FARO — Inteligencia Operativa</span><span class="date">11 jul 2026 · v2</span></div>
+  <div class="tagline">Convertimos investigación en resultados medibles</div>
 
-  <p class="cover-meta">Auditoría de conversión · Clínica Veterinaria Barroso</p>
-  <h1>Tenéis cirugía láser, un diferenciador que ninguna otra veterinaria del dataset tiene. ¿Se ve al llegar?</h1>
+  <p class="cover-meta">Informe de Auditoría Operativa · Clínica Veterinaria Barroso</p>
+  <h1>Cirugía láser única en León y planes de salud por etapas — dos activos que ni Ricardo Díez ni Sanivet tienen.</h1>
+  <p class="cover-sub">Dataset EXP-003 · Caso adicional (veterinaria) · 3 skills operativos (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect)</p>
 
-  <div class="caveat">
-    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada — no hemos podido navegar clinicaveterinariabarroso.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO. El horario citado tiene una fuente que advierte que podría estar desactualizado — se marca igual.
+  <div class="correction">
+    <strong>Corrección respecto a la v1 de este informe:</strong> la v1 presentaba un tercer teléfono (630 52 23 82) como línea específica "de emergencias fuera de horario" y construía todo un hallazgo alrededor de etiquetar bien los tres números. Una investigación posterior, con navegación directa de la web real, no encuentra ese número ni ningún servicio de urgencias — al contrario, confirma que <strong>no hay servicio de fin de semana ni urgencias</strong>. Se retira ese hallazgo; el número queda como no confirmado, no como ventaja del negocio.
   </div>
 
-  <div class="intro">
-    <p style="margin:0;">Barroso lleva casi 30 años en León (fundada en 1996 por Enrique Barroso), tiene una valoración muy alta (4,9/5 sobre 103 opiniones) y un diferenciador tecnológico real que ninguna otra veterinaria de este dataset ha mencionado: cirugía láser CO₂, con menos sangrado y recuperación más rápida. Es exactamente el tipo de diferenciador verificable — no una frase de marketing — que separa a un negocio del resto. La pregunta de este informe es si ese diferenciador llega a un cliente nuevo antes de que decida por otra clínica.</p>
+  <div class="provenance">
+    <strong>Provenencia del resto de datos nuevos:</strong> planes de salud, especialización en cardiología, y mapa de competencia proceden de una investigación hecha fuera de esta sesión (WebFetch no funcionó aquí — 403 confirmado de nuevo). No se han vuelto a verificar de forma independiente. El horario, la fundación (1996) y el equipo (Enrique Barroso + María Bayón) se confirman sin cambios entre ambas investigaciones — mayor confianza en estos datos que en la v1 sola.
   </div>
 
-  <div class="good-box">
-    <h2>🟢 Lo que funciona</h2>
-    <ul>
-      <li>Cirugía láser CO₂ — diferenciador tecnológico real, único en el dataset veterinario auditado hasta ahora. ✅</li>
-      <li>4,9/5 sobre 103 opiniones, según Google My Business citado por fuente específica. ✅</li>
-      <li>Casi 30 años de trayectoria (fundada en 1996), con el mismo veterinario fundador (Enrique Barroso) todavía al frente, junto a María Bayón. ✅</li>
-      <li>Tres canales telefónicos distintos, incluyendo uno específico para emergencias fuera de horario (630 52 23 82) — señal de que se toman en serio la disponibilidad. ✅</li>
-      <li>Reseñas que destacan precios asequibles frente a otras clínicas de la zona, además del trato humano. ✅</li>
-    </ul>
+  <div class="verdict">
+    <h2>Veredicto FARO</h2>
+    <p style="margin-bottom:0;">Barroso tiene dos activos que ningún otro veterinario de este dataset combina: cirugía láser CO₂ (único en León, según la investigación) y planes de salud estructurados por etapas de vida (cachorro, adulto, senior) — el único modelo de ingresos recurrentes visto en el vertical veterinario del dataset. A esto se suma la especialización del fundador en cardiología y ecocardiografía. El reto sigue siendo el mismo que en la v1: estos diferenciadores reales están confirmados solo en fuentes muy específicas, no en la primera capa de información que ve un cliente que compara clínicas.</p>
   </div>
 
-  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
-  <div class="journey">
-    <p><strong>Busco</strong> "veterinario León cirugía" o simplemente "veterinario cerca de mí" — encuentro una valoración muy alta (4,9/5) y casi 30 años de trayectoria.</p>
-    <p><strong>No sé</strong> todavía, solo con eso, que tenéis cirugía láser — un dato que no aparece en la mayoría de resúmenes ni fichas externas, solo en fuentes que hablan específicamente de vuestros servicios.</p>
-    <p><strong>Comparo</strong> mentalmente con otras veterinarias de León que sí destacan su tecnología de forma más visible.</p>
-    <p><strong>Decido</strong> en base a la valoración y la cercanía — pero si mi mascota necesita cirugía, el dato de la tecnología láser podría haber sido el que decidiera, y puede que nunca lo haya visto.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">1996</div><div class="lbl">fundación, por Enrique Barroso — confirmado sin cambios</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">planes de salud por etapa de vida (cachorro/adulto/senior)</div></div>
+    <div class="stat"><div class="num">1</div><div class="lbl">único con cirugía láser CO₂ en el vertical veterinario de este dataset</div></div>
+    <div class="stat"><div class="num">2014</div><div class="lbl">año desde el que María Bayón forma parte del equipo</div></div>
   </div>
 
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La cirugía láser, vuestro diferenciador tecnológico real, no aparece en la mayoría de fuentes externas</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>La cirugía láser CO₂ solo apareció en fuentes que describen específicamente los servicios de la clínica, no en resúmenes generales ni fichas de agregadores — a diferencia de la valoración o la dirección, que aparecen en casi todas las fuentes.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un cliente que compara veterinarias para una cirugía concreta puede no llegar nunca a ver este diferenciador si se queda en la primera capa de información (fichas de Google, agregadores) — justo el momento en que ese dato pesaría más en la decisión.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si "cirugía láser CO₂" aparece en el bloque principal, con explicación del beneficio (menos sangrado, recuperación más rápida) en lenguaje que entienda un propietario, no solo el nombre técnico.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una ventaja tecnológica real en un motivo explícito de elección, en vez de un dato que solo descubren quienes ya buscan específicamente ese servicio.</p></div>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>Tres números de teléfono sin que quede claro, desde fuera, cuál usar y cuándo</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p>Las fuentes consultadas muestran tres teléfonos (987 22 21 66, 620 76 13 73, y 630 52 23 82 específico para emergencias fuera de horario) sin que quede claro en qué orden o contexto se presentan al cliente.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Tener un número específico para emergencias fuera de horario es una ventaja real — pero solo si el cliente lo distingue con claridad del resto en el momento en que lo necesita, mismo patrón de riesgo ya visto en otros casos veterinarios de este dataset.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Mostrar los tres números etiquetados sin ambigüedad ("Consultas", "Alternativo", "Emergencias fuera de horario") siempre juntos, en la web y en cualquier ficha externa.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Cero duda sobre qué número marcar según la situación.</p></div>
-  </div>
-
-  <div class="recommendation">
-    <h2>Recorrido ideal</h2>
-    <p style="margin-bottom:0;">Búsqueda → Valoración 4,9★ visible → Cirugía láser explicada como beneficio (menos dolor, recuperación rápida) → Trayectoria de casi 30 años con el mismo fundador → Teléfonos etiquetados sin ambigüedad → Contacto. Hoy no se puede confirmar si este orden es el real — pendiente de navegación directa.</p>
-  </div>
-
-  <h2>Puntuación FARO</h2>
-  <table class="score-table">
-    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
-    <tr><td>Prueba social</td><td class="num">8/10</td><td class="why">4,9/5 sobre 103 opiniones, cifra específica con fuente nombrada.</td></tr>
-    <tr><td>Confianza</td><td class="num">8/10</td><td class="why">Casi 30 años con el mismo fundador al frente — continuidad real, poco frecuente.</td></tr>
-    <tr><td>Diferenciación</td><td class="num">5/10</td><td class="why">Cirugía láser es un diferenciador real y fuerte, pero poco visible fuera de fuentes muy específicas.</td></tr>
-    <tr><td>Autoridad</td><td class="num">6/10</td><td class="why">Equipamiento propio (radiografía digital, ecografía, laboratorio) real, señal de capacidad clínica seria.</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num">4/10</td><td class="why">Tres teléfonos sin confirmar si están etiquetados con claridad para el cliente.</td></tr>
-    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
-    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver cómo se presenta la cirugía láser en la propia web.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web explica qué pasa al contactar.</td></tr>
-    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
-    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
-    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
-    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real.</td></tr>
-    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la tecnología láser como palanca de decisión.</td></tr>
+  <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
+  <table class="data">
+    <tr><th>Nombre comercial</th><td>Clínica Veterinaria Barroso</td></tr>
+    <tr><th>Eslogan citado</th><td>"Un concepto diferente en la salud de tu mascota"</td></tr>
+    <tr><th>Dirección</th><td>C/ Los Osorios 6 (Arco de la Cárcel / Plaza del Espolón), León — coincide con el dato ya confirmado</td></tr>
+    <tr><th>Teléfono</th><td>987 222 166 (fijo) · 620 761 373 (móvil/WhatsApp) — coinciden con los ya confirmados. El tercer número de la v1 (630 52 23 82, "emergencias") no aparece en esta investigación</td></tr>
+    <tr><th>Email</th><td>veterinariabarroso@gmail.com, según la investigación</td></tr>
+    <tr><th>Horario</th><td>L-V 10:00-13:30 y 16:00-19:30, cerrado sábado y domingo — confirmado sin cambios respecto a la v1, ahora con mayor confianza</td></tr>
   </table>
-  <div class="score-total"><span class="big">31/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 62/100 sobre esas 5 — las 8 restantes quedan sin puntuar hasta poder navegar la web real.</span></div>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Quick wins — ordenados por impacto</h2>
-    <ol class="quickwins">
-      <li>Confirmar si la cirugía láser CO₂ aparece explicada (no solo nombrada) en el bloque principal de la web.</li>
-      <li>Etiquetar con claridad los tres teléfonos según su función (consultas, alternativo, emergencias fuera de horario).</li>
-      <li>Confirmar el horario real actualizado — una fuente advierte que podría no estarlo.</li>
-      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
-    </ol>
-  </div>
+  <div class="section-num"><span class="n">02</span><h2>Equipo</h2></div>
+  <p><strong>Enrique Barroso</strong> — veterinario fundador, más de 30 años de experiencia en medicina y cirugía de pequeños animales, según la investigación. Especialización en cardiología veterinaria, en particular diagnóstico ecocardiográfico. <strong>María Bayón</strong> — veterinaria en el equipo desde 2014, con especialidades citadas en dermatología, oncología, diagnóstico por imagen y oftalmología.</p>
+  <div class="callout"><strong>Coherencia con la v1:</strong> ambos nombres (Enrique Barroso, María Bayón) ya estaban confirmados en la v1 de este informe — la investigación posterior no los contradice, los amplía con años de antigüedad y especialidades concretas.</div>
 
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Si os interesa, así lo implementaríamos</h2>
-    <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (cirugía láser poco visible) → reescritura del bloque principal para explicar el beneficio en lenguaje del propietario, no solo el nombre técnico.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (tres teléfonos sin etiquetar) → orden y etiquetado claro de los canales de contacto.</li>
-      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real.</li>
-    </ul>
-    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
-  </div>
+  <div class="section-num"><span class="n">03</span><h2>Oferta — cirugía láser y planes de salud</h2></div>
+  <p>La cirugía láser CO₂, ya confirmada en la v1, queda mucho más detallada: según la investigación, se usa en cirugía palpebral y maxilofacial, odontología, fístulas y masas perianales, tumores cutáneos y mastectomías, y síndrome braquicefálico (exceso de paladar blando, estenosis de orificios nasales) — con beneficios comunicados de menor sangrado, recuperación más corta, menor dolor e inflamación, y menor diseminación de células tumorales en cirugía oncológica.</p>
+  <table class="data">
+    <tr><th>Plan</th><th>Etapa</th></tr>
+    <tr><td>Plan Cachorros y gatitos</td><td>Primer año en casa</td></tr>
+    <tr><td>Plan Adultos</td><td>Medicina preventiva anual</td></tr>
+    <tr><td>Plan Senior</td><td>Detección temprana de enfermedad</td></tr>
+  </table>
+  <div class="callout"><strong>Diferenciador de mayor valor de esta ampliación:</strong> si se confirma, Barroso sería el único caso veterinario del dataset con un modelo de ingresos recurrentes estructurado por etapas de vida — ni Ricardo Díez ni Sanivet lo tienen (Sanivet solo ofrece la primera consulta de cachorro gratis, sin plan de seguimiento).</div>
+
+  <div class="section-num"><span class="n">04</span><h2>Digital — presencia y canales</h2></div>
+  <table class="data">
+    <tr><th>Canal</th><th>Estado citado</th></tr>
+    <tr><td>Web propia</td><td>Diseño moderno, con imágenes reales del equipo y del equipo láser, según la investigación</td></tr>
+    <tr><td>WhatsApp</td><td>Activo en el número 620 761 373, según la investigación — coincide con el móvil ya confirmado</td></tr>
+    <tr><td>Redes sociales</td><td>Ninguna identificada</td></tr>
+    <tr><td>Blog / contenidos</td><td>Ninguno identificado</td></tr>
+  </table>
+
+  <div class="section-num"><span class="n">05</span><h2>Competencia directa — comparativa con el resto del vertical veterinario del dataset</h2></div>
+  <table class="data">
+    <tr><th>Dimensión</th><th>Barroso</th><th>Ricardo Díez Reyero</th><th>Sanivet</th></tr>
+    <tr><td>Antigüedad</td><td>30 años (1996)</td><td>32+ años (1993)</td><td>8-10 años</td></tr>
+    <tr><td>Urgencias</td><td>No confirmado (v2 no encuentra evidencia)</td><td>No (corregido en v2 de ese caso)</td><td>Guardia de fin de semana, sin resolver del todo</td></tr>
+    <tr><td>Cirugía láser</td><td>Sí, único en el dataset</td><td>No</td><td>No</td></tr>
+    <tr><td>Planes de salud</td><td>Sí, por etapas</td><td>No</td><td>Solo 1ª consulta cachorro gratis</td></tr>
+    <tr><td>Diferenciador ya documentado en este dataset</td><td>Cirugía láser + planes de salud</td><td>Autoridad académica (ULE)</td><td>ISFM Cat Friendly + digitalización</td></tr>
+  </table>
+  <p style="margin-bottom:0;">Los tres casos veterinarios ya auditados en este dataset tienen posicionamientos distintos y no directamente solapados — cada uno podría usar al otro como referencia de "esto es lo que no ofrezco" en su propia comunicación.</p>
+
+  <div class="section-num"><span class="n">06</span><h2>Estrategia — hipótesis por skill operativo</h2></div>
+  <p><strong>faro-auditor-conversion</strong> — los planes de salud no tienen, según la investigación, landing ni funnel de captación propio; la cirugía láser no está optimizada en SEO ("cirugía láser veterinaria León" es una búsqueda que probablemente nadie hace porque no sabe que el servicio existe); la ausencia de cita online es fricción frente a competidores más digitalizados.</p>
+  <p><strong>faro-board-of-advisors</strong> — el modelo híbrido (servicios puntuales + planes recurrentes) es una base de negocio más estable que la de un competidor solo transaccional; la estabilidad del equipo (Enrique desde 1996, María desde 2014) es un activo de confianza poco explotado en la comunicación; con solo dos veterinarios visibles, la capacidad de atención tiene un límite real si la demanda crece.</p>
+  <p><strong>faro-offer-architect</strong> — los planes de salud actuales carecen de nombre propio y precio visible; la cirugía láser podría empaquetarse como línea de producto con garantía explícita; la especialización en cardiología es un nicho de alta demanda y baja oferta en León que podría comunicarse como servicio de referencia independiente.</p>
+
+  <div class="section-num"><span class="n">07</span><h2>Pendientes — datos que requieren confirmación directa</h2></div>
+  <ul class="pending-list">
+    <li><span class="prio">Crítica</span> — Confirmar si existe algún servicio de urgencias o fuera de horario, y si el número 630 52 23 82 de la v1 es real o un error de fuente</li>
+    <li><span class="prio">Alta</span> — Precios reales de los tres planes de salud</li>
+    <li><span class="prio">Alta</span> — Valoración real en Google Business Profile (la v1 citaba 4,9/5 sobre 103 opiniones; la v2 no confirma ni desmiente esa cifra)</li>
+    <li><span class="prio">Media</span> — Objetivos de Enrique Barroso a medio plazo (mantener, ampliar equipo, sucesión)</li>
+  </ul>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"Lleváis casi 30 años en León con el mismo fundador al frente, una valoración de 4,9 sobre 5, y tecnología de cirugía láser que ninguna otra veterinaria de nuestro estudio menciona. Os dejamos un informe honesto sobre cómo hacer que ese diferenciador real se vea antes de que un cliente decida por otra clínica."</p>
-    <p style="margin-bottom:0;">No proponemos cambiar el servicio — proponemos que lo que ya os hace diferentes se note desde el primer segundo.</p>
+    <p class="quote">"Tenéis cirugía láser, algo que ninguna otra veterinaria de nuestro estudio en León tiene, y planes de salud por etapas que os dan ingresos recurrentes que la mayoría de vuestra competencia no tiene. Os dejamos un informe honesto: corregimos un dato de urgencias que habíamos publicado sin confirmar del todo, y os contamos cómo hacer que esos dos diferenciadores reales se vean antes de que alguien decida por otra clínica."</p>
+    <p style="margin-bottom:0;">No proponemos inventar un servicio de urgencias que no tenéis — proponemos que lo que sí tenéis, y es único, se comunique con esa misma fuerza.</p>
   </div>
 
-  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+  <p class="cta-footer">FARO — Inteligencia Operativa para pymes de León con agenda. Documento de trabajo · Dataset EXP-003. Sin compromiso, sin coste por este informe.</p>
 
 </div>
 </body>

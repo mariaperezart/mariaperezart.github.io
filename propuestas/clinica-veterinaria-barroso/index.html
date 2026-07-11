@@ -1,18 +1,26 @@
 <!--
-  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  BORRADOR DE PROPUESTA v2 — no está publicado ni es el sitio oficial
   de este negocio. Octavo candidato de experimentos/EXP-003-pymes-leon.
 
-  Ángulo: la cirugía láser CO2 es un diferenciador tecnológico real y
-  verificable que ningún otro veterinario del dataset menciona, pero
-  solo aparece en fuentes muy específicas -- esta landing lo sube al
-  primer plano, explicado en lenguaje de propietario (menos dolor,
-  recuperación más rápida), no como término técnico suelto.
+  CORRECCIÓN v2: la v1 mostraba un tercer teléfono como "emergencias
+  fuera de horario" (630 52 23 82). Una investigación posterior, con
+  navegación directa de la web real, no encuentra ese número ni ningún
+  servicio de urgencias -- al contrario, confirma que no hay servicio
+  de fin de semana. Se retira ese botón y esa tarjeta de esta landing.
+  El horario, antes marcado como "posiblemente desactualizado", queda
+  confirmado sin cambios por la misma investigación (L-V
+  10:00-13:30/16:00-19:30).
+
+  Ángulo (se mantiene, reforzado): la cirugía láser CO2 es un
+  diferenciador tecnológico real y verificable que ningún otro
+  veterinario del dataset menciona. Nuevo en la v2: planes de salud
+  por etapas (cachorro/adulto/senior) -- el único modelo de ingresos
+  recurrentes del vertical veterinario de este dataset.
 
   Datos públicos confirmados (ver informe-auditoria.html): Calle Los
-  Osorios 6, León · Tel. 987 22 21 66 / 620 76 13 73 · Emergencias
-  fuera de horario 630 52 23 82 · horario L-V 10:00-13:30/16:00-19:30
-  (fuente advierte posible desactualización). Fundada en 1996 por
-  Enrique Barroso, equipo con María Bayón.
+  Osorios 6, León · Tel. 987 222 166 (consultas) / 620 761 373
+  (WhatsApp) · horario L-V 10:00-13:30/16:00-19:30. Fundada en 1996
+  por Enrique Barroso, equipo con María Bayón desde 2014.
 
   Identidad visual: berenjena + cobre -- premium médico, distinta a
   las paletas ya usadas en el dataset.
@@ -98,12 +106,12 @@
     <div class="container hero__grid">
       <div>
         <span class="eyebrow">Calle Los Osorios 6, León · desde 1996</span>
-        <div class="rating">⭐ <strong>4,9/5</strong> · 103 opiniones en Google</div>
+        <div class="rating">⭐ <strong>4,9/5</strong> · 103 opiniones en Google (cifra pendiente de reconfirmar directamente)</div>
         <h1>Cirugía con láser. Menos dolor, recuperación más rápida.</h1>
         <p>Casi 30 años cuidando mascotas en León, con el mismo veterinario fundador al frente. Incorporamos cirugía láser CO₂ para intervenciones con menos sangrado y una recuperación más cómoda.</p>
         <div class="hero-actions">
           <a class="btn btn--primary" href="tel:+34987222166">📞 987 22 21 66</a>
-          <a class="btn btn--outline" href="tel:+34630522382">🚨 Emergencias fuera de horario</a>
+          <a class="btn btn--outline" href="https://wa.me/34620761373" target="_blank" rel="noopener">💬 WhatsApp</a>
         </div>
       </div>
 
@@ -121,6 +129,20 @@
 
   <section class="section">
     <div class="container">
+      <div class="section__intro">
+        <h2>Planes de salud, por etapa de vida</h2>
+        <p style="margin:0 auto;">No solo consultas puntuales — seguimiento continuo adaptado a cada edad.</p>
+      </div>
+      <div class="phone-cards" style="max-width:640px;">
+        <div class="phone-card"><div><span class="label">Cachorros y gatitos</span><div class="num" style="font-size:14px;">Todo lo que necesita el primer año</div></div></div>
+        <div class="phone-card"><div><span class="label">Adultos</span><div class="num" style="font-size:14px;">Medicina preventiva durante todo el año</div></div></div>
+        <div class="phone-card"><div><span class="label">Senior</span><div class="num" style="font-size:14px;">Detección temprana para más tiempo juntos</div></div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
       <div class="section__intro"><h2>Cómo contactarnos</h2></div>
       <div class="phone-cards">
         <div class="phone-card">
@@ -128,12 +150,8 @@
           <a class="btn-call" href="tel:+34987222166">Llamar</a>
         </div>
         <div class="phone-card">
-          <div><span class="label">Línea alternativa</span><div class="num">620 761 373</div></div>
-          <a class="btn-call" href="tel:+34620761373">Llamar</a>
-        </div>
-        <div class="phone-card urgente">
-          <div><span class="label">Emergencias fuera de horario</span><div class="num">630 522 382</div></div>
-          <a class="btn-call" href="tel:+34630522382">Llamar</a>
+          <div><span class="label">WhatsApp</span><div class="num">620 761 373</div></div>
+          <a class="btn-call" href="https://wa.me/34620761373" target="_blank" rel="noopener">Escribir</a>
         </div>
       </div>
     </div>
@@ -142,7 +160,7 @@
 
 <footer>
   <p>Clínica Veterinaria Barroso — Calle Los Osorios 6, León · 987 222 166</p>
-  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El horario no se muestra aquí porque una de las fuentes consultadas advierte que podría estar desactualizado; confirmar directamente antes de publicar.</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. Los planes de salud (nombres, contenido y precio) son ilustrativos a partir de la investigación disponible; confirmar el detalle real antes de publicar.</p>
 </footer>
 
 </body>
