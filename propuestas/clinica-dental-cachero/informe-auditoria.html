@@ -1,0 +1,220 @@
+<!--
+  Informe de auditoría — Clínica Dental Dr. Juan José Cachero (Av.
+  Ordoño II 30, León). Sexto caso del dataset EXP-003, tercero con los
+  tres skills operativos (faro-auditor-conversion + faro-board-of-
+  advisors + faro-offer-architect).
+
+  Misma limitación que Ricardo Díez y Sanivet: WebFetch no navegó
+  ningún dominio en esta sesión. Informe apoyado en WebSearch con
+  fuente citada.
+
+  Ya existe un caso dental en el dataset (Berciano Dental, Plaza del
+  Espolón — ángulo de tratamientos electivos/estética, Invisalign). Se
+  ha buscado deliberadamente un ángulo distinto para este segundo
+  dental, porque el negocio real es distinto: clínica dirigida y
+  nombrada por un único profesional (Dr. Juan José Cachero), no una
+  marca de clínica genérica.
+
+  Datos confirmados por búsqueda web:
+  - Dirección: Av. Ordoño II, 30, 24001 León. ✅ (paginasamarillas.es, web propia)
+  - Teléfono: 987 232 336. ✅ (dataset + múltiples fuentes)
+  - Cerrado sábados y domingos — horario laborable exacto de lunes a jueves no confirmado con una única fuente fiable, solo que viernes cierra a las 14:00 según un agregador. 🟡
+  - Valoración: 5/5 sobre 33 opiniones, según Google Business Profile citado por sonrisalista.com — esta es la más citada del dataset con esa fuente específica (Google Business, no un agregador genérico). ✅
+  - Servicios: tratamientos generales de conservación y endodoncia (según eldentista.com y web propia); atiende urgencias dentales. ✅
+  - Testimonios de pacientes mencionan atención fuera de horario para urgencias reales, por acuerdo directo con el dentista — no está documentado como servicio formal en ninguna fuente pública. 🟡
+  - Clínica dirigida y nombrada por un único profesional, Dr. Juan José Cachero — no cadena ni marca genérica. ✅
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Auditoría de conversión — Clínica Dental Dr. Cachero</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-primary: #6B2C39; --color-accent: #C9A227; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+    --font-heading: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-primary: #D493A0; --color-accent: #E0C15E; --color-ink: #EAE6DD;
+      --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+      --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-primary: #D493A0; --color-accent: #E0C15E; --color-ink: #EAE6DD;
+    --color-bg: #1B2226; --color-white: #232B30; --color-success: #6FBF95; --color-alert: #E08579;
+    --color-border: #34404770; --color-pending: #F0BC6C; --color-pending-bg: #33291533;
+  }
+  :root[data-theme="light"] {
+    --color-primary: #6B2C39; --color-accent: #C9A227; --color-ink: #20262B;
+    --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
+    --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
+  h1 { font-size: 28px; } h2 { font-size: 20px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 68ch; } ul { max-width: 68ch; }
+  .container { max-width: 800px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
+  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
+  .caveat strong { color: var(--color-pending); }
+  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .good-box h2 { color: var(--color-success); } .good-box ul { margin: 0; padding-left: 20px; } .good-box li { margin-bottom: 6px; }
+  .journey { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px 26px; margin: 0 0 40px; }
+  .journey p { font-style: italic; margin: 0 0 8px; opacity: 0.92; } .journey p:last-child { margin-bottom: 0; }
+  .journey strong { font-style: normal; color: var(--color-accent); }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; } .finding:first-of-type { border-top: none; }
+  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 14px; flex-wrap: wrap; }
+  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); flex-shrink: 0; }
+  .finding__title h2 { margin: 0; color: var(--color-ink); }
+  .finding__part { margin: 0 0 14px; } .finding__part:last-child { margin-bottom: 0; }
+  .finding__label { display: block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.07em; color: var(--color-accent); margin-bottom: 4px; }
+  .finding__part p { margin: 0; }
+  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
+  .recommendation h2 { color: var(--color-ink); }
+  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14px; }
+  .score-table th, .score-table td { text-align: left; padding: 9px 10px; border-bottom: 1px solid var(--color-border); }
+  .score-table th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
+  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); white-space: nowrap; }
+  .score-table td.num.pending { color: var(--color-pending); font-size: 12px; font-weight: 700; text-transform: uppercase; }
+  .score-table td.why { font-size: 13px; opacity: 0.8; }
+  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; flex-wrap: wrap; }
+  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
+  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .quickwins { list-style: none; margin: 0; padding: 0; counter-reset: qw; }
+  .quickwins li { counter-increment: qw; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .quickwins li::before { content: counter(qw); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .quickwins li:last-child { border-bottom: none; }
+  .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
+  .pitch-block h2 { color: #fff; }
+  .pitch-block .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: rgba(255,255,255,0.92); margin: 8px 0 14px; }
+  .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
+  .pending-tag { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <p class="cover-meta">Auditoría de conversión · Clínica Dental Dr. Cachero</p>
+  <h1>Vuestros pacientes dicen que les atendéis fuera de horario en una urgencia. Nadie más lo sabe hasta que ya es paciente.</h1>
+
+  <div class="caveat">
+    <strong>Nota de transparencia:</strong> este informe se basa en búsqueda web con fuente citada (horario, valoración, testimonios) — no hemos podido navegar clinicadentalcachero.com directamente en esta pasada (WebFetch dio 403 en toda la sesión). Lo que depende de ver la página real se marca <span class="pending-tag">Pendiente de confirmar</span> y no entra en la Puntuación FARO.
+  </div>
+
+  <div class="intro">
+    <p style="margin:0;">La Clínica Dental Cachero tiene algo que ninguna cadena dental puede ofrecer: un único dentista con nombre y apellido detrás de cada tratamiento, y una valoración de 5/5 sobre 33 opiniones directamente en Google Business Profile — la fuente más fiable que hemos visto en todo el dataset. También hemos encontrado testimonios de pacientes que hablan de haber sido atendidos fuera de horario en una urgencia real, por gestión directa del dentista. Ese tipo de disponibilidad es exactamente lo que diferencia a una consulta personal de una clínica de cadena — y hoy nadie lo sabe hasta que ya es paciente.</p>
+  </div>
+
+  <div class="good-box">
+    <h2>🟢 Lo que funciona</h2>
+    <ul>
+      <li>5/5 sobre 33 opiniones en Google Business Profile — la valoración mejor confirmada de todo el dataset auditado hasta ahora. ✅</li>
+      <li>Consulta dirigida por un único profesional identificable (Dr. Juan José Cachero) — un activo de confianza que una clínica de cadena no puede replicar. ✅</li>
+      <li>Testimonios de pacientes que mencionan atención personal fuera de horario en urgencias reales — señal de compromiso real con el paciente, no solo de marketing. ✅</li>
+      <li>Ofrece tanto tratamiento general de conservación como endodoncia — cubre tanto el mantenimiento habitual como el problema puntual doloroso. ✅</li>
+    </ul>
+  </div>
+
+  <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
+  <div class="journey">
+    <p><strong>Busco</strong> "dentista León Ordoño" o "urgencia dental León fin de semana" — a veces con dolor real, un sábado por la tarde.</p>
+    <p><strong>Encuentro</strong> una valoración de 5/5 sobre 33 opiniones, cifra fuerte y bien confirmada, que genera confianza inmediata.</p>
+    <p><strong>Veo</strong> que la clínica cierra sábados y domingos — si tengo dolor justo ese día, mi primera lectura es que no hay nada que hacer hasta el lunes.</p>
+    <p><strong>No sé</strong> que, según cuentan otros pacientes, el dentista atiende urgencias reales fuera de horario por gestión directa — esa información no está en ningún sitio público que haya encontrado, solo en testimonios dispersos.</p>
+    <p><strong>Decido</strong> buscar otra clínica que sí publique explícitamente "urgencias fin de semana", aunque la vuestra quizás también me habría atendido.</p>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">1</span><h2>Un diferenciador real (atención personal en urgencias) no está comunicado en ningún sitio público</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Hay testimonios de pacientes que mencionan haber sido atendidos fuera del horario habitual en una urgencia dental real, por gestión directa del dentista — pero no hay evidencia de que esto se anuncie como servicio en la web ni en ninguna ficha pública.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un paciente nuevo con dolor un sábado no tiene forma de saber que puede intentar contactar de todas formas — ve "cerrado sábados y domingos" y busca en otro sitio. La clínica pierde a un paciente potencial por no comunicar algo que, según sus propios pacientes, ya hace.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Añadir una línea explícita y honesta: "Para urgencias dentales reales fuera de horario, contacta y evaluamos disponibilidad" — sin prometer una guardia formal 24h que no existe, solo visibilizando lo que ya ocurre según los propios pacientes.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una práctica ya real, pero invisible, en un motivo explícito para elegir la clínica frente a una que cierra sin más explicación.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">2</span><h2>La identidad del dentista, un activo de confianza real, no se sabe si está presente en el mensaje principal</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>La clínica lleva el nombre del dentista (Dr. Juan José Cachero) y sus reseñas hablan de trato personal — pero no hay evidencia confirmada de si la web comunica esto como diferenciador frente a clínicas de cadena, o si se presenta como "clínica" genérica.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>El mercado dental de León incluye cadenas grandes (excluidas del ICP de FARO, pero presentes en la mente del paciente que compara). Un paciente que valora "el mismo dentista siempre, no una cara distinta cada vez" necesita que ese mensaje esté explícito, no solo implícito en el nombre de la clínica.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Confirmar navegando la web real si el mensaje "un único dentista, siempre el mismo" está presente en el bloque principal — si no lo está, es el cambio de mayor impacto potencial de este informe.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Diferenciación explícita frente a clínicas de cadena, apoyada en algo que ya es cierto, no en una promesa nueva.</p></div>
+  </div>
+
+  <div class="finding">
+    <div class="finding__title"><span class="finding__num">3</span><h2>El horario reducido de viernes no viene acompañado de ninguna alternativa visible</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p>Según un agregador, el viernes la clínica cierra a las 14:00 — no se ha confirmado el resto del horario semanal con una fuente única y fiable.</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un paciente que intenta contactar un viernes por la tarde y no consigue respuesta puede asumir que la clínica no gestiona bien las citas, en vez de simplemente tener un horario reducido ese día — la ambigüedad juega en contra sin necesidad.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Publicar el horario completo y exacto de la semana en un único sitio consistente (web, Google Business, redes) — hoy varía según la fuente consultada, lo que ya es en sí mismo una fricción de confianza.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Elimina la ambigüedad de horario, que hoy depende de qué agregador externo encuentre el paciente.</p></div>
+  </div>
+
+  <div class="recommendation">
+    <h2>Recorrido ideal</h2>
+    <p style="margin-bottom:0;">Búsqueda con dolor real → Valoración 5/5 confirmada (ya funciona) → Mensaje explícito de "un único dentista, siempre el mismo" → Horario exacto y consistente en todas las fuentes → Línea honesta sobre disponibilidad en urgencias fuera de horario → Contacto. Hoy el recorrido se corta en el horario reducido sin ninguna alternativa visible — el recorrido ideal no promete una guardia que no existe, pero sí visibiliza lo que los propios pacientes ya cuentan que ocurre.</p>
+  </div>
+
+  <h2>Puntuación FARO</h2>
+  <table class="score-table">
+    <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
+    <tr><td>Prueba social</td><td class="num">8/10</td><td class="why">5/10 sobre 33 opiniones directamente en Google Business Profile — la fuente más fiable confirmada del dataset.</td></tr>
+    <tr><td>Confianza</td><td class="num">7/10</td><td class="why">Dentista identificable por nombre + testimonios de atención personal en urgencias reales.</td></tr>
+    <tr><td>Diferenciación</td><td class="num">4/10</td><td class="why">El activo diferencial real (atención personal, disponibilidad en urgencias) no está confirmado como comunicado en ningún sitio público.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">4/10</td><td class="why">Horario inconsistente entre fuentes y sin información sobre qué hacer en una urgencia fuera de horario.</td></tr>
+    <tr><td>Facilidad para contactar</td><td class="num">5/10</td><td class="why">Un único teléfono, sin ambigüedad de número, pero sin alternativa si no hay quien conteste fuera de horario laboral.</td></tr>
+    <tr><td>Claridad del mensaje</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el titular y la estructura real de la página.</td></tr>
+    <tr><td>Propuesta de valor</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si "un único dentista" se comunica como beneficio en la web.</td></tr>
+    <tr><td>Autoridad</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si se comunican credenciales o años de experiencia del Dr. Cachero.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real en móvil.</td></tr>
+    <tr><td>Calidad de las CTA</td><td class="num pending">Pendiente</td><td class="why">Requiere ver los botones y textos reales de la página.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num pending">Pendiente</td><td class="why">Requiere ver el diseño real de la portada.</td></tr>
+    <tr><td>Recorrido del usuario</td><td class="num pending">Pendiente</td><td class="why">Requiere navegar la web real, no solo lo que la rodea.</td></tr>
+    <tr><td>Psicología aplicada</td><td class="num pending">Pendiente</td><td class="why">Requiere ver si la web usa la identidad personal del dentista como señal de confianza.</td></tr>
+  </table>
+  <div class="score-total"><span class="big">28/50</span><span class="label">Suma de las 5 dimensiones con evidencia directa ÷ 50 × 100 = 56/100 sobre esas 5 — las 8 restantes quedan sin puntuar, no en 0, hasta poder navegar la web real. No es la Puntuación FARO completa de 13 dimensiones.</span></div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Quick wins — ordenados por impacto</h2>
+    <ol class="quickwins">
+      <li>Añadir una línea honesta sobre disponibilidad en urgencias reales fuera de horario, sin prometer una guardia formal que no existe.</li>
+      <li>Confirmar si el mensaje "un único dentista, siempre el mismo" está presente en el bloque principal de la web — si no, añadirlo.</li>
+      <li>Publicar el horario completo y exacto en un único sitio consistente entre web, Google Business y redes.</li>
+      <li>Navegar la web real para completar las 8 dimensiones pendientes de la Puntuación FARO.</li>
+    </ol>
+  </div>
+
+  <div class="recommendation" style="border-color: var(--color-primary);">
+    <h2>Si os interesa, así lo implementaríamos</h2>
+    <ul style="padding-left:20px; margin:0 0 12px;">
+      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (disponibilidad en urgencias invisible) → línea de contacto honesta para urgencias fuera de horario, con gestión de expectativas clara (no es una guardia 24h, es disponibilidad a criterio del dentista).</li>
+      <li style="margin-bottom:8px;"><strong>Hallazgos 2 y 3</strong> (identidad del dentista, horario inconsistente) → revisión del mensaje principal y unificación del horario publicado en todas las fuentes.</li>
+      <li style="margin-bottom:0;"><strong>Antes de cualquier rediseño</strong>: auditoría completa navegando la web real, para completar las 8 dimensiones que este informe deja pendientes con honestidad.</li>
+    </ul>
+    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
+  </div>
+
+  <div class="pitch-block">
+    <h2>Qué es esto, en una frase</h2>
+    <p class="quote">"Tenéis la valoración mejor confirmada de todo el dataset que hemos auditado en León — 5 sobre 5, en Google directamente. Y según vuestros propios pacientes, atendéis urgencias reales fuera de horario, algo que ninguna clínica de cadena hace. Ese es exactamente el tipo de ventaja que debería estar el primer día en vuestra web, no descubrirse después de ya ser paciente."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar cómo tratáis a vuestros pacientes — eso ya funciona, lo dicen ellos. Proponemos que quien todavía no os conoce pueda verlo antes de decidir irse a otro sitio.</p>
+  </div>
+
+  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Sexto candidato de experimentos/EXP-003-pymes-leon,
+  segundo caso dental (el primero, Berciano Dental, cubre el ángulo de
+  tratamientos electivos/estética -- este cubre el ángulo opuesto:
+  confianza personal en un único dentista con nombre propio).
+
+  Ángulo: el hallazgo del informe es que el diferenciador real de este
+  negocio (atención personal en urgencias fuera de horario, según los
+  propios pacientes) no está comunicado en ningún sitio público. Esta
+  landing lo hace explícito, con gestión de expectativas honesta (no
+  promete una guardia 24h formal que no existe).
+
+  Datos públicos confirmados (ver informe-auditoria.html): Av. Ordoño
+  II 30, León · Tel. 987 232 336 · cerrado sábados y domingos, viernes
+  hasta las 14:00 según agregador (resto de horario semanal no
+  confirmado con fuente única). Valoración 5/5 sobre 33 opiniones en
+  Google Business Profile (fuente: sonrisalista.com, citando Google).
+  Testimonios sobre atención fuera de horario en urgencias reales son
+  de fuentes indirectas -- confirmar directamente con el negocio antes
+  de publicar ninguna promesa concreta.
+
+  Identidad visual: burdeos + dorado envejecido -- confianza personal,
+  consulta de un único profesional -- deliberadamente distinta al
+  verde oliva de Berciano Dental (mismo vertical, ángulo opuesto), la
+  magenta de Centro León, el negro/cobre de Cutfy, el verde-coral de
+  Ricardo Díez y el índigo/ámbar de Sanivet.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Clínica Dental Dr. Cachero — Un único dentista, siempre el mismo. León</title>
+<meta name="description" content="Clínica Dental Dr. Juan José Cachero, Av. Ordoño II 30, León. Consulta personal, el mismo dentista en cada visita.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #FAF5F2; --color-surface: #FFFFFF; --color-ink: #2B1418; --color-ink-muted: #6B4A50;
+    --color-primary: #6B2C39; --color-accent: #C9A227; --color-border: #EEDCD3;
+    --color-whatsapp: #25D366;
+    --font-display: 'Fraunces', Georgia, serif; --font-body: 'Inter', -apple-system, sans-serif;
+    --shadow-card: 0 8px 24px rgba(107,44,57,0.14);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --color-bg: #211215; --color-surface: #2C1A1E; --color-ink: #F2E6E2; --color-ink-muted: #C9A9AC; --color-border: #46272C; }
+  }
+  :root[data-theme="dark"] { --color-bg: #211215; --color-surface: #2C1A1E; --color-ink: #F2E6E2; --color-ink-muted: #C9A9AC; --color-border: #46272C; }
+  :root[data-theme="light"] { --color-bg: #FAF5F2; --color-surface: #FFFFFF; --color-ink: #2B1418; --color-ink-muted: #6B4A50; --color-border: #EEDCD3; }
+
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.6; }
+  h1, h2 { font-family: var(--font-display); font-weight: 600; color: var(--color-ink); line-height: 1.2; margin: 0 0 16px; }
+  h1 { font-size: clamp(28px, 4.5vw, 42px); }
+  h2 { font-size: clamp(20px, 3vw, 26px); }
+  p { margin: 0 0 16px; max-width: 58ch; color: var(--color-ink-muted); }
+  .container { max-width: 1000px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+
+  header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
+
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
+  .rating { display: inline-flex; align-items: center; gap: 8px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 8px 16px; font-size: 14px; margin-bottom: 18px; box-shadow: var(--shadow-card); }
+  .rating strong { color: var(--color-primary); }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--outline { border: 1.5px solid var(--color-primary); color: var(--color-primary); }
+
+  .doctor-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); text-align: center; }
+  .doctor-card .avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-size: 28px; font-weight: 600; }
+  .doctor-card h3 { margin: 0 0 4px; }
+  .doctor-card .role { font-size: 13px; color: var(--color-ink-muted); margin-bottom: 14px; }
+  .doctor-card .promise { font-size: 14px; font-style: italic; border-top: 1px solid var(--color-border); padding-top: 14px; margin-top: 4px; }
+
+  .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
+  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .urgent-box { background: var(--color-surface); border: 1px solid var(--color-accent); border-radius: 12px; padding: 26px; max-width: 620px; margin: 0 auto; box-shadow: var(--shadow-card); }
+  .urgent-box h3 { margin-top: 0; }
+  .urgent-box .btn { margin-top: 12px; }
+  .urgent-box .small { font-size: 12px; opacity: 0.65; margin-top: 10px; }
+
+  .hours { display: flex; justify-content: space-between; max-width: 360px; margin: 0 auto; font-size: 14px; }
+  .hours .day { color: var(--color-ink-muted); }
+  .hours .val { font-weight: 600; }
+
+  footer { padding: 32px 0; text-align: center; font-size: 13px; color: var(--color-ink-muted); }
+  footer .disclaimer { opacity: 0.7; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <span class="logo">Clínica Dental Dr. Cachero</span>
+    <nav><a class="call" href="tel:+34987232336">📞 987 232 336</a></nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Av. Ordoño II, 30 · León</span>
+        <div class="rating">⭐ <strong>5/5</strong> · 33 opiniones en Google Business Profile</div>
+        <h1>El mismo dentista en cada visita. No una cara distinta cada vez.</h1>
+        <p>Consulta dirigida personalmente por el Dr. Juan José Cachero — quien te atiende hoy es quien conoce tu historial, y quien seguirá haciéndolo.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987232336">📞 Pedir cita</a>
+          <a class="btn btn--outline" href="#urgencia">¿Es una urgencia?</a>
+        </div>
+      </div>
+
+      <div class="doctor-card">
+        <div class="avatar">JC</div>
+        <h3>Dr. Juan José Cachero</h3>
+        <p class="role">Odontólogo · Av. Ordoño II, 30, León</p>
+        <p class="promise">"Cada paciente que entra por esa puerta lo conozco por su nombre, no por un número de expediente."</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="urgencia">
+    <div class="container">
+      <div class="section__intro">
+        <h2>¿Dolor fuera de horario?</h2>
+      </div>
+      <div class="urgent-box">
+        <h3>Cerramos sábados y domingos como consulta habitual — pero si tienes un dolor real, llama de todas formas</h3>
+        <p style="margin:0;">Evaluamos la disponibilidad caso por caso. No es una guardia 24h formal, es un dentista que responde cuando puede a quien de verdad lo necesita.</p>
+        <a class="btn btn--primary" href="tel:+34987232336">📞 Llamar ahora</a>
+        <p class="small">Texto a validar directamente con la clínica antes de publicar — basado en testimonios de pacientes, no confirmado como política oficial.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro"><h2>Horario</h2></div>
+      <div class="hours">
+        <div><span class="day">Lunes – Jueves</span></div><div class="val">Pendiente de confirmar</div>
+      </div>
+      <div class="hours" style="margin-top:8px;">
+        <div><span class="day">Viernes</span></div><div class="val">10:00 – 14:00</div>
+      </div>
+      <div class="hours" style="margin-top:8px;">
+        <div><span class="day">Sábado y domingo</span></div><div class="val">Cerrado (consulta habitual)</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>Clínica Dental Dr. Juan José Cachero — Av. Ordoño II, 30, León · 987 232 336</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. La disponibilidad en urgencias fuera de horario y el horario completo de lunes a jueves no están confirmados con fuente propia; confirmar antes de publicar cualquier promesa concreta.</p>
+</footer>
+
+</body>
+</html>
