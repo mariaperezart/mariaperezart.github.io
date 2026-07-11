@@ -1,0 +1,271 @@
+<!--
+  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  de este negocio. Candidato de experimentos/EXP-003-pymes-leon.
+
+  Datos públicos reales usados (búsqueda web, bercianodental.com no
+  accesible por WebFetch — 403 — así que no se pudo leer paleta ni
+  horario reales del sitio; identidad visual 100% original):
+  - Dirección: C/ Los Osorios, 2 (Plaza del Espolón), León.
+  - Teléfono: 987 35 59 24.
+  - Especialidad declarada: odontología estética, Invisalign,
+    blanqueamiento, implantología, ortodoncia, periodoncia,
+    tratamientos personalizados combinando especialidades.
+  - Horario: NO confirmado en ninguna fuente — no se inventa, se deja
+    "consultar horario" en vez de un horario ficticio. Confirmarlo
+    antes de publicar.
+  - WhatsApp: no confirmado si el 987 35 59 24 tiene WhatsApp Business
+    activo (formato de fijo) — verificar antes de usarlo como CTA en
+    una conversación real; mientras tanto el CTA enlaza a ese número
+    por si acaso, pero avisar al negocio de que puede necesitar un
+    número de móvil distinto.
+
+  Enfoque distinto al de la landing de Centro León (veterinaria):
+  esto no es un servicio de urgencias — es una clínica de odontología
+  estética con tratamientos electivos (Invisalign, blanqueamiento,
+  implantes). El CTA principal es "reservar cita de valoración", no
+  "llamar ahora" — no hay ansiedad de urgencia que resolver aquí, hay
+  fricción de "no sé si me van a devolver la llamada a tiempo".
+
+  Identidad visual original (verde esmeralda + dorado cálido, tipografía
+  Cormorant Garamond + Karla) — deliberadamente distinta a la paleta
+  magenta/coral usada en la landing de Centro León, para que cada
+  propuesta del dataset tenga su propia identidad y no parezcan
+  copias de la misma plantilla.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Berciano Dental — Odontología estética en León</title>
+<meta name="description" content="Berciano Dental, León. Invisalign, blanqueamiento profesional e implantología con tecnología avanzada. Plaza del Espolón.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Karla:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --color-bg: #F6F4EE;
+    --color-surface: #FFFFFF;
+    --color-ink: #221F1C;
+    --color-ink-muted: #6B6459;
+    --color-primary: #1F5B4E;
+    --color-primary-deep: #123A32;
+    --color-gold: #B68A2E;
+    --color-gold-deep: #96701F;
+    --color-border: #E6E0D2;
+    --color-whatsapp: #25D366;
+    --font-display: 'Cormorant Garamond', Georgia, serif;
+    --font-body: 'Karla', -apple-system, BlinkMacSystemFont, sans-serif;
+    --shadow-card: 0 6px 22px rgba(18, 58, 50, 0.09);
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --color-bg: #16211D; --color-surface: #1C2A25; --color-ink: #EFEDE6; --color-ink-muted: #B7B0A3;
+      --color-primary: #6FBFA9; --color-primary-deep: #9AD8C6; --color-gold: #E0BA5D; --color-gold-deep: #EDCB7C;
+      --color-border: #2C3B35; --color-whatsapp: #4FCB80; --shadow-card: 0 6px 22px rgba(0,0,0,0.4);
+    }
+  }
+  :root[data-theme="dark"] {
+    --color-bg: #16211D; --color-surface: #1C2A25; --color-ink: #EFEDE6; --color-ink-muted: #B7B0A3;
+    --color-primary: #6FBFA9; --color-primary-deep: #9AD8C6; --color-gold: #E0BA5D; --color-gold-deep: #EDCB7C;
+    --color-border: #2C3B35; --color-whatsapp: #4FCB80; --shadow-card: 0 6px 22px rgba(0,0,0,0.4);
+  }
+  :root[data-theme="light"] {
+    --color-bg: #F6F4EE; --color-surface: #FFFFFF; --color-ink: #221F1C; --color-ink-muted: #6B6459;
+    --color-primary: #1F5B4E; --color-primary-deep: #123A32; --color-gold: #B68A2E; --color-gold-deep: #96701F;
+    --color-border: #E6E0D2; --color-whatsapp: #25D366; --shadow-card: 0 6px 22px rgba(18, 58, 50, 0.09);
+  }
+
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
+  h1, h2, h3.display { font-family: var(--font-display); font-weight: 600; color: var(--color-primary-deep); line-height: 1.15; margin: 0 0 16px; text-wrap: balance; }
+  h1 { font-size: clamp(32px, 4.6vw, 48px); font-style: italic; font-weight: 500; }
+  h2 { font-size: clamp(24px, 3vw, 30px); }
+  p { margin: 0 0 16px; max-width: 60ch; }
+  .container { max-width: 1040px; margin: 0 auto; padding: 0 24px; }
+  a { color: var(--color-primary); }
+  a:focus-visible, button:focus-visible, input:focus-visible, select:focus-visible { outline: 2px solid var(--color-primary); outline-offset: 2px; }
+
+  header { background: var(--color-surface); border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; z-index: 50; }
+  header .container { display: flex; align-items: center; justify-content: space-between; gap: 16px; flex-wrap: wrap; }
+  .brand-text { display: flex; flex-direction: column; line-height: 1.1; }
+  .brand-text strong { font-family: var(--font-display); font-style: italic; font-size: 23px; color: var(--color-primary-deep); }
+  .brand-text span { font-size: 10.5px; text-transform: uppercase; letter-spacing: 0.12em; color: var(--color-ink-muted); }
+  nav { display: flex; align-items: center; gap: 22px; font-size: 14px; font-weight: 500; }
+  nav a.navlink { text-decoration: none; color: var(--color-ink); }
+  nav a.navlink:hover { color: var(--color-primary); }
+
+  .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 15px; padding: 14px 26px; border-radius: 3px; text-decoration: none; border: 1.5px solid transparent; transition: transform 120ms ease, filter 120ms ease; }
+  @media (prefers-reduced-motion: no-preference) { .btn:hover { transform: translateY(-1px); filter: brightness(1.05); } }
+  .btn--primary { background: var(--color-gold); color: #22190A; }
+  .btn--outline { background: transparent; border-color: var(--color-primary); color: var(--color-primary); }
+  .btn--lg { padding: 16px 30px; font-size: 16px; }
+
+  .hero { padding: 60px 0 52px; }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
+  @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
+  .eyebrow { display: inline-flex; align-items: center; gap: 6px; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; color: var(--color-primary); margin-bottom: 18px; }
+  .eyebrow::before { content: ""; width: 22px; height: 1px; background: var(--color-gold); display: inline-block; }
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 26px 0 22px; }
+  .trust-list { display: flex; flex-direction: column; gap: 9px; font-size: 14.5px; color: var(--color-ink-muted); max-width: 460px; padding: 0; margin: 0; }
+  .trust-list li { list-style: none; display: flex; gap: 10px; }
+  .trust-list li::before { content: "—"; color: var(--color-gold); font-weight: 700; flex-shrink: 0; }
+
+  .hero__art { display: flex; align-items: center; justify-content: center; }
+  .hero__art svg { width: 100%; max-width: 280px; }
+
+  .section { padding: 52px 0; }
+  .section--tinted { background: var(--color-surface); }
+  .section__intro { max-width: 580px; margin: 0 auto 30px; text-align: center; }
+
+  .steps { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+  @media (max-width: 760px) { .steps { grid-template-columns: 1fr; } }
+  .step { padding: 26px 22px; background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 4px; }
+  .step__num { display: inline-flex; align-items: center; justify-content: center; width: 28px; height: 28px; border: 1.5px solid var(--color-gold); color: var(--color-gold-deep); font-weight: 700; font-size: 13px; margin-bottom: 12px; font-family: var(--font-display); }
+  .step h3 { font-family: var(--font-body); font-size: 15.5px; font-weight: 600; margin: 0 0 6px; color: var(--color-ink); }
+  .step p { font-size: 13.5px; color: var(--color-ink-muted); margin: 0; }
+
+  .service-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 4px 40px; max-width: 640px; margin: 0 auto; }
+  @media (max-width: 620px) { .service-list { grid-template-columns: 1fr; } }
+  .service-list div { padding: 14px 0; border-bottom: 1px solid var(--color-border); font-family: var(--font-display); font-size: 19px; font-style: italic; color: var(--color-primary-deep); }
+
+  .lead-form-wrap { max-width: 480px; margin: 0 auto; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 4px; padding: 34px; box-shadow: var(--shadow-card); }
+  form label { display: block; font-weight: 600; font-size: 13.5px; margin: 14px 0 4px; color: var(--color-ink); }
+  form input, form select { width: 100%; padding: 11px 12px; border: 1px solid var(--color-border); border-radius: 3px; font-family: var(--font-body); font-size: 15px; background: var(--color-bg); color: var(--color-ink); }
+  form button { margin-top: 20px; width: 100%; justify-content: center; }
+  .form-note { font-size: 12.5px; color: var(--color-ink-muted); margin-top: 14px; margin-bottom: 0; }
+
+  .wa-float { position: fixed; bottom: 22px; right: 22px; width: 54px; height: 54px; border-radius: 50%; background: var(--color-whatsapp); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.25); z-index: 60; }
+  .wa-float svg { width: 26px; height: 26px; }
+
+  footer { background: var(--color-primary-deep); color: rgba(255,255,255,0.85); padding: 30px 0; margin-top: 44px; text-align: center; font-size: 14px; }
+  footer .disclaimer { opacity: 0.65; font-size: 12px; margin-top: 8px; }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container">
+    <div class="brand-text">
+      <strong>Berciano Dental</strong>
+      <span>León · Odontología estética</span>
+    </div>
+    <nav>
+      <a class="navlink" href="#servicios">Tratamientos</a>
+      <a class="navlink" href="#reservar">Reservar</a>
+      <a class="btn btn--primary" href="https://wa.me/34987355924?text=Hola%2C%20quiero%20reservar%20una%20cita%20de%20valoraci%C3%B3n" target="_blank" rel="noopener">Reservar cita</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section class="hero">
+    <div class="container hero__grid">
+      <div>
+        <span class="eyebrow">Plaza del Espolón, León</span>
+        <h1>Consulta con quien va a diseñar tu sonrisa, no con una lista de espera.</h1>
+        <p>Invisalign, blanqueamiento profesional e implantología con tecnología avanzada. Escríbenos por WhatsApp y te confirmamos tu primera cita de valoración sin que tengas que esperar a que alguien te devuelva la llamada.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary btn--lg" href="https://wa.me/34987355924?text=Hola%2C%20quiero%20reservar%20una%20cita%20de%20valoraci%C3%B3n" target="_blank" rel="noopener">💬 Reservar cita de valoración</a>
+          <a class="btn btn--outline" href="tel:+34987355924">📞 Llamar</a>
+        </div>
+        <ul class="trust-list">
+          <li>Odontología estética: Invisalign, blanqueamiento, implantología</li>
+          <li>Tratamientos personalizados combinando varias especialidades</li>
+          <li>En pleno centro de León, Plaza del Espolón</li>
+        </ul>
+      </div>
+      <div class="hero__art" aria-hidden="true">
+        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="110" cy="110" r="108" fill="var(--color-surface)" stroke="var(--color-border)"/>
+          <path d="M60 120 Q110 150 160 120" stroke="var(--color-gold)" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="72" cy="96" r="5" fill="var(--color-primary)"/>
+          <circle cx="90" cy="86" r="5" fill="var(--color-primary)"/>
+          <circle cx="110" cy="82" r="5" fill="var(--color-primary)"/>
+          <circle cx="130" cy="86" r="5" fill="var(--color-primary)"/>
+          <circle cx="148" cy="96" r="5" fill="var(--color-primary)"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tinted" id="como-funciona">
+    <div class="container">
+      <div class="section__intro">
+        <h2>¿Escribes fuera de nuestro horario?</h2>
+        <p>No dejamos tu mensaje esperando hasta el día siguiente.</p>
+      </div>
+      <div class="steps">
+        <div class="step">
+          <span class="step__num">1</span>
+          <h3>Recibimos tu mensaje al instante</h3>
+          <p>Aunque sea de noche o fin de semana.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">2</span>
+          <h3>Confirmamos que no se ha perdido</h3>
+          <p>Sabes que alguien lo va a leer, sin tener que insistir.</p>
+        </div>
+        <div class="step">
+          <span class="step__num">3</span>
+          <h3>Te confirmamos cita en cuanto abrimos</h3>
+          <p>Con la información que ya nos diste, sin repetir todo de nuevo.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servicios">
+    <div class="container">
+      <div class="section__intro"><h2>Tratamientos</h2></div>
+      <div class="service-list">
+        <div>Invisalign</div>
+        <div>Blanqueamiento profesional</div>
+        <div>Implantología dental</div>
+        <div>Ortodoncia</div>
+        <div>Odontología general</div>
+        <div>Periodoncia</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--tinted" id="reservar">
+    <div class="container">
+      <div class="lead-form-wrap">
+        <h2 style="font-size:23px;">¿Prefieres que te llamemos?</h2>
+        <p style="font-size:14px;">Déjanos tus datos y te confirmamos tu cita de valoración.</p>
+        <form>
+          <label for="nombre">Nombre</label>
+          <input type="text" id="nombre" required>
+          <label for="telefono">Teléfono</label>
+          <input type="tel" id="telefono" required>
+          <label for="interes">Qué te interesa</label>
+          <select id="interes">
+            <option>Invisalign</option>
+            <option>Blanqueamiento</option>
+            <option>Implantes</option>
+            <option>Revisión general</option>
+            <option>No estoy seguro/a, prefiero que me llaméis</option>
+          </select>
+          <button type="submit" class="btn btn--primary">Solicitar que me llamen</button>
+          <p class="form-note">Sin compromiso — te confirmamos el mejor hueco disponible.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+</main>
+
+<a class="wa-float" href="https://wa.me/34987355924?text=Hola%2C%20quiero%20reservar%20una%20cita%20de%20valoraci%C3%B3n" target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 32 32" fill="#fff" xmlns="http://www.w3.org/2000/svg"><path d="M16.02 3C9.4 3 4 8.4 4 15.02c0 2.36.65 4.56 1.78 6.45L4 29l7.73-1.73a11.9 11.9 0 0 0 4.29.8c6.62 0 12.02-5.4 12.02-12.03C28.04 8.4 22.64 3 16.02 3zm0 21.86c-1.5 0-2.94-.4-4.2-1.14l-.3-.18-4.58 1.02.98-4.46-.2-.32a9.83 9.83 0 0 1-1.5-5.26c0-5.47 4.45-9.92 9.92-9.92 5.47 0 9.92 4.45 9.92 9.92-.02 5.47-4.47 9.34-10.04 9.34zm5.45-7.44c-.3-.15-1.77-.87-2.04-.97-.27-.1-.47-.15-.67.15-.2.3-.77.97-.94 1.17-.17.2-.35.22-.65.07-.3-.15-1.25-.46-2.38-1.47a8.9 8.9 0 0 1-1.65-2.05c-.17-.3-.02-.46.13-.6.14-.14.3-.35.45-.53.15-.17.2-.3.3-.5.1-.2.05-.37-.02-.52-.07-.15-.67-1.6-.92-2.2-.24-.57-.49-.5-.67-.5-.17 0-.37-.02-.57-.02-.2 0-.52.07-.8.37-.27.3-1.05 1.03-1.05 2.5 0 1.48 1.08 2.9 1.23 3.1.15.2 2.12 3.24 5.13 4.54.72.31 1.28.5 1.72.64.72.23 1.38.2 1.9.12.58-.09 1.77-.72 2.02-1.42.25-.7.25-1.3.17-1.43-.07-.12-.27-.2-.57-.35z"/></svg>
+</a>
+
+<footer>
+  <div class="container">
+    <p>Berciano Dental — C. Los Osorios, 2 (Plaza del Espolón), 24003 León · 987 35 59 24</p>
+    <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — horario pendiente de confirmar con el negocio antes de publicar.</p>
+  </div>
+</footer>
+
+</body>
+</html>
