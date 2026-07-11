@@ -1,37 +1,42 @@
 <!--
-  BORRADOR DE PROPUESTA v1 — no está publicado ni es el sitio oficial
+  BORRADOR DE PROPUESTA v2 — no está publicado ni es el sitio oficial
   de este negocio. Cuarto candidato de experimentos/EXP-003-pymes-leon.
 
-  Ángulo: a diferencia de Cutfy (canal de dudas antes de reservar) o
-  Berciano Dental (competir en tratamientos electivos), aquí el
-  problema real detectado es de triaje de urgencias — dos teléfonos
-  (consulta general / urgencias) sin etiquetar con claridad en ningún
-  sitio consultado, y un solo canal de contacto (llamada) en el
-  momento de mayor ansiedad del cliente. Esta landing resuelve
-  exactamente eso: etiqueta los dos números sin ambigüedad y añade
-  WhatsApp como alternativa cuando no contestan, sin sustituir la
-  llamada para una urgencia real.
+  CORRIGE LA v1: la v1 de esta landing mostraba 649 822 027 como
+  "urgencias 24h", dato que una investigación posterior no confirma —
+  la clínica no tiene urgencias 24h propias, es justo lo contrario
+  (desventaja frente a Centro León y San Marcos). Se retira ese número
+  y toda la franja de "urgencia ahora mismo".
 
-  Datos públicos confirmados (ver informe-auditoria.html): Gran Vía de
-  San Marcos 3, León · Tel. consultas 987 22 99 32 · Tel. urgencias 649
-  822 027 · L-V 10:00-14:00 y 17:00-20:00 aprox., sábado desde las
-  11:00 (agregadores, no confirmado en web propia). Valoración 5/5
-  sobre 30 opiniones citada en agregador externo, pendiente de
-  confirmar en Google Business Profile directamente. WhatsApp Business
-  no confirmado como canal activo — verificar antes de publicar.
+  Nuevo ángulo, con datos más ricos de una investigación posterior
+  (ver informe-auditoria.html para provenencia completa, no
+  reverificada de forma independiente en esta sesión): el activo real
+  es la autoridad académica del fundador (32 años, vínculo con la
+  Facultad de Veterinaria de la ULE) y el catálogo de especialidades
+  avanzadas (oncología, cardiología, cirugía compleja) — no urgencias.
+  El contacto oficial confirmado es un Gmail personal, sin dominio
+  propio ni WhatsApp; esta landing propone ambos como mejora, sin
+  fingir un canal que no existe todavía.
 
-  Identidad visual: verde azulado (confianza clínica, no frío) + coral
-  cálido (urgencia sin alarmismo) — deliberadamente distinta a la
-  magenta de Centro León, el verde oliva de Berciano Dental y el
-  negro/cobre de Cutfy.
+  Datos públicos (ver informe-auditoria.html): Gran Vía de San Marcos
+  3, León · Tel. fijo 987 229 932 · móvil 608 787 224 · sin urgencias
+  24h propias · horario L-V 10:00-14:00/17:00-20:00, sábado
+  11:00-14:00 (resto del año); L-V 10:00-15:00, sábado cerrado
+  (julio-agosto). Email real confirmado es odiez@gmail.com — el
+  dominio propio mostrado aquí (info@clinicaveterinariaricardodiez.es)
+  es una propuesta, no un canal activo todavía.
+
+  Identidad visual: se mantiene verde azulado + coral cálido de la v1
+  — sigue encajando con el nuevo ángulo (confianza clínica seria, sin
+  urgencia artificial).
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Clínica Veterinaria Ricardo Díez — Urgencias y consultas, León</title>
-<meta name="description" content="Clínica Veterinaria Ricardo Díez, Gran Vía de San Marcos 3, León. Urgencias y consultas. Llama o escríbenos por WhatsApp.">
+<title>Clínica Veterinaria Ricardo Díez Reyero — Especialista veterinario, León</title>
+<meta name="description" content="Clínica Veterinaria Ricardo Díez Reyero, Gran Vía de San Marcos 3, León. 32 años de experiencia, vínculo académico con la Facultad de Veterinaria de León. Cirugía compleja, oncología, cardiología.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -60,37 +65,43 @@
 
   header { border-bottom: 1px solid var(--color-border); padding: 18px 0; position: sticky; top: 0; background: var(--color-bg); z-index: 50; }
   header .container { display: flex; align-items: center; justify-content: space-between; }
-  .logo { font-family: var(--font-display); font-weight: 700; font-size: 19px; color: var(--color-primary); }
+  .logo { font-family: var(--font-display); font-weight: 700; font-size: 18px; color: var(--color-primary); }
   nav a.call { font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 18px; border-radius: 999px; text-decoration: none; }
 
-  .urgency-bar { background: var(--color-accent); color: #fff; text-align: center; padding: 10px 16px; font-size: 14px; font-weight: 600; }
-  .urgency-bar a { color: #fff; text-decoration: underline; }
-
-  .hero { padding: 56px 0 48px; border-bottom: 1px solid var(--color-border); }
-  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: start; }
+  .hero { padding: 64px 0 48px; border-bottom: 1px solid var(--color-border); }
+  .hero__grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 44px; align-items: center; }
   @media (max-width: 860px) { .hero__grid { grid-template-columns: 1fr; } }
   .eyebrow { display: inline-block; font-size: 13px; font-weight: 600; letter-spacing: 0.04em; color: var(--color-primary); margin-bottom: 12px; }
   .rating { display: inline-flex; align-items: center; gap: 8px; background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 999px; padding: 8px 16px; font-size: 14px; margin-bottom: 18px; box-shadow: var(--shadow-card); }
   .rating strong { color: var(--color-primary); }
-
-  .phone-cards { display: flex; flex-direction: column; gap: 12px; margin: 22px 0; }
-  .phone-card { display: flex; align-items: center; justify-content: space-between; gap: 16px; background: var(--color-surface); border: 1.5px solid var(--color-border); border-radius: 12px; padding: 16px 20px; box-shadow: var(--shadow-card); }
-  .phone-card.urgente { border-color: var(--color-accent); }
-  .phone-card .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-muted); }
-  .phone-card.urgente .label { color: var(--color-accent); }
-  .phone-card .num { font-family: var(--font-display); font-size: 20px; font-weight: 600; color: var(--color-ink); }
-  .phone-card a.btn-call { flex-shrink: 0; font-weight: 600; font-size: 13px; background: var(--color-primary); color: #fff; padding: 10px 16px; border-radius: 999px; text-decoration: none; }
-  .phone-card.urgente a.btn-call { background: var(--color-accent); }
-
+  .hero-actions { display: flex; gap: 12px; flex-wrap: wrap; margin: 22px 0 8px; }
   .btn { display: inline-flex; align-items: center; gap: 8px; font-weight: 600; font-size: 14px; padding: 14px 24px; border-radius: 999px; text-decoration: none; }
-  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; margin-top: 4px; }
+  .btn--primary { background: var(--color-primary); color: #fff; }
+  .btn--whatsapp { background: var(--color-whatsapp); color: #06210F; }
 
-  .wa-mock { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 22px; box-shadow: var(--shadow-card); }
-  .wa-mock .bubble { background: #E7F6EC; border-radius: 12px 12px 12px 2px; padding: 12px 16px; font-size: 14px; color: #16301F; max-width: 92%; margin-bottom: 10px; }
-  :root[data-theme="dark"] .wa-mock .bubble, @media (prefers-color-scheme: dark) { }
+  .doctor-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 14px; padding: 26px; box-shadow: var(--shadow-card); text-align: center; }
+  .doctor-card .avatar { width: 84px; height: 84px; border-radius: 50%; background: linear-gradient(135deg, var(--color-primary), var(--color-accent)); margin: 0 auto 14px; display: flex; align-items: center; justify-content: center; color: #fff; font-family: var(--font-display); font-size: 26px; font-weight: 600; }
+  .doctor-card h3 { margin: 0 0 4px; }
+  .doctor-card .role { font-size: 13px; color: var(--color-ink-muted); margin-bottom: 14px; }
+  .doctor-card .credentials { text-align: left; font-size: 13px; list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--color-border); padding-top: 14px; }
+  .doctor-card .credentials li { display: flex; gap: 8px; margin-bottom: 8px; }
+  .doctor-card .credentials li::before { content: "🎓"; flex-shrink: 0; }
 
   .section { padding: 48px 0; border-bottom: 1px solid var(--color-border); }
-  .section__intro { max-width: 620px; margin: 0 auto 28px; text-align: center; }
+  .section__intro { max-width: 640px; margin: 0 auto 28px; text-align: center; }
+  .specialties { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .specialties { grid-template-columns: repeat(2, 1fr); } }
+  .specialty { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 10px; padding: 16px; text-align: center; font-size: 13px; font-weight: 600; box-shadow: var(--shadow-card); }
+
+  .honest-box { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 24px; max-width: 640px; margin: 0 auto; box-shadow: var(--shadow-card); }
+  .honest-box h3 { margin-top: 0; }
+
+  .contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; max-width: 760px; margin: 0 auto; }
+  @media (max-width: 760px) { .contact-cards { grid-template-columns: 1fr; } }
+  .contact-card { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 18px; text-align: center; box-shadow: var(--shadow-card); }
+  .contact-card .label { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; color: var(--color-ink-muted); margin-bottom: 6px; }
+  .contact-card .val { font-family: var(--font-display); font-size: 16px; font-weight: 600; }
+
   .reviews { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
   @media (max-width: 760px) { .reviews { grid-template-columns: 1fr; } }
   .review { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 12px; padding: 20px; box-shadow: var(--shadow-card); }
@@ -104,11 +115,9 @@
 </head>
 <body>
 
-<div class="urgency-bar">🚨 ¿Urgencia ahora mismo? Llama directamente al <a href="tel:+34649822027">649 822 027</a></div>
-
 <header>
   <div class="container">
-    <span class="logo">Clínica Veterinaria Ricardo Díez</span>
+    <span class="logo">Clínica Veterinaria Ricardo Díez Reyero</span>
     <nav><a class="call" href="tel:+34987229932">📞 Llamar</a></nav>
   </div>
 </header>
@@ -117,29 +126,26 @@
   <section class="hero">
     <div class="container hero__grid">
       <div>
-        <span class="eyebrow">Gran Vía de San Marcos 3, León</span>
-        <div class="rating">⭐ <strong>5/5</strong> · reseñas de clientes reales en Google (cifra pendiente de confirmar directamente)</div>
-        <h1>Consulta o urgencia — te decimos ahora mismo a quién llamar.</h1>
-        <p>Dos números, sin confusión: uno para pedir cita, otro para una urgencia real. Si no consigues que te cojan el teléfono, escríbenos por WhatsApp y te respondemos en cuanto podamos.</p>
-
-        <div class="phone-cards">
-          <div class="phone-card urgente">
-            <div><span class="label">Urgencias · 24h</span><div class="num">649 822 027</div></div>
-            <a class="btn-call" href="tel:+34649822027">Llamar</a>
-          </div>
-          <div class="phone-card">
-            <div><span class="label">Consultas y citas</span><div class="num">987 22 99 32</div></div>
-            <a class="btn-call" href="tel:+34987229932">Llamar</a>
-          </div>
+        <span class="eyebrow">Gran Vía de San Marcos 3, León · desde 1993</span>
+        <div class="rating">⭐ <strong>5/5</strong> · reseñas de clientes reales (cifra pendiente de confirmar directamente en Google)</div>
+        <h1>El veterinario que ha formado a otros veterinarios de León.</h1>
+        <p>32 años de experiencia clínica y vínculo directo con la Facultad de Veterinaria de la Universidad de León. Cirugía compleja, oncología y cardiología — no solo consulta general.</p>
+        <div class="hero-actions">
+          <a class="btn btn--primary" href="tel:+34987229932">📞 987 229 932</a>
+          <a class="btn btn--whatsapp" href="https://wa.me/34608787224?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20mascota" target="_blank" rel="noopener">💬 WhatsApp (propuesta, canal a validar)</a>
         </div>
-
-        <a class="btn btn--whatsapp" href="https://wa.me/34987229932?text=Hola%2C%20tengo%20una%20consulta%20sobre%20mi%20mascota" target="_blank" rel="noopener">💬 Escribir por WhatsApp</a>
       </div>
 
-      <div class="wa-mock">
-        <div class="bubble">Hola 👋 Gracias por escribir a Clínica Veterinaria Ricardo Díez.</div>
-        <div class="bubble">Si es una urgencia real, llama directamente al 649 822 027 — es más rápido que esperar respuesta aquí.</div>
-        <div class="bubble">Si es una consulta general, hemos recibido tu mensaje y te contestamos en cuanto podamos. 🐾</div>
+      <div class="doctor-card">
+        <div class="avatar">RD</div>
+        <h3>Dr. Ricardo Díez Reyero</h3>
+        <p class="role">Veterinario · Fundador, 1993</p>
+        <ul class="credentials">
+          <li>Licenciado en Veterinaria, Universidad de León (1992)</li>
+          <li>Colaborador Honorífico, Facultad de Veterinaria de León</li>
+          <li>Ex-Profesor Asociado, Dpto. de Medicina y Cirugía (2000-2007)</li>
+          <li>Tutor de prácticas de futuros veterinarios</li>
+        </ul>
       </div>
     </div>
   </section>
@@ -147,8 +153,37 @@
   <section class="section">
     <div class="container">
       <div class="section__intro">
-        <h2>Lo que dicen quienes ya han confiado en vosotros</h2>
-        <p style="margin:0 auto;">Reseñas reales encontradas en fuentes públicas — recopiladas aquí para que un cliente nuevo no tenga que buscarlas por su cuenta.</p>
+        <h2>Especialidades que no todas las clínicas de León ofrecen</h2>
+        <p style="margin:0 auto;">Más allá de la consulta general — cirugía y diagnóstico de alta complejidad.</p>
+      </div>
+      <div class="specialties">
+        <div class="specialty">Oncología</div>
+        <div class="specialty">Cardiología</div>
+        <div class="specialty">Cirugía torácica</div>
+        <div class="specialty">Endoscopia</div>
+        <div class="specialty">Cirugía oftálmica</div>
+        <div class="specialty">Traumatología</div>
+        <div class="specialty">Quimioterapia</div>
+        <div class="specialty">Diagnóstico por imagen</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro"><h2>Horario, con claridad</h2></div>
+      <div class="honest-box">
+        <h3>No ofrecemos guardia de urgencias 24h</h3>
+        <p style="margin:0;">Somos una consulta especializada, no un hospital de urgencias — por eso preferimos decirlo con claridad en vez de dejar la duda. Si tu mascota tiene una urgencia fuera de nuestro horario, las clínicas de la zona con servicio 24h son la opción correcta en ese momento.</p>
+        <p style="margin:12px 0 0; font-size:13px;"><strong>Horario:</strong> L-V 10:00-14:00 y 17:00-20:00, sábado 11:00-14:00 (julio-agosto: L-V 10:00-15:00, sábado cerrado).</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section__intro">
+        <h2>Lo que dicen quienes ya han confiado en la clínica</h2>
       </div>
       <div class="reviews">
         <div class="review">
@@ -158,22 +193,34 @@
         </div>
         <div class="review">
           <div class="stars">★★★★★</div>
-          <p>"Trato exquisito y único hacia los animales. Ricardo, Elisa y Nayla son grandes profesionales con una compasión increíble."</p>
+          <p>"Trato exquisito y único hacia los animales. Grandes profesionales con una compasión increíble."</p>
           <div class="who">Reseña pública en Google</div>
         </div>
         <div class="review">
           <div class="stars">★★★★★</div>
-          <p>"Urgencia con nuestro gato, nos atendieron lo más rápido posible y el trato fue excepcional."</p>
+          <p>"Urgencia con nuestro gato, nos atendieron lo más rápido posible dentro de su horario y el trato fue excepcional."</p>
           <div class="who">Reseña pública en Google</div>
         </div>
       </div>
     </div>
   </section>
+
+  <section class="section" style="border-bottom:none;">
+    <div class="container">
+      <div class="section__intro"><h2>Contacto</h2></div>
+      <div class="contact-cards">
+        <div class="contact-card"><div class="label">Teléfono</div><div class="val">987 229 932</div></div>
+        <div class="contact-card"><div class="label">Móvil</div><div class="val">608 787 224</div></div>
+        <div class="contact-card"><div class="label">Email</div><div class="val" style="font-size:13px;">info@clinicaveterinariaricardodiez.es</div></div>
+      </div>
+      <p style="text-align:center; font-size:12px; opacity:0.65; margin-top:12px;">El email de dominio propio es una propuesta de mejora — el canal confirmado hoy es un Gmail personal.</p>
+    </div>
+  </section>
 </main>
 
 <footer>
-  <p>Clínica Veterinaria Ricardo Díez — Gran Vía de San Marcos 3, León · 987 22 99 32 · Urgencias 649 822 027</p>
-  <p class="disclaimer">Borrador de propuesta construido por FARO a partir de información pública — pendiente de validar con el negocio antes de publicar. El texto de las reseñas se cita de fuentes públicas; verificar autoría y permiso antes de publicar tal cual.</p>
+  <p>Clínica Veterinaria Ricardo Díez Reyero — Gran Vía de San Marcos 3, León · 987 229 932</p>
+  <p class="disclaimer">Borrador de propuesta construido por FARO — pendiente de validar con el negocio antes de publicar. El texto de las reseñas se cita de fuentes públicas; verificar autoría y permiso antes de publicar tal cual. El canal de WhatsApp y el email de dominio propio son propuestas, no canales activos confirmados.</p>
 </footer>
 
 </body>
