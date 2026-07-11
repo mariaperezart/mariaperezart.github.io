@@ -1,41 +1,50 @@
 <!--
-  Informe de auditoría — v2, corregido con captura real de la
-  portada de bercianodental.com aportada por el usuario (WebFetch
-  seguía dando 403 en el momento de escribir esto).
+  Informe de auditoría — REVISIÓN v3, amplía la auditoría UX de 6
+  hallazgos (v2, basada en una captura real de la portada) a una
+  auditoría de negocio completa. La v2 sigue siendo válida en su
+  contenido — sus hallazgos 1-3 (CTA sin decir qué pasa al pulsar,
+  WhatsApp ausente del hero, banner de cookies compitiendo con el
+  contenido) proceden de una captura real de bercianodental.com
+  aportada por el usuario, no de suposición — y quedan integrados aquí
+  como hallazgos verificados dentro de la sección 04, no descartados.
 
-  QUÉ CAMBIÓ RESPECTO A v1: la captura real muestra un hero limpio de
-  un único objetivo (nombre de la clínica, un solo CTA "PIDE CITA",
-  teléfono visible con icono, fondo verde oliva + crema) — lo
-  contrario del "amontonamiento de tratamientos en primera pantalla"
-  que v1 marcaba como "patrón típico, pendiente de confirmar". Esa
-  hipótesis quedó descartada y se retira del informe; no se deja como
-  hallazgo corregido a medias. El hallazgo del CTA genérico ("PIDE
-  CITA" no dice qué va a pasar) SÍ queda confirmado directamente por
-  la captura, y pasa de "pendiente" a confirmado.
+  PROVENANCIA DE LOS DATOS NUEVOS (mismo criterio ya aplicado a
+  Ricardo Díez Reyero y a Centro León en este dataset): la ficha
+  societaria, biografía de la fundadora, catálogo de servicios,
+  reputación y mapa de competencia proceden de una investigación hecha
+  por el usuario en otra sesión. WebFetch no funcionó en ESTA sesión
+  para ningún dominio (403 confirmado de nuevo antes de escribir esta
+  revisión) — estos datos no se han vuelto a verificar de forma
+  independiente aquí. Los datos societarios (CIF, Registro Mercantil,
+  capital social, ratios financieros) son, si están bien transcritos,
+  información legalmente pública en España (BORME/eInforma) — pero al
+  tratarse de cifras muy específicas de una empresa real y pequeña,
+  conviene una verificación cruzada antes de citarlas en cualquier
+  conversación real con Cristina Berciano.
 
-  Lo que sigue sin verse en la captura (más abajo de la portada:
-  listado de tratamientos, testimonios, equipo) sigue marcado como
-  pendiente de confirmar — la captura solo cubre la primera pantalla.
-
-  Paleta actualizada a partir de la real (verde oliva oscuro + crema
-  pálido), no la emeralda/dorada inventada en v1 — ver FARO_MVP_LANDING.md
-  sección 9.3, regla de evidencia: corregir en cuanto hay dato real,
-  no mantener la suposición por comodidad.
+  CORRECCIÓN RESPECTO AL TEXTO ORIGINAL DE LA INVESTIGACIÓN: la
+  sección "10 / Anexo" tal como se recibió afirmaba que la landing
+  (index.html en esta carpeta) ya materializa "12 años cuidando
+  sonrisas en León" + primera consulta gratuita + odontología
+  biomimética. Eso no es exacto: index.html es la landing v2 ya
+  existente, centrada en resolver la fricción de "quién me devuelve la
+  llamada" (WhatsApp como canal más rápido que el teléfono) — no
+  construye el storytelling de trayectoria ni la oferta de consulta
+  gratuita. Se corrige la sección 10 para reflejar esto con precisión;
+  el hero product de "Sonrisa Berciano" queda documentado como
+  recomendación pendiente de construir, no como algo ya entregado.
 -->
 <!doctype html>
 <html lang="es-ES">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Auditoría de experiencia — Berciano Dental</title>
+<title>Auditoría operativa — Berciano Dental</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    /* FARO sigue con su propia identidad en este informe (es un entregable de FARO) —
-       pero el acento se ajusta al verde oliva real de Berciano para que el bloque
-       "Oportunidad FARO" se sienta coherente con su marca, no con una paleta inventada */
     --color-primary: #1B3A4B; --color-accent: #8C9B5E; --color-ink: #20262B;
     --color-bg: #F4F1EA; --color-white: #FFFFFF; --color-success: #3E7A5C; --color-alert: #B4453A;
     --color-border: #E4DFD3; --color-pending: #8A5A13; --color-pending-bg: #FBF3E4;
@@ -61,166 +70,198 @@
   * { box-sizing: border-box; }
   body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; }
   h1, h2, h3 { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); line-height: 1.2; margin: 0 0 12px; }
-  h1 { font-size: 30px; }
-  h2 { font-size: 20px; }
-  p { margin: 0 0 14px; max-width: 68ch; }
-  .container { max-width: 780px; margin: 0 auto; padding: 48px 24px 64px; }
-
-  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 40px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
-  .masthead .logo { font-family: var(--font-heading); font-weight: 600; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
+  h1 { font-size: 30px; } h2 { font-size: 21px; } h3 { font-size: 16px; }
+  p { margin: 0 0 14px; max-width: 72ch; } ul { max-width: 72ch; }
+  .container { max-width: 880px; margin: 0 auto; padding: 48px 24px 64px; }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 12px; }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 20px; color: var(--color-primary); letter-spacing: 0.04em; }
   .masthead .date { font-size: 13px; color: var(--color-ink); opacity: 0.65; }
+  .tagline { font-size: 13px; color: var(--color-ink); opacity: 0.6; margin-bottom: 28px; padding-bottom: 20px; border-bottom: 2px solid var(--color-ink); }
+  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 6px; }
+  .cover-sub { font-size: 15px; opacity: 0.8; margin-bottom: 28px; }
+  .provenance { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 24px; font-size: 13.5px; }
+  .provenance strong { color: var(--color-pending); }
+  .verdict { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 26px; margin: 0 0 28px; }
+  .verdict h2 { margin-top: 0; }
+  .stat-row { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin: 28px 0 44px; }
+  @media (max-width: 640px) { .stat-row { grid-template-columns: repeat(2, 1fr); } }
+  .stat { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 10px; padding: 18px 16px; text-align: center; }
+  .stat .num { font-family: var(--font-heading); font-size: 30px; font-weight: 700; color: var(--color-primary); line-height: 1; margin-bottom: 6px; }
+  .stat .lbl { font-size: 12px; opacity: 0.7; }
 
-  .cover-meta { font-size: 14px; color: var(--color-ink); opacity: 0.75; margin-bottom: 8px; }
-  .intro { background: var(--color-white); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 24px 0 32px; }
+  .section-num { display: flex; align-items: baseline; gap: 10px; margin: 56px 0 20px; padding-top: 24px; border-top: 3px solid var(--color-ink); }
+  .section-num:first-of-type { margin-top: 0; }
+  .section-num .n { font-family: var(--font-heading); font-size: 13px; font-weight: 700; letter-spacing: 0.1em; color: var(--color-accent); text-transform: uppercase; }
+  .section-num h2 { margin: 0; }
 
-  .caveat { background: var(--color-pending-bg); border: 1px solid var(--color-pending); border-radius: 8px; padding: 18px 22px; margin: 0 0 40px; font-size: 14px; }
-  .caveat strong { color: var(--color-pending); }
+  table.data { width: 100%; border-collapse: collapse; margin: 14px 0 28px; font-size: 13.5px; }
+  table.data th, table.data td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--color-border); vertical-align: top; }
+  table.data th { font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
 
-  .good-box { background: #EAF5EE; border: 1px solid #BFE0CC; border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
-  .good-box h2 { color: var(--color-success); }
-  .good-box ul { margin: 0; padding-left: 20px; }
-  .good-box li { margin-bottom: 6px; }
+  .callout { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout strong { color: var(--color-primary); }
+  .callout-alert { background: #FBEAE7; border: 1px solid #E5B7AE; border-radius: 10px; padding: 20px 24px; margin: 20px 0 32px; font-size: 14px; }
+  .callout-alert strong { color: var(--color-alert); }
 
-  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; }
-  .finding:first-of-type { border-top: none; }
-  .finding__title { display: flex; align-items: center; gap: 10px; margin-bottom: 12px; flex-wrap: wrap; }
-  .finding__num { display: inline-flex; align-items: center; justify-content: center; width: 30px; height: 30px; border-radius: 50%; background: var(--color-alert); color: #fff; font-weight: 700; font-size: 14px; font-family: var(--font-heading); }
-  .finding__title h2 { margin: 0; color: var(--color-ink); }
-  .tag-pending { font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; background: var(--color-pending-bg); color: var(--color-pending); border: 1px solid var(--color-pending); border-radius: 999px; padding: 3px 10px; }
-  .subhead { font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-ink); opacity: 0.55; margin: 14px 0 6px; }
-  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 8px 0 14px; }
+  .quote { border-left: 3px solid var(--color-accent); padding-left: 14px; font-style: italic; color: var(--color-ink); opacity: 0.9; margin: 12px 0; }
 
-  .recommendation { background: var(--color-white); border: 1px solid var(--color-accent); border-radius: 10px; padding: 28px; margin: 40px 0; }
-  .recommendation h2 { color: var(--color-ink); }
-  .hero-mock { background: var(--color-bg); border: 1px solid var(--color-border); border-radius: 8px; padding: 24px; margin: 16px 0; }
-  .hero-mock h3 { font-size: 21px; margin-bottom: 4px; }
-  .hero-mock .sub { font-size: 14px; color: var(--color-ink); opacity: 0.8; margin-bottom: 14px; }
-  .cta-row { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 6px; }
-  .cta-row span { display: inline-flex; align-items: center; gap: 6px; font-weight: 600; font-size: 14px; padding: 10px 18px; border-radius: 999px; }
-  .cta-row .primary { background: var(--color-accent); color: #22190A; }
+  .finding-inline { background: var(--color-white); border: 1px solid var(--color-alert); border-radius: 10px; padding: 22px 24px; margin: 20px 0 32px; }
+  .finding-inline h3 { color: var(--color-alert); margin-top: 0; margin-bottom: 6px; }
+  .finding-inline .tag { display: inline-block; font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.06em; background: var(--color-success); color: #fff; border-radius: 999px; padding: 3px 10px; margin-bottom: 10px; }
 
-  .score-table { width: 100%; border-collapse: collapse; margin: 16px 0; font-size: 14.5px; }
-  .score-table th, .score-table td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--color-border); }
-  .score-table th { font-size: 12px; text-transform: uppercase; letter-spacing: 0.05em; opacity: 0.6; }
-  .score-table td.num { font-family: var(--font-heading); font-weight: 600; color: var(--color-primary); }
-  .score-total { display: flex; align-items: baseline; gap: 12px; margin-top: 18px; }
-  .score-total .big { font-family: var(--font-heading); font-size: 40px; color: var(--color-primary); font-weight: 600; }
-  .score-total .label { font-size: 13px; opacity: 0.7; }
+  .roadmap-phase { margin-bottom: 32px; }
+  .roadmap-phase h3 { color: var(--color-ink); background: var(--color-bg); display: inline-block; padding: 4px 12px; border-radius: 6px; }
+
+  .pending-list { list-style: none; margin: 0; padding: 0; }
+  .pending-list li { padding: 10px 0; border-bottom: 1px solid var(--color-border); font-size: 14px; }
+  .pending-list .prio { font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--color-pending); }
 
   .pitch-block { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 28px; margin-top: 44px; }
   .pitch-block h2 { color: #fff; }
   .pitch-block .quote { border-left-color: var(--color-accent); color: rgba(255,255,255,0.92); opacity: 1; }
-
   .cta-footer { text-align: center; margin-top: 40px; font-size: 14px; color: var(--color-ink); opacity: 0.75; }
 </style>
 </head>
 <body>
 <div class="container">
 
-  <div class="masthead">
-    <span class="logo">FARO</span>
-    <span class="date">Julio 2026</span>
+  <div class="masthead"><span class="logo">FARO — Inteligencia Operativa</span><span class="date">11 jul 2026 · v3</span></div>
+  <div class="tagline">Convertimos investigación en resultados medibles</div>
+
+  <p class="cover-meta">Informe de Auditoría Operativa · Berciano Dental</p>
+  <h1>Una startup clínica de 3 años, con una fundadora de 12, y cero huella digital.</h1>
+  <p class="cover-sub">Dataset EXP-003 · Caso 5 de N · 3 skills operativos (faro-auditor-conversion + faro-board-of-advisors + faro-offer-architect)</p>
+
+  <div class="provenance">
+    <strong>Provenencia de los datos:</strong> la ficha societaria, biografía de la fundadora, catálogo de servicios, reputación y mapa de competencia proceden de una investigación hecha fuera de esta sesión (WebFetch no funcionó aquí — 403 confirmado de nuevo justo antes de escribir esta revisión). No se han vuelto a verificar de forma independiente. Los hallazgos 1-3 de la sección 04 (CTA, WhatsApp, banner de cookies) sí son una comprobación directa hecha sobre una captura real de bercianodental.com en la sesión original de este caso.
   </div>
 
-  <p class="cover-meta">Auditoría de experiencia · Berciano Dental</p>
-  <h1>El hero ya es limpio. El botón no dice qué va a pasar al pulsarlo.</h1>
-
-  <div class="caveat">
-    <strong>Nota de transparencia sobre este borrador:</strong> los hallazgos marcados ✅ están confirmados con una captura real de vuestra portada. Los marcados <span class="tag-pending">Pendiente de confirmar</span> se refieren a secciones más abajo de la página que todavía no hemos visto — no se presenta ninguna suposición como si fuera una observación directa.
+  <div class="verdict">
+    <h2>Veredicto FARO</h2>
+    <p style="margin-bottom:0;">Berciano Dental no es una clínica establecida: es una startup clínica de 3 años (constituida en febrero de 2023, según la investigación) con una fundadora de 12 años de trayectoria clínica pero, si se confirman las cifras citadas, sin capital, sin reputación online verificable, sin redes sociales y con resultado de explotación negativo en 2024. El hueco entre la excelencia técnica declarada de Cristina Berciano y la invisibilidad digital es a la vez un riesgo de continuidad y la oportunidad de mayor recorrido del dataset EXP-003: talento clínico comprobado que necesita un sistema de captación desde cero.</p>
   </div>
 
-  <div class="intro">
-    <p style="margin:0;">Analizamos el recorrido de alguien que busca mejorar su sonrisa y no sabe todavía qué tratamiento necesita — el visitante más habitual de una clínica de estética dental. El servicio de diseño de sonrisa que ofrecéis está bien construido y documentado (fotos y vídeos reales, simulación digital, prueba en boca antes de decidir) — el problema no está en el tratamiento, está en un par de detalles concretos entre que alguien llega y decide contactar.</p>
+  <div class="stat-row">
+    <div class="stat"><div class="num">3</div><div class="lbl">años desde la constitución (2023), según la investigación</div></div>
+    <div class="stat"><div class="num">12</div><div class="lbl">años de trayectoria clínica de la fundadora</div></div>
+    <div class="stat"><div class="num">3</div><div class="lbl">empleados (microempresa), según la investigación</div></div>
+    <div class="stat"><div class="num">0</div><div class="lbl">reseñas públicas identificadas</div></div>
   </div>
 
-  <div class="good-box">
-    <h2>🟢 Lo que funciona</h2>
-    <ul>
-      <li>El hero de portada es limpio y de un único objetivo: nombre de la clínica, un solo botón ("Pide cita") y el teléfono bien visible con icono — nada de saturación de opciones en la primera pantalla. ✅</li>
-      <li>La propuesta de valor central ("diseño de sonrisa") está bien documentada — fotos/vídeos reales del proceso, simulación digital y prueba en boca antes del tratamiento. ✅</li>
-      <li>El proceso descrito (evaluación → simulación → mock-up → tratamiento) transmite un método serio, no una promesa genérica. ✅</li>
-      <li>Identidad visual coherente y reconocible (verde oliva + crema, logotipo claro) en toda la cabecera. ✅</li>
-    </ul>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>El CTA no dice qué va a pasar al pulsarlo</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>El botón principal dice <em>"PIDE CITA"</em>. Es un CTA de acción, no de resultado: no dice si hay que rellenar un formulario, si van a llamar, ni en cuánto tiempo.</p>
-    <p class="subhead">Impacto</p>
-    <p>Alguien que no sabe todavía qué tratamiento necesita duda antes de pulsar un botón que suena a compromiso inmediato. Un CTA como <span class="quote">"Cuéntanos qué te preocupa, sin compromiso"</span> reduce esa duda sin perder la llamada a la acción.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>No hay un canal de WhatsApp visible en el hero</h2></div>
-    <p class="subhead">Situación actual</p>
-    <p>La portada muestra teléfono y el botón "Pide cita", pero ningún icono ni enlace de WhatsApp en la primera pantalla — a diferencia de negocios similares en León que sí lo hacen visible desde el primer segundo.</p>
-    <p class="subhead">Impacto</p>
-    <p>Quien prefiere escribir antes que llamar (la mayoría, fuera del horario de la clínica) no tiene una vía obvia de hacerlo sin buscar más.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">3</span><h2>El banner de cookies compite con el contenido</h2></div>
-    <p>En la parte inferior de la pantalla, un banner de cookies y un icono flotante de Instagram ocupan espacio visible nada más entrar — mismo tipo de fricción de entrada que un pop-up, aunque de menor intensidad al no bloquear toda la pantalla.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">4</span><h2>Demasiadas decisiones más abajo de la portada</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p class="subhead">Patrón típico en este tipo de sitio, no confirmado todavía</p>
-    <p>Es habitual que, bajando de la portada, convivan diseño de sonrisa, ortodoncia, implantes, estética, equipo y testimonios sin una jerarquía que oriente a quien no sabe qué tratamiento necesita — pero esto no está confirmado con la captura disponible, solo se ve el hero.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">5</span><h2>Mucha información, poco acompañamiento</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p>Esto es un hallazgo estructural común en sitios de clínicas, no confirmado todavía en el vuestro: se suele explicar bien los tratamientos pero apenas qué ocurre después de contactar — ¿os llamarán?, ¿hay compromiso?, ¿cuánto tarda?, ¿qué pasa en la primera visita? Son las preguntas que de verdad frenan el contacto.</p>
-  </div>
-
-  <div class="finding">
-    <div class="finding__title"><span class="finding__num">6</span><h2>El lenguaje puede estar centrado en la clínica, no en la emoción</h2><span class="tag-pending">Pendiente de confirmar</span></div>
-    <p>Si el texto de las secciones internas habla sobre todo de tratamientos, tecnología y materiales, y poco de miedo, inseguridad o confianza — son esas emociones, no las especificaciones técnicas, las que hacen que alguien reserve una cita de valoración.</p>
-  </div>
-
-  <div class="recommendation">
-    <h2>Oportunidad FARO</h2>
-    <p>No proponemos rehacer la web — el hero ya es bueno. Proponemos ajustar el CTA y añadir un canal directo de WhatsApp:</p>
-    <div class="hero-mock">
-      <h3>Berciano Dental — Diseño de sonrisa en León</h3>
-      <p class="sub">Cuéntanos qué te preocupa y uno de nuestros especialistas te orientará sin compromiso.</p>
-      <div class="cta-row"><span class="primary">🟠 Quiero hablar con un especialista</span></div>
-    </div>
-    <p style="margin-bottom:0;">Ese CTA probablemente convierta mejor que "Pide cita" a secas — dice exactamente lo que va a pasar al pulsarlo, sin sonar a compromiso inmediato. Hay un prototipo de landing con este enfoque ya construido, sin coste ni compromiso, si queréis verlo en marcha.</p>
-  </div>
-
-  <div class="recommendation" style="border-color: var(--color-primary);">
-    <h2>Si os interesa, así lo implementaríamos</h2>
-    <p>Cada hallazgo de este informe se corresponde con algo que ya sabemos construir:</p>
-    <ul style="padding-left:20px; margin:0 0 12px;">
-      <li style="margin-bottom:8px;"><strong>Hallazgo 1</strong> (CTA que no dice qué va a pasar) → una landing de un único objetivo con CTA de resultado, como el prototipo de este informe.</li>
-      <li style="margin-bottom:8px;"><strong>Hallazgo 2</strong> (sin WhatsApp visible en el hero) → canal directo de WhatsApp con respuesta automática fuera de horario.</li>
-      <li style="margin-bottom:0;"><strong>Hallazgo 5</strong> (poco acompañamiento tras contactar, si se confirma) → seguimiento automático de quien pregunta y no reserva cita de valoración.</li>
-    </ul>
-    <p style="margin-bottom:0; font-weight:600;">¿Queréis que os ayudemos a implementar alguna de estas mejoras?</p>
-  </div>
-
-  <h2>Puntuación FARO</h2>
-  <table class="score-table">
-    <tr><th>Área</th><th>Nota</th></tr>
-    <tr><td>Claridad del mensaje</td><td class="num">8/10</td></tr>
-    <tr><td>Facilidad para contactar</td><td class="num">7/10</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td></tr>
-    <tr><td>Conversión móvil</td><td class="num">7/10</td></tr>
-    <tr><td>Llamadas a la acción</td><td class="num">6/10</td></tr>
-    <tr><td>Confianza</td><td class="num">8/10</td></tr>
+  <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
+  <table class="data">
+    <tr><th>Denominación social</th><td>Berciano Dental Sociedad Limitada Profesional — sin confirmar de forma independiente en esta sesión</td></tr>
+    <tr><th>Forma jurídica</th><td>S.L.P. unipersonal</td></tr>
+    <tr><th>Constitución</th><td>Febrero de 2023, según la investigación</td></tr>
+    <tr><th>Socia única y administradora</th><td>Cristina Berciano Benítez</td></tr>
+    <tr><th>Dirección</th><td>Calle Los Osorios, 2, Bajo, León (Plaza del Espolón) — coincide con el dato ya confirmado en este dataset mediante captura real</td></tr>
+    <tr><th>Teléfono</th><td>987 355 924 — coincide con el dato ya confirmado</td></tr>
+    <tr><th>Capital social</th><td>3.000 €, según la investigación</td></tr>
+    <tr><th>Empleados</th><td>3, según la investigación (año 2024)</td></tr>
+    <tr><th>Resultado 2024</th><td>Rentabilidad económica negativa (-9,16%, según la investigación); crecimiento de activo (+66%) financiado con endeudamiento (+76%)</td></tr>
   </table>
-  <div class="score-total"><span class="big">68/100</span><span class="label">Conversión estimada del hero — sube frente a la primera versión al confirmarse que la portada ya es limpia; el resto de la web sigue pendiente de auditar</span></div>
+  <div class="callout-alert">
+    <strong>Diagnóstico financiero, si se confirma:</strong> una empresa de 3 años, 3 empleados, capital reducido y resultado de explotación negativo no es necesariamente un fallo de gestión — es el patrón habitual de una startup clínica en fase de inversión inicial. El riesgo real es la ventana de tiempo: sin flujo de caja positivo sostenido, la capacidad de aguantar en fase de inversión es limitada. Esto no se confirma ni se descarta en esta sesión — es exactamente el tipo de dato que debe verificarse con la propia Cristina antes de plantear cualquier intervención con presupuesto.
+  </div>
+  <div class="callout"><strong>Distinguir de empresa homónima:</strong> la investigación señala una entidad separada, un centro de estética dental con "Berciano" en el nombre en Bembibre (León), sin relación jurídica con este negocio de León capital — si se confirma, es un riesgo de confusión de marca y SEO a gestionar, no un dato sobre esta clínica.</div>
+
+  <div class="section-num"><span class="n">02</span><h2>Equipo — liderazgo y talento</h2></div>
+  <p><strong>Dra. Cristina Berciano Benítez</strong> — directora médica, administradora única y socia única. Según la investigación: licenciada en Odontología (Universidad de Salamanca), máster en periodoncia, implantología y regeneración dental, cursos de postgrado en odontología biomimética y estética dental, y 12 años de trayectoria clínica como dentista en León.</p>
+  <div class="callout"><strong>Observación FARO — estructura de equipo:</strong> con 3 empleados y una directora que concentra el rol médico, administrativo y estratégico a la vez, Berciano Dental operaría (si se confirma) como un negocio de una sola persona con soporte mínimo — lo que explicaría por sí solo la ausencia de marketing: no hay tiempo ni recursos dedicados a ello, no es una decisión, es una consecuencia de la estructura. Cualquier intervención de FARO debería diseñarse para no depender de la dedicación diaria de Cristina en su ejecución.</div>
+
+  <div class="section-num"><span class="n">03</span><h2>Oferta — servicios y productos</h2></div>
+  <p>Catálogo citado por la investigación, coherente con lo ya confirmado en este dataset (estética, Invisalign, implantología, ortodoncia): odontología estética como pilar declarado (incluye diseño de sonrisa, ya confirmado con captura real en la v2 de este informe), implantes dentales, ortodoncia con brackets, Invisalign, blanqueamiento dental, carillas, reconstrucción dental, odontología general e infantil, periodoncia, férulas de descarga y prótesis dentales. Convenio citado con Caser (cuadro médico de seguro dental).</p>
+  <div class="callout"><strong>Ausencia de producto recurrente:</strong> a diferencia de Centro León (veterinaria, ya auditada en este dataset, con planes de salud de pago recurrente), todos los servicios de Berciano Dental parecen ser transaccionales — pago por tratamiento, sin plan de mantenimiento ni seguimiento programado. Si se confirma, esto genera volatilidad de ingresos y dificulta la previsibilidad del negocio.</div>
+
+  <div class="section-num"><span class="n">04</span><h2>Digital — presencia y canales</h2></div>
+
+  <div class="finding-inline">
+    <span class="tag">🟢 Comprobado directamente en este proyecto</span>
+    <h3>Tres fricciones reales, vistas sobre una captura de bercianodental.com</h3>
+    <p style="margin-bottom:8px;"><strong>1. El CTA no dice qué pasa al pulsarlo.</strong> El botón principal del hero dice "Pide cita" sin decir si hay que rellenar un formulario, si van a llamar, ni en cuánto tiempo.</p>
+    <p style="margin-bottom:8px;"><strong>2. No hay canal de WhatsApp visible en el hero.</strong> Solo teléfono y el botón "Pide cita" como vías inmediatas visibles en la cabecera.</p>
+    <p style="margin-bottom:0;"><strong>3. El banner de cookies compite con el contenido</strong>, junto a un icono flotante de Instagram, nada más entrar.</p>
+    <p style="margin:10px 0 0; font-size:13px; opacity:0.75;">También confirmado con la misma captura: el hero ya es limpio (un único objetivo, sin saturación de opciones) y el servicio central de diseño de sonrisa está bien documentado (fotos/vídeos reales, simulación digital, prueba en boca) — no todo el hallazgo es negativo.</p>
+  </div>
+
+  <table class="data">
+    <tr><th>Canal</th><th>Estado citado</th></tr>
+    <tr><td>Web propia (bercianodental.com)</td><td>Activa, SEO básico. Sin blog, sin contenido educativo, sin sistema de citas online</td></tr>
+    <tr><td>Google Business / Maps</td><td>Sin reseñas públicas identificadas, según la investigación</td></tr>
+    <tr><td>Facebook / Instagram / LinkedIn / TikTok / YouTube</td><td>Ninguno identificado (aunque hay un icono de Instagram en la portada, según la captura — sin confirmar si el perfil está activo)</td></tr>
+    <tr><td>WhatsApp Business</td><td>No confirmado como canal activo</td></tr>
+    <tr><td>Formulario de contacto web</td><td>Básico ("Solicita presupuesto" en la página de blanqueamiento), sin automatización visible</td></tr>
+  </table>
+  <div class="callout-alert"><strong>Diagnóstico crítico — invisibilidad digital:</strong> si se confirma la ausencia de reseñas y redes sociales, Berciano Dental competiría en un mercado donde la mayoría de nuevos pacientes de clínica dental inician su búsqueda en Google o redes, contra clínicas de León con cientos de reseñas e Instagram activo — una desventaja de partida importante frente a cualquier competidor establecido.</div>
+
+  <div class="section-num"><span class="n">05</span><h2>Reputación — vacío por confirmar</h2></div>
+  <p>La investigación no identifica reseñas públicas de Berciano Dental en Google ni en directorios dentales, frente a competidores de León con volúmenes citados de decenas o cientos de reseñas. No se ha verificado de forma independiente en esta sesión si el perfil de Google Business existe, está reclamado, o simplemente no aparece en las fuentes consultadas por la investigación — es una diferencia importante antes de actuar: "no tiene reseñas" y "no hemos encontrado el perfil" no son lo mismo.</p>
+  <div class="callout"><strong>Primer paso recomendado, antes que cualquier otro:</strong> confirmar directamente si existe un perfil de Google Business Profile para esta clínica. Si no existe, crearlo es la acción de mayor impacto y menor coste de todo este informe.</div>
+
+  <div class="section-num"><span class="n">06</span><h2>Mercado — competencia directa en León capital</h2></div>
+  <table class="data">
+    <tr><th>Competidor</th><th>Trayectoria citada</th><th>Reseñas citadas</th><th>Especialización</th></tr>
+    <tr><td><strong>Berciano Dental</strong></td><td>3 años (empresa) / 12 años (fundadora)</td><td>0</td><td>Estética + implantología + Invisalign</td></tr>
+    <tr><td>Clínica Dental Dr. Cachero (ya auditada en este dataset)</td><td>—</td><td>33, 5/5 confirmado en Google Business Profile</td><td>Consulta personal, un único profesional</td></tr>
+    <tr><td>Competidores citados por la investigación (González Franco, Carrero &amp; Tezza, Mesiodens, Kiddor, Área Dental La Catedral, Activadent)</td><td>10-30+ años</td><td>111 a 455, según la investigación</td><td>Variada — sedación consciente, ortodoncia, economía dental</td></tr>
+  </table>
+  <div class="callout"><strong>Oportunidad de nicho, si se confirma:</strong> ningún competidor citado por la investigación posiciona explícitamente la odontología biomimética — la especialización de postgrado de Cristina. Combinada con el máster en implantología y regeneración, sería un ángulo de diferenciación real y sin competencia directa citada en León, no una oportunidad genérica de marketing.</div>
+
+  <div class="section-num"><span class="n">07</span><h2>Estrategia — hipótesis por skill operativo</h2></div>
+  <p><strong>faro-auditor-conversion</strong> — más allá de los hallazgos 1-3 ya verificados de la portada, si se confirma la ausencia de reseñas y redes, la clínica no existe para el paciente que investiga antes de decidir; el teléfono como único canal de captación robusto elimina a quien prefiere escribir; sin casos clínicos, before/after ni testimonios, la web no refuerza la confianza que el hero ya empieza a construir.</p>
+  <p><strong>faro-board-of-advisors</strong> — la estructura societaria (S.L.P. unipersonal, capital reducido, resultado negativo) limita la capacidad de inversión sin capital externo o socio; el modelo de "una sola persona con todos los roles" es insostenible para escalar sin delegar; la especialización en biomimética e implantología-regeneración es un activo de marca no explotado; la ubicación en Plaza del Espolón (centro histórico) es un activo de paso subvalorado.</p>
+  <p><strong>faro-offer-architect</strong> — falta un "hero product" que dé jerarquía a los 6+ servicios listados sin ella; la primera consulta gratuita (que ya usan competidores citados) sería la puerta de entrada sin barrera de precio; el Invisalign es candidato a ancla de crecimiento por margen y demanda; la implantología con regeneración ósea es un servicio premium sin competencia directa citada; falta un producto de ingreso recurrente tipo plan de mantenimiento anual; el conocimiento clínico acumulado (12 años, máster, postgrados) es contenido educativo sin publicar.</p>
+
+  <div class="section-num"><span class="n">08</span><h2>Recomendación — propuesta de intervención</h2></div>
+  <p>Convertir la invisibilidad actual en punto de partida, no en obstáculo permanente: un posicionamiento claro de odontología de conservación y regeneración, liderado por una dentista con trayectoria clínica real, con un sistema de captación construido desde cero en vez de parcheado sobre uno que no existe.</p>
+
+  <div class="roadmap-phase">
+    <h3>Fase 1 — Fundamentos (0-30 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Corregir el CTA del hero para que diga el siguiente paso (hallazgo verificado, sección 04)</td><td>Menos abandono en el primer contacto</td></tr>
+      <tr><td>Confirmar y, si no existe, crear el perfil de Google Business Profile</td><td>Punto de partida para cualquier estrategia de reseñas</td></tr>
+      <tr><td>Activar WhatsApp Business visible en el hero (hallazgo verificado, sección 04)</td><td>Canal de contacto sin depender del teléfono</td></tr>
+    </table>
+  </div>
+  <div class="roadmap-phase">
+    <h3>Fase 2 — Visibilidad (30-90 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Campaña de reseñas con pacientes actuales</td><td>Primeras reseñas verificables en Google</td></tr>
+      <tr><td>3 casos clínicos before/after, con consentimiento explícito</td><td>Prueba social tangible en web</td></tr>
+      <tr><td>Lanzar "primera consulta diagnóstica gratuita", si el negocio la confirma como viable</td><td>Puerta de entrada sin barrera de precio</td></tr>
+    </table>
+  </div>
+  <div class="roadmap-phase">
+    <h3>Fase 3 — Diferenciación (90-180 días)</h3>
+    <table class="data">
+      <tr><th>Acción</th><th>Resultado medible</th></tr>
+      <tr><td>Posicionar la odontología biomimética como nicho propio, si Cristina confirma que es un enfoque real de su práctica</td><td>Diferenciación sin competencia directa citada en León</td></tr>
+      <tr><td>Plan de mantenimiento anual como producto recurrente</td><td>Primeros ingresos previsibles, no solo transaccionales</td></tr>
+    </table>
+  </div>
+
+  <div class="section-num"><span class="n">09</span><h2>Pendientes — datos que requieren confirmación directa</h2></div>
+  <ul class="pending-list">
+    <li><span class="prio">Crítica</span> — Facturación real y estructura de costes (los datos societarios de este informe no son suficientes para definir un presupuesto de inversión)</li>
+    <li><span class="prio">Crítica</span> — Objetivos personales de Cristina (¿mantener, escalar, buscar socio?) — define el horizonte de cualquier propuesta</li>
+    <li><span class="prio">Crítica</span> — Origen real de los pacientes actuales (boca a boca, Caser, paso por la plaza) — identifica qué ya funciona</li>
+    <li><span class="prio">Alta</span> — Estado real de Google Business (¿existe, está reclamado?)</li>
+    <li><span class="prio">Alta</span> — Disposición de Cristina a aparecer en contenido/redes — determina si la estrategia de marca personal es viable</li>
+    <li><span class="prio">Media</span> — Confirmar si la confusión con la entidad de Bembibre es un problema real o solo una coincidencia de nombre sin impacto</li>
+  </ul>
+
+  <div class="section-num"><span class="n">10</span><h2>Anexo — prueba de concepto ya construida</h2></div>
+  <p><strong>Corrección respecto al texto original de esta investigación:</strong> este anexo no describe un hero product de "12 años cuidando sonrisas en León" con primera consulta gratuita y posicionamiento biomimético — eso es una recomendación de la Fase 2-3 de este informe, todavía por construir. Lo que sí existe ya en esta misma carpeta (<code>index.html</code>, v2) es la landing centrada en el hallazgo verificado de la sección 04: quién devuelve la llamada y cuándo. Ofrece WhatsApp como vía más rápida que el teléfono, con un flujo explícito de "recibimos tu mensaje → confirmamos que no se ha perdido → te confirmamos cita en cuanto abrimos". Sigue siendo un anexo válido de los hallazgos verificados de esta sección, no de las recomendaciones nuevas de las Fases 2-3 (odontología biomimética como marca, primera consulta gratuita, storytelling de trayectoria), que quedan como trabajo futuro si el negocio confirma interés.</p>
 
   <div class="pitch-block">
     <h2>Qué es esto, en una frase</h2>
-    <p class="quote">"He analizado el recorrido de un paciente desde que entra en vuestra web hasta que decide pedir cita. He encontrado varios puntos donde podéis estar perdiendo oportunidades de contacto, no por falta de tráfico, sino por pequeñas fricciones en la experiencia. He preparado este informe con mejoras concretas que podéis aplicar sin cambiar vuestra marca ni vuestra forma de trabajar."</p>
-    <p style="margin-bottom:0;">Nuestro trabajo no consiste en hacer una web nueva. Consiste en conseguir que más personas que ya llegan a vuestra web den el siguiente paso.</p>
+    <p class="quote">"Llevas 12 años como dentista en León, con formación de especialista en implantología y regeneración — y, según lo que hemos podido investigar, tu clínica no tiene todavía ni una reseña pública. Te dejamos un informe honesto: lo que ya comprobamos directamente sobre tu web real, y lo que todavía necesita confirmarse contigo antes de proponer nada más."</p>
+    <p style="margin-bottom:0;">No proponemos cambiar cómo tratas a tus pacientes — proponemos que quien todavía no te conoce pueda encontrarte antes de irse a otra clínica.</p>
   </div>
 
-  <p class="cta-footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+  <p class="cta-footer">FARO — Inteligencia Operativa para pymes de León con agenda. Documento de trabajo · Dataset EXP-003, caso 5 de N. Sin compromiso, sin coste por este informe.</p>
 
 </div>
 </body>
