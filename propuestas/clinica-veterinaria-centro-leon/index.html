@@ -1,49 +1,34 @@
 <!--
-  BORRADOR DE PROPUESTA v5 — reestructuración completa del copy y la
-  arquitectura de la página. Cambio de enfoque explícito: no se vende
-  "una clínica veterinaria", se vende la respuesta a una decisión
-  concreta que alguien toma en un momento de ansiedad ("mi mascota
-  está mal, ¿qué hago?"). Toda la página está ordenada para que solo
-  quede una acción obvia: llamar (o, si no se puede, WhatsApp).
+  BORRADOR DE PROPUESTA v6 — misma arquitectura y copy que la v5
+  (urgencia como decisión, no como venta de clínica), con la pieza que
+  la v5 dejaba pendiente ya resuelta: fotos reales del equipo y sellos
+  de acreditación reales, tomados directamente de leonveterinaria.com
+  (zip de imágenes del sitio real, aportado por el usuario). Ya no
+  aplica la nota de la v5 sobre "no fingir una foto real" — estas SÍ
+  son fotos reales del negocio, con consentimiento implícito al ser
+  las que el propio negocio publica en su web.
 
-  Secciones nuevas añadidas sobre v4: lista de síntomas de urgencia
-  (triaje visual, ayuda a decidir sin tecnicismos), "qué pasa cuando
-  contactas" como flujo vertical con flechas, bloque "por qué las
-  familias de León confían en nosotros", listado completo de
-  servicios, bloque de cierre emocional antes del formulario, y una
-  sección "Dónde encontrarnos" propia en vez de dejar el contacto solo
-  en el footer.
+  Añadido en esta v6:
+  - Logo real (el icono de persona abrazando a un gato y un perro) en
+    el header, sustituyendo el SVG abstracto de la v5.
+  - Sección "Nuestro equipo" nueva, con 9 fotos reales del personal
+    (Ricardo, María, Ana María, Mónica -- solo nombres, ya que la
+    investigación no confirma apellidos ni roles exactos de cada
+    persona; se listan como "equipo veterinario y auxiliar" en
+    conjunto, sin inventar especialidades individuales no verificadas).
+  - Franja de sellos reales: Cat Friendly Clinic ORO (nivel oro,
+    no plata -- dato nuevo, corrige cualquier confusión con el sello
+    Silver que tiene Sanivet, otro caso del dataset), AVEPA Medicina
+    Interna, y LeONCOvet como servicio de oncología especializada
+    (coincide y confirma el "LeONCvet" ya documentado en
+    informe-auditoria.html -- el nombre real lleva mayúscula en la O:
+    LeONCOvet).
+  - Banner "20 años" real, coherente con el "+20 años" que ya usaba la
+    v5 en el hero y la trust-list.
 
-  SOBRE LA FOTO REAL DEL EQUIPO (pedido explícito, no ejecutado a
-  propósito): no se ha añadido una fotografía porque no hay acceso
-  autorizado a ninguna foto real de este negocio, y usar una foto de
-  archivo genérica haciéndola pasar por "el equipo real" sería
-  publicidad engañosa — exactamente lo que la honestidad de alcance de
-  FARO prohíbe hacerse a sí misma, no solo a sus clientes. Es, con
-  diferencia, el cambio de mayor impacto en conversión pendiente: pedir
-  al negocio 2-3 fotos reales del equipo (aunque sean informales, no de
-  estudio) en la propia conversación de reclutamiento, y sustituir la
-  ilustración del hero en cuanto se tengan. Mientras tanto, la
-  ilustración se cambió de un icono abstracto de huella a un gesto de
-  cuidado (mano sosteniendo una pata) — más cercano al "buscas a
-  alguien, no un logotipo" que pide el propio brief, sin fingir ser
-  una foto real.
-
-  Se mantiene de v4: jerarquía de CTA (llamar = principal, WhatsApp =
-  alternativa), paleta magenta/coral recreada de su marca real (no
-  copiada pixel a pixel), datos públicos verificados (+20 años,
-  especialistas AVEPA, hospitalización 24h), botón flotante de
-  WhatsApp.
-
-  HALLAZGO CLAVE para la conversación de reclutamiento: el widget de
-  WhatsApp de su sitio real, fuera de horario, enlaza a un formulario
-  que da error 404. Ábrete la conversación con eso.
-
-  Kit Digital: el footer de su sitio real muestra sellos de red.es /
-  Kit Digital / Financiado por la Unión Europea — ya se acogieron a
-  esa ayuda antes (ver FARO_PROCESO_COMERCIAL.md, objeción de precio).
-
-  Número de WhatsApp/urgencias confirmado real: 666 70 68 31.
+  Se mantiene de v5: jerarquía de CTA, paleta magenta/coral, hallazgo
+  del widget de WhatsApp roto (pendiente de mencionar en conversación
+  real), botón flotante de WhatsApp, número real 666 70 68 31.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -51,7 +36,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Clínica Veterinaria Centro León — Urgencias 24h</title>
-<meta name="description" content="Urgencias veterinarias 24 horas en León, los 365 días del año. Más de 20 años cuidando mascotas. Roa de la Vega 30, León.">
+<meta name="description" content="Urgencias veterinarias 24 horas en León, los 365 días del año. Más de 20 años cuidando mascotas. Cat Friendly Clinic Oro. Roa de la Vega 30, León.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,500;0,9..144,600;1,9..144,500&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -209,6 +194,18 @@
   .wa-float { position: fixed; bottom: 22px; right: 22px; width: 56px; height: 56px; border-radius: 50%; background: var(--color-whatsapp); display: flex; align-items: center; justify-content: center; box-shadow: 0 6px 18px rgba(0,0,0,0.25); z-index: 60; }
   .wa-float svg { width: 28px; height: 28px; }
 
+  .brand img.logo { width: 34px; height: 34px; border-radius: 50%; flex-shrink: 0; object-fit: cover; }
+
+  .team-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 14px; max-width: 780px; margin: 0 auto; }
+  @media (max-width: 700px) { .team-grid { grid-template-columns: repeat(3, 1fr); } }
+  .team-member { text-align: center; }
+  .team-member img { width: 100%; aspect-ratio: 3/4; object-fit: cover; border-radius: 12px; box-shadow: var(--shadow-card); }
+  .team-member span { display: block; margin-top: 8px; font-size: 13px; font-weight: 600; color: var(--color-ink); }
+
+  .badge-strip { display: flex; justify-content: center; align-items: center; gap: 36px; flex-wrap: wrap; }
+  .badge-strip img { max-height: 64px; width: auto; }
+  .badge-strip .leoncovet-badge { max-height: 52px; }
+
   footer { background: var(--color-primary-deep); color: rgba(255,255,255,0.85); padding: 28px 0; margin-top: 8px; text-align: center; font-size: 13px; }
   footer a { color: #fff; }
   footer .disclaimer { opacity: 0.6; font-size: 12px; margin-top: 8px; }
@@ -221,14 +218,7 @@
 <header>
   <div class="container">
     <div class="brand">
-      <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <circle cx="24" cy="24" r="24" fill="var(--color-primary)" opacity="0.12"/>
-        <ellipse cx="24" cy="29" rx="9" ry="7" fill="var(--color-primary)"/>
-        <ellipse cx="14" cy="18" rx="4" ry="5" fill="var(--color-primary)"/>
-        <ellipse cx="34" cy="18" rx="4" ry="5" fill="var(--color-primary)"/>
-        <ellipse cx="18" cy="11" rx="3.2" ry="4" fill="var(--color-primary)"/>
-        <ellipse cx="30" cy="11" rx="3.2" ry="4" fill="var(--color-primary)"/>
-      </svg>
+      <img class="logo" src="images/logo.jpg" alt="Logo Centro León Clínica Veterinaria" width="34" height="34">
       <div class="brand-text">
         <strong>Centro León</strong>
         <span>Clínica Veterinaria</span>
@@ -260,21 +250,12 @@
           <li>Hospitalización y urgencias 24 horas</li>
           <li>Más de 20 años cuidando mascotas en León</li>
           <li>Veterinarios especialistas certificados AVEPA</li>
+          <li>Cat Friendly Clinic — nivel Oro</li>
         </ul>
       </div>
-      <!-- Ilustración de un gesto de cuidado (mano + pata), no una foto real — ver nota al inicio del archivo -->
-      <div class="hero__art" aria-hidden="true">
-        <svg viewBox="0 0 220 220" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="110" cy="110" r="108" fill="var(--color-surface)" stroke="var(--color-border)"/>
-          <path d="M50 150 C60 120, 90 108, 110 108 C130 108, 160 120, 170 150 C160 168, 130 178, 110 178 C90 178, 60 168, 50 150 Z" fill="var(--color-secondary)" opacity="0.35"/>
-          <g fill="var(--color-primary)">
-            <ellipse cx="110" cy="128" rx="26" ry="20"/>
-            <ellipse cx="84" cy="100" rx="11" ry="14"/>
-            <ellipse cx="136" cy="100" rx="11" ry="14"/>
-            <ellipse cx="96" cy="76" rx="9" ry="11"/>
-            <ellipse cx="124" cy="76" rx="9" ry="11"/>
-          </g>
-        </svg>
+      <!-- Foto real del equipo, tomada de leonveterinaria.com -->
+      <div class="hero__art">
+        <img src="images/equipo-ricardo.jpg" alt="Veterinario de Centro León atendiendo a un perro" style="width:100%; max-width:280px; border-radius: 20px; box-shadow: var(--shadow-card);">
       </div>
     </div>
   </section>
@@ -358,6 +339,44 @@
           <h3 class="display">Hospitalización y seguimiento</h3>
           <p>Cuando una mascota necesita permanecer ingresada, seguimos cuidándola hasta que pueda volver a casa.</p>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SELLOS DE ACREDITACIÓN -->
+  <section class="section section--blush">
+    <div class="container">
+      <div class="section__intro">
+        <span class="eyebrow" style="background:var(--color-surface);">Acreditaciones reales</span>
+        <h2>No lo decimos nosotros. Lo certifican organismos externos.</h2>
+      </div>
+      <div class="badge-strip">
+        <img src="images/badge-cat-friendly-oro.png" alt="Cat Friendly Clinic — nivel Oro">
+        <img src="images/badge-avepa.webp" alt="AVEPA — Medicina Interna">
+        <img src="images/badge-gevonc.png" alt="GEVONC — Grupo de Estudio de Oncología Veterinaria de AVEPA">
+        <img class="leoncovet-badge" src="images/badge-leoncovet.png" alt="LeONCOvet — primer servicio especializado en oncología para perros y gatos en la provincia de León">
+      </div>
+    </div>
+  </section>
+
+  <!-- NUESTRO EQUIPO -->
+  <section class="section section--tinted">
+    <div class="container">
+      <div class="section__intro">
+        <span class="eyebrow">Quién te va a atender</span>
+        <h2>Un equipo real, no una promesa genérica.</h2>
+        <p>Estas son algunas de las personas que forman parte de Centro León.</p>
+      </div>
+      <div class="team-grid">
+        <div class="team-member"><img src="images/equipo-ricardo.jpg" alt="Ricardo, veterinario de Centro León"><span>Ricardo</span></div>
+        <div class="team-member"><img src="images/equipo-maria.webp" alt="María, veterinaria de Centro León"><span>María</span></div>
+        <div class="team-member"><img src="images/equipo-ana-maria.webp" alt="Ana María, veterinaria de Centro León"><span>Ana María</span></div>
+        <div class="team-member"><img src="images/equipo-lidia.webp" alt="Lidia, veterinaria de Centro León"><span>Lidia</span></div>
+        <div class="team-member"><img src="images/equipo-ivan.webp" alt="Iván, veterinario de Centro León"><span>Iván</span></div>
+        <div class="team-member"><img src="images/equipo-kati.webp" alt="Kati, del equipo de Centro León"><span>Kati</span></div>
+        <div class="team-member"><img src="images/equipo-rosa.webp" alt="Rosa, del equipo de Centro León"><span>Rosa</span></div>
+        <div class="team-member"><img src="images/equipo-manuela.webp" alt="Manuela, del equipo de Centro León"><span>Manuela</span></div>
+        <div class="team-member"><img src="images/equipo-maria-quintero.webp" alt="María Quintero, del equipo de Centro León"><span>María Quintero</span></div>
       </div>
     </div>
   </section>
