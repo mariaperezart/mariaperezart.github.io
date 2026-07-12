@@ -1,0 +1,127 @@
+<!--
+  Versión cliente del informe — lenguaje limpio, sin procesos internos de
+  FARO ("documentamos", "no confirmamos", puntuaciones internas,
+  hipótesis de Board/Offer Architect). Reescrita a partir del feedback
+  directo del usuario: separar observación (lo que se ve) de proceso
+  interno (cómo llegamos a verlo). Pensada para exportar a PDF y enviar
+  tal cual, o servir de base para que el usuario monte su propio PDF.
+
+  No sustituye a informe-auditoria.html (documento de trabajo interno de
+  FARO, con Puntuación FARO e hipótesis de Board/Offer Architect) — este
+  es el recorte listo para el negocio.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>INFORME FARO · Observaciones sobre Clínica Podológica Vanessa</title>
+<style>
+  :root {
+    --color-primary: #1E5C6B; --color-accent: #E38B5D; --color-ink: #17262A;
+    --color-ink-muted: #4C6165; --color-bg: #FFFFFF; --color-border: #D9E7E9;
+    --color-surface: #F4F9FA;
+    --font-heading: Georgia, 'Times New Roman', serif;
+    --font-body: -apple-system, 'Segoe UI', Helvetica, Arial, sans-serif;
+  }
+  * { box-sizing: border-box; }
+  body { margin: 0; font-family: var(--font-body); color: var(--color-ink); background: var(--color-bg); line-height: 1.65; font-size: 15px; }
+  .container { max-width: 720px; margin: 0 auto; padding: 56px 40px 64px; }
+  h1, h2, h3 { font-family: var(--font-heading); font-weight: 700; color: var(--color-primary); line-height: 1.25; }
+  p { margin: 0 0 14px; color: var(--color-ink); }
+  .masthead { display: flex; align-items: center; justify-content: space-between; margin-bottom: 36px; padding-bottom: 16px; border-bottom: 2px solid var(--color-ink); }
+  .masthead .logo { font-family: var(--font-heading); font-weight: 700; font-size: 19px; color: var(--color-primary); letter-spacing: 0.04em; }
+  .masthead .date { font-size: 13px; color: var(--color-ink-muted); }
+  .eyebrow { display: block; font-size: 12px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--color-accent); margin-bottom: 8px; }
+  h1.title { font-size: 25px; margin: 0 0 28px; }
+  .resumen { background: var(--color-surface); border: 1px solid var(--color-border); border-radius: 8px; padding: 22px 24px; margin-bottom: 36px; }
+  .resumen p:last-child { margin-bottom: 0; }
+  .finding { border-top: 1px solid var(--color-border); padding: 26px 0; }
+  .finding h2 { font-size: 18px; margin: 0 0 12px; }
+  .finding .num { display: inline-block; color: var(--color-accent); font-family: var(--font-heading); margin-right: 8px; }
+  .finding p { max-width: 62ch; }
+  .meta-row { display: flex; gap: 18px; margin-top: 12px; font-size: 13px; }
+  .meta-row .label { font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; font-size: 11px; color: var(--color-ink-muted); }
+  .priority { display: inline-block; font-size: 11px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; border-radius: 999px; padding: 3px 12px; }
+  .priority--alta { background: #FBEAE4; color: #B4453A; }
+  .priority--media { background: #FBF3E4; color: #8A5A13; }
+  .block { margin: 36px 0; }
+  .block h2 { font-size: 18px; }
+  .priorities { list-style: none; margin: 0; padding: 0; counter-reset: pr; }
+  .priorities li { counter-increment: pr; display: flex; gap: 12px; padding: 10px 0; border-bottom: 1px solid var(--color-border); }
+  .priorities li::before { content: counter(pr); flex-shrink: 0; width: 24px; height: 24px; border-radius: 50%; background: var(--color-primary); color: #fff; font-size: 12px; font-weight: 700; display: flex; align-items: center; justify-content: center; font-family: var(--font-heading); }
+  .priorities li:last-child { border-bottom: none; }
+  .objetivo { border-left: 3px solid var(--color-accent); padding-left: 18px; margin: 36px 0; }
+  .cta { background: var(--color-primary); color: #fff; border-radius: 10px; padding: 26px 28px; margin: 40px 0 8px; text-align: center; font-size: 16px; font-weight: 600; }
+  .footer { margin-top: 40px; text-align: center; font-size: 12px; color: var(--color-ink-muted); }
+  @media print {
+    body { font-size: 13.5px; }
+    .container { padding: 24px 32px; max-width: 100%; }
+    .finding, .cta { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <div class="masthead"><span class="logo">FARO</span><span class="date">Julio 2026</span></div>
+
+  <span class="eyebrow">Observaciones · Clínica Podológica Vanessa</span>
+  <h1 class="title">Tenéis activos que transmiten mucha confianza — algunos requieren varios clics para descubrirse.</h1>
+
+  <div class="resumen">
+    <p>Durante una revisión de vuestra presencia digital encontramos varios activos que transmiten mucha confianza — la trayectoria, la formación y la especialización —, pero algunos de ellos requieren varios clics para descubrirse.</p>
+    <p>No es un problema de calidad del servicio, sino de cómo se presenta desde el primer contacto.</p>
+  </div>
+
+  <div class="finding">
+    <h2><span class="num">1</span>Una formación diferencial que pasa desapercibida</h2>
+    <p>Encontramos una trayectoria muy sólida: especialización en retropié, formación de posgrado, responsabilidad en ortopedia y actividad investigadora.</p>
+    <p>Sin embargo, gran parte de esa información aparece en la página del equipo y no en los primeros segundos de navegación.</p>
+    <div class="meta-row">
+      <div><span class="label">Impacto</span><br>Un paciente nuevo puede no llegar a percibir el nivel de especialización que realmente existe.</div>
+    </div>
+    <p style="margin-top:14px;"><span class="priority priority--alta">Prioridad alta</span></p>
+  </div>
+
+  <div class="finding">
+    <h2><span class="num">2</span>La reputación genera confianza, pero podría tener más protagonismo</h2>
+    <p>La clínica cuenta con una valoración de <strong>4,8/5</strong> sobre <strong>20 reseñas</strong> y una trayectoria desde <strong>2003</strong>.</p>
+    <p>No vimos que esa prueba social tuviera un papel protagonista durante el primer recorrido por la web.</p>
+    <div class="meta-row">
+      <div><span class="label">Impacto</span><br>Muchos pacientes toman decisiones comparando varios centros. Mostrar antes la reputación reduce incertidumbre.</div>
+    </div>
+    <p style="margin-top:14px;"><span class="priority priority--media">Prioridad media</span></p>
+  </div>
+
+  <div class="finding">
+    <h2><span class="num">3</span>Una especialización muy amplia que podría comunicarse antes</h2>
+    <p>Se aprecia una atención diferenciada para distintos perfiles de paciente: infantil, deportiva, diabética y personas mayores.</p>
+    <p>Es una forma muy clara de ayudar al visitante a identificarse rápidamente.</p>
+    <div class="meta-row">
+      <div><span class="label">Impacto</span><br>Cuando un paciente encuentra rápidamente "su caso", es más fácil que continúe explorando la web.</div>
+    </div>
+    <p style="margin-top:14px;"><span class="priority priority--media">Prioridad media</span></p>
+  </div>
+
+  <div class="block">
+    <h2>Cambios que priorizaríamos</h2>
+    <ol class="priorities">
+      <li>Dar mayor visibilidad a la experiencia y formación profesional desde la portada.</li>
+      <li>Reforzar la presencia de la reputación durante el primer recorrido.</li>
+      <li>Facilitar que cada tipo de paciente identifique rápidamente el tratamiento que necesita.</li>
+    </ol>
+  </div>
+
+  <div class="objetivo">
+    <p>No creemos que el reto sea incorporar más información.</p>
+    <p style="margin-bottom:0;">Creemos que el valor que ya ofrece la clínica podría percibirse antes, con menos esfuerzo por parte del paciente.</p>
+  </div>
+
+  <div class="cta">Si os resulta interesante, estaremos encantados de comentar estas observaciones en una conversación de 20 minutos.</div>
+
+  <p class="footer">FARO — automatización y mejora operativa para pymes de León con agenda. Sin compromiso, sin coste por este informe.</p>
+
+</div>
+</body>
+</html>
