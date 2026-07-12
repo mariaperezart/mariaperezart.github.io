@@ -1,0 +1,234 @@
+<!--
+  Microdiagnóstico Vanessa — implementación estática de un diseño hecho
+  por el usuario en claude.ai/design (proyecto "Auditoría FARO clínica
+  podológica", archivo Microdiagnostico Vanessa.dc.html), usando su
+  propio FARO Design System (tokens de color/tipografía/espaciado +
+  componentes Eyebrow/Badge/DataGrid/Button).
+
+  El formato .dc.html depende de un runtime propio de claude.ai/design
+  (custom elements x-dc/x-import/sc-for + _ds_bundle.js). Esta versión
+  resuelve esos componentes a HTML/CSS plano para que funcione como
+  página real del repo, sin esa dependencia. Los tokens de color y
+  tipografía y la lógica visual de cada componente (Badge, Button,
+  DataGrid, Eyebrow) se copiaron literalmente del bundle del proyecto.
+
+  Formato "microdiagnóstico": vertical, fondo oscuro, un titular por
+  pantalla, diagnóstico antes que reconocimiento -- el formato que el
+  usuario pidió como nuevo estándar de primer contacto, antes que la
+  landing o el informe largo.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microdiagnóstico — Clínica Podológica Vanessa</title>
+<meta name="description" content="Lo que vimos durante el primer recorrido por podologovanessa.com — microdiagnóstico FARO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    /* ---- FARO Design System tokens (copiados del proyecto) ---- */
+    --faro-ink-950: #0c0d10;
+    --faro-ink-900: #14161a;
+    --faro-ink-800: #1b1e24;
+    --faro-cream-50: #f4f2ee;
+    --faro-slate-400: #9b9ba3;
+    --faro-coral-600: #ff6a3d;
+    --faro-coral-200: #ffb199;
+    --faro-green-400: #5fd0a3;
+    --faro-amber-400: #ffcf6a;
+    --faro-line: rgba(244, 242, 238, 0.12);
+    --faro-line-strong: rgba(244, 242, 238, 0.22);
+    --faro-coral-glow: rgba(255, 106, 61, 0.5);
+    --faro-amber-tint: rgba(255, 207, 106, 0.15);
+
+    --bg: var(--faro-ink-950);
+    --surface-card: var(--faro-ink-900);
+    --text-strong: var(--faro-cream-50);
+    --text-body: var(--faro-cream-50);
+    --text-dim: var(--faro-slate-400);
+    --text-accent: var(--faro-coral-200);
+    --accent: var(--faro-coral-600);
+    --accent-soft: var(--faro-coral-200);
+    --accent-ink: #16110d;
+    --line: var(--faro-line);
+    --border-card: var(--faro-line);
+
+    --font-serif: 'Fraunces', Georgia, serif;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --text-hero: clamp(3.4rem, 11vw, 5.2rem);
+    --text-display: clamp(2rem, 5vw, 3.2rem);
+    --text-title: clamp(1.3rem, 3vw, 1.7rem);
+    --text-xl: 1.15rem; --text-lg: 1.05rem; --text-md: 1rem; --text-sm: 0.9rem;
+    --text-xs: 0.8rem; --text-2xs: 0.72rem; --text-eyebrow: 0.78rem;
+    --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700;
+    --leading-tight: 1.1; --leading-relaxed: 1.55;
+    --tracking-eyebrow: 0.16em; --tracking-tag: 0.05em;
+
+    --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.7rem; --space-4: 0.9rem;
+    --space-5: 1.1rem; --space-6: 1.4rem; --space-7: 1.8rem; --space-8: 2.2rem; --space-9: 3rem;
+    --stage-pad-x: 5vw;
+
+    --radius-lg: 12px; --radius-xl: 14px; --radius-pill: 999px;
+    --border-hairline: 1px solid var(--line);
+    --shadow-cta: 0 12px 30px -10px var(--faro-coral-glow);
+    --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1);
+    --dur-fast: 0.2s; --dur-base: 0.25s;
+    --ambient-glow:
+      radial-gradient(circle at 20% 20%, rgba(255, 106, 61, 0.10), transparent 45%),
+      radial-gradient(circle at 80% 75%, rgba(95, 208, 163, 0.08), transparent 50%);
+  }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: var(--bg); }
+  body { font-family: var(--font-sans); color: var(--text-body); }
+  h1, h2 { font-family: var(--font-serif); font-weight: var(--weight-semibold); color: var(--text-strong); line-height: var(--leading-tight); margin: 0; }
+  p { font-family: var(--font-sans); margin: 0; }
+
+  .stage { background: var(--bg); width: 100%; max-width: 640px; margin: 0 auto; position: relative; padding: calc(var(--space-8) * 1.4) var(--stage-pad-x) var(--space-8) var(--stage-pad-x); background-image: var(--ambient-glow); }
+  .faro-mark { width: 32px; height: 32px; display: block; margin-bottom: var(--space-7); }
+  .eyebrow { font-family: var(--font-sans); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--text-accent); margin: 0; }
+  .badge { display: inline-block; font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: var(--tracking-tag); padding: 0.1rem 0.5rem; border-radius: var(--radius-pill); line-height: 1.6; vertical-align: middle; }
+  .badge--accent { background: rgba(255,177,153,0.15); color: var(--accent-soft); }
+  .badge--pattern { background: var(--faro-amber-tint); color: var(--warn, var(--faro-amber-400)); }
+  .divider { height: 1px; background: var(--faro-line-strong); margin: 0 0 var(--space-8) 0; }
+  .logo-pill { display: inline-flex; align-items: center; gap: var(--space-4); margin: var(--space-5) 0 var(--space-6) 0; background: #2a2a2a; border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5) var(--space-3) var(--space-3); }
+  .logo-pill img { height: 26px; width: auto; border-radius: 6px; display: block; }
+
+  .data-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-6); margin: 0 0 var(--space-7) 0; padding: var(--space-5) var(--space-6); background: var(--surface-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); }
+  .data-grid dt { font-size: var(--text-2xs); color: var(--text-dim); text-transform: uppercase; letter-spacing: var(--tracking-tag); margin-bottom: var(--space-1); }
+  .data-grid dd { margin: 0; font-family: var(--font-serif); font-size: var(--text-lg); color: var(--text-strong); }
+
+  .finding-label { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
+  .finding-label span.eyebrow { color: var(--text-dim); text-transform: uppercase; }
+  .impacto { border-top: var(--border-hairline); padding-top: var(--space-5); margin-bottom: var(--space-8); }
+  .impacto-label { font-family: var(--font-sans); font-size: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--text-dim); margin-bottom: var(--space-3); }
+  .impacto p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--text-body); }
+
+  .evidence-block { margin-bottom: var(--space-6); }
+  .evidence-block img { width: 100%; max-width: 220px; height: auto; border-radius: var(--radius-xl); border: 1px solid var(--line); display: block; margin: 0 auto; }
+  .evidence-caption { font-family: var(--font-sans); font-size: var(--text-2xs); color: var(--text-dim); text-align: center; margin: var(--space-3) 0 0 0; }
+
+  .score-big { font-family: var(--font-serif); font-weight: var(--weight-semibold); color: var(--accent); font-size: calc(var(--text-hero) * 0.7); line-height: var(--leading-tight); margin: 0 0 var(--space-2) 0; }
+  .score-big .of { font-size: 0.4em; color: var(--text-dim); font-weight: var(--weight-regular); }
+
+  .perfiles { display: flex; flex-wrap: wrap; gap: var(--space-3); margin-bottom: var(--space-6); }
+  .perfiles .badge { font-size: var(--text-2xs); padding: 0.35rem 0.7rem; }
+
+  .priorities { display: flex; flex-direction: column; gap: var(--space-6); margin-bottom: var(--space-8); }
+  .priorities .item { display: flex; gap: var(--space-5); align-items: baseline; }
+  .priorities .num { font-family: var(--font-serif); font-size: var(--text-lg); color: var(--accent); flex-shrink: 0; }
+  .priorities p { font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--text-body); }
+
+  .cta-btn { font-family: var(--font-sans); font-weight: var(--weight-semibold); display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); cursor: pointer; border: 1px solid transparent; text-decoration: none; transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard); font-size: var(--text-md); padding: 0.85rem 1.3rem; border-radius: var(--radius-lg); background: var(--accent); color: var(--accent-ink); white-space: nowrap; }
+  .cta-btn:hover { transform: translateY(-2px); box-shadow: var(--shadow-cta); }
+
+  p.body-xl { font-size: var(--text-xl); line-height: var(--leading-relaxed); color: var(--text-body); margin: 0 0 var(--space-6) 0; }
+  p.body-lg { font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--text-body); margin: 0 0 var(--space-6) 0; }
+  p.body-sm { font-size: var(--text-sm); color: var(--text-dim); margin: 0 0 var(--space-8) 0; }
+  h1.hero-title { font-size: calc(var(--text-display) * 0.85); margin: 0 0 var(--space-6) 0; }
+  h2.section-title { font-size: calc(var(--text-title) * 1.15); margin: 0 0 var(--space-6) 0; }
+  h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var(--space-7) 0; }
+</style>
+</head>
+<body>
+
+<div class="stage">
+
+  <svg class="faro-mark" viewBox="0 0 48 48" fill="none">
+    <circle cx="22" cy="26" r="14" stroke="#F2E9E4" stroke-width="2.2"></circle>
+    <circle cx="22" cy="26" r="7.6" stroke="#F2E9E4" stroke-width="2.2"></circle>
+    <circle cx="22" cy="26" r="1.9" fill="#F2E9E4"></circle>
+    <circle cx="33.4" cy="14.6" r="4.3" fill="#F26B42"></circle>
+  </svg>
+
+  <!-- PORTADA -->
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Auditoría FARO · Julio 2026 · 2 minutos de lectura</p>
+  <div class="logo-pill"><img src="images/logo-vanessa-real.png" alt="Podólogo Vanessa"></div>
+  <h1 class="hero-title">Lo que vimos durante el primer recorrido por vuestra web</h1>
+  <p class="body-xl">Antes de escribir este informe hicimos una prueba sencilla: imaginamos que éramos un paciente buscando un podólogo en León por primera vez. En menos de diez minutos encontramos varios elementos que generan mucha confianza — pero algunos aparecen demasiado tarde en el recorrido.</p>
+  <p class="body-sm">Analizada el 12 de julio de 2026 · solo observaciones visibles desde fuera</p>
+
+  <div class="divider"></div>
+
+  <!-- CONTEXTO / MÉTRICAS -->
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Lo que encontramos</p>
+  <h2 class="section-title">Un negocio con más recorrido del que hoy se ve</h2>
+  <dl class="data-grid">
+    <div><dt>Valoración Google</dt><dd>4,8/5</dd></div>
+    <div><dt>Reseñas</dt><dd>20</dd></div>
+    <div><dt>Trayectoria</dt><dd>Desde 2003</dd></div>
+    <div><dt>Servicios listados</dt><dd>9</dd></div>
+  </dl>
+
+  <div class="divider"></div>
+
+  <!-- HALLAZGO 1 -->
+  <div class="finding-label"><span class="eyebrow">Hallazgo 1</span><span class="badge badge--accent">Prioridad alta</span></div>
+  <h2 class="section-title">Una formación diferencial que pasa desapercibida</h2>
+  <p class="body-lg">Especialización en retropié, formación de posgrado, responsabilidad en ortopedia y actividad investigadora — todo aparece en la página del equipo, pero no en los primeros segundos de navegación.</p>
+  <div class="evidence-block">
+    <img src="images/evidencia-hero-crop.png" alt="Portada de podologovanessa.com">
+    <p class="evidence-caption">Así se presenta hoy en el primer vistazo</p>
+  </div>
+  <div class="impacto">
+    <div class="impacto-label">Impacto</div>
+    <p>Un paciente nuevo puede no llegar a percibir el nivel de especialización que realmente existe.</p>
+  </div>
+
+  <!-- HALLAZGO 2 -->
+  <div class="finding-label"><span class="eyebrow">Hallazgo 2</span><span class="badge badge--pattern">Prioridad media</span></div>
+  <div class="score-big">4,8<span class="of">/5</span></div>
+  <p style="font-size:var(--text-md); color:var(--text-dim); margin:0 0 var(--space-6) 0;">sobre 20 reseñas · trayectoria desde 2003</p>
+  <h2 class="section-title" style="font-size:calc(var(--text-title) * 1.1);">La reputación genera confianza, pero podría tener más protagonismo</h2>
+  <p class="body-lg">Esa prueba social no tiene hoy un papel protagonista durante el primer recorrido por la web.</p>
+  <div class="impacto">
+    <div class="impacto-label">Impacto</div>
+    <p>Muchos pacientes comparan varios centros. Mostrar antes la reputación reduce incertidumbre.</p>
+  </div>
+
+  <!-- HALLAZGO 3 -->
+  <div class="finding-label"><span class="eyebrow">Hallazgo 3</span><span class="badge badge--pattern">Prioridad media</span></div>
+  <h2 class="section-title">Una especialización muy amplia que podría comunicarse antes</h2>
+  <p class="body-lg">Atención diferenciada por perfil de paciente — una combinación poco común entre los podólogos de León:</p>
+  <div class="perfiles">
+    <span class="badge badge--accent">Infantil</span>
+    <span class="badge badge--accent">Deportiva</span>
+    <span class="badge badge--accent">Diabética</span>
+    <span class="badge badge--accent">Geriátrica</span>
+    <span class="badge badge--accent">Nutrición integrada</span>
+  </div>
+  <p style="font-size:var(--text-md); line-height:var(--leading-relaxed); color:var(--text-dim); margin:0 0 var(--space-6) 0;">Hoy están mezclados con los tratamientos técnicos, en nueve tarjetas todas del mismo tamaño.</p>
+  <div class="impacto">
+    <div class="impacto-label">Impacto</div>
+    <p>Cuando un paciente encuentra rápido "su caso", es más fácil que siga explorando la web.</p>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- PRIORIDADES -->
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Cambios que priorizaríamos</p>
+  <h2 class="section-title--lg">No hace falta más información — hace falta que se vea antes</h2>
+  <div class="priorities">
+    <div class="item"><span class="num">01</span><p>Dar mayor visibilidad a la experiencia y formación profesional desde la portada.</p></div>
+    <div class="item"><span class="num">02</span><p>Reforzar la presencia de la reputación durante el primer recorrido.</p></div>
+    <div class="item"><span class="num">03</span><p>Facilitar que cada tipo de paciente identifique rápido el tratamiento que necesita.</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <!-- CIERRE -->
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Qué esperaríamos conseguir</p>
+  <h2 class="section-title">Que el valor que ya existe se perciba antes</h2>
+  <p class="body-xl" style="margin-bottom:var(--space-7);">No creemos que el reto sea incorporar más información — creemos que el valor que ya ofrece la clínica podría percibirse antes, con menos esfuerzo del paciente.</p>
+  <div style="border-top:var(--border-hairline); padding-top:var(--space-7);">
+    <p style="font-family:var(--font-serif); font-size:var(--text-title); color:var(--text-strong); margin:0 0 var(--space-6) 0;">¿Comentamos si esto tiene sentido?</p>
+    <a class="cta-btn" href="tel:+34987264130">Hablemos 20 minutos</a>
+    <p style="font-family:var(--font-sans); font-size:var(--text-2xs); color:var(--text-dim); margin:var(--space-6) 0 0 0;">FARO — automatización y mejora operativa para pymes de León. Sin compromiso, sin coste por este informe.</p>
+  </div>
+
+</div>
+
+</body>
+</html>
