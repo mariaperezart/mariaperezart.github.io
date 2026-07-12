@@ -1,0 +1,191 @@
+<!--
+  Microdiagnóstico Autoescuela León Capital — auditoría FARO en el formato final
+  definido por el usuario (ver ejemplo de Vanessa): por hallazgo, Lo que
+  vimos / Qué puede ocurrir / Por qué creemos que merece atención /
+  Evidencia / pregunta retórica en cursiva; sección de Límites del
+  análisis; cierre humilde ("puede que no estemos de acuerdo... y está
+  bien"). Reescrito siguiendo ese formato desde la versión anterior de
+  este caso. Sin capturas propias incrustadas (no hay navegación directa
+  con capturas para este negocio, a diferencia de Vanessa) -- la
+  evidencia cita las fuentes usadas en la investigación original.
+-->
+<!doctype html>
+<html lang="es-ES">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Microdiagnóstico — Autoescuela León Capital</title>
+<meta name="description" content="Lo que vimos durante el primer recorrido por autoescuelaleoncapital.com — microdiagnóstico FARO.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root {
+  --faro-ink-950: #0c0d10; --faro-ink-900: #14161a; --faro-ink-800: #1b1e24;
+  --faro-cream-50: #f4f2ee; --faro-slate-400: #9b9ba3;
+  --faro-coral-600: #ff6a3d; --faro-coral-200: #ffb199;
+  --faro-green-400: #5fd0a3; --faro-amber-400: #ffcf6a;
+  --faro-line: rgba(244, 242, 238, 0.12); --faro-line-strong: rgba(244, 242, 238, 0.22);
+  --faro-coral-glow: rgba(255, 106, 61, 0.5); --faro-amber-tint: rgba(255, 207, 106, 0.15);
+  --faro-green-tint: rgba(95, 208, 163, 0.15);
+  --bg: var(--faro-ink-950); --surface-card: var(--faro-ink-900);
+  --text-strong: var(--faro-cream-50); --text-body: var(--faro-cream-50);
+  --text-dim: var(--faro-slate-400); --text-accent: var(--faro-coral-200);
+  --accent: var(--faro-coral-600); --accent-soft: var(--faro-coral-200); --accent-ink: #16110d;
+  --line: var(--faro-line); --border-card: var(--faro-line);
+  --font-serif: 'Fraunces', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  --text-hero: clamp(3.4rem, 11vw, 5.2rem); --text-display: clamp(2rem, 5vw, 3.2rem);
+  --text-title: clamp(1.3rem, 3vw, 1.7rem);
+  --text-xl: 1.15rem; --text-lg: 1.05rem; --text-md: 1rem; --text-sm: 0.9rem;
+  --text-xs: 0.8rem; --text-2xs: 0.72rem; --text-eyebrow: 0.78rem;
+  --weight-regular: 400; --weight-medium: 500; --weight-semibold: 600; --weight-bold: 700;
+  --leading-tight: 1.1; --leading-relaxed: 1.55;
+  --tracking-eyebrow: 0.16em; --tracking-tag: 0.05em;
+  --space-1: 0.25rem; --space-2: 0.5rem; --space-3: 0.7rem; --space-4: 0.9rem;
+  --space-5: 1.1rem; --space-6: 1.4rem; --space-7: 1.8rem; --space-8: 2.2rem; --space-9: 3rem;
+  --stage-pad-x: 5vw;
+  --radius-lg: 12px; --radius-xl: 14px; --radius-pill: 999px;
+  --border-hairline: 1px solid var(--line);
+  --shadow-cta: 0 12px 30px -10px var(--faro-coral-glow);
+  --ease-standard: cubic-bezier(0.22, 0.61, 0.36, 1); --dur-fast: 0.2s;
+  --ambient-glow:
+    radial-gradient(circle at 20% 20%, rgba(255, 106, 61, 0.10), transparent 45%),
+    radial-gradient(circle at 80% 75%, rgba(95, 208, 163, 0.08), transparent 50%);
+}
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: var(--bg); }
+body { font-family: var(--font-sans); color: var(--text-body); }
+h1, h2 { font-family: var(--font-serif); font-weight: var(--weight-semibold); color: var(--text-strong); line-height: var(--leading-tight); margin: 0; }
+p { font-family: var(--font-sans); margin: 0; }
+.stage { background: var(--bg); width: 100%; max-width: 640px; margin: 0 auto; position: relative; padding: calc(var(--space-8) * 1.4) var(--stage-pad-x) var(--space-8) var(--stage-pad-x); background-image: var(--ambient-glow); }
+.faro-mark { width: 32px; height: 32px; display: block; margin-bottom: var(--space-7); }
+.eyebrow { font-family: var(--font-sans); font-size: var(--text-eyebrow); letter-spacing: var(--tracking-eyebrow); text-transform: uppercase; color: var(--text-accent); margin: 0; }
+.badge { display: inline-block; font-family: var(--font-sans); font-size: var(--text-2xs); font-weight: var(--weight-medium); text-transform: uppercase; letter-spacing: var(--tracking-tag); padding: 0.1rem 0.5rem; border-radius: var(--radius-pill); line-height: 1.6; vertical-align: middle; }
+.badge--accent { background: rgba(255,177,153,0.15); color: var(--accent-soft); }
+.badge--pattern { background: var(--faro-amber-tint); color: var(--faro-amber-400); }
+.badge--neutral { background: transparent; color: var(--text-dim); border: 1px solid var(--line); }
+.divider { height: 1px; background: var(--faro-line-strong); margin: 0 0 var(--space-8) 0; }
+.name-pill { display: inline-flex; align-items: center; gap: var(--space-4); margin: var(--space-5) 0 var(--space-6) 0; background: #2a2a2a; border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5); }
+.name-pill span { font-family: var(--font-serif); font-weight: var(--weight-semibold); color: var(--text-strong); font-size: var(--text-sm); }
+.data-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-6); margin: 0 0 var(--space-7) 0; padding: var(--space-5) var(--space-6); background: var(--surface-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); }
+.data-grid dt { font-size: var(--text-2xs); color: var(--text-dim); text-transform: uppercase; letter-spacing: var(--tracking-tag); margin-bottom: var(--space-1); }
+.data-grid dd { margin: 0; font-family: var(--font-serif); font-size: var(--text-lg); color: var(--text-strong); }
+.finding-label { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
+.finding-label span.eyebrow { color: var(--text-dim); text-transform: uppercase; }
+.sub-label { font-family: var(--font-sans); font-size: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--text-dim); margin: 0 0 var(--space-3) 0; }
+.finding-part { margin-bottom: var(--space-6); }
+.finding-part p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--text-body); }
+.evidence-list { list-style: none; margin: 0; padding: 0; }
+.evidence-list li { font-size: var(--text-sm); color: var(--faro-green-400); margin-bottom: var(--space-2); }
+.evidence-list li.pending { color: var(--text-dim); }
+.rhetorical { font-family: var(--font-serif); font-style: italic; color: var(--text-accent); font-size: var(--text-md); line-height: var(--leading-relaxed); margin: var(--space-6) 0 var(--space-8) 0; }
+.priorities { display: flex; flex-direction: column; gap: var(--space-6); margin-bottom: var(--space-8); }
+.priorities .item { display: flex; gap: var(--space-5); align-items: baseline; }
+.priorities .num { font-family: var(--font-serif); font-size: var(--text-lg); color: var(--accent); flex-shrink: 0; }
+.priorities p { font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--text-body); }
+.limits-tags { display: flex; flex-wrap: wrap; gap: var(--space-3); margin: var(--space-5) 0 var(--space-6) 0; }
+.cta-btn { font-family: var(--font-sans); font-weight: var(--weight-semibold); display: inline-flex; align-items: center; justify-content: center; gap: var(--space-2); cursor: pointer; border: 1px solid transparent; text-decoration: none; font-size: var(--text-md); padding: 0.85rem 1.3rem; border-radius: var(--radius-lg); background: var(--accent); color: var(--accent-ink); white-space: nowrap; }
+p.body-xl { font-size: var(--text-xl); line-height: var(--leading-relaxed); color: var(--text-body); margin: 0 0 var(--space-6) 0; }
+p.body-lg { font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--text-body); margin: 0 0 var(--space-6) 0; }
+p.body-sm { font-size: var(--text-sm); color: var(--text-dim); margin: 0 0 var(--space-8) 0; }
+h1.hero-title { font-size: calc(var(--text-display) * 0.85); margin: 0 0 var(--space-6) 0; }
+h2.section-title { font-size: calc(var(--text-title) * 1.15); margin: 0 0 var(--space-6) 0; }
+h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var(--space-7) 0; }
+.footer-note { font-family: var(--font-sans); font-size: var(--text-2xs); color: var(--text-dim); margin: var(--space-6) 0 0 0; }
+</style>
+</head>
+<body>
+<div class="stage">
+  <svg class="faro-mark" viewBox="0 0 48 48" fill="none">
+    <circle cx="22" cy="26" r="14" stroke="#F2E9E4" stroke-width="2.2"></circle>
+    <circle cx="22" cy="26" r="7.6" stroke="#F2E9E4" stroke-width="2.2"></circle>
+    <circle cx="22" cy="26" r="1.9" fill="#F2E9E4"></circle>
+    <circle cx="33.4" cy="14.6" r="4.3" fill="#F26B42"></circle>
+  </svg>
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Auditoría FARO · Julio 2026 · 2 minutos de lectura</p>
+  <div class="name-pill"><span>Autoescuela León Capital</span></div>
+  <h1 class="hero-title">Lo que vimos durante el primer recorrido por vuestra web</h1>
+  <p class="body-xl">Antes de escribir este informe hicimos una prueba sencilla: imaginamos que éramos alguien buscando autoescuela en León por primera vez. En menos de diez minutos encontramos varios elementos que generan mucha confianza — pero algunos aparecen demasiado tarde en el recorrido, o no aparecen en absoluto.</p>
+  <p class="body-sm">Analizada el 12 de julio de 2026 · solo observaciones visibles desde fuera</p>
+
+  <div class="divider"></div>
+
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Lo que encontramos</p>
+  <h2 class="section-title">Un negocio con más recorrido del que hoy se ve</h2>
+  <dl class="data-grid">
+    <div><dt>Tasa de aprobados</dt><dd>53,33%</dd></div>
+    <div><dt>Trayectoria</dt><dd>Más de 50 años</dd></div>
+    <div><dt>Intensivo</dt><dd>4 días</dd></div>
+    <div><dt>Reserva online</dt><dd>Ya existe</dd></div>
+  </dl>
+
+  <div class="divider"></div>
+
+  <div class="finding-label"><span class="eyebrow">Hallazgo 1</span><span class="badge badge--accent">Prioridad alta</span></div>
+  <h2 class="section-title">Una cifra de aprobados que vive en la web de otro</h2>
+  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Un 53,33% de aprobados en el examen práctico de B para León Capital, según estadísticas públicas de la DGT — no lo vimos replicado en vuestra propia web.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Alguien comparando autoescuelas por resultados no encuentra esta cifra donde decide, y puede asumir que no la tenéis.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es un dato objetivo y verificable — el tipo de prueba que más pesa frente al "café para todos" del resto de autoescuelas de León.</p></div>
+  <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
+      <li class="">&check; Estadísticas DGT (fuente externa)</li>
+      <li class="">&check; Web de autoescuelaleoncapital.com</li>
+  </ul></div>
+  <p class="rhetorical">¿Alguien que compara aprobados entre autoescuelas de León encontraría esta cifra en vuestra web, o solo si la busca en la de la DGT?</p>
+  <div class="divider"></div>
+  <div class="finding-label"><span class="eyebrow">Hallazgo 2</span><span class="badge badge--accent">Prioridad alta</span></div>
+  <h2 class="section-title">El intensivo de 4 días no lidera el mensaje</h2>
+  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Existe un curso intensivo de 4 días, pero no lo vimos destacado en el titular principal de la web.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Alguien con prisa — el perfil que más valora justo esta opción — puede no detectarla a tiempo y seguir buscando.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es la palabra exacta que teclea quien busca "carnet rápido León".</p></div>
+  <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
+      <li class="">&check; Portada de la web</li>
+  </ul></div>
+  <p class="rhetorical">¿Alguien que busca "carnet rápido" reconocería esta opción en los primeros segundos?</p>
+  <div class="divider"></div>
+  <div class="finding-label"><span class="eyebrow">Hallazgo 3</span><span class="badge badge--pattern">Prioridad media</span></div>
+  <h2 class="section-title">Toño, con 50 años de trayectoria detrás, sin cara visible</h2>
+  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Hay un contacto directo y una trayectoria de más de 50 años, pero no encontramos quién es la persona detrás de la autoescuela en ningún sitio visible.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>La confianza que da un nombre y una cara conocida se pierde frente a autoescuelas más nuevas pero con más presencia digital.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>La confianza personal pesa mucho en una decisión que implica meses de relación, como aprender a conducir.</p></div>
+  <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
+      <li class="">&check; Portada y páginas internas de la web</li>
+  </ul></div>
+  <p class="rhetorical">¿Un alumno nuevo sabría con quién va a tratar antes de llamar?</p>
+  <div class="divider"></div>
+
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Cambios que priorizaríamos</p>
+  <h2 class="section-title--lg">No hace falta más información — hace falta que se vea antes</h2>
+  <div class="priorities">
+    <div class="item"><span class="num">01</span><p>Subir la tasa de aprobados (y compararla con la media de León) al bloque principal.</p></div>
+    <div class="item"><span class="num">02</span><p>Destacar el intensivo de 4 días en el titular, no como una opción más.</p></div>
+    <div class="item"><span class="num">03</span><p>Dar cara y nombre a Toño como contacto directo de la autoescuela.</p></div>
+  </div>
+
+  <div class="divider"></div>
+
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Los límites de este análisis</p>
+  <h2 class="section-title">Qué no hemos analizado</h2>
+  <p class="body-lg">No hemos podido valorar:</p>
+  <div class="limits-tags">
+    <span class="badge badge--neutral">Llamadas recibidas</span>
+    <span class="badge badge--neutral">Tasa de conversión</span>
+    <span class="badge badge--neutral">Reservas</span>
+    <span class="badge badge--neutral">Datos internos</span>
+    <span class="badge badge--neutral">Analítica</span>
+  </div>
+  <p class="body-sm" style="margin-top:var(--space-3);">Por tanto, este documento solo analiza aquello que cualquier alumno puede percibir desde fuera.</p>
+
+  <div class="divider"></div>
+
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Qué esperaríamos conseguir</p>
+  <h2 class="section-title">Que el valor que ya existe se perciba antes</h2>
+  <p class="body-xl">No creemos que el reto sea incorporar más información — creemos que el valor que ya ofrece la autoescuela podría percibirse antes, con menos esfuerzo de quien está decidiendo dónde sacarse el carnet.</p>
+  <p class="body-lg" style="margin-bottom:var(--space-3);">Puede que no estemos de acuerdo con todas estas observaciones. Y está bien.</p>
+  <p class="body-lg">El objetivo de este informe no es tener razón en todo, sino ofrecer una mirada externa que quizá resulte útil.</p>
+  <p class="body-lg" style="margin:var(--space-6) 0 var(--space-6) 0;">Si os apetece contrastarlas, estaré encantada de comentarlas durante 20 minutos. Sin compromiso.</p>
+  <a class="cta-btn" href="mailto:hola@autoescuelaleoncapital.com?subject=Hablemos%2020%20minutos">Hablemos 20 minutos</a>
+  <p class="footer-note">Informe elaborado por FARO. Diagnóstico independiente de experiencia digital para pymes de León.<br>Este documento no ha sido generado automáticamente ni reutilizado de otra empresa. Las observaciones corresponden exclusivamente a Autoescuela León Capital.</p>
+</div>
+</body>
+</html>
