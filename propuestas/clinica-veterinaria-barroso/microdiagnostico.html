@@ -1,13 +1,21 @@
 <!--
   Microdiagnóstico Clínica Veterinaria Barroso — auditoría FARO en el formato final
-  definido por el usuario (ver ejemplo de Vanessa): por hallazgo, Lo que
-  vimos / Qué puede ocurrir / Por qué creemos que merece atención /
-  Evidencia / pregunta retórica en cursiva; sección de Límites del
-  análisis; cierre humilde ("puede que no estemos de acuerdo... y está
-  bien"). Reescrito siguiendo ese formato desde la versión anterior de
-  este caso. Sin capturas propias incrustadas (no hay navegación directa
-  con capturas para este negocio, a diferencia de Vanessa) -- la
-  evidencia cita las fuentes usadas en la investigación original.
+  definido por el usuario: por hallazgo, Lo que vimos / Qué puede
+  ocurrir / Por qué creemos que merece atención / Evidencia / pregunta
+  retórica en cursiva; una tarjeta breve "Lo que ya funciona" justo
+  después del resumen (antes de los hallazgos, para bajar las
+  defensas del propietario, sin restar peso al diagnóstico que sigue);
+  sección de Límites del análisis; un cierre-reflexión más elegante
+  que el "puede que no estemos de acuerdo..." de la versión anterior;
+  y una última pantalla, "Una pregunta", con una sola pregunta y nada
+  más -- pensada para quedarse en la cabeza del propietario después de
+  cerrar el informe.
+
+  Se revisó también el lenguaje de cada hallazgo para no afirmar nada
+  que no se haya comprobado (evitar frases como "es la palabra exacta
+  que teclea quien busca X" o "es lo que más pesa": se sustituyen por
+  observaciones sobre lo que sí se vio, con condicionales donde hace
+  falta).
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -68,14 +76,22 @@ p { font-family: var(--font-sans); margin: 0; }
 .divider { height: 1px; background: var(--faro-line-strong); margin: 0 0 var(--space-8) 0; }
 .name-pill { display: inline-flex; align-items: center; gap: var(--space-4); margin: var(--space-5) 0 var(--space-6) 0; background: #2a2a2a; border-radius: var(--radius-lg); padding: var(--space-3) var(--space-5); }
 .name-pill span { font-family: var(--font-serif); font-weight: var(--weight-semibold); color: var(--text-strong); font-size: var(--text-sm); }
+.name-pill img { height: 26px; width: auto; border-radius: 6px; display: block; }
 .data-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--space-4) var(--space-6); margin: 0 0 var(--space-7) 0; padding: var(--space-5) var(--space-6); background: var(--surface-card); border: 1px solid var(--border-card); border-radius: var(--radius-xl); }
 .data-grid dt { font-size: var(--text-2xs); color: var(--text-dim); text-transform: uppercase; letter-spacing: var(--tracking-tag); margin-bottom: var(--space-1); }
 .data-grid dd { margin: 0; font-family: var(--font-serif); font-size: var(--text-lg); color: var(--text-strong); }
+.works-card { display: flex; flex-direction: column; gap: var(--space-3); margin: 0 0 var(--space-8) 0; padding: var(--space-5) var(--space-6); background: var(--faro-green-tint); border: 1px solid rgba(95,208,163,0.3); border-radius: var(--radius-xl); }
+.works-card .item { display: flex; gap: var(--space-3); align-items: baseline; }
+.works-card .check { color: var(--faro-green-400); flex-shrink: 0; }
+.works-card p { font-size: var(--text-md); color: var(--text-body); }
 .finding-label { display: flex; align-items: center; gap: var(--space-4); margin-bottom: var(--space-5); }
 .finding-label span.eyebrow { color: var(--text-dim); text-transform: uppercase; }
 .sub-label { font-family: var(--font-sans); font-size: var(--text-eyebrow); text-transform: uppercase; letter-spacing: var(--tracking-eyebrow); color: var(--text-dim); margin: 0 0 var(--space-3) 0; }
 .finding-part { margin-bottom: var(--space-6); }
 .finding-part p { font-size: var(--text-md); line-height: var(--leading-relaxed); color: var(--text-body); }
+.evidence-block { margin-bottom: var(--space-6); }
+.evidence-block img { width: 100%; max-width: 220px; height: auto; border-radius: var(--radius-xl); border: 1px solid var(--line); display: block; margin: 0 auto; }
+.evidence-caption { font-family: var(--font-sans); font-size: var(--text-2xs); color: var(--text-dim); text-align: center; margin: var(--space-3) 0 0 0; }
 .evidence-list { list-style: none; margin: 0; padding: 0; }
 .evidence-list li { font-size: var(--text-sm); color: var(--faro-green-400); margin-bottom: var(--space-2); }
 .evidence-list li.pending { color: var(--text-dim); }
@@ -93,6 +109,11 @@ h1.hero-title { font-size: calc(var(--text-display) * 0.85); margin: 0 0 var(--s
 h2.section-title { font-size: calc(var(--text-title) * 1.15); margin: 0 0 var(--space-6) 0; }
 h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var(--space-7) 0; }
 .footer-note { font-family: var(--font-sans); font-size: var(--text-2xs); color: var(--text-dim); margin: var(--space-6) 0 0 0; }
+.surprise { border-left: 3px solid var(--accent); padding-left: var(--space-5); margin: 0 0 var(--space-8) 0; }
+.surprise p { font-family: var(--font-serif); font-size: var(--text-lg); line-height: var(--leading-relaxed); color: var(--text-strong); }
+.final-question { margin-top: calc(var(--space-9) * 1.6); padding-top: var(--space-8); border-top: var(--border-hairline); text-align: center; }
+.final-question .eyebrow { display: block; margin-bottom: var(--space-6); }
+.final-question p { font-family: var(--font-serif); font-style: italic; font-size: calc(var(--text-title) * 1.05); line-height: var(--leading-relaxed); color: var(--text-strong); }
 </style>
 </head>
 <body>
@@ -114,39 +135,50 @@ h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var
   <p class="eyebrow" style="margin-bottom:var(--space-5);">Lo que encontramos</p>
   <h2 class="section-title">Un negocio con más recorrido del que hoy se ve</h2>
   <dl class="data-grid">
-    <div><dt>Cirugía láser CO2</dt><dd>Única en León</dd></div>
+    <div><dt>Cirugía láser CO2</dt><dd>Diferenciador confirmado</dd></div>
     <div><dt>Trayectoria</dt><dd>Casi 30 años</dd></div>
     <div><dt>Planes de salud</dt><dd>3 etapas</dd></div>
     <div><dt>WhatsApp</dt><dd>Disponible</dd></div>
   </dl>
 
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Lo que ya funciona</p>
+  <div class="works-card">
+    <div class="item"><span class="check">&check;</span><p>Cirugía láser CO2, poco habitual en León.</p></div>
+    <div class="item"><span class="check">&check;</span><p>Planes de salud por etapa de vida.</p></div>
+    <div class="item"><span class="check">&check;</span><p>Casi 30 años de trayectoria.</p></div>
+    <div class="item"><span class="check">&check;</span><p>WhatsApp disponible para contacto.</p></div>
+  </div>
+
+  <p class="eyebrow" style="margin-bottom:var(--space-5);">Lo que más nos sorprendió</p>
+  <div class="surprise"><p>Esperábamos encontrar una veterinaria más de barrio. Lo que encontramos fue tecnología y planes de salud poco comunes en León, ocultos detrás de una web que no los destaca.</p></div>
+
   <div class="divider"></div>
 
   <div class="finding-label"><span class="eyebrow">Hallazgo 1</span><span class="badge badge--accent">Prioridad alta</span></div>
-  <h2 class="section-title">Una tecnología que no vimos en ninguna otra veterinaria de León</h2>
-  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Cirugía láser CO2 — menos sangrado, recuperación más rápida — no la encontramos en ninguna otra veterinaria de las que revisamos en la ciudad.</p></div>
-  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Un dueño que compara clínicas por tecnología puede no descubrir esta diferencia si no está en el mensaje principal.</p></div>
-  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es un diferenciador tecnológico real y concreto, del tipo que se puede explicar en una frase y se recuerda.</p></div>
+  <h2 class="section-title">Una tecnología poco habitual entre las clínicas que revisamos en León</h2>
+  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Cirugía láser CO2 — menos sangrado, recuperación más rápida. Durante nuestra revisión no encontramos otra clínica que comunicara esta tecnología.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Un dueño que compara clínicas por tecnología podría no descubrir esta diferencia si no está en el mensaje principal.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es un diferenciador tecnológico real y concreto, del tipo que suele explicarse en una frase y resulta fácil de recordar.</p></div>
   <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
       <li class="">&check; Portada de la web</li>
   </ul></div>
   <p class="rhetorical">¿Alguien que compara veterinarias por tecnología encontraría esta diferencia en los primeros segundos?</p>
   <div class="divider"></div>
   <div class="finding-label"><span class="eyebrow">Hallazgo 2</span><span class="badge badge--accent">Prioridad alta</span></div>
-  <h2 class="section-title">Los planes de salud por etapa de vida son el único modelo así que vimos en veterinarias de León</h2>
-  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Planes de salud para cachorro, adulto y senior — el único modelo de ingresos recurrentes que vimos en el vertical veterinario de la ciudad.</p></div>
-  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Sin nombre ni precio orientativo, un cliente interesado no sabe cómo dar el siguiente paso.</p></div>
-  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es una forma de fidelizar y de dar previsibilidad tanto a la clínica como al dueño de la mascota.</p></div>
+  <h2 class="section-title">Planes de salud por etapa de vida, poco comunicados en el vertical que revisamos</h2>
+  <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Planes diferenciados para cachorro, adulto y senior — una propuesta que no encontramos comunicada de esta forma en las demás clínicas veterinarias que revisamos.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Sin detalle de qué incluye cada plan, un cliente interesado podría no saber cómo dar el siguiente paso.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>Es una forma clara de mostrar que el cuidado se adapta a cada etapa de vida de la mascota.</p></div>
   <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
       <li class="">&check; Portada de la web</li>
   </ul></div>
-  <p class="rhetorical">¿Alguien interesado en un plan de salud sabría, sin llamar, qué incluye y cuánto cuesta aproximadamente?</p>
+  <p class="rhetorical">¿Alguien interesado en un plan de salud sabría, sin llamar, qué incluye cada uno?</p>
   <div class="divider"></div>
   <div class="finding-label"><span class="eyebrow">Hallazgo 3</span><span class="badge badge--pattern">Prioridad media</span></div>
   <h2 class="section-title">Casi 30 años con el mismo veterinario, sin confirmar si se comunica como argumento de confianza</h2>
   <div class="finding-part"><p class="sub-label">Lo que vimos</p><p>Trayectoria real y poco común en el sector — no está claro si aparece de forma prominente en la web.</p></div>
-  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>Una clínica nueva con mejor presencia digital puede parecer más establecida sin serlo.</p></div>
-  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>La continuidad de un mismo profesional durante casi tres décadas es un argumento de confianza difícil de igualar.</p></div>
+  <div class="finding-part"><p class="sub-label">Qué puede ocurrir</p><p>La experiencia acumulada puede pasar desapercibida para alguien que conoce la clínica por primera vez.</p></div>
+  <div class="finding-part"><p class="sub-label">Por qué creemos que merece atención</p><p>La continuidad de un mismo profesional durante casi tres décadas es un argumento de confianza que pocas clínicas nuevas pueden ofrecer.</p></div>
   <div class="finding-part"><p class="sub-label">Evidencia</p><ul class="evidence-list">
       <li class="">&check; Portada de la web</li>
   </ul></div>
@@ -157,7 +189,7 @@ h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var
   <h2 class="section-title--lg">No hace falta más información — hace falta que se vea antes</h2>
   <div class="priorities">
     <div class="item"><span class="num">01</span><p>Subir la cirugía láser al mensaje principal de la portada.</p></div>
-    <div class="item"><span class="num">02</span><p>Dar nombre y precio orientativo a los planes de salud.</p></div>
+    <div class="item"><span class="num">02</span><p>Explicar con más claridad qué incluye cada plan de salud y cómo solicitar información.</p></div>
     <div class="item"><span class="num">03</span><p>Comunicar los casi 30 años de trayectoria como argumento de confianza explícito.</p></div>
   </div>
 
@@ -177,14 +209,19 @@ h2.section-title--lg { font-size: calc(var(--text-title) * 1.2); margin: 0 0 var
 
   <div class="divider"></div>
 
-  <p class="eyebrow" style="margin-bottom:var(--space-6);">Qué esperaríamos conseguir</p>
+  <p class="eyebrow" style="margin-bottom:var(--space-6);">Qué cambiaría para un futuro cliente</p>
   <h2 class="section-title">Que el valor que ya existe se perciba antes</h2>
   <p class="body-xl">No creemos que el reto sea incorporar más información — creemos que estos tres activos reales podrían percibirse antes, con menos esfuerzo de quien está eligiendo veterinario.</p>
-  <p class="body-lg" style="margin-bottom:var(--space-3);">Puede que no estemos de acuerdo con todas estas observaciones. Y está bien.</p>
-  <p class="body-lg">El objetivo de este informe no es tener razón en todo, sino ofrecer una mirada externa que quizá resulte útil.</p>
-  <p class="body-lg" style="margin:var(--space-6) 0 var(--space-6) 0;">Si os apetece contrastarlas, estaré encantada de comentarlas durante 20 minutos. Sin compromiso.</p>
+  <p class="body-lg" style="margin-bottom:var(--space-3);">Todas las observaciones de este informe parten de una única pregunta: ¿qué entiende alguien que no os conoce durante sus primeros minutos en la web? Esa respuesta no siempre coincide con la realidad de la clínica, pero sí influye en la primera impresión.</p>
+  <p class="body-lg">No pretenden describir cómo funciona la clínica por dentro — solo reflejan la experiencia de alguien que la descubre por primera vez desde internet. Es posible que algunas no coincidan con vuestra visión, y es completamente normal.</p>
+  <p class="body-lg" style="margin:var(--space-6) 0 var(--space-6) 0;">Precisamente por eso creemos que merece la pena contrastarlas en una conversación de 20 minutos, sin compromiso.</p>
   <a class="cta-btn" href="mailto:veterinariabarroso@gmail.com?subject=Hablemos%2020%20minutos">Hablemos 20 minutos</a>
   <p class="footer-note">Informe elaborado por FARO. Diagnóstico independiente de experiencia digital para pymes de León.<br>Este documento no ha sido generado automáticamente ni reutilizado de otra empresa. Las observaciones corresponden exclusivamente a Clínica Veterinaria Barroso.</p>
+
+  <div class="final-question">
+    <span class="eyebrow">Una pregunta</span>
+    <p>Si alguien compara veterinarias por tecnología, ¿encontraría la vuestra en los primeros segundos?</p>
+  </div>
 </div>
 </body>
 </html>
