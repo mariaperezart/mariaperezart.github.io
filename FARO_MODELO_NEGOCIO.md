@@ -334,6 +334,16 @@ Reformula el pitch interno de "hacemos auditorías web" a **"buscamos el desajus
 
 Solo con esas cinco respuestas la escalera de valor deja de ser una hipótesis razonable y pasa a ser un modelo de negocio validado — que es, con diferencia, más valioso que seguir refinando el lenguaje de los informes.
 
+### 9.5 Benchmarking relativo — "Matriz FARO" / "Índice FARO" (propuesta, sin construir, sin muestra suficiente todavía)
+
+**Nivel de evidencia: 🔴 SUPOSICIÓN, con una restricción de datos identificada, no solo de negocio.** Idea propuesta después de la sección 9.1-9.4: en vez de una auditoría aislada por negocio, comparar cada negocio contra sus pares reales del mismo vertical y ciudad ("solo 1 de 5 clínicas veterinarias que revisamos en León tiene reserva online, vosotros no sois una de ellas"), con un posible **Índice FARO** (autoridad / claridad / diferenciación / prueba social / accesibilidad, sumado) y, a más largo plazo, informes de sector ("Estado de las veterinarias de León 2026") apoyados en una base de datos propia que crece con cada auditoría.
+
+**Por qué es una capa de riesgo distinta a 9.2-9.4, no solo "un paso más".** 9.2-9.4 dependían de validar demanda (¿responden los propietarios?). Esto depende además de tener una **muestra defendible** — y hoy no la hay. Recuento real del repo en este momento: veterinaria 5 negocios, dental 5, peluquería 4, podología 3-4, fisioterapia 3, autoescuela 1 con landing completa. De los 5 veterinarios, solo 3 (Barroso, Sanivet, Centro León) se investigaron con navegación directa de la web real; San Pedro y Ricardo Díez Reyero se investigaron por WebSearch/directorios, con menor confianza y más riesgo de estar desactualizados. Publicar "solo 1 de 5 clínicas tiene reserva online" mezclando ambos niveles de confianza rompe la misma disciplina de la sección 9.4 ("si no puedo demostrarlo, no lo escribo"), solo que aplicada al tamaño y calidad de la muestra en vez de a una frase suelta.
+
+**Qué haría falta antes de construir la matriz o el índice**: (1) que todos los negocios de un vertical usado en la comparación vengan de navegación directa reciente, no de mezcla con WebSearch/directorios; (2) un mínimo de muestra por vertical que un propietario escéptico no pueda descartar como anecdótico — 5 no lo es, probablemente 15-20 sí; (3) los Niveles 2-3 de la escalera (9.2) ya validados con clientes reales, porque el benchmarking relativo es más propio de un Diagnóstico de pago que de la Auditoría gratuita de Nivel 1.
+
+**Qué sí se puede hacer ya, sin construir nada nuevo**: nada por ahora — ni siquiera una frase comparativa suelta en un informe ya enviado, dado el problema de muestra mixta arriba. La siguiente acción concreta sigue siendo la de 9.4: enviar, medir respuesta, y solo entonces evaluar si merece la pena invertir en ampliar la muestra de un vertical concreto lo suficiente como para que una comparación sea defendible.
+
 ---
 
 *Fin de la Fase 2 — Modelo de negocio. Próxima fase: identidad visual (Fase 3), que traduce el posicionamiento (Fase 1) y la estructura de negocio (Fase 2) en un sistema visual coherente.*
