@@ -288,4 +288,52 @@ MRR, número de negocios activos, churn mensual, CAC, LTV, tiempo de soporte por
 
 ---
 
+## 9. Escalera de valor y metodología de los 4 desajustes (12 jul 2026)
+
+**Nivel de evidencia: 🔴 SUPOSICIÓN, con una parte ya 🟡 en curso.** Nace de las auditorías reales construidas en `experimentos/EXP-003-pymes-leon` (7 microdiagnósticos ya enviados o listos para enviar como Nivel 1) y de una sesión de revisión iterativa de esos mismos documentos, no de datos de respuesta de negocios reales — ningún propietario ha abierto, respondido ni pagado nada todavía. Se documenta aquí porque reformula el posicionamiento de este documento (1.2) y el pricing (sección 4) de forma sustancial, y conviene tenerlo localizable, pero **no sustituye la sección 4 activa** — la complementa como capa anterior del embudo.
+
+### 9.1 Posicionamiento reformulado
+
+La propuesta de valor de 1.2 ("FARO no vende automatización, vende la ausencia de un problema") sigue siendo cierta pero describe el punto de llegada, no el punto de entrada. El ángulo de entrada que ha emergido al construir 7 casos reales es más específico: **"FARO descubre el valor que tu negocio ya tiene, pero que tus clientes no perciben. Después diseña el sistema para que ese valor se traduzca en más confianza, más contactos y más ventas."** La automatización (BMC 1.2 original) sigue siendo la solución técnica más frecuente, pero deja de ser el primer mensaje — el primer mensaje es el diagnóstico de percepción, no la herramienta.
+
+### 9.2 Escalera de valor propuesta
+
+| Nivel | Nombre | Precio | Qué es en este repo hoy |
+|---|---|---|---|
+| 1 | Auditoría FARO | Gratis, o 49-99€ a validar | Ya construido: el microdiagnóstico de 1 página/PDF (`propuestas/<slug>/microdiagnostico.html`), 3 hallazgos, 3 acciones, cierre con invitación a 20 min. 7 casos ya existen. |
+| 2 | Diagnóstico FARO | 300-600€ | No construido. Ampliaría el análisis más allá de la web (Google Business, WhatsApp, email, reservas, embudo, competencia) en un documento de 20-40 páginas con ROI estimado y roadmap. |
+| 3 | Proyecto FARO | 2.000-8.000€ | No construido. Ejecución de lo detectado en el Nivel 2 — web, WhatsApp, reservas, CRM, SEO local — vendido como "resolver los problemas detectados", no como horas. |
+| 4 | FARO Operativo | 300-800€/mes | **Ya es la sección 4 de este documento** (planes START/GROW/OPS, 149-499€/mes) — el nivel 4 de la escalera y el modelo de suscripción ya definido son el mismo nivel, descrito con dos rangos de precio ligeramente distintos que conviene reconciliar cuando haya datos reales en vez de mantener dos cifras vivas a la vez. |
+
+**Por qué se documenta así.** Los niveles 1 y 4 ya existen en el repo (uno como artefacto construido, otro como pricing ya definido); los niveles 2 y 3 son huecos reales del embudo — hoy se salta directamente de "informe gratuito de 1 página" a "suscripción mensual", sin nada intermedio para el negocio que quiere invertir pero no está listo para comprometerse a una recurrencia.
+
+**Riesgo ya señalado por el propio documento (sección 8, Personalización excesiva) y aplicable directamente al Nivel 2**: un diagnóstico de 20-40 páginas a medida por 300-600€ es exactamente el patrón que el documento ya identifica como el más peligroso para el margen si no se estandariza — antes de construirlo, definir qué % de esas 20-40 páginas sale de una plantilla reutilizable y qué % es investigación nueva por cliente.
+
+### 9.3 Metodología de los 4 desajustes
+
+Completa la idea ya anotada en `experimentos/EXP-003-pymes-leon/plan.md` (que solo tenía 3 categorías) con una cuarta:
+
+1. **Valor oculto** — existe, casi nadie lo ve. *Ejemplo real ya auditado: la cirugía láser CO2 de Clínica Veterinaria Barroso.*
+2. **Valor disperso** — existe, pero el cliente tiene que buscarlo en varios sitios. *Ejemplo real: la formación de la podóloga de Clínica Wecoco, no enlazada desde su propia página de servicio.*
+3. **Valor ambiguo** — genera dudas por falta de claridad. *Ejemplo real: "guardia" vs. "urgencias" en Sanivet Veterinarios.*
+4. **Valor desaprovechado** — existe, se comunica, pero no pesa en la decisión. *Ejemplo real: los 27 años sin franquicia de Clínica DentFamily, mencionados pero no usados como argumento de confianza.*
+
+Reformula el pitch interno de "hacemos auditorías web" a **"buscamos el desajuste entre el valor real del negocio y la percepción de un cliente nuevo"** — coherente con la Diferenciación ya definida en `FARO_ESTRATEGIA_MARCA.md` (Fase 1): el activo no es la tecnología, es el criterio para encontrar este tipo de desajuste.
+
+**Indicador visual propuesto (no implementado)**: un resumen de una sola pantalla por auditoría — valor real detectado / valor percibido en el primer minuto / fricción principal — o un semáforo 🟢🟡🔴 (valor existente / visible / desaprovechado). Ninguno de los 7 microdiagnósticos ya construidos lo incluye todavía; sería un cambio de plantilla, no de contenido, si se decide adoptarlo.
+
+### 9.4 Lo que hay que validar antes de construir más
+
+**Ninguna parte de la sección 9.2 (Niveles 2 y 3) ni del indicador visual de 9.3 debe construirse antes de tener datos de los 7 envíos ya hechos o por hacer.** La hipótesis central sin validar: que un microdiagnóstico gratuito genera suficientes reuniones y proyectos como para justificar construir el Nivel 2. Antes de invertir más tiempo en metodología o marca, las preguntas con las que se valida (mismo principio que H1-H5 en `FARO_TESIS_MVP_60DIAS.md`, sección 5 de riesgos de este documento):
+
+- De los emails enviados, ¿cuántos se abren?
+- ¿Cuántos propietarios llegan a abrir el PDF adjunto?
+- ¿Cuántos aceptan la llamada de 20 minutos?
+- ¿Cuántos, tras la llamada, pagarían por un Nivel 2 o un Nivel 3?
+- ¿Qué tipo de hallazgo (oculto / disperso / ambiguo / desaprovechado) genera más respuesta?
+
+Solo con esas cinco respuestas la escalera de valor deja de ser una hipótesis razonable y pasa a ser un modelo de negocio validado — que es, con diferencia, más valioso que seguir refinando el lenguaje de los informes.
+
+---
+
 *Fin de la Fase 2 — Modelo de negocio. Próxima fase: identidad visual (Fase 3), que traduce el posicionamiento (Fase 1) y la estructura de negocio (Fase 2) en un sistema visual coherente.*
