@@ -4,9 +4,11 @@
 
 **Corrección (12 jul 2026)**: se confirmó directamente en Google Maps la reputación (4,8/5 sobre 20 opiniones) y la trayectoria (desde 2003, más de 20 años) — datos que la v1 tenía como pendientes. Ya se pueden usar con normalidad.
 
-**Corrección v3 (12 jul 2026)**: tres capturas reales de podologovanessa.com (Inicio, Instalaciones, Equipo) confirman formación mucho más detallada de Vanessa (Retropié, postgrado en Barcelona, responsable de Ortopedia, Máster en Investigación, colegiada nº 838240145) — y muestran que el equipo real es Vanessa + Camila Sicles (recepción). Sergio Díez Álvarez (nutrición), que dábamos por confirmado, **no aparece en la página Equipo** — se retira del guion hasta confirmarlo directamente con la clínica. No usar el ángulo de "nutrición integrada" en ningún contacto hasta entonces.
+**Corrección v3 (12 jul 2026)**: tres capturas reales de podologovanessa.com (Inicio, Instalaciones, Equipo) confirman formación mucho más detallada de Vanessa (Retropié, postgrado en Barcelona, responsable de Ortopedia, Máster en Investigación, colegiada nº 838240145) — y muestran que la página Equipo solo perfila a Vanessa + Camila Sicles (recepción). Sergio Díez Álvarez (nutrición), que dábamos por confirmado, **no aparece en la página Equipo** — se retira del guion hasta confirmarlo directamente con la clínica.
 
-**Ángulo del guion**: especialización real por etapas de vida (infantil, deportiva, diabética, geriátrica) — Vanessa Robles Dorado, formación verificable y extensa (Complutense, Retropié, Barcelona, Ortopedia, colegiada 838240145), más de 20 años de trayectoria y 4,8/5 en Google. Esa formación solo aparece en la página Equipo, no en portada — es el gancho del informe.
+**Corrección v4 (12 jul 2026)**: 5 capturas más, decodificadas de los archivos reales de la sesión y ampliadas 6x, confirman que **la página de Inicio sí nombra a "Sergio Diez Álvarez"** como nutricionista, dentro del catálogo de servicios — solo faltaba en Equipo, no en el sitio. El dato de la v1/v2 era correcto. Se restaura el ángulo de nutrición integrada.
+
+**Ángulo del guion**: especialización real por etapas de vida (infantil, deportiva, diabética, geriátrica) con nutrición integrada (Sergio Diez Álvarez) — Vanessa Robles Dorado, formación verificable y extensa (Complutense, Retropié, Barcelona, Ortopedia, colegiada 838240145), más de 20 años de trayectoria y 4,8/5 en Google. Esa formación solo aparece en la página Equipo, no en portada — es el gancho del informe. El titular real de portada ("Vanessa Robles, Podóloga — Clínica en León") no menciona nada de esto.
 
 **Canal recomendado**: teléfono (987 26 41 30) o email.
 
@@ -45,4 +47,4 @@ Si os interesa que os ayude con algo de esto, seguimos hablando.
 
 ---
 
-*Pendiente antes de contactar: confirmar directamente con la clínica si la nutrición integrada sigue siendo parte de la oferta real (no aparece en la página Equipo), y navegar la página de Servicios para completar las dimensiones pendientes de la Puntuación FARO (reputación, trayectoria y formación ya están confirmadas por captura directa).*
+*Estado: caso ya completo con las 12 dimensiones de la Puntuación FARO confirmadas por captura directa (Inicio, Instalaciones, Equipo, catálogo de servicios, Google Maps). Único punto real que queda fuera del alcance de una auditoría externa: los precios.*

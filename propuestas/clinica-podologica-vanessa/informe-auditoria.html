@@ -59,7 +59,7 @@
   CORRECCIÓN v4 (12 jul 2026, 5 capturas adicionales de la web real:
   Inicio, Instalaciones, Equipo con credenciales completas,
   Especialidades, ficha de Google Maps): la página de servicios muestra
-  un catálogo de ocho tarjetas que mezcla tratamientos técnicos (Estudio
+  un catálogo de nueve tarjetas que mezcla tratamientos técnicos (Estudio
   de la pisada, Quiropodia, Onicocriptosis, Lesiones dérmicas) y
   perfiles de paciente (Pediátrica, Geriátrica, Deportiva, Diabéticos),
   más una tarjeta de Nutrición -- todo en una sola lista sin jerarquía
@@ -69,13 +69,21 @@
   Nav confirmado: Podólogo · Clínica · Equipo · Especialidades ·
   Contacto. ✅
 
-  CORRECCIÓN (misma fecha, autocorrección): una primera pasada de esta
-  v4 atribuyó el servicio de nutrición a un nombre concreto ("Sergio
-  Álvarez") que el usuario confirmó que NO aparece en la captura real
-  -- fue un error de transcripción, no un dato de la fuente. Se retira
-  cualquier nombre propio del servicio de nutrición; el servicio en sí
-  (una tarjeta de nutrición en el catálogo) se mantiene como observado,
-  pero sin atribuírselo a nadie hasta confirmarlo.
+  CORRECCIÓN (misma fecha, autocorrección en dos pasos): una primera
+  pasada de esta v4 atribuyó el servicio de nutrición a "Sergio
+  Álvarez" -- una adivinanza a partir de texto borroso, no una lectura
+  real. El usuario lo señaló y se bajó a "Pendiente de confirmar".
+  Después se decodificaron los archivos de imagen reales del chat
+  (guardados en el transcript de la sesión, no como adjuntos) y se
+  recortó/amplió 6x la tarjeta de Nutricionista de la portada real:
+  el texto dice, con letra pequeña pero legible, "Sergio Diez Álvarez,
+  experto en nutrición clínica y deportiva...". Es decir: el dato
+  original de la v1/v2 ("Sergio Díez Álvarez") era correcto desde el
+  principio. La bajada a "Pendiente" en la v3 (por su ausencia en la
+  página Equipo) y el nombre truncado de la v4 fueron ambos errores
+  propios -- no del negocio. Se restaura como confirmado, con captura
+  como evidencia (images/evidencia-inicio.webp, recorte en
+  images/evidencia-nutricion-crop.png).
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -177,6 +185,7 @@
   </div>
 
   <h2>Ficha de identidad</h2>
+  <img src="images/evidencia-equipo.webp" alt="Captura real de la página Equipo de podologovanessa.com, con las credenciales completas de Vanessa Robles Dorado y la ficha de Camila Sicles" style="width:100%; max-width:420px; display:block; margin:0 auto 20px; border-radius:8px; border:1px solid var(--color-border);">
   <table class="id-table">
     <tr><th>Directora</th><td>Vanessa Robles Dorado — Graduada en Podología (Universidad Complutense de Madrid). Formación en Retropié, postgrado en Barcelona, responsable del área de Ortopedia, Máster en Investigación. Colegiada nº 838240145.</td></tr>
     <tr><th>Equipo</th><td>Vanessa Robles Dorado (dirección) y Camila Sicles (recepción), según la página Equipo de podologovanessa.com — confirmado por captura de pantalla</td></tr>
@@ -187,32 +196,36 @@
     <tr><th>Horario</th><td>Lunes y miércoles 09:30-13:00/15:30-19:30 · Martes, jueves y viernes 09:30-16:30 (jornada intensiva)</td></tr>
     <tr><th>Especialización</th><td>Podología infantil (primera visita a los 4-5 años), geriátrica, deportiva y diabética — listada junto a los tratamientos técnicos en la página Especialidades, sin sección propia</td></tr>
     <tr><th>Servicios técnicos</th><td>Estudio de la pisada (ortopodología, plantillas a medida, ortesis de silicona), quiropodia (callosidades), onicocriptosis (uña encarnada), lesiones dérmicas (lámpara de Wood)</td></tr>
-    <tr><th>Nutrición</th><td>Hay una tarjeta de nutrición en el catálogo de servicios — sin nombre de profesional confirmado. <span class="pending-tag">Pendiente de confirmar</span></td></tr>
+    <tr><th>Nutrición</th><td>Sergio Diez Álvarez — experto en nutrición clínica y deportiva, obesidad y sobrepeso, asesoramiento farmacéutico. Confirmado por captura de la portada real. ✅</td></tr>
     <tr><th>Navegación</th><td>Podólogo · Clínica · Equipo · Especialidades · Contacto</td></tr>
   </table>
 
   <h2>Cómo llega un cliente real hasta vosotros — antes de ver la web</h2>
   <div class="journey">
     <p><strong>Busco</strong> "podólogo diabético León" o "podólogo infantil León" — un tipo de búsqueda muy específica, distinta de "podólogo León" genérico.</p>
-    <p><strong>Leo</strong> el catálogo de servicios — ocho tarjetas en una sola lista, mezclando tratamiento técnico (ortopodología, quiropodia) y perfil de paciente (infantil, diabético), sin agrupar. Tengo que leerlas todas para encontrar la mía.</p>
+    <p><strong>Leo</strong> el catálogo de servicios — nueve tarjetas en una sola lista, mezclando tratamiento técnico (ortopodología, quiropodia) y perfil de paciente (infantil, diabético), sin agrupar. Tengo que leerlas todas para encontrar la mía.</p>
     <p><strong>Busco</strong> si hay algo específico para mi caso (diabetes, niño pequeño, deportista) — si lo encuentro con claridad, confío más que si tengo que deducirlo de un catálogo técnico general.</p>
     <p><strong>Decido</strong> en función de si veo mi situación concreta reflejada, no solo una lista de tratamientos con nombres técnicos.</p>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">1</span><h2>La formación de Vanessa está bien documentada — pero solo en una página que casi nadie visita primero</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p><em>Evidencia: captura de pantalla, página Equipo de podologovanessa.com.</em> La ficha de Equipo detalla la formación real de Vanessa Robles Dorado con mucho nivel de detalle: Experto en Médico-Quirúrgica del Antepié y del Retropié (Complutense de Madrid), postgrado en patología del pie en la Universitat de Barcelona, supervisora de productos de Ortopedia a medida, Máster en Investigación en Podología (Universidad Rey Juan Carlos), colegiada nº 838240145. No es un problema de opacidad — el dato existe y es muy sólido. El problema es dónde vive: portada solo dice "Vanessa Robles, Podóloga" — nada de esto aparece hasta la tercera pantalla (Inicio → Equipo).</p></div>
+    <div class="finding__title"><span class="finding__num">1</span><h2>El titular de portada no dice nada que otro podólogo no pueda decir</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p><em>Evidencia real (recorte de la portada, ampliado):</em></p>
+      <img src="images/evidencia-hero-crop.png" alt="Captura real de la portada de podologovanessa.com: titular 'Vanessa Robles, Podóloga — Clínica en León', botón 'Llamar ahora'" style="width:100%; border-radius:8px; border:1px solid var(--color-border); margin:8px 0 14px;">
+      <p>El titular real dice "Vanessa Robles, Podóloga — Clínica en León". Nada de la formación (Complutense, Retropié, Barcelona, Ortopedia, colegiada nº 838240145) aparece hasta la página Equipo, tres clics después. El dato existe y es muy sólido — el problema es dónde vive.</p></div>
     <div class="finding__part"><span class="finding__label">Impacto</span><p>Un padre buscando la primera revisión de su hijo, o un paciente diabético que necesita cuidado especializado, casi nunca llega hasta la página Equipo antes de decidir si llama. Si la autoridad y la especialización solo viven ahí, se pierden en el primer vistazo.</p></div>
-    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Traer una versión corta de esa autoridad (colegiada, años de experiencia, especialidad en antepié/retropié) a portada, junto al nombre.</p></div>
+    <div class="finding__part"><span class="finding__label">Recomendación</span><p>Traer una versión corta de esa autoridad (colegiada, años de experiencia, especialidad en antepié/retropié) al titular de portada, junto al nombre.</p></div>
     <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Reduce el esfuerzo de interpretación del paciente y aumenta la sensación de "esto es justo para mí" en el primer vistazo, no en la tercera página.</p></div>
   </div>
 
   <div class="finding">
-    <div class="finding__title"><span class="finding__num">2</span><h2>Ocho servicios en una sola lista, con el mismo peso visual para un tratamiento técnico que para un perfil de paciente completo</h2></div>
-    <div class="finding__part"><span class="finding__label">Observación</span><p><em>Evidencia: captura de pantalla, página de servicios de podologovanessa.com.</em> El catálogo muestra ocho tarjetas: Estudio de la pisada, Quiropodia, Onicocriptosis y Lesiones dérmicas (tratamientos técnicos) junto a Podología Pediátrica, Geriátrica, Deportiva y Diabéticos (perfiles de paciente), más una tarjeta de nutrición — todas en una única lista, sin distinguir "qué tratamiento necesito" de "qué tipo de paciente soy". <span class="pending-tag">Pendiente de confirmar</span> el texto exacto de cada tarjeta y el profesional a cargo de nutrición.</p></div>
-    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un padre que busca la primera revisión de su hijo de 4 años tiene que leer ocho tarjetas para encontrar la suya, en vez de reconocerla de inmediato. Lo mismo para un paciente diabético que necesita ver junto el cuidado del pie y la nutrición, y hoy las ve como dos tarjetas sueltas entre otras seis.</p></div>
+    <div class="finding__title"><span class="finding__num">2</span><h2>Nueve servicios en una sola lista, con el mismo peso visual para un tratamiento técnico que para un perfil de paciente completo</h2></div>
+    <div class="finding__part"><span class="finding__label">Observación</span><p><em>Evidencia real (recorte del catálogo de la portada):</em></p>
+      <img src="images/evidencia-catalogo-crop.png" alt="Captura real del catálogo de servicios de podologovanessa.com: nueve tarjetas mezclando tratamientos técnicos y perfiles de paciente" style="width:100%; border-radius:8px; border:1px solid var(--color-border); margin:8px 0 14px;">
+      <p>El catálogo muestra nueve tarjetas: Estudio de la pisada, Quiropodia, Onicocriptosis y Lesiones dérmicas (tratamientos técnicos) junto a Podología Pediátrica, Geriátrica, Deportiva y Diabéticos (perfiles de paciente), más Nutricionista (Sergio Diez Álvarez) — todas en una única lista, sin distinguir "qué tratamiento necesito" de "qué tipo de paciente soy".</p></div>
+    <div class="finding__part"><span class="finding__label">Impacto</span><p>Un padre que busca la primera revisión de su hijo de 4 años tiene que leer nueve tarjetas para encontrar la suya, en vez de reconocerla de inmediato. Lo mismo para un paciente diabético que necesita ver junto el cuidado del pie y la nutrición, y hoy las ve como dos tarjetas sueltas entre otras siete.</p></div>
     <div class="finding__part"><span class="finding__label">Recomendación</span><p>Separar visualmente el catálogo en dos grupos -- "Por tipo de paciente" (infantil, deportivo, diabético, mayor) y "Por tratamiento" (pisada, quiropodia, uña, piel) -- y enlazar la tarjeta de nutrición directamente desde Diabéticos, ya que clínicamente van juntos.</p></div>
-    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una lista plana de ocho ítems en un catálogo que cada paciente reconoce como propio en segundos, y refuerza el argumento de cuidado integral para el segmento diabético.</p></div>
+    <div class="finding__part"><span class="finding__label">Beneficio esperado</span><p>Convierte una lista plana de nueve ítems en un catálogo que cada paciente reconoce como propio en segundos, y refuerza el argumento de cuidado integral para el segmento diabético.</p></div>
   </div>
 
   <div class="good-box">
@@ -222,7 +235,7 @@
       <li>4,8/5 sobre 20 opiniones en Google Maps — sólida para el vertical, pero silenciosa si no pesa lo mismo en la web que en Google. ✅</li>
       <li>Más de 20 años de trayectoria (desde 2003) — un activo de confianza que compite mal contra clínicas nuevas si no se comunica con la misma fuerza que la reputación. ✅</li>
       <li>Formación real y verificable (Complutense, Retropié, Barcelona, Ortopedia, Máster en Investigación, colegiada 838240145) — detallada en Equipo, pero sin traducirse en autoridad percibida desde la portada, donde solo dice "Vanessa Robles, Podóloga". ✅</li>
-      <li>Especialización por etapas de vida (infantil, deportiva, diabética, geriátrica) — un diferenciador real, diluido entre otros cuatro tratamientos técnicos en la misma lista, en vez de destacado como ventaja propia. ✅</li>
+      <li>Especialización por etapas de vida (infantil, deportiva, diabética, geriátrica) con nutrición integrada (Sergio Diez Álvarez) — un diferenciador real, diluido entre otros cuatro tratamientos técnicos en la misma lista, en vez de destacado como ventaja propia. ✅</li>
       <li>Un solo CTA ("Llamar ahora") repetido de forma consistente en cada página — coherente, aunque sin alternativa como WhatsApp o reserva online. ✅</li>
       <li>Horario flexible con jornada intensiva tres días a la semana — se adapta a quien no puede partir el día, si se comunica como ventaja y no solo como horario. ✅</li>
     </ul>
@@ -251,15 +264,15 @@
     <tr><th>Área</th><th>Nota</th><th>Por qué</th></tr>
     <tr><td>Diferenciación</td><td class="num">7/10</td><td class="why">Especialización real y explícita por etapas de vida, poco común en el resto del vertical auditado.</td></tr>
     <tr><td>Autoridad</td><td class="num">7/10</td><td class="why">Formación académica verificable y detallada (Complutense, Retropié, Barcelona, Ortopedia, colegiada 838240145) — pero solo visible en la página Equipo, no en portada.</td></tr>
-    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td><td class="why">Horario flexible y visible, pero el catálogo de ocho servicios sin agrupar obliga a interpretar cuál corresponde a cada caso; precios sin confirmar.</td></tr>
+    <tr><td>Reducción de incertidumbre</td><td class="num">5/10</td><td class="why">Horario flexible y visible, pero el catálogo de nueve servicios sin agrupar obliga a interpretar cuál corresponde a cada caso; precios sin confirmar.</td></tr>
     <tr><td>Prueba social</td><td class="num">8/10</td><td class="why">4,8/5 sobre 20 opiniones en Google Maps, confirmado directamente — cifra sólida, aunque de volumen moderado.</td></tr>
     <tr><td>Confianza</td><td class="num">6/10</td><td class="why">Más de 20 años de trayectoria (desde 2003) combinados con formación académica verificable y reputación real en Google.</td></tr>
     <tr><td>Claridad del mensaje</td><td class="num">3/10</td><td class="why">El titular de portada dice "Vanessa Robles, Podóloga — Clínica en León" — no comunica ninguna especialización real de las que sí existen.</td></tr>
     <tr><td>Propuesta de valor</td><td class="num">3/10</td><td class="why">Mismo problema que el titular: no hay una frase que diferencie a la clínica de cualquier otro podólogo de León.</td></tr>
-    <tr><td>Conversión móvil</td><td class="num">6/10</td><td class="why">Diseño de una sola columna, botones grandes, fácil de usar en móvil — pero el catálogo de ocho tarjetas obliga a mucho scroll para encontrar la propia.</td></tr>
+    <tr><td>Conversión móvil</td><td class="num">6/10</td><td class="why">Diseño de una sola columna, botones grandes, fácil de usar en móvil — pero el catálogo de nueve tarjetas obliga a mucho scroll para encontrar la propia.</td></tr>
     <tr><td>Facilidad para contactar</td><td class="num">7/10</td><td class="why">Barra de contacto (teléfono, dirección, email) repetida justo debajo de cada hero, consistente en las cinco páginas vistas.</td></tr>
     <tr><td>Calidad de las CTA</td><td class="num">6/10</td><td class="why">Un único CTA ("Llamar ahora"), claro y consistente, pero sin alternativa como WhatsApp o reserva online para quien prefiere no llamar.</td></tr>
-    <tr><td>Jerarquía visual</td><td class="num">6/10</td><td class="why">Diseño cuidado (fotografía real, formas curvas, paleta consistente), pero el catálogo de especialidades pierde jerarquía al ser una lista plana de ocho tarjetas iguales.</td></tr>
+    <tr><td>Jerarquía visual</td><td class="num">6/10</td><td class="why">Diseño cuidado (fotografía real, formas curvas, paleta consistente), pero el catálogo de especialidades pierde jerarquía al ser una lista plana de nueve tarjetas iguales.</td></tr>
     <tr><td>Recorrido del usuario</td><td class="num">5/10</td><td class="why">Navegación clara (5 secciones), pero llegar del titular genérico a "esto es para mi caso" requiere leer todo el catálogo de Especialidades.</td></tr>
   </table>
   <div class="score-total"><span class="big">69/120</span><span class="label">57,5/100 sobre las 12 dimensiones, ya con las 5 capturas reales (Inicio, Instalaciones, Equipo, Especialidades, Google Maps). Sube la confianza y la prueba social frente a la v1, pero baja el total porque el mensaje de portada resultó más genérico de lo esperado — activos reales muy fuertes, comunicados con poca fuerza en el primer vistazo. Precios y métricas de uso real quedan fuera del alcance de una auditoría externa.</span></div>
