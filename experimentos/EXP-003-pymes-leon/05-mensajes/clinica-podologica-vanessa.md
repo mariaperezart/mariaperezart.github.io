@@ -2,7 +2,9 @@
 
 **Segundo caso del vertical de podología, expansión del dataset.** Auditado con los tres skills operativos completos, a partir de una investigación con navegación directa hecha por el usuario fuera de esta sesión.
 
-**Ángulo del guion**: especialización real por etapas de vida (infantil, deportiva, diabética, geriátrica), con nutrición integrada — Vanessa Robles Dorado, formación en la Universidad Complutense de Madrid.
+**Corrección (12 jul 2026)**: se confirmó directamente en Google Maps la reputación (4,8/5 sobre 20 opiniones) y la trayectoria (desde 2003, más de 20 años) — datos que la v1 tenía como pendientes. Ya se pueden usar con normalidad.
+
+**Ángulo del guion**: especialización real por etapas de vida (infantil, deportiva, diabética, geriátrica), con nutrición integrada — Vanessa Robles Dorado, formación en la Universidad Complutense de Madrid, más de 20 años de trayectoria y 4,8/5 en Google.
 
 **Canal recomendado**: teléfono (987 26 41 30) o email.
 
@@ -39,4 +41,4 @@ Si os interesa que os ayude con algo de esto, seguimos hablando.
 
 ---
 
-*Pendiente antes de contactar: navegar podologovanessa.com directamente en cuanto WebFetch vuelva a funcionar, confirmar la cifra de reseñas en Google, y completar las 9 dimensiones pendientes de la Puntuación FARO.*
+*Pendiente antes de contactar: navegar podologovanessa.com directamente en cuanto WebFetch vuelva a funcionar, y completar las 7 dimensiones pendientes de la Puntuación FARO (la reputación y la trayectoria ya están confirmadas).*
