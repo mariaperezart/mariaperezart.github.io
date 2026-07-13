@@ -37,6 +37,22 @@
   esto con precisión; el hero product de PlanSalud Senior queda
   documentado como recomendación pendiente de construir, no como algo
   ya entregado.
+
+  CORRECCIÓN v3 (verificación previa al envío, antes de contactar al
+  negocio): un agente de verificación independiente confirmó, vía
+  WebSearch, que la afirmación "0 redes sociales identificadas" de
+  este informe es FALSA. El negocio tiene página de Facebook activa
+  (facebook.com/cvcentroleon, ~166 "me gusta") y cuenta de Instagram
+  (@cvcentroleon, 578 seguidores, 103 publicaciones). No se pudo
+  determinar el nivel de actividad reciente de esas cuentas. Se
+  corrige el hallazgo en toda la sección 04 y en el stat-row/veredicto:
+  pasa de "no tienen redes" a "tienen redes, actividad reciente sin
+  confirmar" -- un hallazgo bastante más débil que el original, y se
+  ajusta el roadmap de la sección 08 en consecuencia (de "crear
+  presencia" a "activar/dinamizar" lo que ya existe). Es exactamente
+  el tipo de dato que el propio negocio comprobaría en los primeros
+  segundos de leer el informe, así que se corrige antes de cualquier
+  envío.
 -->
 <!doctype html>
 <html lang="es-ES">
@@ -142,14 +158,14 @@
 
   <div class="verdict">
     <h2>Veredicto FARO</h2>
-    <p style="margin-bottom:0;">Centro León es una clínica de referencia regional con una fortaleza operativa excepcional (urgencias 24h, oncología especializada, reputación de 4,9/5 citada sobre 103 reseñas) pero con una infraestructura digital subaprovechada: sin redes sociales activas, tienda online no operativa, y un posicionamiento de marca que no transmite la magnitud real de su oferta técnica. El hueco entre excelencia clínica y presencia digital es la oportunidad de crecimiento más rentable de este informe.</p>
+    <p style="margin-bottom:0;">Centro León es una clínica de referencia regional con una fortaleza operativa excepcional (urgencias 24h, oncología especializada, reputación de 4,9/5 citada sobre 103 reseñas) y una infraestructura digital que no está a la misma altura: tiene Facebook e Instagram, pero sin actividad reciente confirmada, tienda online no operativa, y un posicionamiento de marca que no transmite la magnitud real de su oferta técnica. El hueco entre excelencia clínica y presencia digital es la oportunidad de crecimiento más rentable de este informe.</p>
   </div>
 
   <div class="stat-row">
     <div class="stat"><div class="num">4,9/5</div><div class="lbl">satisfacción citada (103 reseñas, fuente externa a esta sesión)</div></div>
     <div class="stat"><div class="num">21</div><div class="lbl">años de trayectoria (2005–2026)</div></div>
     <div class="stat"><div class="num">12</div><div class="lbl">profesionales en plantilla, según la investigación</div></div>
-    <div class="stat"><div class="num">0</div><div class="lbl">redes sociales identificadas</div></div>
+    <div class="stat"><div class="num">2</div><div class="lbl">redes sociales confirmadas (Facebook + Instagram), actividad reciente sin confirmar</div></div>
   </div>
 
   <div class="section-num"><span class="n">01</span><h2>Identidad — ficha del negocio</h2></div>
@@ -197,7 +213,9 @@
   <table class="data">
     <tr><th>Canal</th><th>Estado citado</th></tr>
     <tr><td>Web propia</td><td>Activa, funcional, SEO básico. Sin blog ni contenido educativo</td></tr>
-    <tr><td>Facebook / Instagram / LinkedIn / YouTube / TikTok</td><td>Ninguno identificado</td></tr>
+    <tr><td>Facebook</td><td>Activa — facebook.com/cvcentroleon, ~166 "me gusta". Confirmado 12 jul 2026, actividad reciente sin confirmar</td></tr>
+    <tr><td>Instagram</td><td>Activa — @cvcentroleon, 578 seguidores, 103 publicaciones. Confirmado 12 jul 2026, actividad reciente sin confirmar</td></tr>
+    <tr><td>LinkedIn / YouTube / TikTok</td><td>Ninguno identificado</td></tr>
     <tr><td>Tienda online propia</td><td>No operativa</td></tr>
     <tr><td>Videoconsulta</td><td>Disponible para oncología, según la investigación</td></tr>
     <tr><td>Email marketing</td><td>No identificado</td></tr>
@@ -209,7 +227,7 @@
     <p style="margin-bottom:0;">A diferencia del resto de este informe, este hallazgo sí se verificó de primera mano al construir el primer borrador de la landing de este caso (ver <code>index.html</code> en esta misma carpeta): el botón de WhatsApp del sitio real, cuando se contacta fuera de horario, redirige a un formulario que devuelve error 404 — justo el momento en que un cliente preocupado más necesita una respuesta clara. Es la base del hallazgo principal de la v1 de este informe (recorrido de urgencias con fricción), que sigue siendo válida y no ha sido sustituida por esta revisión, solo ampliada con el contexto de negocio que faltaba.</p>
   </div>
 
-  <div class="callout"><strong>Diagnóstico digital:</strong> si los datos de esta sección se confirman, Centro León tendría 21 años de trayectoria y reputación clínica fuerte, pero una infraestructura digital que no refleja ese nivel — sin redes, sin contenido, con un canal de contacto (WhatsApp) que además falla técnicamente en el peor momento posible.</div>
+  <div class="callout"><strong>Diagnóstico digital:</strong> Centro León tiene 21 años de trayectoria y reputación clínica fuerte, pero una infraestructura digital que no refleja ese nivel — tiene Facebook e Instagram, pero sin contenido reciente confirmado, sin blog, con un canal de contacto (WhatsApp) que además falla técnicamente en el peor momento posible.</div>
 
   <div class="section-num"><span class="n">05</span><h2>Reputación — lo que dicen los clientes</h2></div>
   <p>La investigación cita 103 reseñas con una media de 4,9/5 en un agregador de clínicas veterinarias, con temas recurrentes: profesionalidad y equipamiento, trato humano ("nuestro veterinario sabe hacer lo más difícil: acompañar"), efectividad de las urgencias 24h relatada en un caso concreto de madrugada, clientes con más de 13 años de continuidad, especialización felina, y al menos un caso de cliente que viaja desde Valladolid. Se cita también una queja aislada sobre la atención telefónica centrada en informar solo de precio.</p>
@@ -248,7 +266,7 @@
     <h3>Fase 2 — Escalado (60-180 días)</h3>
     <table class="data">
       <tr><th>Acción</th><th>Resultado medible</th></tr>
-      <tr><td>Presencia en Instagram con contenido del equipo y casos reales (con permiso)</td><td>Captación orgánica de clientes que buscan validación social antes de la primera visita</td></tr>
+      <tr><td>Reactivar Facebook e Instagram (ya existen, cuentas creadas) con contenido regular del equipo y casos reales (con permiso)</td><td>Captación orgánica de clientes que buscan validación social antes de la primera visita</td></tr>
       <tr><td>Landing propia para el proyecto de oncología, si se confirma como diferenciador real</td><td>Captación de pacientes derivados de fuera de León</td></tr>
     </table>
   </div>
