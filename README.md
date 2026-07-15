@@ -2,6 +2,8 @@
 
 Este repositorio contiene todo lo construido para FARO: la tesis de negocio, el modelo de negocio, la marca, el sitio web y los flujos técnicos del MVP. Este README es el punto de entrada: qué es cada cosa, y qué queda pendiente de que tú actives con tus propias cuentas y dinero real.
 
+> Nota: `HOJA_DE_RUTA_FINANCIERA_PERSONAL.md` recoge un plan personal de estabilidad financiera y construcción de activos de la fundadora — no es un documento de estrategia de FARO, es contexto personal en el que FARO aparece como el activo en construcción.
+
 ## 1. Documentos de estrategia (`FARO_*.md`)
 
 | Documento | Contenido |
