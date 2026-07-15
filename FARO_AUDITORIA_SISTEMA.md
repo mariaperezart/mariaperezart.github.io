@@ -1,4 +1,4 @@
-# Auditoría del sistema multiagente de FARO — Fase 0-2
+# Auditoría del sistema multiagente de FARO — Fase 0-4
 
 *Realizada a petición del usuario, con el marco "Arquitecto Jefe del Sistema". Alcance: los 17 agentes de `.claude/agents/`, `base_conocimiento/`, y el estado real de `experimentos/EXP-002-clinicas-valencia` (el único experimento avanzado). No se auditan en esta pasada `estudio` ni `amazon-kdp-publishing` — quedan pendientes si se piden después.*
 
@@ -65,3 +65,40 @@ No hay duplicación entre ellos — cada uno tiene una entrada/salida distinta y
 El sistema no muestra sobre-ingeniería evidente en los 10 agentes secuenciales — es una cadena limpia, sin duplicación, con reglas anti-alucinación que ya demostraron su utilidad una vez. El área real de tensión son los cinco agentes dormidos (12-16): están bien diseñados individualmente, pero **como grupo** son el candidato más claro a la pregunta de Fase 8 ("¿los volvería a crear hoy, o esperaría a que el primer cliente real haga evidente cuál de ellos hace falta primero?") — eso ya es Fase 8, no esta pasada.
 
 **Pendiente real, más urgente que cualquier rediseño**: nada en los agentes 07-10 puede generar valor mientras el Lote A de EXP-002 siga sin enviarse. Ese es el cuello de botella del sistema completo hoy, no un problema de arquitectura.
+
+---
+
+## 4. Auditoría de procesos (Fase 3)
+
+**Redundancias**: ninguna real. Cada paso de la secuencia 01-10 consume la salida del anterior y nada más — no hay información que se recalcule dos veces en distintos agentes.
+
+**Esperas y cuellos de botella**: uno solo, pero estructural — el paso 6 (envío manual). El diseño lo deja así a propósito ("nunca se envía nada automáticamente sin confirmación explícita", regla repetida en 06-preparador y 17-correo), lo cual es correcto para una acción de cara al exterior. El problema de proceso real es que **no existe ningún mecanismo de recordatorio o SLA** sobre cuánto tiempo lleva un experimento parado ahí — hoy solo se sabe que EXP-002 está bloqueado porque el `plan.md` lo dice, no porque el sistema lo señale de forma proactiva.
+
+**Aprobaciones innecesarias**: no se detectan. Las únicas puertas de aprobación humana (enviar mensajes reales, confirmar clasificación de una respuesta encontrada en Gmail) están donde deberían estar — acciones irreversibles o de cara a terceros.
+
+**Dependencias frágiles**: una, real y ya materializada — el Verificador (03) audita duplicados, ICP y "dato claramente erróneo", pero **no tiene una regla explícita de contrastar el contacto con una segunda fuente independiente**. Fue el propio usuario quien improvisó esa comprobación cruzada al enterarse de que una herramienta externa había fabricado datos (ver Fase 2) — no estaba en el SOP del agente. Es una mejora concreta y de bajo coste: añadir esa regla a `03-verificador.md` para que la próxima vez no dependa de que el usuario se acuerde de hacerlo por su cuenta.
+
+**Secuencial vs. paralelo**: la cadena 01-10 es correctamente secuencial — cada paso depende de datos que solo existen tras el anterior (no hay falso secuencialismo que podría paralelizarse sin perder integridad).
+
+**Errores recurrentes**: uno documentado (la fabricación de datos externa, Fase 2), sin repetirse una segunda vez gracias a la verificación cruzada — pero esa verificación fue reactiva, no está todavía institucionalizada como regla del agente.
+
+**Procesos sin métricas**: el ciclo completo (tiempo desde dataset hasta primera respuesta, tiempo bloqueado en cada paso) no se mide en ningún archivo. `base_conocimiento/metricas_historicas.md` solo registrará resultados de experimentos *cerrados* — no hay visibilidad de cuánto tiempo tarda un experimento en moverse entre pasos mientras está en curso.
+
+## 5. Auditoría de prompts (Fase 4)
+
+Los 17 agentes comparten una plantilla idéntica (frontmatter → Responsabilidad ÚNICA → NO DEBES → ENTRADA → SALIDA → REGLAS), en Markdown puro, sin XML. Evaluación:
+
+- **Claridad y estructura**: alta. La sección "NO DEBES" en cada agente es, de hecho, el mecanismo anti-solapamiento que hace innecesaria más coordinación explícita entre agentes — cumple dos funciones a la vez (delimita responsabilidad y previene duplicación) con muy poco texto.
+- **Longitud**: ningún prompt es excesivo (rango ~1,3-3,5 KB); no encontré ningún candidato real a "recortar un 30% sin perder rendimiento" — son ya prompts de responsabilidad única, ajustados a su tarea. Esto es una fortaleza, no algo a corregir.
+- **Riesgo de alucinación**: mitigado de forma consistente y repetida — "nunca inventes", "marca (estimación)", "no completes campos sin fuente" aparece, con variaciones, en Investigador, Verificador, Financiero, Marketing y Correo.
+- **Repetición real encontrada (con evidencia, no supuesta)**: **no existe un `CLAUDE.md` en la raíz del repositorio.** Eso significa que la regla "nunca fabricar datos sin fuente" no vive en ningún lugar compartido — se repite, redactada de forma distinta, en al menos 5 de los 17 agentes. Es exactamente el tipo de contexto repetido que Fase 4 pide detectar: **oportunidad concreta y de bajo riesgo** — crear un `CLAUDE.md` con las 3-4 reglas transversales (nunca fabricar sin fuente, marcar estimaciones explícitamente, nunca enviar/publicar sin confirmación humana, distinguir hipótesis de hecho validado) y aligerar la repetición en cada agente individual a una remisión corta. No cuantifico un % de ahorro de tokens porque no tengo forma de medirlo con evidencia real en esta sesión — lo dejo como oportunidad cualitativa, no como cifra inventada.
+- **Prompt caching / pocos ejemplos / few-shot**: ningún agente usa ejemplos few-shot ni bloques de "thinking" explícitos — son instrucciones directas, lo cual es coherente con tareas de responsabilidad única y bajo riesgo de ambigüedad de formato (todas piden una tabla Markdown concreta como salida).
+
+## Veredicto ampliado (Fase 0-4)
+
+Dos recomendaciones concretas y accionables salen de este bloque, ambas de bajo riesgo y bajo esfuerzo:
+
+1. **Crear `CLAUDE.md`** en la raíz con las reglas transversales repetidas hoy en 5+ agentes distintos.
+2. **Añadir a `03-verificador.md`** una regla explícita de contrastar contacto/dato crítico con una segunda fuente independiente antes de marcar una fila como válida — ya se demostró necesaria una vez, de forma reactiva.
+
+Ninguna de las dos cambia la arquitectura ni el número de agentes — son mejoras de Fase 9 (quick wins), no de Fase 8 (rediseño). La pregunta de fondo sobre si fusionar los 5 agentes dormidos (12-16) sigue abierta para cuando se aborde Fase 8.
