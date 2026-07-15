@@ -1,4 +1,4 @@
-# Auditoría del sistema multiagente de FARO — Fase 0-4
+# Auditoría del sistema multiagente de FARO — Fase 0-8
 
 *Realizada a petición del usuario, con el marco "Arquitecto Jefe del Sistema". Alcance: los 17 agentes de `.claude/agents/`, `base_conocimiento/`, y el estado real de `experimentos/EXP-002-clinicas-valencia` (el único experimento avanzado). No se auditan en esta pasada `estudio` ni `amazon-kdp-publishing` — quedan pendientes si se piden después.*
 
@@ -102,3 +102,51 @@ Dos recomendaciones concretas y accionables salen de este bloque, ambas de bajo 
 2. **Añadir a `03-verificador.md`** una regla explícita de contrastar contacto/dato crítico con una segunda fuente independiente antes de marcar una fila como válida — ya se demostró necesaria una vez, de forma reactiva.
 
 Ninguna de las dos cambia la arquitectura ni el número de agentes — son mejoras de Fase 9 (quick wins), no de Fase 8 (rediseño). La pregunta de fondo sobre si fusionar los 5 agentes dormidos (12-16) sigue abierta para cuando se aborde Fase 8.
+
+---
+
+## 6. Auditoría de memoria (Fase 5)
+
+Los 4 archivos de `base_conocimiento/` (patrones, mensajes efectivos, métricas históricas, sectores validados) están **todos vacíos** — no hay duplicados, obsoletos ni contradicciones que auditar porque no hay contenido todavía. Lo único evaluable es el esquema en sí:
+
+- No hay solape entre los cuatro — cada uno tiene un formato y propósito distinto (patrón de comportamiento / mensaje ganador / serie histórica comparable / nicho probado).
+- Es ya una "memoria mínima": cuatro archivos finos, de propósito único, sin campos genéricos de relleno. No encuentro nada que recortar aquí.
+- **Riesgo a vigilar, no a corregir todavía**: la regla del agente de Aprendizaje ("solo promueve un aprendizaje si tiene un dato del Analizador que lo respalde") es correcta, pero nunca se ha ejecutado — no hay forma de confirmar con evidencia que el proceso de promoción a `base_conocimiento/` funcione como está descrito hasta que cierre el primer experimento real.
+
+## 7. Auditoría de costes (Fase 6)
+
+Los 17 agentes usan `model: sonnet` sin excepción. Con la evidencia disponible (sin telemetría real de uso), la única observación defendible es cualitativa, no una cifra de ahorro:
+
+- Agentes de razonamiento real (Financiero, Verificador cuando detecta anomalías, Estratega, Analizador interpretando cuellos de botella) justifican un modelo capaz.
+- Agentes de mantenimiento casi mecánico (Tracker rellenando una tabla con datos ya confirmados por el usuario; Legal/RRHH/Finanzas manteniendo un checklist casi vacío) son tareas de estructura y formato, no de razonamiento complejo — candidatos razonables a un modelo más barato/rápido si la plataforma lo permite por agente. Lo marco como hipótesis a probar, no como ahorro confirmado — no tengo datos de calidad comparada entre modelos para estas tareas concretas en esta sesión.
+- No se detectan llamadas redundantes ni contexto innecesario cargado — cada agente lee solo sus propios archivos de entrada declarados.
+- Oportunidad de caching de prompt: los 17 prompts son estáticos y se reutilizan en cada invocación futura — se benefician de forma natural de prompt caching si la plataforma de ejecución lo aplica, sin que haga falta ningún cambio de diseño.
+
+## 8. Auditoría de errores (Fase 7)
+
+Con un solo experimento real avanzado (EXP-002, pasos 1-5 de 10) no hay muestra suficiente para generalizar sobre "errores repetitivos", "respuestas inconsistentes" o "fallos de coordinación" — indicarlo explícitamente en vez de especular, como pide el propio marco.
+
+**El único fallo real documentado** (ya descrito en Fase 2/3):
+- **Causa raíz**: una herramienta externa, fuera de este sistema, generó datos completamente fabricados (un experimento y clínicas inexistentes) y los presentó con la misma confianza que datos reales.
+- **Impacto**: si no se detecta, el Lote A podría haber incluido contactos falsos — outreach desperdiciado y, peor, contaminación de `base_conocimiento/metricas_historicas.md` con una tasa de respuesta calculada sobre destinatarios que no existen.
+- **Probabilidad de que se repita**: media-alta si se sigue usando esa herramienta externa en paralelo sin un paso de verificación formal dentro del sistema (hoy depende de que el usuario se acuerde de pedirlo).
+- **Corrección ya aplicada**: verificación cruzada manual + WebSearch sobre 3 de 9 clínicas antes de aceptar el Lote A.
+- **Prevención pendiente de formalizar**: la regla ya propuesta en la Fase 3 para `03-verificador.md`.
+
+## 9. Rediseño desde cero (Fase 8)
+
+Pregunta guía: si tuviera que construir esto hoy, ¿lo haría igual?
+
+**La cadena de 10 agentes (01-10)**: sí, la volvería a construir igual. Es responsabilidad única real, sin duplicación, y ya demostró que atrapa un error real. No hay una arquitectura más simple que no pierda la trazabilidad "cada paso audita al anterior".
+
+**Los 5 agentes dormidos (12-16)**: **no los crearía como 5 archivos separados hoy.** Los cinco comparten exactamente una idea — "sin cliente de pago, aquí no hay nada que hacer" — y hoy pagan un coste de mantenimiento (5 archivos que releer, versionar y explicar en cada auditoría) por una separación que todavía no aporta nada, porque el disparador común (primer cliente real) no ha ocurrido ni una vez. Diseño alternativo: **un único agente "Operaciones post-cliente"** que documente la misma idea que hoy repiten los cinco, y que se divida en Legal/Finanzas/RRHH/Producto/Éxito de Cliente **en el momento real en que llegue el primer cliente** — la especificación detallada que ya tiene cada uno de los cinco no se pierde, se congela como sección de ese único agente hasta que haga falta separarla. Es exactamente el tipo de "no añadas complejidad sin evidencia" que pide el propio marco.
+
+**11-Marketing y 17-Correo**: los mantendría igual — no dependen del disparador de cliente y ya son operables.
+
+**Algo que añadiría y no existe hoy**: ningún mecanismo de recordatorio para experimentos bloqueados en un paso manual (el caso real de EXP-002 ahora mismo). Esta sesión sí tiene una herramienta real para eso (rutinas programadas) — una recomendación concreta y de bajo riesgo es crear un recordatorio periódico que pregunte "¿ya se envió el Lote A de EXP-002?" en lugar de que el estado bloqueado solo se sepa si alguien abre `plan.md`.
+
+### Arquitectura propuesta (vNext) — resumen
+- Igual: 01-10 (secuencia de experimento), 11-Marketing, 17-Correo.
+- Fusionar: 12+13+14+15+16 → 1 agente "Operaciones post-cliente", que se vuelve a dividir en 5 el día del primer cliente real.
+- Añadir: regla de verificación cruzada en 03-verificador.md; `CLAUDE.md` con las reglas transversales (Fase 4); recordatorio periódico sobre experimentos bloqueados en paso manual.
+- Nada que eliminar sin sustituto — no encontré ningún agente de la secuencia principal sin valor demostrado.
