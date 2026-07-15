@@ -1,4 +1,4 @@
-# Auditoría del sistema multiagente de FARO — Fase 0-8
+# Auditoría del sistema multiagente de FARO — Fase 0-10 + Compost Loop
 
 *Realizada a petición del usuario, con el marco "Arquitecto Jefe del Sistema". Alcance: los 17 agentes de `.claude/agents/`, `base_conocimiento/`, y el estado real de `experimentos/EXP-002-clinicas-valencia` (el único experimento avanzado). No se auditan en esta pasada `estudio` ni `amazon-kdp-publishing` — quedan pendientes si se piden después.*
 
@@ -150,3 +150,52 @@ Pregunta guía: si tuviera que construir esto hoy, ¿lo haría igual?
 - Fusionar: 12+13+14+15+16 → 1 agente "Operaciones post-cliente", que se vuelve a dividir en 5 el día del primer cliente real.
 - Añadir: regla de verificación cruzada en 03-verificador.md; `CLAUDE.md` con las reglas transversales (Fase 4); recordatorio periódico sobre experimentos bloqueados en paso manual.
 - Nada que eliminar sin sustituto — no encontré ningún agente de la secuencia principal sin valor demostrado.
+
+---
+
+## 10. Backlog priorizado (Fase 9)
+
+| # | Problema | Solución | Impacto | Esfuerzo | Riesgo | Prioridad | Dependencias | Estado |
+|---|---|---|---|---|---|---|---|---|
+| 1 | Sin mecanismo que avise cuando un experimento queda bloqueado en un paso manual | Rutina programada que revisa `experimentos/` y avisa por email si sigue bloqueado | Alto (desbloquea el cuello de botella real de hoy) | Bajo | Ninguno (solo lectura, no envía nada) | **Hecho** | Ninguna | ✅ Implementado en esta sesión (`trig_01KDWbWKNFYA99L5y2aKsVDY`, lunes 9:00) |
+| 2 | La regla anti-fabricación vive repetida en 5+ agentes, en ningún sitio central | Crear `CLAUDE.md` con las 3-4 reglas transversales | Medio (mantenimiento, no funcionalidad) | Bajo | Ninguno | Alta | Ninguna | Pendiente |
+| 3 | El Verificador no contrasta el contacto con una segunda fuente — ya falló una vez por esto | Añadir esa regla explícita a `03-verificador.md` | Alto (previene el único fallo real ya documentado) | Bajo | Ninguno | **Alta** | Ninguna | Pendiente |
+| 4 | 5 agentes (12-16) mantienen una separación que hoy no aporta nada, sin cliente real todavía | Fusionar en "Operaciones post-cliente"; re-dividir cuando llegue el primer cliente | Medio (reduce superficie de mantenimiento) | Medio (reescribir 5 archivos en 1, sin perder el detalle ya especificado) | Bajo (nada roto si se pospone) | Media | Ninguna | Pendiente |
+| 5 | Sin dato de cuánto tarda cada paso del pipeline | Añadir timestamp simple a cada paso de `plan.md` al completarse | Bajo-medio (solo visibilidad, no cambia el resultado) | Bajo | Ninguno | Media-baja | Ninguna | Pendiente |
+| 6 | Modelo Sonnet para todos los agentes, incluidos los de tarea mecánica (Tracker, Legal, RRHH, Finanzas) | Probar un modelo más barato en 1-2 agentes de bajo riesgo como piloto | Desconocido todavía — es hipótesis, no ahorro confirmado | Bajo (piloto acotado) | Bajo (agentes de bajo riesgo, fácil de revertir) | Baja (no bloquea nada, solo cuando haya tiempo) | Ítem 2 recomendable primero (mismo tipo de cambio de bajo riesgo) | Pendiente, marcado explícitamente como experimento, no como certeza |
+
+**Nota de honestidad**: no incluyo en este backlog nada que no tenga una razón trazable a un hallazgo real de las fases anteriores — no hay ítems de relleno para completar la sección.
+
+## 11. Plan de evolución (Fase 10)
+
+**Versión actual**: 17 agentes (10 en secuencia + 7 independientes), un experimento real a mitad de camino (EXP-002, bloqueado en paso 6), memoria compartida vacía, sin `CLAUDE.md`, sin mecanismo de recordatorio — este último ya resuelto en esta sesión.
+
+↓
+
+**Versión siguiente** (quick wins, esfuerzo bajo, sin tocar arquitectura — ítems 2, 3 y 5 del backlog):
+- `CLAUDE.md` con las reglas transversales.
+- Regla de verificación cruzada añadida a `03-verificador.md`.
+- Timestamps simples por paso en los `plan.md` de experimento.
+- Qué cambia: los archivos de agente y el `plan.md`. Qué desaparece: nada. Qué se crea: `CLAUDE.md`. Qué permanece: los 17 agentes, la secuencia completa, la memoria vacía (todavía sin datos reales que migrar).
+
+↓
+
+**Versión objetivo** (una vez exista al menos un experimento cerrado con datos reales y, idealmente, el primer cliente de pago — ítem 4 del backlog, y la validación real del ítem 6):
+- `base_conocimiento/` con datos reales de 2-3 experimentos cerrados (no antes — no se puede llegar aquí sin pasar primero por cerrar EXP-002).
+- Los 5 agentes dormidos, consolidados en uno hasta ese momento, se dividen de nuevo en Legal/Finanzas/RRHH/Producto/Éxito de Cliente en cuanto el primer cliente real lo exija — migración de la especificación ya escrita, no trabajo desde cero.
+- Decisión ya informada (no hipótesis) sobre si algún agente puede moverse a un modelo más barato, con datos reales de calidad comparada.
+- Qué cambia: estructura de agentes 12-16 (de 1 a 5, en el momento correcto). Qué desaparece: nada de lo ya construido — todo se reactiva, no se descarta. Qué se crea: los KPIs reales en `finanzas/registro.md` y el resto de archivos que hoy no existen porque su disparador no ha ocurrido. Qué permanece: la cadena 01-10 y los agentes 11/17, sin cambios.
+
+## 12. Compost Loop
+
+- **¿Mantengo algún componente solo porque ya existe?** Sí — los 5 agentes dormidos (12-16). Es el único caso detectado en todo el sistema.
+- **¿Qué eliminaría si tuviera que reducir el sistema un 50%?** Fusionaría 12-16 en 1 (de 17 a 13 agentes). No eliminaría ninguno de la cadena 01-10 ni 11/17 — no encontré redundancia real ahí que cortar sin perder capacidad ya demostrada.
+- **¿Qué añadiría si empezara de cero?** Exactamente lo que ya añadí hoy: el recordatorio de experimentos bloqueados. Es la única pieza que faltaba y que ya era técnicamente posible con las herramientas disponibles.
+- **Nuevas reglas permanentes propuestas (máximo 3)**:
+  1. Ningún dato de contacto o prospecto se acepta como válido sin verificación de al menos dos fuentes independientes cuando provenga de una herramienta externa al sistema — regla nacida directamente del único fallo real ya ocurrido.
+  2. Ningún agente nuevo se crea como archivo separado hasta que exista al menos una evidencia real (no hipotética) de que necesita una lógica distinta a la de un agente ya existente — la regla que habría evitado crear 5 agentes dormidos como archivos separados desde el principio.
+  3. Toda regla repetida en 3 o más agentes se promueve a `CLAUDE.md` en vez de mantenerse copiada — para que este mismo hallazgo de la Fase 4 no tenga que volver a descubrirse en la próxima auditoría.
+
+---
+
+*Auditoría completa (Fase 0-10 + Compost Loop). Un ítem del backlog ya implementado en esta misma sesión (recordatorio de EXP-002). Los demás quedan priorizados y con su propia justificación trazable — ninguno se ejecuta automáticamente sin que el usuario lo apruebe.*
