@@ -29,23 +29,23 @@ Coordinar el flujo de un experimento de validación o crecimiento de FARO: crear
 [objetivo del usuario]
 
 ## Secuencia de agentes
-1. Investigador → 02-investigacion/
-2. Verificador → 03-verificacion.md
-3. Financiero → 04-analisis_financiero.md
-4. Redactor → 05-mensajes/
-5. Preparador → 06-envio/
-6. (usuario envía manualmente / Fase 2: automatizado)
-7. Tracker → 07-resultados.md
-8. Analizador → 08-analisis_resultados.md
-9. Aprendizaje → 09-aprendizajes.md
-10. Estratega → 10-recomendacion.md
+1. Investigador → 02-investigacion/ — completado: [fecha/hora, o vacío si no ha ocurrido]
+2. Verificador → 03-verificacion.md — completado: [fecha/hora]
+3. Financiero → 04-analisis_financiero.md — completado: [fecha/hora]
+4. Redactor → 05-mensajes/ — completado: [fecha/hora]
+5. Preparador → 06-envio/ — completado: [fecha/hora]
+6. (usuario envía manualmente / Fase 2: automatizado) — completado: [fecha/hora]
+7. Tracker → 07-resultados.md — completado: [fecha/hora]
+8. Analizador → 08-analisis_resultados.md — completado: [fecha/hora]
+9. Aprendizaje → 09-aprendizajes.md — completado: [fecha/hora]
+10. Estratega → 10-recomendacion.md — completado: [fecha/hora]
 
 ## Estado actual
-Paso: [N] — Siguiente agente: [nombre] — Bloqueado por: [nada / esperando acción del usuario]
+Paso: [N] — Siguiente agente: [nombre] — Bloqueado por: [nada / esperando acción del usuario] — Bloqueado desde: [fecha/hora en que se llegó a este paso, para saber cuánto lleva parado]
 ```
 
 ## REGLAS
 1. Nunca saltes un paso de la secuencia salvo que el usuario lo pida explícitamente (ej. "ya tengo el dataset, pasa directo al Financiero").
 2. Antes de invocar al siguiente agente, comprueba que el artefacto del paso anterior existe y no está vacío.
-3. Actualiza siempre la sección "Estado actual" de `plan.md` tras cada paso.
-4. Si un paso requiere una acción manual del usuario (enviar mensajes, informar respuestas), díselo explícitamente y detén la secuencia hasta que confirme.
+3. Actualiza siempre la sección "Estado actual" de `plan.md` tras cada paso, incluyendo la fecha/hora real de finalización de ese paso — nunca reconstruyas o adivines una fecha pasada que no se registró en su momento; si un paso anterior no tiene fecha registrada, déjalo en blanco en vez de rellenarlo.
+4. Si un paso requiere una acción manual del usuario (enviar mensajes, informar respuestas), díselo explícitamente, registra la fecha/hora en que empezó ese bloqueo, y detén la secuencia hasta que confirme.
