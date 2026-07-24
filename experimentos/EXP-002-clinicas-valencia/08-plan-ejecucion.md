@@ -6,21 +6,78 @@
 
 ---
 
+## FASE 0: Validación asincrónica del problema (CRÍTICA)
+
+**Antes de gastar tiempo en discovery calls y diagnósticos, responde:** ¿Existe realmente demanda de soluciones para "gestionar WhatsApp fuera de horario en clínicas dentales"?
+
+**Método:** Búsqueda de evidencia indirecta (100% asincrónico, sin llamadas)
+
+### Pregunta 1: ¿Hay competencia resolviendo esto?
+
+Busca:
+- ¿Existen productos/servicios específicos para "gestionar WhatsApp en clínicas"?
+- ¿Hay startups, agencias o cursos que cobren por esto?
+- ¿Hay soluciones de software dental que incluyan "gestión de WhatsApp fuera de horario"?
+
+Si NADIE más lo intenta resolver = posible que el problema no duele lo suficiente.
+
+### Pregunta 2: ¿Hay búsquedas de este problema?
+
+Busca en Google:
+- "gestionar WhatsApp clínica dental fuera de horario"
+- "responder mensajes WhatsApp automatizado clínica"
+- "pacientes WhatsApp clínica no responde"
+- Variaciones similares
+
+Observa: ¿hay resultados reales? ¿Qué posiciona? ¿Gente hablando de este problema?
+
+### Pregunta 3: ¿Hay comunidades discutiendo esto?
+
+Busca en:
+- Grupos de Facebook de dueños de clínicas
+- Foros de odontología
+- LinkedIn (busca posts sobre "WhatsApp clínica")
+
+¿Se quejan de esto? ¿Lo mencionan como problema? ¿Alguien ofrece soluciones?
+
+### Pregunta 4: ¿Hay dinero en esto?
+
+Busca:
+- ¿Hay agencias que cobren por implementar esto?
+- ¿Hay software de dental que lo ofrezca como feature premium?
+- ¿Hay gente pagando por soluciones de respuesta automática?
+
+Si NO hay dinero circulando = el problema no duele lo suficiente.
+
+### Resultado esperado
+
+Si encuentras:
+- ✅ Competencia activa resolviendo esto → El problema existe y la gente paga
+- ✅ Búsquedas frecuentes en Google → Hay demanda
+- ✅ Discusiones en comunidades → Es un pain point real
+- ✅ Dinero circulando → Es comercializable
+
+Si NO encuentras evidencia = el problema puede no existir, o es demasiado pequeño.
+
+**No avances al Día 0 sin tener respuesta clara a estas 4 preguntas.**
+
+---
+
 ## FASE 1: Preparación (antes de Día 0)
 
-### ✓ Verificación manual de contactos (paso previo obligatorio)
+### ✓ Verificación manual de contactos (100% asincrónico)
 
 Para CADA clínica del Lote A:
 
 1. **Abre su web** (link en `asignacion.md`)
-2. **Busca el canal real de contacto:**
-   - ¿Hay formulario de contacto? → Úsalo
+2. **Busca el canal de contacto más asincrónico:**
+   - ¿Hay formulario de contacto en web? → Úsalo (mejor opción)
    - ¿Hay email publicado? → Úsalo
-   - ¿Hay teléfono? → Llama PRIMERO para verificar que es el correcto
-3. **Anota el nombre del decisor** si aparece (para personalizar el saludo)
+   - ¿Hay teléfono pero también email? → Usa email
+3. **Anota el nombre del decisor** si aparece públicamente (web, Facebook, Linkedin) para personalizar el saludo
 4. **Registra en este documento** (sección "Contactos verificados" más abajo)
 
-**No avances al Día 0 sin completar esto para las 3 clínicas.**
+**No avances al Día 0 sin completar esto para las 3 clínicas. Prioriza: formulario web > email > teléfono.**
 
 ---
 
@@ -51,20 +108,49 @@ Para CADA clínica del Lote A:
 
 ---
 
-## FASE 4: Discovery calls (semana 2-3)
+## FASE 4: Discovery asincrónico (semana 2-3)
 
 **Cuándo:** Cuando respondan (pueden ser simultáneas o escalonadas)
 
-**Qué hacer:**
-1. Agenda llamada de 30 min
-2. **Sigue el protocolo de diagnóstico** en `06-envio/plan_envio.md` (Sección "Durante la discovery call")
-3. **Documenta el diagnóstico** en archivo `06-envio/discovery/[nombre-clinica].md`
-   - Síntoma reportado
-   - Patrón sistémico que detectaste
-   - Hipótesis de intervención
-   - Preguntas pendientes
+**Qué hacer:** Envía un segundo email (NO una llamada de calendario) con preguntas de diagnóstico estructuradas.
 
-**Clave:** El diagnóstico debe ser documentado DURANTE o INMEDIATAMENTE DESPUÉS de la llamada, no retroactivamente.
+**Formato:** Email con estructura clara, preguntas numeradas, invitando respuesta escrita.
+
+**Contenido del email de diagnóstico:**
+
+Asunto: "Preguntas rápidas sobre [Nombre de la clínica] — para personalizar la propuesta"
+
+Cuerpo:
+
+```
+Hola [Nombre],
+
+Gracias por responder. Antes de proponerte una solución, me gustaría 
+entender mejor tu situación. 5 preguntas rápidas:
+
+1. Cuando un paciente te manda un WhatsApp a las 9 pm y es un paciente 
+nuevo que quiere agendar, ¿qué pasa? 
+(¿nadie responde? ¿alguien logra responder? ¿cómo se entera tu equipo?)
+
+2. ¿Cuántos mensajes sin responder acumulas típicamente en una semana?
+
+3. Si ese paciente RECIBIERA una respuesta en 15 minutos, ¿cómo cambiaría 
+tu negocio? (¿más pacientes? ¿menos cancelaciones? ¿menos estrés?)
+
+4. ¿Cuántas personas atienden recepción en tu clínica?
+
+5. ¿Has intentado algo antes para resolver esto? Si sí, ¿qué y por qué 
+funcionó o no?
+
+Responde directamente a este email — no necesita ser largo.
+
+Un saludo,
+[Firma]
+```
+
+**Documenta la respuesta en archivo:** `06-envio/discovery/[nombre-clinica].md`
+
+**Clave:** Tendrás menos información que en una llamada, pero MUCHO más información que si no preguntas nada. Y totalmente asincrónico.
 
 ---
 

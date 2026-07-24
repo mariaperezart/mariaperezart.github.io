@@ -15,79 +15,70 @@ Copia el bloque "Día 9" de la variante asignada. En variante B, el texto es dis
 ## Día 16 (solo a quien no haya respondido)
 Copia el bloque "Día 16" de la variante asignada. Tras esto, si no hay respuesta, la clínica pasa a la lista de nutrición pasiva (`FARO_PROCESO_COMERCIAL.md` sección 2) — no reintentar antes de 90 días.
 
-## Al recibir respuesta positiva → Agendación de discovery call
+## Al recibir respuesta positiva → Discovery asincrónico por email
 
-Respuesta positiva = cualquier cosa que no sea "no" inmediato (abiertos a hablar, piden más info, quieren llamada).
+Respuesta positiva = cualquier cosa que no sea "no" inmediato (abiertos a hablar, piden más info).
 
-Agenda una llamada de 30 min con la clínica donde el objetivo NO es vender FARO, sino:
+**NO AGENDUES UNA LLAMADA.**
 
-**Diagnosticar el patrón sistémico detrás de "mensajes de WhatsApp sin responder"**
-
----
-
-## Durante la discovery call: Protocolo de diagnóstico
-
-**Duración:** 30 min  
-**Objetivo:** Pasar de síntoma ("pacientes no responden") a patrón sistémico ("¿por qué ocurre?")  
-**Documentación:** Toma notas en tiempo real en archivo `06-envio/discovery/[nombre-clinica].md` DURANTE la llamada, no después.
-
-### Estructura de preguntas (5-7 min por sección)
-
-**Sección 1: Síntoma confirmado (min 1-5)**
-- "Me dijiste que pacientes no responden a mensajes fuera de horario. ¿Qué intentan hacer esos pacientes cuando escriben? ¿Qué necesitan?"
-- "¿Quién en tu clínica revisa esos mensajes?"
-- "¿Cuántos mensajes sin responder acumulas típicamente?"
-
-**Sección 2: El patrón sistémico (min 6-15)** ← **ESTO ES LO CRÍTICO**
-- "Cuando llega un mensaje a las 9 pm, ¿qué impide que se responda?"
-  - *Si responden:* ¿Por qué? ¿Es rutina o excepción?
-  - *Si no responden:* ¿Es por falta de sistema, por falta de persona, por falta de información? 
-- "¿Cómo sabe tu equipo que hay un mensaje sin responder?"
-- "¿Qué ocurre el día siguiente? ¿Alguien revisa esos mensajes?"
-- "¿Has intentado algo para mejorar esto? ¿Por qué funcionó o no?"
-
-**Sección 3: Impacto real (min 16-22)**
-- "Si los pacientes RECIBIERAN respuesta a los 10 minutos, ¿qué cambiaría en tu negocio?" (presione: ingresos, retención, carga de trabajo, satisfacción del equipo)
-- "¿Cuál es el costo de un paciente que no recibe respuesta rápida?" (No: sensación, sino: ¿se va a otra clínica? ¿cómo lo sabes?)
-
-**Sección 4: Insight de capacidad de pago (min 23-27)**
-- "¿Cuánto tiempo te gustaría dedicar semanalemente a esto?" (Indica urgencia + presupuesto mental)
-- "¿Has considerado herramientas? ¿Cuál es tu presupuesto si esto resolviera el problema?"
-
-**Sección 5: Cierre de diagnóstico (min 28-30)**
-- Resumen: "De lo que me dices, parece que el patrón es [TU HIPÓTESIS]. ¿Es correcto?"
-  - Si dice "sí": Patrón validado. Documenta.
-  - Si dice "no": Reformula hasta que asinta. Ese es el patrón REAL, no el que asumiste.
+Envía un segundo email con preguntas de diagnóstico estructuradas.
 
 ---
 
-## Después de la discovery call: Documentación del diagnóstico
+## Protocolo de diagnóstico asincrónico (por email)
 
-**Archivo a crear:** `06-envio/discovery/[nombre-clinica].md`
+**Objetivo:** Pasar de síntoma ("pacientes no responden") a patrón sistémico ("¿por qué ocurre?")
 
-**Estructura:**
+**Formato:** Email con preguntas numeradas, invitando respuesta escrita.
 
-```markdown
-# Discovery — [Nombre Clínica]
+**Ventaja:** Totalmente asincrónico. Pueden responder cuando tengan tiempo. Tú tendrás respuestas documentadas por escrito.
 
-## Síntoma inicial
-[Lo que dijeron que era el problema]
+### Estructura de preguntas (por email)
 
-## Patrón sistémico detectado
-[La estructura subyacente que explica el síntoma — esto es TU diagnóstico]
+Envía esto dentro de 24h de recibir respuesta positiva:
 
-## Evidencia que lo confirma
-[3-5 datos concretos que mencionaron en la llamada que apuntan a este patrón]
+---
 
-## Hipótesis de intervención
-[Si cambiamos X (el factor sistémico), esperamos que ocurra Y (el resultado)]
+**Asunto:** "Preguntas rápidas sobre [Nombre de la clínica] — para personalizar la propuesta"
 
-## Preguntas pendientes
-[Qué no quedó claro, qué necesitas verificar antes de diseñar la intervención]
+**Cuerpo:**
 
-## Siguiente paso propuesto
-[Qué debería cambiar, de forma MUY ESPECÍFICA para ESTA clínica]
-```
+Hola [Nombre],
+
+Gracias por responder. Antes de proponerte una solución, me gustaría entender mejor tu situación. Seis preguntas rápidas (responde directamente en este email):
+
+**1. El patrón actual**
+Cuando un paciente te manda un WhatsApp a las 9 pm y es un paciente nuevo que quiere agendar, ¿qué pasa? ¿Nadie responde? ¿Alguien logra responder? ¿Cómo se entera tu equipo?
+
+**2. Volumen**
+¿Cuántos mensajes sin responder acumulas típicamente en una semana?
+
+**3. El impacto real**
+Si ese paciente RECIBIERA una respuesta en 15 minutos, ¿cómo cambiaría tu negocio? (¿más pacientes? ¿menos cancelaciones? ¿menos estrés?)
+
+**4. El equipo**
+¿Cuántas personas atienden recepción en tu clínica?
+
+**5. Intentos previos**
+¿Has intentado algo antes para resolver esto? Si sí, ¿qué y por qué funcionó o no?
+
+**6. Urgencia**
+¿En una escala del 1-10, cuán importante es resolver esto para ti ahora?
+
+No necesita ser largo — responde con lo que tengas.
+
+Un saludo,
+[Firma]
+
+---
+
+### Cómo documentar la respuesta
+
+Crea archivo `06-envio/discovery/[nombre-clinica].md` y registra:
+- Respuestas literales a cada pregunta
+- Tu interpretación del patrón sistémico (diferencia síntoma de causa)
+- Hipótesis sobre qué cambiaría si intervinieras
+- Preguntas pendientes
 
 ---
 
