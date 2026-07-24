@@ -1,0 +1,69 @@
+DANZA CHIC V3.1 — DOCUMENTO DE GESTIÓN MENSUAL,,,
+"Mérida, Venezuela | 24 de July de 2026",,,
+,,,
+📋 DATOS BÁSICOS (Llenar 1 sola vez),,,
+,,,
+Dato,Valor,Fecha actualización,Notas
+Años funcionando,,,
+Alumnas máximo histórico,,,
+Alumnas actuales,,,
+Capacidad máxima del local,,,
+Mensualidad actual (USD),,,
+,,,
+💰 ESTADO RESULTADOS — MES ACTUAL,MES 1,MES 2,MES 3
+,,,
+Alumnas presentes,,,
+Ingreso total (USD),,,
+"Gastos variables (material, uniforme)",,,
+Alquiler,,,
+Profesor contratado,,,
+Marketing,,,
+Otros gastos fijos,,,
+,,,
+TOTAL GASTOS,=SUM(E18:E22),=SUM(F18:F22),=SUM(G18:G22)
+MARGEN BRUTO,=D17-E23,=E17-F23,=F17-G23
+MARGEN BRUTO %,=(D24/D17)*100,=(E24/E17)*100,=(F24/F17)*100
+RESULTADO OPERATIVO,=D24-E23,=E24-F23,=F24-G23
+SALDO FINAL,,,
+,,,
+📊 CUADRO DE MANDO — 10 INDICADORES CLAVE,Mes 1,Mes 2,Mes 3
+,,,
+Indicador,Verde | Amarillo | Rojo,Valor,Estado
+Ocupación (%),>80% | 60-80% | <60%,,
+Retención mes 2 (%),>85% | 70-85% | <70%,,
+Referidos (% nuevas),>40% | 20-40% | <20%,,
+Margen bruto (%),>25% | 10-25% | <10%,,
+Dependencia fundadora (%),<50% | 50-75% | >75%,,
+NPS (satisfacción),>50 | 30-50 | <30,,
+Tasa abandono mensual (%),<10% | 10-15% | >15%,,
+CAC - Costo adquisición,<10 USD | 10-15 | >15,,
+LTV/CAC ratio,>3 | 2-3 | <2,,
+Punto equilibrio,Alumnas > PE+20% | PE±20% | Alumnas < PE,,
+,,,
+🔴 ACCIONES SI ESTÁ EN ROJO,,,
+,,,
+Ocupación ROJA,"Acción: Revisar precio, ir a colegios, marketing",,
+Retención ROJA,"Acción: Encuesta a mamás, revisar primeras clases",,
+Referidos ROJA,Acción: Mejorar satisfacción (NPS bajo),,
+Margen ROJO,Acción: Subir precio O reducir gastos,,
+Dependencia ROJA,Acción: Contratar profesor urgente,,
+NPS ROJO,Acción: Encuesta a 5-10 mamás. ¿Qué mejorar?,,
+,,,
+🎯 EMBUDO COMERCIAL (Conversión funnel),Mes 1,Mes 2,% Conv.
+,,,
+1. Personas que preguntan (WhatsApp),,,
+2. Asisten clase de prueba,,,=B57/B56
+3. Se matriculan,,,=B58/B57
+4. Renuevan mes 2,,,=B59/B58
+5. Permanecen mes 6,,,=B60/B58
+6. Se convierten en referidos,,,=B61/B58
+,,,
+📝 NOTAS DE LA LLAMADA,,,
+,,,
+Decisión tomada esta llamada:,,,
+,,,
+Próxima acción:,,,
+,,,
+Problemas identificados:,,,
+,,,
+Oportunidades:,,,
