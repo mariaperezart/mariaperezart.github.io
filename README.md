@@ -31,6 +31,17 @@ Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con
 
 Sitio estático (HTML/CSS/JS, sin dependencias de build) que implementa el copy y diseño de los documentos anteriores. Pensado para publicarse vía GitHub Pages directamente desde este repositorio.
 
+## 2.1 Plan de negocio de diseño web (`plan-negocio/`)
+
+Adaptación a Ponferrada 2026 del plan de negocio original (plantilla INCYNCO, 2023) del estudio de diseño web y gráfico. Es un negocio distinto de FARO y complementario: genera caja desde el mes uno mientras FARO se valida.
+
+| Archivo | Contenido |
+|---|---|
+| `plan-negocio/ANALISIS_Y_ADAPTACION_PONFERRADA_2026.md` | Análisis de los errores del plan original (fiscalidad canaria, salario bajo SMI, ventas despejadas en lugar de previstas) y justificación de cada cambio |
+| `plan-negocio/PLAN_NEGOCIO_PONFERRADA_2026.xlsx` | El libro adaptado: misma plantilla y mismas fórmulas, con los datos, la normativa y el mercado de 2026 |
+
+Contiene datos personales y financieros reales — este repositorio es privado y no tiene GitHub Pages activo, así que no se publica.
+
 ## 3. Automatización técnica (`n8n/`, `sql/`)
 
 - `sql/schema.sql` — esquema de base de datos del MVP.
