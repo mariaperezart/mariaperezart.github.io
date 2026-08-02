@@ -41,6 +41,7 @@ Todo lo demás del kit está ordenado alrededor de esto.
 | 07 | `07_RGPD_ENCARGADO_TRATAMIENTO.md` | Obligatorio con cada cliente | Antes del 1.er proyecto |
 | 08 | `08_TEXTOS_LEGALES_WEB.md` | Para las webs que entregues | Antes de la 1.ª entrega |
 | 09 | `09_MAPA_COMPETITIVO_LEON.md` | Quién compite en León, a qué precios y dónde está el hueco | **Ahora** |
+| 11 | `11_GUION_ENTREVISTAS.md` | 10 entrevistas a negocios de León para falsar los supuestos del plan **antes** del alta | **Ahora** |
 
 Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`) y su **análisis** (`ANALISIS_Y_ADAPTACION_LEON_2026.md`).
 
