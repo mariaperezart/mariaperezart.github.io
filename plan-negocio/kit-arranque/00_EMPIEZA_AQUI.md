@@ -43,6 +43,7 @@ Todo lo demás del kit está ordenado alrededor de esto.
 | 09 | `09_MAPA_COMPETITIVO_LEON.md` | Quién compite en León, a qué precios y dónde está el hueco | **Ahora** |
 | 10 | `10_PROSPECTOS_LEON.md` | 94 negocios reales de León con nombre verificado, por segmento | **Ahora** |
 | 12 | **`12_PROSPECCION_PONFERRADA.md`** | Prospección de Ponferrada y El Bierzo, con plan de la primera semana | **Ahora** |
+| 13 | **`13_SOCIO_Y_FIGURA_FISCAL.md`** | Cómo incorporar al segundo socio y qué cambia su deuda con Hacienda | **Ahora** |
 | 11 | `11_GUION_ENTREVISTAS.md` | 10 entrevistas a negocios de León para falsar los supuestos del plan **antes** del alta | **Ahora** |
 
 Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`) y su **análisis** (`ANALISIS_Y_ADAPTACION_LEON_2026.md`).
@@ -54,6 +55,7 @@ Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`
 1. **Abre el panel** y cambia el escenario a *Pesimista*. Mira los meses en rojo. Ese es tu riesgo real, y es manejable si lo ves venir.
 2. **Comprueba que tienes derecho a la tarifa plana.** Todo el Año 1 depende de eso.
 3. **Decide el nombre del estudio.** Y decide si FARO es una marca aparte.
+3.b **Que tu padre pida el aplazamiento de su deuda con Hacienda.** Hasta 50.000 € sin aval. Es lo que desbloquea que pueda ser socio y que podáis pedir subvenciones (ver `13_SOCIO_Y_FIGURA_FISCAL.md`).
 4. **Abre `10_PROSPECTOS_LEON.md`** y comprueba a mano las webs de los 11 negocios del segmento 1. Están señalados por indicios, no auditados: es una hora de trabajo y te deja la lista de las primeras llamadas.
 5. **Precios y costes ya corregidos**: mantenimiento 60 → 80 €/mes, web profesional 3.500 → 2.900 €, y fuera Adobe y las herramientas SEO de pago (−1.040 €/año). Todo aplicado en los dos libros.
 
