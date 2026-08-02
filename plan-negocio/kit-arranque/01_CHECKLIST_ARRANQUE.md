@@ -27,7 +27,7 @@ Ordenado por lo que realmente bloquea el primer euro. **No hagas la fase 2 antes
 
 ### La lista de prospectos
 
-- [ ] **Beneficiarios del Kit Digital en León** (datos públicos), cruzados con qué webs siguen vivas y cuáles están abandonadas. **Es la tarea con mejor retorno de todas.**
+- [ ] **Detectar webs abandonadas negocio a negocio.** No hay listado público de beneficiarios del Kit Digital (Red.es solo publica los agentes digitalizadores). Se detecta preguntando *"¿quién os mantiene la web?"* — ver `10_PROSPECTOS_LEON.md`.
 - [ ] **Sociedades nuevas** del BORME en la provincia.
 - [ ] **10 gestorías e imprentas** de León como prescriptores.
 - [ ] Alojamientos del Camino y productores con IGP/DO.

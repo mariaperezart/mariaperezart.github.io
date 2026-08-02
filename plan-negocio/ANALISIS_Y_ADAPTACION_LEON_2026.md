@@ -106,7 +106,7 @@ Segmentos, con fuente declarada:
 | Pymes y micropymes de León capital y alfoz | ~11.100 | **Estimación propia**: 40 % de las 27.825 de la provincia. **Verificar en DIRCE-INE** |
 | Autónomos y profesionales de la provincia | **34.349** | Seguridad Social, abril 2026. Dato oficial |
 | Alojamiento y hostelería del Camino a su paso por León | ~340 | **Estimación propia** sobre el registro turístico de la Junta. **Verificar** |
-| Agroalimentario con sello leonés (Cecina IGP, Morcilla IGP, DO Tierra de León, Mantecadas de Astorga…) | ~200 | **Estimación propia** sumando operadores de los consejos reguladores. **Confirmar** |
+| Agroalimentario con sello leonés (Cecina IGP, Botillo del Bierzo IGP, DO Tierra de León, Mantecadas de Astorga…) | ~200 | **Estimación propia** sumando operadores de los consejos reguladores. **Confirmar** |
 | Gestorías, imprentas y agencias (prescriptoras) | ~90 | Directorio provincial |
 
 Las verticales de Ponferrada (bodegas de la DO Bierzo) se sustituyen por las dos que tienen sentido desde León: **el Camino de Santiago** y el **agroalimentario leonés con IGP/DO**.

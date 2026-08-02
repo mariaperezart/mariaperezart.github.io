@@ -11,7 +11,7 @@ El plan necesita **16 proyectos al año**. Eso es 1,4 al mes. Con una tasa de ci
 Por orden de facilidad de cierre:
 
 ### Prioridad 1 — Webs del Kit Digital huérfanas
-Negocios que recibieron el bono entre 2022 y 2025, ya cumplieron el periodo de mantenimiento obligatorio y se han quedado sin proveedor. **Los beneficiarios del Kit Digital son datos públicos.** Cruza esa lista con qué webs siguen vivas y cuáles están abandonadas.
+Negocios que recibieron el bono entre 2022 y 2025, ya cumplieron el periodo de mantenimiento obligatorio y se han quedado sin proveedor. **AVISO: no existe listado público de beneficiarios del Kit Digital.** Red.es publica el catálogo de *agentes digitalizadores*, no el de pymes que recibieron el bono. Así que este segmento **no se puede prospectar desde una lista**: hay que detectarlo negocio a negocio, con la pregunta *"¿quién os mantiene la web?"*.
 
 Es el mejor mercado del plan: ya demostraron que pagan por esto, ya tienen web (así que no hay que convencerles de la necesidad) y no tienen proveedor.
 
@@ -23,7 +23,7 @@ Gestorías, asesorías e imprentas de León. No te compran: te traen clientes. U
 
 ### Prioridad 4 — Los dos verticales
 - **Camino de Santiago**: albergues, hoteles pequeños y restaurantes. Contactar en **invierno**, para la temporada.
-- **Agroalimentario leonés** con IGP/DO: cecina, morcilla, DO Tierra de León, mantecadas de Astorga.
+- **Agroalimentario leonés** con IGP/DO: cecina, botillo, DO Tierra de León, mantecadas de Astorga.
 
 ---
 
