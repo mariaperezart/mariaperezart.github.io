@@ -1,6 +1,6 @@
 # Guion de prospección
 
-El plan necesita **17 proyectos al año**. Eso es 1,4 al mes. Con una tasa de cierre realista del 20-25 % en frío, significa unas **6-7 conversaciones comerciales al mes**, y para eso hacen falta unos 25-30 primeros contactos mensuales.
+El plan necesita **16 proyectos al año**. Eso es 1,4 al mes. Con una tasa de cierre realista del 20-25 % en frío, significa unas **6-7 conversaciones comerciales al mes**, y para eso hacen falta unos 25-30 primeros contactos mensuales.
 
 **Dos mañanas fijas a la semana, bloqueadas en agenda, tratadas como si fueran una entrega con fecha.** Si la prospección compite con la producción, siempre pierde. Es la debilidad estructural de trabajar sola y no tiene otra defensa.
 
