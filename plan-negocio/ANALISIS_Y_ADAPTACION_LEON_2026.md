@@ -53,7 +53,7 @@ Un detalle que juega a favor: el original ponía "IGIC" pero tenía metido un **
 - **Protección de datos:** citaba la **LO 15/1999, derogada desde 2018**. El marco vigente es el RGPD y la LOPDGDD 3/2018. Tampoco distinguía las dos condiciones del negocio: *responsable* de sus propios datos y *encargada del tratamiento* de los de sus clientes (art. 28 RGPD, contrato obligatorio con cada uno).
 - **Cuota de autónomos:** hablaba de la "tarifa plana de 60 euros". Hoy son **80 €/mes** y rige la cotización por ingresos reales (15 tramos en 2026, de 205,88 a 607,35 €/mes con el MEI del 0,9 %).
 - **Prevención de riesgos laborales:** apartado **vacío**, pese a presupuestar un empleado. Sin empleados deja de ser un incumplimiento.
-- No mencionaba la **factura electrónica B2B obligatoria** (Ley 18/2022 + Verifactu), que es a la vez una obligación propia y una de las mejores excusas comerciales para llamar a un micronegocio.
+- No mencionaba **Verifactu** (Ley 18/2022 + RD 1007/2023), la factura verificable con software homologado: obligatoria para sociedades desde el **1/01/2027** y para autónomos desde el **1/07/2027**. No urge para el Año 1, pero conviene elegir ya un programa adaptado para no migrar después — y es una de las mejores excusas comerciales para llamar a un micronegocio.
 
 ### 2.3 Estaba dimensionado para otra empresa
 
