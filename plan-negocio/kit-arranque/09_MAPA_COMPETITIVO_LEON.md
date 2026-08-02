@@ -142,15 +142,15 @@ En lugar de un DAFO inventado por empresa, el DAFO **del conjunto**, que es dond
 |---|---|---|---|
 | Web corporativa (León) | 700-1.500 € | **1.200 €** | ✅ Bien situado. DespachoTres cobra 1.500 € |
 | Web básica (España) | 500-3.000 € | 1.200 € | ✅ |
-| Tienda online (León) | 2.500 € + IVA | **3.500 €** | ⚠️ **Por encima.** Hay que justificarlo o ajustarlo |
-| Mantenimiento web | **50-150 €/mes** | **60 €/mes** | 🔴 **Te estás quedando corta** |
+| Tienda online (León) | 2.500 € + IVA | **2.900 €** ✏️ | ✅ Ajustado desde 3.500 €. Los 400 € de diferencia se justifican en multiidioma e integraciones |
+| Mantenimiento web | **50-150 €/mes** | **80 €/mes** | 🔴 **Te estás quedando corta** |
 | SEO local | **150-450 €/mes** | **250 €/mes** | ✅ Bien situado |
 
-### Dos correcciones de precio que salen de aquí
+### Dos correcciones de precio, ya aplicadas a los dos libros
 
-**1. Sube el mantenimiento de 60 € a 75-90 €/mes.** Estás en el suelo de un rango que va de 50 a 150 €. Con 20 clientes, pasar de 60 a 80 € son **4.800 € más al año** sin vender ni un proyecto más — casi la mitad de tu punto de equilibrio actual.
+**1. Mantenimiento: 60 → 80 €/mes.** Estabas en el suelo de un rango que va de 50 a 150 €. Con 20 clientes son **4.800 € más al año** sin vender ni un proyecto más, y el peso del ingreso recurrente sube del 29 % al **32 %**.
 
-**2. Revisa los 3.500 € de la web profesional.** DespachoTres publica 2.500 € para tienda online. O bajas, o el presupuesto tiene que explicar muy bien qué llevan esos 1.000 € de diferencia (multiidioma, integraciones, SEO de producto).
+**2. Web profesional: 3.500 → 2.900 €.** DespachoTres publica 2.500 € para tienda online. A 3.500 € había que justificar 1.000 € de diferencia en cada presupuesto; a 2.900 € son 400 €, que sí se explican con multiidioma e integraciones.
 
 ---
 
@@ -228,7 +228,7 @@ Que lo hagan: les cuesta dinero real. Es la parte más defendible de la estrateg
 ## Resumen en cinco líneas
 
 1. **Mercado saturado en número** (15+ competidores) pero **no en propuesta**: casi todos venden lo mismo de la misma manera.
-2. **Tu precio de web está bien situado.** El de mantenimiento está bajo: súbelo a 75-90 €.
+2. **Precios ya corregidos y aplicados**: mantenimiento de 60 a 80 €/mes, web profesional de 3.500 a 2.900 €.
 3. **El hueco real es la continuidad**, no el diseño.
 4. **No pelees por el SEO de "diseño web León"**: está copado. Puerta fría con diagnóstico, prescriptores y verticales.
 5. **Verifica el mercado de Kit Digital huérfano antes de darte de alta.** Es el supuesto que sostiene el plan y el que menos evidencia tiene.

@@ -9,7 +9,7 @@ Sitio corporativo de hasta 6 secciones sobre WordPress.
 Diseño a medida, adaptado a móvil, textos base, ficha de Google Business Profile, aviso legal, política de privacidad y cookies.
 **Plazo: 2-3 semanas · Incluye 2 rondas de cambios**
 
-### Web profesional / e-commerce — **desde 3.500 €**
+### Web profesional / e-commerce — **desde 2.900 €**
 Tienda online o sitio avanzado. Catálogo, pasarela de pago, multiidioma e integraciones (reservas, facturación, envíos).
 **Plazo: 6-8 semanas · Incluye 2 rondas de cambios**
 
@@ -17,7 +17,7 @@ Tienda online o sitio avanzado. Catálogo, pasarela de pago, multiidioma e integ
 Logotipo, manual básico de marca y aplicaciones: papelería, cartelería, redes y rotulación.
 **Plazo: 2-4 semanas**
 
-### Mantenimiento gestionado — **60 €/mes**
+### Mantenimiento gestionado — **80 €/mes**
 Copias de seguridad, actualizaciones, seguridad, monitorización, pequeños cambios de contenido y revisión trimestral.
 **Permanencia mínima 12 meses · Domiciliado**
 
@@ -33,10 +33,10 @@ Posicionamiento en búsquedas locales de León, gestión de la ficha de Google, 
 
 ### Cómo usar esta hoja
 
-- **Enséñala siempre entera.** Ver que la web esencial cuesta 1.200 € junto a una de 3.500 € hace que la primera parezca razonable. Sola, parece cara.
+- **Enséñala siempre entera.** Ver que la web esencial cuesta 1.200 € junto a una de 2.900 € hace que la primera parezca razonable. Sola, parece cara.
 - **El mantenimiento se ofrece en la entrega**, cuando la satisfacción está en su punto más alto.
 - **Nunca bajes el precio en la primera objeción.** Si tienes que ceder, **quita alcance**: menos secciones, sin textos, sin ficha de Google. El precio es una señal de calidad; el alcance es negociable.
-- **"Desde 3.500 €"** en la web profesional es deliberado: obliga a una conversación sobre el alcance real antes de dar cifra.
+- **"Desde 2.900 €"** en la web profesional es deliberado: obliga a una conversación sobre el alcance real antes de dar cifra.
 
 ---
 
@@ -77,7 +77,7 @@ Posicionamiento en búsquedas locales de León, gestión de la ficha de Google, 
 - Traducción a otros idiomas
 - Licencias de terceros (fuentes, imágenes de stock, plugins premium)
 - Alojamiento y dominio, que se contratan a nombre del cliente
-- Mantenimiento posterior (disponible por 60 €/mes)
+- Mantenimiento posterior (disponible por 80 €/mes)
 
 > *Ponerlo por escrito evita el 90 % de los conflictos de alcance.*
 
@@ -101,7 +101,7 @@ Posicionamiento en búsquedas locales de León, gestión de la ficha de Google, 
 
 #### Y después
 
-Para que la web siga funcionando, actualizada y segura, el **mantenimiento gestionado son 60 €/mes**: copias de seguridad, actualizaciones, seguridad, monitorización, pequeños cambios y una revisión presencial cada trimestre.
+Para que la web siga funcionando, actualizada y segura, el **mantenimiento gestionado son 80 €/mes**: copias de seguridad, actualizaciones, seguridad, monitorización, pequeños cambios y una revisión presencial cada trimestre.
 
 *Sin mantenimiento, una web tarda de media un año en quedarse desactualizada y vulnerable.*
 

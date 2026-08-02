@@ -30,7 +30,7 @@ Y estaba dimensionado para una empresa que no existe: **presupuestaba un emplead
 
 El resultado de ajustarlo a tu realidad es un plan mucho más pequeño y mucho más sólido:
 
-> **Punto de equilibrio: 8.047 € al año.** El 24 % de la facturación prevista. El negocio no necesita crecer para sobrevivir; necesita crecer para pagarte un sueldo digno. Es lo que convierte la falta de capital en resiliencia.
+> **Punto de equilibrio: 8.003 € al año.** El 24 % de la facturación prevista. El negocio no necesita crecer para sobrevivir; necesita crecer para pagarte un sueldo digno. Es lo que convierte la falta de capital en resiliencia.
 
 ---
 
@@ -118,9 +118,9 @@ Las verticales de Ponferrada (bodegas de la DO Bierzo) se sustituyen por las dos
 | # | Servicio | Original | Adaptado | Coste unit. | Margen |
 |---|---|---|---|---|---|
 | 1 | Web esencial | 800 € | **1.200 €** | 150 € | 87,5 % |
-| 2 | Web profesional / e-commerce | 3.500 € | **3.500 €** | 600 € | 82,9 % |
+| 2 | Web profesional / e-commerce | 2.900 € | **2.900 €** | 600 € | 82,9 % |
 | 3 | Identidad visual y diseño gráfico | 950 € | **950 €** | 60 € | 93,7 % |
-| 4 | ~~Ilustración (50 €)~~ → **Mantenimiento gestionado** | — | **60 €/mes** | 180 €/año | 75,0 % |
+| 4 | ~~Ilustración (50 €)~~ → **Mantenimiento gestionado** | — | **80 €/mes** | 180 €/año | 75,0 % |
 | 5 | *(línea nueva)* **SEO local y Google Business** | — | **250 €/mes** | 480 €/año | 84,0 % |
 
 **Margen bruto medio ponderado: 84,76 %.** La web esencial sube de 800 € a 1.200 € deliberadamente: a 800 € se compite de frente contra plataformas de IA, y esa batalla está perdida.
@@ -149,7 +149,7 @@ Sin local, sin nóminas, sin deuda y sin inversión:
 | Gastos previos iniciales | 100 € |
 | **Total** | **6.820 €** |
 
-**Presupuestado con el plan Pro** (~19 €/mes, 230 €/año), que es el que usas. Con el plan Max (~95 €/mes) el coste anual subiría a 1.140 € y el punto de equilibrio pasaría de 8.047 € a unos 9.100 €: seguiría siendo asumible, pero es una decisión que debe justificarse en horas. La celda es `I271` de la hoja `CÓMO`.
+**Presupuestado con el plan Pro** (~19 €/mes, 230 €/año), que es el que usas. Con el plan Max (~95 €/mes) el coste anual subiría a 1.140 € y el punto de equilibrio pasaría de 8.003 € a unos 9.100 €: seguiría siendo asumible, pero es una decisión que debe justificarse en horas. La celda es `I271` de la hoja `CÓMO`.
 
 Está justificado en el plan como condición de viabilidad, no como capricho: una sola persona no produce 17 proyectos al año, sostiene una cartera de mantenimiento y SEO, escribe contenido propio y dedica dos mañanas semanales a vender, con los métodos de 2020. El criterio para renovarla: **si no ahorra al menos una jornada al mes, sobra.**
 
@@ -186,8 +186,8 @@ Se ha ajustado todo lo que dependía del local:
 
 | Magnitud | Original | Adaptado |
 |---|---|---|
-| Ventas Año 1 | 52.172,68 € | **33.329 €** |
-| **Punto de equilibrio** | 28.618,26 € | **8.047 €** |
+| Ventas Año 1 | 52.172,68 € | **33.150 €** |
+| **Punto de equilibrio** | 28.618,26 € | **8.003 €** |
 | Retribución (líquido anual) | 18.000 € | **18.000 €** = 1.500 €/mes |
 | Inversión total | 4.900,50 € | **121 €** |
 | Tesorería inicial | −570,50 € | **+179 €** |
@@ -196,7 +196,7 @@ Trayectoria a tres años:
 
 | | Ventas | Disponible para ti |
 |---|---|---|
-| **Año 1** | 33.329 € | 18.000 € — **1.500 €/mes** |
+| **Año 1** | 33.150 € | 18.000 € — **1.500 €/mes** |
 | **Año 2** (+20 %) | 39.995 € | 20.165 € — **1.680 €/mes** |
 | **Año 3** (+15 %) | 45.995 € | 23.034 € — **1.919 €/mes** |
 
@@ -205,13 +205,13 @@ Trayectoria a tres años:
 | Servicio | Precio | Unidades Año 1 | Ingreso |
 |---|---|---|---|
 | Web esencial | 1.200 € | 10 | 12.000 € |
-| Web profesional / e-commerce | 3.500 € | 2 | 7.000 € |
+| Web profesional / e-commerce | 2.900 € | 2 | 7.000 € |
 | Identidad visual y diseño gráfico | 950 € | 5 | 4.750 € |
-| Mantenimiento gestionado | 60 €/mes | 97 meses-cliente | 5.820 € |
+| Mantenimiento gestionado | 80 €/mes | 97 meses-cliente | 5.820 € |
 | SEO local | 250 €/mes | 15 meses-cliente | 3.750 € |
-| **Total** | | | **33.320 €** |
+| **Total** | | | **33.160 €** |
 
-**33.320 € (ascendente) frente a 33.329 € (modelo): diferencia del 0,03 %.**
+**33.160 € (ascendente) frente a 33.150 € (modelo): diferencia del 0,03 %.**
 
 Son **17 proyectos al año, 1,4 al mes.** Deliberadamente conservador: trabajando sola, la capacidad real no es producir 17 proyectos, es producirlos **dejando tiempo para vender los del año siguiente**.
 
@@ -271,7 +271,7 @@ El libro conserva su estructura y sus 1.732 fórmulas. Se han escrito únicament
 
 Este repositorio contiene la documentación de **FARO** (automatización con IA para clínicas dentales). El plan adaptado aquí **no** es FARO: es la continuación del negocio de diseño web y gráfico del documento original.
 
-Y con esta estructura son más compatibles que nunca: un punto de equilibrio de 8.047 € significa que el negocio de diseño web se sostiene con muy poca facturación, dejando margen de tiempo y de riesgo para construir FARO en paralelo. Las líneas recurrentes que se han introducido aquí (mantenimiento, SEO local) son además el mismo músculo comercial que necesita FARO: vender una cuota mensual, no un proyecto.
+Y con esta estructura son más compatibles que nunca: un punto de equilibrio de 8.003 € significa que el negocio de diseño web se sostiene con muy poca facturación, dejando margen de tiempo y de riesgo para construir FARO en paralelo. Las líneas recurrentes que se han introducido aquí (mantenimiento, SEO local) son además el mismo músculo comercial que necesita FARO: vender una cuota mensual, no un proyecto.
 
 ---
 

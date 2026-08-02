@@ -12,16 +12,16 @@ Antes de nada, esto:
 
 | Escenario | Ventas Año 1 | Caja mínima | Meses en negativo | Colchón necesario |
 |---|---|---|---|---|
-| Pesimista | 18.754 € | −1.122 € | 4 | **1.122 €** |
-| **Previsto** | **33.355 €** | **−931 €** | **3** | **931 €** |
-| Optimista | 50.223 € | −723 € | 2 | **723 €** |
+| Pesimista | 19.246 € | −1.029 € | 4 | **1.029 €** |
+| **Previsto** | **34.018 €** | **−844 €** | **3** | **844 €** |
+| Optimista | 51.121 € | −675 € | 2 | **675 €** |
 
 Incluso vendiendo el doble de lo previsto entras en negativo, porque el problema no son las ventas del año: es el arranque.
 
 **Solo hay dos salidas, y hay que elegir una conscientemente:**
 
-1. **Que el primer cliente firme el mes 1.** Su anticipo de 684 € casi cubre el agujero: la caja mínima pasa de −931 € a −247 €. Si además fraccionas el seguro de RC en vez de pagarlo de golpe, se queda en −47 € y un solo mes en rojo. **Por eso hay que vender antes de darse de alta.**
-2. **Tener ~1.200 € guardados** antes de empezar.
+1. **Que el primer cliente firme el mes 1.** Su anticipo de 684 € casi cubre el agujero: la caja mínima pasa de −844 € a unos −160 €. Si además fraccionas el seguro de RC en vez de pagarlo de golpe, se queda en −47 € y un solo mes en rojo. **Por eso hay que vender antes de darse de alta.**
+2. **Tener ~1.100 € guardados** antes de empezar.
 
 Todo lo demás del kit está ordenado alrededor de esto.
 
@@ -52,7 +52,7 @@ Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`
 2. **Comprueba que tienes derecho a la tarifa plana.** Todo el Año 1 depende de eso.
 3. **Decide el nombre del estudio.** Y decide si FARO es una marca aparte.
 4. **Empieza la lista de prospectos** con los beneficiarios del Kit Digital en León. Es la tarea con mejor retorno de todas — y además es el supuesto del plan con menos evidencia (ver `09_MAPA_COMPETITIVO_LEON.md`).
-5. **Sube el mantenimiento de 60 a 80 €/mes.** El mercado va de 50 a 150 € y estás en el suelo. Con 20 clientes son 4.800 € más al año.
+5. **Precios ya corregidos** con el mapa competitivo: mantenimiento 60 → 80 €/mes y web profesional 3.500 → 2.900 €. Están aplicados en los dos libros.
 
 **No te des de alta todavía.** El reloj de la tarifa plana son 12 meses y empieza el día del alta.
 

@@ -103,7 +103,7 @@ Casi siempre es un no educado. Contesta:
 
 Los proyectos pagan las facturas del mes. **Las cuotas son las que construyen el negocio.** En cada entrega, esta frase:
 
-> "La web ya está. Ahora, o alguien la mantiene, o en un año está como estaba la anterior. Por 60 € al mes me ocupo yo: copias, actualizaciones, seguridad y los cambios pequeños que necesites. Y paso a verte cada trimestre."
+> "La web ya está. Ahora, o alguien la mantiene, o en un año está como estaba la anterior. Por 80 € al mes me ocupo yo: copias, actualizaciones, seguridad y los cambios pequeños que necesites. Y paso a verte cada trimestre."
 
 **Ofrécelo siempre, en el momento de la entrega**, cuando la satisfacción está en su punto más alto. No un mes después.
 

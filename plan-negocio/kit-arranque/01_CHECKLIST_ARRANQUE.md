@@ -108,7 +108,7 @@ Por probabilidad de que ocurra:
 
 | Riesgo | Qué hacer antes de que pase |
 |---|---|
-| **Los 3 primeros meses en negativo** | Es lo más probable de todo. Ver `PANEL_ARRANQUE`: necesitas ~1.200 € de colchón o el primer cliente firmado antes del alta |
+| **Los 3 primeros meses en negativo** | Es lo más probable de todo. Ver `PANEL_ARRANQUE`: necesitas ~1.100 € de colchón o el primer cliente firmado antes del alta |
 | **El cliente no entrega los contenidos** | Cláusula cuarta del contrato: 15 días de plazo, y a los 60 se factura lo hecho |
 | **El alcance crece sin pagarse** | Dos rondas de cambios incluidas, por escrito. La tercera se factura |
 | **Un impago** | 50 % por adelantado y no entregar accesos sin cobrar |

@@ -146,7 +146,7 @@ Para la cuota de mantenimiento usa un contrato aparte, con estos puntos mínimos
 
 - **Objeto:** copias de seguridad, actualizaciones de plataforma y plugins, monitorización de disponibilidad, soporte por correo y **hasta `[N]` pequeños cambios de contenido al mes**
 - **Qué NO incluye:** páginas nuevas, rediseños, funcionalidades nuevas, recuperación de ataques por credenciales cedidas a terceros
-- **Precio:** `[60]` €/mes + IVA, domiciliado, cobro por adelantado
+- **Precio:** `[80]` €/mes + IVA, domiciliado, cobro por adelantado
 - **Permanencia mínima:** 12 meses
 - **Preaviso de baja:** 30 días
 - **Tiempo de respuesta:** `[1-2]` días hábiles
