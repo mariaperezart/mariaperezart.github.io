@@ -14,7 +14,7 @@
 | Cotización | **Tarifa plana de 80 €/mes** el primer año |
 | Equipo | **Ordenador y conexión ya en propiedad** |
 | Capital inicial | **Ninguno.** Solo el material que ya tiene |
-| Herramienta central | **Suscripción de Claude**, como coste recurrente explícito |
+| Herramienta central | **Suscripción de Claude Pro**, como coste recurrente explícito |
 
 ---
 
@@ -30,7 +30,7 @@ Y estaba dimensionado para una empresa que no existe: **presupuestaba un emplead
 
 El resultado de ajustarlo a tu realidad es un plan mucho más pequeño y mucho más sólido:
 
-> **Punto de equilibrio: 9.082 € al año.** El 26 % de la facturación prevista. El negocio no necesita crecer para sobrevivir; necesita crecer para pagarte un sueldo digno. Es lo que convierte la falta de capital en resiliencia.
+> **Punto de equilibrio: 8.047 € al año.** El 24 % de la facturación prevista. El negocio no necesita crecer para sobrevivir; necesita crecer para pagarte un sueldo digno. Es lo que convierte la falta de capital en resiliencia.
 
 ---
 
@@ -123,9 +123,9 @@ Las verticales de Ponferrada (bodegas de la DO Bierzo) se sustituyen por las dos
 | 4 | ~~Ilustración (50 €)~~ → **Mantenimiento gestionado** | — | **60 €/mes** | 180 €/año | 75,0 % |
 | 5 | *(línea nueva)* **SEO local y Google Business** | — | **250 €/mes** | 480 €/año | 84,0 % |
 
-**Margen bruto medio ponderado: 85,11 %.** La web esencial sube de 800 € a 1.200 € deliberadamente: a 800 € se compite de frente contra plataformas de IA, y esa batalla está perdida.
+**Margen bruto medio ponderado: 84,76 %.** La web esencial sube de 800 € a 1.200 € deliberadamente: a 800 € se compite de frente contra plataformas de IA, y esa batalla está perdida.
 
-Las dos líneas recurrentes suponen el **28 % de la facturación del Año 1**. Trabajando sola valen aún más que con equipo: el ingreso recurrente no exige volver a vender cada mes, que es justo lo que escasea.
+Las dos líneas recurrentes suponen el **29 % de la facturación del Año 1**. Trabajando sola valen aún más que con equipo: el ingreso recurrente no exige volver a vender cada mes, que es justo lo que escasea.
 
 ### 3.4 La estructura de costes
 
@@ -133,8 +133,8 @@ Sin local, sin nóminas, sin deuda y sin inversión:
 
 | Partida | Año 1 |
 |---|---|
-| **Suscripciones de software** | **2.340 €** |
-| ↳ Claude (plan Max, ~95 €/mes) | 1.140 € |
+| **Suscripciones de software** | **1.430 €** |
+| ↳ Claude Pro (~19 €/mes) | 230 € |
 | ↳ Adobe Creative Cloud (~62 €/mes) | 740 € |
 | ↳ Herramientas de SEO local | 300 € |
 | ↳ Hosting y dominios propios | 160 € |
@@ -147,11 +147,11 @@ Sin local, sin nóminas, sin deuda y sin inversión:
 | Seguro de responsabilidad civil profesional | 250 € |
 | Varios | 240 € |
 | Gastos previos iniciales | 100 € |
-| **Total** | **7.730 €** |
+| **Total** | **6.820 €** |
 
-**Claude es la segunda partida del negocio, después de tu propio sueldo.** Lo he presupuestado al plan Max (~95 €/mes) para no quedarme corto. Si te vale el **plan Pro** (~19 €/mes), el coste anual baja de 1.140 € a unos 230 € y **el punto de equilibrio cae por debajo de 8.000 €**. Es la celda `I271` de la hoja `CÓMO` si quieres cambiarla.
+**Presupuestado con el plan Pro** (~19 €/mes, 230 €/año), que es el que usas. Con el plan Max (~95 €/mes) el coste anual subiría a 1.140 € y el punto de equilibrio pasaría de 8.047 € a unos 9.100 €: seguiría siendo asumible, pero es una decisión que debe justificarse en horas. La celda es `I271` de la hoja `CÓMO`.
 
-Está justificado en el plan como condición de viabilidad, no como capricho: una sola persona no produce 18 proyectos al año, sostiene una cartera de mantenimiento y SEO, escribe contenido propio y dedica dos mañanas semanales a vender, con los métodos de 2020. El criterio para renovarla: **si no ahorra al menos una jornada al mes, sobra.**
+Está justificado en el plan como condición de viabilidad, no como capricho: una sola persona no produce 17 proyectos al año, sostiene una cartera de mantenimiento y SEO, escribe contenido propio y dedica dos mañanas semanales a vender, con los métodos de 2020. El criterio para renovarla: **si no ahorra al menos una jornada al mes, sobra.**
 
 ### 3.5 Inversión inicial: prácticamente cero
 
@@ -186,8 +186,8 @@ Se ha ajustado todo lo que dependía del local:
 
 | Magnitud | Original | Adaptado |
 |---|---|---|
-| Ventas Año 1 | 52.172,68 € | **34.259 €** |
-| **Punto de equilibrio** | 28.618,26 € | **9.082 €** |
+| Ventas Año 1 | 52.172,68 € | **33.329 €** |
+| **Punto de equilibrio** | 28.618,26 € | **8.047 €** |
 | Retribución (líquido anual) | 18.000 € | **18.000 €** = 1.500 €/mes |
 | Inversión total | 4.900,50 € | **121 €** |
 | Tesorería inicial | −570,50 € | **+179 €** |
@@ -196,9 +196,9 @@ Trayectoria a tres años:
 
 | | Ventas | Disponible para ti |
 |---|---|---|
-| **Año 1** | 34.259 € | 18.000 € — **1.500 €/mes** |
-| **Año 2** (+20 %) | 41.111 € | 20.295 € — **1.691 €/mes** |
-| **Año 3** (+15 %) | 47.277 € | 23.266 € — **1.939 €/mes** |
+| **Año 1** | 33.329 € | 18.000 € — **1.500 €/mes** |
+| **Año 2** (+20 %) | 39.995 € | 20.165 € — **1.680 €/mes** |
+| **Año 3** (+15 %) | 45.995 € | 23.034 € — **1.919 €/mes** |
 
 **La validación cruzada que el plan original no tenía.** La plantilla despeja las ventas desde el sueldo objetivo; para comprobar que la cifra es alcanzable, se ha construido aparte la previsión ascendente que faltaba:
 
@@ -206,22 +206,31 @@ Trayectoria a tres años:
 |---|---|---|---|
 | Web esencial | 1.200 € | 10 | 12.000 € |
 | Web profesional / e-commerce | 3.500 € | 2 | 7.000 € |
-| Identidad visual y diseño gráfico | 950 € | 6 | 5.700 € |
+| Identidad visual y diseño gráfico | 950 € | 5 | 4.750 € |
 | Mantenimiento gestionado | 60 €/mes | 97 meses-cliente | 5.820 € |
 | SEO local | 250 €/mes | 15 meses-cliente | 3.750 € |
-| **Total** | | | **34.270 €** |
+| **Total** | | | **33.320 €** |
 
-**34.270 € (ascendente) frente a 34.259 € (modelo): diferencia del 0,03 %.**
+**33.320 € (ascendente) frente a 33.329 € (modelo): diferencia del 0,03 %.**
 
-Son **18 proyectos al año, 1,5 al mes.** Deliberadamente conservador: trabajando sola, la capacidad real no es producir 18 proyectos, es producirlos **dejando tiempo para vender los del año siguiente**.
+Son **17 proyectos al año, 1,4 al mes.** Deliberadamente conservador: trabajando sola, la capacidad real no es producir 17 proyectos, es producirlos **dejando tiempo para vender los del año siguiente**.
 
 ### 3.8 Los dos riesgos que hay que vigilar
 
-**1. El salto de cuota del mes 13.** Al acabar la tarifa plana, el RETA pasa de **960 € a unos 3.960 € anuales** (tramo 8, ~330 €/mes con tu nivel de rendimiento). Son 3.000 € más de coste fijo sin haber subido de sueldo.
+**1. El salto de cuota del mes 13.** No es un error del plan: es cómo funciona la tarifa plana.
 
-La plantilla no lo veía: solo inflacionaba la cuota del Año 1 con el IPC. **He sustituido esas dos fórmulas por la cuota real** (`D148` y `E148` de la hoja `CUÁNTO Y CUÁNDO`). La mitigación está en los objetivos del Año 1: **apartar 250 € al mes** durante el primer año son exactamente los 3.000 € del salto.
+La tarifa plana de 80 €/mes dura **12 meses**. A partir del mes 13 pasas al sistema ordinario de **cotización por ingresos reales**, donde la cuota depende del tramo en que caiga tu rendimiento neto. Con el rendimiento previsto en este plan (unos 1.786 €/mes) caes en el tramo 7-8, de unos **330 €/mes**.
 
-*Matiz:* la tarifa plana se prorroga otros 12 meses si el rendimiento neto no supera el SMI (1.184 €/mes). Con 1.500 €/mes no se cumpliría, así que el plan asume prudentemente que no se prorroga.
+| | Año 1 | Año 2 |
+|---|---|---|
+| Cuota mensual | 80 € | ~330 € |
+| Coste anual | **960 €** | **~3.960 €** |
+
+Son **3.000 € más de coste fijo** sin que hayas subido de sueldo, y llegan de golpe el mes 13.
+
+La plantilla no lo veía: solo inflacionaba la cuota del Año 1 con el IPC, lo que habría dejado el Año 2 en unos 990 € en lugar de 3.960 €. **He sustituido esas dos fórmulas por la cuota real** (`D148` y `E148` de la hoja `CUÁNTO Y CUÁNDO`). La mitigación está en los objetivos del Año 1: **apartar 250 € al mes** durante el primer año son exactamente los 3.000 € del salto.
+
+**Hay una salida, y hay que pedirla.** La tarifa plana se prorroga otros 12 meses si tu rendimiento neto no supera el SMI (1.184 €/mes, 14.208 €/año). El plan proyecta 1.786 €/mes, así que asume prudentemente que no la tendrás — pero el primer año arrancas de cero clientes y es perfectamente posible que el rendimiento real se quede por debajo. **Revísalo en el mes 10**: si vas por debajo del SMI, solicita la prórroga. No es automática, hay que pedirla. Está puesto como objetivo del Año 1 en el libro.
 
 **2. Que la venta se coma a la producción, o al revés.** Es la debilidad estructural de trabajar sola y no tiene solución barata. La defensa del plan son **dos mañanas semanales bloqueadas para prospección, tratadas como si fueran una entrega con fecha**, y usar la IA para comprimir producción y liberar horas de venta — no para bajar el precio.
 
@@ -233,7 +242,7 @@ La plantilla no lo veía: solo inflacionaba la cuota del Año 1 con el IPC. **He
 2. **Declarar los metros afectos en el 036**, o no podrás deducir nada de los suministros de casa.
 3. **Revisar los estatutos de tu comunidad de propietarios** y el criterio del Ayuntamiento de León sobre actividad en el domicilio.
 4. **Epígrafe de IAE**: determina si las facturas llevan retención del 15 % y si tienes que presentar el modelo 130. Resolver con la asesoría antes del 036.
-5. **Decidir el plan de Claude**: Max (1.140 €/año, como está presupuestado) o Pro (~230 €/año, que baja el punto de equilibrio por debajo de 8.000 €).
+5. **Vigilar si Pro te llega.** El plan va con Pro (230 €/año). Si el volumen te obliga a pasar a Max, son 910 € más al año y el punto de equilibrio sube a unos 9.100 €.
 6. **Verificar las tres cifras de mercado** marcadas como estimación propia (sección 3.2).
 7. **Solicitar las ayudas.** El plan **no computa ninguna** — la viabilidad no depende de ellas. Pero sin capital inicial, una subvención es la vía más rápida de crear el colchón de tesorería que hoy no existe:
    - **CONSOLIDACYL** (Junta de Castilla y León), con atención especial a la reincorporación de la mujer.
@@ -262,7 +271,7 @@ El libro conserva su estructura y sus 1.732 fórmulas. Se han escrito únicament
 
 Este repositorio contiene la documentación de **FARO** (automatización con IA para clínicas dentales). El plan adaptado aquí **no** es FARO: es la continuación del negocio de diseño web y gráfico del documento original.
 
-Y con esta estructura son más compatibles que nunca: un punto de equilibrio de 9.082 € significa que el negocio de diseño web se sostiene con muy poca facturación, dejando margen de tiempo y de riesgo para construir FARO en paralelo. Las líneas recurrentes que se han introducido aquí (mantenimiento, SEO local) son además el mismo músculo comercial que necesita FARO: vender una cuota mensual, no un proyecto.
+Y con esta estructura son más compatibles que nunca: un punto de equilibrio de 8.047 € significa que el negocio de diseño web se sostiene con muy poca facturación, dejando margen de tiempo y de riesgo para construir FARO en paralelo. Las líneas recurrentes que se han introducido aquí (mantenimiento, SEO local) son además el mismo músculo comercial que necesita FARO: vender una cuota mensual, no un proyecto.
 
 ---
 
