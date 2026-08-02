@@ -40,6 +40,7 @@ Todo lo demás del kit está ordenado alrededor de esto.
 | 05 | `05_CONTRATO_SERVICIOS.md` | Contrato tipo | Antes del 1.er proyecto |
 | 07 | `07_RGPD_ENCARGADO_TRATAMIENTO.md` | Obligatorio con cada cliente | Antes del 1.er proyecto |
 | 08 | `08_TEXTOS_LEGALES_WEB.md` | Para las webs que entregues | Antes de la 1.ª entrega |
+| 09 | `09_MAPA_COMPETITIVO_LEON.md` | Quién compite en León, a qué precios y dónde está el hueco | **Ahora** |
 
 Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`) y su **análisis** (`ANALISIS_Y_ADAPTACION_LEON_2026.md`).
 
@@ -50,7 +51,8 @@ Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`
 1. **Abre el panel** y cambia el escenario a *Pesimista*. Mira los meses en rojo. Ese es tu riesgo real, y es manejable si lo ves venir.
 2. **Comprueba que tienes derecho a la tarifa plana.** Todo el Año 1 depende de eso.
 3. **Decide el nombre del estudio.** Y decide si FARO es una marca aparte.
-4. **Empieza la lista de prospectos** con los beneficiarios del Kit Digital en León. Es la tarea con mejor retorno de todas.
+4. **Empieza la lista de prospectos** con los beneficiarios del Kit Digital en León. Es la tarea con mejor retorno de todas — y además es el supuesto del plan con menos evidencia (ver `09_MAPA_COMPETITIVO_LEON.md`).
+5. **Sube el mantenimiento de 60 a 80 €/mes.** El mercado va de 50 a 150 € y estás en el suelo. Con 20 clientes son 4.800 € más al año.
 
 **No te des de alta todavía.** El reloj de la tarifa plana son 12 meses y empieza el día del alta.
 
