@@ -152,3 +152,76 @@ De acuerdo, y conviene dejarlo escrito para que no se reabra dentro de tres sema
 > **Lumbre queda decidido.** Solo se reabre si la OEPM lo bloquea en las clases 35 o 42. Ninguna otra razón —que aparezca un nombre «también bueno», que alguien opine, que un día suene raro— reabre esta decisión.
 
 Y si la OEPM lo bloquea, no se empieza de cero: se va a la lista corta de la sección 8 del documento 15, por este orden — **Cartabón**, **Vencejo**, **Cayado**.
+
+
+---
+
+## 7. Qué ocupa «Lumbre» hoy, y qué significa
+
+> **Aviso: esto es búsqueda web, no OEPM.** Dice quién usa el nombre comercialmente, no quién lo tiene registrado ni en qué clases. La consulta en la OEPM sigue pendiente y sigue siendo la única que decide.
+
+### Lo que hay
+
+«Lumbre» en España está ocupado principalmente por **restaurantes**:
+
+| Quién | Dónde |
+|---|---|
+| Lumbre Restaurante | Casalarreina, La Rioja — 1 Sol Repsol 2024 y 2025 |
+| **Lumbre** | **León capital, Barrio Húmedo** — abierto en marzo de 2024 |
+| La Lumbre de Rivas SL | Rivas-Vaciamadrid, hostelería |
+
+### La consecuencia buena: probablemente sea registrable
+
+Los servicios de restauración son **clase 43**. Los tuyos son **35** (publicidad y gestión de negocios) y **42** (diseño y desarrollo de webs). Son clases distintas y sin relación de complementariedad: **una marca de restaurante no bloquea una marca de estudio de diseño.**
+
+Si lo que aparece en la OEPM son registros en clase 43, **LUMBRE a secas es registrable en 35 y 42**, y toda la discusión sobre marcas compuestas sobra.
+
+**El dato que hay que mirar en la OEPM no es si existe «LUMBRE». Es en qué clases.** Existir, existe seguro. Lo único relevante es si hay algo en la 35 o en la 42.
+
+> **Ojo con una trampa:** muchas marcas de hostelería registran también la **clase 35**, porque cubre publicidad y venta al por menor. Si alguno de esos restaurantes lo hizo, sí habría conflicto parcial — en 35, no en 42. En ese caso cabe registrar solo la 42, que es la que de verdad cubre el diseño y desarrollo web.
+
+### La consecuencia mala, y no es legal: es comercial
+
+**Hay un restaurante llamado Lumbre en León capital**, que es la mitad de tu mercado.
+
+Legalmente da igual. Comercialmente no:
+
+- Quien busque «Lumbre León» va a encontrar un restaurante, no a ti. Tu ficha de Google competirá por el nombre con un negocio local ya asentado.
+- «He contratado a Lumbre» en León puede recibir un «¿el del Barrio Húmedo?».
+- Y confirma el riesgo que ya estaba anotado en este documento: **fuego + calor + hogar es territorio de restaurante**, y no es una coincidencia que tres negocios de hostelería hayan llegado a la misma palabra.
+
+**Mi lectura:** no mata el nombre. Vendes sobre todo en Ponferrada y El Bierzo, la categoría es tan distinta que nadie se confunde dos segundos, y en cuanto alguien ve la web se acabó la ambigüedad. Pero es un coste real que no estaba sobre la mesa cuando se decidió, y conviene decidir **sabiéndolo**, no descubrirlo en la tercera visita.
+
+---
+
+## 8. Si la OEPM bloquea: por qué un apellido NO es la solución
+
+Existe la idea de que, si «Lumbre» está cogido, basta con convertirlo en marca compuesta —Lumbre Digital, Lumbre Local, Lumbre Estudio— y el problema desaparece. **No funciona así, y creerlo sale caro.**
+
+En la práctica de la OEPM y la EUIPO, el riesgo de confusión se juzga por el **elemento dominante**. En «LUMBRE DIGITAL» frente a un «LUMBRE» anterior en las mismas clases:
+
+- El elemento distintivo es idéntico: *Lumbre*.
+- «Digital» es descriptivo del servicio y tiene distintividad casi nula, así que **no diferencia**.
+- Resultado previsible: riesgo de confusión, y oposición prosperando.
+
+**Añadir una palabra genérica es la peor manera posible de esquivar un conflicto de marca.** Solo diferenciaría un segundo término que fuese *distintivo* por sí mismo — y entonces ya no es «Lumbre», es otro nombre.
+
+### Las opciones compuestas, valoradas
+
+| Propuesta | Veredicto |
+|---|---|
+| **Lumbre Digital** | ❌ Además de no resolver nada legalmente, **incumple tu propio encargo inicial**: «no quiero que suene tecnológico — Tech, Digital, Solutions». Es literalmente una de las palabras que descartaste |
+| **Lumbre Creative** | ❌ Anglicismo. Descartado en el encargo original |
+| **Lumbre Estudio** | ❌ Ya descartado en la sección 3, y tampoco resolvería el conflicto |
+| **Lumbre Local** | 🟡 Cálido y bien posicionado, pero «local» es descriptivo (poca protección) y te encierra: el día que trabajes en Asturias, el nombre te contradice |
+| **Lumbre Bierzo / Lumbre Norte** | 🟡 Geográficos: distintividad débil en registro y techo de crecimiento. «Bierzo» además roza denominaciones protegidas |
+| **Lumbre Web** | ❌ Te ata al servicio que menos margen recurrente deja |
+| **Somos Lumbre** | 🟡 Con personalidad, pero es una frase, no un nombre: incómodo en un logotipo, torpe al decir «soy de Somos Lumbre», y no se puede abreviar a «Lumbre» sin recrear el conflicto que venía a resolver |
+
+### Lo que sí haría si la OEPM bloquea la 42
+
+**Nada de apellidos.** Un compuesto construido sobre una raíz bloqueada hereda el problema y encima te deja un nombre peor. Se pasa al siguiente de la lista: **Cartabón**, y después Vencejo y Cayado.
+
+### Y una separación que conviene tener clara
+
+**El dominio no dice nada de la marca.** Que `lumbre.es` esté ocupado no significa que la marca lo esté, ni al revés: cualquiera puede tener un dominio sin ningún derecho de marca. Son dos registros independientes, en dos sitios distintos, con dos efectos distintos. Puedes llamarte Lumbre y estar en `lumbreestudio.es` sin ningún problema.
