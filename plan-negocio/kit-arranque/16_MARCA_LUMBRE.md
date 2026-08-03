@@ -60,16 +60,36 @@ Lumbre invita a una tentación inmediata: *encender*, *prender*, *chispa*, *aviv
 
 ---
 
-## 3. Arquitectura del nombre
+## 3. Arquitectura del nombre: **Lumbre**, sin apellido
 
-- **Marca de uso:** **Lumbre**, a secas. Es lo que se dice por teléfono y lo que se pone en el logotipo.
-- **Forma larga**, solo cuando hace falta desambiguar (registro, firma de correo, pie de factura): **Estudio Lumbre**. En ese orden — «Lumbre Estudio» suena a calco del inglés.
-- **Nombre legal:** el tuyo como empresaria individual. «Lumbre» es marca comercial, no denominación social, mientras no haya sociedad.
-- **No** crear submarcas por servicio (*Lumbre Web*, *Lumbre Marca*). Con dos personas y cinco servicios, dividir la marca la debilita sin ganar nada.
+**Se llama Lumbre. Punto.** Ni «Lumbre Estudio», ni «Estudio Lumbre», ni «Lumbre Diseño», ni «Lumbre Digital».
 
-**Dice «he contratado a Lumbre», no «he contratado a una empresa de webs».** Ese es el activo: funciona como nombre propio. No lo estropees añadiéndole apellidos descriptivos.
+### Por qué no lleva apellido
 
----
+**1. «Estudio» no hace el trabajo por el que estaría ahí.** Si el apellido existe para explicar qué eres, a un ferretero de Ponferrada «Estudio Lumbre» no le explica nada: en castellano «estudio» es también un piso pequeño y un sitio donde te hacen fotos de la comunión. Añade una señal equivocada y encima no informa.
+
+**2. «Nombre + Estudio» es un patrón saturado y con acento urbano.** Estudio Albino, Estudio Santa Rita, Estudio Menta, Estudio Primo. Es la fórmula del diseño y la arquitectura de Madrid y Barcelona de los últimos años. Lumbre es una palabra del noroeste —cocina de leña, invierno, monte— y ese contraste es justo lo que sobra.
+
+**3. La prueba del bar.** *«Soy de Lumbre»* frente a *«Soy de Lumbre Estudio»*. La primera la dice cualquiera en Villafranca sin pensarlo; la segunda hay que ensayarla.
+
+**4. No hace falta forma larga para nada legal.** Es la razón que zanja el asunto. Como empresaria individual, en la factura y en el contrato va tu **nombre y apellidos con tu NIF**, no la marca. «Lumbre» es un nombre comercial, no una denominación social. No existe ningún documento que exija un apellido.
+
+**5. En la OEPM se registra mejor.** Una marca denominativa de una sola palabra —**LUMBRE**— protege más que «Lumbre Estudio», porque el segundo término es genérico y no aporta distintividad. Menos palabras, más protección, y la misma tasa.
+
+### Dónde va entonces lo que haces
+
+El descriptor no desaparece: se separa del nombre y va donde toca.
+
+| Sitio | Qué se escribe |
+|---|---|
+| Logotipo y tarjeta | **LUMBRE**, y debajo, en pequeño: `Diseño web · Imagen de marca · Mantenimiento` y `Ponferrada · León` |
+| Al presentarte | «Soy de Lumbre, hacemos las webs de los negocios de aquí» — la cláusula explicativa va en la frase, no en el nombre |
+| Teléfono | «Lumbre, dígame» |
+| `<title>` de la web | `Lumbre — Diseño web en Ponferrada y El Bierzo`. Es un título de página, no el nombre de la marca: ahí sí van las palabras que se buscan |
+| Ficha de Google Business | **Lumbre**, a secas. Google prohíbe meter palabras clave en el campo del nombre; lo que posiciona es la **categoría**, que se pone en «Diseñador de sitios web» |
+| Factura y contrato | Tu nombre completo y tu NIF. La marca puede aparecer en el membrete, pero no sustituye a lo legal |
+
+> **En la tarjeta, «SEO local» no.** Es el servicio menos entendido de los cinco y el más difícil de vender en frío. En la tarjeta van los tres que se entienden sin explicación; el SEO se cuenta en la visita, cuando ya hay confianza.
 
 ## 4. Lo visual: qué se conserva y qué cambia
 
