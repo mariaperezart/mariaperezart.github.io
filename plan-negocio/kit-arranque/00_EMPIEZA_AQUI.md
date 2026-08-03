@@ -45,6 +45,7 @@ Todo lo demás del kit está ordenado alrededor de esto.
 | 12 | **`12_PROSPECCION_PONFERRADA.md`** | Prospección de Ponferrada y El Bierzo, con plan de la primera semana | **Ahora** |
 | 13 | **`13_SOCIO_Y_FIGURA_FISCAL.md`** | Cómo incorporar al segundo socio y qué cambia su deuda con Hacienda | **Ahora** |
 | 14 | **`14_COMO_PAGAR_A_TU_PADRE.md`** | La mecánica de pagarle: cuánto da el plan, cómo se mueve el dinero, qué papel lo respalda | **Ahora** |
+| 15 | **`15_NAMING.md`** | 100 nombres para el estudio, con el embudo hasta 3 ganadores y la comparación con FARO | **Ahora** |
 | 11 | `11_GUION_ENTREVISTAS.md` | 10 entrevistas a negocios de León para falsar los supuestos del plan **antes** del alta | **Ahora** |
 
 Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`) y su **análisis** (`ANALISIS_Y_ADAPTACION_LEON_2026.md`).
@@ -55,7 +56,7 @@ Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`
 
 1. **Abre el panel** y cambia el escenario a *Pesimista*. Mira los meses en rojo. Ese es tu riesgo real, y es manejable si lo ves venir.
 2. **Comprueba que tienes derecho a la tarifa plana.** Todo el Año 1 depende de eso.
-3. **Decide el nombre del estudio.** Y decide si FARO es una marca aparte.
+3. **Decide el nombre del estudio** con `15_NAMING.md`. FARO no es sostenible: está saturado y es imposible de posicionar. Y **quita el ® de la web actual hoy**: si la marca no está registrada, ese símbolo no se puede usar.
 3.b **Que tu padre pida el aplazamiento de su deuda con Hacienda.** Hasta 50.000 € sin aval. Es lo que desbloquea que pueda ser socio y que podáis pedir subvenciones (ver `13_SOCIO_Y_FIGURA_FISCAL.md`).
 3.c **Firmad el pacto de comisión antes de la primera visita.** Un folio: 20 % de lo cobrado de los clientes que traiga él, 12 meses por cliente. El plan actual, tal cual, deja **0 €** para pagarle: hace falta llegar a ~40.000 € de ventas para que cobre algo digno (ver `14_COMO_PAGAR_A_TU_PADRE.md`).
 4. **Abre `10_PROSPECTOS_LEON.md`** y comprueba a mano las webs de los 11 negocios del segmento 1. Están señalados por indicios, no auditados: es una hora de trabajo y te deja la lista de las primeras llamadas.
