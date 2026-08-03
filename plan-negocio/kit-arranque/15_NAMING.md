@@ -293,3 +293,97 @@ En este orden, y ninguna cuesta dinero:
 4. **Dominio `.es` y `.com`** — en cualquier registrador. Si el `.com` está pillado pero el `.es` libre, para un negocio local no es un problema.
 5. **Google e Instagram** — buscar «*nombre* + estudio» y «*nombre* + diseño». Aquí es donde apareció Aplomo Studio, no en un registro.
 6. **La prueba del teléfono.** Llama a tu padre y dile solo el nombre. Que te lo escriba. Si lo escribe mal, tienes un problema que ningún registro te va a avisar.
+
+---
+
+## 7. Segunda ronda: descartado Compludo, buscando en el territorio que sí gusta
+
+Al presentar los tres finalistas, la respuesta fue: **gustan Hito y Aplomo, no gusta Compludo**. Eso es información valiosa, porque no es una preferencia estética: es el rechazo de una **estrategia** completa.
+
+**Queda descartado el territorio toponímico y patrimonial** —Compludo, Aquiana, Ferrada, Bergidum, Souto, Médulas— y confirmado el de los **sustantivos abstractos castellanos, cortos y sobrios, que nombran una cualidad**.
+
+### El problema estructural que esto crea
+
+Compludo puntuaba 10 en diferenciación y 10 en buscabilidad **precisamente por no ser una palabra común**. Al descartar ese camino, hay que aceptar una consecuencia:
+
+> **Cualquier sustantivo común del castellano ya tiene ocupantes.** La pregunta deja de ser «¿está libre?» —no lo va a estar— y pasa a ser **«¿es tolerable esta colisión?»**.
+
+### El test de tolerancia
+
+Una colisión es **grave** si se cumplen tres cosas a la vez: mismo sector, mismo país con alcance no meramente local, y nombre prácticamente idéntico. Si solo se cumple una, normalmente se puede convivir.
+
+| Nombre | Ocupante encontrado | Sector | Nombre idéntico | Veredicto |
+|---|---|---|---|---|
+| **Aplomo** | Aplomo Studio (Sevilla) | Estudio creativo: branding, web, naming | Sí, si usas «Aplomo Estudio» | 🔴 **Grave** |
+| **Hito** | Hitostudio | Diseño web y marketing | Compuesto, no idéntico | 🟠 Media, pero ver abajo |
+| **Jalón** | Jalón iMagen (Valladolid) | SEO y diseño web | Compuesto | 🟠 Media — y es **Castilla y León**, tu mismo mercado |
+| **Temple** | Temple Creativo | Diseño web y landing pages | Compuesto | 🟠 Media |
+| **Tesón** | *No se ha encontrado ninguno en el sector* | — | — | 🟢 **Libre** |
+| **Cabal** | Cábala Creativos (Alicante) | Diseño gráfico | No: «Cábala» ≠ «Cabal» | 🟢 **Libre** |
+
+### Por qué Hito se cae aunque no existiera Hitostudio
+
+No es por el competidor. Es que **«hito» es un sustantivo común de uso corriente**: «marcar un hito», «un hito histórico». Eso significa dos cosas que no tienen arreglo:
+
+- **No se puede posicionar.** Google devuelve el uso genérico de la palabra. Para un estudio que vende SEO local, no poder posicionar su propio nombre es una contradicción que el cliente nota.
+- **No se puede proteger bien.** Un registro sobre una palabra común es débil frente a terceros: te da poco derecho a impedir que otros la usen.
+
+Es un nombre estupendo para recordar y malo para poseer.
+
+### Si aun así quieres Aplomo, estas son las condiciones
+
+No está muerto legalmente. En España lo que da derechos es **el registro**, no el uso: si «APLOMO» no está registrado en clases 35 y 42, puedes solicitarlo tú y serías la titular. El estudio de Sevilla podría oponerse alegando uso anterior no registrado (art. 9 de la Ley 17/2001), pero eso exige demostrar un alcance **no meramente local**, y un perfil de Behance es prueba fina.
+
+**Solo tomaría Aplomo si se cumplen las dos:**
+
+1. La búsqueda en OEPM y TMview en clases 35 y 42 sale limpia, y presentas la solicitud **antes** de gastar en rotulación.
+2. Aceptas que vas a compartir los resultados de Google con un estudio del mismo sector para siempre, y que cuando un cliente busque tu nombre puede acabar en Sevilla.
+
+El riesgo legal es asumible. El comercial, no tanto.
+
+### Las dos recomendaciones nuevas
+
+#### Cabal — primera opción
+
+**Significado.** Completo, exacto, sin que falte ni sobre nada. Y «una persona cabal»: íntegra, de fiar. En Castilla es de los mayores elogios que se le hacen a alguien.
+
+| | |
+|---|---|
+| Memorabilidad | 7 |
+| Diferenciación | 8 |
+| Profesionalidad | 8 |
+| Potencial de marca | 7 |
+| Buscabilidad | 7 |
+| Colisión | 🟢 Libre en el sector |
+
+**Por qué funciona.** Es el que más se parece a lo que te gustó de Aplomo: una cualidad de carácter, adulta y sobria, no una metáfora que hay que explicar. Y resume la promesa comercial entera del estudio en cinco letras — presupuesto cerrado, accesos a tu nombre, «te decimos que no si no te conviene». «Estudio Cabal» suena a despacho asentado, no a estudio recién montado, que es exactamente el problema de credibilidad que tienes.
+
+**En contra.** En varios países de América se usa como muletilla («¿cabal?»). Existe **Cabal**, red de tarjetas de pago importante en Argentina — irrelevante para León, relevante si algún día cruzas el charco. Y puede leerse como apellido.
+
+#### Tesón — segunda opción
+
+**Significado.** Constancia, firmeza en no abandonar lo empezado.
+
+| | |
+|---|---|
+| Memorabilidad | 7 |
+| Diferenciación | 8 |
+| Profesionalidad | 7 |
+| Potencial de marca | 7 |
+| Buscabilidad | 7 |
+| Colisión | 🟢 No se ha encontrado ninguno |
+
+**Por qué funciona, y es más fino de lo que parece.** Tu mercado número uno son webs que alguien hizo, cobró y abandonó — las del Kit Digital sin proveedor de mantenimiento. Tu producto recurrente son 80 €/mes por no abandonarlas. **Un estudio que se llama Tesón está respondiendo a la objeción antes de que la formulen.** De los cien nombres, es el que mejor encaja con la tesis comercial del plan.
+
+**En contra.** Habla de esfuerzo, no de talento ni de criterio. Puede leerse como tesón de hormiga en vez de como buen ojo. Es el riesgo real de este nombre.
+
+### Si lo que te gustaba era la idea, no la palabra
+
+- **La plomada de Aplomo** (comprobar que algo está recto) sobrevive en **Plomada**: libre, más literal, menos rotundo por ser de tres sílabas y femenino.
+- **El mojón de Hito** (la marca que dice cuánto has avanzado) sobrevive en **Jalón** y **Linde**. Jalón tiene el inconveniente de Valladolid, que es tu mismo mercado regional.
+
+### Recomendación final de esta ronda
+
+**Cabal.** Es lo más cerca que se puede estar de Aplomo sin heredar su problema, y no tiene ningún punto débil grave en España.
+
+Si suena demasiado seco, **Tesón**. Si Cabal y Tesón se caen en la OEPM, entonces vuelve la conversación sobre Compludo — porque el problema de fondo no era Compludo: era que las palabras comunes ya están cogidas.
