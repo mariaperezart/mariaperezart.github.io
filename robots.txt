@@ -1,5 +1,4 @@
 User-agent: *
-Disallow: /gracias/
 Allow: /
 
 Sitemap: https://mariaperezart.github.io/sitemap.xml

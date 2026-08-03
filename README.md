@@ -29,7 +29,24 @@ Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
-Sitio estático (HTML/CSS/JS, sin dependencias de build) que implementa el copy y diseño de los documentos anteriores. Pensado para publicarse vía GitHub Pages directamente desde este repositorio.
+Sitio estático (HTML/CSS/JS, sin dependencias de build), pensado para publicarse vía GitHub Pages directamente desde este repositorio.
+
+> ⚠️ **El sitio ya no es el de la automatización para clínicas dentales.** Desde agosto de 2026 la web es la del **estudio de diseño web y gráfico de El Bierzo y León** (`plan-negocio/`), que es el negocio que se va a arrancar de verdad. Se mantiene el nombre FARO y el sistema visual completo de `FARO_IDENTIDAD_VISUAL.md` — logo, paleta, tipografías y componentes no han cambiado.
+>
+> Los documentos `FARO_*.md` de la sección 1 **siguen describiendo el negocio de clínicas** y no se han reescrito: son la tesis anterior, útil como archivo, pero no describen lo que hay hoy en la web. Si en algún momento el proyecto de clínicas se retoma, habrá que decidir si comparte marca o no.
+
+| Página | Contenido |
+|---|---|
+| `/` | Portada: propuesta de valor, tres problemas típicos, proceso, precios y alcance |
+| `/servicios/` + 4 subpáginas | Diseño web · Identidad visual · Mantenimiento · SEO local |
+| `/precios/` | Hoja de precios completa (1.200 € / desde 2.900 € / 950 € / 80 €/mes / 250 €/mes) |
+| `/como-funciona/` | El proceso en 6 pasos y qué se necesita del cliente |
+| `/quienes-somos/` | El estudio, los compromisos y la zona de trabajo |
+| `/diagnostico/` | Autodiagnóstico de 8 preguntas (se resuelve en el navegador, no envía nada) |
+| `/preguntas-frecuentes/` | 12 preguntas con datos estructurados `FAQPage` |
+| `/contacto/`, `/gracias/`, `/404.html`, `/legal/*` | Resto del sitio |
+
+Los precios y plazos publicados son exactamente los del plan de negocio (`plan-negocio/kit-arranque/06_PRESUPUESTO_TIPO.md`): si se cambian ahí, hay que cambiarlos aquí.
 
 ## 2.1 Plan de negocio de diseño web (`plan-negocio/`)
 
@@ -41,6 +58,9 @@ Construido sobre la realidad de la promotora: **una sola persona, trabajando des
 |---|---|
 | `plan-negocio/ANALISIS_Y_ADAPTACION_LEON_2026.md` | Análisis de los errores del plan original (fiscalidad canaria, salario bajo SMI, ventas despejadas en lugar de previstas, estructura sobredimensionada) y justificación de cada cambio |
 | `plan-negocio/PLAN_NEGOCIO_LEON_2026.xlsx` | El libro adaptado: misma plantilla y mismas fórmulas, con los datos, la normativa y el mercado de 2026 |
+| `plan-negocio/kit-arranque/` | Kit de arranque completo: checklist, guía fiscal, contrato, RGPD, prospección de León y Ponferrada, y los documentos 13 y 14 sobre el segundo socio |
+
+**Nota:** el arranque comercial se hace en **Ponferrada y El Bierzo** con un segundo socio (labor comercial), figura fiscal aún sin formalizar. El modelo financiero del `.xlsx` sigue calculado para **una sola persona retribuida**; los documentos 13 y 14 del kit explican el umbral de facturación a partir del cual puede retribuirse al segundo.
 
 Contiene datos personales y financieros reales — este repositorio es privado y no tiene GitHub Pages activo, así que no se publica.
 
@@ -65,11 +85,15 @@ Todo lo de arriba es código y contenido — está terminado. Lo que sigue son a
 ### Conectar los formularios (gratis o de bajo coste, ~20 minutos)
 - [ ] Crear una cuenta en un servicio de formularios (Formspree, Getform, o similar).
 - [ ] Sustituir `https://formspree.io/f/TU_ID_DE_FORMSPREE` en `contacto/index.html` por tu endpoint real.
-- [ ] Repetir para el formulario de `/diagnostico/` si decides conectarlo a un backend real (hoy calcula en el navegador sin enviar datos a ningún sitio).
-- [ ] Sustituir el email y teléfono de ejemplo en `/contacto/` por los reales.
+- [ ] Sustituir `hola@faro.es` por el correo real en `contacto/index.html` (aparece 2 veces) y añadir teléfono si quieres recibir llamadas. El autodiagnóstico de `/diagnostico/` no necesita backend: se resuelve entero en el navegador y no envía nada.
 
-### Revisión legal (coste variable, recomendable antes de operar con datos de pacientes)
-- [ ] Encargar a un abogado especializado en protección de datos sanitarios la redacción de `/legal/privacidad/`, `/legal/terminos/` y `/legal/cookies/` (hoy son marcadores de posición, ver `FARO_WEB_COPY.md`, sección 12).
+### Antes de publicar: decidir el nombre y el dominio
+- [ ] Confirmar si el estudio se va a llamar FARO de cara al cliente. Si cambia, hay que tocar el logo (`assets/img/`), el `<title>` de las 15 páginas y el JSON-LD.
+- [ ] Registrar el dominio y configurarlo en Settings → Pages → Custom domain. Al hacerlo, actualizar la constante `BASE` de los `canonical`, `og:url` y `sitemap.xml`, que hoy apuntan a `mariaperezart.github.io`.
+
+### Revisión legal (coste variable, antes de publicar)
+- [ ] Completar en `/legal/terminos/` y `/legal/privacidad/` los datos identificativos reales (nombre, NIF, domicilio, correo): la Ley 34/2002 los exige y hoy son marcadores de posición.
+- [ ] Que la asesoría o un abogado revise los tres textos legales antes de operar con datos de clientes. Están alineados con `plan-negocio/kit-arranque/08_TEXTOS_LEGALES_WEB.md`.
 
 ### Infraestructura técnica del MVP (~30-75€/mes, ver `FARO_TESIS_MVP_60DIAS.md` sección 2.8)
 - [ ] Contratar un VPS (recomendado Hetzner CX22).

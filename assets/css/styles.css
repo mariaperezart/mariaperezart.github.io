@@ -140,7 +140,8 @@ a { color: var(--color-primary); }
   }
   .nav__links.is-open { display: flex; }
   .nav__toggle { display: block; }
-  .nav__cta { display: none; }
+  /* El CTA se mantiene visible en móvil, pero compacto: es la conversión principal */
+  .nav__cta { padding: 8px 14px; font-size: 13px; }
 }
 
 /* Botones */

@@ -4,9 +4,30 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Página no encontrada — FARO</title>
-<meta name="description" content="La página que buscas no existe o se ha movido. Vuelve al inicio de FARO o contacta con nosotros.">
-<meta name="robots" content="noindex">
+<meta name="description" content="La página que buscas no existe o ha cambiado de sitio.">
+<link rel="canonical" href="https://mariaperezart.github.io/404.html">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
+<meta property="og:title" content="Página no encontrada — FARO">
+<meta property="og:description" content="La página que buscas no existe o ha cambiado de sitio.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://mariaperezart.github.io/404.html">
+<meta property="og:image" content="/assets/img/favicon.svg">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  "name": "FARO",
+  "url": "https://mariaperezart.github.io/",
+  "logo": "https://mariaperezart.github.io/assets/img/logo.svg",
+  "description": "Estudio de diseño web y gráfico en Ponferrada (El Bierzo) y León. Diseño, mantenimiento y posicionamiento local para negocios de la zona.",
+  "areaServed": [
+    { "@type": "City", "name": "Ponferrada" },
+    { "@type": "City", "name": "León" },
+    { "@type": "AdministrativeArea", "name": "El Bierzo" }
+  ],
+  "knowsLanguage": "es-ES"
+}
+</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -16,30 +37,69 @@
 <header class="site-header">
   <nav class="nav">
     <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+    <button class="nav__toggle" aria-label="Abrir menú">☰</button>
     <ul class="nav__links">
-      <li><a href="/">Inicio</a></li>
+      <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/como-funciona/">Cómo trabajamos</a></li>
+      <li><a href="/precios/">Precios</a></li>
+      <li><a href="/quienes-somos/">Quiénes somos</a></li>
+      <li><a href="/preguntas-frecuentes/">FAQ</a></li>
       <li><a href="/contacto/">Contacto</a></li>
     </ul>
+    <a class="btn btn--accent nav__cta" href="/diagnostico/">Diagnóstico gratis</a>
   </nav>
 </header>
 
 <main>
+
   <section class="hero text-center">
     <div class="container">
-      <h1>Esta página se nos ha escapado a nosotros también.</h1>
-      <p>Irónico, lo sabemos — pero esta sí la vemos nosotros, no un paciente tuyo. Vuelve al inicio o dinos qué buscabas.</p>
-      <div class="hero__actions" style="justify-content: center;">
-        <a class="btn btn--primary" href="/">Volver al inicio</a>
-        <a class="btn btn--secondary" href="/contacto/">Contactar</a>
+      <span class="hero__eyebrow">Error 404</span>
+      <h1>Aquí no hay nada.</h1>
+      <p style="max-width:520px;margin:0 auto;">La página que buscabas no existe o ha cambiado de sitio. Ironías del oficio: esto es exactamente uno de los fallos que buscamos en los diagnósticos.</p>
+      <div class="hero__actions" style="justify-content:center;">
+        <a class="btn btn--accent" href="/">Volver al inicio</a>
+        <a class="btn btn--secondary" href="/servicios/">Ver servicios</a>
       </div>
     </div>
   </section>
 </main>
 
 <footer class="site-footer">
+  <div class="container footer__grid">
+    <div>
+      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Diseño web y de marca para negocios de El Bierzo y León. Presupuesto cerrado, plazo por escrito y los accesos siempre a tu nombre.</p>
+    </div>
+    <div>
+      <h4>Servicios</h4>
+      <a href="/servicios/diseno-web/">Diseño web</a>
+      <a href="/servicios/identidad-visual/">Identidad visual</a>
+      <a href="/servicios/mantenimiento-web/">Mantenimiento</a>
+      <a href="/servicios/seo-local/">SEO local</a>
+    </div>
+    <div>
+      <h4>Estudio</h4>
+      <a href="/quienes-somos/">Quiénes somos</a>
+      <a href="/como-funciona/">Cómo trabajamos</a>
+      <a href="/precios/">Precios</a>
+      <a href="/contacto/">Contacto</a>
+    </div>
+    <div>
+      <h4>Recursos</h4>
+      <a href="/diagnostico/">Diagnóstico gratuito</a>
+      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
+    </div>
+  </div>
   <div class="container footer__legal">
-    <span>© 2026 FARO. Todos los derechos reservados.</span>
+    <span>© 2026 FARO. Ponferrada · León.</span>
+    <span>
+      <a href="/legal/privacidad/">Privacidad</a>
+      <a href="/legal/terminos/">Términos</a>
+      <a href="/legal/cookies/">Cookies</a>
+    </span>
   </div>
 </footer>
+<script src="/assets/js/main.js"></script>
 </body>
 </html>
