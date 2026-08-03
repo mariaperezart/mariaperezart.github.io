@@ -33,6 +33,28 @@ Es el supuesto peor sostenido de todo el plan y a la vez el que sostiene el merc
 
 ---
 
+## 0.1 No hagas dos rondas de visitas. Haz una.
+
+Hay una tentación razonable —y cara— que conviene descartar antes de empezar: hacer primero 10 entrevistas de investigación y después, semanas más tarde, volver a salir a vender. Son dos rondas de coche, dos rondas de agenda y dos veces la misma cara delante del mismo empresario.
+
+**Es el mismo viaje.** La visita de diagnóstico (`03_DIAGNOSTICO_15_MIN.md`) y la entrevista son la misma cita, con el orden invertido:
+
+| Momento | Qué haces | Por qué en ese orden |
+|---|---|---|
+| Primeros 20 min | **La entrevista.** Preguntas por su última decisión digital, sin enseñar nada tuyo | Si primero enseñas el diagnóstico, ya no te cuenta la verdad: te contesta a lo que le has enseñado |
+| Últimos 15 min | **El diagnóstico.** Sacas el informe, los tres hallazgos, y cierras con «¿te preparo un presupuesto?» | Ya sabes qué le duele. El informe se cuenta con sus palabras, no con las tuyas |
+
+Cambia una sola cosa del guion del bloque 1: en vez de decir «no vengo a venderte nada», di **«primero te pregunto y luego te enseño lo que he mirado de tu web»**. Es cierto, y evita la incomodidad de sacar el informe después de haber dicho que no vendías.
+
+**Dos números distintos que conviene no confundir:**
+
+- **10 entrevistas** es lo que hace falta para *aprender*. Más de 10 empieza a repetirse; menos de 10 no distingue señal de anécdota.
+- **20-30 visitas** es lo que hace falta para *llenar el embudo* y sacar el primer cliente del mes 1, que es de lo que depende que la caja no entre en negativo.
+
+Las 10 primeras son las dos cosas a la vez. De la 11 en adelante, ya solo vendes — pero **sigues rellenando el recuento de objeciones** de la sección 7.
+
+---
+
 ## 1. Por qué estas 10 conversaciones valen más que 300 filas de datos
 
 Una hoja de cálculo con 300 negocios de León te dice **quién existe**. No te dice nada de lo único que importa.
@@ -444,6 +466,22 @@ Se hace **de una sentada**, con las 10 fichas encima de la mesa, no entrevista a
 **3. Dinero.** Coloca las 10 cifras en una recta. Mira dónde caen tus 1.200 € y tus 2.900 €. Y aparte, cuenta cuántos pagan hoy algo recurrente y de cuánto: eso valida o tumba los 80 €/mes, que son el 32 % de tus ingresos previstos.
 
 **4. Tiempo idea → firma.** Coge la **mediana**, no la media (un caso de dos años te desplaza la media y te miente). Esa mediana te dice si el primer cliente puede firmar el mes 1, que es de lo que depende que la caja no entre en negativo.
+
+**5. La objeción que se repite.** Este recuento no se para en la entrevista 10: se sigue rellenando en cada visita mientras vendas.
+
+Una línea por visita, en un papel o en una hoja de cálculo:
+
+| Fecha | Negocio | La frase con la que te frenó, **literal** | ¿Antes o después de dar el precio? | ¿Cerró? |
+|---|---|---|---|---|
+
+Dos reglas para que sirva de algo:
+
+- **Literal, con sus palabras.** «Es que ahora no es el momento» y «es que ya tengo una web» son objeciones distintas y se responden distinto. Si lo resumes a «precio», pierdes la información.
+- **Anota si salió antes o después del precio.** Una objeción antes del precio es de posicionamiento (no ha entendido para qué sirve). Después del precio es de valor percibido (lo ha entendido y no lo vale para él). Se arreglan en sitios distintos de la web.
+
+**El umbral de acción:** cuando **la misma objeción aparezca en 6 de 10 visitas**, esa es la frase que hay que responder en la web —en la portada o en la FAQ—, y hay que responderla con lo que hayas contestado tú en persona cuando sí funcionó. Antes de esas 6, no toques la web: estarías reescribiendo por intuición, que es exactamente lo que este documento existe para evitar.
+
+> Esto también sirve al revés. Si en 20 visitas **nadie** menciona que las webs del Kit Digital se quedaron sin mantenimiento, esa hipótesis está muerta y hay que reordenar la prospección antes de gastar meses de tarifa plana persiguiéndola.
 
 ### Cuándo algo es señal y cuándo es ruido
 

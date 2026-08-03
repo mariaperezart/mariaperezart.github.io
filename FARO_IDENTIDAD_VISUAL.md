@@ -1,5 +1,9 @@
 # FARO — Identidad Visual
 
+> **Este documento sigue vigente: es el sistema visual que usa la web actual del estudio de diseño.** Logo, paleta, tipografías, escala de espaciado y componentes están implementados tal cual en `assets/css/styles.css`.
+>
+> Lo que sí quedó del proyecto anterior de clínicas dentales, y hay que leer con esa salvedad: los ejemplos de iconografía (sección 6), el estilo fotográfico (sección 7) y el moodboard (sección 12) están redactados para el sector sanitario. El resto es independiente del sector y no cambia.
+
 **Fase 3 del ecosistema empresarial FARO**
 Traduce a sistema visual el posicionamiento de la Fase 1 (socio de confianza, criterio antes que tecnología, cercanía profesional) y la estructura de negocio de la Fase 2. Este documento es una especificación de diseño lista para que un diseñador gráfico o una herramienta de generación de imágenes la ejecute directamente — no bocetos ni ideas sueltas.
 

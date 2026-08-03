@@ -27,6 +27,24 @@ Ponferrada es un mercado más pequeño que León capital —63.444 habitantes fr
 
 ---
 
+## El vínculo padre-hija: herramienta de venta, no posicionamiento de marca
+
+Esta distinción vale dinero, así que conviene tenerla clara antes de la primera visita.
+
+**En la web y en la marca, no.** El 89-92 % de las empresas españolas son familiares: decir «somos una empresa familiar» no diferencia nada, y en diseño y tecnología proyecta *pequeño e informal* justo donde más falta hace proyectar solvencia. La web no lo menciona, y es deliberado.
+
+**En la silla, delante del cliente, sí.** Muchos de los negocios de esta lista —bodegas de la DO Bierzo, elaboradores de botillo, casas rurales del Camino— son familiares de segunda o tercera generación. Ahí, «esto lo llevamos mi hija y yo» hace tres cosas en una frase:
+
+- Explica por qué sois dos y por qué uno vende y el otro produce, sin que parezca improvisado
+- Iguala la conversación: el que tienes delante también metió a un hijo en el negocio
+- Responde por adelantado a la objeción de la edad, que es la que de verdad frena a una diseñadora joven delante de un bodeguero de sesenta
+
+**Dónde encaja en el guion:** en la apertura, una sola vez, sin insistir. No es el argumento de venta —el argumento sigue siendo el diagnóstico y los tres hallazgos—, es lo que abre la puerta para poder darlo.
+
+**Dónde no encaja:** con ayuntamientos, consejos reguladores y cualquier interlocutor institucional. Ahí lo que se valora es proceso y cumplimiento, y el vínculo familiar no suma o resta.
+
+---
+
 ## Segmento 1 — Bodegas DO Bierzo
 
 **El vertical con mayor ticket medio y mayor efecto demostración.** Una bodega que te contrata te abre las siguientes: se conocen todas.
