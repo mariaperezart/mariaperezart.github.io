@@ -387,3 +387,106 @@ El riesgo legal es asumible. El comercial, no tanto.
 **Cabal.** Es lo más cerca que se puede estar de Aplomo sin heredar su problema, y no tiene ningún punto débil grave en España.
 
 Si suena demasiado seco, **Tesón**. Si Cabal y Tesón se caen en la OEPM, entonces vuelve la conversación sobre Compludo — porque el problema de fondo no era Compludo: era que las palabras comunes ya están cogidas.
+
+---
+
+## 8. Tercera ronda: dos correcciones, una discrepancia y un cambio de familia
+
+Esta sección nace de una crítica externa al documento. Dos de sus objeciones son correctas y obligan a corregir lo escrito arriba.
+
+### Corrección 1 — «Hito no se puede posicionar» estaba mal planteado
+
+Sobrevaloré la buscabilidad. El argumento en contra es bueno: Apple, Orange y Zara son palabras comunes y posicionan perfectamente, porque la autoridad de marca acaba imponiéndose al significado del diccionario.
+
+Pero hay una razón más simple y más contundente que ninguna de las dos partes puso encima de la mesa:
+
+> **Nadie descubre un estudio de diseño buscando su nombre.** El nombre solo se busca cuando ya te conocen. Lo que trae clientes nuevos es posicionar «diseño web Ponferrada», y eso no depende del nombre del estudio.
+
+**La buscabilidad baja de eje decisivo a criterio de desempate.** Lo único que sobrevive del argumento original es menor y hay que decirlo así: cuando un empresario al que visitaste te busque tres semanas después y no recuerde bien el nombre, acabar en el estudio de Sevilla es una fricción real. Pequeña, no decisiva.
+
+Queda corregido también el punto 0 de este documento: el quinto eje estaba sobreponderado.
+
+### Corrección 2 — «Las palabras comunes no se pueden proteger» era falso
+
+Lo era. Una palabra del diccionario **sí se registra** si no es descriptiva de los productos o servicios de su clase. «Hito» aplicado a servicios de diseño es **arbitrario**, no descriptivo, y tiene carácter distintivo normal: es registrable. Lo que no se registra es lo descriptivo («Diseño Web», «Estudio Gráfico»).
+
+Lo que sí sobrevive, y es de práctica y no de derecho: con una palabra de uso corriente convives con más usos ajenos y tu zona real de defensa es más estrecha. Pero eso es incomodidad, no impedimento.
+
+### Discrepancia — el test de comprensión de «Cabal» mide lo que no toca
+
+La crítica propone: preguntar a diez empresarios qué significa «cabal» y, si menos de siete aciertan, descartarlo. Y a la vez sostiene —con razón— que Stripe, Slack y Notion no significan nada y funcionan igual.
+
+**Las dos cosas no pueden ser verdad al mismo tiempo.** Si un nombre no necesita significar nada, la comprensión no puede ser el listón. El listón es el recuerdo.
+
+El test correcto para cualquier candidato no es *«¿qué significa esto?»* sino:
+
+1. **Dilo una vez. Al día siguiente, pregunta cuál recuerda.**
+2. **Pídele que lo escriba**, sin verlo.
+3. **Pregúntale qué le sugiere.** No buscas la definición: buscas que no le sugiera nada malo.
+
+Dicho eso, la parte de fondo de la objeción es justa: afirmé que «cabal» se entiende sin ninguna evidencia. No la tengo.
+
+### La crítica de fondo: nombres bonitos frente a nombres eficaces
+
+El diagnóstico es correcto y el remedio, para este caso, no.
+
+**Por qué el remedio no sirve.** Stripe, Slack, Notion, Asana y Trello son empresas estadounidenses con capital riesgo que venden en autoservicio a un público global de perfil técnico. Un nombre arbitrario es óptimo ahí porque es registrable en todo el mundo y porque **el significado se compra con dinero**: pagan campañas hasta que la palabra signifique lo que ellos quieren.
+
+Aquí la situación es la inversa en todos los ejes: no hay presupuesto para comprar significado, se vende cara a cara a gente de más de cincuenta años, y el nombre se va a **pronunciar en un bar de Villafranca** más veces de las que se va a teclear. Un nombre arbitrario, sin dinero detrás, no es neutral: se paga en tiempo de explicación en cada visita.
+
+**Por qué el diagnóstico sí es correcto, y el error real que señala.** El problema de Aplomo, Cabal, Tesón, Criterio y Esmero no es que signifiquen demasiado. Es que son **sustantivos abstractos**, y los sustantivos abstractos son la categoría que peor se recuerda y la más saturada: media consultoría de España se llama así.
+
+> La regla que de verdad importa es **concreto por encima de abstracto**. Una palabra que produce una imagen mental se recuerda mucho mejor que una que nombra una cualidad. «Cartabón» y «Lumbre» se ven. «Aplomo» y «Cabal» no se ven.
+
+Y de ahí sale la conclusión incómoda: **el orden que propone la propia crítica —Aplomo, Tesón, Cabal— es exactamente el contrario al que implica su propio principio.** Los tres son abstractos. Los tres están en la familia menos memorable.
+
+Esto rehabilita en parte a Compludo, que fue descartado. No se relitiga: se deja anotado que el motivo por el que puntuaba alto era este, no el localismo.
+
+### La matriz ponderada, ejecutada
+
+Con los pesos propuestos: memorabilidad 25 %, pronunciar 15 %, escribir 15 %, legal 20 %, dominio 10 %, diferenciación 15 %.
+
+**Advertencia: el 30 % del peso —legal y dominio— no se puede puntuar** sin la OEPM y un registrador. Publicar un ranking con ese 30 % inventado sería fabricar precisión. Lo que sigue está calculado **solo sobre el 70 % verificable** y es provisional.
+
+| Puesto | Nombre | Puntuación (70 %) | Familia |
+|---|---|---|---|
+| 1 | **Hito** | 8,57 | Abstracto |
+| 2 | **Vencejo** | 8,43 | Concreto |
+| 2 | **Lumbre** | 8,43 | Concreto |
+| 4 | **Cartabón** | 8,21 | Concreto |
+| 5 | **Cayado** | 8,07 | Concreto |
+| 6 | **Cepa** | 8,00 | Concreto |
+| 6 | **Aplomo** | 8,00 | Abstracto |
+| 8 | **Tesón** | 7,86 | Abstracto |
+| 8 | **Obrador** | 7,86 | Concreto |
+| 8 | **Cabal** | 7,86 | Abstracto |
+| 11 | **Sillar** | 7,71 | Concreto |
+| 12 | **Compludo** | 7,64 | Concreto |
+
+**Dos resultados que conviene mirar de frente:**
+
+- **La matriz devuelve a Hito al primer puesto**, contradiciendo el orden que propuso quien planteó la matriz. Los pesos cargan el 55 % en memorabilidad, pronunciación y escritura, y ahí Hito es imbatible. La matriz tampoco puntúa la profesionalidad, que sí estaba en los ejes originales.
+- **Cabal y Tesón caen al octavo puesto.** Bajo estos pesos, mi recomendación de la ronda anterior no se sostiene. Queda retirada.
+
+### La familia nueva: concretos e imaginables
+
+Sin topónimos, que están descartados. Objetos y cosas que producen imagen:
+
+| Nombre | Significado | A favor | En contra | Ocupante encontrado |
+|---|---|---|---|---|
+| **Lumbre** | El fuego del hogar | Calidez máxima, imagen inmediata, «al amor de la lumbre» habla directo al negocio familiar. Sin tilde, se escribe a la primera | Puede leerse como restaurante o casa rural | Ninguno en el sector |
+| **Cartabón** | La escuadra de 60/30 grados del estuche de dibujo | Todo el mundo lo ve al oírlo, y es inequívocamente del oficio de dibujar. Alta diferenciación | Tilde; puede sonar a material escolar | Ninguno en el sector |
+| **Vencejo** | El pájaro que anida en los aleros y vuela rápido y preciso | Concreto, vivo, cero pretensión, muy castellano | No dice nada del servicio; puede leerse infantil | Sin comprobar |
+| **Cayado** | El bastón del pastor y del peregrino | Imagen, Camino de Santiago, apoyo sin dirigir | Puede sonar religioso o rural en exceso | Sin comprobar |
+| **Cepa** | El tronco de la vid; y «de buena cepa» | Cortísimo, imagen clara, encaja con bodegas | Saturado en el sector del vino | Sin comprobar |
+| **Obrador** | El taller artesano | Gremial, cálido, artesanal | Muy asociado a panadería | Sin comprobar |
+
+### Sobre dedicar «una o dos sesiones más»
+
+De acuerdo con seguir trabajándolo. En desacuerdo con que bloquee nada.
+
+**El nombre no impide salir a la calle la semana que viene.** Lo que vende tu padre en la primera visita es un diagnóstico gratuito, no una marca: puede presentarse con su nombre y su teléfono. Lo que sí bloquea el nombre es rotulación, dominio, logotipo y facturas — y nada de eso hace falta hasta la primera factura.
+
+**Y el test de los 20 empresarios se hace dentro de las visitas que ya vas a hacer**, igual que las entrevistas del documento 11. Al final de cada visita, tres candidatos dichos en voz alta, y al día siguiente una llamada de treinta segundos: *«¿cuál recuerdas?»* y *«¿me lo escribes por WhatsApp?»*. Veinte visitas, veinte datos, cero desplazamientos extra.
+
+**El ganador de ese test gana el naming.** Nada de lo escrito en este documento —ni la matriz, ni los cinco ejes, ni mi criterio— pesa más que veinte empresarios de El Bierzo diciendo cuál se les quedó.
