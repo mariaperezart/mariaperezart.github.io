@@ -29,7 +29,9 @@ Ejecuta el proceso comercial y de validación de `FARO_PROCESO_COMERCIAL.md` con
 
 ## 2. Sitio web (`index.html` y carpetas de página)
 
-Sitio estático (HTML/CSS/JS, sin dependencias de build), pensado para publicarse vía GitHub Pages directamente desde este repositorio.
+Sitio estático (HTML/CSS/JS, sin dependencias de build).
+
+> 📍 **Dónde está publicado.** El sitio se sirve desde **`faroconsultoria.vercel.app`**, que Vercel despliega desde la rama `main` del repositorio **`mariaperezart/faro-app`**. GitHub Pages sigue desactivado aquí. Este repositorio es la **fuente**: se edita aquí y se copia a `faro-app` (raíz), donde la plataforma anterior de clínicas se conserva bajo `/plataforma/`, `/checkout/`, `/onboarding/` y `/dashboard/`. Si editas la web directamente en `faro-app`, los dos repos divergen.
 
 > ⚠️ **El sitio ya no es el de la automatización para clínicas dentales.** Desde agosto de 2026 la web es la del **estudio de diseño web y gráfico de El Bierzo y León** (`plan-negocio/`), que es el negocio que se va a arrancar de verdad. Se mantiene el nombre FARO y el sistema visual completo de `FARO_IDENTIDAD_VISUAL.md` — logo, paleta, tipografías y componentes no han cambiado.
 >
@@ -76,11 +78,12 @@ Contiene datos personales y financieros reales — este repositorio es privado y
 
 Todo lo de arriba es código y contenido — está terminado. Lo que sigue son acciones que **solo tú puedes ejecutar**, porque requieren tu identidad legal, tu método de pago o tus propias cuentas. Ningún asistente puede completarlas por ti.
 
-### Publicar la web (gratis, ~15 minutos)
-- [ ] Fusionar a `main` la pull request abierta con el trabajo más reciente (o la rama activa en ese momento, si hay una PR sin fusionar — revisa qué rama tiene los últimos commits antes de publicar, `main` puede estar por detrás de una rama `claude/...` en curso).
-- [ ] En GitHub: **Settings → Pages** de este repositorio → fuente = rama `main` → carpeta raíz.
-- [ ] Confirmar que `mariaperezart.github.io` sirve la web (puede tardar unos minutos en propagarse).
-- [ ] Si quieres un dominio propio (ej. `faro.clinic`), registrarlo y configurarlo en Settings → Pages → Custom domain.
+### Publicar la web (ya desplegada, queda comprobarla)
+- [x] La web está empujada a `main` de `mariaperezart/faro-app`; Vercel la despliega sola en cada push.
+- [ ] **Abrir `faroconsultoria.vercel.app` y comprobar que sirve la web nueva.** No se ha podido verificar desde la sesión: la política de red del entorno bloquea `vercel.app`.
+- [ ] Comprobar que las tipografías cargan (Google Fonts se sirve desde fuera y aquí estaba bloqueado).
+- [ ] Fusionar a `main` de este repositorio la rama `claude/ponferrada-2026-analysis-jsknfv`, que es donde vive la fuente.
+- [ ] Si quieres un dominio propio (ej. `faroconsultoria.es`), registrarlo y añadirlo en el proyecto de Vercel → Settings → Domains. Al hacerlo, actualizar la constante `BASE` de los `canonical`, `og:url` y `sitemap.xml`.
 
 ### Conectar los formularios (gratis o de bajo coste, ~20 minutos)
 - [ ] Crear una cuenta en un servicio de formularios (Formspree, Getform, o similar).
