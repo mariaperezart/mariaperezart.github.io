@@ -47,6 +47,7 @@ Todo lo demás del kit está ordenado alrededor de esto.
 | 14 | **`14_COMO_PAGAR_A_TU_PADRE.md`** | La mecánica de pagarle: cuánto da el plan, cómo se mueve el dinero, qué papel lo respalda | **Ahora** |
 | 15 | `15_NAMING.md` | 100 nombres para el estudio y las tres rondas de criba. Cerrado: el nombre es Lumbre | Archivo |
 | 16 | **`16_MARCA_LUMBRE.md`** | La marca decidida: propósito, territorio verbal, qué se conserva del sistema visual y en qué orden gastar | **Ahora** |
+| 17 | **`17_MODELO_RECURRENTE.md`** | Cuánto trabajo cabe de verdad en los 80 €/mes, y el techo de capacidad del negocio recurrente | **Ahora** |
 | 11 | `11_GUION_ENTREVISTAS.md` | 10 entrevistas a negocios de León para falsar los supuestos del plan **antes** del alta | **Ahora** |
 
 Y en la carpeta de arriba: el **plan de negocio** (`PLAN_NEGOCIO_LEON_2026.xlsx`) y su **análisis** (`ANALISIS_Y_ADAPTACION_LEON_2026.md`).
