@@ -1,14 +1,14 @@
 /* FARO — Sistema de diseño (ver FARO_IDENTIDAD_VISUAL.md) */
 
 :root {
-  /* Color */
-  --color-primary: #1B3A4B;   /* Azul Faro */
-  --color-accent: #E8A33D;    /* Ámbar Señal */
-  --color-ink: #20262B;       /* Grafito */
-  --color-bg: #F4F1EA;        /* Niebla */
+  /* Color — Sistema SILLAR */
+  --color-primary: #1F3A5F;   /* Marino */
+  --color-accent: #B8860B;    /* Arena/Terracota */
+  --color-ink: #575534;       /* Piedra */
+  --color-bg: #F5F1E8;        /* Arena clara */
   --color-white: #FFFFFF;
-  --color-success: #3E7A5C;   /* Verde Ancla */
-  --color-alert: #B4453A;     /* Rojo Baliza */
+  --color-success: #80D5CF;   /* Gris claro */
+  --color-alert: #B4453A;     /* Rojo */
   --color-border: #E4DFD3;
 
   /* Tipografía */
