@@ -5,35 +5,41 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.nav__toggle');
   var links = document.querySelector('.nav__links');
   if (toggle && links) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', function () {
-      links.classList.toggle('is-open');
+      var abierto = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
     });
   }
 
-  // Calculadora de ROI (página /diagnostico)
-  var roiForm = document.getElementById('roi-form');
-  if (roiForm) {
-    roiForm.addEventListener('submit', function (e) {
+  // Autodiagnóstico de 8 preguntas (página /diagnostico)
+  // Se resuelve entero en el navegador: no se envía nada a ningún servidor.
+  var checkForm = document.getElementById('check-form');
+  if (checkForm) {
+    var VEREDICTOS = [
+      { hasta: 3, texto: 'Hay bastante que arreglar, y probablemente estés perdiendo contactos sin enterarte. La buena noticia es que las cosas que fallan a este nivel suelen ser las más baratas de resolver: la ficha de Google, el formulario y el certificado de seguridad se arreglan en días, no en meses.' },
+      { hasta: 5, texto: 'Lo básico está, pero hay agujeros. Normalmente son el formulario que nadie ha vuelto a probar, la ficha de Google con datos viejos o un gestor de contenidos sin actualizar. Merece la pena mirarlo con calma antes de gastar dinero en nada nuevo.' },
+      { hasta: 7, texto: 'Estás mejor que la mayoría de negocios que revisamos. A este nivel lo que suele faltar no es arreglar, es mantener: que alguien mire la web cada pocos meses para que no se degrade sola.' },
+      { hasta: 8, texto: 'Ocho de ocho. Si has respondido con sinceridad, ahora mismo no necesitas contratarnos nada — y te lo diríamos igual en persona. Guárdanos para cuando quieras dar el siguiente paso o cuando algo empiece a fallar.' }
+    ];
+
+    checkForm.addEventListener('submit', function (e) {
       e.preventDefault();
 
-      var gabinetes = parseInt(document.getElementById('roi-gabinetes').value, 10) || 4;
-      var mensajesDia = parseInt(document.getElementById('roi-mensajes').value, 10) || 30;
+      var items = checkForm.querySelectorAll('.check-item');
+      var total = items.length;
+      var marcados = 0;
+      items.forEach(function (item) { if (item.checked) { marcados++; } });
 
-      // Misma lógica de cálculo que FARO_TESIS_MVP_60DIAS.md, sección 1.4
-      var mensajesFueraHorarioMes = mensajesDia * 0.15 * 30;
-      var contactosPerdidosMes = mensajesFueraHorarioMes * 0.20;
-      var recuperadosBajo = contactosPerdidosMes * 0.10;
-      var recuperadosAlto = contactosPerdidosMes * 0.15;
-      var valorMedioBajo = 150;
-      var valorMedioAlto = 250;
+      document.getElementById('check-score').textContent = marcados + ' de ' + total;
 
-      var ingresoBajo = Math.round(recuperadosBajo * valorMedioBajo);
-      var ingresoAlto = Math.round(recuperadosAlto * valorMedioAlto);
+      var veredicto = VEREDICTOS[VEREDICTOS.length - 1];
+      for (var i = 0; i < VEREDICTOS.length; i++) {
+        if (marcados <= VEREDICTOS[i].hasta) { veredicto = VEREDICTOS[i]; break; }
+      }
+      document.getElementById('check-verdict').textContent = veredicto.texto;
 
-      document.getElementById('roi-rango').textContent =
-        ingresoBajo.toLocaleString('es-ES') + '€ – ' + ingresoAlto.toLocaleString('es-ES') + '€ / mes';
-
-      var resultBox = document.getElementById('roi-result');
+      var resultBox = document.getElementById('check-result');
       resultBox.classList.add('is-visible');
       resultBox.scrollIntoView({ behavior: 'smooth', block: 'center' });
     });

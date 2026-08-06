@@ -3,22 +3,29 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Contacto — FARO</title>
-<meta name="description" content="Habla con FARO. Agenda una llamada de 15 minutos o escríbenos directamente.">
+<title>Contacto — SILLAR, diseño web y marca en El Bierzo y León</title>
+<meta name="description" content="Escríbenos y te contestamos en menos de 24 horas laborables. Diagnóstico gratuito de 15 minutos en Ponferrada, El Bierzo y León.">
+<link rel="canonical" href="https://faroconsultoria.vercel.app/contacto/">
 <link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="Contacto — FARO">
-<meta property="og:description" content="Habla con FARO. Agenda una llamada de 15 minutos o escríbenos directamente.">
+<meta property="og:title" content="Contacto — SILLAR, diseño web y marca en El Bierzo y León">
+<meta property="og:description" content="Escríbenos y te contestamos en menos de 24 horas laborables. Diagnóstico gratuito de 15 minutos en Ponferrada, El Bierzo y León.">
 <meta property="og:type" content="website">
-<meta property="og:url" content="https://mariaperezart.github.io/contacto/">
+<meta property="og:url" content="https://faroconsultoria.vercel.app/contacto/">
 <meta property="og:image" content="/assets/img/favicon.svg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
-  "name": "FARO",
-  "url": "https://mariaperezart.github.io/",
-  "logo": "https://mariaperezart.github.io/assets/img/logo.svg",
-  "description": "Automatización y optimización operativa por suscripción para clínicas dentales."
+  "@type": "ProfessionalService",
+  "name": "SILLAR",
+  "url": "https://faroconsultoria.vercel.app/",
+  "logo": "https://faroconsultoria.vercel.app/assets/img/logo.svg",
+  "description": "Estudio de diseño web y gráfico en Ponferrada (El Bierzo) y León. Diseño, mantenimiento y posicionamiento local para negocios de la zona.",
+  "areaServed": [
+    { "@type": "City", "name": "Ponferrada" },
+    { "@type": "City", "name": "León" },
+    { "@type": "AdministrativeArea", "name": "El Bierzo" }
+  ],
+  "knowsLanguage": "es-ES"
 }
 </script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -29,52 +36,80 @@
 <body>
 <header class="site-header">
   <nav class="nav">
-    <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> FARO</a>
+    <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> SILLAR</a>
     <button class="nav__toggle" aria-label="Abrir menú">☰</button>
     <ul class="nav__links">
-      <li><a href="/como-funciona/">Cómo funciona</a></li>
       <li><a href="/servicios/">Servicios</a></li>
+      <li><a href="/como-funciona/">Cómo trabajamos</a></li>
       <li><a href="/precios/">Precios</a></li>
-      <li><a href="/casos-de-exito/">Casos de éxito</a></li>
-      <li><a href="/preguntas-frecuentes/">FAQ</a></li>
+      <li><a href="/quienes-somos/">Quiénes somos</a></li>
+      <li><a href="/lo-que-recibes/">Lo que recibes</a></li>
       <li><a href="/contacto/">Contacto</a></li>
     </ul>
-    <a class="btn btn--accent nav__cta" href="/diagnostico/">Agenda tu diagnóstico</a>
+    <a class="btn btn--accent nav__cta" href="/diagnostico/">Diagnóstico gratis</a>
   </nav>
 </header>
 
 <main>
+
   <section class="hero">
-    <div class="container">
-      <h1>Hablemos de tu clínica, no de tecnología.</h1>
+    <div class="container hero__grid">
+      <div>
+        <p class="breadcrumb"><a href="/">Inicio</a> › Contacto</p>
+        <h1>Contacto — diseño web en Ponferrada y León</h1>
+        <p>Cuéntanos qué negocio tienes y qué te gustaría resolver. Contestamos en menos de 24 horas laborables, y si estás en la zona te proponemos un día para ir a verte.</p>
 
-      <form data-faro-form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
-        <p class="form-note form-pending-notice" style="display:none; color:var(--color-alert);">
-          Este formulario todavía no está conectado a un servicio de envío real. Sustituye la acción del formulario por tu propio endpoint (Formspree, Getform, etc.) antes de publicar.
-        </p>
-        <label for="c-nombre">Nombre</label>
-        <input type="text" id="c-nombre" name="nombre" required>
+        <!-- TODO: sustituir info@sillar.es por el correo real en TODO el sitio antes de publicar. Aparece en /contacto/ y en el cierre de las 11 páginas. -->
+        <div class="card" style="background:#FBF3E4;border-color:var(--color-accent);margin-bottom:24px;">
+          <p style="margin-bottom:8px;"><strong>Escríbenos directamente.</strong> Contesta la persona que hará tu web, no un buzón automático.</p>
+          <p style="font-family:var(--font-heading);font-size:24px;margin:0 0 12px;word-break:break-all;"><a href="mailto:info@sillar.es" style="text-decoration:none;">info@sillar.es</a></p>
+          <p style="margin-bottom:0;font-size:15px;">Contestamos en menos de 24 horas laborables, de lunes a viernes.</p>
+        </div>
+        <p><strong>Zona:</strong> Ponferrada, El Bierzo y León</p>
 
-        <label for="c-clinica">Clínica</label>
-        <input type="text" id="c-clinica" name="clinica" required>
+        <form data-faro-form action="https://formspree.io/f/PENDIENTE_DE_CONECTAR" method="POST">
+          <label for="c-nombre">Tu nombre</label>
+          <input type="text" id="c-nombre" name="nombre" required>
 
-        <label for="c-email">Email</label>
-        <input type="email" id="c-email" name="email" required>
+          <label for="c-negocio">Tu negocio y dónde está</label>
+          <input type="text" id="c-negocio" name="negocio" placeholder="Ej. Bar Ponte, Ponferrada" required>
 
-        <label for="c-telefono">Teléfono</label>
-        <input type="tel" id="c-telefono" name="telefono">
+          <label for="c-contacto">Teléfono o correo, como prefieras que te contestemos</label>
+          <input type="text" id="c-contacto" name="contacto" required>
 
-        <label for="c-mensaje">Mensaje (opcional)</label>
-        <textarea id="c-mensaje" name="mensaje" rows="4"></textarea>
+          <label for="c-mensaje">¿Qué te gustaría resolver? <span style="font-weight:400;color:#55606a;">(opcional)</span></label>
+          <textarea id="c-mensaje" name="mensaje" rows="4"></textarea>
 
-        <button type="submit" class="btn btn--accent" style="margin-top: 24px;">Enviar</button>
-      </form>
+          <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;margin-top:16px;">
+            <input type="checkbox" required style="width:auto;margin-top:4px;">
+            <span>He leído y acepto la <a href="/legal/privacidad/">política de privacidad</a>.</span>
+          </label>
 
-      <div style="margin-top: 48px;">
-        <p><strong>O escríbenos directamente:</strong></p>
-        <p>Email: <a href="mailto:hola@faro.clinic">hola@faro.clinic</a></p>
-        <p>Teléfono: <a href="tel:+34600000000">+34 600 000 000</a></p>
-        <p class="form-note">(Sustituye estos datos de contacto por los reales antes de publicar.)</p>
+          <button type="submit" class="btn btn--accent" style="margin-top:24px;">Enviar</button>
+          <p class="form-note form-pending-notice" style="display:none;color:var(--color-alert);">El formulario no ha podido enviarse. Escríbenos directamente a <a href="mailto:info@sillar.es">info@sillar.es</a> y lo resolvemos igual.</p>
+        </form>
+      </div>
+      <div>
+        <div class="card">
+          <h3>Qué pasa cuando escribes</h3>
+          <p><strong>1.</strong> Te contestamos, siempre.</p>
+          <p><strong>2.</strong> Si tienes web, la miramos antes de llamarte. Media hora de trabajo por nuestra parte, gratis.</p>
+          <p><strong>3.</strong> Te proponemos un día para vernos, quince minutos, en tu negocio.</p>
+          <p><strong>4.</strong> Sales de ahí con un informe de una página, tanto si nos contratas como si no.</p>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <h3 style="margin-top:0;">No te vamos a perseguir</h3>
+          <p style="margin-bottom:0;">Contestamos una vez. Si no nos dices nada, <strong>no volvemos a escribirte</strong>. Ni llamadas de seguimiento, ni correos recordatorios, ni newsletter a la que no te has apuntado.</p>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <h3 style="margin-top:0;">Dónde trabajamos</h3>
+          <p style="margin-bottom:0;">Ponferrada, Villafranca, Cacabelos, Bembibre, Camponaraya, Toreno, Villablino y toda la comarca. Y León capital. Si tu negocio está aquí, vamos a verte; si estás fuera, trabajamos a distancia.</p>
+        </div>
+        <div class="card" style="margin-top:24px;background:#FBF3E4;border-color:var(--color-accent);">
+          <h3 style="margin-top:0;">¿Prefieres ver primero cómo estás?</h3>
+          <p style="margin-bottom:16px;">Hay un test de ocho preguntas que se responde en un minuto y no pide correo.</p>
+          <a class="btn btn--accent" href="/diagnostico/">Hacer el test rápido (1 min)</a>
+        </div>
       </div>
     </div>
   </section>
@@ -83,29 +118,32 @@
 <footer class="site-footer">
   <div class="container footer__grid">
     <div>
-      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> FARO</a>
-      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Ayudamos a clínicas dentales a que ningún paciente que contacta se quede sin respuesta ni sin seguimiento.</p>
+      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> SILLAR</a>
+      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Diseño web y de marca para negocios de El Bierzo y León. Presupuesto cerrado, plazo por escrito y los accesos siempre a tu nombre.</p>
     </div>
     <div>
-      <h4>Producto</h4>
-      <a href="/como-funciona/">Cómo funciona</a>
-      <a href="/servicios/">Servicios</a>
+      <h4>Servicios</h4>
+      <a href="/servicios/diseno-web/">Diseño web</a>
+      <a href="/servicios/identidad-visual/">Identidad visual</a>
+      <a href="/servicios/mantenimiento-web/">Mantenimiento</a>
+      <a href="/servicios/seo-local/">SEO local</a>
+    </div>
+    <div>
+      <h4>Estudio</h4>
+      <a href="/quienes-somos/">Quiénes somos</a>
+      <a href="/como-funciona/">Cómo trabajamos</a>
       <a href="/precios/">Precios</a>
-    </div>
-    <div>
-      <h4>Empresa</h4>
-      <a href="/sobre-faro/">Sobre FARO</a>
-      <a href="/casos-de-exito/">Casos de éxito</a>
       <a href="/contacto/">Contacto</a>
     </div>
     <div>
       <h4>Recursos</h4>
-      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
       <a href="/diagnostico/">Diagnóstico gratuito</a>
+      <a href="/lo-que-recibes/">Lo que recibes</a>
+      <a href="/preguntas-frecuentes/">Preguntas frecuentes</a>
     </div>
   </div>
   <div class="container footer__legal">
-    <span>© 2026 FARO. Todos los derechos reservados.</span>
+    <span>© 2026 SILLAR. Ponferrada · León.</span>
     <span>
       <a href="/legal/privacidad/">Privacidad</a>
       <a href="/legal/terminos/">Términos</a>

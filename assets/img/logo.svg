@@ -1,4 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="FARO">
-  <circle cx="12" cy="20" r="5" fill="#E8A33D"/>
-  <path d="M18 20 L34 8 L34 32 Z" fill="#1B3A4B"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="SILLAR">
+  <!-- Cara frontal (Arena/Beige) -->
+  <path d="M 10 12 L 24 12 L 24 26 L 10 26 Z" fill="#F5F1E8"/>
+  <!-- Cara lateral (Marino) -->
+  <path d="M 24 12 L 30 8 L 30 22 L 24 26 Z" fill="#1F3A5F"/>
+  <!-- Cara superior (Piedra oscura) -->
+  <path d="M 10 12 L 24 12 L 30 8 L 16 8 Z" fill="#575534"/>
+  <!-- Líneas de precisión -->
+  <line x1="24" y1="12" x2="30" y2="8" stroke="#1F3A4B" stroke-width="0.5"/>
+  <line x1="24" y1="26" x2="30" y2="22" stroke="#1F3A4B" stroke-width="0.5"/>
 </svg>
