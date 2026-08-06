@@ -37,6 +37,11 @@
 
 html { scroll-behavior: smooth; }
 
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
 body {
   margin: 0;
   font-family: var(--font-body);
@@ -54,9 +59,9 @@ h1, h2, h3, h4 {
   color: var(--color-primary);
 }
 
-h1 { font-size: 40px; }
-h2 { font-size: 32px; }
-h3 { font-size: 24px; }
+h1 { font-size: clamp(28px, 6.2vw, 40px); }
+h2 { font-size: clamp(24px, 4.6vw, 32px); }
+h3 { font-size: clamp(19px, 3vw, 24px); }
 
 p { margin: 0 0 var(--space-2); }
 
@@ -122,6 +127,9 @@ a { color: var(--color-primary); }
   background: none;
   border: none;
   font-size: 24px;
+  line-height: 1;
+  min-width: 44px;
+  min-height: 44px;
   cursor: pointer;
   color: var(--color-primary);
 }
@@ -364,9 +372,10 @@ input, select, textarea {
   font-size: 15px;
   background: var(--color-white);
 }
-input:focus, select:focus, textarea:focus {
-  outline: none;
-  border: 2px solid var(--color-primary);
+input:focus-visible, select:focus-visible, textarea:focus-visible,
+a:focus-visible, button:focus-visible, summary:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
 }
 .form-note {
   font-size: 13px;
@@ -446,11 +455,11 @@ input:focus, select:focus, textarea:focus {
 
 /* Breadcrumb */
 .breadcrumb {
-  font-size: 13px;
-  color: rgba(32,38,43,0.6);
+  font-size: 14px;
+  color: rgba(32,38,43,0.7);
   margin-bottom: var(--space-3);
 }
-.breadcrumb a { color: rgba(32,38,43,0.6); }
+.breadcrumb a { color: rgba(32,38,43,0.7); }
 
 /* Utilidades */
 .text-center { text-align: center; }

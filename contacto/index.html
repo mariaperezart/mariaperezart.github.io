@@ -56,33 +56,28 @@
     <div class="container hero__grid">
       <div>
         <p class="breadcrumb"><a href="/">Inicio</a> › Contacto</p>
-        <h1>Hablemos</h1>
+        <h1>Contacto — diseño web en Ponferrada y León</h1>
         <p>Cuéntanos qué negocio tienes y qué te gustaría resolver. Contestamos en menos de 24 horas laborables, y si estás en la zona te proponemos un día para ir a verte.</p>
 
-        <!-- TODO (acción de la propietaria): sustituir por el correo real antes de publicar -->
-        <p><strong>Correo:</strong> <a href="mailto:hola@faro.es">hola@faro.es</a><br>
-        <strong>Zona:</strong> Ponferrada, El Bierzo y León</p>
+        <!-- TODO (acción de la propietaria): sustituir TELEFONO_REAL, el número de wa.me y el correo antes de publicar -->
+        <div class="card" style="background:#FBF3E4;border-color:var(--color-accent);margin-bottom:24px;">
+          <p style="margin-bottom:8px;"><strong>¿Prefieres llamar?</strong> Contesta la persona que hará tu web.</p>
+          <p style="font-family:var(--font-heading);font-size:26px;margin:0 0 12px;"><a href="tel:+34TELEFONO_REAL" style="text-decoration:none;">TELÉFONO PENDIENTE</a></p>
+          <p style="margin-bottom:0;font-size:15px;"><a href="https://wa.me/34TELEFONO_REAL">Escribir por WhatsApp</a> · <a href="mailto:hola@faro.es">hola@faro.es</a> · De 9 a 18 h, de lunes a viernes</p>
+        </div>
+        <p><strong>Zona:</strong> Ponferrada, El Bierzo y León</p>
 
         <form data-faro-form action="https://formspree.io/f/TU_ID_DE_FORMSPREE" method="POST">
           <label for="c-nombre">Tu nombre</label>
           <input type="text" id="c-nombre" name="nombre" required>
 
-          <label for="c-negocio">Tu negocio</label>
-          <input type="text" id="c-negocio" name="negocio" placeholder="Nombre y a qué os dedicáis">
+          <label for="c-negocio">Tu negocio y dónde está</label>
+          <input type="text" id="c-negocio" name="negocio" placeholder="Ej. Bar Ponte, Ponferrada" required>
 
-          <label for="c-localidad">Localidad</label>
-          <input type="text" id="c-localidad" name="localidad" placeholder="Ej. Ponferrada">
+          <label for="c-contacto">Teléfono o correo, como prefieras que te contestemos</label>
+          <input type="text" id="c-contacto" name="contacto" required>
 
-          <label for="c-web">¿Tienes web? Pégala aquí si la tienes</label>
-          <input type="text" id="c-web" name="web" placeholder="www.tunegocio.es">
-
-          <label for="c-email">Tu correo</label>
-          <input type="email" id="c-email" name="email" required>
-
-          <label for="c-telefono">Teléfono (opcional)</label>
-          <input type="tel" id="c-telefono" name="telefono">
-
-          <label for="c-mensaje">¿Qué te gustaría resolver?</label>
+          <label for="c-mensaje">¿Qué te gustaría resolver? <span style="font-weight:400;color:#55606a;">(opcional)</span></label>
           <textarea id="c-mensaje" name="mensaje" rows="4"></textarea>
 
           <label style="display:flex;gap:10px;align-items:flex-start;font-weight:400;font-size:14px;margin-top:16px;">
@@ -97,16 +92,23 @@
       <div>
         <div class="card">
           <h3>Qué pasa cuando escribes</h3>
-          <p><strong>1.</strong> Te contestamos en menos de 24 horas laborables.</p>
+          <p><strong>1.</strong> Te contestamos, siempre.</p>
           <p><strong>2.</strong> Si tienes web, la miramos antes de llamarte. Media hora de trabajo por nuestra parte, gratis.</p>
           <p><strong>3.</strong> Te proponemos un día para vernos, quince minutos, en tu negocio.</p>
           <p><strong>4.</strong> Sales de ahí con un informe de una página, tanto si nos contratas como si no.</p>
-          <p style="margin-bottom:0;">No hay llamadas de seguimiento insistentes. Si no nos dices nada, no volvemos a escribirte.</p>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <h3 style="margin-top:0;">No te vamos a perseguir</h3>
+          <p style="margin-bottom:0;">Contestamos una vez. Si no nos dices nada, <strong>no volvemos a escribirte</strong>. Ni llamadas de seguimiento, ni correos recordatorios, ni newsletter a la que no te has apuntado.</p>
+        </div>
+        <div class="card" style="margin-top:24px;">
+          <h3 style="margin-top:0;">Dónde trabajamos</h3>
+          <p style="margin-bottom:0;">Ponferrada, Villafranca, Cacabelos, Bembibre, Camponaraya, Toreno, Villablino y toda la comarca. Y León capital. Si tu negocio está aquí, vamos a verte; si estás fuera, trabajamos a distancia.</p>
         </div>
         <div class="card" style="margin-top:24px;background:#FBF3E4;border-color:var(--color-accent);">
           <h3 style="margin-top:0;">¿Prefieres ver primero cómo estás?</h3>
-          <p style="margin-bottom:16px;">Hay un autodiagnóstico de ocho preguntas que se responde en un minuto y no pide correo.</p>
-          <a class="btn btn--accent" href="/diagnostico/">Hacer el autodiagnóstico</a>
+          <p style="margin-bottom:16px;">Hay un test de ocho preguntas que se responde en un minuto y no pide correo.</p>
+          <a class="btn btn--accent" href="/diagnostico/">Hacer el test rápido (1 min)</a>
         </div>
       </div>
     </div>

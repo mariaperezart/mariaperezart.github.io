@@ -5,8 +5,10 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggle = document.querySelector('.nav__toggle');
   var links = document.querySelector('.nav__links');
   if (toggle && links) {
+    toggle.setAttribute('aria-expanded', 'false');
     toggle.addEventListener('click', function () {
-      links.classList.toggle('is-open');
+      var abierto = links.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', abierto ? 'true' : 'false');
     });
   }
 
