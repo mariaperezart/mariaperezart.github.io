@@ -1,11 +1,15 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="SILLAR">
-  <!-- Cara frontal (Arena/Beige) -->
-  <path d="M 10 12 L 24 12 L 24 26 L 10 26 Z" fill="#F5F1E8"/>
-  <!-- Cara lateral (Marino) -->
-  <path d="M 24 12 L 30 8 L 30 22 L 24 26 Z" fill="#1F3A5F"/>
-  <!-- Cara superior (Piedra oscura) -->
-  <path d="M 10 12 L 24 12 L 30 8 L 16 8 Z" fill="#575534"/>
-  <!-- Líneas de precisión -->
-  <line x1="24" y1="12" x2="30" y2="8" stroke="#1F3A4B" stroke-width="0.5"/>
-  <line x1="24" y1="26" x2="30" y2="22" stroke="#1F3A4B" stroke-width="0.5"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="FARO">
+  <!-- Rayos de luz -->
+  <line x1="14" y1="7" x2="6" y2="4" stroke="#B8860B" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="26" y1="7" x2="34" y2="4" stroke="#B8860B" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Base / roca -->
+  <path d="M 10 36 L 30 36 L 27 33 L 13 33 Z" fill="#575534"/>
+  <!-- Cuerpo del faro -->
+  <path d="M 16 12 L 24 12 L 27 33 L 13 33 Z" fill="#1F3A5F"/>
+  <!-- Franja -->
+  <path d="M 14.9 20 L 25.1 20 L 25.7 23.4 L 14.3 23.4 Z" fill="#F5F1E8"/>
+  <!-- Sala de luz -->
+  <rect x="15.5" y="6" width="9" height="6" fill="#B8860B"/>
+  <!-- Tejado -->
+  <path d="M 14.5 6 L 25.5 6 L 20 1 Z" fill="#575534"/>
 </svg>
