@@ -3,16 +3,14 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Danza Chic - Academia de formación técnica infantil en Mérida. Acrodance, danza lírica, gimnasia. Niñas 3-14 años. Que se note el entrenamiento.">
-  <title>Danza Chic | Formación Técnica de Danza Infantil</title>
+  <meta name="description" content="Danza Chic - Formación técnica en acrodance, danza lírica, gimnasia. Mérida, Venezuela. Que se note el entrenamiento.">
+  <title>Danza Chic — Formación Técnica de Danza</title>
 
-  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <!-- Styles -->
-  <link rel="stylesheet" href="styles.css?v=20250810">
+  <link rel="stylesheet" href="styles.css?v=20250811">
 </head>
 <body>
 
@@ -25,10 +23,10 @@
       </div>
       <ul class="navbar__links">
         <li><a href="#inicio" class="nav-link">Inicio</a></li>
-        <li><a href="#nosotros" class="nav-link">Formación</a></li>
-        <li><a href="#clases" class="nav-link">Disciplinas</a></li>
-        <li><a href="#galeria" class="nav-link">Galería</a></li>
-        <li><a href="#profesoras" class="nav-link">Equipo</a></li>
+        <li><a href="#como-formamos" class="nav-link">Formación</a></li>
+        <li><a href="#disciplinas" class="nav-link">Disciplinas</a></li>
+        <li><a href="#en-clase" class="nav-link">Galería</a></li>
+        <li><a href="#director" class="nav-link">Equipo</a></li>
         <li><a href="#contacto" class="nav-link cta-nav">Contactar</a></li>
       </ul>
       <button class="navbar__toggle" data-toggle-menu>
@@ -39,429 +37,436 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero: Minimalist + Editorial -->
   <section id="inicio" class="hero" data-hero>
-    <div class="hero__background"></div>
-    <div class="hero__content">
+    <div class="hero__content hero__content--split">
       <div class="hero__text">
         <h1 class="hero__title" data-reveal>
-          Que se note <span class="gradient-text">el entrenamiento</span>
+          Que se note<br>
+          <span class="accent-text">el entrenamiento</span>
         </h1>
-        <p class="hero__subtitle" data-reveal-delay="0.1">
-          Academia de formación técnica en danza. Acrodance, danza lírica, gimnasia. Para niñas que quieren entrenar en serio.
+        <p class="hero__subtitle" data-reveal-delay="0.15">
+          Acrodance. Danza lírica. Gimnasia.<br>
+          Formación técnica para niñas que quieren entrenar en serio.
         </p>
-        <div class="hero__ctas" data-reveal-delay="0.2">
-          <a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20interesa%20conocer%20sobre%20la%20formación%20técnica"
-             class="btn btn--primary" target="_blank">
-            <span class="btn__icon">💬</span> Consultar por WhatsApp
+        <div class="hero__ctas" data-reveal-delay="0.3">
+          <a href="#contacto" class="btn btn--primary">
+            Agendar una clase
           </a>
-          <a href="#contacto" class="btn btn--secondary">
-            Agendar Clase de Prueba
+          <a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20interesa%20conocer%20sobre%20la%20formación" class="btn btn--secondary" target="_blank">
+            Consultar por WhatsApp
           </a>
         </div>
       </div>
-      <div class="hero__visual">
-        <div class="hero__image-container" data-reveal-delay="0.15">
-          <img src="assets/img/hero-placeholder.jpg" alt="Entrenamiento de danza técnica en Danza Chic" class="hero__image" loading="lazy">
-        </div>
+      <div class="hero__image" data-reveal-delay="0.2">
+        <img src="assets/img/hero-placeholder.jpg" alt="María Daniela entrenando" loading="lazy">
       </div>
-    </div>
-    <div class="hero__scroll-indicator" data-scroll-hint>
-      <span>Despliza</span>
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
-        <path d="M12 5v14M19 15l-7 7-7-7" stroke-width="2" stroke-linecap="round"/>
-      </svg>
     </div>
   </section>
 
-  <!-- About Section — 4 Pillars -->
-  <section id="nosotros" class="about" data-section="about">
+  <!-- Cómo Formamos: 4 Pillars with Photos -->
+  <section id="como-formamos" class="pillars">
     <div class="container">
-      <div class="about__header" data-reveal>
+      <div class="pillars__header" data-reveal>
         <h2 class="section-title">Cómo Formamos</h2>
-        <p class="section-subtitle">Cuatro pilares que definen nuestra metodología</p>
+        <p class="section-subtitle">Cuatro pilares de la metodología Danza Chic</p>
       </div>
 
-      <div class="about__grid">
-        <div class="about__card" data-reveal-delay="0.1">
-          <div class="card__icon">🎯</div>
-          <h3 class="card__title">Técnica</h3>
-          <p class="card__text">Base sólida en movimiento, postura, control corporal. Cada ejercicio construye competencia. Sin técnica, no hay progreso.</p>
+      <div class="pillars__grid">
+        <!-- Técnica -->
+        <div class="pillar" data-reveal-delay="0.1">
+          <div class="pillar__image">
+            <img src="assets/img/304de319-10520.jpg" alt="Entrenamiento técnico" loading="lazy">
+          </div>
+          <div class="pillar__content">
+            <h3 class="pillar__title">Técnica</h3>
+            <p class="pillar__text">Base sólida en movimiento, postura y control corporal. Sin técnica, no hay progreso.</p>
+          </div>
         </div>
-        <div class="about__card" data-reveal-delay="0.2">
-          <div class="card__icon">💪</div>
-          <h3 class="card__title">Exigencia</h3>
-          <p class="card__text">Estándares claros. Correcciones precisas. Repetición deliberada. No entrenamos para que pasen tiempo; entrenamos para que avancen.</p>
+
+        <!-- Exigencia -->
+        <div class="pillar" data-reveal-delay="0.2">
+          <div class="pillar__image">
+            <img src="assets/img/3aedd5b3-10524.jpg" alt="Correcciones precisas" loading="lazy">
+          </div>
+          <div class="pillar__content">
+            <h3 class="pillar__title">Exigencia</h3>
+            <p class="pillar__text">Estándares claros. Correcciones precisas. Entrenamos para que avancen, no para que pasen tiempo.</p>
+          </div>
         </div>
-        <div class="about__card" data-reveal-delay="0.3">
-          <div class="card__icon">📈</div>
-          <h3 class="card__title">Progresión</h3>
-          <p class="card__text">Cada clase construye sobre la anterior. Niveles Baby, Junior, Advanced. Tu hija verá cómo mejora, mes tras mes.</p>
+
+        <!-- Progresión -->
+        <div class="pillar" data-reveal-delay="0.3">
+          <div class="pillar__image">
+            <img src="assets/img/6b4a0c4a-10526.jpg" alt="Alumnas en progresión" loading="lazy">
+          </div>
+          <div class="pillar__content">
+            <h3 class="pillar__title">Progresión</h3>
+            <p class="pillar__text">Baby → Junior → Advanced. Cada mes ves el avance. Objetivos claros en cada nivel.</p>
+          </div>
         </div>
-        <div class="about__card" data-reveal-delay="0.4">
-          <div class="card__icon">🎭</div>
-          <h3 class="card__title">Escenario</h3>
-          <p class="card__text">Presentaciones donde muestre lo aprendido. No es sobre shine; es sobre demostrar técnica. El público ve el trabajo.</p>
+
+        <!-- Escenario -->
+        <div class="pillar" data-reveal-delay="0.4">
+          <div class="pillar__image">
+            <img src="assets/img/gallery-6.jpg" alt="Presentación en escenario" loading="lazy">
+          </div>
+          <div class="pillar__content">
+            <h3 class="pillar__title">Escenario</h3>
+            <p class="pillar__text">Lo aprendido llega al escenario. No es performance; es demostración de técnica.</p>
+          </div>
         </div>
       </div>
 
-      <div class="about__statement" data-reveal-delay="0.5">
-        <blockquote class="statement__text">
-          "Mira todo lo que hay detrás de lo que hacen. Eso es Danza Chic."
-        </blockquote>
+      <div class="pillars__quote" data-reveal-delay="0.5">
+        <p>"Mira todo lo que hay detrás de lo que hacen.<br>Eso es Danza Chic."</p>
       </div>
     </div>
   </section>
 
-  <!-- Classes Section -->
-  <section id="clases" class="classes" data-section="classes">
+  <!-- Disciplinas: Editorial Layout -->
+  <section id="disciplinas" class="disciplines">
     <div class="container">
-      <div class="classes__header" data-reveal>
+      <div class="disciplines__header" data-reveal>
         <h2 class="section-title">Disciplinas</h2>
-        <p class="section-subtitle">Formación técnica en movimiento</p>
+        <p class="section-subtitle">Cada una con una pedagogía específica</p>
       </div>
 
-      <div class="classes__grid">
-        <div class="class-card" data-reveal-delay="0.1">
-          <div class="class-card__icon">🪂</div>
-          <h3 class="class-card__title">Acrodance</h3>
-          <p class="class-card__description">Técnica acrobática + danza. Control corporal, saltos, combinaciones. Estructura progresiva desde Baby hasta Advanced.</p>
-          <div class="class-card__ages">
-            <span class="badge">Mini Baby 3-5</span>
-            <span class="badge">Junior 6+</span>
-            <span class="badge">Advanced</span>
+      <div class="disciplines__list">
+        <!-- Acrodance -->
+        <div class="discipline" data-reveal-delay="0.1">
+          <div class="discipline__content">
+            <h3 class="discipline__title">Acrodance</h3>
+            <p class="discipline__description">
+              Danza + acrobacia + flexibilidad. Trabajamos control corporal, saltos, combinaciones y movimientos aéreos.
+            </p>
+            <div class="discipline__meta">
+              <span class="meta-item">Mini Baby 3-5 años</span>
+              <span class="meta-item">Junior 6+ años</span>
+              <span class="meta-item">Advanced</span>
+            </div>
           </div>
-          <p class="class-card__schedule">Consultar horarios</p>
+          <div class="discipline__badge">ACR</div>
         </div>
 
-        <div class="class-card" data-reveal-delay="0.2">
-          <div class="class-card__icon">🎼</div>
-          <h3 class="class-card__title">Danza Lírica</h3>
-          <p class="class-card__description">Expresión técnica con musicalizad. Movimiento controlado, interpretación consciente. Base en técnica clásica.</p>
-          <div class="class-card__ages">
-            <span class="badge">Desde 3 años</span>
-            <span class="badge">Todos los niveles</span>
+        <!-- Danza Lírica -->
+        <div class="discipline" data-reveal-delay="0.2">
+          <div class="discipline__content">
+            <h3 class="discipline__title">Danza Lírica</h3>
+            <p class="discipline__description">
+              Expresión + movimiento + técnica. Trabajo sobre musicalizad con control consciente y interpretación auténtica.
+            </p>
+            <div class="discipline__meta">
+              <span class="meta-item">Desde 3 años</span>
+              <span class="meta-item">Todos los niveles</span>
+            </div>
           </div>
-          <p class="class-card__schedule">Consultar horarios</p>
+          <div class="discipline__badge">LÍR</div>
         </div>
 
-        <div class="class-card" data-reveal-delay="0.3">
-          <div class="class-card__icon">🤸</div>
-          <h3 class="class-card__title">Gimnasia</h3>
-          <p class="class-card__description">Flexibilidad, fuerza, coordinación. Preparación para competencias. Técnica deportiva rigurosa.</p>
-          <div class="class-card__ages">
-            <span class="badge">Niveles mixtos</span>
-            <span class="badge">5+ años</span>
+        <!-- Gimnasia -->
+        <div class="discipline" data-reveal-delay="0.3">
+          <div class="discipline__content">
+            <h3 class="discipline__title">Gimnasia</h3>
+            <p class="discipline__description">
+              Fuerza + coordinación + técnica deportiva rigurosa. Preparación para competencias y desarrollo de capacidades físicas.
+            </p>
+            <div class="discipline__meta">
+              <span class="meta-item">5+ años</span>
+              <span class="meta-item">Estructura progresiva</span>
+            </div>
           </div>
-          <p class="class-card__schedule">Consultar horarios</p>
+          <div class="discipline__badge">GIM</div>
         </div>
       </div>
 
-      <div class="classes__info" data-reveal-delay="0.4">
-        <div class="info-box">
-          <h4>Clase de Prueba Gratis</h4>
-          <p>Una clase para conocer el nivel de exigencia. Sin compromiso.</p>
-        </div>
-        <div class="info-box">
-          <h4>Grupos Reducidos</h4>
-          <p>Máximo 12 niñas. Atención personalizada y corrección directa.</p>
-        </div>
-        <div class="info-box">
-          <h4>Estructura Progresiva</h4>
-          <p>Baby → Junior → Advanced. Cada nivel tiene objetivos claros.</p>
-        </div>
+      <div class="disciplines__note" data-reveal-delay="0.4">
+        <p><strong>Clase de prueba gratis.</strong> Una clase para conocer nuestro nivel de exigencia, sin compromiso.</p>
       </div>
     </div>
   </section>
 
-  <!-- Gallery Section -->
-  <section id="galeria" class="gallery" data-section="gallery">
+  <!-- EN CLASE: Editorial Gallery (STAR SECTION) -->
+  <section id="en-clase" class="gallery-editorial">
     <div class="container-full">
-      <div class="gallery__header" data-reveal>
+      <div class="gallery-editorial__header" data-reveal>
         <h2 class="section-title">En Clase</h2>
-        <p class="section-subtitle">Lo que sucede en el entrenamiento diario</p>
+        <p class="section-subtitle">Entrenamiento real. Evidencia del trabajo diario.</p>
       </div>
 
-      <div class="gallery__grid" data-gallery>
-        <div class="gallery__item" data-gallery-item>
-          <img src="assets/img/gallery-1.jpg" alt="Clase de técnica en Acrodance" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Técnica Acrodance</p>
+      <div class="gallery-editorial__content">
+        <!-- Acrodance Row -->
+        <div class="gallery-section" data-reveal-delay="0.1">
+          <h3 class="gallery-section__title">Acrodance</h3>
+          <div class="gallery-section__grid">
+            <div class="gallery-item">
+              <img src="assets/img/gallery-1.jpg" alt="Técnica Acrodance" loading="lazy">
+              <div class="gallery-item__label">Técnica</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/304de319-10520.jpg" alt="Flexibilidad" loading="lazy">
+              <div class="gallery-item__label">Flexibilidad</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/3aedd5b3-10524.jpg" alt="Correcciones" loading="lazy">
+              <div class="gallery-item__label">Correcciones</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/gallery-2.jpg" alt="Acrobacias" loading="lazy">
+              <div class="gallery-item__label">Acrobacias</div>
+            </div>
           </div>
         </div>
-        <div class="gallery__item gallery__item--tall" data-gallery-item>
-          <img src="assets/img/gallery-2.jpg" alt="Entrenamiento intenso" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Entrenamiento Progresivo</p>
+
+        <!-- Lírica Row -->
+        <div class="gallery-section" data-reveal-delay="0.2">
+          <h3 class="gallery-section__title">Danza Lírica</h3>
+          <div class="gallery-section__grid">
+            <div class="gallery-item">
+              <img src="assets/img/gallery-3.jpg" alt="Expresión corporal" loading="lazy">
+              <div class="gallery-item__label">Expresión</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/907d51d8-10528.jpg" alt="Movimiento" loading="lazy">
+              <div class="gallery-item__label">Movimiento</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/gallery-4.jpg" alt="Interpretación" loading="lazy">
+              <div class="gallery-item__label">Interpretación</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/gallery-5.jpg" alt="Coreografía" loading="lazy">
+              <div class="gallery-item__label">Coreografía</div>
+            </div>
           </div>
         </div>
-        <div class="gallery__item" data-gallery-item>
-          <img src="assets/img/gallery-3.jpg" alt="Correcciones de postura" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Correcciones Técnicas</p>
-          </div>
-        </div>
-        <div class="gallery__item" data-gallery-item>
-          <img src="assets/img/gallery-4.jpg" alt="Gimnasia con aparatos" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Gimnasia Técnica</p>
-          </div>
-        </div>
-        <div class="gallery__item" data-gallery-item>
-          <img src="assets/img/gallery-5.jpg" alt="Danza lírica en clase" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Danza Lírica</p>
-          </div>
-        </div>
-        <div class="gallery__item gallery__item--tall" data-gallery-item>
-          <img src="assets/img/gallery-6.jpg" alt="Presentación de resultados" loading="lazy">
-          <div class="gallery__overlay">
-            <p>Showcase Técnico</p>
+
+        <!-- Gimnasia Row -->
+        <div class="gallery-section" data-reveal-delay="0.3">
+          <h3 class="gallery-section__title">Gimnasia</h3>
+          <div class="gallery-section__grid">
+            <div class="gallery-item">
+              <img src="assets/img/74857a89-10593.jpg" alt="Técnica" loading="lazy">
+              <div class="gallery-item__label">Técnica</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/6e876e64-10570.jpg" alt="Flexibilidad" loading="lazy">
+              <div class="gallery-item__label">Flexibilidad</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/6f3d3965-10569.jpg" alt="Coordinación" loading="lazy">
+              <div class="gallery-item__label">Coordinación</div>
+            </div>
+            <div class="gallery-item">
+              <img src="assets/img/fd8a5dba-10591.jpg" alt="Fuerza" loading="lazy">
+              <div class="gallery-item__label">Fuerza</div>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Testimonials Section -->
-  <section id="testimonios" class="testimonials" data-section="testimonials">
+  <!-- Director: María Daniela as Protagonist -->
+  <section id="director" class="director">
+    <div class="container">
+      <div class="director__header" data-reveal>
+        <h2 class="section-title">La Exigencia Empieza por Quién Entrena</h2>
+      </div>
+
+      <div class="director__content">
+        <div class="director__image" data-reveal-delay="0.1">
+          <img src="assets/img/profesora-1.jpg" alt="María Daniela" loading="lazy">
+        </div>
+        <div class="director__bio" data-reveal-delay="0.2">
+          <h3 class="director__name">María Daniela Pérez Sánchez</h3>
+          <p class="director__title">Directora y Entrenadora Principal</p>
+
+          <div class="director__credentials">
+            <p><strong>Campeona Nacional de Gimnasia Rítmica 2023</strong></p>
+            <p><strong>Seleccionada para Equipo Nacional de Venezuela</strong></p>
+          </div>
+
+          <p class="director__bio-text">
+            María Daniela es la directora fundadora de Danza Chic y responsable de la formación técnica de todas nuestras alumnas. Su trayectoria como atleta competitiva le permite entrenar con los estándares de exigencia que caracterizan a la academia.
+          </p>
+
+          <p class="director__bio-text">
+            No es una entrenadora que memorizó técnicas. Es alguien que vivió en su propio cuerpo lo que significa entrenar exigentemente, competir y ejecutar bajo presión. Eso es lo que enseña.
+          </p>
+
+          <div class="director__callout">
+            "Aquí no preparamos coreografías para lucir en el escenario. Preparamos técnica para que nuestras alumnas demuestren que han entrenado."
+          </div>
+        </div>
+      </div>
+
+      <!-- Other Teachers -->
+      <div class="teachers" data-reveal-delay="0.3">
+        <h4 class="teachers__title">Equipo de Profesoras</h4>
+        <div class="teachers__grid">
+          <div class="teacher">
+            <img src="assets/img/profesora-2.jpg" alt="Profesora Danza Lírica" loading="lazy">
+            <h5 class="teacher__name">Profesora de Danza Lírica</h5>
+            <p class="teacher__specialty">Técnica | Interpretación</p>
+          </div>
+          <div class="teacher">
+            <img src="assets/img/profesora-3.jpg" alt="Profesora Gimnasia" loading="lazy">
+            <h5 class="teacher__name">Profesora de Gimnasia</h5>
+            <p class="teacher__specialty">Fuerza | Coordinación</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials: Real Observations -->
+  <section id="testimonios" class="testimonials">
     <div class="container">
       <div class="testimonials__header" data-reveal>
-        <h2 class="section-title">Qué Notan Las Mamás</h2>
-        <p class="section-subtitle">Observaciones de madres sobre el progreso técnico</p>
+        <h2 class="section-title">Qué Notan Las Madres</h2>
+        <p class="section-subtitle">Cambios técnicos observables</p>
       </div>
 
-      <div class="testimonials__grid">
-        <div class="testimonial" data-reveal-delay="0.1">
-          <div class="testimonial__content">
-            <p class="testimonial__text">
-              "Mi hija mejoró su postura completamente. Notamos cambios reales en su cuerpo, no solo en la clase. Mantiene la espalda derecha, tiene más control."
-            </p>
-            <div class="testimonial__author">
-              <p class="author__name">Madre de alumna Acrodance</p>
-              <p class="author__relation">Junior Level</p>
-            </div>
-          </div>
+      <div class="testimonials__cards">
+        <div class="testimonial-card" data-reveal-delay="0.1">
+          <p class="testimonial-card__text">
+            "Mi hija mejoró su postura completamente. Mantiene la espalda derecha, tiene más control. Son cambios que no solo se ven en clase."
+          </p>
+          <p class="testimonial-card__author">Mamá de alumna Acrodance, Junior</p>
         </div>
 
-        <div class="testimonial" data-reveal-delay="0.2">
-          <div class="testimonial__content">
-            <p class="testimonial__text">
-              "La exigencia es real. Las profesoras no pasan por alto errores. Al principio me sorprendió, pero ahora veo que eso es lo que hace que aprendan de verdad."
-            </p>
-            <div class="testimonial__author">
-              <p class="author__name">Madre de alumna Gimnasia</p>
-              <p class="author__relation">Nivel Intermedio</p>
-            </div>
-          </div>
+        <div class="testimonial-card" data-reveal-delay="0.2">
+          <p class="testimonial-card__text">
+            "La exigencia es real. Las profesoras no dejan pasar errores. Al principio me sorprendió, pero ahora veo que eso es lo que hace que aprendan."
+          </p>
+          <p class="testimonial-card__author">Mamá de alumna Gimnasia</p>
         </div>
 
-        <div class="testimonial" data-reveal-delay="0.3">
-          <div class="testimonial__content">
-            <p class="testimonial__text">
-              "Vemos avance cada mes. Cambió de nivel y el salto fue evidente. Las niñas saben exactamente qué deben mejorar porque las correcciones son específicas."
-            </p>
-            <div class="testimonial__author">
-              <p class="author__name">Madre de alumna Danza Lírica</p>
-              <p class="author__relation">Niveles Baby a Junior</p>
-            </div>
-          </div>
+        <div class="testimonial-card" data-reveal-delay="0.3">
+          <p class="testimonial-card__text">
+            "Vemos avance cada mes. Cambió de nivel y el salto fue evidente. Las niñas saben exactamente qué mejorar porque las correcciones son específicas."
+          </p>
+          <p class="testimonial-card__author">Mamá de alumna Danza Lírica</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Profesoras Section -->
-  <section id="profesoras" class="profesoras" data-section="profesoras">
-    <div class="container">
-      <div class="profesoras__header" data-reveal>
-        <h2 class="section-title">El Equipo</h2>
-        <p class="section-subtitle">Profesionales que saben de entrenamiento técnico</p>
-      </div>
-
-      <div class="profesoras__grid">
-        <div class="profesor-card" data-reveal-delay="0.1">
-          <div class="profesor-card__image">
-            <img src="assets/img/profesora-1.jpg" alt="Directora María Daniela" loading="lazy">
-          </div>
-          <div class="profesor-card__content">
-            <h3 class="profesor-card__name">Directora María Daniela</h3>
-            <p class="profesor-card__specialty">Formación Técnica | Acrodance y Danza Lírica</p>
-            <p class="profesor-card__bio"><strong>Campeona 2023</strong> | Seleccionada para equipo nacional de Venezuela. Directora fundadora de Danza Chic. Especialista en formación técnica desde niveles iniciantes hasta preparación competitiva.</p>
-          </div>
-        </div>
-
-        <div class="profesor-card" data-reveal-delay="0.2">
-          <div class="profesor-card__image">
-            <img src="assets/img/profesora-2.jpg" alt="Profesora de Danza Lírica" loading="lazy">
-          </div>
-          <div class="profesor-card__content">
-            <h3 class="profesor-card__name">Profesora de Danza Lírica</h3>
-            <p class="profesor-card__specialty">Técnica | Interpretación Controlada</p>
-            <p class="profesor-card__bio">Especializada en formación lírica con énfasis en técnica pura y movimiento consciente. Exigente en correcciones.</p>
-          </div>
-        </div>
-
-        <div class="profesor-card" data-reveal-delay="0.3">
-          <div class="profesor-card__image">
-            <img src="assets/img/profesora-3.jpg" alt="Profesora de Gimnasia" loading="lazy">
-          </div>
-          <div class="profesor-card__content">
-            <h3 class="profesor-card__name">Profesora de Gimnasia</h3>
-            <p class="profesor-card__specialty">Fuerza | Coordinación | Aparatos</p>
-            <p class="profesor-card__bio">Certificada en gimnasia técnica. Prepara alumnas en progresión estructurada. Competencia y desarrollo seguro.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Contact Section -->
-  <section id="contacto" class="contact" data-section="contact">
+  <!-- Contact: CTA with Friction Reduction -->
+  <section id="contacto" class="contact">
     <div class="container">
       <div class="contact__header" data-reveal>
-        <h2 class="section-title">¿Buscas Formación Exigente?</h2>
-        <p class="section-subtitle">Contacta para agendar una clase de prueba</p>
+        <h2 class="section-title">¿Buscas una formación exigente?</h2>
+        <p class="contact__subtitle">Conoce Danza Chic y descubre cómo entrenamos.</p>
       </div>
 
       <div class="contact__grid">
-        <div class="contact__info">
-          <div class="info-item" data-reveal-delay="0.1">
-            <div class="info-item__icon">📍</div>
-            <div class="info-item__content">
-              <h4>Ubicación</h4>
-              <p>Av. 4 entre Calles 22-23<br>Mérida, Venezuela</p>
-              <a href="https://maps.google.com/?q=Av+4+entre+Calles+22-23+Merida+Venezuela"
-                 class="link" target="_blank">Ver en mapa →</a>
+        <div class="contact__form-section" data-reveal-delay="0.1">
+          <h3 class="contact__form-title">Agendar una Clase</h3>
+          <form class="contact__form" data-form="contact">
+            <div class="form-group">
+              <label for="nombre">Nombre</label>
+              <input type="text" id="nombre" name="nombre" required>
             </div>
-          </div>
-
-          <div class="info-item" data-reveal-delay="0.2">
-            <div class="info-item__icon">📞</div>
-            <div class="info-item__content">
-              <h4>Teléfono</h4>
-              <p><a href="tel:+584124567890" class="link">+58 412 456 7890</a></p>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required>
             </div>
-          </div>
-
-          <div class="info-item" data-reveal-delay="0.3">
-            <div class="info-item__icon">💬</div>
-            <div class="info-item__content">
-              <h4>WhatsApp</h4>
-              <p><a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20gustaría%20agendar%20una%20clase%20de%20prueba"
-                    class="link" target="_blank">Enviar mensaje →</a></p>
+            <div class="form-group">
+              <label for="edad">Edad de tu hija</label>
+              <select id="edad" name="edad" required>
+                <option value="">Selecciona</option>
+                <option value="3-4">3-4 años</option>
+                <option value="5-6">5-6 años</option>
+                <option value="7-8">7-8 años</option>
+                <option value="9-10">9-10 años</option>
+                <option value="11-12">11-12 años</option>
+                <option value="13-14">13-14 años</option>
+              </select>
             </div>
-          </div>
-
-          <div class="info-item" data-reveal-delay="0.4">
-            <div class="info-item__icon">📧</div>
-            <div class="info-item__content">
-              <h4>Email</h4>
-              <p><a href="mailto:contacto@danzachic.ve" class="link">contacto@danzachic.ve</a></p>
+            <div class="form-group">
+              <label for="disciplina">Disciplina</label>
+              <select id="disciplina" name="disciplina">
+                <option value="">No estoy seguro</option>
+                <option value="acrodance">Acrodance</option>
+                <option value="lirica">Danza Lírica</option>
+                <option value="gimnasia">Gimnasia</option>
+                <option value="todas">Probar todas</option>
+              </select>
             </div>
-          </div>
+            <button type="submit" class="btn btn--primary btn--full">
+              Agendar
+            </button>
+          </form>
         </div>
 
-        <form class="contact__form" data-form="contact" data-reveal-delay="0.2">
-          <div class="form-group">
-            <label for="nombre" class="form-label">Nombre de la mamá/papá</label>
-            <input type="text" id="nombre" name="nombre" class="form-input" required>
+        <div class="contact__info" data-reveal-delay="0.2">
+          <h3 class="contact__info-title">Contacto Directo</h3>
+
+          <div class="contact__item">
+            <h4>WhatsApp</h4>
+            <a href="https://wa.me/584124567890" class="contact__link" target="_blank">
+              +58 412 456 7890
+            </a>
           </div>
 
-          <div class="form-group">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" id="email" name="email" class="form-input" required>
+          <div class="contact__item">
+            <h4>Ubicación</h4>
+            <p>Av. 4 entre Calles 22-23<br>Mérida, Venezuela</p>
+            <a href="https://maps.google.com/?q=Av+4+Merida+Venezuela" class="contact__link" target="_blank">Ver en mapa</a>
           </div>
 
-          <div class="form-group">
-            <label for="edad" class="form-label">Edad de tu hija</label>
-            <select id="edad" name="edad" class="form-input" required>
-              <option value="">Selecciona una edad</option>
-              <option value="3-4">3-4 años</option>
-              <option value="5-6">5-6 años</option>
-              <option value="7-8">7-8 años</option>
-              <option value="9-10">9-10 años</option>
-              <option value="11-12">11-12 años</option>
-              <option value="13-14">13-14 años</option>
-            </select>
+          <div class="contact__item">
+            <h4>Teléfono</h4>
+            <a href="tel:+584124567890" class="contact__link">
+              +58 412 456 7890
+            </a>
           </div>
 
-          <div class="form-group">
-            <label for="disciplina" class="form-label">Disciplina de interés</label>
-            <select id="disciplina" name="disciplina" class="form-input">
-              <option value="">No estoy seguro</option>
-              <option value="acrodance">Acrodance</option>
-              <option value="lirica">Danza Lírica</option>
-              <option value="gimnasia">Gimnasia</option>
-              <option value="todas">Quiero probar todas</option>
-            </select>
+          <div class="contact__note">
+            <p><strong>Antes de inscribirte,</strong> conoce nuestra forma de entrenar. La exigencia no sorprende a quien ya la espera.</p>
           </div>
-
-          <div class="form-group">
-            <label for="mensaje" class="form-label">Mensaje (opcional)</label>
-            <textarea id="mensaje" name="mensaje" class="form-input form-textarea" placeholder="Cuéntame sobre tu hija..."></textarea>
-          </div>
-
-          <button type="submit" class="btn btn--primary btn--full">
-            Agendar Clase Gratis
-          </button>
-          <p class="form-note">O contacta directamente por <a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20gustaría%20agendar%20una%20clase%20de%20prueba"
-                class="link" target="_blank">WhatsApp</a></p>
-        </form>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="footer" data-footer>
+  <footer class="footer">
     <div class="container">
       <div class="footer__content">
-        <div class="footer__section">
-          <h4 class="footer__title">Danza Chic</h4>
-          <p class="footer__text">Academia de formación técnica en danza. Acrodance, danza lírica, gimnasia. Que se note el entrenamiento.</p>
+        <div class="footer__col">
+          <h4>Danza Chic</h4>
+          <p>Formación técnica en acrodance, danza lírica y gimnasia. Que se note el entrenamiento.</p>
           <div class="footer__socials">
-            <a href="https://instagram.com/danza.chic" class="social-link" target="_blank" aria-label="Instagram">
-              📷
-            </a>
-            <a href="https://facebook.com/danza.chic" class="social-link" target="_blank" aria-label="Facebook">
-              f
-            </a>
-            <a href="https://tiktok.com/@danza.chic" class="social-link" target="_blank" aria-label="TikTok">
-              🎬
-            </a>
+            <a href="https://instagram.com/danza.chic" target="_blank">Instagram</a>
+            <a href="https://facebook.com/danza.chic" target="_blank">Facebook</a>
+            <a href="https://tiktok.com/@danza.chic" target="_blank">TikTok</a>
           </div>
         </div>
-
-        <div class="footer__section">
-          <h4 class="footer__title">Enlaces</h4>
-          <ul class="footer__links">
-            <li><a href="#inicio" class="footer-link">Inicio</a></li>
-            <li><a href="#nosotros" class="footer-link">Formación</a></li>
-            <li><a href="#clases" class="footer-link">Disciplinas</a></li>
-            <li><a href="#galeria" class="footer-link">Galería</a></li>
-            <li><a href="#contacto" class="footer-link">Contacto</a></li>
-          </ul>
+        <div class="footer__col">
+          <h4>Enlaces</h4>
+          <a href="#inicio">Inicio</a>
+          <a href="#como-formamos">Formación</a>
+          <a href="#disciplinas">Disciplinas</a>
+          <a href="#en-clase">Galería</a>
+          <a href="#director">Equipo</a>
         </div>
-
-        <div class="footer__section">
-          <h4 class="footer__title">Información</h4>
-          <p class="footer__text small">
-            <strong>Ubicación:</strong> Av. 4 entre Calles 22-23, Mérida<br>
-            <strong>Teléfono:</strong> <a href="tel:+584124567890" class="footer-link">+58 412 456 7890</a><br>
-            <strong>WhatsApp:</strong> <a href="https://wa.me/584124567890" class="footer-link">+58 412 456 7890</a>
-          </p>
+        <div class="footer__col">
+          <h4>Información</h4>
+          <p><strong>WhatsApp:</strong> <a href="https://wa.me/584124567890">+58 412 456 7890</a></p>
+          <p><strong>Ubicación:</strong> Av. 4, Mérida</p>
         </div>
       </div>
-
       <div class="footer__bottom">
-        <p class="footer__credit">© 2026 Danza Chic | Formación Técnica en Danza | Mérida, Venezuela</p>
+        <p>© 2026 Danza Chic | Formación Técnica en Danza | Mérida, Venezuela</p>
       </div>
     </div>
   </footer>
 
-  <!-- Scripts -->
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=20250810"></script>
-  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=20250810"></script>
-  <script defer src="main.js?v=20250810"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=20250811"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=20250811"></script>
+  <script defer src="main.js?v=20250811"></script>
 </body>
 </html>
