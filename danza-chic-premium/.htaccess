@@ -1,0 +1,67 @@
+# Danza Chic — Hostinger Cache Busting Configuration
+
+# Disable browser caching for HTML files (force fresh content on each visit)
+<FilesMatch "\.html$">
+  Header set Cache-Control "max-age=0, must-revalidate"
+  Header unset ETag
+  FileETag None
+</FilesMatch>
+
+# Aggressive caching for versioned assets (with ?v=YYYYMMDD)
+<FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|woff|woff2|ttf|otf|eot)(\?|$)">
+  Header set Cache-Control "max-age=31536000, immutable"
+  Header unset ETag
+  FileETag None
+</FilesMatch>
+
+# Moderate caching for CSS/JS (will be cache-busted via ?v= parameter)
+<FilesMatch "\.(css|js)(\?|$)">
+  Header set Cache-Control "max-age=2592000, public"
+  Header unset ETag
+  FileETag None
+</FilesMatch>
+
+# Gzip compression
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css text/javascript application/javascript application/json
+</IfModule>
+
+# Enable mod_rewrite
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Remove .html extension from URLs
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+  # Redirect to HTTPS
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+</IfModule>
+
+# Security headers
+Header always set X-Content-Type-Options "nosniff"
+Header always set X-Frame-Options "SAMEORIGIN"
+Header always set X-XSS-Protection "1; mode=block"
+Header always set Referrer-Policy "strict-origin-when-cross-origin"
+
+# Allow CORS for fonts
+<FilesMatch "\.(woff|woff2|ttf|otf|eot|svg)$">
+  Header set Access-Control-Allow-Origin "*"
+</FilesMatch>
+
+# Disable directory listing
+<IfModule mod_autoindex.c>
+  Options -Indexes
+</IfModule>
+
+# Set correct MIME types
+<IfModule mod_mime.c>
+  AddType image/svg+xml svg svgz
+  AddEncoding gzip svgz
+  AddType application/javascript js
+  AddType text/css css
+  AddType image/webp webp
+</IfModule>
