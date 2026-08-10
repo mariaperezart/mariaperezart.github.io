@@ -1,0 +1,170 @@
+{
+  "video_meta": {
+    "filename": "DJI_20000401210240_0103_D.mp4",
+    "size": "12MB",
+    "type": "Aerial Drone Footage",
+    "created_for": "UGC Content"
+  },
+  "scripts": [
+    {
+      "id": "tiktok_hook_1",
+      "platform": "TikTok",
+      "duration": "15 seconds",
+      "title": "POV Shift",
+      "hook": "POV: You can fly 🚁",
+      "script": "Show 2-3 seconds of drone footage, then text overlay: 'Perspective changes EVERYTHING' with smooth transitions between aerial angles.",
+      "voiceover": "This is what you're missing. ☁️",
+      "caption": "POV: You can fly #dronelife #perspectives #DJI #foryoupage #explore",
+      "music_vibe": "Trending upbeat/cinematic sound",
+      "engagement": "High - POV hooks perform 40% better"
+    },
+    {
+      "id": "reels_cinematic",
+      "platform": "Instagram Reels",
+      "duration": "30 seconds",
+      "title": "Cinematic Beauty",
+      "hook": "NO TEXT - let visuals speak first 2 seconds",
+      "script": "Pure drone footage with subtle color grading, smooth transitions. Text overlay appears at 3s: 'Untouched.' Simple, elegant.",
+      "voiceover": "Optional - subtle ambient music only recommended",
+      "caption": "Perspective from above 🚁✨ #cinematography #dronelife #aerialview #explore #content",
+      "music_vibe": "Cinematic/Ambient instrumental",
+      "engagement": "Premium feel - attracts high-quality engagement"
+    },
+    {
+      "id": "youtube_shorts_vertical",
+      "platform": "YouTube Shorts",
+      "duration": "30-45 seconds",
+      "title": "Discovery Hook",
+      "hook": "Wait for the transition...",
+      "script": "Start with text: 'Wait for it...' (2s) → Show footage → Text: 'This is what you're missing' (3s) → Repeat best shot with text overlay: 'Explore Above' (5s)",
+      "voiceover": "Optional trending audio",
+      "caption": "Aerial Perspective | Drone Cinematography | #shorts #dji #dronelife #explore #perspectives",
+      "music_vibe": "Trending YouTube Shorts sound (check viral sounds)",
+      "engagement": "Hook-first structure = 60% higher CTR"
+    },
+    {
+      "id": "instagram_feed_teaser",
+      "platform": "Instagram Feed",
+      "duration": "15-20 seconds (looped)",
+      "title": "Static Feed Post",
+      "hook": "Visual hook only - first 3 frames are key",
+      "script": "Use most visually stunning 15 seconds of footage, loop if necessary. Minimal text overlay - just location or one word.",
+      "voiceover": "None - feed videos play on mute by default",
+      "caption": "New perspective unlocked 🚁✨ Swipe to see more aerial views. Tag someone you'd take with you 👇 #dronelife #aerialview #perspectives #explore",
+      "music_vibe": "Trending Instagram audio (optional for save/share)",
+      "engagement": "Looped content = 3x more watch time"
+    },
+    {
+      "id": "linkedin_professional",
+      "platform": "LinkedIn",
+      "duration": "20 seconds",
+      "title": "Innovation in Visual Storytelling",
+      "hook": "Visual hook + text: 'Perspective Matters'",
+      "script": "Professional framing - show drone technology, then footage. Text: 'How we see the world shapes how we create content.' Final frame: 'Professional UGC Services'",
+      "voiceover": "Optional - professional/corporate tone",
+      "caption": "Creative storytelling through innovation. Drone cinematography is reshaping how brands tell their stories. Our UGC content captures perspectives that matter. 📹✨ #content #innovation #creativity #corporatevideo",
+      "music_vibe": "Professional/Corporate instrumental",
+      "engagement": "Professional + visual = premium positioning"
+    },
+    {
+      "id": "tiktok_trend_rider",
+      "platform": "TikTok",
+      "duration": "15 seconds",
+      "title": "Trending Format",
+      "hook": "This or that? [Your question here]",
+      "script": "Split screen or comparison: Show ground perspective (use generic reference) vs aerial drone view. Text: 'Aerial view wins? 👀' Vote-style engagement.",
+      "voiceover": "Quick voiceover: 'Which perspective is better?'",
+      "caption": "Tell me: This or that? 👇 #dronelife #perspectives #aerial #choose #trend",
+      "music_vibe": "TikTok trending sound (high engagement)",
+      "engagement": "Comparison format = 5x comments"
+    },
+    {
+      "id": "real_estate_angle",
+      "platform": "All platforms",
+      "duration": "30 seconds",
+      "title": "Property Showcase",
+      "hook": "Discover this view 🏡",
+      "script": "Aerial view of landscape/property. Text overlays: 'Location' (5s) → 'Scale' (5s) → 'Possibility' (5s) → CTA: 'Explore Available Properties'",
+      "voiceover": "Professional: 'Discover properties from a new perspective...'",
+      "caption": "Your dream location from a new angle 🚁 Aerial views showcase what matters most - location, scale, and possibility. #realestate #property #luxury #aerialview #investment",
+      "music_vibe": "Premium/Cinematic",
+      "engagement": "Real estate = high commercial intent"
+    },
+    {
+      "id": "travel_inspiration",
+      "platform": "All platforms",
+      "duration": "30 seconds",
+      "title": "Adventure Awaits",
+      "hook": "Your next adventure 👀",
+      "script": "Footage shows expansive landscape. Text: 'Adventure Calls' (2s) → 'Where would you go?' (3s) → 'Explore Above' (3s) with CTA sticker.",
+      "voiceover": "Inspirational: 'See the world differently...'",
+      "caption": "Where would you explore first? 🚁✨ Adventure looks different from up here. What's your dream destination? Tag someone you'd take with you 👇 #travel #adventure #explore #wanderlust #perspectives",
+      "music_vibe": "Upbeat/Inspirational",
+      "engagement": "Travel content = high engagement + shares"
+    }
+  ],
+  "captions_by_performance": {
+    "high_engagement": [
+      "POV: You can fly 🚁✨ Where would you go first? #dronelife #perspectives",
+      "This is what adventures look like from above ☁️ #aerialview #explore",
+      "Perspective shift incoming 👀 #dronelife #cinematography #DJI"
+    ],
+    "high_reach": [
+      "Discover a new perspective 🚁 #explore #dronelife #aerialview #discover #perspectives",
+      "Your view from above awaits ✨ #DJI #cinematography #adventure #content",
+      "Shift your perspective 🚁✨ #dronelife #explore #perspectives #aerialview"
+    ],
+    "high_conversions": [
+      "Professional UGC content ready for your campaigns 🎬 DM for rates #usergenerated #content #creator",
+      "Want this for your brand? This aerial content converts 🚁✨ #UGC #contentcreation #business",
+      "Stunning drone footage available for licensing/purchase 🎥 Contact for rates #dronefilmmaker #stock"
+    ]
+  },
+  "hashtag_strategy": {
+    "tier_1_reach": {
+      "volume": "100K+",
+      "tags": ["#dronelife", "#aerialview", "#DJI", "#cinematography", "#perspectives", "#explore", "#dronevideooftheday", "#filmmaking"]
+    },
+    "tier_2_engagement": {
+      "volume": "10K-100K",
+      "tags": ["#dronecontent", "#aerialphotography", "#cinematic", "#dronefilmmaker", "#landscape", "#adventuretime", "#createcontent", "#contentcreator"]
+    },
+    "tier_3_niche": {
+      "volume": "1K-10K",
+      "tags": ["#ugccontent", "#usergenerated", "#dronetiktok", "#aerialcinematography", "#dronecreators", "#perspectiveshift", "#untouched", "#cinemalike"]
+    }
+  },
+  "engagement_questions": [
+    "Where would you fly first? 👇",
+    "This view or ground level? Tell me your preference 👇",
+    "What's the most unusual angle you've seen from above?",
+    "If you could go anywhere right now, where? 👇",
+    "Tag someone you'd take on this adventure ✈️",
+    "Aerial or ground? Which tells the better story?"
+  ],
+  "export_recommendations": {
+    "vertical_9_16": {
+      "use_for": "TikTok, Instagram Reels, YouTube Shorts",
+      "specs": "1080x1920px or 1440x2560px",
+      "format": "MP4 H.264, 60fps recommended"
+    },
+    "horizontal_16_9": {
+      "use_for": "YouTube, Twitter, LinkedIn (desktop)",
+      "specs": "1920x1080px or 3840x2160px (4K)",
+      "format": "MP4 H.264, 60fps"
+    },
+    "square_1_1": {
+      "use_for": "Instagram Feed, Twitter cards",
+      "specs": "1080x1080px",
+      "format": "MP4 H.264"
+    }
+  },
+  "performance_tips": {
+    "hooks": "First 0.5-1 second is critical. Text overlay or visual surprise within first 3 seconds.",
+    "transitions": "Smooth cuts between drone angles every 3-5 seconds to maintain attention.",
+    "captions": "Add captions for 75%+ watch rate (most people watch on mute).",
+    "calls_to_action": "Include clear CTA - comment, share, tag, swipe up, DM.",
+    "best_times": "Post 6-9 AM, 12-1 PM, 7-11 PM (time zone dependent)",
+    "frequency": "Test 1-2 variations per platform first, then scale what wins."
+  }
+}

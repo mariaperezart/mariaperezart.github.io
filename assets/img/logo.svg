@@ -1,4 +1,15 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" width="40" height="40" role="img" aria-label="FARO">
-  <circle cx="12" cy="20" r="5" fill="#E8A33D"/>
-  <path d="M18 20 L34 8 L34 32 Z" fill="#1B3A4B"/>
+  <!-- Rayos de luz -->
+  <line x1="14" y1="7" x2="6" y2="4" stroke="#B8860B" stroke-width="1.6" stroke-linecap="round"/>
+  <line x1="26" y1="7" x2="34" y2="4" stroke="#B8860B" stroke-width="1.6" stroke-linecap="round"/>
+  <!-- Base / roca -->
+  <path d="M 10 36 L 30 36 L 27 33 L 13 33 Z" fill="#575534"/>
+  <!-- Cuerpo del faro -->
+  <path d="M 16 12 L 24 12 L 27 33 L 13 33 Z" fill="#1F3A5F"/>
+  <!-- Franja -->
+  <path d="M 14.9 20 L 25.1 20 L 25.7 23.4 L 14.3 23.4 Z" fill="#F5F1E8"/>
+  <!-- Sala de luz -->
+  <rect x="15.5" y="6" width="9" height="6" fill="#B8860B"/>
+  <!-- Tejado -->
+  <path d="M 14.5 6 L 25.5 6 L 20 1 Z" fill="#575534"/>
 </svg>
