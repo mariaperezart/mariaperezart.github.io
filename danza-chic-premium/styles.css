@@ -289,9 +289,9 @@ a:hover { color: var(--magenta-active); }
 }
 
 .pillar__text {
-  font-size: 0.95rem;
-  color: var(--gris-medio);
-  line-height: 1.7;
+  font-size: 1.1rem;
+  color: var(--negro);
+  line-height: 1.6;
 }
 
 .pillars__quote {
