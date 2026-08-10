@@ -1,254 +1,467 @@
-<!doctype html>
-<html lang="es-ES">
+<!DOCTYPE html>
+<html lang="es">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>FARO — Diseño web y de marca para negocios de El Bierzo y León</title>
-<meta name="description" content="Estudio de diseño web y gráfico en Ponferrada y León. Presencia digital construida para durar: webs que funcionan año uno, año cinco y año diez.">
-<link rel="canonical" href="https://faroconsultoria.vercel.app/">
-<link rel="icon" href="/assets/img/favicon.svg" type="image/svg+xml">
-<meta property="og:title" content="FARO — Diseño web y de marca para negocios de El Bierzo y León">
-<meta property="og:description" content="Presencia digital construida para durar. Precisión. Escuadra. Oficio. Y lo que bien se hace, dura.">
-<meta property="og:type" content="website">
-<meta property="og:url" content="https://faroconsultoria.vercel.app/">
-<meta property="og:image" content="/assets/img/favicon.svg">
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  "name": "FARO",
-  "url": "https://faroconsultoria.vercel.app/",
-  "logo": "https://faroconsultoria.vercel.app/assets/img/logo.svg",
-  "description": "Estudio de diseño web y gráfico en Ponferrada (El Bierzo) y León. Diseño, mantenimiento y posicionamiento local para negocios de la zona.",
-  "areaServed": [
-    { "@type": "City", "name": "Ponferrada" },
-    { "@type": "City", "name": "León" },
-    { "@type": "AdministrativeArea", "name": "El Bierzo" }
-  ],
-  "knowsLanguage": "es-ES"
-}
-</script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="/assets/css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Danza Chic - Academia de formación técnica infantil en Mérida. Acrodance, danza lírica, gimnasia. Niñas 3-14 años. Que se note el entrenamiento.">
+  <title>Danza Chic | Formación Técnica de Danza Infantil</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css?v=20250810">
 </head>
 <body>
-<header class="site-header">
-  <nav class="nav">
-    <a class="nav__logo" href="/"><img src="/assets/img/logo.svg" alt=""> FARO</a>
-    <button class="nav__toggle" aria-label="Abrir menú">☰</button>
-    <ul class="nav__links">
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#como-funciona">Cómo funciona</a></li>
-      <li><a href="#proyectos">Proyectos</a></li>
-      <li><a href="/precios/">Precios</a></li>
-      <li><a href="/quienes-somos/">Sobre FARO</a></li>
-      <li><a href="/contacto/">Contacto</a></li>
-    </ul>
-    <a class="btn btn--accent nav__cta" href="/contacto/">Contacto</a>
+
+  <!-- Navigation -->
+  <nav class="navbar" data-navbar>
+    <div class="navbar__container">
+      <div class="navbar__logo">
+        <span class="logo-icon">💃</span>
+        <span class="logo-text">Danza Chic</span>
+      </div>
+      <ul class="navbar__links">
+        <li><a href="#inicio" class="nav-link">Inicio</a></li>
+        <li><a href="#nosotros" class="nav-link">Formación</a></li>
+        <li><a href="#clases" class="nav-link">Disciplinas</a></li>
+        <li><a href="#galeria" class="nav-link">Galería</a></li>
+        <li><a href="#profesoras" class="nav-link">Equipo</a></li>
+        <li><a href="#contacto" class="nav-link cta-nav">Contactar</a></li>
+      </ul>
+      <button class="navbar__toggle" data-toggle-menu>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
   </nav>
-</header>
 
-<main>
-
-  <section class="hero" style="background:linear-gradient(135deg, #F5F1E8 0%, #FFFFFF 100%);">
-    <div class="container hero__grid">
-      <div>
-        <h1 style="font-size:48px;line-height:1.2;margin-bottom:16px;">Presencia digital construida para durar.</h1>
-        <p style="font-size:18px;color:var(--color-ink);margin-bottom:32px;max-width:520px;">Diseñamos y construimos webs que representen bien a tu negocio hoy y dentro de cinco años.</p>
-        <div class="hero__trust" style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-bottom:32px;max-width:520px;">
-          <div style="text-align:center;">
-            <div style="font-size:24px;margin-bottom:8px;">🛡️</div>
-            <p style="font-size:14px;margin:0;color:var(--color-ink);"><strong>Precio cerrado</strong><br>Sin sorpresas.</p>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-size:24px;margin-bottom:8px;">🔐</div>
-            <p style="font-size:14px;margin:0;color:var(--color-ink);"><strong>Accesos tuyos</strong><br>Siempre tuyos.</p>
-          </div>
-          <div style="text-align:center;">
-            <div style="font-size:24px;margin-bottom:8px;">⚡</div>
-            <p style="font-size:14px;margin:0;color:var(--color-ink);"><strong>Respuesta rápida</strong><br>Días, no semanas.</p>
-          </div>
-        </div>
-        <div class="hero__actions" style="display:flex;gap:16px;flex-wrap:wrap;">
-          <a class="btn btn--accent" href="#como-funciona">Ver cómo funciona</a>
-          <a class="btn btn--secondary" href="#proyectos">Ver proyectos</a>
+  <!-- Hero Section -->
+  <section id="inicio" class="hero" data-hero>
+    <div class="hero__background"></div>
+    <div class="hero__content">
+      <div class="hero__text">
+        <h1 class="hero__title" data-reveal>
+          Que se note <span class="gradient-text">el entrenamiento</span>
+        </h1>
+        <p class="hero__subtitle" data-reveal-delay="0.1">
+          Academia de formación técnica en danza. Acrodance, danza lírica, gimnasia. Para niñas que quieren entrenar en serio.
+        </p>
+        <div class="hero__ctas" data-reveal-delay="0.2">
+          <a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20interesa%20conocer%20sobre%20la%20formación%20técnica"
+             class="btn btn--primary" target="_blank">
+            <span class="btn__icon">💬</span> Consultar por WhatsApp
+          </a>
+          <a href="#contacto" class="btn btn--secondary">
+            Agendar Clase de Prueba
+          </a>
         </div>
       </div>
-      <div class="hero__art" style="text-align:center;">
-        <div style="background:#E8DCCF;aspect-ratio:4/5;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:64px;">🏗️</div>
+      <div class="hero__visual">
+        <div class="hero__image-container" data-reveal-delay="0.15">
+          <img src="assets/img/hero-placeholder.jpg" alt="Entrenamiento de danza técnica en Danza Chic" class="hero__image" loading="lazy">
+        </div>
       </div>
+    </div>
+    <div class="hero__scroll-indicator" data-scroll-hint>
+      <span>Despliza</span>
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor">
+        <path d="M12 5v14M19 15l-7 7-7-7" stroke-width="2" stroke-linecap="round"/>
+      </svg>
     </div>
   </section>
 
-  <section class="section" style="background:var(--color-primary);color:white;padding:64px 0;" id="servicios">
+  <!-- About Section — 4 Pillars -->
+  <section id="nosotros" class="about" data-section="about">
     <div class="container">
-      <h2 style="text-align:center;font-size:32px;margin-bottom:12px;color:white;">Lo esencial, de un vistazo.</h2>
-      <p style="text-align:center;max-width:560px;margin:0 auto 48px;color:rgba(255,255,255,0.85);">Estas son las tres piezas que casi todo negocio necesita. La lista completa, con la identidad visual y la web a medida para vender online, está en <a href="/servicios/" style="color:#B8860B;">servicios</a>.</p>
-      <div class="grid grid--3">
-        <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;">
-          <h3 style="color:white;">Empezar bien.</h3>
-          <p style="font-size:14px;color:#80D5CF;margin:8px 0 16px;font-weight:600;">Web (identidad visual opcional)</p>
-          <p>La base de tu presencia digital. Web responsiva, ficha de Google y todos los textos legales.</p>
-          <p style="font-size:14px;margin-top:16px;"><strong style="color:#B8860B;">Desde 1.200 €</strong></p>
+      <div class="about__header" data-reveal>
+        <h2 class="section-title">Cómo Formamos</h2>
+        <p class="section-subtitle">Cuatro pilares que definen nuestra metodología</p>
+      </div>
+
+      <div class="about__grid">
+        <div class="about__card" data-reveal-delay="0.1">
+          <div class="card__icon">🎯</div>
+          <h3 class="card__title">Técnica</h3>
+          <p class="card__text">Base sólida en movimiento, postura, control corporal. Cada ejercicio construye competencia. Sin técnica, no hay progreso.</p>
         </div>
-        <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;">
-          <h3 style="color:white;">Mantener bien.</h3>
-          <p style="font-size:14px;color:#80D5CF;margin:8px 0 16px;font-weight:600;">Mantenimiento · sin permanencia</p>
-          <p>Actualizaciones, copias de seguridad, cambios de contenido. Tu web viva y segura cada mes.</p>
-          <p style="font-size:14px;margin-top:16px;"><strong style="color:#B8860B;">80 €/mes</strong></p>
+        <div class="about__card" data-reveal-delay="0.2">
+          <div class="card__icon">💪</div>
+          <h3 class="card__title">Exigencia</h3>
+          <p class="card__text">Estándares claros. Correcciones precisas. Repetición deliberada. No entrenamos para que pasen tiempo; entrenamos para que avancen.</p>
         </div>
-        <div class="card" style="background:rgba(255,255,255,0.05);border:1px solid rgba(255,255,255,0.1);color:white;">
-          <h3 style="color:white;">Crecer bien.</h3>
-          <p style="font-size:14px;color:#80D5CF;margin:8px 0 16px;font-weight:600;">SEO Local · compromiso 6 meses</p>
-          <p>Que te encuentren cuando la gente te busca. Posicionamiento en Google para tu zona.</p>
-          <p style="font-size:14px;margin-top:16px;"><strong style="color:#B8860B;">250 €/mes</strong></p>
+        <div class="about__card" data-reveal-delay="0.3">
+          <div class="card__icon">📈</div>
+          <h3 class="card__title">Progresión</h3>
+          <p class="card__text">Cada clase construye sobre la anterior. Niveles Baby, Junior, Advanced. Tu hija verá cómo mejora, mes tras mes.</p>
         </div>
+        <div class="about__card" data-reveal-delay="0.4">
+          <div class="card__icon">🎭</div>
+          <h3 class="card__title">Escenario</h3>
+          <p class="card__text">Presentaciones donde muestre lo aprendido. No es sobre shine; es sobre demostrar técnica. El público ve el trabajo.</p>
+        </div>
+      </div>
+
+      <div class="about__statement" data-reveal-delay="0.5">
+        <blockquote class="statement__text">
+          "Mira todo lo que hay detrás de lo que hacen. Eso es Danza Chic."
+        </blockquote>
       </div>
     </div>
   </section>
 
-  <section class="section" style="padding:64px 0;" id="como-funciona">
+  <!-- Classes Section -->
+  <section id="clases" class="classes" data-section="classes">
     <div class="container">
-      <h2 style="text-align:center;font-size:32px;margin-bottom:48px;">Un proceso claro. Sin rodeos.</h2>
-      <div style="max-width:800px;margin:0 auto;">
-        <div style="display:grid;grid-template-columns:repeat(5,1fr);gap:16px;align-items:start;margin-bottom:48px;">
-          <div style="text-align:center;">
-            <div style="width:48px;height:48px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700;">1</div>
-            <h4 style="margin:0 0 8px;font-size:14px;font-weight:600;">Escuchamos</h4>
-            <p style="font-size:13px;margin:0;color:#666;">Entendemos tu negocio, los objetivos y cómo trabajas.</p>
+      <div class="classes__header" data-reveal>
+        <h2 class="section-title">Disciplinas</h2>
+        <p class="section-subtitle">Formación técnica en movimiento</p>
+      </div>
+
+      <div class="classes__grid">
+        <div class="class-card" data-reveal-delay="0.1">
+          <div class="class-card__icon">🪂</div>
+          <h3 class="class-card__title">Acrodance</h3>
+          <p class="class-card__description">Técnica acrobática + danza. Control corporal, saltos, combinaciones. Estructura progresiva desde Baby hasta Advanced.</p>
+          <div class="class-card__ages">
+            <span class="badge">Mini Baby 3-5</span>
+            <span class="badge">Junior 6+</span>
+            <span class="badge">Advanced</span>
           </div>
-          <div style="text-align:center;">
-            <div style="width:48px;height:48px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700;">2</div>
-            <h4 style="margin:0 0 8px;font-size:14px;font-weight:600;">Planificamos</h4>
-            <p style="font-size:13px;margin:0;color:#666;">Definimos estructura, contenido y diseño con precisión.</p>
-          </div>
-          <div style="text-align:center;">
-            <div style="width:48px;height:48px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700;">3</div>
-            <h4 style="margin:0 0 8px;font-size:14px;font-weight:600;">Construimos</h4>
-            <p style="font-size:13px;margin:0;color:#666;">Diseño, desarrollo y dos rondas de cambios incluidas.</p>
-          </div>
-          <div style="text-align:center;">
-            <div style="width:48px;height:48px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700;">4</div>
-            <h4 style="margin:0 0 8px;font-size:14px;font-weight:600;">Entregamos</h4>
-            <p style="font-size:13px;margin:0;color:#666;">Tu web en vivo, todas las contraseñas a tu nombre.</p>
-          </div>
-          <div style="text-align:center;">
-            <div style="width:48px;height:48px;background:var(--color-primary);color:white;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;font-weight:700;">5</div>
-            <h4 style="margin:0 0 8px;font-size:14px;font-weight:600;">Acompañamos</h4>
-            <p style="font-size:13px;margin:0;color:#666;">Mantenimiento mensual, seguimiento y evolución.</p>
-          </div>
+          <p class="class-card__schedule">Consultar horarios</p>
         </div>
-        <div style="text-align:center;margin-top:32px;">
-          <a class="btn btn--secondary" href="/como-funciona/">Ver el proceso completo</a>
+
+        <div class="class-card" data-reveal-delay="0.2">
+          <div class="class-card__icon">🎼</div>
+          <h3 class="class-card__title">Danza Lírica</h3>
+          <p class="class-card__description">Expresión técnica con musicalizad. Movimiento controlado, interpretación consciente. Base en técnica clásica.</p>
+          <div class="class-card__ages">
+            <span class="badge">Desde 3 años</span>
+            <span class="badge">Todos los niveles</span>
+          </div>
+          <p class="class-card__schedule">Consultar horarios</p>
+        </div>
+
+        <div class="class-card" data-reveal-delay="0.3">
+          <div class="class-card__icon">🤸</div>
+          <h3 class="class-card__title">Gimnasia</h3>
+          <p class="class-card__description">Flexibilidad, fuerza, coordinación. Preparación para competencias. Técnica deportiva rigurosa.</p>
+          <div class="class-card__ages">
+            <span class="badge">Niveles mixtos</span>
+            <span class="badge">5+ años</span>
+          </div>
+          <p class="class-card__schedule">Consultar horarios</p>
+        </div>
+      </div>
+
+      <div class="classes__info" data-reveal-delay="0.4">
+        <div class="info-box">
+          <h4>Clase de Prueba Gratis</h4>
+          <p>Una clase para conocer el nivel de exigencia. Sin compromiso.</p>
+        </div>
+        <div class="info-box">
+          <h4>Grupos Reducidos</h4>
+          <p>Máximo 12 niñas. Atención personalizada y corrección directa.</p>
+        </div>
+        <div class="info-box">
+          <h4>Estructura Progresiva</h4>
+          <p>Baby → Junior → Advanced. Cada nivel tiene objetivos claros.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--color-bg);padding:64px 0;" id="proyectos">
+  <!-- Gallery Section -->
+  <section id="galeria" class="gallery" data-section="gallery">
+    <div class="container-full">
+      <div class="gallery__header" data-reveal>
+        <h2 class="section-title">En Clase</h2>
+        <p class="section-subtitle">Lo que sucede en el entrenamiento diario</p>
+      </div>
+
+      <div class="gallery__grid" data-gallery>
+        <div class="gallery__item" data-gallery-item>
+          <img src="assets/img/gallery-1.jpg" alt="Clase de técnica en Acrodance" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Técnica Acrodance</p>
+          </div>
+        </div>
+        <div class="gallery__item gallery__item--tall" data-gallery-item>
+          <img src="assets/img/gallery-2.jpg" alt="Entrenamiento intenso" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Entrenamiento Progresivo</p>
+          </div>
+        </div>
+        <div class="gallery__item" data-gallery-item>
+          <img src="assets/img/gallery-3.jpg" alt="Correcciones de postura" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Correcciones Técnicas</p>
+          </div>
+        </div>
+        <div class="gallery__item" data-gallery-item>
+          <img src="assets/img/gallery-4.jpg" alt="Gimnasia con aparatos" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Gimnasia Técnica</p>
+          </div>
+        </div>
+        <div class="gallery__item" data-gallery-item>
+          <img src="assets/img/gallery-5.jpg" alt="Danza lírica en clase" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Danza Lírica</p>
+          </div>
+        </div>
+        <div class="gallery__item gallery__item--tall" data-gallery-item>
+          <img src="assets/img/gallery-6.jpg" alt="Presentación de resultados" loading="lazy">
+          <div class="gallery__overlay">
+            <p>Showcase Técnico</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonios" class="testimonials" data-section="testimonials">
     <div class="container">
-      <h2 style="text-align:center;font-size:32px;margin-bottom:12px;">Así pensamos un proyecto.</h2>
-      <p style="text-align:center;max-width:640px;margin:0 auto 48px;color:#55606a;">Somos nuevos y no vamos a inventarnos una lista de clientes. Esto son <strong>conceptos de diseño</strong> — cómo abordaríamos negocios como estos — no trabajos entregados. La forma de ver ejemplos reales de cómo trabajamos es <a href="/lo-que-recibes/">lo que recibe un cliente</a>.</p>
-      <div class="grid grid--2" style="gap:32px;margin-bottom:48px;">
-        <div class="card" style="padding:0;overflow:hidden;background:white;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <div style="background:#D4A574;height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;">🍽️</div>
-          <div style="padding:24px;">
-            <span class="badge" style="background:rgba(31,58,95,0.08);color:var(--color-primary);">Concepto de diseño</span>
-            <h3 style="margin:10px 0 4px;">Restaurante de menú diario</h3>
-            <p style="font-size:13px;margin:0 0 16px;color:#8a8a8a;">Ejemplo ilustrativo — no es un cliente real</p>
-            <p style="font-size:14px;margin:0;color:#666;">Cómo lo resolveríamos: Web + SEO Local</p>
-          </div>
-        </div>
-        <div class="card" style="padding:0;overflow:hidden;background:white;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <div style="background:#B0A89B;height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;">🔧</div>
-          <div style="padding:24px;">
-            <span class="badge" style="background:rgba(31,58,95,0.08);color:var(--color-primary);">Concepto de diseño</span>
-            <h3 style="margin:10px 0 4px;">Taller mecánico de barrio</h3>
-            <p style="font-size:13px;margin:0 0 16px;color:#8a8a8a;">Ejemplo ilustrativo — no es un cliente real</p>
-            <p style="font-size:14px;margin:0;color:#666;">Cómo lo resolveríamos: Identidad + Web</p>
-          </div>
-        </div>
-        <div class="card" style="padding:0;overflow:hidden;background:white;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <div style="background:#A89A8A;height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;">⚕️</div>
-          <div style="padding:24px;">
-            <span class="badge" style="background:rgba(31,58,95,0.08);color:var(--color-primary);">Concepto de diseño</span>
-            <h3 style="margin:10px 0 4px;">Clínica dental pequeña</h3>
-            <p style="font-size:13px;margin:0 0 16px;color:#8a8a8a;">Ejemplo ilustrativo — no es un cliente real</p>
-            <p style="font-size:14px;margin:0;color:#666;">Cómo lo resolveríamos: Web + Mantenimiento</p>
-          </div>
-        </div>
-        <div class="card" style="padding:0;overflow:hidden;background:white;border:none;box-shadow:0 4px 12px rgba(0,0,0,0.1);">
-          <div style="background:#9A8A7A;height:200px;display:flex;align-items:center;justify-content:center;font-size:64px;">🏗️</div>
-          <div style="padding:24px;">
-            <span class="badge" style="background:rgba(31,58,95,0.08);color:var(--color-primary);">Concepto de diseño</span>
-            <h3 style="margin:10px 0 4px;">Empresa de construcción y reformas</h3>
-            <p style="font-size:13px;margin:0 0 16px;color:#8a8a8a;">Ejemplo ilustrativo — no es un cliente real</p>
-            <p style="font-size:14px;margin:0;color:#666;">Cómo lo resolveríamos: Web + SEO Local</p>
-          </div>
-        </div>
+      <div class="testimonials__header" data-reveal>
+        <h2 class="section-title">Qué Notan Las Mamás</h2>
+        <p class="section-subtitle">Observaciones de madres sobre el progreso técnico</p>
       </div>
-      <div style="text-align:center;">
-        <a class="btn btn--secondary" href="/como-funciona/">Ver cómo trabajamos en un proyecto real →</a>
+
+      <div class="testimonials__grid">
+        <div class="testimonial" data-reveal-delay="0.1">
+          <div class="testimonial__content">
+            <p class="testimonial__text">
+              "Mi hija mejoró su postura completamente. Notamos cambios reales en su cuerpo, no solo en la clase. Mantiene la espalda derecha, tiene más control."
+            </p>
+            <div class="testimonial__author">
+              <p class="author__name">Madre de alumna Acrodance</p>
+              <p class="author__relation">Junior Level</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial" data-reveal-delay="0.2">
+          <div class="testimonial__content">
+            <p class="testimonial__text">
+              "La exigencia es real. Las profesoras no pasan por alto errores. Al principio me sorprendió, pero ahora veo que eso es lo que hace que aprendan de verdad."
+            </p>
+            <div class="testimonial__author">
+              <p class="author__name">Madre de alumna Gimnasia</p>
+              <p class="author__relation">Nivel Intermedio</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial" data-reveal-delay="0.3">
+          <div class="testimonial__content">
+            <p class="testimonial__text">
+              "Vemos avance cada mes. Cambió de nivel y el salto fue evidente. Las niñas saben exactamente qué deben mejorar porque las correcciones son específicas."
+            </p>
+            <div class="testimonial__author">
+              <p class="author__name">Madre de alumna Danza Lírica</p>
+              <p class="author__relation">Niveles Baby a Junior</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <section class="section" style="background:var(--color-primary);color:white;padding:64px 0;">
+  <!-- Profesoras Section -->
+  <section id="profesoras" class="profesoras" data-section="profesoras">
     <div class="container">
-      <div style="max-width:600px;margin:0 auto;text-align:center;">
-        <h2 style="font-size:32px;margin-bottom:24px;color:white;">¿Listo para construir?</h2>
-        <p style="font-size:18px;margin-bottom:32px;opacity:0.95;">El primer paso es una conversación. No tiene compromiso. Es para entender cómo podemos ayudarte.</p>
-        <a class="btn btn--accent" href="/contacto/" style="padding:16px 32px;font-size:16px;">Escríbenos por WhatsApp</a>
-        <p style="font-size:14px;margin-top:24px;opacity:0.8;">O llama al <a href="tel:+34" style="color:white;text-decoration:underline;">+34 [Tu teléfono]</a></p>
+      <div class="profesoras__header" data-reveal>
+        <h2 class="section-title">El Equipo</h2>
+        <p class="section-subtitle">Profesionales que saben de entrenamiento técnico</p>
+      </div>
+
+      <div class="profesoras__grid">
+        <div class="profesor-card" data-reveal-delay="0.1">
+          <div class="profesor-card__image">
+            <img src="assets/img/profesora-1.jpg" alt="Directora María Daniela" loading="lazy">
+          </div>
+          <div class="profesor-card__content">
+            <h3 class="profesor-card__name">Directora María Daniela</h3>
+            <p class="profesor-card__specialty">Formación Técnica | Acrodance y Danza Lírica</p>
+            <p class="profesor-card__bio"><strong>Campeona 2023</strong> | Seleccionada para equipo nacional de Venezuela. Directora fundadora de Danza Chic. Especialista en formación técnica desde niveles iniciantes hasta preparación competitiva.</p>
+          </div>
+        </div>
+
+        <div class="profesor-card" data-reveal-delay="0.2">
+          <div class="profesor-card__image">
+            <img src="assets/img/profesora-2.jpg" alt="Profesora de Danza Lírica" loading="lazy">
+          </div>
+          <div class="profesor-card__content">
+            <h3 class="profesor-card__name">Profesora de Danza Lírica</h3>
+            <p class="profesor-card__specialty">Técnica | Interpretación Controlada</p>
+            <p class="profesor-card__bio">Especializada en formación lírica con énfasis en técnica pura y movimiento consciente. Exigente en correcciones.</p>
+          </div>
+        </div>
+
+        <div class="profesor-card" data-reveal-delay="0.3">
+          <div class="profesor-card__image">
+            <img src="assets/img/profesora-3.jpg" alt="Profesora de Gimnasia" loading="lazy">
+          </div>
+          <div class="profesor-card__content">
+            <h3 class="profesor-card__name">Profesora de Gimnasia</h3>
+            <p class="profesor-card__specialty">Fuerza | Coordinación | Aparatos</p>
+            <p class="profesor-card__bio">Certificada en gimnasia técnica. Prepara alumnas en progresión estructurada. Competencia y desarrollo seguro.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-</main>
+  <!-- Contact Section -->
+  <section id="contacto" class="contact" data-section="contact">
+    <div class="container">
+      <div class="contact__header" data-reveal>
+        <h2 class="section-title">¿Buscas Formación Exigente?</h2>
+        <p class="section-subtitle">Contacta para agendar una clase de prueba</p>
+      </div>
 
-<footer class="site-footer">
-  <div class="container footer__grid">
-    <div>
-      <a class="nav__logo" href="/" style="color:#fff"><img src="/assets/img/logo.svg" alt=""> FARO</a>
-      <p style="color:rgba(255,255,255,0.8); margin-top: 16px; max-width: 320px;">Presencia digital construida para durar. Precisión. Escuadra. Oficio. Y lo que bien se hace, dura.</p>
-      <div style="margin-top:16px;display:flex;gap:16px;">
-        <a href="https://wa.me/34" style="color:white;text-decoration:none;font-size:14px;">WhatsApp</a>
-        <a href="https://instagram.com" style="color:white;text-decoration:none;font-size:14px;">Instagram</a>
-        <a href="https://linkedin.com" style="color:white;text-decoration:none;font-size:14px;">LinkedIn</a>
+      <div class="contact__grid">
+        <div class="contact__info">
+          <div class="info-item" data-reveal-delay="0.1">
+            <div class="info-item__icon">📍</div>
+            <div class="info-item__content">
+              <h4>Ubicación</h4>
+              <p>Av. 4 entre Calles 22-23<br>Mérida, Venezuela</p>
+              <a href="https://maps.google.com/?q=Av+4+entre+Calles+22-23+Merida+Venezuela"
+                 class="link" target="_blank">Ver en mapa →</a>
+            </div>
+          </div>
+
+          <div class="info-item" data-reveal-delay="0.2">
+            <div class="info-item__icon">📞</div>
+            <div class="info-item__content">
+              <h4>Teléfono</h4>
+              <p><a href="tel:+584124567890" class="link">+58 412 456 7890</a></p>
+            </div>
+          </div>
+
+          <div class="info-item" data-reveal-delay="0.3">
+            <div class="info-item__icon">💬</div>
+            <div class="info-item__content">
+              <h4>WhatsApp</h4>
+              <p><a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20gustaría%20agendar%20una%20clase%20de%20prueba"
+                    class="link" target="_blank">Enviar mensaje →</a></p>
+            </div>
+          </div>
+
+          <div class="info-item" data-reveal-delay="0.4">
+            <div class="info-item__icon">📧</div>
+            <div class="info-item__content">
+              <h4>Email</h4>
+              <p><a href="mailto:contacto@danzachic.ve" class="link">contacto@danzachic.ve</a></p>
+            </div>
+          </div>
+        </div>
+
+        <form class="contact__form" data-form="contact" data-reveal-delay="0.2">
+          <div class="form-group">
+            <label for="nombre" class="form-label">Nombre de la mamá/papá</label>
+            <input type="text" id="nombre" name="nombre" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input type="email" id="email" name="email" class="form-input" required>
+          </div>
+
+          <div class="form-group">
+            <label for="edad" class="form-label">Edad de tu hija</label>
+            <select id="edad" name="edad" class="form-input" required>
+              <option value="">Selecciona una edad</option>
+              <option value="3-4">3-4 años</option>
+              <option value="5-6">5-6 años</option>
+              <option value="7-8">7-8 años</option>
+              <option value="9-10">9-10 años</option>
+              <option value="11-12">11-12 años</option>
+              <option value="13-14">13-14 años</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="disciplina" class="form-label">Disciplina de interés</label>
+            <select id="disciplina" name="disciplina" class="form-input">
+              <option value="">No estoy seguro</option>
+              <option value="acrodance">Acrodance</option>
+              <option value="lirica">Danza Lírica</option>
+              <option value="gimnasia">Gimnasia</option>
+              <option value="todas">Quiero probar todas</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="mensaje" class="form-label">Mensaje (opcional)</label>
+            <textarea id="mensaje" name="mensaje" class="form-input form-textarea" placeholder="Cuéntame sobre tu hija..."></textarea>
+          </div>
+
+          <button type="submit" class="btn btn--primary btn--full">
+            Agendar Clase Gratis
+          </button>
+          <p class="form-note">O contacta directamente por <a href="https://wa.me/584124567890?text=Hola%20Danza%20Chic,%20me%20gustaría%20agendar%20una%20clase%20de%20prueba"
+                class="link" target="_blank">WhatsApp</a></p>
+        </form>
       </div>
     </div>
-    <div>
-      <h4 style="color:white;">Servicios</h4>
-      <a href="#servicios">Diseño web</a>
-      <a href="#servicios">Identidad visual</a>
-      <a href="#servicios">Mantenimiento</a>
-      <a href="#servicios">SEO local</a>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer" data-footer>
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4 class="footer__title">Danza Chic</h4>
+          <p class="footer__text">Academia de formación técnica en danza. Acrodance, danza lírica, gimnasia. Que se note el entrenamiento.</p>
+          <div class="footer__socials">
+            <a href="https://instagram.com/danza.chic" class="social-link" target="_blank" aria-label="Instagram">
+              📷
+            </a>
+            <a href="https://facebook.com/danza.chic" class="social-link" target="_blank" aria-label="Facebook">
+              f
+            </a>
+            <a href="https://tiktok.com/@danza.chic" class="social-link" target="_blank" aria-label="TikTok">
+              🎬
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__section">
+          <h4 class="footer__title">Enlaces</h4>
+          <ul class="footer__links">
+            <li><a href="#inicio" class="footer-link">Inicio</a></li>
+            <li><a href="#nosotros" class="footer-link">Formación</a></li>
+            <li><a href="#clases" class="footer-link">Disciplinas</a></li>
+            <li><a href="#galeria" class="footer-link">Galería</a></li>
+            <li><a href="#contacto" class="footer-link">Contacto</a></li>
+          </ul>
+        </div>
+
+        <div class="footer__section">
+          <h4 class="footer__title">Información</h4>
+          <p class="footer__text small">
+            <strong>Ubicación:</strong> Av. 4 entre Calles 22-23, Mérida<br>
+            <strong>Teléfono:</strong> <a href="tel:+584124567890" class="footer-link">+58 412 456 7890</a><br>
+            <strong>WhatsApp:</strong> <a href="https://wa.me/584124567890" class="footer-link">+58 412 456 7890</a>
+          </p>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <p class="footer__credit">© 2026 Danza Chic | Formación Técnica en Danza | Mérida, Venezuela</p>
+      </div>
     </div>
-    <div>
-      <h4 style="color:white;">Empresa</h4>
-      <a href="/quienes-somos/">Sobre FARO</a>
-      <a href="#como-funciona">Cómo trabajamos</a>
-      <a href="/precios/">Precios</a>
-      <a href="/contacto/">Contacto</a>
-    </div>
-    <div>
-      <h4 style="color:white;">Legal</h4>
-      <a href="/legal/privacidad/">Privacidad</a>
-      <a href="/legal/terminos/">Términos</a>
-      <a href="/legal/cookies/">Cookies</a>
-    </div>
-  </div>
-  <div class="container footer__legal">
-    <span>© 2026 FARO. Ponferrada · León.</span>
-    <span>
-      <a href="/legal/privacidad/">Privacidad</a>
-      <a href="/legal/terminos/">Términos</a>
-      <a href="/legal/cookies/">Cookies</a>
-    </span>
-  </div>
-</footer>
-<script src="/assets/js/main.js"></script>
+  </footer>
+
+  <!-- Scripts -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js?v=20250810"></script>
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js?v=20250810"></script>
+  <script defer src="main.js?v=20250810"></script>
 </body>
 </html>
