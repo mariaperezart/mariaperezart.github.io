@@ -182,27 +182,18 @@
 
       const formData = new FormData(form);
       const nombre = formData.get('nombre');
-      const email = formData.get('email');
       const edad = formData.get('edad');
       const disciplina = formData.get('disciplina');
-      const mensaje = formData.get('mensaje');
 
       // Basic validation
-      if (!nombre || !email || !edad) {
+      if (!nombre || !edad) {
         alert('Por favor, completa los campos obligatorios.');
-        return;
-      }
-
-      // Email regex
-      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-      if (!emailRegex.test(email)) {
-        alert('Por favor, ingresa un email válido.');
         return;
       }
 
       // Prepare WhatsApp message
       const whatsappMessage = encodeURIComponent(
-        `Hola Danza Chic!\n\nNombre: ${nombre}\nEmail: ${email}\nEdad de la niña: ${edad}\nDisciplina de interés: ${disciplina || 'No especificada'}\nMensaje: ${mensaje || 'Sin mensaje adicional'}`
+        `Hola Danza Chic!\n\nNombre: ${nombre}\nEdad de la niña: ${edad}\nInterés: ${disciplina || 'No especificada'}`
       );
 
       // Redirect to WhatsApp
