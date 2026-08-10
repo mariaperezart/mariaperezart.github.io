@@ -713,6 +713,36 @@ a:hover { color: var(--magenta-active); }
   letter-spacing: 0.03em;
 }
 
+/* FILTRO: ¿Es para tu hija? */
+.filtro {
+  padding: var(--spacing-2xl) var(--spacing-lg);
+  background: var(--negro);
+}
+
+.filtro__box {
+  max-width: 720px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.filtro__box .section-title { color: white; }
+
+.filtro__text {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,0.75);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-md);
+}
+
+.filtro__highlight {
+  font-size: 1.3rem;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: var(--rosa-acento);
+  line-height: 1.5;
+  margin-top: var(--spacing-lg);
+}
+
 /* CONTACT */
 .contact {
   padding: var(--spacing-3xl) var(--spacing-lg);
@@ -1118,6 +1148,7 @@ a:hover { color: var(--magenta-active); }
   .gallery-editorial { padding: var(--spacing-2xl) var(--spacing-md); }
   .experiencia { padding: var(--spacing-2xl) var(--spacing-md); }
   .testimonials { padding: var(--spacing-2xl) var(--spacing-md); }
+  .filtro { padding: var(--spacing-2xl) var(--spacing-md); }
   .contact { padding: var(--spacing-2xl) var(--spacing-md); }
 
   .pillar__image { height: 200px; }
