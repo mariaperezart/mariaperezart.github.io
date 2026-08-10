@@ -175,6 +175,14 @@ a:hover { color: var(--magenta-active); }
   align-items: center;
 }
 
+.hero__credential {
+  font-size: 0.95rem;
+  color: var(--gris-medio);
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.6;
+  font-weight: 500;
+}
+
 .hero__title {
   font-size: clamp(2.5rem, 7vw, 3.8rem);
   line-height: 1.1;
@@ -186,6 +194,14 @@ a:hover { color: var(--magenta-active); }
 
 .hero__subtitle {
   font-size: 1.125rem;
+  color: var(--gris-medio);
+  line-height: 1.8;
+  margin-bottom: var(--spacing-lg);
+  max-width: 500px;
+}
+
+.hero__description {
+  font-size: 1rem;
   color: var(--gris-medio);
   line-height: 1.8;
   margin-bottom: var(--spacing-xl);
@@ -209,6 +225,14 @@ a:hover { color: var(--magenta-active); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+.hero__image-caption {
+  font-size: 0.85rem;
+  color: var(--gris-medio);
+  margin-top: var(--spacing-sm);
+  text-align: center;
+  font-style: italic;
 }
 
 @media (max-width: 768px) {
@@ -352,10 +376,17 @@ a:hover { color: var(--magenta-active); }
 .gallery-section__title {
   font-size: 1.75rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-xl);
+  margin-bottom: var(--spacing-sm);
   text-transform: uppercase;
   letter-spacing: 0.05em;
   color: var(--rosa-acento);
+}
+
+.gallery-section__description {
+  font-size: 0.95rem;
+  color: var(--gris-medio);
+  margin-bottom: var(--spacing-xl);
+  font-style: italic;
 }
 
 .gallery-section__grid {
@@ -401,15 +432,15 @@ a:hover { color: var(--magenta-active); }
   transform: translateY(0);
 }
 
-/* DIRECTOR SECTION */
-.director {
+/* EXPERIENCIA SECTION */
+.experiencia {
   padding: var(--spacing-3xl) var(--spacing-lg);
-  background: var(--marfil);
+  background: white;
 }
 
-.director__header { text-align: center; margin-bottom: var(--spacing-3xl); }
+.experiencia__header { text-align: center; margin-bottom: var(--spacing-3xl); }
 
-.director__content {
+.experiencia__content {
   max-width: 1100px;
   margin: 0 auto var(--spacing-3xl);
   display: grid;
@@ -419,22 +450,22 @@ a:hover { color: var(--magenta-active); }
   margin-bottom: var(--spacing-3xl);
 }
 
-.director__image {
+.experiencia__image {
   width: 100%;
   height: 500px;
   overflow: hidden;
   background: var(--gris-claro);
 }
 
-.director__image img {
+.experiencia__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.director__bio {}
-.director__name { font-size: 2rem; margin-bottom: var(--spacing-sm); }
-.director__title {
+.experiencia__bio {}
+.experiencia__name { font-size: 2rem; margin-bottom: var(--spacing-sm); }
+.experiencia__title {
   font-size: 1.1rem;
   color: var(--rosa-acento);
   font-weight: 600;
@@ -443,27 +474,52 @@ a:hover { color: var(--magenta-active); }
   letter-spacing: 0.05em;
 }
 
-.director__credentials {
+.experiencia__credentials {
   background: rgba(217, 70, 166, 0.1);
   padding: var(--spacing-lg);
   margin-bottom: var(--spacing-lg);
   border-left: 4px solid var(--rosa-acento);
 }
 
-.director__credentials p {
+.experiencia__credentials p {
   color: var(--negro);
   margin-bottom: var(--spacing-sm);
   font-weight: 600;
 }
 
-.director__bio-text {
+.experiencia__story {
   font-size: 1rem;
   line-height: 1.8;
   color: var(--gris-medio);
   margin-bottom: var(--spacing-lg);
 }
 
-.director__callout {
+.experiencia__story p {
+  margin-bottom: var(--spacing-lg);
+}
+
+.story__list {
+  list-style: none;
+  padding: 0;
+  margin: var(--spacing-lg) 0;
+}
+
+.story__list li {
+  padding-left: var(--spacing-lg);
+  margin-bottom: var(--spacing-sm);
+  position: relative;
+  color: var(--gris-medio);
+}
+
+.story__list li:before {
+  content: "→";
+  position: absolute;
+  left: 0;
+  color: var(--rosa-acento);
+  font-weight: 700;
+}
+
+.experiencia__callout {
   font-size: 1.125rem;
   font-family: var(--font-display);
   font-style: italic;
@@ -475,8 +531,8 @@ a:hover { color: var(--magenta-active); }
 }
 
 @media (max-width: 768px) {
-  .director__content { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
-  .director__image { height: 350px; }
+  .experiencia__content { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
+  .experiencia__image { height: 350px; }
 }
 
 /* TEACHERS GRID */
@@ -730,7 +786,7 @@ a:hover { color: var(--magenta-active); }
   .pillars { padding: var(--spacing-2xl) var(--spacing-md); }
   .disciplines { padding: var(--spacing-2xl) var(--spacing-md); }
   .gallery-editorial { padding: var(--spacing-2xl) var(--spacing-md); }
-  .director { padding: var(--spacing-2xl) var(--spacing-md); }
+  .experiencia { padding: var(--spacing-2xl) var(--spacing-md); }
   .testimonials { padding: var(--spacing-2xl) var(--spacing-md); }
   .contact { padding: var(--spacing-2xl) var(--spacing-md); }
 
