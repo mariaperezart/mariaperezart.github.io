@@ -291,6 +291,64 @@
     </div>
   </section>
 
+  <!-- DISCIPLINAS: Con Fotografías -->
+  <section id="disciplinas" class="disciplines">
+    <div class="container">
+      <div class="disciplines__header" data-reveal>
+        <h2 class="section-title">Disciplinas</h2>
+        <p class="section-subtitle">Cada una con su propia identidad técnica</p>
+      </div>
+
+      <div class="disciplines__grid">
+        <!-- Acrodance -->
+        <div class="discipline-card" data-reveal-delay="0.1">
+          <div class="discipline-card__image">
+            <img src="assets/img/6b4a0c4a-10526.jpg" alt="Acrodance" loading="lazy">
+          </div>
+          <h3 class="discipline-card__title">Acrodance</h3>
+          <p class="discipline-card__description">
+            Danza + acrobacia + flexibilidad. Control corporal, saltos y movimientos aéreos.
+          </p>
+          <div class="discipline-card__meta">
+            <span>3-5 años</span>
+            <span>6+ años</span>
+            <span>Advanced</span>
+          </div>
+        </div>
+
+        <!-- Danza Lírica -->
+        <div class="discipline-card" data-reveal-delay="0.2">
+          <div class="discipline-card__image">
+            <img src="assets/img/5bde80a6-10585.jpg" alt="Danza Lírica" loading="lazy">
+          </div>
+          <h3 class="discipline-card__title">Danza Lírica</h3>
+          <p class="discipline-card__description">
+            Expresión + movimiento + técnica. Control consciente e interpretación sobre música.
+          </p>
+          <div class="discipline-card__meta">
+            <span>Desde 3 años</span>
+            <span>Todos los niveles</span>
+          </div>
+        </div>
+
+        <!-- Gimnasia -->
+        <div class="discipline-card" data-reveal-delay="0.3">
+          <div class="discipline-card__image">
+            <img src="assets/img/74857a89-10593.jpg" alt="Gimnasia" loading="lazy">
+          </div>
+          <h3 class="discipline-card__title">Gimnasia</h3>
+          <p class="discipline-card__description">
+            Fuerza + coordinación + técnica deportiva rigurosa. Preparación para competencias.
+          </p>
+          <div class="discipline-card__meta">
+            <span>5+ años</span>
+            <span>Estructura progresiva</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- EXPERIENCIA: María Daniela's Journey -->
   <section id="experiencia" class="experiencia">
     <div class="container">
@@ -382,15 +440,12 @@
 
       <div class="contact__grid">
         <div class="contact__form-section" data-reveal-delay="0.1">
-          <h3 class="contact__form-title">Agendar Clase de Prueba</h3>
+          <h3 class="contact__form-title">Solicitar Clase de Prueba</h3>
+          <p class="contact__form-subtitle">Rellena y nos contactamos por WhatsApp</p>
           <form class="contact__form" data-form="contact">
             <div class="form-group">
-              <label for="nombre">Nombre de mamá/papá</label>
+              <label for="nombre">Nombre</label>
               <input type="text" id="nombre" name="nombre" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email</label>
-              <input type="email" id="email" name="email" required>
             </div>
             <div class="form-group">
               <label for="edad">Edad de tu hija</label>
@@ -405,9 +460,9 @@
               </select>
             </div>
             <div class="form-group">
-              <label for="disciplina">Disciplina de interés</label>
-              <select id="disciplina" name="disciplina">
-                <option value="">No estoy seguro</option>
+              <label for="disciplina">¿Cuál te interesa?</label>
+              <select id="disciplina" name="disciplina" required>
+                <option value="">Selecciona</option>
                 <option value="acrodance">Acrodance</option>
                 <option value="lirica">Danza Lírica</option>
                 <option value="gimnasia">Gimnasia</option>
@@ -415,7 +470,7 @@
               </select>
             </div>
             <button type="submit" class="btn btn--primary btn--full">
-              Agendar
+              Enviar →
             </button>
           </form>
         </div>
