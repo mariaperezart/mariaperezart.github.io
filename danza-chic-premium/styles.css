@@ -265,7 +265,7 @@ a:hover { color: var(--magenta-active); }
 
 .pillar__image {
   width: 100%;
-  height: 250px;
+  height: 320px;
   overflow: hidden;
   background: var(--gris-claro);
 }
@@ -274,8 +274,11 @@ a:hover { color: var(--magenta-active); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s ease;
 }
+
+.pillar__image--bottom img { object-position: center bottom; }
 
 .pillar__image:hover img { transform: scale(1.05); }
 
@@ -539,7 +542,10 @@ a:hover { color: var(--magenta-active); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
 }
+
+.experiencia__image--main img { object-position: left center; }
 
 @media (max-width: 900px) {
   .experiencia__images { grid-template-columns: 1fr 1fr; }
@@ -837,6 +843,7 @@ a:hover { color: var(--magenta-active); }
   margin: 0 auto var(--spacing-2xl);
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  align-items: start;
   gap: var(--spacing-lg);
 }
 
@@ -847,6 +854,8 @@ a:hover { color: var(--magenta-active); }
   background: var(--gris-claro);
   cursor: pointer;
 }
+
+.gallery-training__item--tall { height: 480px; }
 
 .gallery-training__item img {
   width: 100%;
@@ -980,8 +989,11 @@ a:hover { color: var(--magenta-active); }
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
   transition: transform 0.6s ease;
 }
+
+.escenario__item--bottom img { object-position: center bottom; }
 
 .escenario__item:hover img {
   transform: scale(1.05);
@@ -1022,6 +1034,7 @@ a:hover { color: var(--magenta-active); }
   .gallery-training { padding: var(--spacing-2xl) var(--spacing-md); }
   .gallery-training__grid { grid-template-columns: repeat(2, 1fr); gap: var(--spacing-md); }
   .gallery-training__item { height: 200px; }
+  .gallery-training__item--tall { height: 340px; }
   .formacion { padding: var(--spacing-2xl) var(--spacing-md); }
   .formacion__areas { grid-template-columns: 1fr; }
   .escenario { padding: var(--spacing-2xl) var(--spacing-md); }
