@@ -7,7 +7,7 @@
   --marfil: #FAF7F2;
   --negro: #1A1A1A;
   --gris-claro: #E8E4DE;
-  --gris-medio: #9B9B9B;
+  --gris-medio: #7A7A7A;
   --rosa-acento: #D946A6;
   --magenta-active: #C2185B;
 
@@ -18,9 +18,9 @@
   --spacing-sm: 1rem;
   --spacing-md: 1.5rem;
   --spacing-lg: 2rem;
-  --spacing-xl: 3rem;
-  --spacing-2xl: 4rem;
-  --spacing-3xl: 6rem;
+  --spacing-xl: 2.5rem;
+  --spacing-2xl: 3rem;
+  --spacing-3xl: 4.5rem;
 
   --transition-fast: 0.2s ease;
   --transition-smooth: 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
@@ -58,7 +58,7 @@ h1 { font-size: clamp(2.8rem, 8vw, 4.5rem); letter-spacing: -0.02em; }
 h2 { font-size: clamp(2rem, 6vw, 3.5rem); letter-spacing: -0.01em; margin-bottom: var(--spacing-md); }
 h3 { font-size: clamp(1.5rem, 4vw, 2rem); }
 h4 { font-size: 1.25rem; font-weight: 600; }
-p { font-size: 1.025rem; color: var(--gris-medio); line-height: 1.8; margin-bottom: var(--spacing-md); }
+p { font-size: 1.075rem; color: var(--gris-medio); line-height: 1.75; margin-bottom: var(--spacing-md); }
 
 strong { color: var(--negro); font-weight: 600; }
 a { color: var(--rosa-acento); text-decoration: none; transition: color var(--transition-fast); }
@@ -519,17 +519,32 @@ a:hover { color: var(--magenta-active); }
   margin-bottom: var(--spacing-2xl);
 }
 
+.experiencia__images {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: var(--spacing-md);
+  align-items: end;
+}
+
 .experiencia__image {
   width: 100%;
-  height: 500px;
   overflow: hidden;
   background: var(--gris-claro);
 }
+
+.experiencia__image--main { height: 500px; }
+.experiencia__image--secondary { height: 340px; }
 
 .experiencia__image img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+}
+
+@media (max-width: 900px) {
+  .experiencia__images { grid-template-columns: 1fr 1fr; }
+  .experiencia__image--main { height: 380px; }
+  .experiencia__image--secondary { height: 380px; }
 }
 
 .experiencia__bio {}
@@ -601,7 +616,8 @@ a:hover { color: var(--magenta-active); }
 
 @media (max-width: 768px) {
   .experiencia__content { grid-template-columns: 1fr; gap: var(--spacing-2xl); }
-  .experiencia__image { height: 350px; }
+  .experiencia__images { grid-template-columns: 1fr; }
+  .experiencia__image--main, .experiencia__image--secondary { height: 350px; }
 }
 
 /* TEACHERS GRID */
@@ -651,10 +667,22 @@ a:hover { color: var(--magenta-active); }
 }
 
 .testimonial-card {
-  padding: var(--spacing-xl);
+  padding: var(--spacing-xl) var(--spacing-lg);
   background: var(--marfil);
-  border-left: 4px solid var(--rosa-acento);
+  border-left: 5px solid var(--rosa-acento);
   transition: transform 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+}
+
+.testimonial-card:before {
+  content: "\201C";
+  display: block;
+  font-family: var(--font-display);
+  font-size: 4rem;
+  line-height: 1;
+  color: var(--rosa-acento);
+  opacity: 0.35;
+  margin-bottom: var(--spacing-xs);
 }
 
 .testimonial-card:hover {
@@ -663,19 +691,20 @@ a:hover { color: var(--magenta-active); }
 }
 
 .testimonial-card__text {
-  font-size: 1.15rem;
-  line-height: 1.85;
+  font-size: 1.3rem;
+  line-height: 1.7;
   color: var(--negro);
   margin-bottom: var(--spacing-lg);
-  font-style: italic;
   font-weight: 500;
   letter-spacing: -0.01em;
 }
 
 .testimonial-card__author {
-  font-size: 1rem;
-  color: var(--gris-medio);
-  font-weight: 600;
+  font-size: 1.05rem;
+  color: var(--rosa-acento);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
 }
 
 /* CONTACT */
@@ -807,7 +836,7 @@ a:hover { color: var(--magenta-active); }
   max-width: 1200px;
   margin: 0 auto var(--spacing-2xl);
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: var(--spacing-lg);
 }
 
