@@ -172,39 +172,6 @@
     });
   }
 
-  // ========== Contact Form ==========
-  function initContactForm() {
-    const form = document.querySelector('[data-form="contact"]');
-    if (!form) return;
-
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-
-      const formData = new FormData(form);
-      const nombre = formData.get('nombre');
-      const edad = formData.get('edad');
-      const disciplina = formData.get('disciplina');
-
-      // Basic validation
-      if (!nombre || !edad) {
-        alert('Por favor, completa los campos obligatorios.');
-        return;
-      }
-
-      // Prepare WhatsApp message
-      const whatsappMessage = encodeURIComponent(
-        `Hola Danza Chic!\n\nNombre: ${nombre}\nEdad de la niña: ${edad}\nInterés: ${disciplina || 'No especificada'}`
-      );
-
-      // Redirect to WhatsApp
-      window.open(`https://wa.me/584124567890?text=${whatsappMessage}`, '_blank');
-
-      // Show success and reset
-      alert('¡Gracias! Te redirigimos a WhatsApp para agendar la clase.');
-      form.reset();
-    });
-  }
-
   // ========== Smooth Scrolling for Anchor Links ==========
   function initSmoothScroll() {
     document.querySelectorAll('a[href^="#"]').forEach(link => {
@@ -226,7 +193,6 @@
     safe(() => initNavigation(), 'Navigation');
     safe(() => initReveal(), 'Reveal');
     safe(() => initGSAP(), 'GSAP');
-    safe(() => initContactForm(), 'ContactForm');
     safe(() => initSmoothScroll(), 'SmoothScroll');
   }
 
