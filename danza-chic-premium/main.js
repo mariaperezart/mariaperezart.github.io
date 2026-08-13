@@ -1,4 +1,4 @@
-/* Danza Chic Premium — Main JavaScript */
+/* DC Academia Premium — Main JavaScript */
 
 (function() {
   'use strict';

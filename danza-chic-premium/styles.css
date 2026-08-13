@@ -1,18 +1,22 @@
-/* Danza Chic — Editorial Redesign */
+/* DC Academia — Editorial Redesign */
 
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Archivo+Black&family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap');
 
 :root {
-  /* NEW PALETTE: Marfil + Negro + Rosa Acento */
+  /* BRAND PALETTE: Negro + Fucsia + Turquesa + Azul (identidad DC Academia) */
   --marfil: #FAF7F2;
   --negro: #1A1A1A;
+  --negro-marca: #000000;
   --gris-claro: #E8E4DE;
   --gris-medio: #7A7A7A;
-  --rosa-acento: #D946A6;
-  --magenta-active: #C2185B;
+  --rosa-acento: #E10073;
+  --magenta-active: #B8005E;
+  --turquesa: #00BDC9;
+  --azul-corp: #0F2378;
 
   --font-display: 'Playfair Display', serif;
   --font-body: 'Inter', sans-serif;
+  --font-logo: 'Archivo Black', sans-serif;
 
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
@@ -131,6 +135,51 @@ a:hover { color: var(--magenta-active); }
   font-weight: 700;
   font-size: 1.25rem;
   font-family: var(--font-display);
+}
+
+/* BRAND MARK: DC Academia logotype */
+.brand-mark {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.brand-mark__dc {
+  display: inline-flex;
+  align-items: center;
+  font-family: var(--font-logo);
+  font-size: 1.5rem;
+  line-height: 1;
+  letter-spacing: -0.03em;
+  color: var(--negro-marca);
+  transform: skewX(-8deg);
+}
+
+.brand-mark__accent {
+  display: inline-block;
+  width: 0.26em;
+  height: 0.95em;
+  margin: 0 0.05em;
+  background: var(--rosa-acento);
+  transform: skewX(-18deg);
+}
+
+.brand-mark__sub {
+  font-family: var(--font-body);
+  font-weight: 800;
+  font-size: 0.7rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--negro-marca);
+}
+
+.brand-mark--on-dark .brand-mark__dc,
+.brand-mark--on-dark .brand-mark__sub {
+  color: #FFFFFF;
+}
+
+.footer .brand-mark {
+  margin-bottom: var(--spacing-md);
 }
 
 .navbar__links {
@@ -936,6 +985,9 @@ a:hover { color: var(--magenta-active); }
   background: var(--marfil);
   border-left: 4px solid var(--rosa-acento);
 }
+
+.formacion__area--turquesa { border-left-color: var(--turquesa); }
+.formacion__area--azul { border-left-color: var(--azul-corp); }
 
 .formacion__area-title {
   font-size: 1.3rem;

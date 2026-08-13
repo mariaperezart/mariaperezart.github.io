@@ -1,8 +1,8 @@
-# Danza Chic — Website Premium
+# DC Academia — Website Premium
 
 ## 📋 Descripción
 
-Sitio web profesional y premium para **Danza Chic**, academia de danza infantil en Mérida, Venezuela. Diseñado con máxima calidad visual, optimizado para conversión y responsive en todos los dispositivos.
+Sitio web profesional y premium para **DC Academia**, academia de danza infantil en Mérida, Venezuela. Diseñado con máxima calidad visual, optimizado para conversión y responsive en todos los dispositivos.
 
 ## 🎨 Características
 
@@ -71,9 +71,9 @@ Para que la web se vea perfectamente, coloca las fotos en `assets/img/`:
 
 ### Cambiar Número de WhatsApp
 
-Edita `index.html` y busca `584124567890` reemplaza por tu número:
+Edita `index.html` y busca `584126900962` reemplaza por tu número:
 ```html
-+584124567890  →  +58XXXXXXXXXXX
++584126900962  →  +58XXXXXXXXXXX
 ```
 
 También está en varias secciones:
@@ -193,9 +193,9 @@ Para cambiar paleta, edita `:root { }` al inicio de `styles.css`.
 ## 📧 Contacto del Sitio
 
 **Ubicación:** Av. 4 entre Calles 22-23, Mérida, Venezuela  
-**WhatsApp:** +58 412 456 7890  
+**WhatsApp:** +58 412-6900962  
 **Email:** contacto@danzachic.ve  
-**Teléfono:** +58 412 456 7890
+**Teléfono:** +58 412-6900962
 
 ---
 
